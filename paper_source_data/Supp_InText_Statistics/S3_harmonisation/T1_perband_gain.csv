@@ -1,0 +1,619 @@
+objective,arm,family,benchmark,axis,metric,mean,std,n_seeds
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,STURM-Flood,t1visx,micro_mIoU@clean,0.71708,0.01777,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,STURM-Flood,t1visx,micro_mIoU@t1vis+05,0.71649,0.01876,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,STURM-Flood,t1visx,micro_mIoU@t1vis-05,0.71621,0.01681,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,STURM-Flood,t1visx,micro_mIoU@t1vis+10,0.71501,0.01949,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,STURM-Flood,t1visx,micro_mIoU@t1vis-10,0.71323,0.01598,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,STURM-Flood,t1visx,micro_mIoU@t1vis+20,0.70884,0.02065,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,STURM-Flood,t1visx,micro_mIoU@t1vis-20,0.69884,0.01454,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,STURM-Flood,t1visx,micro_mIoU@t1vis+30,0.69913,0.02150,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,STURM-Flood,t1visx,micro_mIoU@t1vis-30,0.66751,0.01652,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,STURM-Flood,t1visx,micro_mIoU@clean,0.72560,0.01577,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,STURM-Flood,t1visx,micro_mIoU@t1vis+05,0.72463,0.01582,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,STURM-Flood,t1visx,micro_mIoU@t1vis-05,0.72515,0.01629,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,STURM-Flood,t1visx,micro_mIoU@t1vis+10,0.72271,0.01638,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,STURM-Flood,t1visx,micro_mIoU@t1vis-10,0.72288,0.01747,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,STURM-Flood,t1visx,micro_mIoU@t1vis+20,0.71593,0.01822,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,STURM-Flood,t1visx,micro_mIoU@t1vis-20,0.71076,0.02144,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,STURM-Flood,t1visx,micro_mIoU@t1vis+30,0.70680,0.02042,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,STURM-Flood,t1visx,micro_mIoU@t1vis-30,0.68662,0.02757,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,STURM-Flood,t1visx,micro_mIoU@clean,0.73542,0.00342,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,STURM-Flood,t1visx,micro_mIoU@t1vis+05,0.73780,0.00361,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,STURM-Flood,t1visx,micro_mIoU@t1vis-05,0.73091,0.00371,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,STURM-Flood,t1visx,micro_mIoU@t1vis+10,0.73826,0.00433,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,STURM-Flood,t1visx,micro_mIoU@t1vis-10,0.72376,0.00443,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,STURM-Flood,t1visx,micro_mIoU@t1vis+20,0.73475,0.00635,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,STURM-Flood,t1visx,micro_mIoU@t1vis-20,0.69894,0.00737,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,STURM-Flood,t1visx,micro_mIoU@t1vis+30,0.72638,0.00877,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,STURM-Flood,t1visx,micro_mIoU@t1vis-30,0.65711,0.01415,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,STURM-Flood,t1visx,micro_mIoU@clean,0.73296,0.00865,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,STURM-Flood,t1visx,micro_mIoU@t1vis+05,0.72969,0.00863,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,STURM-Flood,t1visx,micro_mIoU@t1vis-05,0.73488,0.00901,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,STURM-Flood,t1visx,micro_mIoU@t1vis+10,0.72551,0.00882,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,STURM-Flood,t1visx,micro_mIoU@t1vis-10,0.73554,0.00914,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,STURM-Flood,t1visx,micro_mIoU@t1vis+20,0.71458,0.01024,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,STURM-Flood,t1visx,micro_mIoU@t1vis-20,0.72905,0.01006,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,STURM-Flood,t1visx,micro_mIoU@t1vis+30,0.70180,0.01309,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,STURM-Flood,t1visx,micro_mIoU@t1vis-30,0.70615,0.01972,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,STURM-Flood,t1visx,micro_mIoU@clean,0.70916,0.01491,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,STURM-Flood,t1visx,micro_mIoU@t1vis+05,0.71060,0.01360,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,STURM-Flood,t1visx,micro_mIoU@t1vis-05,0.70554,0.01838,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,STURM-Flood,t1visx,micro_mIoU@t1vis+10,0.71025,0.01419,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,STURM-Flood,t1visx,micro_mIoU@t1vis-10,0.69965,0.02364,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,STURM-Flood,t1visx,micro_mIoU@t1vis+20,0.70556,0.01837,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,STURM-Flood,t1visx,micro_mIoU@t1vis-20,0.67923,0.03758,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,STURM-Flood,t1visx,micro_mIoU@t1vis+30,0.69743,0.02357,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,STURM-Flood,t1visx,micro_mIoU@t1vis-30,0.64753,0.05240,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,STURM-Flood,t1visx,micro_mIoU@clean,0.75332,0.00224,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,STURM-Flood,t1visx,micro_mIoU@t1vis+05,0.75408,0.00226,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,STURM-Flood,t1visx,micro_mIoU@t1vis-05,0.74998,0.00370,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,STURM-Flood,t1visx,micro_mIoU@t1vis+10,0.75273,0.00301,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,STURM-Flood,t1visx,micro_mIoU@t1vis-10,0.74361,0.00612,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,STURM-Flood,t1visx,micro_mIoU@t1vis+20,0.74570,0.00503,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,STURM-Flood,t1visx,micro_mIoU@t1vis-20,0.71863,0.01223,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,STURM-Flood,t1visx,micro_mIoU@t1vis+30,0.73380,0.00696,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,STURM-Flood,t1visx,micro_mIoU@t1vis-30,0.67085,0.02009,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,STURM-Flood,t1visx,micro_mIoU@clean,0.73568,0.00627,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,STURM-Flood,t1visx,micro_mIoU@t1vis+05,0.73235,0.00791,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,STURM-Flood,t1visx,micro_mIoU@t1vis-05,0.73775,0.00452,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,STURM-Flood,t1visx,micro_mIoU@t1vis+10,0.72810,0.00914,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,STURM-Flood,t1visx,micro_mIoU@t1vis-10,0.73744,0.00451,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,STURM-Flood,t1visx,micro_mIoU@t1vis+20,0.71756,0.01089,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,STURM-Flood,t1visx,micro_mIoU@t1vis-20,0.72769,0.01039,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,STURM-Flood,t1visx,micro_mIoU@t1vis+30,0.70415,0.01269,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,STURM-Flood,t1visx,micro_mIoU@t1vis-30,0.70052,0.02047,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,STURM-Flood,t1visx,micro_mIoU@clean,0.73555,0.01141,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,STURM-Flood,t1visx,micro_mIoU@t1vis+05,0.73265,0.01266,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,STURM-Flood,t1visx,micro_mIoU@t1vis-05,0.73726,0.01050,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,STURM-Flood,t1visx,micro_mIoU@t1vis+10,0.72895,0.01387,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,STURM-Flood,t1visx,micro_mIoU@t1vis-10,0.73748,0.01012,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,STURM-Flood,t1visx,micro_mIoU@t1vis+20,0.71936,0.01640,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,STURM-Flood,t1visx,micro_mIoU@t1vis-20,0.73168,0.01203,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,STURM-Flood,t1visx,micro_mIoU@t1vis+30,0.70646,0.01867,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,STURM-Flood,t1visx,micro_mIoU@t1vis-30,0.71260,0.01715,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,STURM-Flood,t1visx,micro_mIoU@clean,0.75299,0.00718,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,STURM-Flood,t1visx,micro_mIoU@t1vis+05,0.75510,0.00610,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,STURM-Flood,t1visx,micro_mIoU@t1vis-05,0.74797,0.00838,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,STURM-Flood,t1visx,micro_mIoU@t1vis+10,0.75486,0.00530,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,STURM-Flood,t1visx,micro_mIoU@t1vis-10,0.73940,0.00970,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,STURM-Flood,t1visx,micro_mIoU@t1vis+20,0.74886,0.00426,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,STURM-Flood,t1visx,micro_mIoU@t1vis-20,0.70690,0.01502,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,STURM-Flood,t1visx,micro_mIoU@t1vis+30,0.73771,0.00423,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,STURM-Flood,t1visx,micro_mIoU@t1vis-30,0.64568,0.02251,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,STURM-Flood,t1tiltx,micro_mIoU@clean,0.71708,0.01777,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt+05,0.71988,0.01524,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt-05,0.70716,0.02130,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt+10,0.71615,0.01423,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt-10,0.68698,0.02612,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt+20,0.68846,0.01656,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt-20,0.61184,0.04271,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt+30,0.62861,0.02308,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt-30,0.52332,0.05298,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,STURM-Flood,t1tiltx,micro_mIoU@clean,0.72560,0.01577,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt+05,0.72567,0.01333,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt-05,0.71573,0.02392,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt+10,0.71734,0.01507,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt-10,0.69553,0.03591,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt+20,0.67948,0.02400,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt-20,0.63053,0.06062,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt+30,0.60632,0.04201,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt-30,0.53871,0.07487,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,STURM-Flood,t1tiltx,micro_mIoU@clean,0.73542,0.00342,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt+05,0.73786,0.00443,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt-05,0.72503,0.00439,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt+10,0.73236,0.00649,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt-10,0.70516,0.00686,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt+20,0.70217,0.01054,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt-20,0.63626,0.01719,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt+30,0.64497,0.01585,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt-30,0.55071,0.02521,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,STURM-Flood,t1tiltx,micro_mIoU@clean,0.73296,0.00865,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt+05,0.72783,0.00896,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt-05,0.73191,0.01046,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt+10,0.71777,0.01171,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt-10,0.72253,0.01356,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt+20,0.68310,0.02646,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt-20,0.66948,0.03080,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt+30,0.62239,0.05056,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt-30,0.57989,0.04569,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,STURM-Flood,t1tiltx,micro_mIoU@clean,0.70916,0.01491,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt+05,0.71656,0.01298,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt-05,0.68546,0.02513,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt+10,0.71161,0.01895,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt-10,0.65001,0.03721,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt+20,0.67693,0.03623,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt-20,0.56251,0.05349,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt+30,0.60822,0.05921,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt-30,0.47309,0.04915,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,STURM-Flood,t1tiltx,micro_mIoU@clean,0.75332,0.00224,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt+05,0.75188,0.00305,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt-05,0.74406,0.00587,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt+10,0.74193,0.00531,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt-10,0.72256,0.01118,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt+20,0.69941,0.01049,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt-20,0.63709,0.02496,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt+30,0.62724,0.01962,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt-30,0.52614,0.02186,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,STURM-Flood,t1tiltx,micro_mIoU@clean,0.73568,0.00627,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt+05,0.73117,0.00778,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt-05,0.73292,0.00732,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt+10,0.72200,0.00905,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt-10,0.71865,0.01361,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt+20,0.68770,0.01221,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt-20,0.65536,0.03263,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt+30,0.63122,0.02163,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt-30,0.55351,0.04452,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,STURM-Flood,t1tiltx,micro_mIoU@clean,0.73555,0.01141,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt+05,0.73143,0.01219,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt-05,0.73177,0.01434,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt+10,0.72171,0.01390,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt-10,0.71756,0.02317,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt+20,0.68018,0.01812,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt-20,0.65794,0.04450,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt+30,0.59954,0.03343,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt-30,0.56278,0.05757,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,STURM-Flood,t1tiltx,micro_mIoU@clean,0.75299,0.00718,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt+05,0.75489,0.00508,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt-05,0.73938,0.00977,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt+10,0.74703,0.00413,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt-10,0.71218,0.01379,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt+20,0.70658,0.00722,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt-20,0.60860,0.02419,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt+30,0.63457,0.01335,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,STURM-Flood,t1tiltx,micro_mIoU@t1tilt-30,0.49530,0.02579,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@clean,0.74379,0.01827,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis+05,0.74714,0.01737,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis-05,0.73971,0.01947,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis+10,0.74999,0.01717,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis-10,0.73504,0.02138,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis+20,0.75477,0.01604,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis-20,0.72288,0.02780,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis+30,0.75774,0.01420,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis-30,0.70431,0.03846,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@clean,0.75210,0.00715,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis+05,0.75415,0.00780,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis-05,0.74920,0.00715,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis+10,0.75572,0.00852,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis-10,0.74575,0.00750,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis+20,0.75770,0.01094,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis-20,0.73613,0.00916,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis+30,0.75807,0.01437,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis-30,0.72144,0.01229,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@clean,0.74788,0.01530,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis+05,0.75534,0.01392,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis-05,0.73887,0.01682,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis+10,0.76165,0.01287,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis-10,0.72780,0.01882,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis+20,0.77116,0.01278,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis-20,0.69837,0.02308,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis+30,0.77745,0.01348,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis-30,0.65887,0.02538,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@clean,0.75209,0.00431,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis+05,0.75346,0.00332,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis-05,0.75024,0.00499,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis+10,0.75448,0.00266,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis-10,0.74758,0.00504,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis+20,0.75544,0.00374,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis-20,0.73828,0.00610,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis+30,0.75482,0.00792,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis-30,0.72242,0.01219,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@clean,0.76155,0.00827,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis+05,0.76438,0.00766,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis-05,0.75663,0.00952,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis+10,0.76689,0.00759,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis-10,0.75125,0.01210,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis+20,0.76935,0.00794,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis-20,0.73561,0.02276,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis+30,0.76895,0.00896,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis-30,0.71503,0.03357,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@clean,0.75304,0.01382,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis+05,0.76227,0.01176,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis-05,0.74175,0.01563,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis+10,0.76936,0.01081,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis-10,0.72772,0.01768,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis+20,0.78038,0.00846,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis-20,0.68906,0.02033,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis+30,0.78797,0.00779,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis-30,0.63674,0.02171,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@clean,0.77007,0.00770,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis+05,0.77179,0.00784,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis-05,0.76776,0.00732,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis+10,0.77287,0.00795,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis-10,0.76455,0.00693,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis+20,0.77397,0.00784,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis-20,0.75395,0.00704,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis+30,0.77311,0.00850,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis-30,0.73344,0.00998,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@clean,0.76810,0.01121,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis+05,0.77162,0.00984,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis-05,0.76434,0.01184,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis+10,0.77459,0.00829,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis-10,0.75976,0.01154,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis+20,0.77807,0.00637,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis-20,0.74909,0.00937,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis+30,0.77853,0.00764,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis-30,0.73239,0.01329,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@clean,0.76011,0.01049,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis+05,0.76855,0.00885,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis-05,0.74920,0.01269,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis+10,0.77560,0.00738,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis-10,0.73478,0.01566,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis+20,0.78620,0.00534,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis-20,0.69072,0.02278,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis+30,0.79406,0.00392,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,WorldFloods-v2 flood-only,t1visx,micro_mIoU@t1vis-30,0.63350,0.03041,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@clean,0.74379,0.01827,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt+05,0.75034,0.01638,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt-05,0.73532,0.02157,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt+10,0.75568,0.01497,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt-10,0.72427,0.02677,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt+20,0.75730,0.01013,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt-20,0.68918,0.04262,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt+30,0.73872,0.01033,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt-30,0.62554,0.05436,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@clean,0.75210,0.00715,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt+05,0.75725,0.00796,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt-05,0.74416,0.00783,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt+10,0.76041,0.00952,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt-10,0.73283,0.00866,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt+20,0.76060,0.01161,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt-20,0.69581,0.01388,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt+30,0.74854,0.01437,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt-30,0.62482,0.02323,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@clean,0.74788,0.01530,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt+05,0.76184,0.01305,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt-05,0.72931,0.01837,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt+10,0.77228,0.01219,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt-10,0.70458,0.02171,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt+20,0.78781,0.01239,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt-20,0.63839,0.02158,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt+30,0.78252,0.01083,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt-30,0.57217,0.01828,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@clean,0.75209,0.00431,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt+05,0.75543,0.00344,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt-05,0.74710,0.00506,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt+10,0.75766,0.00421,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt-10,0.73890,0.00577,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt+20,0.75462,0.00733,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt-20,0.70834,0.01113,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt+30,0.74394,0.01131,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt-30,0.64489,0.03084,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@clean,0.76155,0.00827,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt+05,0.76726,0.00805,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt-05,0.75215,0.01062,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt+10,0.77104,0.00835,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt-10,0.73921,0.01674,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt+20,0.76880,0.01081,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt-20,0.69674,0.03016,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt+30,0.75579,0.01365,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt-30,0.62950,0.03256,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@clean,0.75304,0.01382,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt+05,0.76998,0.01049,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt-05,0.72837,0.01828,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt+10,0.78213,0.00825,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt-10,0.69363,0.02177,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt+20,0.79696,0.00842,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt-20,0.60137,0.02034,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt+30,0.78535,0.00775,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt-30,0.51618,0.01338,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@clean,0.77007,0.00770,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt+05,0.77349,0.00808,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt-05,0.76420,0.00693,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt+10,0.77549,0.00859,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt-10,0.75485,0.00604,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt+20,0.77034,0.00962,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt-20,0.71610,0.00772,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt+30,0.75066,0.01532,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt-30,0.63474,0.02451,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@clean,0.76810,0.01121,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt+05,0.77533,0.00881,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt-05,0.75834,0.01147,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt+10,0.78035,0.00675,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt-10,0.74648,0.00934,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt+20,0.77749,0.00847,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt-20,0.71099,0.01459,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt+30,0.75848,0.02076,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt-30,0.64842,0.02570,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@clean,0.76011,0.01049,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt+05,0.77611,0.00700,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt-05,0.73611,0.01589,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt+10,0.78824,0.00445,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt-10,0.69868,0.02206,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt+20,0.80458,0.00305,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt-20,0.60031,0.02475,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt+30,0.79202,0.00807,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,WorldFloods-v2 flood-only,t1tiltx,micro_mIoU@t1tilt-30,0.51801,0.02021,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,STURM-Flood,gain,worst_drop_micro,0.04468,0.03853,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,STURM-Flood,gain,worst_drop_relative,0.06231,,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,STURM-Flood,t1vis,worst_drop_micro,0.01971,0.00726,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,STURM-Flood,t1vis,worst_drop_relative,0.02748,,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,STURM-Flood,t1tilt,worst_drop_micro,0.10525,0.02503,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,STURM-Flood,t1tilt,worst_drop_relative,0.14677,,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,STURM-Flood,t1all,worst_drop_micro,0.10525,0.02503,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,STURM-Flood,t1all,worst_drop_relative,0.14677,,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,STURM-Flood,t1visx,worst_drop_micro,0.04957,0.01187,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,STURM-Flood,t1visx,worst_drop_relative,0.06913,,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,STURM-Flood,t1tiltx,worst_drop_micro,0.19376,0.03530,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,STURM-Flood,t1tiltx,worst_drop_relative,0.27020,,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,STURM-Flood,t1allx,worst_drop_micro,0.19376,0.03530,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,STURM-Flood,t1allx,worst_drop_relative,0.27020,,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,STURM-Flood,gain,worst_drop_micro,0.05086,0.04908,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,STURM-Flood,gain,worst_drop_relative,0.07009,,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,STURM-Flood,t1vis,worst_drop_micro,0.02125,0.01133,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,STURM-Flood,t1vis,worst_drop_relative,0.02928,,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,STURM-Flood,t1tilt,worst_drop_micro,0.09800,0.04211,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,STURM-Flood,t1tilt,worst_drop_relative,0.13507,,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,STURM-Flood,t1all,worst_drop_micro,0.09800,0.04211,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,STURM-Flood,t1all,worst_drop_relative,0.13507,,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,STURM-Flood,t1visx,worst_drop_micro,0.04095,0.02040,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,STURM-Flood,t1visx,worst_drop_relative,0.05643,,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,STURM-Flood,t1tiltx,worst_drop_micro,0.18928,0.05726,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,STURM-Flood,t1tiltx,worst_drop_relative,0.26087,,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,STURM-Flood,t1allx,worst_drop_micro,0.18928,0.05726,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,STURM-Flood,t1allx,worst_drop_relative,0.26087,,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,STURM-Flood,gain,worst_drop_micro,0.01026,0.00290,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,STURM-Flood,gain,worst_drop_relative,0.01395,,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,STURM-Flood,t1vis,worst_drop_micro,0.03649,0.00400,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,STURM-Flood,t1vis,worst_drop_relative,0.04962,,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,STURM-Flood,t1tilt,worst_drop_micro,0.09916,0.01482,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,STURM-Flood,t1tilt,worst_drop_relative,0.13484,,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,STURM-Flood,t1all,worst_drop_micro,0.09916,0.01482,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,STURM-Flood,t1all,worst_drop_relative,0.13484,,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,STURM-Flood,t1visx,worst_drop_micro,0.07831,0.01077,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,STURM-Flood,t1visx,worst_drop_relative,0.10648,,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,STURM-Flood,t1tiltx,worst_drop_micro,0.18471,0.02302,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,STURM-Flood,t1tiltx,worst_drop_relative,0.25116,,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,STURM-Flood,t1allx,worst_drop_micro,0.18471,0.02302,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,STURM-Flood,t1allx,worst_drop_relative,0.25116,,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,STURM-Flood,gain,worst_drop_micro,0.03152,0.00692,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,STURM-Flood,gain,worst_drop_relative,0.04300,,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,STURM-Flood,t1vis,worst_drop_micro,0.01872,0.00430,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,STURM-Flood,t1vis,worst_drop_relative,0.02554,,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,STURM-Flood,t1tilt,worst_drop_micro,0.07705,0.02191,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,STURM-Flood,t1tilt,worst_drop_relative,0.10513,,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,STURM-Flood,t1all,worst_drop_micro,0.07705,0.02191,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,STURM-Flood,t1all,worst_drop_relative,0.10513,,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,STURM-Flood,t1visx,worst_drop_micro,0.04367,0.00530,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,STURM-Flood,t1visx,worst_drop_relative,0.05958,,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,STURM-Flood,t1tiltx,worst_drop_micro,0.16804,0.04284,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,STURM-Flood,t1tiltx,worst_drop_relative,0.22926,,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,STURM-Flood,t1allx,worst_drop_micro,0.16804,0.04284,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,STURM-Flood,t1allx,worst_drop_relative,0.22926,,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,STURM-Flood,gain,worst_drop_micro,0.08877,0.01217,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,STURM-Flood,gain,worst_drop_relative,0.12518,,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,STURM-Flood,t1vis,worst_drop_micro,0.03967,0.02030,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,STURM-Flood,t1vis,worst_drop_relative,0.05594,,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,STURM-Flood,t1tilt,worst_drop_micro,0.14665,0.04935,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,STURM-Flood,t1tilt,worst_drop_relative,0.20679,,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,STURM-Flood,t1all,worst_drop_micro,0.14665,0.04935,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,STURM-Flood,t1all,worst_drop_relative,0.20679,,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,STURM-Flood,t1visx,worst_drop_micro,0.07067,0.03698,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,STURM-Flood,t1visx,worst_drop_relative,0.09966,,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,STURM-Flood,t1tiltx,worst_drop_micro,0.23780,0.04864,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,STURM-Flood,t1tiltx,worst_drop_relative,0.33533,,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,STURM-Flood,t1allx,worst_drop_micro,0.23780,0.04864,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,STURM-Flood,t1allx,worst_drop_relative,0.33533,,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,STURM-Flood,gain,worst_drop_micro,0.00358,0.00119,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,STURM-Flood,gain,worst_drop_relative,0.00475,,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,STURM-Flood,t1vis,worst_drop_micro,0.03512,0.01070,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,STURM-Flood,t1vis,worst_drop_relative,0.04662,,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,STURM-Flood,t1tilt,worst_drop_micro,0.11623,0.02443,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,STURM-Flood,t1tilt,worst_drop_relative,0.15428,,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,STURM-Flood,t1all,worst_drop_micro,0.11623,0.02443,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,STURM-Flood,t1all,worst_drop_relative,0.15428,,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,STURM-Flood,t1visx,worst_drop_micro,0.08247,0.01961,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,STURM-Flood,t1visx,worst_drop_relative,0.10947,,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,STURM-Flood,t1tiltx,worst_drop_micro,0.22718,0.02122,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,STURM-Flood,t1tiltx,worst_drop_relative,0.30158,,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,STURM-Flood,t1allx,worst_drop_micro,0.22718,0.02122,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,STURM-Flood,t1allx,worst_drop_relative,0.30158,,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,STURM-Flood,gain,worst_drop_micro,0.04244,0.02498,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,STURM-Flood,gain,worst_drop_relative,0.05768,,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,STURM-Flood,t1vis,worst_drop_micro,0.02174,0.00187,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,STURM-Flood,t1vis,worst_drop_relative,0.02956,,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,STURM-Flood,t1tilt,worst_drop_micro,0.08665,0.02069,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,STURM-Flood,t1tilt,worst_drop_relative,0.11778,,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,STURM-Flood,t1all,worst_drop_micro,0.08665,0.02069,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,STURM-Flood,t1all,worst_drop_relative,0.11778,,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,STURM-Flood,t1visx,worst_drop_micro,0.04550,0.00828,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,STURM-Flood,t1visx,worst_drop_relative,0.06184,,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,STURM-Flood,t1tiltx,worst_drop_micro,0.18347,0.03901,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,STURM-Flood,t1tiltx,worst_drop_relative,0.24939,,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,STURM-Flood,t1allx,worst_drop_micro,0.18347,0.03901,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,STURM-Flood,t1allx,worst_drop_relative,0.24939,,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,STURM-Flood,gain,worst_drop_micro,0.05497,0.03445,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,STURM-Flood,gain,worst_drop_relative,0.07473,,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,STURM-Flood,t1vis,worst_drop_micro,0.01692,0.00480,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,STURM-Flood,t1vis,worst_drop_relative,0.02300,,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,STURM-Flood,t1tilt,worst_drop_micro,0.07973,0.03078,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,STURM-Flood,t1tilt,worst_drop_relative,0.10840,,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,STURM-Flood,t1all,worst_drop_micro,0.07973,0.03078,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,STURM-Flood,t1all,worst_drop_relative,0.10840,,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,STURM-Flood,t1visx,worst_drop_micro,0.03274,0.00577,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,STURM-Flood,t1visx,worst_drop_relative,0.04451,,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,STURM-Flood,t1tiltx,worst_drop_micro,0.17277,0.04626,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,STURM-Flood,t1tiltx,worst_drop_relative,0.23488,,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,STURM-Flood,t1allx,worst_drop_micro,0.17277,0.04626,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,STURM-Flood,t1allx,worst_drop_relative,0.23488,,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,STURM-Flood,gain,worst_drop_micro,0.00651,0.00253,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,STURM-Flood,gain,worst_drop_relative,0.00864,,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,STURM-Flood,t1vis,worst_drop_micro,0.04609,0.00818,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,STURM-Flood,t1vis,worst_drop_relative,0.06121,,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,STURM-Flood,t1tilt,worst_drop_micro,0.14439,0.01771,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,STURM-Flood,t1tilt,worst_drop_relative,0.19176,,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,STURM-Flood,t1all,worst_drop_micro,0.14439,0.01771,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,STURM-Flood,t1all,worst_drop_relative,0.19176,,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,STURM-Flood,t1visx,worst_drop_micro,0.10731,0.01566,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,STURM-Flood,t1visx,worst_drop_relative,0.14251,,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,STURM-Flood,t1tiltx,worst_drop_micro,0.25769,0.02190,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,STURM-Flood,t1tiltx,worst_drop_relative,0.34222,,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,STURM-Flood,t1allx,worst_drop_micro,0.25769,0.02190,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,STURM-Flood,t1allx,worst_drop_relative,0.34222,,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,WorldFloods-v2 flood-only,gain,worst_drop_micro,0.00353,0.00223,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,WorldFloods-v2 flood-only,gain,worst_drop_relative,0.00475,,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,WorldFloods-v2 flood-only,t1vis,worst_drop_micro,0.02091,0.01105,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,WorldFloods-v2 flood-only,t1vis,worst_drop_relative,0.02811,,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,WorldFloods-v2 flood-only,t1tilt,worst_drop_micro,0.05461,0.02691,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,WorldFloods-v2 flood-only,t1tilt,worst_drop_relative,0.07342,,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,WorldFloods-v2 flood-only,t1all,worst_drop_micro,0.05461,0.02691,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,WorldFloods-v2 flood-only,t1all,worst_drop_relative,0.07342,,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,WorldFloods-v2 flood-only,t1visx,worst_drop_micro,0.03948,0.02195,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,WorldFloods-v2 flood-only,t1visx,worst_drop_relative,0.05308,,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,WorldFloods-v2 flood-only,t1tiltx,worst_drop_micro,0.11825,0.04173,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,WorldFloods-v2 flood-only,t1tiltx,worst_drop_relative,0.15898,,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,WorldFloods-v2 flood-only,t1allx,worst_drop_micro,0.11825,0.04173,4
+CE,S11 uncropped 4.6x5.1km,ncgt_evit_ce_N252,WorldFloods-v2 flood-only,t1allx,worst_drop_relative,0.15898,,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,WorldFloods-v2 flood-only,gain,worst_drop_micro,0.01646,0.00992,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,WorldFloods-v2 flood-only,gain,worst_drop_relative,0.02189,,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,WorldFloods-v2 flood-only,t1vis,worst_drop_micro,0.01597,0.00300,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,WorldFloods-v2 flood-only,t1vis,worst_drop_relative,0.02123,,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,WorldFloods-v2 flood-only,t1tilt,worst_drop_micro,0.05629,0.01087,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,WorldFloods-v2 flood-only,t1tilt,worst_drop_relative,0.07485,,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,WorldFloods-v2 flood-only,t1all,worst_drop_micro,0.05629,0.01087,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,WorldFloods-v2 flood-only,t1all,worst_drop_relative,0.07485,,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,WorldFloods-v2 flood-only,t1visx,worst_drop_micro,0.03066,0.00649,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,WorldFloods-v2 flood-only,t1visx,worst_drop_relative,0.04077,,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,WorldFloods-v2 flood-only,t1tiltx,worst_drop_micro,0.12728,0.01993,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,WorldFloods-v2 flood-only,t1tiltx,worst_drop_relative,0.16923,,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,WorldFloods-v2 flood-only,t1allx,worst_drop_micro,0.12728,0.01993,4
+CE,S11 cropped 2.4x2.6km,b1crop_evit_ce_N252,WorldFloods-v2 flood-only,t1allx,worst_drop_relative,0.16923,,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,WorldFloods-v2 flood-only,gain,worst_drop_micro,0.00474,0.00324,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,WorldFloods-v2 flood-only,gain,worst_drop_relative,0.00634,,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,WorldFloods-v2 flood-only,t1vis,worst_drop_micro,0.04951,0.00903,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,WorldFloods-v2 flood-only,t1vis,worst_drop_relative,0.06620,,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,WorldFloods-v2 flood-only,t1tilt,worst_drop_micro,0.10949,0.01165,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,WorldFloods-v2 flood-only,t1tilt,worst_drop_relative,0.14640,,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,WorldFloods-v2 flood-only,t1all,worst_drop_micro,0.10949,0.01165,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,WorldFloods-v2 flood-only,t1all,worst_drop_relative,0.14640,,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,WorldFloods-v2 flood-only,t1visx,worst_drop_micro,0.08901,0.01467,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,WorldFloods-v2 flood-only,t1visx,worst_drop_relative,0.11901,,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,WorldFloods-v2 flood-only,t1tiltx,worst_drop_micro,0.17570,0.02006,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,WorldFloods-v2 flood-only,t1tiltx,worst_drop_relative,0.23494,,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,WorldFloods-v2 flood-only,t1allx,worst_drop_micro,0.17570,0.02006,4
+CE,pseudo 2.60km,v2_evit_ce_ps_N252,WorldFloods-v2 flood-only,t1allx,worst_drop_relative,0.23494,,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,WorldFloods-v2 flood-only,gain,worst_drop_micro,0.01425,0.01147,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,WorldFloods-v2 flood-only,gain,worst_drop_relative,0.01895,,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,WorldFloods-v2 flood-only,t1vis,worst_drop_micro,0.01381,0.00490,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,WorldFloods-v2 flood-only,t1vis,worst_drop_relative,0.01836,,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,WorldFloods-v2 flood-only,t1tilt,worst_drop_micro,0.04375,0.01188,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,WorldFloods-v2 flood-only,t1tilt,worst_drop_relative,0.05817,,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,WorldFloods-v2 flood-only,t1all,worst_drop_micro,0.04375,0.01188,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,WorldFloods-v2 flood-only,t1all,worst_drop_relative,0.05817,,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,WorldFloods-v2 flood-only,t1visx,worst_drop_micro,0.02967,0.01296,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,WorldFloods-v2 flood-only,t1visx,worst_drop_relative,0.03945,,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,WorldFloods-v2 flood-only,t1tiltx,worst_drop_micro,0.10719,0.03283,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,WorldFloods-v2 flood-only,t1tiltx,worst_drop_relative,0.14253,,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,WorldFloods-v2 flood-only,t1allx,worst_drop_micro,0.10719,0.03283,4
+Logit-KD,S11 uncropped 4.6x5.1km,ncgt_evit_lkd_N252,WorldFloods-v2 flood-only,t1allx,worst_drop_relative,0.14253,,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,WorldFloods-v2 flood-only,gain,worst_drop_micro,0.01210,0.00413,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,WorldFloods-v2 flood-only,gain,worst_drop_relative,0.01589,,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,WorldFloods-v2 flood-only,t1vis,worst_drop_micro,0.02593,0.01626,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,WorldFloods-v2 flood-only,t1vis,worst_drop_relative,0.03405,,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,WorldFloods-v2 flood-only,t1tilt,worst_drop_micro,0.06480,0.02469,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,WorldFloods-v2 flood-only,t1tilt,worst_drop_relative,0.08509,,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,WorldFloods-v2 flood-only,t1all,worst_drop_micro,0.06480,0.02469,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,WorldFloods-v2 flood-only,t1all,worst_drop_relative,0.08509,,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,WorldFloods-v2 flood-only,t1visx,worst_drop_micro,0.04652,0.02738,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,WorldFloods-v2 flood-only,t1visx,worst_drop_relative,0.06109,,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,WorldFloods-v2 flood-only,t1tiltx,worst_drop_micro,0.13204,0.03064,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,WorldFloods-v2 flood-only,t1tiltx,worst_drop_relative,0.17339,,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,WorldFloods-v2 flood-only,t1allx,worst_drop_micro,0.13204,0.03064,4
+Logit-KD,S11 cropped 2.4x2.6km,b1crop_evit_lkd_N252,WorldFloods-v2 flood-only,t1allx,worst_drop_relative,0.17339,,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,WorldFloods-v2 flood-only,gain,worst_drop_micro,0.00617,0.00279,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,WorldFloods-v2 flood-only,gain,worst_drop_relative,0.00819,,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,WorldFloods-v2 flood-only,t1vis,worst_drop_micro,0.06398,0.00836,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,WorldFloods-v2 flood-only,t1vis,worst_drop_relative,0.08497,,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,WorldFloods-v2 flood-only,t1tilt,worst_drop_micro,0.15167,0.01149,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,WorldFloods-v2 flood-only,t1tilt,worst_drop_relative,0.20141,,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,WorldFloods-v2 flood-only,t1all,worst_drop_micro,0.15167,0.01149,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,WorldFloods-v2 flood-only,t1all,worst_drop_relative,0.20141,,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,WorldFloods-v2 flood-only,t1visx,worst_drop_micro,0.11630,0.01200,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,WorldFloods-v2 flood-only,t1visx,worst_drop_relative,0.15444,,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,WorldFloods-v2 flood-only,t1tiltx,worst_drop_micro,0.23686,0.01106,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,WorldFloods-v2 flood-only,t1tiltx,worst_drop_relative,0.31453,,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,WorldFloods-v2 flood-only,t1allx,worst_drop_micro,0.23686,0.01106,4
+Logit-KD,pseudo 2.60km,v2_evit_lkd_ps_N252,WorldFloods-v2 flood-only,t1allx,worst_drop_relative,0.31453,,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,WorldFloods-v2 flood-only,gain,worst_drop_micro,0.00961,0.00635,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,WorldFloods-v2 flood-only,gain,worst_drop_relative,0.01249,,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,WorldFloods-v2 flood-only,t1vis,worst_drop_micro,0.01612,0.00247,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,WorldFloods-v2 flood-only,t1vis,worst_drop_relative,0.02093,,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,WorldFloods-v2 flood-only,t1tilt,worst_drop_micro,0.05397,0.00762,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,WorldFloods-v2 flood-only,t1tilt,worst_drop_relative,0.07009,,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,WorldFloods-v2 flood-only,t1all,worst_drop_micro,0.05397,0.00762,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,WorldFloods-v2 flood-only,t1all,worst_drop_relative,0.07009,,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,WorldFloods-v2 flood-only,t1visx,worst_drop_micro,0.03663,0.00644,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,WorldFloods-v2 flood-only,t1visx,worst_drop_relative,0.04757,,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,WorldFloods-v2 flood-only,t1tiltx,worst_drop_micro,0.13532,0.02386,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,WorldFloods-v2 flood-only,t1tiltx,worst_drop_relative,0.17573,,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,WorldFloods-v2 flood-only,t1allx,worst_drop_micro,0.13532,0.02386,4
+OFA,S11 uncropped 4.6x5.1km,ncgt_evit_ofa_N252,WorldFloods-v2 flood-only,t1allx,worst_drop_relative,0.17573,,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,WorldFloods-v2 flood-only,gain,worst_drop_micro,0.01064,0.00648,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,WorldFloods-v2 flood-only,gain,worst_drop_relative,0.01385,,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,WorldFloods-v2 flood-only,t1vis,worst_drop_micro,0.01902,0.00722,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,WorldFloods-v2 flood-only,t1vis,worst_drop_relative,0.02476,,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,WorldFloods-v2 flood-only,t1tilt,worst_drop_micro,0.05711,0.02002,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,WorldFloods-v2 flood-only,t1tilt,worst_drop_relative,0.07435,,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,WorldFloods-v2 flood-only,t1all,worst_drop_micro,0.05711,0.02002,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,WorldFloods-v2 flood-only,t1all,worst_drop_relative,0.07435,,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,WorldFloods-v2 flood-only,t1visx,worst_drop_micro,0.03571,0.01498,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,WorldFloods-v2 flood-only,t1visx,worst_drop_relative,0.04650,,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,WorldFloods-v2 flood-only,t1tiltx,worst_drop_micro,0.11968,0.03291,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,WorldFloods-v2 flood-only,t1tiltx,worst_drop_relative,0.15581,,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,WorldFloods-v2 flood-only,t1allx,worst_drop_micro,0.11968,0.03291,4
+OFA,S11 cropped 2.4x2.6km,b1crop_evit_ofa_N252,WorldFloods-v2 flood-only,t1allx,worst_drop_relative,0.15581,,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,WorldFloods-v2 flood-only,gain,worst_drop_micro,0.00567,0.00249,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,WorldFloods-v2 flood-only,gain,worst_drop_relative,0.00746,,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,WorldFloods-v2 flood-only,t1vis,worst_drop_micro,0.06939,0.01327,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,WorldFloods-v2 flood-only,t1vis,worst_drop_relative,0.09129,,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,WorldFloods-v2 flood-only,t1tilt,worst_drop_micro,0.15980,0.01660,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,WorldFloods-v2 flood-only,t1tilt,worst_drop_relative,0.21023,,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,WorldFloods-v2 flood-only,t1all,worst_drop_micro,0.15980,0.01660,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,WorldFloods-v2 flood-only,t1all,worst_drop_relative,0.21023,,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,WorldFloods-v2 flood-only,t1visx,worst_drop_micro,0.12661,0.02191,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,WorldFloods-v2 flood-only,t1visx,worst_drop_relative,0.16657,,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,WorldFloods-v2 flood-only,t1tiltx,worst_drop_micro,0.24210,0.01464,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,WorldFloods-v2 flood-only,t1tiltx,worst_drop_relative,0.31851,,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,WorldFloods-v2 flood-only,t1allx,worst_drop_micro,0.24210,0.01464,4
+OFA,pseudo 2.60km,v2_evit_ofa_ps_N252,WorldFloods-v2 flood-only,t1allx,worst_drop_relative,0.31851,,4
+CE,paired vs uncropped,ncgt_evit_ce_N252 - v2_evit_ce_ps_N252,STURM-Flood,gain,paired_worstdrop,0.03529,wins=39/46,46
+CE,paired vs cropped,b1crop_evit_ce_N252 - v2_evit_ce_ps_N252,STURM-Flood,gain,paired_worstdrop,0.02107,wins=39/46,46
+Logit-KD,paired vs uncropped,ncgt_evit_lkd_N252 - v2_evit_lkd_ps_N252,STURM-Flood,gain,paired_worstdrop,0.02798,wins=41/46,46
+Logit-KD,paired vs cropped,b1crop_evit_lkd_N252 - v2_evit_lkd_ps_N252,STURM-Flood,gain,paired_worstdrop,0.05629,wins=45/46,46
+OFA,paired vs uncropped,ncgt_evit_ofa_N252 - v2_evit_ofa_ps_N252,STURM-Flood,gain,paired_worstdrop,0.03099,wins=44/46,46
+OFA,paired vs cropped,b1crop_evit_ofa_N252 - v2_evit_ofa_ps_N252,STURM-Flood,gain,paired_worstdrop,0.03530,wins=44/46,46
+CE,paired vs uncropped,ncgt_evit_ce_N252 - v2_evit_ce_ps_N252,STURM-Flood,t1vis,paired_worstdrop,-0.00338,wins=19/46,46
+CE,paired vs cropped,b1crop_evit_ce_N252 - v2_evit_ce_ps_N252,STURM-Flood,t1vis,paired_worstdrop,-0.00792,wins=11/46,46
+Logit-KD,paired vs uncropped,ncgt_evit_lkd_N252 - v2_evit_lkd_ps_N252,STURM-Flood,t1vis,paired_worstdrop,-0.01032,wins=21/46,46
+Logit-KD,paired vs cropped,b1crop_evit_lkd_N252 - v2_evit_lkd_ps_N252,STURM-Flood,t1vis,paired_worstdrop,-0.01032,wins=19/46,46
+OFA,paired vs uncropped,ncgt_evit_ofa_N252 - v2_evit_ofa_ps_N252,STURM-Flood,t1vis,paired_worstdrop,-0.01083,wins=20/46,46
+OFA,paired vs cropped,b1crop_evit_ofa_N252 - v2_evit_ofa_ps_N252,STURM-Flood,t1vis,paired_worstdrop,-0.02093,wins=16/46,46
+CE,paired vs uncropped,ncgt_evit_ce_N252 - v2_evit_ce_ps_N252,STURM-Flood,t1tilt,paired_worstdrop,0.00466,wins=22/46,46
+CE,paired vs cropped,b1crop_evit_ce_N252 - v2_evit_ce_ps_N252,STURM-Flood,t1tilt,paired_worstdrop,0.01160,wins=25/46,46
+Logit-KD,paired vs uncropped,ncgt_evit_lkd_N252 - v2_evit_lkd_ps_N252,STURM-Flood,t1tilt,paired_worstdrop,-0.02859,wins=14/46,46
+Logit-KD,paired vs cropped,b1crop_evit_lkd_N252 - v2_evit_lkd_ps_N252,STURM-Flood,t1tilt,paired_worstdrop,0.00508,wins=31/46,46
+OFA,paired vs uncropped,ncgt_evit_ofa_N252 - v2_evit_ofa_ps_N252,STURM-Flood,t1tilt,paired_worstdrop,-0.02524,wins=15/46,46
+OFA,paired vs cropped,b1crop_evit_ofa_N252 - v2_evit_ofa_ps_N252,STURM-Flood,t1tilt,paired_worstdrop,-0.02060,wins=19/46,46
+CE,paired vs uncropped,ncgt_evit_ce_N252 - v2_evit_ce_ps_N252,STURM-Flood,t1all,paired_worstdrop,0.00500,wins=22/46,46
+CE,paired vs cropped,b1crop_evit_ce_N252 - v2_evit_ce_ps_N252,STURM-Flood,t1all,paired_worstdrop,0.01149,wins=25/46,46
+Logit-KD,paired vs uncropped,ncgt_evit_lkd_N252 - v2_evit_lkd_ps_N252,STURM-Flood,t1all,paired_worstdrop,-0.02753,wins=14/46,46
+Logit-KD,paired vs cropped,b1crop_evit_lkd_N252 - v2_evit_lkd_ps_N252,STURM-Flood,t1all,paired_worstdrop,0.00534,wins=31/46,46
+OFA,paired vs uncropped,ncgt_evit_ofa_N252 - v2_evit_ofa_ps_N252,STURM-Flood,t1all,paired_worstdrop,-0.02462,wins=15/46,46
+OFA,paired vs cropped,b1crop_evit_ofa_N252 - v2_evit_ofa_ps_N252,STURM-Flood,t1all,paired_worstdrop,-0.02062,wins=19/46,46
+CE,paired vs uncropped,ncgt_evit_ce_N252 - v2_evit_ce_ps_N252,STURM-Flood,t1visx,paired_worstdrop,-0.00500,wins=17/46,46
+CE,paired vs cropped,b1crop_evit_ce_N252 - v2_evit_ce_ps_N252,STURM-Flood,t1visx,paired_worstdrop,-0.01242,wins=14/46,46
+Logit-KD,paired vs uncropped,ncgt_evit_lkd_N252 - v2_evit_lkd_ps_N252,STURM-Flood,t1visx,paired_worstdrop,-0.01948,wins=16/46,46
+Logit-KD,paired vs cropped,b1crop_evit_lkd_N252 - v2_evit_lkd_ps_N252,STURM-Flood,t1visx,paired_worstdrop,-0.01675,wins=17/46,46
+OFA,paired vs uncropped,ncgt_evit_ofa_N252 - v2_evit_ofa_ps_N252,STURM-Flood,t1visx,paired_worstdrop,-0.01789,wins=20/46,46
+OFA,paired vs cropped,b1crop_evit_ofa_N252 - v2_evit_ofa_ps_N252,STURM-Flood,t1visx,paired_worstdrop,-0.03321,wins=18/46,46
+CE,paired vs uncropped,ncgt_evit_ce_N252 - v2_evit_ce_ps_N252,STURM-Flood,t1tiltx,paired_worstdrop,0.01413,wins=27/46,46
+CE,paired vs cropped,b1crop_evit_ce_N252 - v2_evit_ce_ps_N252,STURM-Flood,t1tiltx,paired_worstdrop,0.03044,wins=33/46,46
+Logit-KD,paired vs uncropped,ncgt_evit_lkd_N252 - v2_evit_lkd_ps_N252,STURM-Flood,t1tiltx,paired_worstdrop,-0.03873,wins=14/46,46
+Logit-KD,paired vs cropped,b1crop_evit_lkd_N252 - v2_evit_lkd_ps_N252,STURM-Flood,t1tiltx,paired_worstdrop,-0.00111,wins=24/46,46
+OFA,paired vs uncropped,ncgt_evit_ofa_N252 - v2_evit_ofa_ps_N252,STURM-Flood,t1tiltx,paired_worstdrop,-0.04050,wins=14/46,46
+OFA,paired vs cropped,b1crop_evit_ofa_N252 - v2_evit_ofa_ps_N252,STURM-Flood,t1tiltx,paired_worstdrop,-0.01398,wins=18/46,46
+CE,paired vs uncropped,ncgt_evit_ce_N252 - v2_evit_ce_ps_N252,STURM-Flood,t1allx,paired_worstdrop,0.01415,wins=27/46,46
+CE,paired vs cropped,b1crop_evit_ce_N252 - v2_evit_ce_ps_N252,STURM-Flood,t1allx,paired_worstdrop,0.03023,wins=33/46,46
+Logit-KD,paired vs uncropped,ncgt_evit_lkd_N252 - v2_evit_lkd_ps_N252,STURM-Flood,t1allx,paired_worstdrop,-0.03795,wins=14/46,46
+Logit-KD,paired vs cropped,b1crop_evit_lkd_N252 - v2_evit_lkd_ps_N252,STURM-Flood,t1allx,paired_worstdrop,-0.00094,wins=24/46,46
+OFA,paired vs uncropped,ncgt_evit_ofa_N252 - v2_evit_ofa_ps_N252,STURM-Flood,t1allx,paired_worstdrop,-0.04036,wins=14/46,46
+OFA,paired vs cropped,b1crop_evit_ofa_N252 - v2_evit_ofa_ps_N252,STURM-Flood,t1allx,paired_worstdrop,-0.01402,wins=18/46,46

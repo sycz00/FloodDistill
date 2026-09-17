@@ -1,0 +1,11 @@
+stage,labels,evaluator,benchmark,mean_micro_mIoU,sd_ddof1,sd_ddof0,n_seeds
+"EfficientViT-B0, OFA","Sen1Floods11, 252",workstation,STURM-Flood,0.7357,0.0072,0.0062,4
+"EfficientViT-B0, OFA","Sen1Floods11, 252",workstation,WorldFloods-v2,0.7701,0.0089,0.0077,4
+"EfficientViT-B0, OFA","pseudo, 2500",workstation,STURM-Flood,0.7561,0.0053,0.0046,4
+"EfficientViT-B0, OFA","pseudo, 2500",workstation,WorldFloods-v2,0.7639,0.0021,0.0018,4
++ ReLU6,"pseudo, 2500",workstation,STURM-Flood,0.7481,0.0064,0.0055,4
++ ReLU6,"pseudo, 2500",workstation,WorldFloods-v2,0.7714,0.0137,0.0119,4
+"+ QAT, float export (device)","pseudo, 2500",on-device,STURM,0.7557,0.0062,0.0054,4
+"+ QAT, float export (device)","pseudo, 2500",on-device,WorldFloods-v2,0.7861,0.0105,0.0091,4
+"+ QAT, INT8 engine (deployed)","pseudo, 2500",on-device,STURM,0.7447,0.0236,0.0204,4
+"+ QAT, INT8 engine (deployed)","pseudo, 2500",on-device,WorldFloods-v2,0.7703,0.0214,0.0185,4

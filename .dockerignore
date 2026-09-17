@@ -1,0 +1,20 @@
+# The build context is the repo root (docker/Dockerfile does COPY . .), so anything heavy
+# left lying in the tree lands in the image. The pseudo-label pool alone is 38 GB and is
+# mounted at /pseudo at run time, see docker/README.md.
+data/**/*.pt
+data/pseudo/
+data/flood_unlabeled_manifest.csv
+
+# Local runs (checkpoints, exports, logs, evaluation results) stay out of the image, so an old
+# eval_results.json or per-scene cell cannot stand in for a new one. Runs go to the mounted /out.
+runs/
+**/*.engine
+wandb/
+
+# Generated figures, downloaded backbone weights, caches.
+assets/sturm_orig/
+assets/qual_candidates/
+assets/checkpoints/
+__pycache__/
+*.py[cod]
+.git/

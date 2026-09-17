@@ -1,0 +1,8 @@
+{
+  "sturm_mIoU": 0.741702,
+  "sturm_flood_IoU": 0.624564,
+  "sturm_pixel_acc": 0.885685,
+  "sturm_f1": 0.84648,
+  "sturm_flood_f1": 0.7689,
+  "arch": "mobilenet_v3_small"
+}

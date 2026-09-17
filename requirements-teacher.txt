@@ -1,0 +1,13 @@
+# Full teacher/training stack, including requirements.txt.
+# Prefer environment.yml for the geospatial dependencies; GDAL is installed
+# through conda or the system package manager.
+
+-r requirements.txt
+
+terratorch==1.2.2
+torchgeo==0.6.2
+segmentation-models-pytorch==0.5.0
+pytorch-lightning==2.6.1
+torchmetrics==1.8.2
+scikit-image==0.25.2
+# gdal==3.12.2: install via conda (conda install -c conda-forge gdal=3.12.2) or system libgdal

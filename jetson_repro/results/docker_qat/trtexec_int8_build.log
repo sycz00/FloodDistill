@@ -1,0 +1,315 @@
+&&&& RUNNING TensorRT.trtexec [TensorRT v8401] # /usr/src/tensorrt/bin/trtexec --onnx=runs/deploy_qat/docker_qat/model_qdq_trt_no_out_static.onnx --int8 --fp16 --saveEngine=runs/deploy_qat/docker_qat/model_int8_qat.engine --workspace=2048
+[09/16/2026-14:12:22] [W] --workspace flag has been deprecated by --memPoolSize flag.
+[09/16/2026-14:12:22] [I] === Model Options ===
+[09/16/2026-14:12:22] [I] Format: ONNX
+[09/16/2026-14:12:22] [I] Model: runs/deploy_qat/docker_qat/model_qdq_trt_no_out_static.onnx
+[09/16/2026-14:12:22] [I] Output:
+[09/16/2026-14:12:22] [I] === Build Options ===
+[09/16/2026-14:12:22] [I] Max batch: explicit batch
+[09/16/2026-14:12:22] [I] Memory Pools: workspace: 2048 MiB, dlaSRAM: default, dlaLocalDRAM: default, dlaGlobalDRAM: default
+[09/16/2026-14:12:22] [I] minTiming: 1
+[09/16/2026-14:12:22] [I] avgTiming: 8
+[09/16/2026-14:12:22] [I] Precision: FP32+FP16+INT8
+[09/16/2026-14:12:22] [I] LayerPrecisions: 
+[09/16/2026-14:12:22] [I] Calibration: Dynamic
+[09/16/2026-14:12:22] [I] Refit: Disabled
+[09/16/2026-14:12:22] [I] Sparsity: Disabled
+[09/16/2026-14:12:22] [I] Safe mode: Disabled
+[09/16/2026-14:12:22] [I] DirectIO mode: Disabled
+[09/16/2026-14:12:22] [I] Restricted mode: Disabled
+[09/16/2026-14:12:22] [I] Build only: Disabled
+[09/16/2026-14:12:22] [I] Save engine: runs/deploy_qat/docker_qat/model_int8_qat.engine
+[09/16/2026-14:12:22] [I] Load engine: 
+[09/16/2026-14:12:22] [I] Profiling verbosity: 0
+[09/16/2026-14:12:22] [I] Tactic sources: Using default tactic sources
+[09/16/2026-14:12:22] [I] timingCacheMode: local
+[09/16/2026-14:12:22] [I] timingCacheFile: 
+[09/16/2026-14:12:22] [I] Input(s)s format: fp32:CHW
+[09/16/2026-14:12:22] [I] Output(s)s format: fp32:CHW
+[09/16/2026-14:12:22] [I] Input build shapes: model
+[09/16/2026-14:12:22] [I] Input calibration shapes: model
+[09/16/2026-14:12:22] [I] === System Options ===
+[09/16/2026-14:12:22] [I] Device: 0
+[09/16/2026-14:12:22] [I] DLACore: 
+[09/16/2026-14:12:22] [I] Plugins:
+[09/16/2026-14:12:22] [I] === Inference Options ===
+[09/16/2026-14:12:22] [I] Batch: Explicit
+[09/16/2026-14:12:22] [I] Input inference shapes: model
+[09/16/2026-14:12:22] [I] Iterations: 10
+[09/16/2026-14:12:22] [I] Duration: 3s (+ 200ms warm up)
+[09/16/2026-14:12:22] [I] Sleep time: 0ms
+[09/16/2026-14:12:22] [I] Idle time: 0ms
+[09/16/2026-14:12:22] [I] Streams: 1
+[09/16/2026-14:12:22] [I] ExposeDMA: Disabled
+[09/16/2026-14:12:22] [I] Data transfers: Enabled
+[09/16/2026-14:12:22] [I] Spin-wait: Disabled
+[09/16/2026-14:12:22] [I] Multithreading: Disabled
+[09/16/2026-14:12:22] [I] CUDA Graph: Disabled
+[09/16/2026-14:12:22] [I] Separate profiling: Disabled
+[09/16/2026-14:12:22] [I] Time Deserialize: Disabled
+[09/16/2026-14:12:22] [I] Time Refit: Disabled
+[09/16/2026-14:12:22] [I] Inputs:
+[09/16/2026-14:12:22] [I] === Reporting Options ===
+[09/16/2026-14:12:22] [I] Verbose: Disabled
+[09/16/2026-14:12:22] [I] Averages: 10 inferences
+[09/16/2026-14:12:22] [I] Percentile: 99
+[09/16/2026-14:12:22] [I] Dump refittable layers:Disabled
+[09/16/2026-14:12:22] [I] Dump output: Disabled
+[09/16/2026-14:12:22] [I] Profile: Disabled
+[09/16/2026-14:12:22] [I] Export timing to JSON file: 
+[09/16/2026-14:12:22] [I] Export output to JSON file: 
+[09/16/2026-14:12:22] [I] Export profile to JSON file: 
+[09/16/2026-14:12:22] [I] 
+[09/16/2026-14:12:22] [I] === Device Information ===
+[09/16/2026-14:12:22] [I] Selected Device: Xavier
+[09/16/2026-14:12:22] [I] Compute Capability: 7.2
+[09/16/2026-14:12:22] [I] SMs: 6
+[09/16/2026-14:12:22] [I] Compute Clock Rate: 1.109 GHz
+[09/16/2026-14:12:22] [I] Device Global Memory: 6854 MiB
+[09/16/2026-14:12:22] [I] Shared Memory per SM: 96 KiB
+[09/16/2026-14:12:22] [I] Memory Bus Width: 256 bits (ECC disabled)
+[09/16/2026-14:12:22] [I] Memory Clock Rate: 1.109 GHz
+[09/16/2026-14:12:22] [I] 
+[09/16/2026-14:12:22] [I] TensorRT version: 8.4.1
+[09/16/2026-14:12:24] [I] [TRT] [MemUsageChange] Init CUDA: CPU +185, GPU +0, now: CPU 209, GPU 4877 (MiB)
+[09/16/2026-14:12:28] [I] [TRT] [MemUsageChange] Init builder kernel library: CPU +131, GPU +195, now: CPU 359, GPU 5056 (MiB)
+[09/16/2026-14:12:28] [I] Start parsing network model
+[09/16/2026-14:12:28] [I] [TRT] ----------------------------------------------------------------
+[09/16/2026-14:12:28] [I] [TRT] Input filename:   runs/deploy_qat/docker_qat/model_qdq_trt_no_out_static.onnx
+[09/16/2026-14:12:28] [I] [TRT] ONNX IR version:  0.0.7
+[09/16/2026-14:12:28] [I] [TRT] Opset version:    13
+[09/16/2026-14:12:28] [I] [TRT] Producer name:    pytorch
+[09/16/2026-14:12:28] [I] [TRT] Producer version: 2.10.0
+[09/16/2026-14:12:28] [I] [TRT] Domain:           
+[09/16/2026-14:12:28] [I] [TRT] Model version:    0
+[09/16/2026-14:12:28] [I] [TRT] Doc string:       
+[09/16/2026-14:12:28] [I] [TRT] ----------------------------------------------------------------
+[09/16/2026-14:12:28] [W] [TRT] onnx2trt_utils.cpp:367: Your ONNX model has been generated with INT64 weights, while TensorRT does not natively support INT64. Attempting to cast down to INT32.
+[09/16/2026-14:12:28] [W] [TRT] onnx2trt_utils.cpp:395: One or more weights outside the range of INT32 was clamped
+[09/16/2026-14:12:29] [I] Finish parsing network model
+[09/16/2026-14:12:29] [W] [TRT] Calibrator won't be used in explicit precision mode. Use quantization aware training to generate network with Quantize/Dequantize nodes.
+[09/16/2026-14:12:31] [I] [TRT] ---------- Layers Running on DLA ----------
+[09/16/2026-14:12:31] [I] [TRT] ---------- Layers Running on GPU ----------
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONSTANT: (Unnamed Layer* 238) [Constant]
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONSTANT: (Unnamed Layer* 335) [Constant]
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONSTANT: (Unnamed Layer* 463) [Constant]
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONSTANT: (Unnamed Layer* 559) [Constant]
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] COPY: node_of_ql_x_c0
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONVOLUTION: w_float_c0 + node_of_ql_w_c0 + /model/backbone/input_stem/op_list.0/conv/Conv + PWN(/model/backbone/input_stem/op_list.0/act/Clip)
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] COPY: node_of_ql_x_c1
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONVOLUTION: w_float_c1 + node_of_ql_w_c1 + /model/backbone/input_stem/op_list.1/main/depth_conv/conv/Conv + PWN(/model/backbone/input_stem/op_list.1/main/depth_conv/act/Clip)
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONVOLUTION: w_float_c2 + node_of_ql_w_c2 + /model/backbone/input_stem/op_list.1/main/point_conv/conv/Conv + /model/backbone/input_stem/op_list.1/Add
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] COPY: node_of_ql_x_c3
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONVOLUTION: w_float_c3 + node_of_ql_w_c3 + /model/backbone/stages.0/op_list.0/main/inverted_conv/conv/Conv + PWN(/model/backbone/stages.0/op_list.0/main/inverted_conv/act/Clip)
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONVOLUTION: w_float_c4 + node_of_ql_w_c4 + /model/backbone/stages.0/op_list.0/main/depth_conv/conv/Conv + PWN(/model/backbone/stages.0/op_list.0/main/depth_conv/act/Clip)
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONVOLUTION: w_float_c5 + node_of_ql_w_c5 + /model/backbone/stages.0/op_list.0/main/point_conv/conv/Conv
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] COPY: node_of_ql_x_c6
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONVOLUTION: w_float_c6 + node_of_ql_w_c6 + /model/backbone/stages.0/op_list.1/main/inverted_conv/conv/Conv + PWN(/model/backbone/stages.0/op_list.1/main/inverted_conv/act/Clip)
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONVOLUTION: w_float_c7 + node_of_ql_w_c7 + /model/backbone/stages.0/op_list.1/main/depth_conv/conv/Conv + PWN(/model/backbone/stages.0/op_list.1/main/depth_conv/act/Clip)
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONVOLUTION: w_float_c8 + node_of_ql_w_c8 + /model/backbone/stages.0/op_list.1/main/point_conv/conv/Conv + /model/backbone/stages.0/op_list.1/Add
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] COPY: node_of_ql_x_c9
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONVOLUTION: w_float_c9 + node_of_ql_w_c9 + /model/backbone/stages.1/op_list.0/main/inverted_conv/conv/Conv + PWN(/model/backbone/stages.1/op_list.0/main/inverted_conv/act/Clip)
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONVOLUTION: w_float_c10 + node_of_ql_w_c10 + /model/backbone/stages.1/op_list.0/main/depth_conv/conv/Conv + PWN(/model/backbone/stages.1/op_list.0/main/depth_conv/act/Clip)
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONVOLUTION: w_float_c11 + node_of_ql_w_c11 + /model/backbone/stages.1/op_list.0/main/point_conv/conv/Conv
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] COPY: node_of_ql_x_c12
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONVOLUTION: w_float_c12 + node_of_ql_w_c12 + /model/backbone/stages.1/op_list.1/main/inverted_conv/conv/Conv + PWN(/model/backbone/stages.1/op_list.1/main/inverted_conv/act/Clip)
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONVOLUTION: w_float_c13 + node_of_ql_w_c13 + /model/backbone/stages.1/op_list.1/main/depth_conv/conv/Conv + PWN(/model/backbone/stages.1/op_list.1/main/depth_conv/act/Clip)
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONVOLUTION: w_float_c14 + node_of_ql_w_c14 + /model/backbone/stages.1/op_list.1/main/point_conv/conv/Conv + /model/backbone/stages.1/op_list.1/Add
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] COPY: node_of_ql_x_c15
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] COPY: node_of_ql_x_c51
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONVOLUTION: w_float_c15 + node_of_ql_w_c15 + /model/backbone/stages.2/op_list.0/main/inverted_conv/conv/Conv + PWN(/model/backbone/stages.2/op_list.0/main/inverted_conv/act/Clip)
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONVOLUTION: w_float_c51 + node_of_ql_w_c51 + /model/head/input_ops.2/conv/Conv
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONVOLUTION: w_float_c16 + node_of_ql_w_c16 + /model/backbone/stages.2/op_list.0/main/depth_conv/conv/Conv + PWN(/model/backbone/stages.2/op_list.0/main/depth_conv/act/Clip)
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONVOLUTION: w_float_c17 + node_of_ql_w_c17 + /model/backbone/stages.2/op_list.0/main/point_conv/conv/Conv
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] COPY: node_of_ql_x_c18
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONVOLUTION: w_float_c18 + node_of_ql_w_c18 + /model/backbone/stages.2/op_list.1/context_module/main/qkv/conv/Conv
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] COPY: node_of_ql_x_c19
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONVOLUTION: w_float_c19 + node_of_ql_w_c19 + /model/backbone/stages.2/op_list.1/context_module/main/aggreg.0/aggreg.0.0/Conv
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONVOLUTION: w_float_c20 + node_of_ql_w_c20 + /model/backbone/stages.2/op_list.1/context_module/main/aggreg.0/aggreg.0.1/Conv
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] SHUFFLE: /model/backbone/stages.2/op_list.1/context_module/main/Reshape
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] POINTWISE: PWN(/model/backbone/stages.2/op_list.1/context_module/main/kernel_func/Relu)
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] POINTWISE: PWN(/model/backbone/stages.2/op_list.1/context_module/main/kernel_func_1/Relu)
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] SLICE: /model/backbone/stages.2/op_list.1/context_module/main/Pad
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] MATRIX_MULTIPLY: /model/backbone/stages.2/op_list.1/context_module/main/MatMul
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] MATRIX_MULTIPLY: /model/backbone/stages.2/op_list.1/context_module/main/MatMul_1
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] POINTWISE: PWN(/model/backbone/stages.2/op_list.1/context_module/main/Constant_30_output_0 + (Unnamed Layer* 244) [Shuffle], PWN(/model/backbone/stages.2/op_list.1/context_module/main/Add, /model/backbone/stages.2/op_list.1/context_module/main/Div))
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] SHUFFLE: /model/backbone/stages.2/op_list.1/context_module/main/Reshape_3
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONVOLUTION: w_float_c21 + node_of_ql_w_c21 + /model/backbone/stages.2/op_list.1/context_module/main/proj/conv/Conv + /model/backbone/stages.2/op_list.1/context_module/Add
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] COPY: node_of_ql_x_c22
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONVOLUTION: w_float_c22 + node_of_ql_w_c22 + /model/backbone/stages.2/op_list.1/local_module/main/inverted_conv/conv/Conv + PWN(/model/backbone/stages.2/op_list.1/local_module/main/inverted_conv/act/Clip)
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONVOLUTION: w_float_c23 + node_of_ql_w_c23 + /model/backbone/stages.2/op_list.1/local_module/main/depth_conv/conv/Conv + PWN(/model/backbone/stages.2/op_list.1/local_module/main/depth_conv/act/Clip)
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONVOLUTION: w_float_c24 + node_of_ql_w_c24 + /model/backbone/stages.2/op_list.1/local_module/main/point_conv/conv/Conv + /model/backbone/stages.2/op_list.1/local_module/Add
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] COPY: node_of_ql_x_c25
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONVOLUTION: w_float_c25 + node_of_ql_w_c25 + /model/backbone/stages.2/op_list.2/context_module/main/qkv/conv/Conv
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] COPY: node_of_ql_x_c26
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONVOLUTION: w_float_c26 + node_of_ql_w_c26 + /model/backbone/stages.2/op_list.2/context_module/main/aggreg.0/aggreg.0.0/Conv
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONVOLUTION: w_float_c27 + node_of_ql_w_c27 + /model/backbone/stages.2/op_list.2/context_module/main/aggreg.0/aggreg.0.1/Conv
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] SHUFFLE: /model/backbone/stages.2/op_list.2/context_module/main/Reshape
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] POINTWISE: PWN(/model/backbone/stages.2/op_list.2/context_module/main/kernel_func/Relu)
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] POINTWISE: PWN(/model/backbone/stages.2/op_list.2/context_module/main/kernel_func_1/Relu)
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] SLICE: /model/backbone/stages.2/op_list.2/context_module/main/Pad
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] MATRIX_MULTIPLY: /model/backbone/stages.2/op_list.2/context_module/main/MatMul
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] MATRIX_MULTIPLY: /model/backbone/stages.2/op_list.2/context_module/main/MatMul_1
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] POINTWISE: PWN(/model/backbone/stages.2/op_list.1/context_module/main/Constant_30_output_0 + (Unnamed Layer* 244) [Shuffle]_clone_1, PWN(/model/backbone/stages.2/op_list.2/context_module/main/Add, /model/backbone/stages.2/op_list.2/context_module/main/Div))
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] SHUFFLE: /model/backbone/stages.2/op_list.2/context_module/main/Reshape_3
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONVOLUTION: w_float_c28 + node_of_ql_w_c28 + /model/backbone/stages.2/op_list.2/context_module/main/proj/conv/Conv + /model/backbone/stages.2/op_list.2/context_module/Add
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] COPY: node_of_ql_x_c29
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONVOLUTION: w_float_c29 + node_of_ql_w_c29 + /model/backbone/stages.2/op_list.2/local_module/main/inverted_conv/conv/Conv + PWN(/model/backbone/stages.2/op_list.2/local_module/main/inverted_conv/act/Clip)
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONVOLUTION: w_float_c30 + node_of_ql_w_c30 + /model/backbone/stages.2/op_list.2/local_module/main/depth_conv/conv/Conv + PWN(/model/backbone/stages.2/op_list.2/local_module/main/depth_conv/act/Clip)
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONVOLUTION: w_float_c31 + node_of_ql_w_c31 + /model/backbone/stages.2/op_list.2/local_module/main/point_conv/conv/Conv + /model/backbone/stages.2/op_list.2/local_module/Add
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] COPY: node_of_ql_x_c32
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] COPY: node_of_ql_x_c50
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONVOLUTION: w_float_c32 + node_of_ql_w_c32 + /model/backbone/stages.3/op_list.0/main/inverted_conv/conv/Conv + PWN(/model/backbone/stages.3/op_list.0/main/inverted_conv/act/Clip)
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONVOLUTION: w_float_c50 + node_of_ql_w_c50 + /model/head/input_ops.1/op_list.0/conv/Conv
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] RESIZE: /model/head/input_ops.1/op_list.1/Resize
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONVOLUTION: w_float_c33 + node_of_ql_w_c33 + /model/backbone/stages.3/op_list.0/main/depth_conv/conv/Conv + PWN(/model/backbone/stages.3/op_list.0/main/depth_conv/act/Clip)
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONVOLUTION: w_float_c34 + node_of_ql_w_c34 + /model/backbone/stages.3/op_list.0/main/point_conv/conv/Conv
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] COPY: node_of_ql_x_c35
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONVOLUTION: w_float_c35 + node_of_ql_w_c35 + /model/backbone/stages.3/op_list.1/context_module/main/qkv/conv/Conv
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] COPY: node_of_ql_x_c36
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONVOLUTION: w_float_c36 + node_of_ql_w_c36 + /model/backbone/stages.3/op_list.1/context_module/main/aggreg.0/aggreg.0.0/Conv
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONVOLUTION: w_float_c37 + node_of_ql_w_c37 + /model/backbone/stages.3/op_list.1/context_module/main/aggreg.0/aggreg.0.1/Conv
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] SHUFFLE: /model/backbone/stages.3/op_list.1/context_module/main/Reshape
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] POINTWISE: PWN(/model/backbone/stages.3/op_list.1/context_module/main/kernel_func/Relu)
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] POINTWISE: PWN(/model/backbone/stages.3/op_list.1/context_module/main/kernel_func_1/Relu)
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] SLICE: /model/backbone/stages.3/op_list.1/context_module/main/Pad
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] MATRIX_MULTIPLY: /model/backbone/stages.3/op_list.1/context_module/main/MatMul
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] MATRIX_MULTIPLY: /model/backbone/stages.3/op_list.1/context_module/main/MatMul_1
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] POINTWISE: PWN(/model/backbone/stages.2/op_list.1/context_module/main/Constant_30_output_0 + (Unnamed Layer* 244) [Shuffle]_clone_2, PWN(/model/backbone/stages.3/op_list.1/context_module/main/Add, /model/backbone/stages.3/op_list.1/context_module/main/Div))
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] SHUFFLE: /model/backbone/stages.3/op_list.1/context_module/main/Reshape_3
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONVOLUTION: w_float_c38 + node_of_ql_w_c38 + /model/backbone/stages.3/op_list.1/context_module/main/proj/conv/Conv + /model/backbone/stages.3/op_list.1/context_module/Add
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] COPY: node_of_ql_x_c39
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONVOLUTION: w_float_c39 + node_of_ql_w_c39 + /model/backbone/stages.3/op_list.1/local_module/main/inverted_conv/conv/Conv + PWN(/model/backbone/stages.3/op_list.1/local_module/main/inverted_conv/act/Clip)
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONVOLUTION: w_float_c40 + node_of_ql_w_c40 + /model/backbone/stages.3/op_list.1/local_module/main/depth_conv/conv/Conv + PWN(/model/backbone/stages.3/op_list.1/local_module/main/depth_conv/act/Clip)
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONVOLUTION: w_float_c41 + node_of_ql_w_c41 + /model/backbone/stages.3/op_list.1/local_module/main/point_conv/conv/Conv + /model/backbone/stages.3/op_list.1/local_module/Add
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] COPY: node_of_ql_x_c42
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONVOLUTION: w_float_c42 + node_of_ql_w_c42 + /model/backbone/stages.3/op_list.2/context_module/main/qkv/conv/Conv
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] COPY: node_of_ql_x_c43
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONVOLUTION: w_float_c43 + node_of_ql_w_c43 + /model/backbone/stages.3/op_list.2/context_module/main/aggreg.0/aggreg.0.0/Conv
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONVOLUTION: w_float_c44 + node_of_ql_w_c44 + /model/backbone/stages.3/op_list.2/context_module/main/aggreg.0/aggreg.0.1/Conv
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] SHUFFLE: /model/backbone/stages.3/op_list.2/context_module/main/Reshape
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] POINTWISE: PWN(/model/backbone/stages.3/op_list.2/context_module/main/kernel_func/Relu)
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] POINTWISE: PWN(/model/backbone/stages.3/op_list.2/context_module/main/kernel_func_1/Relu)
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] SLICE: /model/backbone/stages.3/op_list.2/context_module/main/Pad
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] MATRIX_MULTIPLY: /model/backbone/stages.3/op_list.2/context_module/main/MatMul
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] MATRIX_MULTIPLY: /model/backbone/stages.3/op_list.2/context_module/main/MatMul_1
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] POINTWISE: PWN(/model/backbone/stages.2/op_list.1/context_module/main/Constant_30_output_0 + (Unnamed Layer* 244) [Shuffle]_clone_3, PWN(/model/backbone/stages.3/op_list.2/context_module/main/Add, /model/backbone/stages.3/op_list.2/context_module/main/Div))
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] SHUFFLE: /model/backbone/stages.3/op_list.2/context_module/main/Reshape_3
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONVOLUTION: w_float_c45 + node_of_ql_w_c45 + /model/backbone/stages.3/op_list.2/context_module/main/proj/conv/Conv + /model/backbone/stages.3/op_list.2/context_module/Add
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] COPY: node_of_ql_x_c46
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONVOLUTION: w_float_c46 + node_of_ql_w_c46 + /model/backbone/stages.3/op_list.2/local_module/main/inverted_conv/conv/Conv + PWN(/model/backbone/stages.3/op_list.2/local_module/main/inverted_conv/act/Clip)
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONVOLUTION: w_float_c47 + node_of_ql_w_c47 + /model/backbone/stages.3/op_list.2/local_module/main/depth_conv/conv/Conv + PWN(/model/backbone/stages.3/op_list.2/local_module/main/depth_conv/act/Clip)
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONVOLUTION: w_float_c48 + node_of_ql_w_c48 + /model/backbone/stages.3/op_list.2/local_module/main/point_conv/conv/Conv + /model/backbone/stages.3/op_list.2/local_module/Add
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] COPY: node_of_ql_x_c49
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONVOLUTION: w_float_c49 + node_of_ql_w_c49 + /model/head/input_ops.0/op_list.0/conv/Conv
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] RESIZE: /model/head/input_ops.0/op_list.1/Resize
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] POINTWISE: PWN(/model/head/Add, /model/head/Add_1)
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] COPY: node_of_ql_x_c52
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONVOLUTION: w_float_c52 + node_of_ql_w_c52 + /model/head/middle/op_list.0/main/inverted_conv/conv/Conv + PWN(/model/head/middle/op_list.0/main/inverted_conv/act/Clip)
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONVOLUTION: w_float_c53 + node_of_ql_w_c53 + /model/head/middle/op_list.0/main/depth_conv/conv/Conv + PWN(/model/head/middle/op_list.0/main/depth_conv/act/Clip)
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONVOLUTION: w_float_c54 + node_of_ql_w_c54 + /model/head/middle/op_list.0/main/point_conv/conv/Conv + /model/head/middle/op_list.0/Add
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] COPY: node_of_ql_x_c55
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONVOLUTION: w_float_c55 + node_of_ql_w_c55 + /model/head/output_ops.0/op_list.0/conv/Conv + PWN(/model/head/output_ops.0/op_list.0/act/Clip)
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] CONVOLUTION: /model/head/output_ops.0/op_list.1/conv/Conv
+[09/16/2026-14:12:31] [I] [TRT] [GpuLayer] RESIZE: /Resize
+[09/16/2026-14:12:34] [I] [TRT] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +261, GPU +410, now: CPU 628, GPU 5463 (MiB)
+[09/16/2026-14:12:34] [I] [TRT] [MemUsageChange] Init cuDNN: CPU +85, GPU +150, now: CPU 713, GPU 5613 (MiB)
+[09/16/2026-14:12:34] [I] [TRT] Local timing cache in use. Profiling results in this builder pass will not be stored.
+[09/16/2026-14:21:57] [I] [TRT] Detected 1 inputs and 1 output network tensors.
+[09/16/2026-14:21:57] [I] [TRT] Total Host Persistent Memory: 107104
+[09/16/2026-14:21:57] [I] [TRT] Total Device Persistent Memory: 1864192
+[09/16/2026-14:21:57] [I] [TRT] Total Scratch Memory: 4194304
+[09/16/2026-14:21:57] [I] [TRT] [MemUsageStats] Peak memory usage of TRT CPU/GPU memory allocators: CPU 3 MiB, GPU 36 MiB
+[09/16/2026-14:21:57] [I] [TRT] [BlockAssignment] Algorithm ShiftNTopDown took 72.8605ms to assign 9 blocks to 145 nodes requiring 8348160 bytes.
+[09/16/2026-14:21:57] [I] [TRT] Total Activation Memory: 8348160
+[09/16/2026-14:21:57] [I] [TRT] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 983, GPU 4376 (MiB)
+[09/16/2026-14:21:57] [I] [TRT] [MemUsageChange] TensorRT-managed allocation in building engine: CPU +0, GPU +5, now: CPU 0, GPU 5 (MiB)
+[09/16/2026-14:21:57] [W] [TRT] The getMaxBatchSize() function should not be used with an engine built from a network created with NetworkDefinitionCreationFlag::kEXPLICIT_BATCH flag. This function will always return 1.
+[09/16/2026-14:21:57] [W] [TRT] The getMaxBatchSize() function should not be used with an engine built from a network created with NetworkDefinitionCreationFlag::kEXPLICIT_BATCH flag. This function will always return 1.
+[09/16/2026-14:21:58] [I] Engine built in 575.604 sec.
+[09/16/2026-14:21:58] [I] [TRT] [MemUsageChange] Init CUDA: CPU +0, GPU +0, now: CPU 843, GPU 4375 (MiB)
+[09/16/2026-14:21:58] [I] [TRT] Loaded engine size: 1 MiB
+[09/16/2026-14:21:58] [I] [TRT] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 846, GPU 4375 (MiB)
+[09/16/2026-14:21:58] [I] [TRT] [MemUsageChange] TensorRT-managed allocation in engine deserialization: CPU +0, GPU +2, now: CPU 0, GPU 2 (MiB)
+[09/16/2026-14:21:58] [I] Engine deserialized in 0.0418469 sec.
+[09/16/2026-14:21:58] [I] [TRT] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 846, GPU 4375 (MiB)
+[09/16/2026-14:21:58] [I] [TRT] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +10, now: CPU 0, GPU 12 (MiB)
+[09/16/2026-14:21:58] [I] Using random values for input image
+[09/16/2026-14:21:58] [I] Created input binding for image with dimensions 1x6x512x512
+[09/16/2026-14:21:58] [I] Using random values for output logits
+[09/16/2026-14:21:58] [I] Created output binding for logits with dimensions 1x2x512x512
+[09/16/2026-14:21:58] [I] Starting inference
+[09/16/2026-14:22:01] [I] Warmup completed 18 queries over 200 ms
+[09/16/2026-14:22:01] [I] Timing trace has 543 queries over 3.00736 s
+[09/16/2026-14:22:01] [I] 
+[09/16/2026-14:22:01] [I] === Trace details ===
+[09/16/2026-14:22:01] [I] Trace averages of 10 runs:
+[09/16/2026-14:22:01] [I] Average on 10 runs - GPU latency: 6.10611 ms - Host latency: 6.50567 ms (enqueue 3.41066 ms)
+[09/16/2026-14:22:01] [I] Average on 10 runs - GPU latency: 5.10425 ms - Host latency: 5.49325 ms (enqueue 3.38953 ms)
+[09/16/2026-14:22:01] [I] Average on 10 runs - GPU latency: 5.79467 ms - Host latency: 6.17272 ms (enqueue 4.67075 ms)
+[09/16/2026-14:22:01] [I] Average on 10 runs - GPU latency: 5.1436 ms - Host latency: 5.51764 ms (enqueue 2.96844 ms)
+[09/16/2026-14:22:01] [I] Average on 10 runs - GPU latency: 5.09704 ms - Host latency: 5.45824 ms (enqueue 2.66271 ms)
+[09/16/2026-14:22:01] [I] Average on 10 runs - GPU latency: 5.09968 ms - Host latency: 5.45888 ms (enqueue 2.60793 ms)
+[09/16/2026-14:22:01] [I] Average on 10 runs - GPU latency: 5.10235 ms - Host latency: 5.46296 ms (enqueue 2.62278 ms)
+[09/16/2026-14:22:01] [I] Average on 10 runs - GPU latency: 5.10106 ms - Host latency: 5.46249 ms (enqueue 2.65352 ms)
+[09/16/2026-14:22:01] [I] Average on 10 runs - GPU latency: 5.09907 ms - Host latency: 5.46068 ms (enqueue 2.67001 ms)
+[09/16/2026-14:22:01] [I] Average on 10 runs - GPU latency: 5.09794 ms - Host latency: 5.45913 ms (enqueue 2.63336 ms)
+[09/16/2026-14:22:01] [I] Average on 10 runs - GPU latency: 5.0971 ms - Host latency: 5.4571 ms (enqueue 2.63957 ms)
+[09/16/2026-14:22:01] [I] Average on 10 runs - GPU latency: 5.08398 ms - Host latency: 5.45425 ms (enqueue 3.12056 ms)
+[09/16/2026-14:22:01] [I] Average on 10 runs - GPU latency: 5.09365 ms - Host latency: 5.45511 ms (enqueue 2.74045 ms)
+[09/16/2026-14:22:01] [I] Average on 10 runs - GPU latency: 5.09398 ms - Host latency: 5.45424 ms (enqueue 2.74809 ms)
+[09/16/2026-14:22:01] [I] Average on 10 runs - GPU latency: 5.0977 ms - Host latency: 5.45873 ms (enqueue 2.68197 ms)
+[09/16/2026-14:22:01] [I] Average on 10 runs - GPU latency: 5.10403 ms - Host latency: 5.46694 ms (enqueue 2.75741 ms)
+[09/16/2026-14:22:01] [I] Average on 10 runs - GPU latency: 5.09114 ms - Host latency: 5.45179 ms (enqueue 2.7127 ms)
+[09/16/2026-14:22:01] [I] Average on 10 runs - GPU latency: 5.09871 ms - Host latency: 5.45952 ms (enqueue 2.68395 ms)
+[09/16/2026-14:22:01] [I] Average on 10 runs - GPU latency: 5.09857 ms - Host latency: 5.4616 ms (enqueue 2.6689 ms)
+[09/16/2026-14:22:01] [I] Average on 10 runs - GPU latency: 5.10199 ms - Host latency: 5.46278 ms (enqueue 2.62526 ms)
+[09/16/2026-14:22:01] [I] Average on 10 runs - GPU latency: 5.1045 ms - Host latency: 5.46503 ms (enqueue 2.6073 ms)
+[09/16/2026-14:22:01] [I] Average on 10 runs - GPU latency: 5.09834 ms - Host latency: 5.46027 ms (enqueue 2.66925 ms)
+[09/16/2026-14:22:01] [I] Average on 10 runs - GPU latency: 5.09558 ms - Host latency: 5.45654 ms (enqueue 2.63969 ms)
+[09/16/2026-14:22:01] [I] Average on 10 runs - GPU latency: 5.10032 ms - Host latency: 5.46206 ms (enqueue 2.61119 ms)
+[09/16/2026-14:22:01] [I] Average on 10 runs - GPU latency: 5.10972 ms - Host latency: 5.47252 ms (enqueue 2.58887 ms)
+[09/16/2026-14:22:01] [I] Average on 10 runs - GPU latency: 5.11975 ms - Host latency: 5.49009 ms (enqueue 2.67256 ms)
+[09/16/2026-14:22:01] [I] Average on 10 runs - GPU latency: 5.10161 ms - Host latency: 5.4653 ms (enqueue 2.63384 ms)
+[09/16/2026-14:22:01] [I] Average on 10 runs - GPU latency: 5.10378 ms - Host latency: 5.46539 ms (enqueue 2.57378 ms)
+[09/16/2026-14:22:01] [I] Average on 10 runs - GPU latency: 5.10597 ms - Host latency: 5.46609 ms (enqueue 2.55571 ms)
+[09/16/2026-14:22:01] [I] Average on 10 runs - GPU latency: 5.10903 ms - Host latency: 5.46978 ms (enqueue 2.55494 ms)
+[09/16/2026-14:22:01] [I] Average on 10 runs - GPU latency: 5.1048 ms - Host latency: 5.46537 ms (enqueue 2.53251 ms)
+[09/16/2026-14:22:01] [I] Average on 10 runs - GPU latency: 5.10623 ms - Host latency: 5.46718 ms (enqueue 2.55593 ms)
+[09/16/2026-14:22:01] [I] Average on 10 runs - GPU latency: 5.10822 ms - Host latency: 5.46932 ms (enqueue 2.53171 ms)
+[09/16/2026-14:22:01] [I] Average on 10 runs - GPU latency: 5.11344 ms - Host latency: 5.47468 ms (enqueue 2.57118 ms)
+[09/16/2026-14:22:01] [I] Average on 10 runs - GPU latency: 5.11096 ms - Host latency: 5.4814 ms (enqueue 2.72341 ms)
+[09/16/2026-14:22:01] [I] Average on 10 runs - GPU latency: 5.10879 ms - Host latency: 5.47024 ms (enqueue 2.54531 ms)
+[09/16/2026-14:22:01] [I] Average on 10 runs - GPU latency: 5.10383 ms - Host latency: 5.46536 ms (enqueue 2.53965 ms)
+[09/16/2026-14:22:01] [I] Average on 10 runs - GPU latency: 5.10908 ms - Host latency: 5.47029 ms (enqueue 2.53643 ms)
+[09/16/2026-14:22:01] [I] Average on 10 runs - GPU latency: 5.10657 ms - Host latency: 5.46731 ms (enqueue 2.54858 ms)
+[09/16/2026-14:22:01] [I] Average on 10 runs - GPU latency: 5.11143 ms - Host latency: 5.47168 ms (enqueue 2.53252 ms)
+[09/16/2026-14:22:01] [I] Average on 10 runs - GPU latency: 5.10806 ms - Host latency: 5.4699 ms (enqueue 2.52485 ms)
+[09/16/2026-14:22:01] [I] Average on 10 runs - GPU latency: 5.10986 ms - Host latency: 5.47 ms (enqueue 2.53032 ms)
+[09/16/2026-14:22:01] [I] Average on 10 runs - GPU latency: 5.10605 ms - Host latency: 5.46624 ms (enqueue 2.53877 ms)
+[09/16/2026-14:22:01] [I] Average on 10 runs - GPU latency: 5.10427 ms - Host latency: 5.46458 ms (enqueue 2.53286 ms)
+[09/16/2026-14:22:01] [I] Average on 10 runs - GPU latency: 5.11086 ms - Host latency: 5.47568 ms (enqueue 2.6012 ms)
+[09/16/2026-14:22:01] [I] Average on 10 runs - GPU latency: 5.10491 ms - Host latency: 5.4655 ms (enqueue 2.54495 ms)
+[09/16/2026-14:22:01] [I] Average on 10 runs - GPU latency: 5.10591 ms - Host latency: 5.46619 ms (enqueue 2.60928 ms)
+[09/16/2026-14:22:01] [I] Average on 10 runs - GPU latency: 5.10798 ms - Host latency: 5.46946 ms (enqueue 2.5301 ms)
+[09/16/2026-14:22:01] [I] Average on 10 runs - GPU latency: 5.11465 ms - Host latency: 5.47424 ms (enqueue 2.51514 ms)
+[09/16/2026-14:22:01] [I] Average on 10 runs - GPU latency: 5.11069 ms - Host latency: 5.47231 ms (enqueue 2.50098 ms)
+[09/16/2026-14:22:01] [I] Average on 10 runs - GPU latency: 5.11287 ms - Host latency: 5.47559 ms (enqueue 2.52583 ms)
+[09/16/2026-14:22:01] [I] Average on 10 runs - GPU latency: 5.10969 ms - Host latency: 5.47051 ms (enqueue 2.54534 ms)
+[09/16/2026-14:22:01] [I] Average on 10 runs - GPU latency: 5.11609 ms - Host latency: 5.48118 ms (enqueue 2.53035 ms)
+[09/16/2026-14:22:01] [I] Average on 10 runs - GPU latency: 5.11211 ms - Host latency: 5.47275 ms (enqueue 2.49739 ms)
+[09/16/2026-14:22:01] [I] 
+[09/16/2026-14:22:01] [I] === Performance summary ===
+[09/16/2026-14:22:01] [I] Throughput: 180.557 qps
+[09/16/2026-14:22:01] [I] Latency: min = 5.33466 ms, max = 11.4859 ms, mean = 5.50005 ms, median = 5.46533 ms, percentile(99%) = 6.51685 ms
+[09/16/2026-14:22:01] [I] Enqueue Time: min = 2.39087 ms, max = 15.9094 ms, mean = 2.68265 ms, median = 2.6001 ms, percentile(99%) = 3.75491 ms
+[09/16/2026-14:22:01] [I] H2D Latency: min = 0.258606 ms, max = 0.346649 ms, mean = 0.263342 ms, median = 0.260986 ms, percentile(99%) = 0.29126 ms
+[09/16/2026-14:22:01] [I] GPU Compute Time: min = 4.97409 ms, max = 11.1228 ms, mean = 5.13652 ms, median = 5.10413 ms, percentile(99%) = 6.11226 ms
+[09/16/2026-14:22:01] [I] D2H Latency: min = 0.0910339 ms, max = 0.118698 ms, mean = 0.100183 ms, median = 0.0998535 ms, percentile(99%) = 0.114853 ms
+[09/16/2026-14:22:01] [I] Total Host Walltime: 3.00736 s
+[09/16/2026-14:22:01] [I] Total GPU Compute Time: 2.78913 s
+[09/16/2026-14:22:01] [W] * GPU compute time is unstable, with coefficient of variance = 5.72339%.
+[09/16/2026-14:22:01] [W]   If not already in use, locking GPU clock frequency or adding --useSpinWait may improve the stability.
+[09/16/2026-14:22:01] [I] Explanations of the performance metrics are printed in the verbose logs.
+[09/16/2026-14:22:01] [I] 
+&&&& PASSED TensorRT.trtexec [TensorRT v8401] # /usr/src/tensorrt/bin/trtexec --onnx=runs/deploy_qat/docker_qat/model_qdq_trt_no_out_static.onnx --int8 --fp16 --saveEngine=runs/deploy_qat/docker_qat/model_int8_qat.engine --workspace=2048

@@ -1,0 +1,13 @@
+convention,axis,pair,gt_family,ps_family,n_groups,mean_delta,median_delta,wins,wilcoxon_p,sign_p,holm_p_wilcoxon,holm_p_sign,survives_holm_both
+per-seed drop then average (paper convention),gain,EvIT CE,ncgt_evit_ce_N252,evit_ce_ps,46,0.03529,0.02268,39,2.289e-08,1.832e-06,4.578e-08,3.663e-06,1
+per-seed drop then average (paper convention),gain,EvIT OFA,ncgt_evit_ofa_N252,evit_ofa_ps,46,0.03099,0.02127,44,6.865e-09,3.075e-11,2.059e-08,1.845e-10,1
+per-seed drop then average (paper convention),gain,UNet Logit-KD,ncgt_unet_lkd_N252,unet_lkd_ps,46,0.01690,0.00748,44,4.791e-10,3.075e-11,2.396e-09,1.845e-10,1
+per-seed drop then average (paper convention),haze,EvIT CE,ncgt_evit_ce_N252,evit_ce_ps,46,0.02561,0.02499,33,1.177e-02,4.534e-03,1.177e-02,4.534e-03,1
+per-seed drop then average (paper convention),haze,EvIT OFA,ncgt_evit_ofa_N252,evit_ofa_ps,46,0.06233,0.05891,41,8.973e-10,4.406e-08,3.589e-09,1.322e-07,1
+per-seed drop then average (paper convention),haze,UNet Logit-KD,ncgt_unet_lkd_N252,unet_lkd_ps,46,0.11207,0.08829,43,2.501e-12,4.622e-10,1.501e-11,1.849e-09,1
+seed-average first (sensitivity check),gain,EvIT CE,ncgt_evit_ce_N252,evit_ce_ps,46,0.03564,0.02532,40,6.352e-08,3.103e-07,1.270e-07,9.308e-07,1
+seed-average first (sensitivity check),gain,EvIT OFA,ncgt_evit_ofa_N252,evit_ofa_ps,46,0.03127,0.02127,42,1.270e-08,5.100e-09,5.080e-08,2.550e-08,1
+seed-average first (sensitivity check),gain,UNet Logit-KD,ncgt_unet_lkd_N252,unet_lkd_ps,46,0.01667,0.00799,42,3.605e-09,5.100e-09,1.802e-08,2.550e-08,1
+seed-average first (sensitivity check),haze,EvIT CE,ncgt_evit_ce_N252,evit_ce_ps,46,0.01406,0.01502,28,1.826e-01,1.839e-01,1.826e-01,1.839e-01,0
+seed-average first (sensitivity check),haze,EvIT OFA,ncgt_evit_ofa_N252,evit_ofa_ps,46,0.06397,0.05301,40,2.681e-08,3.103e-07,8.042e-08,9.308e-07,1
+seed-average first (sensitivity check),haze,UNet Logit-KD,ncgt_unet_lkd_N252,unet_lkd_ps,46,0.11271,0.08839,43,2.501e-12,4.622e-10,1.501e-11,2.773e-09,1

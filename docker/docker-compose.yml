@@ -1,0 +1,200 @@
+# One image, one service per pipeline stage. Build context is the project root (..).
+# Needs the NVIDIA Container Toolkit.
+#
+#   docker compose -f docker/docker-compose.yml build
+#   docker compose -f docker/docker-compose.yml run --rm train
+# Set DATA_ROOT, PSEUDO_ROOT, OUT_ROOT and HF_CACHE in docker/.env. Use real directories;
+# bind mounts do not follow host symlinks.
+
+x-base: &base
+  image: flooddistill
+  build:
+    context: ..
+    dockerfile: docker/Dockerfile
+  gpus: all
+  working_dir: /workspace/FloodDistill
+  user: "${DOCKER_UID:-1000}:${DOCKER_GID:-1000}"
+  shm_size: "16gb"
+  environment:
+    - DATA_ROOT=/data
+    - PSEUDO_DIR=/pseudo
+    - WANDB_MODE=${WANDB_MODE:-disabled}
+
+# create_host_path: false, otherwise Docker creates missing directories as root and the
+# container user cannot write to /out. Create the directories first (docker/README.md).
+x-vols-ro: &vols-ro
+  - {type: bind, source: "${DATA_ROOT:?set DATA_ROOT to the directory holding sen1floods11/, STURM-Flood/, WorldFloodsv2/, flood_unlabeled/}", target: /data, read_only: true, bind: {create_host_path: false}}
+  - {type: bind, source: "${PSEUDO_ROOT:?set PSEUDO_ROOT to the pseudo-label pool}", target: /pseudo, read_only: true, bind: {create_host_path: false}}
+  - {type: bind, source: "${OUT_ROOT:?set OUT_ROOT to a writable output directory}", target: /out, bind: {create_host_path: false}}
+  - {type: bind, source: "${HF_CACHE:?set HF_CACHE to a writable Hugging Face cache directory}", target: /hf, bind: {create_host_path: false}}
+
+x-vols-rw: &vols-rw
+  - {type: bind, source: "${DATA_ROOT:?set DATA_ROOT}", target: /data, read_only: true, bind: {create_host_path: false}}
+  - {type: bind, source: "${PSEUDO_ROOT:?set PSEUDO_ROOT}", target: /pseudo, bind: {create_host_path: false}}
+  - {type: bind, source: "${OUT_ROOT:?set OUT_ROOT}", target: /out, bind: {create_host_path: false}}
+  - {type: bind, source: "${HF_CACHE:?set HF_CACHE}", target: /hf, bind: {create_host_path: false}}
+
+services:
+
+  # Entrypoint with your own arguments:
+  #   docker compose run --rm flooddistill --mode all --dataset s11 --n 252
+  flooddistill:
+    <<: *base
+    volumes: *vols-ro
+
+  # Stage 1. Teacher over the GDACS tiles -> pseudo_*.pt + source_manifest.csv. Writes /pseudo.
+  generate:
+    <<: *base
+    volumes: *vols-rw
+    command:
+      - python
+      - scripts/train.py
+      - pseudo
+      - generate
+      - --official_ckpt
+      - "hf"
+      - --unlabeled_root
+      - "/data/flood_unlabeled"
+      - --unlabeled_source
+      - "flood"
+      - --out_dir
+      - "/pseudo"
+      - --confidence_threshold
+      - "0.80"
+      - --min_flood_frac
+      - "0.0"
+      - --store_pixel_confidence
+
+  # Stage 2. Pre-filter + farthest-point sampling -> diversity_N<N>_index.json. Writes /pseudo.
+  curate:
+    <<: *base
+    volumes: *vols-rw
+    command:
+      - python
+      - scripts/curate.py
+      - diversity
+      - --pseudo_dir
+      - "/pseudo"
+      - --top_k
+      - "${N:-2500}"
+
+  # Stage 3. Main model. Override with N=252, OBJECTIVE=ce, DATASET=s11, MODEL=unet, ...
+  train:
+    <<: *base
+    volumes: *vols-ro
+    command:
+      - --mode
+      - "train"
+      - --model
+      - "${MODEL:-evit}"
+      - --objective
+      - "${OBJECTIVE:-ofa}"
+      - --dataset
+      - "${DATASET:-pseudo}"
+      - --n
+      - "${N:-2500}"
+      - --seed
+      - "${SEED:-42}"
+      - --epochs
+      - "${EPOCHS:-50}"
+      - --out
+      - "/out"
+
+  # Stage 3b. The ReLU6 student, trained from scratch; the INT8 path needs it.
+  train-relu6:
+    <<: *base
+    volumes: *vols-ro
+    command:
+      - --mode
+      - "train"
+      - --model
+      - "evit_relu6"
+      - --objective
+      - "${OBJECTIVE:-ofa}"
+      - --dataset
+      - "${DATASET:-pseudo}"
+      - --n
+      - "${N:-2500}"
+      - --seed
+      - "${SEED:-42}"
+      - --epochs
+      - "${EPOCHS:-50}"
+      - --out
+      - "/out"
+
+  # Stage 4. Score a checkpoint on Sen1Floods11. Defaults to what `train` writes; override
+  # with CKPT=/out/<recipe dir>/<run>/best.pt, e.g. /out/ablations_sen1/sen_ce_N252_s42/best.pt.
+  evaluate:
+    <<: *base
+    volumes: *vols-ro
+    command:
+      - --mode
+      - "evaluate"
+      - --model
+      - "${MODEL:-evit}"
+      - --ckpt
+      - "${CKPT:-/out/nsweep/pseudo_ofa_aug_N2500_s42/best.pt}"
+      - --out
+      - "/out/eval"
+
+  # Stage 5. QAT + ONNX export -> model_qdq_trt_no_out.onnx. Defaults to what `train-relu6`
+  # writes; CKPT must be a ReLU6 checkpoint.
+  export:
+    <<: *base
+    volumes: *vols-ro
+    command:
+      - --mode
+      - "export"
+      - --model
+      - "evit_relu6"
+      - --ckpt
+      - "${CKPT:-/out/repro/repro_ofa_relu6_N2500_s42/best.pt}"
+      - --n
+      - "${N:-2500}"
+      - --qat_epochs
+      - "${QAT_EPOCHS:-10}"
+      - --out
+      - "/out/qat"
+
+  # Supplement S3 robustness test (B2_robustness_holm.csv): trains the three N=252 pairs,
+  # evaluates them on STURM under gain and haze and runs the tests. OUT_ROOT is mounted as runs/.
+  robustness-b2:
+    <<: *base
+    volumes:
+      - {type: bind, source: "${DATA_ROOT:?set DATA_ROOT}", target: /data, read_only: true, bind: {create_host_path: false}}
+      - {type: bind, source: "${PSEUDO_ROOT:?set PSEUDO_ROOT}", target: /pseudo, read_only: true, bind: {create_host_path: false}}
+      - {type: bind, source: "${OUT_ROOT:?set OUT_ROOT}", target: /workspace/FloodDistill/runs, bind: {create_host_path: false}}
+      - {type: bind, source: "${HF_CACHE:?set HF_CACHE}", target: /hf, bind: {create_host_path: false}}
+    environment:
+      - DATA_ROOT=/data
+      - PSEUDO_DIR=/pseudo
+      - WANDB_MODE=${WANDB_MODE:-disabled}
+      - GPU=${GPU:-0}
+      - SEEDS=${SEEDS:-42 64 91 107}
+      - EPOCHS=${EPOCHS:-50}
+      - IDX_PREFIX=${IDX_PREFIX:-diversity}
+    command: [bash, experiments/robustness_b2.sh]
+
+  # Recompute the published tables from paper_source_data/ and diff against the paper.
+  # Doesn't need a GPU, datasets or checkpoints.
+  verify:
+    <<: *base
+    gpus: []
+    volumes: *vols-ro
+    command:
+      - python
+      - evaluation/verify_paper_source_data.py
+
+  # Stage 6. Group-level statistics (no GPU, no data). Reads the per-scene cells that
+  # perscene_sweeps.sh wrote to OUT_ROOT; the image itself holds none.
+  collect:
+    <<: *base
+    gpus: []
+    volumes: *vols-ro
+    command:
+      - python
+      - evaluation/paired_group_tests.py
+      - --cache
+      - "/out/perscene"
+      - --out
+      - "/out/paired_group_tests.csv"

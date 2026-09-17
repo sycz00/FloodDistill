@@ -1,0 +1,76 @@
+{
+  "generated_by": "experiments/fig_qualitative_batches.py",
+  "perturbation": {
+    "axis": "haze",
+    "level": 0.2,
+    "apply_with": "--haze 0.2"
+  },
+  "loader": {
+    "eval_img_size": 512,
+    "sturm_normalize": "original",
+    "wf": "split=test, tile_size=512, normalize=s11",
+    "s11_split": "n/a (not evaluated by this figure)"
+  },
+  "rgb": {
+    "map": "min(rho/K, 1) on B4/B3/B2",
+    "ceiling": 0.4
+  },
+  "picks": {
+    "STURM-S2": [
+      {
+        "idx": 642,
+        "id": "EMSR419_AOI05_06_10_2_1.tif"
+      }
+    ],
+    "WorldFloods-v2": [
+      {
+        "idx": 216,
+        "id": "EMSR342_06NORTHNORMANTON_DEL_v1.tif#r2560_c4096"
+      }
+    ]
+  },
+  "panels": [
+    {
+      "panel": "qual_haze020_batch05.png",
+      "batch": 5,
+      "rows": [
+        {
+          "dataset": "sturm",
+          "id": "EMSR419_AOI05_06_10_2_1.tif",
+          "scene": "EMSR419_AOI05_DEL_PRODUCT",
+          "water_frac": 0.1003,
+          "flood_iou_clean": {
+            "teacher": 0.7145,
+            "unet": 0.7384,
+            "gt": 0.7222,
+            "ofa": 0.7323
+          },
+          "flood_iou_perturbed": {
+            "teacher": 0.7101,
+            "unet": 0.682,
+            "gt": 0.1157,
+            "ofa": 0.7481
+          }
+        },
+        {
+          "dataset": "wf",
+          "id": "EMSR342_06NORTHNORMANTON_DEL_v1.tif#r2560_c4096",
+          "scene": "EMSR342_06NORTHNORMANTON_DEL_v1.tif",
+          "water_frac": 0.257,
+          "flood_iou_clean": {
+            "teacher": 0.8594,
+            "unet": 0.857,
+            "gt": 0.8611,
+            "ofa": 0.8485
+          },
+          "flood_iou_perturbed": {
+            "teacher": 0.8742,
+            "unet": 0.8537,
+            "gt": 0.5505,
+            "ofa": 0.8723
+          }
+        }
+      ]
+    }
+  ]
+}

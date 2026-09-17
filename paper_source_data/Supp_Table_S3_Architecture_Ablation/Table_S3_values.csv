@@ -1,0 +1,15 @@
+architecture,params,pretrain,loss,benchmark,mean,sd_ddof1,sd_ddof0,n_seeds
+MobileNetV3-Small,3.55M,ImageNet,CE,S11 mIoU,0.8684,0.0039,0.0034,4
+MobileNetV3-Small,3.55M,ImageNet,CE,STURM mIoU,0.7338,0.0088,0.0076,4
+MobileNetV3-Small,3.55M,ImageNet,Logit-KD,S11 mIoU,0.8723,0.0023,0.002,4
+MobileNetV3-Small,3.55M,ImageNet,Logit-KD,STURM mIoU,0.7457,0.0063,0.0055,4
+Small CNN,1.64M,None,CE,S11 mIoU,0.8872,0.0044,0.0038,4
+Small CNN,1.64M,None,CE,STURM mIoU,0.7369,0.0073,0.0063,4
+Small CNN,1.64M,None,Logit-KD,S11 mIoU,0.8823,0.0025,0.0022,4
+Small CNN,1.64M,None,Logit-KD,STURM mIoU,0.7392,0.0086,0.0074,4
+EfficientViT-B0,0.7M,ImageNet,CE,S11 mIoU,0.8612,0.0075,0.0065,4
+EfficientViT-B0,0.7M,ImageNet,CE,STURM mIoU,0.7369,0.0129,0.0112,4
+EfficientViT-B0,0.7M,ImageNet,Logit-KD,S11 mIoU,0.869,0.0064,0.0055,4
+EfficientViT-B0,0.7M,ImageNet,Logit-KD,STURM mIoU,0.7545,0.0053,0.0046,4
+EfficientViT-B0,0.7M,ImageNet,OFA (ours),S11 mIoU,0.8699,0.0026,0.0023,4
+EfficientViT-B0,0.7M,ImageNet,OFA (ours),STURM mIoU,0.7595,0.0033,0.0029,4

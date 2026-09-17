@@ -1,0 +1,9 @@
+model,family,n_seeds,micro_mIoU,bg_IoU,water_IoU,macro_mIoU
+index_mndwi_m10,index_mndwi_m10,1,0.69749,0.87205,0.52293,0.59603
+index_mndwi_m05,index_mndwi_m05,1,0.74778,0.90399,0.59156,0.63685
+index_mndwi_zero,index_mndwi_zero,1,0.78909,0.92785,0.65034,0.66597
+index_mndwi_p05,index_mndwi_p05,1,0.83240,0.94801,0.71679,0.69310
+index_mndwi_p10,index_mndwi_p10,1,0.85916,0.95936,0.75895,0.70479
+index_mndwi_p15,index_mndwi_p15,1,0.86852,0.96386,0.77318,0.70401
+index_mndwi_p20,index_mndwi_p20,1,0.86804,0.96506,0.77102,0.68999
+index_mndwi_p25,index_mndwi_p25,1,0.86235,0.96459,0.76011,0.67582

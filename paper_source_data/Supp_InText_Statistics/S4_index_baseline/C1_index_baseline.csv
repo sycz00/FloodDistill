@@ -1,0 +1,15 @@
+model,benchmark,micro_mIoU,micro_flood_IoU,macro_scene_mIoU,macro_scene_flood_IoU
+MNDWI + Otsu (per chip),STURM-Flood,0.6094,0.4922,0.5209,0.3338
+NDWI + Otsu (per chip),STURM-Flood,0.5615,0.4473,0.4470,0.2717
+MNDWI > 0 (fixed),STURM-Flood,0.7467,0.6447,0.5945,0.3891
+Teacher Prithvi-EO-2.0,STURM-Flood,0.7550,0.6434,0.5921,0.3723
+"pseudo-EvIT-OFA N=2,500",STURM-Flood,0.7561,0.6421,0.5909,0.3664
+pseudo-EvIT-OFA N=252,STURM-Flood,0.7530,0.6398,0.5803,0.3537
+S11-EvIT-OFA N=252,STURM-Flood,0.7357,0.6234,0.5610,0.3559
+MNDWI + Otsu (per chip),WorldFloods-v2 flood-only,0.6098,0.4430,0.5748,0.3117
+NDWI + Otsu (per chip),WorldFloods-v2 flood-only,0.5466,0.3561,0.5477,0.2866
+MNDWI > 0 (fixed),WorldFloods-v2 flood-only,0.7627,0.6433,0.6557,0.4179
+Teacher Prithvi-EO-2.0,WorldFloods-v2 flood-only,0.7706,0.6410,0.7126,0.5040
+"pseudo-EvIT-OFA N=2,500",WorldFloods-v2 flood-only,0.7639,0.6297,0.6901,0.4618
+pseudo-EvIT-OFA N=252,WorldFloods-v2 flood-only,0.7601,0.6248,0.6635,0.4141
+S11-EvIT-OFA N=252,WorldFloods-v2 flood-only,0.7701,0.6447,0.6558,0.4072

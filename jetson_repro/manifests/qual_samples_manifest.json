@@ -1,0 +1,71 @@
+{
+  "generated_by": "evaluation/plot_models.py",
+  "n_values": [
+    50,
+    2500
+  ],
+  "samples_per_dataset": 1,
+  "loader": {
+    "s11_split": "test",
+    "eval_img_size": 512,
+    "sturm_normalize": "original",
+    "wf": "n/a (not evaluated by this branch)",
+    "gdacs_index": "diversity_N2500_index.json"
+  },
+  "picks": {
+    "S11": [
+      
+      {
+        "idx": 23,
+        "id": "India_900498_S2Hand.tif"
+      }
+      
+    ],
+    "STURM-S2": [
+      {
+        "idx": 235,
+        "id": "EMSR326_02ANTEQUERA_14_05_1_1.tif"
+      },
+      {
+        "idx": 175,
+        "id": "EMSR292_01CHRISOUPOLI_08_09_2_2.tif"
+      },
+      {
+        "idx": 128,
+        "id": "EMSR292_01CHRISOUPOLI_06_07_2_2.tif"
+      },
+      {
+        "idx": 1425,
+        "id": "EMSR470_AOI01_31_11_2_2.tif"
+      }
+    ],
+    "WorldFloods-v2": [
+      {
+        "idx": 195,
+        "id": "EMSR342_06NORTHNORMANTON_DEL_v1.tif#r1536_c4608"
+      },
+      {
+        "idx": 448,
+        "id": "EMSR347_06MWANZA_DEL_v1.tif#r1024_c6656"
+      },
+      {
+        "idx": 660,
+        "id": "EMSR347_07ZOMBA_DEL_v2.tif#r0_c512"
+      },
+      {
+        "idx": 238,
+        "id": "EMSR342_06NORTHNORMANTON_DEL_v1.tif#r3584_c4096"
+      }
+    ],
+    "GDACS": [
+      {
+        "idx": 681,
+        "id": "pseudo_014529.pt"
+      },
+      {
+        "idx": 1519,
+        "id": "pseudo_009372.pt"
+      }
+    ]
+  }
+}

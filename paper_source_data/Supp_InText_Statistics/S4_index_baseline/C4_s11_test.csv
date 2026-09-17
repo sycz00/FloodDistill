@@ -1,0 +1,7 @@
+model,family,n_seeds,micro_mIoU,micro_mIoU_std,bg_IoU,water_IoU,water_IoU_std,macro_mIoU
+MNDWI > 0  (the labeller itself),index_mndwi_zero,1,0.78909,0.00000,0.92785,0.65034,0.00000,0.66597
+Prithvi 300M teacher,teacher,1,0.89746,0.00000,0.97331,0.82161,0.00000,0.74857
+CE   / Prithvi labels   N=2500,v2_evit_ce_ps_N2500,4,0.87333,0.00138,0.96672,0.77994,0.00222,0.68982
+CE   / MNDWI labels     N=2500,c4mndwi_evit_ce_N2500,4,0.83521,0.00451,0.95362,0.71679,0.00710,0.64394
+OFA  / Prithvi labels   N=2500,v2_evit_ofa_ps_N2500,4,0.87735,0.00256,0.96816,0.78654,0.00454,0.69150
+OFA  / MNDWI labels     N=2500,c4mndwi_evit_ofa_N2500,4,0.87764,0.00426,0.96741,0.78787,0.00734,0.69451

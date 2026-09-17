@@ -1,0 +1,8 @@
+model,family,n_seeds,micro_mIoU,bg_IoU,water_IoU,macro_mIoU
+"MNDWI > 0  (2-band rule, 0 params)",index_mndwi_zero,1,0.78909,0.92785,0.65034,0.66597
+"NDWI > 0   (2-band rule, 0 params)",index_ndwi_zero,1,0.84088,0.96075,0.72101,0.64159
+Prithvi 300M teacher,teacher,1,0.89746,0.97331,0.82161,0.74857
+pseudo-OFA  N=2500  (deployed),v2_evit_ofa_ps_N2500,4,0.87735,0.96816,0.78654,0.69150
+pseudo-OFA  N=252,v2_evit_ofa_ps_N252,4,0.85174,0.96048,0.74300,0.63088
+S11-OFA uncropped  N=252,ncgt_evit_ofa_N252,4,0.85263,0.96008,0.74519,0.65298
+S11-OFA cropped    N=252,b1crop_evit_ofa_N252,4,0.84031,0.95764,0.72297,0.63090

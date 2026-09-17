@@ -1,0 +1,5 @@
+model,family,n_seeds,micro_mIoU,bg_IoU,water_IoU,macro_mIoU
+ncgt_evit_ce_N252,ncgt_evit_ce_N252,4,0.84447,0.95802,0.73092,0.63541
+ncgt_evit_lkd_N252,ncgt_evit_lkd_N252,4,0.83588,0.95498,0.71679,0.63190
+v2_evit_ce_ps_N2500,v2_evit_ce_ps_N2500,4,0.87333,0.96672,0.77994,0.68982
+v2_evit_lkd_ps_N2500,v2_evit_lkd_ps_N2500,4,0.87498,0.96714,0.78281,0.69106

@@ -1,0 +1,8 @@
+# GDACS / Earth Engine acquisition dependencies.
+# Authenticate with earthengine authenticate and pass the project ID.
+
+earthengine-api
+urllib3
+numpy
+rasterio
+tqdm

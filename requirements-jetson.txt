@@ -1,0 +1,13 @@
+# Device-side Python dependencies. TensorRT 8.4 and pycuda come from JetPack.
+# If needed, add /usr/lib/python3.8/dist-packages to PYTHONPATH.
+# Engine building uses /usr/src/tensorrt/bin/trtexec.
+
+numpy
+rasterio
+onnx
+onnxruntime           # CPU EP, main accuracy path on the device
+tqdm
+
+# Provided by JetPack (do NOT pip install):
+#   tensorrt            (8.4.x)
+#   pycuda

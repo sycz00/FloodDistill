@@ -1,0 +1,36 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+
+# Training runs and experiment tracking. Nothing under runs/ is released: checkpoints,
+# exports, logs and evaluation results all come from experiments/*.sh. Anchored, so
+# jetson_repro/runs/ (the shipped device export) is still tracked.
+/runs/
+wandb/
+
+# Downloaded pretrained weights / checkpoints (fetched by datasets/*.sh)
+assets/checkpoints/
+
+# Generated figures, written by `bash figures/make_figures.sh` and the qualitative scripts.
+assets/sturm_orig/
+assets/qual_candidates/
+assets/grad_conflict_n.*
+assets/qual_N*
+assets/tta_error_persistence.*
+
+# An earlier pseudo pool that is no longer used. The current pool is data/pseudo_gdacs/.
+data/pseudo/
+
+# Data files under data/ (the Python package itself stays tracked).
+# Pseudo-label pool (38 GB) with its indices, built in README step 3:
+data/pseudo_gdacs/
+data/**/*.pt
+# 6 MB GEE manifest, rebuilt by data/build_flood_unlabeled_manifest.py:
+data/flood_unlabeled_manifest.csv
+
+# Editable/source installs cloned outside the repo tree are unaffected; local
+# clones placed inside the repo (e.g. ./efficientvit) shouldn't be committed.
+/efficientvit/
+
+# Retired code and notes, kept locally, not part of the release.
+wandb/

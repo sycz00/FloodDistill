@@ -1,0 +1,52 @@
+objective,arm,family,eval_tensor,effective_gsd_m,metric,mean,std,n_seeds
+CE,S11 uncropped,ncgt_evit_ce_N252,128,10.0,micro_mIoU_clean,0.72109,0.00468,4
+CE,S11 uncropped,ncgt_evit_ce_N252,224,5.71,micro_mIoU_clean,0.73969,0.00177,4
+CE,S11 uncropped,ncgt_evit_ce_N252,512,2.5,micro_mIoU_clean,0.71708,0.01777,4
+CE,S11 cropped 264,b1crop_evit_ce_N252,128,10.0,micro_mIoU_clean,0.68643,0.01315,4
+CE,S11 cropped 264,b1crop_evit_ce_N252,224,5.71,micro_mIoU_clean,0.72396,0.01118,4
+CE,S11 cropped 264,b1crop_evit_ce_N252,512,2.5,micro_mIoU_clean,0.72560,0.01577,4
+CE,pseudo,v2_evit_ce_ps_N252,128,10.0,micro_mIoU_clean,0.69844,0.02180,4
+CE,pseudo,v2_evit_ce_ps_N252,224,5.71,micro_mIoU_clean,0.72495,0.01198,4
+CE,pseudo,v2_evit_ce_ps_N252,512,2.5,micro_mIoU_clean,0.73542,0.00342,4
+Logit-KD,S11 uncropped,ncgt_evit_lkd_N252,128,10.0,micro_mIoU_clean,0.72026,0.00206,4
+Logit-KD,S11 uncropped,ncgt_evit_lkd_N252,224,5.71,micro_mIoU_clean,0.73768,0.00363,4
+Logit-KD,S11 uncropped,ncgt_evit_lkd_N252,512,2.5,micro_mIoU_clean,0.73296,0.00865,4
+Logit-KD,S11 cropped 264,b1crop_evit_lkd_N252,128,10.0,micro_mIoU_clean,0.69748,0.00443,4
+Logit-KD,S11 cropped 264,b1crop_evit_lkd_N252,224,5.71,micro_mIoU_clean,0.72513,0.00507,4
+Logit-KD,S11 cropped 264,b1crop_evit_lkd_N252,512,2.5,micro_mIoU_clean,0.70916,0.01491,4
+Logit-KD,pseudo,v2_evit_lkd_ps_N252,128,10.0,micro_mIoU_clean,0.71392,0.02220,4
+Logit-KD,pseudo,v2_evit_lkd_ps_N252,224,5.71,micro_mIoU_clean,0.74225,0.00880,4
+Logit-KD,pseudo,v2_evit_lkd_ps_N252,512,2.5,micro_mIoU_clean,0.75332,0.00224,4
+OFA,S11 uncropped,ncgt_evit_ofa_N252,128,10.0,micro_mIoU_clean,0.73142,0.00070,4
+OFA,S11 uncropped,ncgt_evit_ofa_N252,224,5.71,micro_mIoU_clean,0.74423,0.00386,4
+OFA,S11 uncropped,ncgt_evit_ofa_N252,512,2.5,micro_mIoU_clean,0.73568,0.00627,4
+OFA,S11 cropped 264,b1crop_evit_ofa_N252,128,10.0,micro_mIoU_clean,0.72241,0.00520,4
+OFA,S11 cropped 264,b1crop_evit_ofa_N252,224,5.71,micro_mIoU_clean,0.74224,0.00476,4
+OFA,S11 cropped 264,b1crop_evit_ofa_N252,512,2.5,micro_mIoU_clean,0.73555,0.01141,4
+OFA,pseudo,v2_evit_ofa_ps_N252,128,10.0,micro_mIoU_clean,0.72671,0.01135,4
+OFA,pseudo,v2_evit_ofa_ps_N252,224,5.71,micro_mIoU_clean,0.74625,0.00849,4
+OFA,pseudo,v2_evit_ofa_ps_N252,512,2.5,micro_mIoU_clean,0.75299,0.00718,4
+CE,margin pseudo-S11 uncropped,,128,10.0,margin_micro,-0.02265,,4
+CE,margin pseudo-S11 uncropped,,224,5.71,margin_micro,-0.01474,,4
+CE,margin pseudo-S11 uncropped,,512,2.5,margin_micro,0.01834,,4
+CE,margin pseudo-S11 cropped 264,,128,10.0,margin_micro,0.01201,,4
+CE,margin pseudo-S11 cropped 264,,224,5.71,margin_micro,0.00099,,4
+CE,margin pseudo-S11 cropped 264,,512,2.5,margin_micro,0.00983,,4
+Logit-KD,margin pseudo-S11 uncropped,,128,10.0,margin_micro,-0.00634,,4
+Logit-KD,margin pseudo-S11 uncropped,,224,5.71,margin_micro,0.00457,,4
+Logit-KD,margin pseudo-S11 uncropped,,512,2.5,margin_micro,0.02036,,4
+Logit-KD,margin pseudo-S11 cropped 264,,128,10.0,margin_micro,0.01644,,4
+Logit-KD,margin pseudo-S11 cropped 264,,224,5.71,margin_micro,0.01712,,4
+Logit-KD,margin pseudo-S11 cropped 264,,512,2.5,margin_micro,0.04416,,4
+OFA,margin pseudo-S11 uncropped,,128,10.0,margin_micro,-0.00471,,4
+OFA,margin pseudo-S11 uncropped,,224,5.71,margin_micro,0.00202,,4
+OFA,margin pseudo-S11 uncropped,,512,2.5,margin_micro,0.01730,,4
+OFA,margin pseudo-S11 cropped 264,,128,10.0,margin_micro,0.00430,,4
+OFA,margin pseudo-S11 cropped 264,,224,5.71,margin_micro,0.00401,,4
+OFA,margin pseudo-S11 cropped 264,,512,2.5,margin_micro,0.01744,,4
+CE,pseudo - S11 uncropped,v2_evit_ce_ps_N252 - ncgt_evit_ce_N252,128,10.0,paired_delta,-0.02521,wins=12/46,46
+CE,pseudo - S11 cropped,v2_evit_ce_ps_N252 - b1crop_evit_ce_N252,128,10.0,paired_delta,-0.00558,wins=21/46,46
+Logit-KD,pseudo - S11 uncropped,v2_evit_lkd_ps_N252 - ncgt_evit_lkd_N252,128,10.0,paired_delta,-0.01201,wins=20/46,46
+Logit-KD,pseudo - S11 cropped,v2_evit_lkd_ps_N252 - b1crop_evit_lkd_N252,128,10.0,paired_delta,0.00088,wins=29/46,46
+OFA,pseudo - S11 uncropped,v2_evit_ofa_ps_N252 - ncgt_evit_ofa_N252,128,10.0,paired_delta,-0.01654,wins=14/46,46
+OFA,pseudo - S11 cropped,v2_evit_ofa_ps_N252 - b1crop_evit_ofa_N252,128,10.0,paired_delta,-0.01037,wins=24/46,46

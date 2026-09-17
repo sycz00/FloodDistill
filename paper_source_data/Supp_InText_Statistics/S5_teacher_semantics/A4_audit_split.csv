@@ -1,0 +1,10 @@
+quantity,subset,n,mean,std,s42,s64,s91,s107
+student-teacher agreement %,"flagged, IN N=2500 training",961,95.9950,0.6153,96.46,96.57,95.32,95.63
+student-teacher agreement %,"flagged, HELD OUT",1981,96.1875,1.1700,97.83,96.21,95.25,95.46
+student-teacher agreement %,"flagged, all",2942,96.1250,0.9503,97.38,96.33,95.28,95.51
+mask IoU,"flagged, IN N=2500 training",961,0.7810,0.0170,0.7688,0.7766,0.7726,0.806
+mask IoU,"flagged, HELD OUT",1981,0.8577,0.0052,0.8558,0.8568,0.853,0.865
+mask IoU,"flagged, all",2942,0.8326,0.0089,0.8273,0.8306,0.8267,0.8457
+false-alarm rate %,teacher-empty baselines (all HELD OUT),8883,1.9325,0.7657,2.8,2.21,1.73,0.99
+mask IoU,teacher-empty baselines,8883,0.5999,0.0248,0.5766,0.5822,0.612,0.6289
+mask IoU,whole pool,23720,0.6240,0.0240,0.606,0.604,0.631,0.6548

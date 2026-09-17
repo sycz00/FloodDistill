@@ -1,0 +1,7 @@
+{
+  "float_val_mIoU": 0.855442,
+  "qat_val_mIoU": 0.846502,
+  "float_test_mIoU": 0.865632,
+  "qat_test_mIoU": 0.86602,
+  "mIoU_drop": -0.000388
+}

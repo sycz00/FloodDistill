@@ -1,0 +1,8 @@
+{
+  "sturm_mIoU": 0.743594,
+  "sturm_flood_IoU": 0.626528,
+  "sturm_pixel_acc": 0.88706,
+  "sturm_f1": 0.84775,
+  "sturm_flood_f1": 0.770387,
+  "arch": "micro_m"
+}

@@ -1,0 +1,76 @@
+{
+  "generated_by": "experiments/fig_qualitative_batches.py",
+  "perturbation": {
+    "axis": "haze",
+    "level": 0.1,
+    "apply_with": "--haze 0.1"
+  },
+  "loader": {
+    "eval_img_size": 512,
+    "sturm_normalize": "original",
+    "wf": "split=test, tile_size=512, normalize=s11",
+    "s11_split": "n/a (not evaluated by this figure)"
+  },
+  "rgb": {
+    "map": "min(rho/K, 1) on B4/B3/B2",
+    "ceiling": 0.4
+  },
+  "picks": {
+    "STURM-S2": [
+      {
+        "idx": 595,
+        "id": "EMSR419_AOI04_04_06_2_2.tif"
+      }
+    ],
+    "WorldFloods-v2": [
+      {
+        "idx": 630,
+        "id": "EMSR347_07ZOMBA_DEL_MONIT01_v1.tif#r3072_c5120"
+      }
+    ]
+  },
+  "panels": [
+    {
+      "panel": "qual_haze010_batch01.png",
+      "batch": 1,
+      "rows": [
+        {
+          "dataset": "sturm",
+          "id": "EMSR419_AOI04_04_06_2_2.tif",
+          "scene": "EMSR419_AOI04_DEL_PRODUCT",
+          "water_frac": 0.1276,
+          "flood_iou_clean": {
+            "teacher": 0.7967,
+            "unet": 0.7915,
+            "gt": 0.4827,
+            "ofa": 0.8153
+          },
+          "flood_iou_perturbed": {
+            "teacher": 0.7817,
+            "unet": 0.7388,
+            "gt": 0.1524,
+            "ofa": 0.7919
+          }
+        },
+        {
+          "dataset": "wf",
+          "id": "EMSR347_07ZOMBA_DEL_MONIT01_v1.tif#r3072_c5120",
+          "scene": "EMSR347_07ZOMBA_DEL_MONIT01_v1.tif",
+          "water_frac": 0.0308,
+          "flood_iou_clean": {
+            "teacher": 0.3649,
+            "unet": 0.3197,
+            "gt": 0.1226,
+            "ofa": 0.392
+          },
+          "flood_iou_perturbed": {
+            "teacher": 0.5007,
+            "unet": 0.4966,
+            "gt": 0.0411,
+            "ofa": 0.5083
+          }
+        }
+      ]
+    }
+  ]
+}
