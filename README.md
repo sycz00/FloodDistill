@@ -2,12 +2,12 @@
 
 Code for *Cross-Architecture Foundation-Model Distillation for Edge Flood
 Segmentation* (Schmalstieg, Müller, Samek).
-[preprint]()
+[preprint](<https://arxiv.org/abs/2609.20441>)
 
 The frozen Prithvi-EO-2.0-300M Sen1Floods11 checkpoint supervises an
 EfficientViT-B0 student on additional GDACS Sentinel-2 imagery. The paper compares
 training sources at N=252, scales the pseudo-label pool to N=2,500, and evaluates
-a ReLU6/QAT student on a Jetson Xavier NX. The teacher is not fine-tuned again here.
+a ReLU6/QAT student on a Jetson Xavier NX.
 
 <p align="center">
   <a href="paper_source_data/Figure_01_Pipeline_Overview/pipeline.pdf">
@@ -258,14 +258,15 @@ Two parts of the code are adapted from EfficientViT (Apache-2.0); they are liste
 
 ## Citation
 
-The preprint is not online yet. Please cite it as below; the arXiv ID follows once it exists.
-
+Its currently as preprint only. Please cite it as below;
 ```bibtex
-@misc{schmalstieg2026flooddistill,
-  title         = {Cross-Architecture Foundation-Model Distillation for Edge Flood Segmentation},
-  author        = {Schmalstieg, Fabian and M{\"u}ller, Karsten and Samek, Wojciech},
-  year          = {2026},
-  eprint        = {XXXX.XXXXX},
-  archivePrefix = {arXiv}
+@misc{schmalstieg2026flooddistillation,
+  title={Cross-Architecture Foundation-Model Distillation for Edge Flood Segmentation},
+  author={Fabian Schmalstieg and Karsten Mueller and Wojciech Samek},
+  year={2026},
+  eprint={2609.20441},
+  archivePrefix={arXiv},
+  primaryClass={cs.CV},
+  url={https://arxiv.org/abs/2609.20441},
 }
 ```
