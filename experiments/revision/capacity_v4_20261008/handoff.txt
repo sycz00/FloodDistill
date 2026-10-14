@@ -1,0 +1,11 @@
+Capacity v4,8October2026
+Read corrected prompt; only appendixB/E and U6 specification opened for their instructed stages.
+Fast supervisor set reproduced after host-CUDA retry; failed sandbox receipts preserved. Slow sensitivity/index sweeps not rerun.
+14 substantive GPU diagnostic jobs completed. Exact native STE repair passed8 nonbinary-scale/bias tests and4cells x8TRAIN batches. Full live-teacher task audit passed. Largest selected v2 source rescore delta0.138pp.
+W4A4 TRAIN forward agreement remains approximately91.8%; original v2 source scores rescored, original external conclusions not reused for the adopted simulator.
+Detached Stage1 completion worker is alive and waiting for foreign depth-training processes on both GPUs. No queued training is currently running; no foreign job touched. Poll interval2seconds.
+Queued:4sensitivity sweeps,3LR optimizer runs,then protocol freeze before auto-launching21Stage2 FP runs (3compatible warmups reused).
+Stage1 actual recordedGPU-command time378.959s; outstanding5400s reservation stays within7200s. Stage2 future reservation21420s. Combined remaining bound7.45GPUh, excluding foreign-job waiting.
+Stages3-8 are not queued yet. The entire programme is not complete or fully scheduled.
+Control from FloodDistill: /home/schmalstieg/miniconda3/envs/esi/bin/python experiments/revision/capacity_v4_20261008/stage1_completion_queue/revision_queue.py status|pause|resume|stop --manifest experiments/revision/capacity_v4_20261008/stage1_completion_queue/manifest.json
+After Stage2 is created, use the same control actions with stage2_fp/revision_queue.py and stage2_fp/manifest.json.

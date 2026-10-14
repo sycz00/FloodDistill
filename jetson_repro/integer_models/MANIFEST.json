@@ -1,0 +1,37 @@
+{
+  "status": "workstation_candidates_for_Jetson_validation",
+  "fully_integer_verified": false,
+  "R4_parameters": 12230,
+  "EfficientViT_B0_parameters": 704714,
+  "files": {
+    "r4_float.pt": {
+      "bytes": 84429,
+      "sha256": "be8cf8fe3990c470a8227aa349b6fed7a3b44327105a5adf40458df2ce892ec5",
+      "source_path": "experiments/revision/jetson_integer_20261014T101741Z/bundle/R4/checkpoint_float.pt"
+    },
+    "evit_b0_qat.pt": {
+      "bytes": 3093589,
+      "sha256": "9c59bf5bebb31dc2da42d4da42297f0c96a734ab270e8b77fbafcd1701de2924",
+      "source_path": "experiments/revision/jetson_integer_20261014T101741Z/bundle/B0/qat128/checkpoint_qat.pt"
+    },
+    "r4_int8_ptq.onnx": {
+      "bytes": 101639,
+      "sha256": "f46aee69fea13334760cb1f2078160862247c48ec1d09d027fe2fefe58b1aad5",
+      "source_path": "experiments/revision/jetson_integer_20261014T101741Z/bundle/R4/percentile_pc.onnx"
+    },
+    "evit_b0_int8_qat.onnx": {
+      "bytes": 3068929,
+      "sha256": "5bcbd1bad6e5ab7aedc716d8d638f4cd7561ce16f51afc6702cfd51dd92ba47b",
+      "source_path": "experiments/revision/jetson_integer_20261014T101741Z/bundle/B0/qat128/model_qdq.onnx"
+    },
+    "r4_architecture.py": {
+      "bytes": 4594,
+      "sha256": "e183da27b0fd96077af5d9bc9143e932d302f3b9ff9bd1d9074d53fb1e6de84d",
+      "source_path": "experiments/revision/capacity_v4_20261008/code/v5/rungs.py"
+    }
+  },
+  "R4_source_mIoU": 0.881788729191131,
+  "B0_source_mIoU": 0.8670426098971538,
+  "B0_QAT_updates": 128,
+  "B0_strict_logit_parity": "failed; actual exported runtime evaluated separately"
+}

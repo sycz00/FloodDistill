@@ -1,0 +1,5 @@
+# Reviewer closure status
+
+The actual letter is paper/review.docx. R1.1/R2.1 need restrained novelty language and the measured edge-control gates. R1.2/R2.4 reuse MobileNet/LightFormer comparisons and add the new sealed readout. R2.3 retains bounded OFA update evidence, with no universal wall-clock speed claim. R1.3/R2.2 require data roles, the author's STURM history, benchmark exposure and the paired label-source results. R1.4 requires a consolidated component table. R1.5 requires surface-water/flood-application terminology. R2.5 uses threshold-free comparison, event uncertainty and failure strata. R1.6/R2.6 need independent-reference dry-window diagnostics, cautious deployment/power wording and the ordinary-dry limitation.
+
+The manuscript and response remain author work; this queue does not submit or edit them. Numerical corrections are in revision_corrections.csv. STURM did not choose OFA/EfficientViT; null additional teacher/OOD/saliency investigations remain author-reported development exposure.

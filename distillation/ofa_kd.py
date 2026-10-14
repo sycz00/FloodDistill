@@ -187,7 +187,7 @@ def ofa_loss(
     per_pixel  = (term1 + term2)                                       # (B, H, W)
     valid_loss = per_pixel[valid]
     if valid_loss.numel() == 0:
-        return branch_logits.new_zeros(())
+        return branch_logits.sum() * 0.0
     if pixel_weights is not None:
         w = pixel_weights[valid]
         w = w / (w.mean() + 1e-8)   # mean 1, keeps the loss scale
@@ -200,6 +200,7 @@ def _kd_loss_weighted(
     teacher_logits: Tensor,
     temperature: float,
     pixel_weights: Tensor,
+    valid_mask: Tensor | None = None,
 ) -> Tensor:
     """KD loss with per-pixel weights (B, H, W), e.g. teacher confidence.
 
@@ -209,6 +210,10 @@ def _kd_loss_weighted(
     log_p_s  = F.log_softmax(student_logits.float() / temperature, dim=1)
     p_t      = F.softmax(teacher_logits.float()  / temperature, dim=1)
     kl_pixel = F.kl_div(log_p_s, p_t, reduction="none").sum(dim=1)   # (B, H, W)
+    if valid_mask is not None:
+        kl_pixel, pixel_weights = kl_pixel[valid_mask], pixel_weights[valid_mask]
+        if kl_pixel.numel() == 0:
+            return student_logits.sum() * 0.0
     w        = pixel_weights / (pixel_weights.mean() + 1e-8)
     return (temperature ** 2) * (kl_pixel * w).mean()
 
@@ -507,7 +512,7 @@ class OFALoss(nn.Module):
         loads with build_student() as usual.
 
         teacher is frozen and kept outside nn.Module tracking. student is EfficientViT-B0 or
-        anything with .model.backbone. alpha is the KD weight on the main output (0..1),
+        a student with an explicitly marked spatial encoder. alpha is the KD weight on the main output (0..1),
         ofa_alpha the weight of the branch losses (paper: 0.3-1.0). gamma >= 1 is the OFA
         modulation exponent, the paper reports 1.1-1.4 as best; gamma=1 is plain KD per
         branch. ignore_index is left out of all losses.
@@ -556,6 +561,7 @@ class OFALoss(nn.Module):
         sses_proxy_mode: str = "spectral_continuous",
         branch_conflict_mode: bool = False,
         ofa_branch_warmup_epoch: int = 0,
+        kd_valid_only: bool = False,
     ) -> None:
         super().__init__()
         if disc_weighted and uncertainty_weighted:
@@ -581,6 +587,7 @@ class OFALoss(nn.Module):
         self.temperature          = temperature
         self.gamma                = gamma
         self.ignore_index         = ignore_index
+        self.kd_valid_only        = kd_valid_only
         self.disc_weighted        = disc_weighted
         self.uncertainty_weighted = uncertainty_weighted
         self.dist_match_alpha     = dist_match_alpha
@@ -716,6 +723,18 @@ class OFALoss(nn.Module):
             mode_str = " ".join(modes) if modes else "standard"
             print(f"[OFALoss] hook: student.model.backbone (EfficientViT)  "
                   f"ofa_alpha={self.ofa_alpha}  gamma={self.gamma}  mode={mode_str}")
+        elif (hasattr(student, "encoder") and
+              getattr(student.encoder, "_ofa_stage_features_type", None) == "spatial_list"):
+            def _encoder_hook(mod, inp, out):
+                if not isinstance(out, (list, tuple)) or not out:
+                    raise RuntimeError("OFA encoder must return nonempty spatial feature maps.")
+                if any(not isinstance(f, Tensor) or f.ndim != 4 for f in out):
+                    raise RuntimeError("OFA encoder features must be BCHW tensors.")
+                self._stage_feats.clear()
+                self._stage_feats.extend(out)
+            self._hooks.append(student.encoder.register_forward_hook(_encoder_hook))
+            print(f"[OFALoss] hook: student.encoder ({type(student.encoder).__name__})  "
+                  f"ofa_alpha={self.ofa_alpha}  gamma={self.gamma}")
         else:
             print("[OFALoss] WARNING: student architecture not recognised; "
                   "backbone hook not registered.  OFA branch losses will be zero.")
@@ -868,12 +887,14 @@ class OFALoss(nn.Module):
                 teacher_logits.to(dtype=student_logits.dtype),
                 self.temperature,
                 pixel_weights,
+                valid_mask=(masks != self.ignore_index) if self.kd_valid_only else None,
             )
         else:
             kd = kd_loss(
                 student_logits,
                 teacher_logits.to(dtype=student_logits.dtype),
                 self.temperature,
+                valid_mask=(masks != self.ignore_index) if self.kd_valid_only else None,
             )
         total = (1.0 - self.alpha) * f + self.alpha * kd
 

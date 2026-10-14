@@ -1,0 +1,60 @@
+version: capacity_v5_addendum_20261009
+parent_protocol: protocol_v4.yaml (sha 2f97f32a8e385601fb88df50a916c77b6dda0aa010e20062bffe10af43f6b01a) - all ground rules still apply
+authority: user directive 2026-10-09 (questions Q1-Q5); overrides the v4 stage ORDER only, not data roles or statistics
+frozen_before_any_v5_result: true
+known_before_freeze:
+  - Stage1 1.6 single-seed screen: A3 W4A8 QAT lr5e-4 S11-val 85.91 vs FP parent 82.70 (source only)
+  - Stage2 S11-val seed means (A0 1 seed, A3 2 seeds, X1 3 seeds, others 4)
+  - v2 seed-42 external readouts of A0/A1/A3 FP and v2 QAT arms; teacher and MNDWI fixed external readouts
+  - paper Table II (pretrained B0, N=2500): CE/LKD/OFA within 0.2-1.3 pp mIoU
+code: code/v5/{rungs,train_v5,lowbit_v5,terminal_v5,select_v5}.py (opt-in; capsule 297031f5f4ae1df5 untouched)
+evaluator_parity: terminal_v5 reproduces v2 terminal_A3_FP_s42 per-image counts exactly (3,550 images, 0 differences)
+
+E1_external_readout:
+  scope: EVERY completed Stage2 FP checkpoint and EVERY v5 checkpoint (no external-based subset selection)
+  benchmarks: S11-test (S11_TEST512_LEGACY), STURM (P3_STURM_FINITE_SIX_BAND_SUPPORT_MASK_V1), WF (P3_WF_NATIVE_ZERO_PAD512_V1); full + known-overlap-excluded
+  role: frozen secondary readout; may not change any method, rung, LR, seed or gate
+  comparators: teacher and MNDWI>0 fixed counts from prompt5_closure/tables/current_full_pooled_counts.csv
+  efficiency_axis: parameters, MACs/pixel at 512 (measured by hooks), theoretical weight bytes at FP32/INT8/INT4
+
+E2_low_bit_recipe (Q1):
+  graph: A3; seeds: [42, 64, 91, 107]; parent: Stage2 FP best checkpoint of the same seed
+  arms:
+    Q48: W4A8 QAT, integer-domain simulator, lr 5e-4, wd 1e-5, clip 1, 1560 updates, BN frozen
+    Q4b: W4A4 body + stem input activation A8 (4-bit body, disclosed exception), same recipe
+    F48: matched control - identical continuation with QDQ bypassed (same prepared graph, data order, optimizer)
+  H6a_quantization_specific_gain: Q48 - F48 paired S11-val mIoU, 4 seeds; claim only if 95% CI lower bound > 0.
+    Expected (prior): CI includes 0 or is negative -> the Stage1.6 gain is extra optimisation, not a low-bit effect.
+  H6b_low_bit_vs_teacher: Q48 and Q4b vs teacher, per-event water-IoU on STURM and WF, seed-averaged within event,
+    event bootstrap (10,000, seed 1729). non-inferior if one-sided lower bound > -2.0 pp; "better than teacher" only if lower bound > 0.
+    S11-test: in-domain gap reported without margin.
+  H6c_four_bit_body: Q4b within 1.0 pp of Q48 (4-seed S11-val mean) -> 4-bit body viable.
+
+E3_capacity_floor (Q4 part 1):
+  rungs (params): R1 linear 14; R2 per-pixel MLP 418; R3 tiny conv 1,058; R4 pure-conv context 12,230; A3N 20,250; A3 30,922 (reference)
+  recipe: Stage2 LKD recipe, scratch, ReLU6; per-rung LR grid {5e-5, 5e-4, 5e-3} at seed 42 (A3 5e-5 reused from Stage2)
+  lr_selection: argmax seed-42 S11-val mIoU (ties -> smaller LR); then seeds 64/91/107 at the selected LR
+  floor_rule_for_E4 (S11-val only): smallest rung whose 4-seed mean >= A3(selected LR) 4-seed mean - 1.0 pp; none -> undefined
+  external_knee (readout only): smallest rung whose per-event water-IoU difference to the teacher has one-sided
+    95% lower bound > -2.0 pp on BOTH STURM and WF (sensitivity 1.0 / 3.0 pp). "undefined" is a valid outcome.
+  per_pixel_gate: R1/R2 neighbour-perturbation check must pass
+
+E4_training_method_comparison (Q4 part 2):
+  methods: LKD (0.5 focal + 0.5 T^2 KL, T4; live teacher), OFA (LKD + 0.3 OFA exit branches, gamma 1.2),
+    CE (focal on teacher hard masks only), SUP (focal on S11 human labels, 252-chip train split, matched 7,800 updates)
+  models: A0 (705k) and A3 (31k) at the recipe LR 5e-5, 4 seeds each; floor rung F (from E3 rule) at its selected LR, 4 seeds
+    (OFA only for staged EfficientViT graphs; for per-pixel/plain-conv rungs OFA is undefined and not run)
+  disclosure: F's LR was selected under LKD (favours LKD slightly); A0/A3 use one shared LR for all methods
+  H7_distillation_gap_grows_as_capacity_shrinks:
+    contrast D(m) = KD(m) - CE(m) per seed (KD in {LKD, OFA}); interaction I = D(small) - D(A0), small in {A3, F}
+    primary: S11-val, paired-seed 95% CI of I excludes 0 with I > 0
+    secondary readout: STURM/WF water-IoU and mIoU, paired-seed and event-bootstrap CIs
+  H7b_teacher_needed_at_all: LKD(m) - SUP(m) per model, same statistics (OOD expected to favour LKD; paper N=252: +3.6 pp STURM)
+  H7c_OFA_over_LKD: OFA - LKD per model; claim only if CI excludes 0 (paper pretrained B0: within noise)
+
+statistics: seed mean +- sample SD; paired-seed Student-t 95% CI; event bootstrap separate; MDE = measured paired-seed SD
+  (Stage2 scratch S11-val seed SD 0.65-1.0 pp => 4-seed CI half-width ~1.5 pp); sub-MDE differences unresolved
+budget_gpu_hours: {E1: 1.0, E2: 2.0, E3: 9.0, E4: 7.0}  # programme total stays <= 30 GPU-h (6.0 used before v5)
+stop_rules:
+  - a failing smoke/functional gate blocks that arm, never silently substitutes another
+  - one retry for a diagnosed technical failure; preserve all attempts

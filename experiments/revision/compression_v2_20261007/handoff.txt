@@ -1,0 +1,71 @@
+Compression v2 handoff, host-verified at 2026-10-07T20:51:00.509419+00:00
+Status: detached worker alive; A1_FP_s42 and A3_FP_s42 training on separate RTX4090 UUIDs.
+Main queue snapshot: 3 succeeded (two checks plus teacher transform), 2 running, 94 pending, 0 failed, 0 blocked.
+No main FP/QAT run or terminal benchmark result is complete at this handoff.
+Worker PID 955776, observed PPID1 and its own session; CLI parent has exited.
+Manifest: /home/schmalstieg/repos/FloodDistill/experiments/revision/compression_v2_20261007/pilot_final/manifest.json
+State: /home/schmalstieg/repos/FloodDistill/experiments/revision/compression_v2_20261007/pilot_final/manifest.state.json
+Worker log: /home/schmalstieg/repos/FloodDistill/experiments/revision/compression_v2_20261007/pilot_final/worker.log
+Attempt logs: /home/schmalstieg/repos/FloodDistill/experiments/revision/compression_v2_20261007/pilot_final/logs
+Launch identity, checks and dependency list: /home/schmalstieg/repos/FloodDistill/experiments/revision/compression_v2_20261007/launch_receipt.json
+Frozen source: /home/schmalstieg/repos/FloodDistill/experiments/revision/compression_v2_20261007/frozen/140df39f28974301
+Live host process visibility matters: authoritative host snapshot is status_host_snapshot.json.
+The earlier sandbox-only status_cli_snapshot.json hid the host PID and is not liveness evidence.
+
+Completed verification: original2500 cached files fully rehashed; teacher checkpoint SHA and strict compatibility verified;
+graph legality/shapes, metric identities/equivariance/shrinkage, QDQ/BN/mode isolation, exact optimizer-state resume,
+source-only Trainer integration, source gates/technical fallback, detached sentinel/time-cap child cleanup,
+artifact CPU prediction validation, collector integrity/source event pairing, and final99-node DAG check passed.
+Real CUDA batch16 FP/QAT preflight and full allowed89-image quantizer calibration timings passed.
+Teacher rank32 transform/cache completed on fixed256 fit plus256 disjoint interaction training-event images.
+
+Autonomous finite schedule:
+A1/A3 common FP50epochs; A0 anchor; fixed S11-val-input PTQ W8A8/W4A8/W4A4;
+seed42 matched B1/B2/B3 fixed1560-update QAT at A1W4A8, A3W4A8, A3W8A8 and A3W4A4.
+B3 exact identity skips duplicate B2 training. Source gate requires >=0.005 mIoU above both B1 and B2.
+Predeclared hard cell A3W4A4; fallback A1W4A8 only if hard cell is technically invalid.
+If gate passes: random/quant/independent/total spectrum controls; own-seed64/91/107 matched confirmation;
+MobileNetV3-Small native Hardswish/ReLU scratch seed42 W4A8; beta0.5x/2x matched B2/B3 arms.
+Every source branch closes before checkpoint freeze and any S11test/STURM/WorldFloods terminal readout.
+Terminal work includes full and known-overlap-excluded support, export validation, actual bytes/MACs,
+RTX4090 TorchScript batch-one runtime20warmups/200synchronized repeats, and automatic collection.
+Foreign GPU work is never stopped; shared UUID locks/headroom and host admission remain enabled.
+Poll interval5seconds plus state/hash/admission bookkeeping. No automatic GPU retry or recipe reduction.
+
+Budget: main42300 + preflight reservations660 =42960 GPU seconds (11.933 GPU-hours), cap43200 (12 hours).
+Each GPU command has an enforced time cap with owned process-group cleanup and checkpoint grace.
+FP cap1600s, QAT480s; MobileNet FP2400s/QAT600s; terminal240s or330s for native FP/MobileNet.
+Measured forecast per50-epoch EViT warmup874.8s; per10-epoch feature QAT202.8s before standalone final diagnostics.
+Earlier full clean evaluation took61-65s; current serial readers/export are unmeasured, with larger caps.
+Rough awake-host wall forecast:1-2h if expansion stops,3-4h if all conditional work runs; caches/contention/terminal work can change this.
+The12-hour limit counts aggregate GPU-command time, not12 wall-clock hours and not a guaranteed finish time.
+
+Exact queue controls (run on the host):
+/home/schmalstieg/miniconda3/envs/esi/bin/python /home/schmalstieg/repos/FloodDistill/experiments/revision/compression_v2_20261007/pilot_final/revision_queue.py status --manifest /home/schmalstieg/repos/FloodDistill/experiments/revision/compression_v2_20261007/pilot_final/manifest.json
+/home/schmalstieg/miniconda3/envs/esi/bin/python /home/schmalstieg/repos/FloodDistill/experiments/revision/compression_v2_20261007/pilot_final/revision_queue.py pause --manifest /home/schmalstieg/repos/FloodDistill/experiments/revision/compression_v2_20261007/pilot_final/manifest.json
+/home/schmalstieg/miniconda3/envs/esi/bin/python /home/schmalstieg/repos/FloodDistill/experiments/revision/compression_v2_20261007/pilot_final/revision_queue.py resume --manifest /home/schmalstieg/repos/FloodDistill/experiments/revision/compression_v2_20261007/pilot_final/manifest.json
+/home/schmalstieg/miniconda3/envs/esi/bin/python /home/schmalstieg/repos/FloodDistill/experiments/revision/compression_v2_20261007/pilot_final/revision_queue.py stop --manifest /home/schmalstieg/repos/FloodDistill/experiments/revision/compression_v2_20261007/pilot_final/manifest.json
+pause prevents new admissions; active jobs finish. stop prevents new admissions and exits after active jobs finish.
+resume reconciles the same immutable manifest; do not start the superseded uninitialized pilot/manifest.json.
+The worker survives editor/terminal closure while the host stays awake; it does not run during sleep/shutdown.
+
+Automatic outputs after all branches reach terminal queue states:
+/home/schmalstieg/repos/FloodDistill/experiments/revision/compression_v2_20261007/results/pilot_collection.json
+/home/schmalstieg/repos/FloodDistill/experiments/revision/compression_v2_20261007/results/pilot_collection.txt
+/home/schmalstieg/repos/FloodDistill/experiments/revision/compression_v2_20261007/results/pilot_collection_metrics.csv
+/home/schmalstieg/repos/FloodDistill/experiments/revision/compression_v2_20261007/results/pilot_collection_source_metrics.csv
+/home/schmalstieg/repos/FloodDistill/experiments/revision/compression_v2_20261007/results/pilot_collection_source_comparisons.csv
+/home/schmalstieg/repos/FloodDistill/experiments/revision/compression_v2_20261007/results/pilot_collection_outcomes.csv
+/home/schmalstieg/repos/FloodDistill/experiments/revision/compression_v2_20261007/results/pilot_collection_comparisons.csv
+Collector retains failed/blocked/skipped arms, source event CIs, paired terminal event CIs, seed variation,
+initial/final raw interaction/flip diagnostics, verified artifact hashes and a source-only0.01-tolerance size summary.
+Large checkpoints/exports: /data1/schmalstieg/flooddistill/revision_20261005/compression_v2_20261007
+Training feature cache tensors under results/ are ignored by git.
+
+Scientific boundaries: original restored cohort,0FPS replacements; raw-cache hard-target generation lineage has historical gaps.
+The mechanistic QAT pilot has QDQ enabled for all10epochs; historical QAT had its first epoch off.
+W8/W4 are fake-quant simulations with floating-point CUDA kernels and actual serialized overhead; no packed4-bit deployment or XavierNX result.
+A2 is predeclared but deferred. Extra MobileNet seeds, matched ReLU6OFA continuation, faithful QFD/SQuaT,
+focused related-work positioning and time-matched ordinary KD remain required before publishable novelty claims.
+Historical unsuccessful teacher-derived STURM criteria were disclosed; these benchmarks are not claimed historically untouched.
+No mechanism gain, OOD gain or deployment compression claim is established while this queue is running.

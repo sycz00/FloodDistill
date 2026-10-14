@@ -1,0 +1,24 @@
+{
+  "INT4": "not_started_gate_closed",
+  "Jetson": "pending_access_to_device; historical environment retained",
+  "QAT_B0": "128 updates complete; source runtime measured; strict logit parity failed",
+  "QAT_R4": "one-update smoke/reload/export/source runtime measured; no efficacy claim",
+  "models": {
+    "B0": {
+      "device_status": "pending_native_build_accuracy_latency_memory_and_kernel_audit",
+      "original_failure_receipt": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/attempts/B0.attempt1.json",
+      "parameters": 704714,
+      "recommended_device_probe": "qat128/model_qdq.onnx"
+    },
+    "R4": {
+      "device_status": "pending_native_build_accuracy_latency_memory_and_kernel_audit",
+      "original_failure_receipt": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/attempts/R4.attempt1.json",
+      "parameters": 12230,
+      "recommended_device_probe": "percentile_pc.onnx"
+    }
+  },
+  "native_INT8": "not_demonstrated; TensorRT builder blocked before parse/calibration by CUDA35",
+  "original_queues": "original model jobs failed strict parity; repair collector blocked by B0 parity; retained unchanged",
+  "reconciliation": "final_status.json and receipts/*_final.json are the final reconciled evidence; no failed job was relabeled succeeded",
+  "workstation": "completed_with_preserved_negative_results"
+}

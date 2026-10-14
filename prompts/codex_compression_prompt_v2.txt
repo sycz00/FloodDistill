@@ -1,0 +1,268 @@
+Implement and test compression interaction distillation in FloodDistill
+Version 2   7 October 2026
+
+This specification supersedes codex_compression_prompt.txt. Its metric normalization, calibration uncertainty handling, loss-strength controls and project facts have been corrected after checking the paper, supplement, reviewer letter and prompt5 closure package.
+
+TASK AND SCIENTIFIC STANDARD
+
+Implement the small prototype specified below in the existing research branch, verify it, prepare a finite experiment DAG, and actually start the authorized detached queue on the RTX 4090 once preflight passes. Continue beyond a plan or code skeleton. Reuse the existing training, quantization, evaluation and job-runner code. Do not rewrite the manuscript or build a new training framework or scheduler.
+
+This is an unvalidated research hypothesis. The candidate contribution is a statistically shrunk feature-distillation metric derived from the interaction of floating-point transfer residuals and quantization displacement. Architecture scaling, KD, QAT, feature matching, Mahalanobis metrics and the residual identity are prior concepts. Do not claim a new state of the art, a guaranteed compression ratio, novel label information, or improved OOD performance without results. Report negative evidence honestly.
+
+The paper already reports a null result for intermediate feature MSE. The supplement reports high representation alignment in the original full-pool student, and the v5 matched controls find no consistent OFA advantage across architectures and benchmarks. These facts increase the burden of proof. Test the new mechanism primarily on substantially smaller and lower-bit students; do not rebrand the old MSE experiment as a new contribution.
+
+1. ESTABLISH THE REAL WORKSPACE AND REUSE POINTS
+
+Read applicable AGENTS.md instructions. Inspect git status, the research branch, environment, source configs, checkpoint lineage and active jobs before editing. Preserve unrelated work. Use an isolated worktree based on research if necessary; do not reset or overwrite existing experiments. Prefer rg for discovery.
+
+Paths recorded in the uploaded closure archive, to VERIFY on the execution machine:
+  repo: /home/schmalstieg/repos/FloodDistill
+  Python: /home/schmalstieg/miniconda3/envs/esi/bin/python
+  data: /home/schmalstieg/data
+  code snapshot: /data1/schmalstieg/flooddistill/revision_20261005/snapshots/95f47d14ae77a2cf
+  restored cohort: /data1/schmalstieg/flooddistill/revision_20261005/original_N2500_recovered_20261006
+
+These paths are provenance pointers, not proof of current availability. If the actual repo/data/GPU is unavailable, finish independent work, identify the exact blocker, and do not fabricate completed training. Do not execute archived commands blindly.
+
+Inspect and extend existing code as appropriate:
+  scripts/train.py, training/trainer.py, training/losses.py
+  models/student.py, models/teacher.py, models/bridge_teacher.py
+  models/lightformer.py, models/qblocks.py, scripts/quantize.py
+  distillation/ofa_kd.py
+  data/channel_adapter.py, data/pseudo_labeled.py, data/ood_datasets.py
+  evaluation/revision_eval.py, evaluation/revision_native_border.py
+  evaluation/perscene_eval.py, evaluation/stats_scene_level.py
+  evaluation/revision_collect.py
+  experiments/revision_prepare_original.py
+  experiments/revision_prepare_matched.py
+  experiments/revision_queue.py
+
+The ZIP supplies a frozen revision_queue.py and example manifests/specs. Use them as references for the repository runner, not as a reason to duplicate it. Keep new code minimal: graph-scaling adapter/config, feature-statistics module, bounded metric loss, experiment preparation and aggregation. Persist small manifests/checksums/results, not extensive new documentation. Record scoped continuing instructions in AGENTS.md only if useful.
+
+2. PRESERVE THE VERIFIED PROJECT PROTOCOL
+
+Task: binary surface-water segmentation with a frozen Prithvi-EO-2.0 300M task teacher. Do not claim discrimination of newly inundated versus permanent water. The teacher's task adaptation used 252 human-labeled Sen1Floods11 training chips.
+
+Expected teacher SHA256 from v5:
+3675e9c2b52547de8ff8a19f4881c28573e6d4d2f0805d866f4fc48c1e517d60
+Verify checkpoint provenance and compatibility rather than silently substituting a teacher.
+
+Use the restored original N2500 GDACS pseudo cohort as the primary reference. Keep regenerated cohorts separate; their differences include target semantics, not just replacement image IDs. Keep existing FPS/filtering fixed. Inputs are B2,B3,B4,B8A,B11,B12, training size 224x224, evaluation 512x512. Normalization reported by v5 is mean [.1413,.138,.1235,.309,.2045,.1191], std [.0741,.0737,.0869,.118,.0977,.0766]; verify executed config. Do not shrink input resolution to claim architecture compression.
+
+Current matched FP recipe: AdamW LR5e-5, decay .05, cosine, batch16, drop_last, max50 epochs, no warmup, FP32/no_amp, global gradient clip5. Seeds 42,64,91,107. Augment with the existing flips/90-degree rotation and per-channel gain U(.8,1.2). Transform hard masks geometrically; obtain live teacher soft outputs on the IDENTICAL augmented input. Do not pair cached teacher features/logits with different crops or radiometric transforms.
+
+Main matched loss is 0.5*focal(gamma=2) + 0.5*T^2*KL(softmax(z_teacher/T) || softmax(z_student/T)), T=4, reduced over valid target pixels. Confirm tensor reductions in code. Historical hard-only CE and current focal controls are different; do not call their difference a pure KD effect. Binary output is two classes; a one-channel implementation would require Bernoulli KL, never softmax over one class.
+
+OFA means heterogeneous OFA-KD with four training-only exits, not Once-for-All NAS. Current matched branch implementation adds .3*mean(branch losses), teacher softmax(zT/4), student branch softmax(zbranch), no branch T^2, target modulation (1+pT(y))^1.2. Inspect actual code. The old paper's branch counts and sum/mean description differ from the v5 code audit; preserve executed matched definitions. No assumption that OFA is always best. Use matched Logit-KD as the primary base objective and retain an OFA comparator where feasible.
+
+Checkpoint selection uses 89 S11 validation scenes, pooled two-class mIoU, evaluation every2 epochs, strict improvement retaining the earlier checkpoint on ties, patience20 checks, at most50 epochs. For paired QAT methods use the SAME fixed update budget, evaluation cadence and checkpoint rule. Log selected and completed updates; equal epoch limits do not ensure equal actual compute. Preserve old stopping behavior for reproduction, and label any fixed-budget mechanistic comparison separately.
+
+Historical quantizer calibration used S11 validation inputs. Reproduce that for the existing deployment baseline and use the same fixed allowed calibration IDs across new matched quantizer variants. All new PCA/adapter/interaction fitting uses TRAINING inputs only. Do not silently change historical calibration to train-only and attribute the result to the metric; a train-only calibration variant is a separately labeled protocol if run.
+
+External evaluation is terminal after source-only design and checkpoint freeze:
+  S11 test: S11_TEST512_LEGACY, 90 maps/10 events.
+  STURM: P3_STURM_FINITE_SIX_BAND_SUPPORT_MASK_V1, 2675 chips/46 maps/29 events.
+  WF: P3_WF_NATIVE_ZERO_PAD512_V1, 785 windows/18 maps/11 events.
+Reuse executed band adapters, finite-support masks, label mappings, normalization/clipping and permanent-water/cloud/nodata exclusions. Do not recode preprocessing from inconsistent manuscript prose. WF partial windows must use native zero-padding/cropping, not legacy resizing. Report the existing full and known-overlap-excluded support separately; exclusions do not create an untouched test benchmark.
+
+Historical use of STURM for unsuccessful teacher-derived criteria must be disclosed accurately. The author states it did not decide which architecture or whether OFA entered the study. Do not claim a chronology unsupported by evidence, and do not call these benchmarks historically untouched. No target/OOD imagery, labels or outcomes may fit metrics, choose precision, generate architectures, calibrate quantizers, select checkpoints or gate queue expansion.
+
+Current v5 float reference means for S11 / corrected STURM / native WF:
+  EfficientViT matched KD: .8781848 / .7604943 / .7669035
+  EfficientViT compatible OFA: .8748326 / .7602644 / .7712826
+  teacher: .8945720 / .7539159 / .7717073
+These are provenance checks, not guarantees of exact reproduction or deployed-engine performance. v5 completed 39/39 count/collector jobs and no new training or QAT. Do not inherit old device numbers as measurements of current checkpoints.
+
+3. FIX A SMALL ARCHITECTURE LADDER
+
+Create legal complete graphs using existing scaling hooks, starting from EfficientViT-B0. Before inspecting new accuracy, declare:
+  A0 width1.00, repeatable depth1.00
+  A1 width0.50, repeatable depth1.00
+  A2 width0.35, repeatable depth0.75
+  A3 width0.25, repeatable depth0.50
+
+Keep mandatory stage/stride/channel transitions, output stride, six-band stem semantics and segmentation classes. Round channels according to actual kernel/head/group divisibility and minimums. Resolve illegal recipes deterministically from graph constraints; record actual channel/block lists and deduplicate identical graphs. Reduce eligible repeated blocks using a fixed index rule. Do not drop entire decoder levels or change target geometry without an explicit separately named experiment.
+
+No NAS controller, accuracy predictor, evolutionary/BO search, learned architecture gates, performance-guided candidate generation or new supernet. Sampling means this fixed finite family. Deployment selection within it is source-validation model selection and must be reported as such. Dense smaller modules must actually replace large tensors; zero masks alone are not deployed compression.
+
+Use a consistent initialization policy within every matched graph. ReLU6 is the first deployment family because the paper's Hardswish-to-INT8 path failed. Reuse a compatible, verified ReLU6 checkpoint or train ReLU6 using the existing from-scratch recipe. Never assume swapping Hardswish for ReLU6 preserves the FP reference. Keep activation changes distinct from architecture/precision/metric effects. Tiny graphs requiring from-scratch training must not be compared to unmatched pretrained controls as a metric effect.
+
+Second-family confirmation should use the already integrated mobilenet_v3_small. LightFormer exists but has a different and substantially larger current head; do not assume the paper's old parameter counts. Count full deployed models and auxiliary training parameters separately.
+
+4. BUILD A CONTROLLED QUANTIZATION MATRIX
+
+WbAa denotes b-bit weights/a-bit activations in specified quantized operators, with all exceptions listed:
+  FP32 reference; supported FP16 inference reference.
+  W8A8 PTQ and QAT, preserving actual FP exceptions.
+  W4A8 PTQ/QAT: primary low-bit prototype.
+  W4A4 PTQ/QAT: next activation stress.
+  W4A16: optional weight-only diagnostic.
+  W2A8: deferred severe stress, not a default first experiment.
+
+Reuse existing fake-quant/STE primitives. Historical code uses conv input/weight QDQ, floating final logits, frozen BN running AND affine parameters, and fixed-scale calibration; inspect actual code to settle any scale-learning inconsistency in manuscript text. Start with that quantizer family. Put per-channel, learned-step-size or clipping changes into explicit quantizer ablations rather than changing them only for the proposed loss. Log bit ranges, signedness, granularity, scales, zero-points, rounding, biases and float operators.
+
+LiteMLA MatMuls stayed FP16 in the historical Xavier NX/TensorRT8.4 graph. The historical engine is mixed INT8/FP16, and historical FP16 timing was faster. Four-bit simulation support does not imply an executable four-bit CNN kernel on this target. Preserve a machine-readable precision map. Label each result simulation_only, exported_unbenchmarked, or deployed_measured with backend/device.
+
+5. FIT A COMMON FEATURE SPACE WITHOUT CHANGING THE TEACHER
+
+Start with ONE feature tap: the last retained encoder-stage output immediately before the student decoder, paired with the corresponding semantic teacher-neck feature supported by existing hooks. Resolve the concrete module once using graph semantics, not OOD performance or a sweep for maximum alignment. Use the existing spatial CKA plumbing where helpful. Do not replace features with the two class logits: binary logits have only one independent margin, which would collapse the intended feature geometry.
+
+Use a fixed 8x8 spatial grid for the initial feature probe, keeping interpolation and coordinate conventions explicit and identical. Sample only valid spatial positions. Form per-position outer products and losses FIRST, average within available pseudo water/background strata with equal stratum mass, then average with equal mass per image. Do not form outer products of spatially averaged residual vectors: E[f f^T] is not E[f]E[f]^T. Apply the SAME position weights to PCA, weighted ridge fitting, all moment estimates and every feature-loss control. Use the existing training validity mask and teacher/pseudo class definitions, not OOD labels. Pseudo classes remain teacher-derived and are not new annotations. The main focal/KL reductions stay unchanged.
+
+Select reproducible TRAINING-only calibration pools before inspecting results. Default up to256 images for fitting the feature transform and up to256 different images for interaction estimation, separated by GDACS event/site groups where metadata allow. Keep the image IDs and group IDs fixed across architectures/precisions. Do not treat neighboring pixels or paired event/pre-event images as independent bootstrap observations. If independent group metadata are missing, report the limitation and do not claim event-level confidence; use a conservative stable fallback or M=I when reliability cannot be established.
+
+On the feature-fit pool, fit a fixed teacher PCA transform with centering and variance standardization. Set r=min(32, teacher dimension, smallest declared student's tap dimension, usable numerical rank). Fix this r and teacher basis for the family before evaluation. Drop numerically degenerate directions, floor whitening scales and log retained variance. This PCA is a computational choice, not the claimed novelty; it may discard task-relevant low-variance features.
+
+For each common FP student warmup checkpoint, fit a small linear/1x1 adapter plus bias into that teacher space using training-only ridge regression (or reuse a documented compatible adapter). Fit only the adapter; keep the student and teacher fixed. A scale-relative ridge value such as 1e-3*trace(student Gram)/dimension is a predeclared numerical default, with bias unpenalized. Handle degenerate inputs explicitly. Freeze this adapter for every matched QAT continuation. Thus the metric cannot improve merely by training a larger adapter or rotating it to avoid difficult directions. Remove it at deployment.
+
+6. COMPUTE THE INTERACTION AND A RELIABLE METRIC
+
+At a common checkpoint after FP warmup and quantizer calibration, for identical calibration inputs obtain:
+  t = fixed teacher feature transform
+  s_f = frozen-adapter feature with fake quantization bypassed
+  s_q = SAME frozen-adapter feature with the target quantization enabled
+  f = t - s_f
+  q = s_f - s_q
+  e = t - s_q = f + q
+
+FP and quantized branches share master weights, adapter, input, fusion and frozen BN state. Disable dropout and observer/state updates for measurement. Save/restore module flags explicitly. Frozen teacher is eval/no_grad. Compute statistics in stable precision; do not retain a teacher graph. The FP residual includes optimization/adapter mismatch and is not a pure causal measure of architecture loss.
+
+Using the identical image/class-balanced expectation throughout, estimate:
+  R = E[(f q^T + q f^T)/2]
+  Cf = E[f f^T]
+  Cq = E[q q^T]
+  C = Cf + Cq
+  Ce = E[e e^T] = C + 2R
+
+These are UNCENTERED second moments. Centering would remove systematic bias terms and no longer represent the raw-MSE second moments used here; fully centered covariances do satisfy an analogous covariance identity. Ordinary MSE already includes 2*trace(R). The new intervention is the metric constructed below, not the identity itself.
+
+Retain per-image moment contributions and group IDs. Estimate an approximate spectral noise radius with a fixed-seed,200-resample cluster bootstrap over independent source event/site groups:
+  delta = empirical95th percentile of ||R_boot - R||_operator.
+Resample whole groups, retaining the intended equal-image expectation using group totals/counts. Never bootstrap pixels independently. Use at least max(32,2r) independent groups as a provisional feasibility floor, not as a theorem of sufficient sample size. If less support exists, do not manufacture more observations; record insufficient support and use M=I for the main reliable variant. A raw unshrunk metric may remain a named exploratory ablation.
+
+For symmetric R=V diag(lambda_j) V^T, define:
+  p_j = max(lambda_j - delta, 0)
+  nu = trace(C)/r
+  h_j = min(3, 2*gamma*p_j/(nu+epsilon))
+  d_j = (1+h_j) / mean_k(1+h_k)
+  M = V diag(d_j) V^T
+Fix gamma=1 for the pilot. Use a documented tiny numerical floor in the standardized feature units. When total residual energy is negligible or no positive component survives, set M=I exactly.
+
+Properties to verify: M is symmetric positive definite, trace(M)=r, condition_number(M)<=4. If quantization displacement vanishes while FP transfer error remains nonzero, M approaches I. This replaces v1's normalization by the sum of positive eigenvalues, which could amplify arbitrarily small noise.
+
+Interpret statistical reliability carefully. CONDITIONAL on ||R_est-R_population||op<=delta, each retained empirical direction v satisfies v^T R_population v >= lambda_est-delta>0. The bootstrap only approximates this noise radius; it is not an unconditional95% guarantee, causal identification, or an OOD confidence bound. Log split-group stability as a diagnostic, without tuning against external benchmarks.
+
+Equal trace does not ensure equal feature-loss strength. For EVERY proposed/control metric K, compute and freeze:
+  c_K = trace(Ce) / trace(K Ce)
+when residual energy/denominator are numerically meaningful. Identity has c_I=1. With negligible error, use identity and c=1. Do not introduce an epsilon that materially changes the matching; handle near-zero cases explicitly.
+
+The feature objective is:
+  L_feature(K) = c_K * E_train[(t-s_q)^T K (t-s_q)] / r
+This exactly matches initial calibration feature-loss magnitude to MSE. It does not match every training-time gradient. The effective metric c_K*K keeps K's condition number but generally no longer has trace r. Log feature/task loss and gradient norms; do not claim trace normalization alone controls all optimization confounds.
+
+Freeze teacher transform, student adapter, R, delta, M, c_K and beta throughout the primary QAT continuation. No additional FP student forward is required on each training step. Measure final R again for diagnostics but do not silently refresh training weights. A periodically refreshed variant is a later separately specified experiment if the static method first earns further work.
+
+7. TRAIN THE MATCHED CONTINUATIONS
+
+Primary objective:
+  L = existing matched Logit-KD task loss + beta*L_feature(K).
+In an OFA arm, retain its exact existing losses and add the same controlled feature term. No feature term may change labels, data filtering or class semantics.
+
+Reuse the archived feature-MSE coefficient if documented and appropriate. Otherwise set beta once per common architecture/precision checkpoint with a predeclared training-only gradient rule: beta=0.1*||g_base||/(||g_identity_feature||+small_floor), using RMS/averaged norms over the same fixed handful of training calibration minibatches and a fixed last shared encoder parameter block. Store exactly how it was measured, reset gradients/state, and share that beta across all feature metrics. If the feature gradient is degenerate, stop that configuration rather than using an enormous weight. A small source-validation beta sensitivity is confirmation work, with identical budgets across methods. Never tune on STURM/WF.
+
+Use the existing QAT LR1e-5,10-epoch continuation as the initial reference when code confirms it; freeze actual steps before paired runs. Each method starts from an independent copy of the SAME FP checkpoint, adapter and quantizer state, with matched RNG/data order. Do not initialize the proposed method from a baseline already fine-tuned for extra epochs. Count warmup, transform fitting, quantizer calibration and QAT costs separately.
+
+Required baseline sequence:
+  B0: common FP checkpoint evaluated directly and after PTQ.
+  B1: existing Logit-KD QAT without feature matching.
+  B2: same QAT plus feature MSE, K=I.
+  B3: same QAT plus the corrected interaction metric.
+Optional hard-only QAT from the common KD checkpoint is a continuation without KD, not a student never exposed to teacher supervision.
+
+Mechanism controls on the predeclared smallest valid tested graph/precision:
+  K_random: seeded random orthogonal orientation with B3's eigenvalues.
+  K_quant: eigenvectors of Cq, with B3's SAME sorted eigenvalues.
+  K_independent: eigenvectors of Cf+Cq, same sorted eigenvalues.
+  K_total: eigenvectors of Ce, same sorted eigenvalues.
+For deterministic construction order eigenvectors by descending eigenvalue and pair with descending B3 eigenvalues. Use the same c_K initial loss matching for each. Random orientation is not learned or resampled per minibatch. These controls isolate directional information at equal anisotropy. An unshrunk R metric and diagonal R are secondary ablations, not prerequisites for the first result.
+
+If B3 produces M=I, all matched-spectrum controls collapse to MSE; skip duplicate training and report the absence of a usable interaction intervention. If B3 cannot beat both B1 and B2, stop expansion rather than searching indefinitely. Before a publishable novelty claim compare with a faithfully implemented relevant QFD/SQuaT approach; do not call a modified approximation a reproduction.
+
+8. DIAGNOSTICS WITH EXACT INTERPRETATIONS
+
+At the common checkpoint and after QAT, compute A=trace(Cf), Q=trace(Cq), X=trace(R). When A+Q is meaningful:
+  eta = 2X/(A+Q), in [-1,1]
+  total_error_amplification = trace(Ce)/(A+Q) = 1+eta, in [0,2]
+  rho = Q/(A+Q)
+  |eta| <= 2*sqrt(rho*(1-rho))
+  chi_plus = 2*trace(positive_part(R))/(A+Q)
+  chi_minus = 2*trace(positive_part(-R))/(A+Q)
+  eta = chi_plus-chi_minus; chi_plus+chi_minus<=1.
+
+Report raw diagnostic moments separately from the noise-shrunk training spectrum. Opposing directions can cancel in eta; chi_plus/chi_minus reveal that. These are derived diagnostics, not proven new OOD predictors. Fixed teacher standardization matters; arbitrary feature rescaling changes them. Also report ||M-I||, retained directions, delta and eigenvalues. Large isotropic positive R can still yield M=I after normalization.
+
+On S11 validation ground truth, calculate harmful quantization flips H=P(FP correct,Q wrong) and repaired flips B=P(FP wrong,Q correct), on identical valid support and frozen decision rule. Accuracy_Q-Accuracy_FP = B-H exactly; IoU differences do NOT obey that identity. Report water IoU, pooled two-class mIoU, water precision/recall and image/event aggregation. Use existing boundary diagnostics only if implemented; do not invent a new benchmark. Retain teacher-disagreement diagnostics separately from GT correctness.
+
+The proposal's predictive hypotheses are: robust anisotropic reinforcing directions exist at some smaller/low-bit settings; B3 reduces harmful quantization effects more than B2; and this translates into a better measured size/accuracy frontier. Each can fail independently. Better teacher feature fit is not evidence of better labels or OOD robustness. Teacher-empty or MNDWI-empty images do not establish independently verified dry-scene safety.
+
+9. PREFLIGHT AND A FINITE EXPERIMENT DAG
+
+Default initial pilot limit:12 GPU-hours unless an existing explicit user/repository resource budget governs this work. Treat this as an editable operational bound, not a claim that all experiments fit. Time a short batch/epoch, forecast jobs, and prioritize COMPLETE matched conditions. The full four-seed confirmation is pending when it exceeds the cap, never silently declared complete. Do not launch an unbounded sweep.
+
+Wave0: verify checkpoint/cohort/evaluator lineage, GPU identity, graph legality, math tests, QDQ/BN behavior and detached runner. Reproduce the existing ReLU6 W8 reference where available; keep missing hardware lineage explicit.
+
+Wave1: train or reuse common FP students A1 and A3 with the fixed recipe; A0 is the anchor. Reuse same-seed common warmups across continuations. A2 remains a predeclared intermediate, not an architecture proposed after seeing performance. Map PTQ for W8A8,W4A8,W4A4. Choose graph feasibility and experiment order before source accuracy inspection. An FP model that fails badly establishes a capacity limit; do not call its QAT failure a metric failure alone.
+
+Wave2: one-seed B1/B2/B3 at A1,W4A8, followed by A3,W4A8 if budget permits. Add W8 as a low-distortion control and W4A4 as the next stress condition. Skip B3 training when it is mathematically identical to B2. Use seed42 for pilot; report this as screening, not confirmation.
+
+Wave3: only if source-validation B3 improves over both B1/B2 and nonidentity weighting exists, run matched-spectrum controls on the predeclared hard cell. Provisional practical screening effect is0.005 absolute mIoU (0.5 percentage points), declared before runs; report smaller outcomes without changing this threshold retrospectively. If hard cell is technically invalid, use the previously declared fallback A1,W4A8, not the most favorable observed cell.
+
+Wave4: confirm fixed comparisons with seeds42,64,91,107 and a second family when authorized compute remains. Include beta sensitivity and a relevant published low-bit KD baseline before scientific claims. If budget prevents this, preserve the next-wave manifest and state the missing evidence. Do not infer statistical significance from one seed or from pooled pixels.
+
+Wave5: freeze configs/checkpoints; run terminal S11 test and corrected full/excluded STURM/WF evaluation, using existing event/map-level paired analysis. No feedback from these results into method changes in this run. Label subsequent changes as exploratory if later requested.
+
+Primary deployment summary: for each method report the smallest actual exported model within a predeclared one-percentage-point S11 validation mIoU tolerance of the matching ReLU6 FP anchor, plus the complete predeclared frontier and final external outcomes. This tolerance is a provisional engineering choice, not a performance guarantee. Separate a precision accuracy study from unsupported low-bit deployment claims.
+
+10. ACTUALLY LAUNCH THE EXISTING DETACHED RUNNER
+
+Discover the RTX4090 and its current UUID; pin it explicitly. At most one GPU-intensive training/evaluation process on that device. Do not copy the archive's old two-GPU UUID list or treat its earlier multi-GPU authorization as a request here. Never stop/preempt foreign jobs. Measure required_free_mb per job and leave headroom; do not infer training memory from old count-only jobs.
+
+Use experiments/revision_queue.py. Confirm its actual CLI and manifest schema first. The archived runner supports unique finite DAG jobs, absolute argv executable/cwd, input SHA256s, expected output receipts, dependencies, GPU admission/locks, persistent state and detached start_new_session. Manifest hashes are frozen; create a NEW manifest/state for each new wave rather than mutating a running DAG.
+
+After resolving absolute runtime and paths, execute the equivalent of:
+  /verified/python experiments/revision_queue.py init --manifest /new/run/manifest.json --state /new/run/manifest.state.json
+  /verified/python experiments/revision_queue.py start --manifest /new/run/manifest.json --state /new/run/manifest.state.json
+  /verified/python experiments/revision_queue.py status --manifest /new/run/manifest.json --state /new/run/manifest.state.json
+
+Do not merely print these commands. First verify a short detached smoke task and its output receipt, then start the actual feasible pilot queue. Preserve a launch receipt with PID identity, GPU UUID, manifest hash, log/state paths and queued dependency list. Verify the worker is alive/admitted or explicitly waiting for foreign GPU work. It should survive VSCode/terminal closure while the host remains running; do not promise shutdown/reboot persistence that the runner does not provide.
+
+Use existing CPU worker/thread, nice/ionice, disk/RAM and free-GPU checks. Do not enable services or introduce privileged system changes. Resource limits should come from actual preflight, not copied arbitrary old settings. Implement the GPU-hour cap using a minimal runner extension or existing per-job/time-budget mechanism if needed; bound jobs/checkpoint shutdown instead of claiming an unenforced cap. No uncontrolled retries, silent batch/precision changes or duplicate jobs. Preserve logs and show exact failure causes.
+
+An outer agent should persist progress and may finish its interactive turn once the verified queue is running, but its report must distinguish implemented, running, pending, completed, failed and blocked work. Long experiments are not completed merely because they launched. Provide the verified status/pause/resume/stop commands.
+
+11. CORRECTNESS AND FAIRNESS GATES
+
+Test: legal shapes/attention divisibility, actual smaller dense graphs, teacher eval/frozen state, shared fixed adapter and FP/Q weights, mode restoration, valid-mask reductions, no observer contamination, no single-logit softmax KD, and removal of training-only modules at export.
+
+Numerically verify Ce=Cf+Cq+2R, symmetry, M positive definiteness/trace/condition bound, exact identity when q=0/no retained interaction, continuity as q tends to zero, orthogonal-coordinate equivariance, isotropic-R identity, c_K initial loss matching, eta/chi bounds, and the accuracy damage/repair identity. Test finite STE gradients, a loss-decreasing smoke run, checkpoint resume and deterministic state isolation between matched runs. Gradient checking across true rounding discontinuities is inappropriate for an STE; check its defined surrogate separately.
+
+Report same initial feature loss and training-time feature/task gradient norms; c_K does not equalize every gradient. Include a time-matched ordinary-KD continuation if extra compute could plausibly explain gains. Estimate source group bootstrap uncertainty with the existing statistics machinery; resample independent events/maps, not pixels. Four seeds provide replication evidence, not automatic equivalence or significance.
+
+A deployed result needs exported prediction validation and actual artifact/runtime measurement: parameter count, precision map, MACs at actual shape, serialized engine bytes, batch-one latency, memory, backend/device and total training cost. Use the historical20 warmups/200 repeats where comparable, with proper synchronization. Include scale/zero-point/float-operator/packing overhead in size. Do not multiply theoretical bit ratios and call the result measured compression. Never label4090 results XavierNX measurements or claim INT8 is automatically faster than FP16.
+
+12. FINISH WITH REVIEWABLE OUTPUTS
+
+Return minimal code changes, fixed experiment/config manifests, meaningful test results, launch/status receipts, monitoring/stop/resume commands, available checkpoints/exports and completed results. Summarize what evidence supports the mechanism, what supports only generic feature weighting, and what remains unknown. Preserve negative/skipped/failed conditions and every predeclared graph on the frontier. Keep large data/checkpoints outside git unless project policy explicitly tracks them.
+
+Novelty gates: B3 must improve beyond B1 and B2, withstand random/quant-only/independent-error/TOTAL-error directions, survive matched-seed confirmation and demonstrate a useful compression tradeoff. Even then perform a focused related-work comparison; metric learning and covariance-based distillation are not new generally.
+
+Relevant primary sources for positioning, not permission to replace the project recipe:
+  OFA-KD: https://arxiv.org/abs/2310.19444
+  US-Nets: https://arxiv.org/abs/1903.05134
+  OQAT: https://arxiv.org/abs/2010.04354
+  QFD: https://arxiv.org/abs/2307.10638
+  SQuaT: https://proceedings.mlr.press/v300/lee26f.html
+  IDa-Det: https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136710347.pdf
+  Streamlined KD: https://openaccess.thecvf.com/content/CVPR2026/html/Jeong_Streamlined_Knowledge_Distillation_CVPR_2026_paper.html
+
+The method is potentially useful because it can allocate training effort differently without adding inference modules. It can fail because feature directions are irrelevant, unrepresentable, noisy, isotropic or stale. Do not hide these failure modes or retrofit the hypothesis after looking at the external benchmarks.

@@ -8,6 +8,37 @@ __pycache__/
 /runs/
 wandb/
 
+# Generated revision campaigns stay local. Keep their actual source, recipes,
+# concise reports and aggregate tables; omit datasets, models, traces and logs.
+/experiments/revision/**
+!/experiments/revision/**/
+!/experiments/revision/**/*.py
+!/experiments/revision/**/*.sh
+!/experiments/revision/**/*.md
+!/experiments/revision/**/*.yaml
+!/experiments/revision/**/*.yml
+!/experiments/revision/**/protocol*.json
+!/experiments/revision/**/training_spec*.json
+!/experiments/revision/**/specs/*.json
+!/experiments/revision/**/*summary*.csv
+!/experiments/revision/**/results_final.csv
+!/experiments/revision/**/results_reconciled.csv
+!/experiments/revision/**/final_status.json
+!/experiments/revision/**/HANDOVER*.txt
+!/experiments/revision/**/handoff*.txt
+# Redundant source capsules and vendor copies are provenance snapshots, not code
+# to publish. The selected model exports live in jetson_repro/integer_models/.
+/experiments/revision/**/frozen/**
+/experiments/revision/**/bundle/**
+/experiments/revision/**/workstation_sources/**
+/experiments/revision/**/code/efficientvit/**
+/experiments/revision/**/logs/**
+/experiments/revision/**/shards/**
+/experiments/revision/**/reference_cache/**
+/experiments/revision/**/source_margins/**
+/experiments/revision/**/normal_windows/**
+/experiments/revision/**/sealed_windows/**
+
 # Downloaded pretrained weights / checkpoints (fetched by datasets/*.sh)
 assets/checkpoints/
 
@@ -25,6 +56,8 @@ data/pseudo/
 # Pseudo-label pool (38 GB) with its indices, built in README step 3:
 data/pseudo_gdacs/
 data/**/*.pt
+# Compression fitting tensors stay local; checkpoints and exports use /data1.
+/experiments/revision/compression_v2*/results/*.pt
 # 6 MB GEE manifest, rebuilt by data/build_flood_unlabeled_manifest.py:
 data/flood_unlabeled_manifest.csv
 

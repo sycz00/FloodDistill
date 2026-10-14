@@ -1,0 +1,158 @@
+{
+  "FP_recipe": {
+    "AMP": false,
+    "activation": "ReLU6",
+    "batch": 16,
+    "clip": 5,
+    "cosine": true,
+    "drop_last": true,
+    "epochs": 50,
+    "incomplete_budget_is_failure": true,
+    "inherited_early_stop_patience": 20,
+    "lr": 5e-05,
+    "scratch": true,
+    "strict_best_earlier_tie": true,
+    "updates": 7800,
+    "validation_every_epochs": 2,
+    "weight_decay": 0.05
+  },
+  "MDE_context_pp": {
+    "conditional_event_halfwidth": [
+      0.9,
+      1.3,
+      1.9
+    ],
+    "pretrained_N2500_max_seed_SD": [
+      0.4,
+      0.7,
+      0.8
+    ],
+    "pretrained_N2500_median_seed_SD": [
+      0.22,
+      0.2,
+      0.51
+    ],
+    "warning": "Historical pretrained estimates do not guarantee power for new scratch graphs; measure paired-seed variance"
+  },
+  "Stage1_optimizer_grid_rows": [
+    {
+      "final_mIoU": 0.8234266930493614,
+      "lr": 1e-05,
+      "selected_mIoU": 0.8234436795867501
+    },
+    {
+      "final_mIoU": 0.8273660422938092,
+      "lr": 0.0001,
+      "selected_mIoU": 0.82793945473738
+    },
+    {
+      "final_mIoU": 0.8567380382147417,
+      "lr": 0.0005,
+      "selected_mIoU": 0.859063581489488
+    }
+  ],
+  "Stage3_recipe_grid": {
+    "epochs": [
+      10,
+      30
+    ],
+    "learned_steps": "LSQ-style only after primary-source inspection and tests; not yet implemented",
+    "lr": [
+      0.0001,
+      0.0005
+    ],
+    "maximum_configs": 6,
+    "selection": "hyperparameter selection on A3 W4A8 seed42 S11 validation only; no scientific superiority claim"
+  },
+  "Stage5_unlock": "SB residual >=.01 at W8A8/W4A8 or >=.015 at4bit body; within.005 atW4A8 closes Stage5",
+  "Stage8_order": [
+    "U6",
+    "U1",
+    "U5",
+    "U7_CPU_gate",
+    "U8",
+    "U3",
+    "U4",
+    "U7_runs"
+  ],
+  "analysis_code_sha256": "27e4d55f590214f79d82a6f8609eeaedcf2a1635a1e9944a83999846be888e36",
+  "base_loss": ".5 focal(gamma2) + .5 T^2 KL(teacher||student), T4, valid pixels",
+  "budget_enforcement": "actual completed command seconds plus outstanding hard-timeout reservations; explicit reallocation",
+  "cohort_sha256": "1ac4ef17efae3ebb0d3fb8daad38b4541ef04627c07a60e1e2c42e00d2efbc60",
+  "count_and_event_code_sha256": "053bdfb95b7d7da61a7281729781e3e683c391d3e96e8525875ee2078cbe288e",
+  "data_roles": {
+    "external": "S11-test/STURM/WF frozen secondary readouts; never method/gate tuning",
+    "fits": "TRAIN only",
+    "hyperparameters_checkpoint_selection": "S11 validation89"
+  },
+  "delta_NI": {
+    "never_loosen_after_external_results": true,
+    "provisional_absolute": 0.02,
+    "rule": "max(.02,2*measured median seed SD of waterIoU)",
+    "sensitivity": [
+      0.01,
+      0.03
+    ]
+  },
+  "frozen_at": "2026-10-08T12:35:38.657204+00:00",
+  "graph_declarations": {
+    "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/capacity_v4_20261008/stage2_graphs_declared.json",
+    "sha256": "abefdb0c33291c9159eb5a7c6f7f3260831798fe9d3ba36bf13cbe699f636161"
+  },
+  "hypotheses": {
+    "H1": {
+      "criterion": "median repaired preclip norm <=10x same-cell FP frozen-BN; max <=100x",
+      "logger_independent_F64_deviation_max": 0.01
+    },
+    "H2": {
+      "criterion": "conventional fixes recover >=50% A3 W4A4-to-W4A8 PTQ gap; TRAIN-ranked selective8 recovers >=50% A1 W4 weight damage"
+    },
+    "H3": {
+      "criterion": "R2 minus A0 S11-test mIoU CI lower bound > -delta_NI; teacher comparisons on STURM/WF water-IoU with event CIs"
+    },
+    "H4": {
+      "criterion": "A1 minus A3 pooled mIoU negative on STURM and WF over4seeds with paired-seed95% CI excluding0; descriptive secondary test, not a scheduling gate"
+    },
+    "H5": {
+      "criterion": "3seed source gain >=max(.005,2SE) over strongest control, all same sign, waterIoU not worse, diagnostic changes; seed107 then conditional event CIs"
+    }
+  },
+  "programme_target_gpu_seconds": 108000,
+  "scope_limits": [
+    "simulation_only until supported engines measured",
+    "no externally selected graphs/seeds/recipe",
+    "no novelty claim before matched isolating controls and related-work audit"
+  ],
+  "seed_set": [
+    42,
+    64,
+    91,
+    107
+  ],
+  "simulator_adoption": {
+    "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/capacity_v4_20261008/simulator_adoption.json",
+    "sha256": "a607f530203cf16c6527525a21fbb39ecd5b9c6a6d31c402103db1859faa9e8b"
+  },
+  "stage_caps_gpu_seconds": {
+    "1": 7200,
+    "2": 21600,
+    "3": 21600,
+    "4": 36000,
+    "5": 14400,
+    "6": 7200,
+    "8": 21600
+  },
+  "statistics": {
+    "bootstrap_seed": 1729,
+    "bootstrap_unit": "event, conditional fixed checkpoints",
+    "event_bootstrap_resamples": 10000,
+    "no_prediction_pooling_across_seeds": true,
+    "paired_seed_CI": "Student-t interval on paired differences; never pixels",
+    "seed_SD": "sample ddof1"
+  },
+  "status": "frozen_before_Stage2_results",
+  "sum_of_stage_maxima_is_not_a_global_reservation": true,
+  "task": "binary surface water; not flood increments",
+  "teacher_sha256": "3675e9c2b52547de8ff8a19f4881c28573e6d4d2f0805d866f4fc48c1e517d60",
+  "version": "capacity_v4_20261008"
+}

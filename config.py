@@ -84,6 +84,8 @@ class TrainConfig:
     # eval train, val and test after training. Mainly for pseudo-only runs: the student
     # never saw S11 train/val there, so those scores aren't inflated by memorisation.
     eval_all_splits: bool = False
+    # Source-only experiments defer test/OOD readout until the finite design is frozen.
+    defer_terminal_evaluation: bool = False
 
     # names used for per-class metrics (W&B and console), None gives class0, class1, ...
     class_names: list[str] = field(default_factory=lambda: ["background", "flood"])

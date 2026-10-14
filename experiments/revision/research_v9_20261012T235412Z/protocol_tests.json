@@ -1,0 +1,48 @@
+{
+  "augmentation_alignment": true,
+  "efficientvit_import": true,
+  "ignore_support": true,
+  "outcome": "passed",
+  "outside_band_equal": true,
+  "real_window_confusion_parity": [
+    {
+      "counts": [
+        48378,
+        68238,
+        48433,
+        68180
+      ],
+      "dataset": "s11val"
+    },
+    {
+      "counts": [
+        692,
+        130380,
+        715,
+        130357
+      ],
+      "dataset": "s11"
+    },
+    {
+      "counts": [
+        21672,
+        109400,
+        21672,
+        109400
+      ],
+      "dataset": "sturm"
+    },
+    {
+      "counts": [
+        118,
+        14946,
+        130,
+        14914
+      ],
+      "dataset": "wf"
+    }
+  ],
+  "strict_threshold_ties": true,
+  "synthetic_edge_distance": true,
+  "unavailable_preserves_prediction": true
+}

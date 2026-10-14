@@ -93,7 +93,10 @@ def focal_loss(
     valid   = target != ignore_index
     p_t     = torch.exp(-ce)                    # probability of the correct class
     loss    = (1.0 - p_t) ** gamma * ce
-    return loss[valid].mean()                   # mean over valid pixels only
+    valid_loss = loss[valid]
+    if valid_loss.numel() == 0:
+        return logits.sum() * 0.0              # graph-connected zero, no fabricated labels
+    return valid_loss.mean()                   # mean over valid pixels only
 
 
 def dkd_loss(
@@ -182,11 +185,13 @@ def kd_loss(
     student_logits: Tensor,
     teacher_logits: Tensor,
     temperature: float = 4.0,
+    valid_mask: Tensor | None = None,
 ) -> Tensor:
     """T^2*KL(p_teacher || p_student), using F.kl_div(log p_student, p_teacher).
 
     Dense (B,C,H,W) logits are flattened to (B*H*W,C), so batchmean divides
-    by pixel count. Also accepts (B,C). This helper has no ignore mask.
+    by pixel count. Also accepts (B,C). Optional valid_mask restricts that
+    denominator to valid pixels; None preserves the inherited all-pixel loss.
     """
     if student_logits.dim() == 4:
         B, C, H, W = student_logits.shape
@@ -198,6 +203,13 @@ def kd_loss(
         s = F.log_softmax(student_logits / temperature, dim=1)
         t = F.softmax(teacher_logits   / temperature, dim=1)
 
+    if valid_mask is not None:
+        valid = valid_mask.reshape(-1).bool()
+        if valid.numel() != s.shape[0]:
+            raise ValueError("KD valid mask does not match logit pixels")
+        s, t = s[valid], t[valid]
+        if s.shape[0] == 0:
+            return student_logits.sum() * 0.0
     return F.kl_div(s, t, reduction="batchmean") * (temperature ** 2)
 
 
@@ -304,6 +316,7 @@ class DistillLoss(nn.Module):
         use_dkd: bool = False,
         dkd_alpha: float = 1.0,
         dkd_beta: float = 1.0,
+        kd_valid_only: bool = False,
     ) -> None:
         super().__init__()
         # object.__setattr__ bypasses nn.Module.__setattr__, so teacher and student don't end
@@ -322,6 +335,7 @@ class DistillLoss(nn.Module):
         self.use_dkd           = use_dkd
         self.dkd_alpha         = dkd_alpha
         self.dkd_beta          = dkd_beta
+        self.kd_valid_only     = kd_valid_only
         self._at_enabled       = at_beta > 0.0
         self._feat_enabled     = feat_distil_alpha > 0.0
 
@@ -519,7 +533,8 @@ class DistillLoss(nn.Module):
                 ignore_index = self.ignore_index,
             )
         else:
-            kd = kd_loss(student_logits, t_logits, self.temperature)
+            kd = kd_loss(student_logits, t_logits, self.temperature,
+                         valid_mask=(masks != self.ignore_index) if self.kd_valid_only else None)
 
         total = (1.0 - self.alpha) * f + self.alpha * kd
 

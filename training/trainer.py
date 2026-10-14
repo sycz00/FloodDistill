@@ -10,11 +10,16 @@ and state-dict keys are kept stable for evaluation and deployment.
 from __future__ import annotations
 
 import inspect
+import hashlib
 import os
+import random
+import tempfile
 import time
 from collections import deque
+from dataclasses import asdict
 from typing import Callable
 
+import numpy as np
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -99,6 +104,28 @@ class Trainer:
         self.concept_distil_alpha           = concept_distil_alpha
         self.sam                            = sam
         self.sam_rho                        = sam_rho
+        # Capture actual main tensors before optimization. Historical runs without
+        # this field retain unknown initialization identity.
+        initial = hashlib.sha256()
+        for name, tensor in sorted(model.state_dict().items()):
+            initial.update(name.encode())
+            initial.update(str(tensor.dtype).encode())
+            initial.update(str(tuple(tensor.shape)).encode())
+            initial.update(tensor.detach().cpu().contiguous().numpy().tobytes())
+        self.initial_model_sha256 = initial.hexdigest()
+        self.loss_policy = {
+            "main_hard": "focal" if loss_fn is not None else cfg.task_loss,
+            "main_focal_gamma": (2.0 if hasattr(loss_fn, "exit_branches") else
+                                 getattr(loss_fn, "gamma", cfg.gamma)),
+            "main_kl_mask": ("valid_only" if getattr(loss_fn, "kd_valid_only", False)
+                             else "legacy_all_pixels") if loss_fn is not None else None,
+            "hard_and_ofa_branch_mask": "target != ignore_index",
+            "all_ignored_hard_or_valid_kl": (
+                "graph-connected zero loss; optimizer step retained" if loss_fn is not None or cfg.task_loss == "focal"
+                else "legacy CE all-ignored reduction remains undefined"),
+            "grad_clip_norm": cfg.grad_clip,
+            "grad_clip_scope": "main model parameters; inherited norm2 after AMP unscale",
+        }
 
         if cfg.seed is not None:
             if getattr(cfg, "deterministic", False):
@@ -252,8 +279,12 @@ class Trainer:
 
             # Validation
             run_val = (epoch + 1) % cfg.val_every_n_epochs == 0 or epoch == cfg.epochs - 1
+            epoch_metrics = {}
+            improved = False
+            should_stop = False
             if run_val:
                 val_metrics = self.evaluate(model, self.val_dl)
+                epoch_metrics = val_metrics
                 self._log(epoch, val_metrics, prefix="val")
 
                 miou_history.append(val_metrics["mIoU"])
@@ -262,7 +293,6 @@ class Trainer:
                 if improved:
                     best_smoothed_miou = smoothed_miou
                     best_miou = val_metrics["mIoU"]
-                    self.save_checkpoint(model, optimizer, epoch, val_metrics, "best.pt")
                     iou_per_class = val_metrics.get("iou_per_class", [])
                     flood_iou = iou_per_class[1] if len(iou_per_class) > 1 else float("nan")
                     print(f"  [{mode_tag}] new best  smoothed_mIoU={best_smoothed_miou:.4f}"
@@ -281,13 +311,38 @@ class Trainer:
                             print(f"  [{mode_tag}] early stop at epoch {epoch+1} "
                                   f"(smoothed_mIoU no improvement for "
                                   f"{cfg.early_stop_patience} checks)")
-                            break
+                            should_stop = True
+
+            selection_state = {
+                "window": window,
+                "miou_history": list(miou_history),
+                "best_smoothed_miou": best_smoothed_miou,
+                "best_miou": best_miou,
+                "es_counter": es_counter,
+                "validated_this_epoch": run_val,
+                "early_stop_reached": should_stop,
+                "metric": "S11 validation smoothed mIoU",
+                "comparison": "strict greater than; ties retain earlier checkpoint",
+            }
+            if improved:
+                self.save_checkpoint(
+                    model, optimizer, epoch, epoch_metrics, "best.pt",
+                    scheduler=scheduler, selection_state=selection_state,
+                )
+            self.save_checkpoint(
+                model, optimizer, epoch, epoch_metrics, "last.pt",
+                scheduler=scheduler, selection_state=selection_state,
+            )
+            if should_stop:
+                break
 
         # Evaluation on best checkpoint: test (always) + all splits (optional)
-        print(f"\n[Trainer] loading best checkpoint for test evaluation …")
+        print(f"\n[Trainer] loading best validation checkpoint …")
         self.load_checkpoint(model, best_ckpt_path)
-        test_metrics = self.evaluate(model, self.test_dl)
-        self._log(cfg.epochs, test_metrics, prefix="test")
+        test_metrics = {}
+        if not getattr(cfg, "defer_terminal_evaluation", False):
+            test_metrics = self.evaluate(model, self.test_dl)
+            self._log(cfg.epochs, test_metrics, prefix="test")
 
         extra_results: dict = {}
         if getattr(cfg, "eval_all_splits", False):
@@ -303,7 +358,7 @@ class Trainer:
 
         elapsed = self._elapsed(t0)
         print(f"\n[Trainer] done in {elapsed}  best_val_mIoU={best_miou:.4f}  "
-              f"test_mIoU={test_metrics['mIoU']:.4f}")
+              f"terminal_evaluation={'deferred' if not test_metrics else test_metrics['mIoU']}")
 
         if self.grad_logger is not None:
             self.grad_logger.summary()
@@ -375,18 +430,77 @@ class Trainer:
         epoch: int,
         metrics: dict,
         filename: str = "checkpoint.pt",
+        *,
+        scheduler=None,
+        selection_state: dict | None = None,
     ) -> str:
+        """Atomically preserve inference weights and completed-epoch training state.
+
+        Existing load_checkpoint remains an inference/model+optimizer loader.
+        DataLoader workers, samplers and augmentation state are not restored;
+        this payload does not claim exact unattended training resumption.
+        """
         path = os.path.join(self.cfg.out_dir, filename)
+        numpy_state = np.random.get_state()
         payload = {
             "epoch":   epoch,
             "metrics": metrics,
             "model":   model.module.state_dict()
                        if isinstance(model, nn.DataParallel)
                        else model.state_dict(),
+            "checkpoint_schema_version": 2,
+            "config": asdict(self.cfg),
+            "loss_fn": self.loss_fn.state_dict() if self.loss_fn is not None else None,
+            "loss_policy": dict(self.loss_policy),
+            "initial_model_sha256": self.initial_model_sha256,
+            "scheduler": scheduler.state_dict() if scheduler is not None else None,
+            "scaler": self.scaler.state_dict(),
+            "training_state": {
+                "next_epoch": epoch + 1,
+                "global_step": self._global_step,
+                "selection": dict(selection_state or {}),
+            },
+            "rng_state": {
+                "python": random.getstate(),
+                # ndarray pickles require unsafe globals under weights_only;
+                # a list keeps the original uint32 state losslessly loadable.
+                "numpy": {
+                    "bit_generator": numpy_state[0],
+                    "keys": numpy_state[1].tolist(),
+                    "position": int(numpy_state[2]),
+                    "has_gauss": int(numpy_state[3]),
+                    "cached_gaussian": float(numpy_state[4]),
+                },
+                "torch_cpu": torch.get_rng_state(),
+                "torch_cuda": torch.cuda.get_rng_state_all() if torch.cuda.is_initialized() else [],
+            },
+            "resume_support": {
+                "exact_automatic_resume": False,
+                "limitation": "DataLoader worker RNG, sampler/generator and augmentation state are not restored; no resume CLI or automatic retry.",
+                "completed_epoch_state_saved": True,
+            },
         }
         if optimizer is not None:
             payload["optimizer"] = optimizer.state_dict()
-        torch.save(payload, path)
+        directory = os.path.dirname(path) or "."
+        descriptor, temporary_path = tempfile.mkstemp(
+            prefix=f".{os.path.basename(filename)}.", suffix=".tmp", dir=directory,
+        )
+        try:
+            with os.fdopen(descriptor, "wb") as stream:
+                torch.save(payload, stream)
+                stream.flush()
+                os.fsync(stream.fileno())
+            os.replace(temporary_path, path)
+            if hasattr(os, "O_DIRECTORY"):
+                directory_descriptor = os.open(directory, os.O_RDONLY | os.O_DIRECTORY)
+                try:
+                    os.fsync(directory_descriptor)
+                finally:
+                    os.close(directory_descriptor)
+        finally:
+            if os.path.exists(temporary_path):
+                os.unlink(temporary_path)
         return path
 
     def load_checkpoint(
@@ -417,6 +531,7 @@ class Trainer:
         cfg        = self.cfg
         total_loss = 0.0
         n          = 0
+        clip_norm_sum, clipped_steps = 0.0, 0
 
         for batch in self.train_dl:
             images = batch["image"].to(self.device, non_blocking=True).float()
@@ -447,14 +562,21 @@ class Trainer:
             self.scaler.scale(loss).backward()
             if cfg.grad_clip > 0:
                 self.scaler.unscale_(optimizer)
-                nn.utils.clip_grad_norm_(model.parameters(), cfg.grad_clip)
+                grad_norm = nn.utils.clip_grad_norm_(model.parameters(), cfg.grad_clip).item()
+                clip_norm_sum += grad_norm
+                clipped_steps += int(grad_norm > cfg.grad_clip)
             self.scaler.step(optimizer)
             self.scaler.update()
 
+            self._global_step += 1
             total_loss += loss.item()
             n += 1
 
-        return {"loss": total_loss / max(n, 1)}
+        result = {"loss": total_loss / max(n, 1)}
+        if cfg.grad_clip > 0:
+            result.update(pre_clip_grad_norm_mean=clip_norm_sum / max(n, 1),
+                          clipped_step_fraction=clipped_steps / max(n, 1))
+        return result
 
     def _train_epoch_distill(
         self,
@@ -473,6 +595,7 @@ class Trainer:
         """
         cfg          = self.cfg
         loss_fn      = self.loss_fn
+        clip_norm_sum, clipped_steps, clip_steps = 0.0, 0, 0
         total_loss        = 0.0
         component_totals: dict[str, float] = {}   # dynamic: accumulates all keys from components
         total_pseudo_feat = 0.0
@@ -638,7 +761,10 @@ class Trainer:
 
                 if cfg.grad_clip > 0:
                     self.scaler.unscale_(optimizer)
-                    nn.utils.clip_grad_norm_(model.parameters(), cfg.grad_clip)
+                    grad_norm = nn.utils.clip_grad_norm_(model.parameters(), cfg.grad_clip).item()
+                    clip_norm_sum += grad_norm
+                    clipped_steps += int(grad_norm > cfg.grad_clip)
+                    clip_steps += 1
                 self.scaler.step(optimizer)
                 self.scaler.update()
 
@@ -687,6 +813,9 @@ class Trainer:
         nb = max(n, 1)
         log_dict: dict[str, float] = {"loss_total": total_loss / nb}
         log_dict.update({f"loss_{k}": v / nb for k, v in component_totals.items()})
+        if clip_steps:
+            log_dict.update(pre_clip_grad_norm_mean=clip_norm_sum / clip_steps,
+                            clipped_step_fraction=clipped_steps / clip_steps)
         if has_feat_only:
             log_dict["loss_pseudo_feat"] = total_pseudo_feat / nb
         if has_concept:

@@ -1,0 +1,171 @@
+version: v7
+frozen_before_v7_scientific_training: true
+source_prompt: /home/schmalstieg/repos/FloodDistill/prompts/prompt_v7_overnight.md
+source_prompt_sha256: ef2e13953139011da34f3ad063904cab90230ef5093d9f6e7b8f77e71e87b1e7
+hypotheses:
+- A0 competent LR anchor
+- R4 cached focal CE vs live-soft LKD at common5e-3
+- R4 additive spectral rule x disagreement factorial and controls, prospective continuation
+data_roles:
+  training_calibration_diagnostic_weight_design: TRAIN only
+  checkpoint_LR_promotion: S11 validation only
+  external: research-exposed S11test/STURM/WF secondary readouts
+cohort_sha256: 1ac4ef17efae3ebb0d3fb8daad38b4541ef04627c07a60e1e2c42e00d2efbc60
+teacher_sha256: 3675e9c2b52547de8ff8a19f4881c28573e6d4d2f0805d866f4fc48c1e517d60
+band_order:
+- B2
+- B3
+- B4
+- B8A
+- B11
+- B12
+normalization_mean:
+- 0.1413
+- 0.138
+- 0.1235
+- 0.309
+- 0.2045
+- 0.1191
+normalization_std:
+- 0.0741
+- 0.0737
+- 0.0869
+- 0.118
+- 0.0977
+- 0.0766
+shared_recipe:
+  batch_size: 16
+  workers: 2
+  precision: FP32
+  optimizer: AdamW
+  weight_decay: 0.05
+  gradient_clip: 5
+  validation_frequency_updates: 312
+  selection: strict source mIoU, earliest checkpoint tie
+  scratch_updates: 7800
+  continuation_updates: 1560
+  patience_disabled: true
+  cosine: inherited epoch-stepped,156 updates per epoch, T_max50 scratch or10 continuation
+  focal_gamma: 2
+  teacher_constructed_before_student: true
+  continuation_BN: loaded inherited buffers,train in all arms
+rule:
+  available: finite nonnegative green and SWIR1, sum>1e-6 reflectance
+  r: clip((green-swir)/(green+swir),-1,1), zero unavailable
+  R: r>0
+  a: 8*tanh(alpha)
+  b: 8*tanh(beta)
+  initialization: alpha=beta=0
+  logits: land=z_land-(a*r+b)/2, water=z_water+(a*r+b)/2
+  added_parameters: 2
+continuation_loss:
+  T: 4
+  direction: KL(teacher||student)
+  formula: 0.5*focal(cached)+0.5*T^2*mean_valid(w*KL(p||q))
+  u: 1+2*disagreement
+  w: u/mean_valid(u)
+  empty_valid: graph-connected zero
+  C4: within image,teacher class,confidence[.5,.7),[.7,.9),[.9,1], dedicated RNG permutes
+    binary mask
+  C5: within image,teacher class, same emphasis count, highest entropy on valid available;
+    flattened-index tie
+arms:
+  C0:
+  - false
+  - uniform
+  C1:
+  - true
+  - uniform
+  C2:
+  - false
+  - disagreement
+  C3:
+  - true
+  - disagreement
+  C4:
+  - true
+  - shuffled_disagreement
+  C5:
+  - true
+  - teacher_entropy
+  HC:
+  - false
+  - onehot_cached
+  HL:
+  - false
+  - onehot_live
+pilot_seeds:
+- 42
+- 64
+confirmation_seeds:
+- 91
+- 107
+confirmation_arms:
+- C0
+- C3
+- C4
+- C5
+promotion_pp:
+  mean_C3_C0_min: 0.5
+  each_C3_C0_min: 0
+  mean_C3_C4_min: 0.2
+  mean_C3_C5_min: 0.2
+  mean_water_C3_C0_min: -0.5
+promotion_integrity: all finite loss/gradients, paired base/logits/minibatch, focused
+  label alignment, budget gate
+target_refresh_trigger: '>=1% cached-vs-live hard disagreement on valid augmented
+  TRAIN'
+LR_grid:
+- 5.0e-05
+- 0.0005
+- 0.005
+LR_tie: smaller LR
+seed_set:
+- 42
+- 64
+- 91
+- 107
+statistics:
+  four_seed_CI: paired Student-t95%,sampleSD,df3
+  two_seed_pilot: descriptive
+  event_CI: 10,000 whole event bootstrap,seed1729,checkpoint conditional
+  empty_union: undefined water IoU omitted from event mean
+budget:
+  historical_gpu_seconds: 76797.98575085367
+  incremental_cap_seconds: 28800
+  wall_seconds: 28800
+  protected_collection_seconds: 3600
+  technical_retry_reserve_seconds: 2700
+deliberate_amendments:
+- new runs disable inherited patience;exact7800
+- continuations start checkpoint included
+- local tracking only
+- TRAIN-only new calibration;legacy spec validation ID key only verifies inherited
+  source split
+deferred:
+- A1 LR reanchor unless its full bundle fits released reservations after optimized
+  A3 CE
+- C1/C2 seeds91/107 not separately reserved
+- final external checkpoints not separately reserved
+- QAT/OFA grids,U1,U6,R1,temporal claims,new graphs,new data
+deployment: actual TorchScript FP32/FP16, native INT8 if installed backend supports;
+  separate from simulation
+bundles:
+- id: diagnostics
+- id: A0_grid
+  future_reserve_seconds: 4200
+- id: A0_reanchor
+  condition: A0_selected_lr
+- id: R4_CE
+- id: pilot
+- id: confirmation
+  condition: C3_promotion
+- id: target_refresh
+  condition: target_refresh
+- id: optional_A3_CE
+- id: optional_A1_grid
+  future_reserve_seconds: 4200
+- id: optional_A1_reanchor
+  condition: A1_selected_lr
+- id: collection
+  condition: completed_terminal

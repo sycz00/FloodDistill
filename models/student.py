@@ -102,10 +102,11 @@ def _replace_last_conv(model: nn.Module, num_classes: int) -> None:
 
 
 # feature tap nodes and their output strides for a 224x224 input
-# features.1: 16ch @ H/2 (112x112)
-# features.3: 24ch @ H/4 (56x56)
-# features.8: 48ch @ H/8 (28x28)
-# features.12: 576ch @ H/16 (14x14)
+# features.1: 16ch @ H/4 (56x56)
+# features.3: 24ch @ H/8 (28x28)
+# features.8: 48ch @ H/16 (14x14)
+# features.12: 576ch @ H/32 (7x7)
+# Keep the historical extractor/skip names below for existing callers/checkpoints.
 _MNV3_NODES: dict[str, str] = {
     "features.1":  "s2",
     "features.3":  "s4",
@@ -117,6 +118,8 @@ _MNV3_CH: list[int] = [16, 24, 48, 576]
 
 class MobileNetV3Encoder(nn.Module):
     """MobileNetV3-Small with 4-scale feature extraction for 6-band input."""
+
+    _ofa_stage_features_type = "spatial_list"
 
     def __init__(self, in_channels: int = 6, pretrained: bool = True) -> None:
         super().__init__()
@@ -141,6 +144,7 @@ class MobileNetV3Encoder(nn.Module):
 
         self.extractor    = create_feature_extractor(backbone, return_nodes=_MNV3_NODES)
         self.out_channels: list[int] = _MNV3_CH
+        self.out_strides: list[int] = [4, 8, 16, 32]
 
     def forward(self, x: torch.Tensor) -> list[torch.Tensor]:
         feats = self.extractor(x)
@@ -167,10 +171,10 @@ class _UNetBlock(nn.Module):
 
 
 class UNetDecoder(nn.Module):
-    """4-level UNet decoder, s16 to s8 to s4 to s2.
+    """4-level UNet decoder, deepest feature to shallowest skip.
 
-        Widths with decoder_channels=128: 256ch after up3 (H/8), 128ch after up2 (H/4) and
-        64ch after up1 (H/2), which is out_channels.
+        MobileNet widths with decoder_channels=128: 256ch after up3 (H/16), 128ch
+        after up2 (H/8) and 64ch after up1 (H/4), which is out_channels.
     """
 
     def __init__(
@@ -221,8 +225,8 @@ class LightweightSegModel(nn.Module):
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         H, W     = x.shape[-2:]
         features = self.encoder(x)          # [s2, s4, s8, s16]
-        decoded  = self.decoder(features)   # (B, out_ch, H/2, W/2)
-        logits   = self.head(decoded)       # (B, num_classes, H/2, W/2)
+        decoded  = self.decoder(features)   # (B, out_ch, H/4, W/4)
+        logits   = self.head(decoded)       # (B, num_classes, H/4, W/4)
         return F.interpolate(logits, size=(H, W), mode="bilinear", align_corners=False)
 
 
@@ -926,6 +930,13 @@ def build_student(
             pretrained=pretrained,
         )
 
+    elif arch_lower == "lightformer_resnet18":
+        from models.lightformer import LightFormerResNet18
+        model = LightFormerResNet18(
+            in_channels=in_channels, num_classes=num_classes,
+            head_dropout=head_dropout, pretrained=pretrained,
+        )
+
     # EfficientViT
     elif arch_lower.startswith("efficientvit_"):
         import re
@@ -997,7 +1008,7 @@ def build_student(
             "            'mobilenet_v3_small', 'efficientvit_b0[_relu6]',\n"
             "            'efficientvit_b1', 'efficientvit_b2'\n"
             "Q-hard:     'vit_tiny', 'tiny_vit_5m', 'tiny_vit_11m', 'tiny_vit_21m'\n"
-            "Baselines:  'unet_resnet50', 'unet_resnet101'"
+            "Baselines:  'unet_resnet50', 'unet_resnet101', 'lightformer_resnet18'"
         )
 
     # Print param count + quantization tier summary

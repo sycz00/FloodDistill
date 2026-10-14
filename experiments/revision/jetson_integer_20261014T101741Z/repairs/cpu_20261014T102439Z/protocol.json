@@ -1,0 +1,17 @@
+{
+  "created": "2026-10-14T10:24:39.160844+00:00",
+  "hashes": {
+    "jetson_integer.py": "4d93d8220c6ce4f2dca3597ef9be0c893f05e36973ffb1cae839f7f3eb08d270",
+    "jetson_integer_prepare.py": "34ccf2b7478fba2a97faf89ab866b6075fbc6f756bc23b2c0da419f435b22736",
+    "jetson_integer_recover.py": "9ea58e875eca5c5fa8178d36498928332acbefebe5995d90fb838b84905c649a"
+  },
+  "motivation": "Repair scalar INT32-bias representation and distinguish ONNX semantic parity from optimized runtime numerics; retain existing artifacts",
+  "old_protocol_sha256": "7810636500c7847af5d1f93ae713f0534ba307d84dc74198e40375547837c210",
+  "new_B0_variants": [
+    "Conv-only Percentile99.99",
+    "Conv+residual+mm1 Percentile99.99; attention mm2 and normalizer Add excluded"
+  ],
+  "calibration_count": 32,
+  "source_selection_only": true,
+  "additional_training": false
+}

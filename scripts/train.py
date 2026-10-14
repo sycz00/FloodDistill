@@ -37,7 +37,7 @@ def _add_model_args(p: argparse.ArgumentParser) -> None:
                              "efficientvit_b0_lrelu6", "efficientvit_b0_silu", "efficientvit_b0_tanh",
                              "efficientvit_b1", "efficientvit_b2",
                              "tiny_vit_5m", "tiny_vit_11m", "tiny_vit_21m",
-                             "mobilenet_v3_small", "unet_resnet50", "unet_resnet101",
+                             "mobilenet_v3_small", "lightformer_resnet18", "unet_resnet50", "unet_resnet101",
                              "micro_s", "micro_m", "lcnet_050", "lcnet_050_relu6", "lcnet_075"])
     p.add_argument("--pretrained_tag", default="dist_in22k_ft_in1k",
                    choices=["dist_in22k_ft_in1k", "dist_in22k", "in1k"])
@@ -102,6 +102,8 @@ def _add_train_args(p: argparse.ArgumentParser) -> None:
     p.add_argument("--no_amp",   dest="use_amp",        action="store_false")
     p.add_argument("--amp_dtype", default="fp16",       choices=["fp16", "bf16"])
     p.add_argument("--grad_clip", type=float,           default=0.0)
+    p.add_argument("--kd_valid_only", action="store_true",
+                   help="Restrict main KL to hard-label valid pixels; legacy default is all pixels.")
 
 
 def _add_infra_args(p: argparse.ArgumentParser) -> None:
@@ -236,6 +238,14 @@ def cmd_finetune(args):
 
     args = _resolve_arch_defaults(args)
 
+    if getattr(args, "match_teacher_initialization", False):
+        if args.target != "student" or not (args.official_ckpt or args.teacher_ckpt):
+            raise ValueError("Matched initialization requires a student and the frozen teacher checkpoint")
+        # KD/OFA construct this teacher before the student. Preserve their RNG
+        # sequence for the focal-only control, without using teacher supervision.
+        initialization_teacher = _build_teacher(args, freeze=True)
+        del initialization_teacher
+
     if args.target == "teacher":
         model = _build_teacher(args, freeze=False)
         if args.freeze_backbone:
@@ -302,6 +312,7 @@ def cmd_finetune(args):
             feat_distil_alpha = train_cfg.feat_alpha,
             ignore_index      = train_cfg.ignore_index,
             gamma             = train_cfg.gamma,
+            kd_valid_only     = args.kd_valid_only,
         )
         loss_fn.register_hooks()
 
@@ -407,6 +418,7 @@ def cmd_distill(args):
         feat_distil_alpha = train_cfg.feat_alpha,
         ignore_index      = train_cfg.ignore_index,
         gamma             = train_cfg.gamma,
+        kd_valid_only     = args.kd_valid_only,
     )
     loss_fn.register_hooks()
 
@@ -558,6 +570,7 @@ def cmd_ofa(args):
         temperature          = args.temperature,
         gamma                = args.gamma,
         ignore_index         = -1,
+        kd_valid_only        = args.kd_valid_only,
         disc_weighted        = args.disc_weighted,
         uncertainty_weighted = args.uncertainty_weighted,
         dist_match_alpha     = args.dist_match_alpha,
@@ -797,6 +810,10 @@ def build_parser() -> argparse.ArgumentParser:
     _add_train_args(ft)
     _add_infra_args(ft)
     ft.add_argument("--target", default="student", choices=["student", "teacher"])
+    ft.add_argument("--gamma", type=float, default=2.0,
+                    help="Focal exponent when --task_loss focal.")
+    ft.add_argument("--match_teacher_initialization", action="store_true",
+                    help="Construct/discard frozen teacher before student to match KD/OFA initialization RNG.")
     ft.add_argument("--freeze_backbone", action="store_true",
                     help="Freeze teacher backbone; train only decoder+head.")
     ft.add_argument("--feat_alpha", type=float, default=0.0,

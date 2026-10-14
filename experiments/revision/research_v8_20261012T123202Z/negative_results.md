@@ -1,0 +1,17 @@
+Implementation/protocol issues are separate from measured method effects.
+- F1: mean descriptive query mIoU change -0.2867 pp; worsening episodes retained in comparisons.csv.
+- F3: mean descriptive query mIoU change -0.3783 pp; worsening episodes retained in comparisons.csv.
+- F4: mean descriptive query mIoU change -0.5517 pp; worsening episodes retained in comparisons.csv.
+- B_supervised: mean descriptive query mIoU change -1.7710 pp; worsening episodes retained in comparisons.csv.
+- B_teacher_label: mean descriptive query mIoU change -1.2376 pp; worsening episodes retained in comparisons.csv.
+- B_supervised_SGD20: mean descriptive query mIoU change -0.3533 pp; worsening episodes retained in comparisons.csv.
+- Q0: mean descriptive query mIoU change -0.4739 pp; worsening episodes retained in comparisons.csv.
+- Q1: mean descriptive query mIoU change -0.8105 pp; worsening episodes retained in comparisons.csv.
+- Q2: mean descriptive query mIoU change -0.4473 pp; worsening episodes retained in comparisons.csv.
+- Q3: mean descriptive query mIoU change -0.7173 pp; worsening episodes retained in comparisons.csv.
+- Second teacher deferred: installed task head and compatible paired SAR/optical inference are not verified.
+- Competent full QAT deferred under the four-hour cap; new Q arms are conventional fixed-PTQ simulation controls.
+- Independent dry-reference assessment remains unresolved; adaptation does not resolve it.
+- Actual reviewer letter and test.txt not located; exact wording and additional demands remain unverified.
+- Original N100 versus N2500 confounds scene count and optimizer work; crossing time is missing when validation timestamps are absent.
+- Native INT8 is unsupported in the inherited backend. Edge latency is unmeasured.

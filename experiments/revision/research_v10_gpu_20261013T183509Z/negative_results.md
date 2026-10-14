@@ -1,0 +1,1 @@
+Cloud-shadow geometry was dropped and remains future work. OFA is a neutral existing ablation. Shared misses do not prove spectral invisibility. Historical numerical/technical failures, failed source gates, deferred optional work and scientific null results remain distinct. See experiment_checklist.csv and contrasts.csv for executed evidence.

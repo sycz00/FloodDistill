@@ -1,0 +1,54 @@
+{
+  "arch": "efficientvit_b0",
+  "batch_context_indices": [
+    960,
+    961,
+    962,
+    963,
+    964,
+    965,
+    966,
+    967,
+    2304,
+    2305,
+    2306,
+    2307,
+    2308,
+    2309,
+    2310,
+    2311
+  ],
+  "checkpoint": "/data1/schmalstieg/flooddistill/revision_20261005/original_N2500_recovered_20261006/training/O4_train_efficientvit_b0_historical_ofa_clip5_allvalid_N2500_s64/best.pt",
+  "evaluation": "/data1/schmalstieg/flooddistill/revision_20261005/original_N2500_recovered_20261006/evaluations/O4_eval_robust_efficientvit_b0_historical_ofa_clip5_allvalid_N2500_s64.json",
+  "exclusion_plan": "/home/schmalstieg/repos/FloodDistill/experiments/revision/prompt5_closure/overlap_exclusion_plan.json",
+  "exclusion_plan_sha256": "cbdd6735be7c095d286b16e00c6d029ae2b54a922825a09c6ceb052af3b6e00a",
+  "expected_chip_counts": {
+    "EMSR465_AOI01_07_11_1_1.tif": {
+      "mask_sha256": "587380d24944580bfa9acb3f06b39ed53b4e158ddfb2b5ea2e748c72ed0482b0",
+      "valid_pixels": 262144,
+      "water_pixels": 3872
+    },
+    "EMSR501_AOI01_10_05_2_1.tif": {
+      "mask_sha256": "612f5dcc464031afb70146b8ee17c513dbab1c92f28c573b34330314162dc3bd",
+      "valid_pixels": 262144,
+      "water_pixels": 37472
+    },
+    "EMSR501_AOI01_10_05_2_2.tif": {
+      "mask_sha256": "7a1a9aae82be21520e6bc8343af7881bcb95dba279243a2cefd8f0dcc5bf6308",
+      "valid_pixels": 262144,
+      "water_pixels": 39168
+    }
+  },
+  "purpose": "Exactly3 missing corrected chip counts;16 contexts preserving original batch8; no new training or corruption.",
+  "run_id": "O4_train_efficientvit_b0_historical_ofa_clip5_allvalid_N2500_s64",
+  "runtime_packages": {
+    "albumentations": "2.0.8",
+    "numpy": "2.2.6",
+    "rasterio": "1.4.4",
+    "terratorch": "1.2.2",
+    "timm": "1.0.24",
+    "torch": "2.10.0",
+    "torchvision": "0.25.0"
+  },
+  "sturm_root": "/home/schmalstieg/data/STURM-Flood/Dataset"
+}

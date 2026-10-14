@@ -1,0 +1,2711 @@
+{
+  "bits": [
+    4,
+    4
+  ],
+  "calibration_seed": 1729,
+  "conditional_gate": "/home/schmalstieg/repos/FloodDistill/experiments/revision/compression_v2_20261007/results/mechanism_source_gate.json",
+  "excluded_sturm_chips": [
+    "EMSR465_AOI01_07_11_1_1.tif",
+    "EMSR501_AOI01_10_05_2_1.tif",
+    "EMSR501_AOI01_10_05_2_2.tif"
+  ],
+  "excluded_wf_maps": [
+    "EMSR438_AOI02_DEL_MONIT03.tif"
+  ],
+  "feature_pools": {
+    "fit": [
+      {
+        "file": "pseudo_023575.pt",
+        "group": "KERALA2018",
+        "source": "KERALA2018_0000/20180822T050649_20180822T052447_T43PFM"
+      },
+      {
+        "file": "pseudo_013433.pt",
+        "group": "GDACS_1102398",
+        "source": "GDACS_1102398_2_0000/20231219T033141_20231219T034413_T47NRH"
+      },
+      {
+        "file": "pseudo_022497.pt",
+        "group": "GDACS_1103984",
+        "source": "GDACS_1103984_1_0000/20250513T161851_20250513T163513_T15PZT"
+      },
+      {
+        "file": "pseudo_001642.pt",
+        "group": "GDACS_1100214",
+        "source": "GDACS_1100214_1_0002/20190915T150721_20190915T150719_T19QGA"
+      },
+      {
+        "file": "pseudo_007938.pt",
+        "group": "GDACS_1101380",
+        "source": "GDACS_1101380_1_0000/20220427T080559_20220427T082510_T35MRT"
+      },
+      {
+        "file": "pseudo_018814.pt",
+        "group": "GDACS_1103336",
+        "source": "GDACS_1103336_1_0000/20240701T143751_20240701T144716_T19HBD"
+      },
+      {
+        "file": "pseudo_012156.pt",
+        "group": "GDACS_1102155",
+        "source": "GDACS_1102155_1_0001/20230214T100029_20230214T100452_T33TVM"
+      },
+      {
+        "file": "pseudo_004615.pt",
+        "group": "GDACS_1100745",
+        "source": "GDACS_1100745_3_0002/20200515T070231_20200515T070232_T39LVD"
+      },
+      {
+        "file": "pseudo_022989.pt",
+        "group": "GDACS_1104073",
+        "source": "GDACS_1104073_1_0003/20260725T035541_20260725T035538_T48UXU"
+      },
+      {
+        "file": "pseudo_012188.pt",
+        "group": "GDACS_1102167",
+        "source": "GDACS_1102167_2_0000/20230215T102121_20230215T102115_T32TPT"
+      },
+      {
+        "file": "pseudo_004761.pt",
+        "group": "GDACS_1100768",
+        "source": "GDACS_1100768_2_0003/20200330T022329_20200330T022323_T51PVM"
+      },
+      {
+        "file": "pseudo_011161.pt",
+        "group": "GDACS_1101967",
+        "source": "GDACS_1101967_3_0003/20230505T205021_20230505T205021_T07WEM"
+      },
+      {
+        "file": "pseudo_014783.pt",
+        "group": "GDACS_1102628",
+        "source": "GDACS_1102628_1_0000/20240521T162901_20240521T164512_T15QWU"
+      },
+      {
+        "file": "pseudo_018355.pt",
+        "group": "GDACS_1103257",
+        "source": "GDACS_1103257_1_0003/20250429T060301_20250429T060924_T42SXB"
+      },
+      {
+        "file": "pseudo_018539.pt",
+        "group": "GDACS_1103290",
+        "source": "GDACS_1103290_2_0001/20250520T102701_20250520T104518_T30NUL"
+      },
+      {
+        "file": "pseudo_009389.pt",
+        "group": "GDACS_1101649",
+        "source": "GDACS_1101649_1_0001/20211225T103441_20211225T103440_T32UNF"
+      },
+      {
+        "file": "pseudo_000245.pt",
+        "group": "GDACS_1000052",
+        "source": "GDACS_1000052_1_0003/20170217T014651_20170217T015312_T51HUC"
+      },
+      {
+        "file": "pseudo_006616.pt",
+        "group": "GDACS_1101146",
+        "source": "GDACS_1101146_2_0002/20211023T033821_20211023T034209_T47NPG"
+      },
+      {
+        "file": "pseudo_012412.pt",
+        "group": "GDACS_1102210",
+        "source": "GDACS_1102210_2_0001/20230206T104129_20230206T104511_T31TEJ"
+      },
+      {
+        "file": "pseudo_001906.pt",
+        "group": "GDACS_1100259",
+        "source": "GDACS_1100259_2_0000/20191110T101241_20191110T101236_T32TQT"
+      },
+      {
+        "file": "pseudo_002110.pt",
+        "group": "GDACS_1100301",
+        "source": "GDACS_1100301_1_0003/20191202T070219_20191202T070221_T39LUG"
+      },
+      {
+        "file": "pseudo_010921.pt",
+        "group": "GDACS_1101920",
+        "source": "GDACS_1101920_2_0000/20230323T021531_20230323T022732_T50LMR"
+      },
+      {
+        "file": "pseudo_003188.pt",
+        "group": "GDACS_1100485",
+        "source": "GDACS_1100485_1_0001/20200601T155529_20200601T155527_T17QPE"
+      },
+      {
+        "file": "pseudo_007970.pt",
+        "group": "GDACS_1101386",
+        "source": "GDACS_1101386_1_0000/20220503T143731_20220503T145107_T19HBT"
+      },
+      {
+        "file": "pseudo_022097.pt",
+        "group": "GDACS_1103914",
+        "source": "GDACS_1103914_1_0001/20260526T080559_20260526T081526_T37SDV"
+      },
+      {
+        "file": "pseudo_008987.pt",
+        "group": "GDACS_1101564",
+        "source": "GDACS_1101564_1_0002/20220808T045659_20220808T050250_T44RQR"
+      },
+      {
+        "file": "pseudo_003900.pt",
+        "group": "GDACS_1100623",
+        "source": "GDACS_1100623_1_0002/20200915T032541_20200915T034126_T48PUV"
+      },
+      {
+        "file": "pseudo_023507.pt",
+        "group": "IRAN2019",
+        "source": "IRAN2019_KHUZESTAN_0006/20190322T072619_20190322T073719_T39STR"
+      },
+      {
+        "file": "pseudo_002839.pt",
+        "group": "GDACS_1100421",
+        "source": "GDACS_1100421_2_0000/20190310T055641_20190310T060759_T43SBU"
+      },
+      {
+        "file": "pseudo_008292.pt",
+        "group": "GDACS_1101440",
+        "source": "GDACS_1101440_1_0002/20220531T110619_20220531T110934_T30UXB"
+      },
+      {
+        "file": "pseudo_017148.pt",
+        "group": "GDACS_1103047",
+        "source": "GDACS_1103047_1_0001/20231119T092159_20231119T092200_T34SEH"
+      },
+      {
+        "file": "pseudo_019149.pt",
+        "group": "GDACS_1103400",
+        "source": "GDACS_1103400_3_0000/20250726T092051_20250726T092401_T34UFU"
+      },
+      {
+        "file": "pseudo_014847.pt",
+        "group": "GDACS_1102639",
+        "source": "GDACS_1102639_1_0001/20240505T072159_20240505T072201_T38LMM"
+      },
+      {
+        "file": "pseudo_016231.pt",
+        "group": "GDACS_1102889",
+        "source": "GDACS_1102889_1_0003/20240903T030529_20240903T032327_T48PZC"
+      },
+      {
+        "file": "pseudo_021381.pt",
+        "group": "GDACS_1103787",
+        "source": "GDACS_1103787_1_0001/20260222T162159_20260222T163018_T16QCH"
+      },
+      {
+        "file": "pseudo_011757.pt",
+        "group": "GDACS_1102079",
+        "source": "GDACS_1102079_1_0002/20230616T030531_20230616T032415_T48PZU"
+      },
+      {
+        "file": "pseudo_014278.pt",
+        "group": "GDACS_1102543",
+        "source": "GDACS_1102543_4_0000/20240325T151721_20240325T152436_T18LUP"
+      },
+      {
+        "file": "pseudo_022059.pt",
+        "group": "GDACS_1103906",
+        "source": "GDACS_1103906_1_0002/20260511T044701_20260511T045553_T45RVL"
+      },
+      {
+        "file": "pseudo_007125.pt",
+        "group": "GDACS_1101229",
+        "source": "GDACS_1101229_1_0003/20211223T113511_20211223T113507_T29SMD"
+      },
+      {
+        "file": "pseudo_019829.pt",
+        "group": "GDACS_1103524",
+        "source": "GDACS_1103524_1_0003/20250922T074609_20250922T074848_T38TNM"
+      },
+      {
+        "file": "pseudo_017886.pt",
+        "group": "GDACS_1103182",
+        "source": "GDACS_1103182_1_0002/20250218T100111_20250218T100109_T33UWR"
+      },
+      {
+        "file": "pseudo_001580.pt",
+        "group": "GDACS_1100197",
+        "source": "GDACS_1100197_2_0003/20190913T172921_20190913T173945_T13QDB"
+      },
+      {
+        "file": "pseudo_009396.pt",
+        "group": "GDACS_1101651",
+        "source": "GDACS_1101651_1_0000/20220818T081609_20220818T083534_T35PRL"
+      },
+      {
+        "file": "pseudo_017288.pt",
+        "group": "GDACS_1103075",
+        "source": "GDACS_1103075_2_0000/20240114T094249_20240114T094746_T33SVB"
+      },
+      {
+        "file": "pseudo_018307.pt",
+        "group": "GDACS_1103249",
+        "source": "GDACS_1103249_1_0002/20250411T071641_20250411T073417_T38NLJ"
+      },
+      {
+        "file": "pseudo_001776.pt",
+        "group": "GDACS_1100237",
+        "source": "GDACS_1100237_1_0000/20191029T093121_20191029T094450_T33PTQ"
+      },
+      {
+        "file": "pseudo_010771.pt",
+        "group": "GDACS_1101889",
+        "source": "GDACS_1101889_1_0001/20230318T080641_20230318T081234_T37SEB"
+      },
+      {
+        "file": "pseudo_022734.pt",
+        "group": "GDACS_1104024",
+        "source": "GDACS_1104024_2_0000/20260715T100051_20260715T100316_T33UXQ"
+      },
+      {
+        "file": "pseudo_016154.pt",
+        "group": "GDACS_1102877",
+        "source": "GDACS_1102877_2_0000/20240307T103911_20240307T104021_T32VNP"
+      },
+      {
+        "file": "pseudo_013526.pt",
+        "group": "GDACS_1102417",
+        "source": "GDACS_1102417_28_0003/20221204T152641_20221204T152918_T17LRL"
+      },
+      {
+        "file": "pseudo_015392.pt",
+        "group": "GDACS_1102738",
+        "source": "GDACS_1102738_1_0002/20231008T144731_20231008T144726_T20PPV"
+      },
+      {
+        "file": "pseudo_021062.pt",
+        "group": "GDACS_1103727",
+        "source": "GDACS_1103727_16_0002/20250114T105411_20250114T105439_T30TXM"
+      },
+      {
+        "file": "pseudo_000273.pt",
+        "group": "GDACS_1000062",
+        "source": "GDACS_1000062_1_0003/20170225T072851_20170225T075430_T36KYU"
+      },
+      {
+        "file": "pseudo_023644.pt",
+        "group": "SLOVENIA2023",
+        "source": "SLOVENIA2023_0000/20230214T100029_20230214T100452_T33TVM"
+      },
+      {
+        "file": "pseudo_007478.pt",
+        "group": "GDACS_1101290",
+        "source": "GDACS_1101290_20_0002/20210624T151709_20210624T151704_T18NXJ"
+      },
+      {
+        "file": "pseudo_007251.pt",
+        "group": "GDACS_1101250",
+        "source": "GDACS_1101250_1_0001/20220102T081341_20220102T083203_T35KLA"
+      },
+      {
+        "file": "pseudo_005497.pt",
+        "group": "GDACS_1100920",
+        "source": "GDACS_1100920_1_0001/20200606T220629_20200606T220623_T60HXD"
+      },
+      {
+        "file": "pseudo_017447.pt",
+        "group": "GDACS_1103100",
+        "source": "GDACS_1103100_4_0001/20250204T102251_20250204T102341_T32TNR"
+      },
+      {
+        "file": "pseudo_014597.pt",
+        "group": "GDACS_1102596",
+        "source": "GDACS_1102596_1_0001/20240501T085559_20240501T090228_T36UUA"
+      },
+      {
+        "file": "pseudo_014524.pt",
+        "group": "GDACS_1102584",
+        "source": "GDACS_1102584_1_0001/20240417T055639_20240417T055634_T43TBE"
+      },
+      {
+        "file": "pseudo_011805.pt",
+        "group": "GDACS_1102091",
+        "source": "GDACS_1102091_1_0003/20230626T095031_20230626T095031_T33SWD"
+      },
+      {
+        "file": "pseudo_001953.pt",
+        "group": "GDACS_1100271",
+        "source": "GDACS_1100271_1_0002/20181027T085039_20181027T085743_T35SNA"
+      },
+      {
+        "file": "pseudo_022622.pt",
+        "group": "GDACS_1104005",
+        "source": "GDACS_1104005_2_0003/20260625T001109_20260625T001517_T55HDU"
+      },
+      {
+        "file": "pseudo_009357.pt",
+        "group": "GDACS_1101644",
+        "source": "GDACS_1101644_1_0000/20220109T112441_20220109T112451_T30VWJ"
+      },
+      {
+        "file": "pseudo_020123.pt",
+        "group": "GDACS_1103572",
+        "source": "GDACS_1103572_1_0000/20251027T033739_20251027T035431_T47NPF"
+      },
+      {
+        "file": "pseudo_003132.pt",
+        "group": "GDACS_1100476",
+        "source": "GDACS_1100476_1_0001/20200521T160829_20200521T162349_T16PBA"
+      },
+      {
+        "file": "pseudo_007903.pt",
+        "group": "GDACS_1101372",
+        "source": "GDACS_1101372_3_0000/20210404T102559_20210404T103315_T32ULU"
+      },
+      {
+        "file": "pseudo_005239.pt",
+        "group": "GDACS_1100878",
+        "source": "GDACS_1100878_1_0001/20200416T015649_20200416T015648_T54UVD"
+      },
+      {
+        "file": "pseudo_022882.pt",
+        "group": "GDACS_1104050",
+        "source": "GDACS_1104050_1_0003/20260730T103629_20260730T104318_T31TEK"
+      },
+      {
+        "file": "pseudo_017779.pt",
+        "group": "GDACS_1103161",
+        "source": "GDACS_1103161_1_0001/20250305T072821_20250305T075346_T36LYH"
+      },
+      {
+        "file": "pseudo_023027.pt",
+        "group": "GDACS_4320",
+        "source": "GDACS_4320_1_0003/20160119T154552_20160119T154958_T18TWK"
+      },
+      {
+        "file": "pseudo_013557.pt",
+        "group": "GDACS_1102423",
+        "source": "GDACS_1102423_1_0002/20230301T081851_20230301T082245_T36SYD"
+      },
+      {
+        "file": "pseudo_012440.pt",
+        "group": "GDACS_1102215",
+        "source": "GDACS_1102215_1_0001/20221104T032921_20221104T034313_T47PRQ"
+      },
+      {
+        "file": "pseudo_003170.pt",
+        "group": "GDACS_1100482",
+        "source": "GDACS_1100482_1_0001/20200510T045659_20200510T051529_T44NMM"
+      },
+      {
+        "file": "pseudo_009472.pt",
+        "group": "GDACS_1101664",
+        "source": "GDACS_1101664_1_0003/20220920T023541_20220920T024841_T51RUQ"
+      },
+      {
+        "file": "pseudo_008111.pt",
+        "group": "GDACS_1101406",
+        "source": "GDACS_1101406_1_0003/20220222T152639_20220222T152811_T18PWS"
+      },
+      {
+        "file": "pseudo_015123.pt",
+        "group": "GDACS_1102685",
+        "source": "GDACS_1102685_1_0002/20240609T160829_20240609T162850_T16PDV"
+      },
+      {
+        "file": "pseudo_006161.pt",
+        "group": "GDACS_1101048",
+        "source": "GDACS_1101048_1_0002/20210425T031539_20210425T033040_T48NUG"
+      },
+      {
+        "file": "pseudo_016935.pt",
+        "group": "GDACS_1103008",
+        "source": "GDACS_1103008_1_0002/20241119T112259_20241119T112256_T29SNB"
+      },
+      {
+        "file": "pseudo_017695.pt",
+        "group": "GDACS_1103149",
+        "source": "GDACS_1103149_1_0003/20250307T131321_20250307T131319_T27VVL"
+      },
+      {
+        "file": "pseudo_007295.pt",
+        "group": "GDACS_1101257",
+        "source": "GDACS_1101257_1_0000/20220117T095239_20220117T095351_T34UEG"
+      },
+      {
+        "file": "pseudo_018906.pt",
+        "group": "GDACS_1103355",
+        "source": "GDACS_1103355_7_0001/20250320T100051_20250320T100049_T33TVN"
+      },
+      {
+        "file": "pseudo_022931.pt",
+        "group": "GDACS_1104059",
+        "source": "GDACS_1104059_2_0000/20260728T101051_20260728T101059_T32TQT"
+      },
+      {
+        "file": "pseudo_008420.pt",
+        "group": "GDACS_1101461",
+        "source": "GDACS_1101461_1_0001/20220605T015659_20220605T020811_T52RCQ"
+      },
+      {
+        "file": "pseudo_006740.pt",
+        "group": "GDACS_1101168",
+        "source": "GDACS_1101168_1_0001/20201230T103441_20201230T104207_T30NUM"
+      },
+      {
+        "file": "pseudo_022692.pt",
+        "group": "GDACS_1104017",
+        "source": "GDACS_1104017_1_0003/20260716T093151_20260716T093147_T35VME"
+      },
+      {
+        "file": "pseudo_019549.pt",
+        "group": "GDACS_1103477",
+        "source": "GDACS_1103477_1_0003/20250825T055651_20250825T055823_T42SXD"
+      },
+      {
+        "file": "pseudo_011394.pt",
+        "group": "GDACS_1102010",
+        "source": "GDACS_1102010_2_0002/20221207T021351_20221207T021504_T51NZJ"
+      },
+      {
+        "file": "pseudo_004690.pt",
+        "group": "GDACS_1100757",
+        "source": "GDACS_1100757_1_0000/20210215T111049_20210215T111210_T29SQV"
+      },
+      {
+        "file": "pseudo_006547.pt",
+        "group": "GDACS_1101130",
+        "source": "GDACS_1101130_1_0000/20201215T071309_20201215T071308_T39SYA"
+      },
+      {
+        "file": "pseudo_006977.pt",
+        "group": "GDACS_1101208",
+        "source": "GDACS_1101208_1_0001/20211212T021341_20211212T021344_T51PYL"
+      },
+      {
+        "file": "pseudo_008097.pt",
+        "group": "GDACS_1101405",
+        "source": "GDACS_1101405_2_0000/20210420T190909_20210420T191241_T11VLF"
+      },
+      {
+        "file": "pseudo_013787.pt",
+        "group": "GDACS_1102461",
+        "source": "GDACS_1102461_1_0002/20230119T080149_20230119T080221_T38TLM"
+      },
+      {
+        "file": "pseudo_000715.pt",
+        "group": "GDACS_1000164",
+        "source": "GDACS_1000164_4_0003/20180210T105201_20180210T105158_T31UDQ"
+      },
+      {
+        "file": "pseudo_006030.pt",
+        "group": "GDACS_1101022",
+        "source": "GDACS_1101022_1_0003/20210730T160911_20210730T162834_T16PCV"
+      },
+      {
+        "file": "pseudo_017411.pt",
+        "group": "GDACS_1103094",
+        "source": "GDACS_1103094_1_0002/20250120T153629_20250120T153947_T17MPR"
+      },
+      {
+        "file": "pseudo_011812.pt",
+        "group": "GDACS_1102093",
+        "source": "GDACS_1102093_1_0001/20220530T142741_20220530T143940_T19HCT"
+      },
+      {
+        "file": "pseudo_014859.pt",
+        "group": "GDACS_1102641",
+        "source": "GDACS_1102641_1_0002/20240517T222541_20240517T222544_T60HUE"
+      },
+      {
+        "file": "pseudo_011909.pt",
+        "group": "GDACS_1102107",
+        "source": "GDACS_1102107_1_0001/20230617T143731_20230617T145050_T19HCC"
+      },
+      {
+        "file": "pseudo_001016.pt",
+        "group": "GDACS_1000221",
+        "source": "GDACS_1000221_2_0000/20190224T145721_20190224T150622_T18LZH"
+      },
+      {
+        "file": "pseudo_000970.pt",
+        "group": "GDACS_1000213",
+        "source": "GDACS_1000213_3_0003/20180915T095019_20180915T100757_T32PMQ"
+      },
+      {
+        "file": "pseudo_000478.pt",
+        "group": "GDACS_1000122",
+        "source": "GDACS_1000122_1_0001/20160731T033542_20160731T034230_T48QUK"
+      },
+      {
+        "file": "pseudo_014191.pt",
+        "group": "GDACS_1102526",
+        "source": "GDACS_1102526_1_0002/20230211T072031_20230211T073413_T38PNB"
+      },
+      {
+        "file": "pseudo_019003.pt",
+        "group": "GDACS_1103371",
+        "source": "GDACS_1103371_1_0002/20250626T034201_20250626T034905_T47QRB"
+      },
+      {
+        "file": "pseudo_011274.pt",
+        "group": "GDACS_1101991",
+        "source": "GDACS_1101991_3_0000/20230209T100151_20230209T100209_T33TWN"
+      },
+      {
+        "file": "pseudo_013830.pt",
+        "group": "GDACS_1102467",
+        "source": "GDACS_1102467_2_0001/20240212T110151_20240212T110443_T31UCT"
+      },
+      {
+        "file": "pseudo_015303.pt",
+        "group": "GDACS_1102718",
+        "source": "GDACS_1102718_1_0003/20240628T095549_20240628T100131_T33TWK"
+      },
+      {
+        "file": "pseudo_019694.pt",
+        "group": "GDACS_1103500",
+        "source": "GDACS_1103500_11_0000/20240908T153819_20240908T154501_T18SVJ"
+      },
+      {
+        "file": "pseudo_020043.pt",
+        "group": "GDACS_1103557",
+        "source": "GDACS_1103557_1_0003/20251002T144729_20251002T144730_T20QPD"
+      },
+      {
+        "file": "pseudo_003590.pt",
+        "group": "GDACS_1100567",
+        "source": "GDACS_1100567_1_0002/20200808T090601_20200808T091204_T35SKC"
+      },
+      {
+        "file": "pseudo_002438.pt",
+        "group": "GDACS_1100352",
+        "source": "GDACS_1100352_1_0001/20200115T162629_20200115T163253_T16PCC"
+      },
+      {
+        "file": "pseudo_000608.pt",
+        "group": "GDACS_1000147",
+        "source": "GDACS_1000147_1_0003/20161110T092212_20161110T092617_T34SGH"
+      },
+      {
+        "file": "pseudo_011109.pt",
+        "group": "GDACS_1101957",
+        "source": "GDACS_1101957_1_0001/20230418T100559_20230418T102738_T31NCG"
+      },
+      {
+        "file": "pseudo_021336.pt",
+        "group": "GDACS_1103780",
+        "source": "GDACS_1103780_1_0001/20250520T131301_20250520T131719_T23KMQ"
+      },
+      {
+        "file": "pseudo_013005.pt",
+        "group": "GDACS_1102324",
+        "source": "GDACS_1102324_1_0001/20231108T220629_20231108T220623_T60HWC"
+      },
+      {
+        "file": "pseudo_001294.pt",
+        "group": "GDACS_1100134",
+        "source": "GDACS_1100134_1_0003/20190826T021609_20190826T022819_T51QTU"
+      },
+      {
+        "file": "pseudo_008727.pt",
+        "group": "GDACS_1101515",
+        "source": "GDACS_1101515_1_0002/20211223T022109_20211223T022109_T52SCF"
+      },
+      {
+        "file": "pseudo_020878.pt",
+        "group": "GDACS_1103698",
+        "source": "GDACS_1103698_1_0002/20250304T094101_20250304T094055_T33TYJ"
+      },
+      {
+        "file": "pseudo_013798.pt",
+        "group": "GDACS_1102462",
+        "source": "GDACS_1102462_3_0003/20240211T081051_20240211T081231_T37SEC"
+      },
+      {
+        "file": "pseudo_017007.pt",
+        "group": "GDACS_1103018",
+        "source": "GDACS_1103018_1_0002/20241126T111319_20241126T111320_T31UCU"
+      },
+      {
+        "file": "pseudo_014316.pt",
+        "group": "GDACS_1102551",
+        "source": "GDACS_1102551_1_0000/20240324T102701_20240324T102658_T32TMR"
+      },
+      {
+        "file": "pseudo_006443.pt",
+        "group": "GDACS_1101109",
+        "source": "GDACS_1101109_3_0002/20210209T031901_20210209T031859_T49SEB"
+      },
+      {
+        "file": "pseudo_009548.pt",
+        "group": "GDACS_1101677",
+        "source": "GDACS_1101677_1_0000/20220919T145741_20220919T145737_T20TQT"
+      },
+      {
+        "file": "pseudo_022797.pt",
+        "group": "GDACS_1104037",
+        "source": "GDACS_1104037_1_0000/20260202T094119_20260202T094309_T34VFJ"
+      },
+      {
+        "file": "pseudo_017742.pt",
+        "group": "GDACS_1103156",
+        "source": "GDACS_1103156_1_0003/20240217T074009_20240217T074159_T38SMB"
+      },
+      {
+        "file": "pseudo_015768.pt",
+        "group": "GDACS_1102801",
+        "source": "GDACS_1102801_1_0001/20230907T104629_20230907T105113_T31UFS"
+      },
+      {
+        "file": "pseudo_022255.pt",
+        "group": "GDACS_1103942",
+        "source": "GDACS_1103942_13_0002/20260609T021211_20260609T021527_T51NXH"
+      },
+      {
+        "file": "pseudo_002866.pt",
+        "group": "GDACS_1100425",
+        "source": "GDACS_1100425_1_0000/20200324T152639_20200324T152952_T18LTR"
+      },
+      {
+        "file": "pseudo_010266.pt",
+        "group": "GDACS_1101801",
+        "source": "GDACS_1101801_1_0000/20221119T074221_20221119T080213_T36LWL"
+      },
+      {
+        "file": "pseudo_010205.pt",
+        "group": "GDACS_1101791",
+        "source": "GDACS_1101791_1_0001/20220119T094321_20220119T094346_T34TCP"
+      },
+      {
+        "file": "pseudo_013091.pt",
+        "group": "GDACS_1102338",
+        "source": "GDACS_1102338_2_0000/20231112T021341_20231112T021342_T51PXP"
+      },
+      {
+        "file": "pseudo_001852.pt",
+        "group": "GDACS_1100251",
+        "source": "GDACS_1100251_1_0000/20191031T083101_20191031T083101_T37VFG"
+      },
+      {
+        "file": "pseudo_023017.pt",
+        "group": "GDACS_4319",
+        "source": "GDACS_4319_2_0000/20160114T113432_20160114T113427_T30UVG"
+      },
+      {
+        "file": "pseudo_020571.pt",
+        "group": "GDACS_1103645",
+        "source": "GDACS_1103645_2_0002/20251201T153631_20251201T153633_T17MRQ"
+      },
+      {
+        "file": "pseudo_010013.pt",
+        "group": "GDACS_1101757",
+        "source": "GDACS_1101757_3_0003/20221205T094401_20221205T094359_T33SXD"
+      },
+      {
+        "file": "pseudo_014823.pt",
+        "group": "GDACS_1102635",
+        "source": "GDACS_1102635_1_0003/20240514T045701_20240514T050956_T44NLP"
+      },
+      {
+        "file": "pseudo_005105.pt",
+        "group": "GDACS_1100851",
+        "source": "GDACS_1100851_6_0002/20201011T022331_20201011T022437_T50MQV"
+      },
+      {
+        "file": "pseudo_020422.pt",
+        "group": "GDACS_1103619",
+        "source": "GDACS_1103619_1_0003/20241124T094331_20241124T094344_T34TCM"
+      },
+      {
+        "file": "pseudo_012499.pt",
+        "group": "GDACS_1102228",
+        "source": "GDACS_1102228_1_0001/20230926T073231_20230926T073229_T38LLN"
+      },
+      {
+        "file": "pseudo_004983.pt",
+        "group": "GDACS_1100825",
+        "source": "GDACS_1100825_1_0000/20210127T155529_20210127T155525_T17PLK"
+      },
+      {
+        "file": "pseudo_005713.pt",
+        "group": "GDACS_1100964",
+        "source": "GDACS_1100964_2_0001/20210226T080911_20210226T081236_T35NRA"
+      },
+      {
+        "file": "pseudo_015281.pt",
+        "group": "GDACS_1102715",
+        "source": "GDACS_1102715_1_0002/20240622T070631_20240622T072626_T38NNH"
+      },
+      {
+        "file": "pseudo_009606.pt",
+        "group": "GDACS_1101687",
+        "source": "GDACS_1101687_5_0000/20221004T163129_20221004T164226_T15QWV"
+      },
+      {
+        "file": "pseudo_018809.pt",
+        "group": "GDACS_1103335",
+        "source": "GDACS_1103335_4_0001/20250623T125331_20250623T125326_T24LYQ"
+      },
+      {
+        "file": "pseudo_022454.pt",
+        "group": "GDACS_1103976",
+        "source": "GDACS_1103976_1_0003/20260703T072609_20260703T073255_T38SQH"
+      },
+      {
+        "file": "pseudo_010065.pt",
+        "group": "GDACS_1101765",
+        "source": "GDACS_1101765_1_0002/20221206T082229_20221206T082246_T36SYC"
+      },
+      {
+        "file": "pseudo_016496.pt",
+        "group": "GDACS_1102932",
+        "source": "GDACS_1102932_1_0003/20240427T222541_20240427T222624_T59GMK"
+      },
+      {
+        "file": "pseudo_000926.pt",
+        "group": "GDACS_1000202",
+        "source": "GDACS_1000202_1_0002/20180527T074731_20180527T075855_T37PCK"
+      },
+      {
+        "file": "pseudo_011068.pt",
+        "group": "GDACS_1101949",
+        "source": "GDACS_1101949_1_0002/20220709T081609_20220709T084024_T35MLS"
+      },
+      {
+        "file": "pseudo_015906.pt",
+        "group": "GDACS_1102828",
+        "source": "GDACS_1102828_1_0001/20230718T112119_20230718T112118_T29TPG"
+      },
+      {
+        "file": "pseudo_019513.pt",
+        "group": "GDACS_1103473",
+        "source": "GDACS_1103473_1_0000/20250901T105041_20250901T105043_T31UET"
+      },
+      {
+        "file": "pseudo_005817.pt",
+        "group": "GDACS_1100983",
+        "source": "GDACS_1100983_2_0003/20201107T102231_20201107T102337_T32TQT"
+      },
+      {
+        "file": "pseudo_008735.pt",
+        "group": "GDACS_1101516",
+        "source": "GDACS_1101516_1_0002/20211018T101939_20211018T102105_T32TMS"
+      },
+      {
+        "file": "pseudo_021297.pt",
+        "group": "GDACS_1103772",
+        "source": "GDACS_1103772_2_0003/20260216T211909_20260216T211910_T04QFJ"
+      },
+      {
+        "file": "pseudo_014135.pt",
+        "group": "GDACS_1102517",
+        "source": "GDACS_1102517_1_0002/20230214T100029_20230214T100452_T33TWJ"
+      },
+      {
+        "file": "pseudo_003709.pt",
+        "group": "GDACS_1100591",
+        "source": "GDACS_1100591_1_0000/20191001T032541_20191001T032603_T48QWJ"
+      },
+      {
+        "file": "pseudo_018471.pt",
+        "group": "GDACS_1103277",
+        "source": "GDACS_1103277_34_0003/20250602T034539_20250602T035529_T48TXL"
+      },
+      {
+        "file": "pseudo_005514.pt",
+        "group": "GDACS_1100922",
+        "source": "GDACS_1100922_1_0001/20210608T161829_20210608T163408_T15PZR"
+      },
+      {
+        "file": "pseudo_008584.pt",
+        "group": "GDACS_1101490",
+        "source": "GDACS_1101490_1_0002/20220611T185919_20220611T190813_T10UGA"
+      },
+      {
+        "file": "pseudo_002385.pt",
+        "group": "GDACS_1100343",
+        "source": "GDACS_1100343_1_0001/20190101T105439_20190101T105645_T30SYH"
+      },
+      {
+        "file": "pseudo_013714.pt",
+        "group": "GDACS_1102448",
+        "source": "GDACS_1102448_1_0003/20240123T183649_20240123T184412_T11SMS"
+      },
+      {
+        "file": "pseudo_008618.pt",
+        "group": "GDACS_1101499",
+        "source": "GDACS_1101499_1_0003/20220614T100041_20220614T101116_T31NEH"
+      },
+      {
+        "file": "pseudo_013023.pt",
+        "group": "GDACS_1102327",
+        "source": "GDACS_1102327_1_0000/20231111T105301_20231111T105527_T31UDS"
+      },
+      {
+        "file": "pseudo_023337.pt",
+        "group": "GDACS_4403",
+        "source": "GDACS_4403_2_0002/20161012T034702_20161012T040251_T47PPS"
+      },
+      {
+        "file": "pseudo_017606.pt",
+        "group": "GDACS_1103138",
+        "source": "GDACS_1103138_1_0000/20240208T062021_20240208T062021_T41SQR"
+      },
+      {
+        "file": "pseudo_004898.pt",
+        "group": "GDACS_1100805",
+        "source": "GDACS_1100805_5_0000/20210326T151659_20210326T151713_T18MVT"
+      },
+      {
+        "file": "pseudo_004710.pt",
+        "group": "GDACS_1100760",
+        "source": "GDACS_1100760_1_0000/20210212T074009_20210212T080243_T35JQJ"
+      },
+      {
+        "file": "pseudo_006383.pt",
+        "group": "GDACS_1101097",
+        "source": "GDACS_1101097_1_0002/20200909T141739_20200909T142649_T20KMF"
+      },
+      {
+        "file": "pseudo_000596.pt",
+        "group": "GDACS_1000146",
+        "source": "GDACS_1000146_1_0001/20160821T030542_20160821T083453_T49QDV"
+      },
+      {
+        "file": "pseudo_001058.pt",
+        "group": "GDACS_1000227",
+        "source": "GDACS_1000227_2_0003/20190327T072731_20190327T074847_T37LBD"
+      },
+      {
+        "file": "pseudo_021153.pt",
+        "group": "GDACS_1103747",
+        "source": "GDACS_1103747_3_0001/20260201T110301_20260201T110256_T30STD"
+      },
+      {
+        "file": "pseudo_010276.pt",
+        "group": "GDACS_1101802",
+        "source": "GDACS_1101802_2_0002/20230102T001109_20230102T001107_T55HFA"
+      },
+      {
+        "file": "pseudo_011524.pt",
+        "group": "GDACS_1102035",
+        "source": "GDACS_1102035_1_0000/20220714T090559_20220714T091727_T35TLJ"
+      },
+      {
+        "file": "pseudo_012150.pt",
+        "group": "GDACS_1102154",
+        "source": "GDACS_1102154_1_0001/20221225T080331_20221225T080334_T38TMN"
+      },
+      {
+        "file": "pseudo_019125.pt",
+        "group": "GDACS_1103394",
+        "source": "GDACS_1103394_5_0003/20250712T102559_20250712T103000_T32UNU"
+      },
+      {
+        "file": "pseudo_012042.pt",
+        "group": "GDACS_1102131",
+        "source": "GDACS_1102131_1_0001/20230112T022041_20230112T022043_T52SCG"
+      },
+      {
+        "file": "pseudo_004542.pt",
+        "group": "GDACS_1100733",
+        "source": "GDACS_1100733_1_0001/20210110T142729_20210110T142730_T21NUJ"
+      },
+      {
+        "file": "pseudo_004181.pt",
+        "group": "GDACS_1100672",
+        "source": "GDACS_1100672_1_0002/20200222T021709_20200222T022934_T51PTS"
+      },
+      {
+        "file": "pseudo_007220.pt",
+        "group": "GDACS_1101245",
+        "source": "GDACS_1101245_1_0002/20201227T144729_20201227T144723_T20PMR"
+      },
+      {
+        "file": "pseudo_022472.pt",
+        "group": "GDACS_1103979",
+        "source": "GDACS_1103979_1_0000/20260702T075609_20260702T075645_T37TGH"
+      },
+      {
+        "file": "pseudo_021601.pt",
+        "group": "GDACS_1103829",
+        "source": "GDACS_1103829_1_0000/20260321T074609_20260321T081412_T36KUB"
+      },
+      {
+        "file": "pseudo_002966.pt",
+        "group": "GDACS_1100444",
+        "source": "GDACS_1100444_1_0003/20200429T184919_20200429T185550_T12VVJ"
+      },
+      {
+        "file": "pseudo_018225.pt",
+        "group": "GDACS_1103238",
+        "source": "GDACS_1103238_1_0001/20250426T095051_20250426T095050_T33UXR"
+      },
+      {
+        "file": "pseudo_005312.pt",
+        "group": "GDACS_1100889",
+        "source": "GDACS_1100889_5_0002/20210513T152641_20210513T152639_T18NYP"
+      },
+      {
+        "file": "pseudo_015185.pt",
+        "group": "GDACS_1102699",
+        "source": "GDACS_1102699_1_0000/20240611T155911_20240611T161203_T16PFB"
+      },
+      {
+        "file": "pseudo_008513.pt",
+        "group": "GDACS_1101478",
+        "source": "GDACS_1101478_1_0003/20210623T094031_20210623T094347_T33TYK"
+      },
+      {
+        "file": "pseudo_000291.pt",
+        "group": "GDACS_1000066",
+        "source": "GDACS_1000066_1_0000/20170307T074231_20170307T074924_T36KYD"
+      },
+      {
+        "file": "pseudo_012595.pt",
+        "group": "GDACS_1102245",
+        "source": "GDACS_1102245_1_0001/20231005T032609_20231005T034228_T48PUV"
+      },
+      {
+        "file": "pseudo_012851.pt",
+        "group": "GDACS_1102293",
+        "source": "GDACS_1102293_2_0002/20231102T170451_20231102T171357_T14SQA"
+      },
+      {
+        "file": "pseudo_000947.pt",
+        "group": "GDACS_1000208",
+        "source": "GDACS_1000208_4_0000/20180218T014721_20180218T015212_T53SKU"
+      },
+      {
+        "file": "pseudo_013164.pt",
+        "group": "GDACS_1102348",
+        "source": "GDACS_1102348_1_0003/20230414T161831_20230414T162739_T15PZT"
+      },
+      {
+        "file": "pseudo_001226.pt",
+        "group": "GDACS_1100120",
+        "source": "GDACS_1100120_1_0002/20190814T031549_20190814T032755_T48PYA"
+      },
+      {
+        "file": "pseudo_010145.pt",
+        "group": "GDACS_1101778",
+        "source": "GDACS_1101778_4_0003/20221217T021341_20221217T021344_T51PYN"
+      },
+      {
+        "file": "pseudo_005932.pt",
+        "group": "GDACS_1101002",
+        "source": "GDACS_1101002_1_0002/20210806T143731_20210806T143730_T20PQS"
+      },
+      {
+        "file": "pseudo_018839.pt",
+        "group": "GDACS_1103341",
+        "source": "GDACS_1103341_10_0000/20250707T145729_20250707T145828_T19NFG"
+      },
+      {
+        "file": "pseudo_007556.pt",
+        "group": "GDACS_1101305",
+        "source": "GDACS_1101305_9_0003/20210421T021339_20210421T021339_T51NVB"
+      },
+      {
+        "file": "pseudo_013201.pt",
+        "group": "GDACS_1102354",
+        "source": "GDACS_1102354_1_0003/20231018T083849_20231018T085614_T34NFK"
+      },
+      {
+        "file": "pseudo_009315.pt",
+        "group": "GDACS_1101634",
+        "source": "GDACS_1101634_1_0000/20211006T112119_20211006T113232_T28PDA"
+      },
+      {
+        "file": "pseudo_009392.pt",
+        "group": "GDACS_1101650",
+        "source": "GDACS_1101650_1_0001/20220910T105631_20220910T105847_T31UET"
+      },
+      {
+        "file": "pseudo_017287.pt",
+        "group": "GDACS_1103073",
+        "source": "GDACS_1103073_1_0003/20241229T085401_20241229T085356_T35SNA"
+      },
+      {
+        "file": "pseudo_001279.pt",
+        "group": "GDACS_1100131",
+        "source": "GDACS_1100131_1_0001/20190127T170551_20190127T171004_T15SUV"
+      },
+      {
+        "file": "pseudo_018288.pt",
+        "group": "GDACS_1103247",
+        "source": "GDACS_1103247_1_0001/20240613T022539_20240613T024502_T50NML"
+      },
+      {
+        "file": "pseudo_012091.pt",
+        "group": "GDACS_1102141",
+        "source": "GDACS_1102141_1_0002/20230718T093549_20230718T093841_T34UDV"
+      },
+      {
+        "file": "pseudo_019196.pt",
+        "group": "GDACS_1103413",
+        "source": "GDACS_1103413_2_0000/20240716T091559_20240716T091941_T35ULQ"
+      },
+      {
+        "file": "pseudo_017197.pt",
+        "group": "GDACS_1103054",
+        "source": "GDACS_1103054_1_0000/20241220T032141_20241220T032629_T48PXS"
+      },
+      {
+        "file": "pseudo_014666.pt",
+        "group": "GDACS_1102609",
+        "source": "GDACS_1102609_3_0000/20230804T153621_20230804T153815_T18NVL"
+      },
+      {
+        "file": "pseudo_005782.pt",
+        "group": "GDACS_1100974",
+        "source": "GDACS_1100974_2_0003/20210716T080611_20210716T081240_T38TKL"
+      },
+      {
+        "file": "pseudo_010111.pt",
+        "group": "GDACS_1101773",
+        "source": "GDACS_1101773_1_0003/20221127T102351_20221127T102351_T32TNN"
+      },
+      {
+        "file": "pseudo_009304.pt",
+        "group": "GDACS_1101631",
+        "source": "GDACS_1101631_2_0002/20220913T033539_20220913T034543_T47PQQ"
+      },
+      {
+        "file": "pseudo_005052.pt",
+        "group": "GDACS_1100838",
+        "source": "GDACS_1100838_1_0000/20210418T032529_20210418T033907_T48PUA"
+      },
+      {
+        "file": "pseudo_017499.pt",
+        "group": "GDACS_1103108",
+        "source": "GDACS_1103108_1_0002/20250204T084211_20250204T085740_T33KYR"
+      },
+      {
+        "file": "pseudo_006081.pt",
+        "group": "GDACS_1101034",
+        "source": "GDACS_1101034_1_0002/20201115T112341_20201115T113729_T28PDA"
+      },
+      {
+        "file": "pseudo_001042.pt",
+        "group": "GDACS_1000225",
+        "source": "GDACS_1000225_3_0003/20190312T063651_20190312T064749_T40RGS"
+      },
+      {
+        "file": "pseudo_015005.pt",
+        "group": "GDACS_1102665",
+        "source": "GDACS_1102665_1_0000/20240608T095549_20240608T095736_T33UYR"
+      },
+      {
+        "file": "pseudo_019885.pt",
+        "group": "GDACS_1103533",
+        "source": "GDACS_1103533_2_0001/20251002T110809_20251002T112634_T28PGB"
+      },
+      {
+        "file": "pseudo_022878.pt",
+        "group": "GDACS_1104049",
+        "source": "GDACS_1104049_1_0003/20260719T062321_20260719T062316_T42UXB"
+      },
+      {
+        "file": "pseudo_008764.pt",
+        "group": "GDACS_1101524",
+        "source": "GDACS_1101524_1_0001/20220711T141719_20220711T142628_T20JLL"
+      },
+      {
+        "file": "pseudo_003226.pt",
+        "group": "GDACS_1100491",
+        "source": "GDACS_1100491_1_0001/20200611T162901_20200611T164203_T16RBU"
+      },
+      {
+        "file": "pseudo_014225.pt",
+        "group": "GDACS_1102532",
+        "source": "GDACS_1102532_2_0003/20230312T065709_20230312T070812_T40SBA"
+      },
+      {
+        "file": "pseudo_010968.pt",
+        "group": "GDACS_1101926",
+        "source": "GDACS_1101926_1_0003/20220313T071659_20220313T071835_T40UDB"
+      },
+      {
+        "file": "pseudo_008129.pt",
+        "group": "GDACS_1101411",
+        "source": "GDACS_1101411_2_0001/20211201T023051_20211201T024541_T50NLL"
+      },
+      {
+        "file": "pseudo_020259.pt",
+        "group": "GDACS_1103594",
+        "source": "GDACS_1103594_1_0001/20251018T155531_20251018T160037_T17PMK"
+      },
+      {
+        "file": "pseudo_000341.pt",
+        "group": "GDACS_1000082",
+        "source": "GDACS_1000082_1_0000/20170427T153621_20170427T153620_T18QWF"
+      },
+      {
+        "file": "pseudo_010715.pt",
+        "group": "GDACS_1101878",
+        "source": "GDACS_1101878_1_0002/20230226T103919_20230226T104451_T31SDD"
+      },
+      {
+        "file": "pseudo_011237.pt",
+        "group": "GDACS_1101984",
+        "source": "GDACS_1101984_1_0002/20230501T024531_20230501T025735_T50RNN"
+      },
+      {
+        "file": "pseudo_005412.pt",
+        "group": "GDACS_1100906",
+        "source": "GDACS_1100906_1_0002/20210530T221611_20210530T221605_T60GVA"
+      },
+      {
+        "file": "pseudo_013471.pt",
+        "group": "GDACS_1102407",
+        "source": "GDACS_1102407_1_0002/20240109T103329_20240109T103324_T32UND"
+      },
+      {
+        "file": "pseudo_020891.pt",
+        "group": "GDACS_1103700",
+        "source": "GDACS_1103700_1_0000/20251231T093319_20251231T093313_T34TDN"
+      },
+      {
+        "file": "pseudo_014590.pt",
+        "group": "GDACS_1102595",
+        "source": "GDACS_1102595_6_0002/20230529T102601_20230529T103727_T31TGN"
+      },
+      {
+        "file": "pseudo_004447.pt",
+        "group": "GDACS_1100716",
+        "source": "GDACS_1100716_1_0000/20200116T105309_20200116T105304_T32VPM"
+      },
+      {
+        "file": "pseudo_020821.pt",
+        "group": "GDACS_1103687",
+        "source": "GDACS_1103687_1_0003/20251219T004659_20251219T004702_T55MBP"
+      },
+      {
+        "file": "pseudo_011579.pt",
+        "group": "GDACS_1102044",
+        "source": "GDACS_1102044_3_0000/20230606T030531_20230606T031832_T49QBD"
+      },
+      {
+        "file": "pseudo_010956.pt",
+        "group": "GDACS_1101925",
+        "source": "GDACS_1101925_2_0001/20220321T090651_20220321T091339_T35UQR"
+      },
+      {
+        "file": "pseudo_004457.pt",
+        "group": "GDACS_1100718",
+        "source": "GDACS_1100718_1_0003/20200731T050611_20200731T050609_T44NNP"
+      },
+      {
+        "file": "pseudo_002988.pt",
+        "group": "GDACS_1100450",
+        "source": "GDACS_1100450_1_0001/20200417T071621_20200417T073455_T37NHA"
+      },
+      {
+        "file": "pseudo_009405.pt",
+        "group": "GDACS_1101653",
+        "source": "GDACS_1101653_1_0000/20211010T050731_20211010T050850_T44RMU"
+      },
+      {
+        "file": "pseudo_003035.pt",
+        "group": "GDACS_1100459",
+        "source": "GDACS_1100459_5_0000/20200211T074959_20200211T080355_T36NXG"
+      },
+      {
+        "file": "pseudo_007616.pt",
+        "group": "GDACS_1101315",
+        "source": "GDACS_1101315_1_0001/20220312T021351_20220312T021349_T51NXH"
+      },
+      {
+        "file": "pseudo_003754.pt",
+        "group": "GDACS_1100597",
+        "source": "GDACS_1100597_1_0001/20200827T094041_20200827T095632_T32PNU"
+      },
+      {
+        "file": "pseudo_009063.pt",
+        "group": "GDACS_1101580",
+        "source": "GDACS_1101580_1_0000/20210731T095029_20210731T095031_T33SUB"
+      },
+      {
+        "file": "pseudo_014631.pt",
+        "group": "GDACS_1102603",
+        "source": "GDACS_1102603_1_0001/20240509T105031_20240509T105027_T31UGS"
+      },
+      {
+        "file": "pseudo_018979.pt",
+        "group": "GDACS_1103367",
+        "source": "GDACS_1103367_2_0003/20250712T025611_20250712T031217_T48MYU"
+      },
+      {
+        "file": "pseudo_017436.pt",
+        "group": "GDACS_1103098",
+        "source": "GDACS_1103098_3_0000/20240126T135659_20240126T140916_T20HQJ"
+      },
+      {
+        "file": "pseudo_015723.pt",
+        "group": "GDACS_1102792",
+        "source": "GDACS_1102792_1_0003/20240730T103629_20240730T105447_T29PRQ"
+      },
+      {
+        "file": "pseudo_001186.pt",
+        "group": "GDACS_1100110",
+        "source": "GDACS_1100110_1_0001/20190717T124329_20190717T124326_T25MBM"
+      },
+      {
+        "file": "pseudo_022962.pt",
+        "group": "GDACS_1104068",
+        "source": "GDACS_1104068_1_0001/20250702T072321_20250702T072413_T38PMA"
+      },
+      {
+        "file": "pseudo_009832.pt",
+        "group": "GDACS_1101726",
+        "source": "GDACS_1101726_1_0001/20211013T144729_20211013T144727_T20PQA"
+      },
+      {
+        "file": "pseudo_009987.pt",
+        "group": "GDACS_1101752",
+        "source": "GDACS_1101752_1_0000/20221122T102239_20221122T102240_T32TMK"
+      },
+      {
+        "file": "pseudo_021975.pt",
+        "group": "GDACS_1103892",
+        "source": "GDACS_1103892_5_0000/20260529T152941_20260529T153436_T17MQP"
+      },
+      {
+        "file": "pseudo_016780.pt",
+        "group": "GDACS_1102984",
+        "source": "GDACS_1102984_1_0000/20240515T110621_20240515T111001_T32VLM"
+      },
+      {
+        "file": "pseudo_008356.pt",
+        "group": "GDACS_1101451",
+        "source": "GDACS_1101451_2_0002/20220601T194911_20220601T194908_T09UVB"
+      },
+      {
+        "file": "pseudo_000753.pt",
+        "group": "GDACS_1000173",
+        "source": "GDACS_1000173_1_0000/20180309T095019_20180309T095740_T33TXK"
+      },
+      {
+        "file": "pseudo_023681.pt",
+        "group": "SUDAN2020",
+        "source": "SUDAN2020_KHARTOUM_0004/20200830T080611_20200830T081241_T36PVC"
+      },
+      {
+        "file": "pseudo_006685.pt",
+        "group": "GDACS_1101158",
+        "source": "GDACS_1101158_1_0003/20210929T113319_20210929T113317_T30UUC"
+      },
+      {
+        "file": "pseudo_020985.pt",
+        "group": "GDACS_1103713",
+        "source": "GDACS_1103713_4_0000/20260107T152701_20260107T152834_T18MUT"
+      },
+      {
+        "file": "pseudo_010357.pt",
+        "group": "GDACS_1101818",
+        "source": "GDACS_1101818_1_0000/20230115T032059_20230115T033412_T48PVT"
+      }
+    ],
+    "interaction": [
+      {
+        "file": "pseudo_022530.pt",
+        "group": "GDACS_1103988",
+        "source": "GDACS_1103988_1_0002/20260611T155821_20260611T161743_T16PFT"
+      },
+      {
+        "file": "pseudo_005024.pt",
+        "group": "GDACS_1100833",
+        "source": "GDACS_1100833_1_0002/20210321T151701_20210321T151703_T18NXJ"
+      },
+      {
+        "file": "pseudo_010700.pt",
+        "group": "GDACS_1101876",
+        "source": "GDACS_1101876_2_0003/20220704T031531_20220704T033033_T48NUH"
+      },
+      {
+        "file": "pseudo_005264.pt",
+        "group": "GDACS_1100881",
+        "source": "GDACS_1100881_3_0001/20210512T222531_20210512T222532_T04WDU"
+      },
+      {
+        "file": "pseudo_007013.pt",
+        "group": "GDACS_1101212",
+        "source": "GDACS_1101212_2_0003/20211231T142731_20211231T143734_T19KHV"
+      },
+      {
+        "file": "pseudo_009550.pt",
+        "group": "GDACS_1101678",
+        "source": "GDACS_1101678_1_0000/20220917T031519_20220917T033145_T48PVV"
+      },
+      {
+        "file": "pseudo_013780.pt",
+        "group": "GDACS_1102460",
+        "source": "GDACS_1102460_2_0002/20240117T150719_20240117T150901_T18LWL"
+      },
+      {
+        "file": "pseudo_009835.pt",
+        "group": "GDACS_1101727",
+        "source": "GDACS_1101727_1_0000/20221112T061101_20221112T061103_T42SXH"
+      },
+      {
+        "file": "pseudo_021276.pt",
+        "group": "GDACS_1103770",
+        "source": "GDACS_1103770_1_0000/20250304T094101_20250304T094055_T33TYH"
+      },
+      {
+        "file": "pseudo_011563.pt",
+        "group": "GDACS_1102042",
+        "source": "GDACS_1102042_1_0000/20230528T055641_20230528T060755_T42RVP"
+      },
+      {
+        "file": "pseudo_000579.pt",
+        "group": "GDACS_1000141",
+        "source": "GDACS_1000141_1_0003/20171019T033729_20171019T034744_T47NPF"
+      },
+      {
+        "file": "pseudo_010533.pt",
+        "group": "GDACS_1101850",
+        "source": "GDACS_1101850_1_0000/20230209T082111_20230209T082246_T37SBU"
+      },
+      {
+        "file": "pseudo_001314.pt",
+        "group": "GDACS_1100139",
+        "source": "GDACS_1100139_1_0003/20190603T023559_20190603T024924_T49NHC"
+      },
+      {
+        "file": "pseudo_021760.pt",
+        "group": "GDACS_1103854",
+        "source": "GDACS_1103854_8_0003/20250708T151741_20250708T152303_T18LUP"
+      },
+      {
+        "file": "pseudo_018459.pt",
+        "group": "GDACS_1103276",
+        "source": "GDACS_1103276_7_0001/20250524T100029_20250524T100639_T32TQP"
+      },
+      {
+        "file": "pseudo_019180.pt",
+        "group": "GDACS_1103410",
+        "source": "GDACS_1103410_1_0000/20241227T095421_20241227T095423_T33TWL"
+      },
+      {
+        "file": "pseudo_000281.pt",
+        "group": "GDACS_1000063",
+        "source": "GDACS_1000063_1_0003/20170223T184421_20170223T184421_T11SKU"
+      },
+      {
+        "file": "pseudo_023422.pt",
+        "group": "GDACS_4423",
+        "source": "GDACS_4423_2_0001/20160412T033552_20160412T034713_T47PPS"
+      },
+      {
+        "file": "pseudo_008348.pt",
+        "group": "GDACS_1101450",
+        "source": "GDACS_1101450_1_0002/20220601T095041_20220601T095037_T33TWJ"
+      },
+      {
+        "file": "pseudo_000815.pt",
+        "group": "GDACS_1000181",
+        "source": "GDACS_1000181_1_0000/20180329T053641_20180329T053658_T44UND"
+      },
+      {
+        "file": "pseudo_009596.pt",
+        "group": "GDACS_1101684",
+        "source": "GDACS_1101684_1_0003/20220922T100031_20220922T100034_T33TVL"
+      },
+      {
+        "file": "pseudo_023465.pt",
+        "group": "GDACS_4434",
+        "source": "GDACS_4434_2_0002/20161231T185802_20161231T190105_T10SEJ"
+      },
+      {
+        "file": "pseudo_005304.pt",
+        "group": "GDACS_1100887",
+        "source": "GDACS_1100887_1_0003/20210526T024549_20210526T025349_T50RLS"
+      },
+      {
+        "file": "pseudo_001485.pt",
+        "group": "GDACS_1100174",
+        "source": "GDACS_1100174_1_0002/20190417T110629_20190417T111237_T30UWE"
+      },
+      {
+        "file": "pseudo_008047.pt",
+        "group": "GDACS_1101398",
+        "source": "GDACS_1101398_1_0001/20210605T060629_20210605T060759_T42SVE"
+      },
+      {
+        "file": "pseudo_005882.pt",
+        "group": "GDACS_1100995",
+        "source": "GDACS_1100995_1_0000/20210722T041549_20210722T043125_T46QCJ"
+      },
+      {
+        "file": "pseudo_001452.pt",
+        "group": "GDACS_1100169",
+        "source": "GDACS_1100169_1_0000/20190629T043709_20190629T043709_T47UMA"
+      },
+      {
+        "file": "pseudo_012017.pt",
+        "group": "GDACS_1102126",
+        "source": "GDACS_1102126_1_0002/20230706T155529_20230706T155651_T17PLK"
+      },
+      {
+        "file": "pseudo_002976.pt",
+        "group": "GDACS_1100448",
+        "source": "GDACS_1100448_3_0002/20200425T072609_20200425T074553_T37PHL"
+      },
+      {
+        "file": "pseudo_007707.pt",
+        "group": "GDACS_1101332",
+        "source": "GDACS_1101332_1_0002/20211013T153621_20211013T153809_T17MQS"
+      },
+      {
+        "file": "pseudo_005748.pt",
+        "group": "GDACS_1100969",
+        "source": "GDACS_1100969_1_0002/20210724T100029_20210724T100936_T33SUC"
+      },
+      {
+        "file": "pseudo_023277.pt",
+        "group": "GDACS_4382",
+        "source": "GDACS_4382_2_0003/20160825T042702_20160825T044109_T45QYG"
+      },
+      {
+        "file": "pseudo_003778.pt",
+        "group": "GDACS_1100600",
+        "source": "GDACS_1100600_1_0002/20200831T050659_20200831T051456_T44RQS"
+      },
+      {
+        "file": "pseudo_012757.pt",
+        "group": "GDACS_1102270",
+        "source": "GDACS_1102270_6_0002/20231012T095849_20231012T101313_T31PEK"
+      },
+      {
+        "file": "pseudo_019626.pt",
+        "group": "GDACS_1103490",
+        "source": "GDACS_1103490_2_0001/20250110T153629_20250110T153933_T18NVP"
+      },
+      {
+        "file": "pseudo_020769.pt",
+        "group": "GDACS_1103679",
+        "source": "GDACS_1103679_2_0002/20250714T153651_20250714T153702_T18NTH"
+      },
+      {
+        "file": "pseudo_000361.pt",
+        "group": "GDACS_1000087",
+        "source": "GDACS_1000087_1_0001/20170523T124321_20170523T124320_T25LBL"
+      },
+      {
+        "file": "pseudo_000082.pt",
+        "group": "CHINA2020",
+        "source": "CHINA2020_YANGTZE_0006/20190604T025551_20190604T030939_T50RMT"
+      },
+      {
+        "file": "pseudo_006997.pt",
+        "group": "GDACS_1101210",
+        "source": "GDACS_1101210_1_0003/20211206T091249_20211206T091249_T35TLG"
+      },
+      {
+        "file": "pseudo_006830.pt",
+        "group": "GDACS_1101185",
+        "source": "GDACS_1101185_1_0000/20210217T032809_20210217T034000_T47NQD"
+      },
+      {
+        "file": "pseudo_003180.pt",
+        "group": "GDACS_1100484",
+        "source": "GDACS_1100484_1_0001/20200530T072621_20200530T074318_T37MFT"
+      },
+      {
+        "file": "pseudo_003324.pt",
+        "group": "GDACS_1100515",
+        "source": "GDACS_1100515_3_0000/20200620T042709_20200620T044041_T46RBQ"
+      },
+      {
+        "file": "pseudo_011613.pt",
+        "group": "GDACS_1102049",
+        "source": "GDACS_1102049_3_0003/20230605T153621_20230605T153621_T17MQV"
+      },
+      {
+        "file": "pseudo_013001.pt",
+        "group": "GDACS_1102323",
+        "source": "GDACS_1102323_1_0003/20231106T050001_20231106T051230_T44NLP"
+      },
+      {
+        "file": "pseudo_004754.pt",
+        "group": "GDACS_1100767",
+        "source": "GDACS_1100767_1_0003/20210206T081121_20210206T081235_T37SCR"
+      },
+      {
+        "file": "pseudo_016719.pt",
+        "group": "GDACS_1102971",
+        "source": "GDACS_1102971_1_0003/20241028T081041_20241028T081236_T37TFH"
+      },
+      {
+        "file": "pseudo_016432.pt",
+        "group": "GDACS_1102923",
+        "source": "GDACS_1102923_1_0000/20231226T050221_20231226T050218_T44RQS"
+      },
+      {
+        "file": "pseudo_020114.pt",
+        "group": "GDACS_1103571",
+        "source": "GDACS_1103571_2_0000/20241223T051231_20241223T052219_T44QKE"
+      },
+      {
+        "file": "pseudo_015939.pt",
+        "group": "GDACS_1102834",
+        "source": "GDACS_1102834_2_0003/20240823T110621_20240823T112729_T28PFR"
+      },
+      {
+        "file": "pseudo_023689.pt",
+        "group": "TENNESSEE2021",
+        "source": "TENNESSEE2021_0000/20210825T162901_20210825T164058_T16SDF"
+      },
+      {
+        "file": "pseudo_012971.pt",
+        "group": "GDACS_1102319",
+        "source": "GDACS_1102319_1_0000/20231023T003701_20231023T003703_T55MCN"
+      },
+      {
+        "file": "pseudo_007339.pt",
+        "group": "GDACS_1101267",
+        "source": "GDACS_1101267_1_0002/20220123T060141_20220123T060137_T42SXC"
+      },
+      {
+        "file": "pseudo_003407.pt",
+        "group": "GDACS_1100531",
+        "source": "GDACS_1100531_2_0003/20191016T055821_20191016T060358_T42SYE"
+      },
+      {
+        "file": "pseudo_013080.pt",
+        "group": "GDACS_1102335",
+        "source": "GDACS_1102335_1_0003/20230213T103039_20230213T103136_T31TGL"
+      },
+      {
+        "file": "pseudo_003980.pt",
+        "group": "GDACS_1100641",
+        "source": "GDACS_1100641_3_0002/20201001T094039_20201001T095558_T32PMU"
+      },
+      {
+        "file": "pseudo_010541.pt",
+        "group": "GDACS_1101851",
+        "source": "GDACS_1101851_1_0000/20230129T062119_20230129T062115_T42TVN"
+      },
+      {
+        "file": "pseudo_018011.pt",
+        "group": "GDACS_1103204",
+        "source": "GDACS_1103204_2_0002/20250411T180919_20250411T180916_T13UDU"
+      },
+      {
+        "file": "pseudo_008676.pt",
+        "group": "GDACS_1101508",
+        "source": "GDACS_1101508_1_0002/20220626T030529_20220626T032154_T49QCB"
+      },
+      {
+        "file": "pseudo_014404.pt",
+        "group": "GDACS_1102564",
+        "source": "GDACS_1102564_6_0001/20240402T073611_20240402T074027_T39VXC"
+      },
+      {
+        "file": "pseudo_005230.pt",
+        "group": "GDACS_1100876",
+        "source": "GDACS_1100876_1_0000/20210510T072619_20210510T074705_T37MEN"
+      },
+      {
+        "file": "pseudo_003672.pt",
+        "group": "GDACS_1100583",
+        "source": "GDACS_1100583_1_0003/20200801T092031_20200801T093641_T33PWM"
+      },
+      {
+        "file": "pseudo_006851.pt",
+        "group": "GDACS_1101187",
+        "source": "GDACS_1101187_1_0002/20211202T084331_20211202T084325_T36SUG"
+      },
+      {
+        "file": "pseudo_013291.pt",
+        "group": "GDACS_1102374",
+        "source": "GDACS_1102374_1_0001/20231211T133829_20231211T133830_T21JYM"
+      },
+      {
+        "file": "pseudo_008619.pt",
+        "group": "GDACS_1101500",
+        "source": "GDACS_1101500_1_0000/20220324T032539_20220324T033631_T47NQD"
+      },
+      {
+        "file": "pseudo_011036.pt",
+        "group": "GDACS_1101944",
+        "source": "GDACS_1101944_1_0002/20220614T100041_20220614T100037_T32TQM"
+      },
+      {
+        "file": "pseudo_008947.pt",
+        "group": "GDACS_1101558",
+        "source": "GDACS_1101558_1_0002/20220722T100559_20220722T101518_T32TPT"
+      },
+      {
+        "file": "pseudo_015621.pt",
+        "group": "GDACS_1102776",
+        "source": "GDACS_1102776_1_0000/20240722T112119_20240722T113614_T28PDU"
+      },
+      {
+        "file": "pseudo_014007.pt",
+        "group": "GDACS_1102498",
+        "source": "GDACS_1102498_1_0003/20230213T103039_20230213T103136_T31SFA"
+      },
+      {
+        "file": "pseudo_018789.pt",
+        "group": "GDACS_1103332",
+        "source": "GDACS_1103332_2_0003/20250615T030541_20250615T031920_T49QCB"
+      },
+      {
+        "file": "pseudo_000734.pt",
+        "group": "GDACS_1000168",
+        "source": "GDACS_1000168_2_0003/20171208T021329_20171208T021332_T51PYL"
+      },
+      {
+        "file": "pseudo_007920.pt",
+        "group": "GDACS_1101375",
+        "source": "GDACS_1101375_1_0002/20220420T172901_20220420T173837_T14UPA"
+      },
+      {
+        "file": "pseudo_013767.pt",
+        "group": "GDACS_1102459",
+        "source": "GDACS_1102459_1_0000/20230209T100151_20230209T100209_T34UCB"
+      },
+      {
+        "file": "pseudo_005790.pt",
+        "group": "GDACS_1100977",
+        "source": "GDACS_1100977_26_0002/20210817T052651_20210817T053502_T43RGQ"
+      },
+      {
+        "file": "pseudo_006511.pt",
+        "group": "GDACS_1101121",
+        "source": "GDACS_1101121_1_0001/20210120T091209_20210120T091210_T34SGH"
+      },
+      {
+        "file": "pseudo_001868.pt",
+        "group": "GDACS_1100253",
+        "source": "GDACS_1100253_1_0001/20191102T155421_20191102T155929_T18TWN"
+      },
+      {
+        "file": "pseudo_009895.pt",
+        "group": "GDACS_1101735",
+        "source": "GDACS_1101735_5_0001/20230102T081239_20230102T082516_T35MQT"
+      },
+      {
+        "file": "pseudo_005382.pt",
+        "group": "GDACS_1100902",
+        "source": "GDACS_1100902_1_0002/20210517T044701_20210517T045547_T45QUF"
+      },
+      {
+        "file": "pseudo_007822.pt",
+        "group": "GDACS_1101356",
+        "source": "GDACS_1101356_1_0003/20220419T102559_20220419T103708_T30PWU"
+      },
+      {
+        "file": "pseudo_002940.pt",
+        "group": "GDACS_1100440",
+        "source": "GDACS_1100440_3_0002/20200426T060631_20200426T061626_T42SWE"
+      },
+      {
+        "file": "pseudo_009372.pt",
+        "group": "GDACS_1101646",
+        "source": "GDACS_1101646_1_0003/20220906T004709_20220906T005417_T53HQD"
+      },
+      {
+        "file": "pseudo_000010.pt",
+        "group": "AFGHANISTAN2022",
+        "source": "AFGHANISTAN2022_0005/20210228T061809_20210228T062930_T41SPU"
+      },
+      {
+        "file": "pseudo_002574.pt",
+        "group": "GDACS_1100377",
+        "source": "GDACS_1100377_1_0002/20200224T214859_20200224T214901_T02LLK"
+      },
+      {
+        "file": "pseudo_005471.pt",
+        "group": "GDACS_1100916",
+        "source": "GDACS_1100916_5_0003/20200704T081611_20200704T081759_T37TDL"
+      },
+      {
+        "file": "pseudo_016672.pt",
+        "group": "GDACS_1102962",
+        "source": "GDACS_1102962_2_0001/20240406T030519_20240406T031707_T48PZT"
+      },
+      {
+        "file": "pseudo_001245.pt",
+        "group": "GDACS_1100125",
+        "source": "GDACS_1100125_2_0000/20181215T101421_20181215T101420_T32TNS"
+      },
+      {
+        "file": "pseudo_004201.pt",
+        "group": "GDACS_1100675",
+        "source": "GDACS_1100675_1_0002/20191024T161239_20191024T161238_T17SMV"
+      },
+      {
+        "file": "pseudo_015882.pt",
+        "group": "GDACS_1102821",
+        "source": "GDACS_1102821_1_0003/20240314T034531_20240314T035814_T46NHL"
+      },
+      {
+        "file": "pseudo_021899.pt",
+        "group": "GDACS_1103880",
+        "source": "GDACS_1103880_3_0000/20260520T021211_20260520T021530_T51NXJ"
+      },
+      {
+        "file": "pseudo_021267.pt",
+        "group": "GDACS_1103768",
+        "source": "GDACS_1103768_1_0003/20260221T082859_20260221T082853_T37UCQ"
+      },
+      {
+        "file": "pseudo_003680.pt",
+        "group": "GDACS_1100586",
+        "source": "GDACS_1100586_1_0003/20200818T151709_20200818T151707_T19QDA"
+      },
+      {
+        "file": "pseudo_014885.pt",
+        "group": "GDACS_1102645",
+        "source": "GDACS_1102645_1_0002/20240527T100601_20240527T102046_T31NBG"
+      },
+      {
+        "file": "pseudo_015389.pt",
+        "group": "GDACS_1102737",
+        "source": "GDACS_1102737_1_0002/20240709T110619_20240709T112115_T28PFR"
+      },
+      {
+        "file": "pseudo_020651.pt",
+        "group": "GDACS_1103659",
+        "source": "GDACS_1103659_1_0003/20251202T190649_20251202T190649_T10UEV"
+      },
+      {
+        "file": "pseudo_018693.pt",
+        "group": "GDACS_1103313",
+        "source": "GDACS_1103313_1_0002/20250528T161829_20250528T163833_T15PXS"
+      },
+      {
+        "file": "pseudo_010220.pt",
+        "group": "GDACS_1101793",
+        "source": "GDACS_1101793_1_0000/20221214T110349_20221214T110444_T31UCT"
+      },
+      {
+        "file": "pseudo_003796.pt",
+        "group": "GDACS_1100603",
+        "source": "GDACS_1100603_1_0002/20200908T160829_20200908T162453_T16QED"
+      },
+      {
+        "file": "pseudo_004802.pt",
+        "group": "GDACS_1100776",
+        "source": "GDACS_1100776_4_0000/20210220T153619_20210220T153616_T17MNQ"
+      },
+      {
+        "file": "pseudo_014384.pt",
+        "group": "GDACS_1102561",
+        "source": "GDACS_1102561_1_0002/20240414T072619_20240414T074425_T37MEU"
+      },
+      {
+        "file": "pseudo_017169.pt",
+        "group": "GDACS_1103050",
+        "source": "GDACS_1103050_2_0000/20241215T191821_20241215T191942_T10UEV"
+      },
+      {
+        "file": "pseudo_011869.pt",
+        "group": "GDACS_1102101",
+        "source": "GDACS_1102101_1_0001/20230617T143731_20230617T143729_T20PQB"
+      },
+      {
+        "file": "pseudo_011337.pt",
+        "group": "GDACS_1102000",
+        "source": "GDACS_1102000_1_0000/20230508T041551_20230508T042759_T46QDH"
+      },
+      {
+        "file": "pseudo_004678.pt",
+        "group": "GDACS_1100755",
+        "source": "GDACS_1100755_2_0001/20210131T052039_20210131T052539_T44RLU"
+      },
+      {
+        "file": "pseudo_004665.pt",
+        "group": "GDACS_1100753",
+        "source": "GDACS_1100753_1_0002/20200503T230911_20200503T230909_T58KGG"
+      },
+      {
+        "file": "pseudo_005097.pt",
+        "group": "GDACS_1100850",
+        "source": "GDACS_1100850_2_0002/20200726T080609_20200726T082005_T35MQT"
+      },
+      {
+        "file": "pseudo_017222.pt",
+        "group": "GDACS_1103057",
+        "source": "GDACS_1103057_1_0001/20231122T075129_20231122T081140_T35JNM"
+      },
+      {
+        "file": "pseudo_021397.pt",
+        "group": "GDACS_1103789",
+        "source": "GDACS_1103789_8_0002/20260303T211921_20260303T211915_T04QFK"
+      },
+      {
+        "file": "pseudo_023082.pt",
+        "group": "GDACS_4339",
+        "source": "GDACS_4339_3_0002/20160315T055612_20160315T060423_T42SYB"
+      },
+      {
+        "file": "pseudo_002753.pt",
+        "group": "GDACS_1100407",
+        "source": "GDACS_1100407_2_0002/20190224T075921_20190224T080423_T38SLG"
+      },
+      {
+        "file": "pseudo_011683.pt",
+        "group": "GDACS_1102061",
+        "source": "GDACS_1102061_1_0002/20230610T093041_20230610T093036_T34TFT"
+      },
+      {
+        "file": "pseudo_000884.pt",
+        "group": "GDACS_1000195",
+        "source": "GDACS_1000195_1_0000/20180508T080609_20180508T082740_T36NUN"
+      },
+      {
+        "file": "pseudo_006969.pt",
+        "group": "GDACS_1101207",
+        "source": "GDACS_1101207_2_0001/20211209T152641_20211209T153325_T17LRK"
+      },
+      {
+        "file": "pseudo_002667.pt",
+        "group": "GDACS_1100395",
+        "source": "GDACS_1100395_1_0001/20191031T032851_20191031T033502_T48QUK"
+      },
+      {
+        "file": "pseudo_014542.pt",
+        "group": "GDACS_1102587",
+        "source": "GDACS_1102587_1_0001/20240422T062131_20240422T062319_T40KEC"
+      },
+      {
+        "file": "pseudo_021273.pt",
+        "group": "GDACS_1103769",
+        "source": "GDACS_1103769_5_0002/20260219T153631_20260219T153931_T17MNQ"
+      },
+      {
+        "file": "pseudo_010433.pt",
+        "group": "GDACS_1101830",
+        "source": "GDACS_1101830_1_0002/20230117T095331_20230117T095354_T34UCU"
+      },
+      {
+        "file": "pseudo_012241.pt",
+        "group": "GDACS_1102177",
+        "source": "GDACS_1102177_1_0003/20230803T095559_20230803T100733_T31PFP"
+      },
+      {
+        "file": "pseudo_006881.pt",
+        "group": "GDACS_1101191",
+        "source": "GDACS_1101191_1_0003/20211122T034051_20211122T034715_T47PNM"
+      },
+      {
+        "file": "pseudo_008910.pt",
+        "group": "GDACS_1101553",
+        "source": "GDACS_1101553_1_0002/20211217T111451_20211217T111454_T30UWF"
+      },
+      {
+        "file": "pseudo_019941.pt",
+        "group": "GDACS_1103541",
+        "source": "GDACS_1103541_1_0002/20250930T104041_20250930T104039_T32VNM"
+      },
+      {
+        "file": "pseudo_011133.pt",
+        "group": "GDACS_1101961",
+        "source": "GDACS_1101961_1_0002/20230428T143731_20230428T143725_T20PPS"
+      },
+      {
+        "file": "pseudo_022638.pt",
+        "group": "GDACS_1104009",
+        "source": "GDACS_1104009_2_0000/20260714T033539_20260714T034656_T48QTK"
+      },
+      {
+        "file": "pseudo_010705.pt",
+        "group": "GDACS_1101877",
+        "source": "GDACS_1101877_1_0001/20230220T093031_20230220T093339_T33TYE"
+      },
+      {
+        "file": "pseudo_019107.pt",
+        "group": "GDACS_1103390",
+        "source": "GDACS_1103390_1_0000/20250711T222001_20250711T222001_T60KXF"
+      },
+      {
+        "file": "pseudo_021117.pt",
+        "group": "GDACS_1103738",
+        "source": "GDACS_1103738_1_0003/20260121T163611_20260121T164821_T15QWV"
+      },
+      {
+        "file": "pseudo_019777.pt",
+        "group": "GDACS_1103518",
+        "source": "GDACS_1103518_1_0000/20250922T162701_20250922T163333_T16PBV"
+      },
+      {
+        "file": "pseudo_014289.pt",
+        "group": "GDACS_1102544",
+        "source": "GDACS_1102544_6_0003/20230716T080611_20230716T082517_T35MQS"
+      },
+      {
+        "file": "pseudo_020885.pt",
+        "group": "GDACS_1103699",
+        "source": "GDACS_1103699_1_0001/20260102T152649_20260102T152651_T19QCB"
+      },
+      {
+        "file": "pseudo_016940.pt",
+        "group": "GDACS_1103009",
+        "source": "GDACS_1103009_1_0001/20240731T143751_20240731T143745_T20PQT"
+      },
+      {
+        "file": "pseudo_016790.pt",
+        "group": "GDACS_1102986",
+        "source": "GDACS_1102986_1_0001/20231023T084021_20231023T084952_T36SVD"
+      },
+      {
+        "file": "pseudo_009506.pt",
+        "group": "GDACS_1101669",
+        "source": "GDACS_1101669_1_0003/20220915T155819_20220915T161219_T16PGS"
+      },
+      {
+        "file": "pseudo_020657.pt",
+        "group": "GDACS_1103661",
+        "source": "GDACS_1103661_2_0000/20251212T113511_20251212T113507_T30UUA"
+      },
+      {
+        "file": "pseudo_021663.pt",
+        "group": "GDACS_1103840",
+        "source": "GDACS_1103840_3_0002/20260420T174859_20260420T175521_T13UFV"
+      },
+      {
+        "file": "pseudo_001542.pt",
+        "group": "GDACS_1100190",
+        "source": "GDACS_1100190_1_0001/20190914T110649_20190914T110919_T30UVB"
+      },
+      {
+        "file": "pseudo_006034.pt",
+        "group": "GDACS_1101023",
+        "source": "GDACS_1101023_2_0001/20210806T143731_20210806T143730_T20NPN"
+      },
+      {
+        "file": "pseudo_017129.pt",
+        "group": "GDACS_1103044",
+        "source": "GDACS_1103044_1_0003/20241209T004711_20241209T004705_T54MYU"
+      },
+      {
+        "file": "pseudo_005113.pt",
+        "group": "GDACS_1100853",
+        "source": "GDACS_1100853_1_0002/20200705T223009_20200705T223011_T60KXF"
+      },
+      {
+        "file": "pseudo_007844.pt",
+        "group": "GDACS_1101360",
+        "source": "GDACS_1101360_1_0001/20220413T092031_20220413T092342_T36VVK"
+      },
+      {
+        "file": "pseudo_022100.pt",
+        "group": "GDACS_1103915",
+        "source": "GDACS_1103915_1_0001/20250503T061651_20250503T062726_T42TWL"
+      },
+      {
+        "file": "pseudo_008082.pt",
+        "group": "GDACS_1101403",
+        "source": "GDACS_1101403_1_0000/20220507T053651_20220507T053646_T43SDA"
+      },
+      {
+        "file": "pseudo_019195.pt",
+        "group": "GDACS_1103412",
+        "source": "GDACS_1103412_1_0003/20250802T090611_20250802T090730_T36UUG"
+      },
+      {
+        "file": "pseudo_023213.pt",
+        "group": "GDACS_4369",
+        "source": "GDACS_4369_2_0000/20160709T075612_20160709T081516_T36PXU"
+      },
+      {
+        "file": "pseudo_015533.pt",
+        "group": "GDACS_1102762",
+        "source": "GDACS_1102762_1_0001/20240716T055639_20240716T055650_T42SXD"
+      },
+      {
+        "file": "pseudo_017183.pt",
+        "group": "GDACS_1103052",
+        "source": "GDACS_1103052_1_0001/20241220T082351_20241220T082345_T37TEJ"
+      },
+      {
+        "file": "pseudo_003361.pt",
+        "group": "GDACS_1100523",
+        "source": "GDACS_1100523_1_0000/20190810T015659_20190810T021458_T51NYH"
+      },
+      {
+        "file": "pseudo_003865.pt",
+        "group": "GDACS_1100619",
+        "source": "GDACS_1100619_1_0000/20190823T103029_20190823T103244_T31TEJ"
+      },
+      {
+        "file": "pseudo_005178.pt",
+        "group": "GDACS_1100865",
+        "source": "GDACS_1100865_1_0003/20210509T161829_20210509T163405_T15PYS"
+      },
+      {
+        "file": "pseudo_019763.pt",
+        "group": "GDACS_1103513",
+        "source": "GDACS_1103513_1_0003/20250923T080701_20250923T081607_T37TFF"
+      },
+      {
+        "file": "pseudo_018110.pt",
+        "group": "GDACS_1103220",
+        "source": "GDACS_1103220_9_0001/20240412T100559_20240412T100818_T32TQQ"
+      },
+      {
+        "file": "pseudo_004944.pt",
+        "group": "GDACS_1100815",
+        "source": "GDACS_1100815_1_0003/20210404T141049_20210404T141920_T20GLT"
+      },
+      {
+        "file": "pseudo_001525.pt",
+        "group": "GDACS_1100184",
+        "source": "GDACS_1100184_1_0001/20190511T013701_20190511T013657_T54STD"
+      },
+      {
+        "file": "pseudo_014833.pt",
+        "group": "GDACS_1102637",
+        "source": "GDACS_1102637_1_0000/20240430T074609_20240430T080448_T36PYQ"
+      },
+      {
+        "file": "pseudo_010679.pt",
+        "group": "GDACS_1101873",
+        "source": "GDACS_1101873_1_0000/20230104T080321_20230104T081554_T36NVF"
+      },
+      {
+        "file": "pseudo_018582.pt",
+        "group": "GDACS_1103297",
+        "source": "GDACS_1103297_1_0001/20240418T140709_20240418T141923_T20KPU"
+      },
+      {
+        "file": "pseudo_008476.pt",
+        "group": "GDACS_1101471",
+        "source": "GDACS_1101471_1_0000/20220530T142741_20220530T143940_T18GYV"
+      },
+      {
+        "file": "pseudo_012923.pt",
+        "group": "GDACS_1102309",
+        "source": "GDACS_1102309_1_0000/20231026T022331_20231026T022325_T50MRB"
+      },
+      {
+        "file": "pseudo_013421.pt",
+        "group": "GDACS_1102396",
+        "source": "GDACS_1102396_1_0002/20231215T103431_20231215T103433_T31TGM"
+      },
+      {
+        "file": "pseudo_016658.pt",
+        "group": "GDACS_1102960",
+        "source": "GDACS_1102960_1_0002/20231025T092041_20231025T093608_T33PVR"
+      },
+      {
+        "file": "pseudo_012055.pt",
+        "group": "GDACS_1102133",
+        "source": "GDACS_1102133_1_0001/20230713T070629_20230713T072511_T38NNH"
+      },
+      {
+        "file": "pseudo_011552.pt",
+        "group": "GDACS_1102040",
+        "source": "GDACS_1102040_1_0000/20220817T022329_20220817T022328_T50NRF"
+      },
+      {
+        "file": "pseudo_016392.pt",
+        "group": "GDACS_1102917",
+        "source": "GDACS_1102917_1_0000/20231119T160549_20231119T161140_T17RLK"
+      },
+      {
+        "file": "pseudo_022580.pt",
+        "group": "GDACS_1103999",
+        "source": "GDACS_1103999_1_0003/20260708T135131_20260708T135141_T21JVL"
+      },
+      {
+        "file": "pseudo_002706.pt",
+        "group": "GDACS_1100401",
+        "source": "GDACS_1100401_1_0001/20200313T233811_20200313T233811_T57LYL"
+      },
+      {
+        "file": "pseudo_019311.pt",
+        "group": "GDACS_1103435",
+        "source": "GDACS_1103435_4_0002/20250825T055651_20250825T055823_T42SYC"
+      },
+      {
+        "file": "pseudo_004852.pt",
+        "group": "GDACS_1100787",
+        "source": "GDACS_1100787_1_0000/20210226T103909_20210226T103910_T32VNM"
+      },
+      {
+        "file": "pseudo_018573.pt",
+        "group": "GDACS_1103295",
+        "source": "GDACS_1103295_2_0003/20250528T161829_20250528T163833_T15PZQ"
+      },
+      {
+        "file": "pseudo_009652.pt",
+        "group": "GDACS_1101694",
+        "source": "GDACS_1101694_1_0002/20220914T094609_20220914T095925_T32PLV"
+      },
+      {
+        "file": "pseudo_019214.pt",
+        "group": "GDACS_1103417",
+        "source": "GDACS_1103417_1_0003/20241021T054809_20241021T054803_T43TFH"
+      },
+      {
+        "file": "pseudo_016920.pt",
+        "group": "GDACS_1103006",
+        "source": "GDACS_1103006_2_0002/20240603T151721_20240603T151724_T18LUP"
+      },
+      {
+        "file": "pseudo_002901.pt",
+        "group": "GDACS_1100431",
+        "source": "GDACS_1100431_2_0001/20190716T153621_20190716T153624_T18NTN"
+      },
+      {
+        "file": "pseudo_017110.pt",
+        "group": "GDACS_1103041",
+        "source": "GDACS_1103041_2_0003/20231220T080331_20231220T080332_T37TFF"
+      },
+      {
+        "file": "pseudo_005831.pt",
+        "group": "GDACS_1100986",
+        "source": "GDACS_1100986_2_0002/20210408T032539_20210408T032534_T50UMC"
+      },
+      {
+        "file": "pseudo_009624.pt",
+        "group": "GDACS_1101690",
+        "source": "GDACS_1101690_1_0000/20220924T113319_20220924T113319_T30UVF"
+      },
+      {
+        "file": "pseudo_001779.pt",
+        "group": "GDACS_1100238",
+        "source": "GDACS_1100238_2_0000/20181024T102059_20181024T102428_T32TLP"
+      },
+      {
+        "file": "pseudo_012897.pt",
+        "group": "GDACS_1102304",
+        "source": "GDACS_1102304_1_0001/20231028T102039_20231028T102035_T32TPT"
+      },
+      {
+        "file": "pseudo_014441.pt",
+        "group": "GDACS_1102571",
+        "source": "GDACS_1102571_1_0003/20230709T031521_20230709T032914_T47NRC"
+      },
+      {
+        "file": "pseudo_009130.pt",
+        "group": "GDACS_1101597",
+        "source": "GDACS_1101597_1_0000/20210722T105619_20210722T105914_T31UES"
+      },
+      {
+        "file": "pseudo_008828.pt",
+        "group": "GDACS_1101537",
+        "source": "GDACS_1101537_1_0000/20220712T143741_20220712T144937_T19JCG"
+      },
+      {
+        "file": "pseudo_017833.pt",
+        "group": "GDACS_1103171",
+        "source": "GDACS_1103171_2_0003/20250226T152659_20250226T152655_T18NWL"
+      },
+      {
+        "file": "pseudo_011644.pt",
+        "group": "GDACS_1102056",
+        "source": "GDACS_1102056_1_0001/20230214T100029_20230214T100452_T33TVM"
+      },
+      {
+        "file": "pseudo_012621.pt",
+        "group": "GDACS_1102248",
+        "source": "GDACS_1102248_1_0002/20231002T081749_20231002T082806_T37SCV"
+      },
+      {
+        "file": "pseudo_021401.pt",
+        "group": "GDACS_1103790",
+        "source": "GDACS_1103790_1_0001/20260312T104019_20260312T104818_T31SCA"
+      },
+      {
+        "file": "pseudo_019326.pt",
+        "group": "GDACS_1103437",
+        "source": "GDACS_1103437_3_0002/20241230T100421_20241230T100417_T33TUN"
+      },
+      {
+        "file": "pseudo_010641.pt",
+        "group": "GDACS_1101867",
+        "source": "GDACS_1101867_1_0003/20230212T134701_20230212T135539_T21KXQ"
+      },
+      {
+        "file": "pseudo_005322.pt",
+        "group": "GDACS_1100891",
+        "source": "GDACS_1100891_1_0003/20210517T141739_20210517T141734_T21NUG"
+      },
+      {
+        "file": "pseudo_020974.pt",
+        "group": "GDACS_1103711",
+        "source": "GDACS_1103711_2_0003/20250205T195641_20250205T195641_T09UWB"
+      },
+      {
+        "file": "pseudo_017397.pt",
+        "group": "GDACS_1103092",
+        "source": "GDACS_1103092_1_0003/20250126T104229_20250126T104225_T31SDA"
+      },
+      {
+        "file": "pseudo_000375.pt",
+        "group": "GDACS_1000091",
+        "source": "GDACS_1000091_1_0000/20170531T082011_20170531T084246_T34HDH"
+      },
+      {
+        "file": "pseudo_019993.pt",
+        "group": "GDACS_1103551",
+        "source": "GDACS_1103551_1_0000/20251008T032151_20251008T032938_T48QYK"
+      },
+      {
+        "file": "pseudo_009662.pt",
+        "group": "GDACS_1101696",
+        "source": "GDACS_1101696_2_0000/20221002T002101_20221002T002504_T55HBU"
+      },
+      {
+        "file": "pseudo_011217.pt",
+        "group": "GDACS_1101980",
+        "source": "GDACS_1101980_1_0002/20230509T022331_20230509T022325_T51PVM"
+      },
+      {
+        "file": "pseudo_005086.pt",
+        "group": "GDACS_1100848",
+        "source": "GDACS_1100848_1_0003/20210326T151659_20210326T151713_T18MVT"
+      },
+      {
+        "file": "pseudo_002456.pt",
+        "group": "GDACS_1100355",
+        "source": "GDACS_1100355_1_0003/20200111T125301_20200111T125302_T24KTC"
+      },
+      {
+        "file": "pseudo_014554.pt",
+        "group": "GDACS_1102591",
+        "source": "GDACS_1102591_2_0000/20231113T054059_20231113T054822_T43SES"
+      },
+      {
+        "file": "pseudo_020641.pt",
+        "group": "GDACS_1103657",
+        "source": "GDACS_1103657_4_0002/20251219T190831_20251219T190831_T10TDQ"
+      },
+      {
+        "file": "pseudo_017680.pt",
+        "group": "GDACS_1103148",
+        "source": "GDACS_1103148_1_0000/20240326T003709_20240326T003746_T55MDN"
+      },
+      {
+        "file": "pseudo_004596.pt",
+        "group": "GDACS_1100742",
+        "source": "GDACS_1100742_2_0002/20210203T094211_20210203T094345_T33SWD"
+      },
+      {
+        "file": "pseudo_013218.pt",
+        "group": "GDACS_1102358",
+        "source": "GDACS_1102358_1_0003/20230611T050609_20230611T050606_T44NNP"
+      },
+      {
+        "file": "pseudo_002146.pt",
+        "group": "GDACS_1100307",
+        "source": "GDACS_1100307_1_0001/20191207T032121_20191207T032731_T48PVQ"
+      },
+      {
+        "file": "pseudo_013899.pt",
+        "group": "GDACS_1102480",
+        "source": "GDACS_1102480_1_0002/20230908T024531_20230908T030308_T49NCB"
+      },
+      {
+        "file": "pseudo_003437.pt",
+        "group": "GDACS_1100535",
+        "source": "GDACS_1100535_1_0003/20191029T021349_20191029T021345_T51NVA"
+      },
+      {
+        "file": "pseudo_001988.pt",
+        "group": "GDACS_1100278",
+        "source": "GDACS_1100278_1_0000/20191111T071129_20191111T071203_T39SXA"
+      },
+      {
+        "file": "pseudo_011962.pt",
+        "group": "GDACS_1102116",
+        "source": "GDACS_1102116_1_0000/20230214T100029_20230214T100452_T33TVM"
+      },
+      {
+        "file": "pseudo_008659.pt",
+        "group": "GDACS_1101505",
+        "source": "GDACS_1101505_1_0002/20211018T101939_20211018T102105_T32TPT"
+      },
+      {
+        "file": "pseudo_011603.pt",
+        "group": "GDACS_1102047",
+        "source": "GDACS_1102047_1_0000/20230528T152639_20230528T152642_T19QBA"
+      },
+      {
+        "file": "pseudo_010174.pt",
+        "group": "GDACS_1101783",
+        "source": "GDACS_1101783_1_0002/20220204T142729_20220204T142725_T20NRN"
+      },
+      {
+        "file": "pseudo_012855.pt",
+        "group": "GDACS_1102294",
+        "source": "GDACS_1102294_5_0000/20231102T131249_20231102T131244_T23KNU"
+      },
+      {
+        "file": "pseudo_010937.pt",
+        "group": "GDACS_1101922",
+        "source": "GDACS_1101922_2_0001/20230410T163841_20230410T164312_T17UMT"
+      },
+      {
+        "file": "pseudo_009240.pt",
+        "group": "GDACS_1101620",
+        "source": "GDACS_1101620_3_0003/20220904T094549_20220904T100010_T31PGK"
+      },
+      {
+        "file": "pseudo_013569.pt",
+        "group": "GDACS_1102427",
+        "source": "GDACS_1102427_1_0000/20230809T003709_20230809T003708_T55MDP"
+      },
+      {
+        "file": "pseudo_002182.pt",
+        "group": "GDACS_1100314",
+        "source": "GDACS_1100314_1_0001/20191223T111359_20191223T111437_T30UYC"
+      },
+      {
+        "file": "pseudo_018638.pt",
+        "group": "GDACS_1103306",
+        "source": "GDACS_1103306_1_0002/20241230T100421_20241230T100417_T33TWN"
+      },
+      {
+        "file": "pseudo_003730.pt",
+        "group": "GDACS_1100594",
+        "source": "GDACS_1100594_1_0000/20200819T074619_20200819T080457_T36NYH"
+      },
+      {
+        "file": "pseudo_000906.pt",
+        "group": "GDACS_1000199",
+        "source": "GDACS_1000199_1_0001/20180529T064631_20180529T065906_T39PYP"
+      },
+      {
+        "file": "pseudo_021377.pt",
+        "group": "GDACS_1103786",
+        "source": "GDACS_1103786_57_0003/20260519T022531_20260519T024542_T50NMJ"
+      },
+      {
+        "file": "pseudo_011551.pt",
+        "group": "GDACS_1102039",
+        "source": "GDACS_1102039_1_0002/20230528T050659_20230528T051854_T44RMU"
+      },
+      {
+        "file": "pseudo_004778.pt",
+        "group": "GDACS_1100771",
+        "source": "GDACS_1100771_3_0003/20210218T112109_20210218T112238_T30UUC"
+      },
+      {
+        "file": "pseudo_013510.pt",
+        "group": "GDACS_1102414",
+        "source": "GDACS_1102414_1_0003/20230215T102121_20230215T102115_T32TNS"
+      },
+      {
+        "file": "pseudo_000990.pt",
+        "group": "GDACS_1000216",
+        "source": "GDACS_1000216_2_0002/20181031T101139_20181031T101140_T32TQR"
+      },
+      {
+        "file": "pseudo_000642.pt",
+        "group": "GDACS_1000152",
+        "source": "GDACS_1000152_1_0003/20170909T033529_20170909T034537_T47PNN"
+      },
+      {
+        "file": "pseudo_017902.pt",
+        "group": "GDACS_1103185",
+        "source": "GDACS_1103185_1_0000/20240317T080649_20240317T082511_T35NRA"
+      },
+      {
+        "file": "pseudo_023066.pt",
+        "group": "GDACS_4334",
+        "source": "GDACS_4334_2_0000/20160308T093002_20160308T093139_T34TEQ"
+      },
+      {
+        "file": "pseudo_000033.pt",
+        "group": "BANGLADESH2022",
+        "source": "BANGLADESH2022_0004/20220625T042721_20220625T043831_T46RCN"
+      },
+      {
+        "file": "pseudo_023451.pt",
+        "group": "GDACS_4427",
+        "source": "GDACS_4427_2_0003/20170107T140041_20170107T140456_T21HTC"
+      },
+      {
+        "file": "pseudo_000099.pt",
+        "group": "CHINA2021",
+        "source": "CHINA2021_ZHENGZHOU_0006/20210726T030551_20210726T031744_T49SGU"
+      },
+      {
+        "file": "pseudo_009107.pt",
+        "group": "GDACS_1101590",
+        "source": "GDACS_1101590_3_0001/20211113T040019_20211113T040014_T47SPB"
+      },
+      {
+        "file": "pseudo_000170.pt",
+        "group": "EMSR479",
+        "source": "EMSR479_GREECE_0003/20200104T092401_20200104T092355_T34SFJ"
+      },
+      {
+        "file": "pseudo_007133.pt",
+        "group": "GDACS_1101230",
+        "source": "GDACS_1101230_1_0003/20220102T104339_20220102T104336_T31UFR"
+      },
+      {
+        "file": "pseudo_002953.pt",
+        "group": "GDACS_1100442",
+        "source": "GDACS_1100442_1_0001/20190401T054639_20190401T055900_T43SBU"
+      },
+      {
+        "file": "pseudo_009982.pt",
+        "group": "GDACS_1101751",
+        "source": "GDACS_1101751_1_0000/20220615T021349_20220615T021348_T51NYH"
+      },
+      {
+        "file": "pseudo_012874.pt",
+        "group": "GDACS_1102299",
+        "source": "GDACS_1102299_1_0002/20230815T030551_20230815T032317_T48PZC"
+      },
+      {
+        "file": "pseudo_000285.pt",
+        "group": "GDACS_1000065",
+        "source": "GDACS_1000065_1_0001/20170303T074821_20170303T080900_T36KUC"
+      },
+      {
+        "file": "pseudo_014033.pt",
+        "group": "GDACS_1102502",
+        "source": "GDACS_1102502_1_0001/20230309T055651_20230309T060626_T42SWE"
+      },
+      {
+        "file": "pseudo_004516.pt",
+        "group": "GDACS_1100729",
+        "source": "GDACS_1100729_1_0001/20210114T154549_20210114T154839_T17PQL"
+      },
+      {
+        "file": "pseudo_009129.pt",
+        "group": "GDACS_1101596",
+        "source": "GDACS_1101596_1_0003/20220811T222549_20220811T222547_T59GQQ"
+      },
+      {
+        "file": "pseudo_022429.pt",
+        "group": "GDACS_1103969",
+        "source": "GDACS_1103969_1_0002/20260619T160819_20260619T162020_T16PCB"
+      },
+      {
+        "file": "pseudo_006419.pt",
+        "group": "GDACS_1101106",
+        "source": "GDACS_1101106_1_0000/20200928T110739_20200928T110901_T30STE"
+      },
+      {
+        "file": "pseudo_012025.pt",
+        "group": "GDACS_1102128",
+        "source": "GDACS_1102128_1_0000/20230718T170851_20230718T171743_T13QHD"
+      },
+      {
+        "file": "pseudo_015551.pt",
+        "group": "GDACS_1102764",
+        "source": "GDACS_1102764_1_0002/20240715T062629_20240715T062630_T41TNF"
+      },
+      {
+        "file": "pseudo_010812.pt",
+        "group": "GDACS_1101895",
+        "source": "GDACS_1101895_1_0002/20230104T094411_20230104T095633_T32NNK"
+      },
+      {
+        "file": "pseudo_001346.pt",
+        "group": "GDACS_1100147",
+        "source": "GDACS_1100147_1_0001/20190603T152641_20190603T152641_T18QYF"
+      },
+      {
+        "file": "pseudo_019021.pt",
+        "group": "GDACS_1103374",
+        "source": "GDACS_1103374_1_0001/20250711T041549_20250711T042427_T46REP"
+      },
+      {
+        "file": "pseudo_017039.pt",
+        "group": "GDACS_1103024",
+        "source": "GDACS_1103024_1_0003/20241126T075159_20241126T080451_T36MXD"
+      },
+      {
+        "file": "pseudo_006696.pt",
+        "group": "GDACS_1101160",
+        "source": "GDACS_1101160_1_0002/20210610T153619_20210610T154022_T17MQV"
+      },
+      {
+        "file": "pseudo_020633.pt",
+        "group": "GDACS_1103655",
+        "source": "GDACS_1103655_2_0001/20251203T074311_20251203T074311_T38SNE"
+      },
+      {
+        "file": "pseudo_007787.pt",
+        "group": "GDACS_1101347",
+        "source": "GDACS_1101347_1_0003/20220125T151701_20220125T151704_T19PBK"
+      },
+      {
+        "file": "pseudo_016879.pt",
+        "group": "GDACS_1102999",
+        "source": "GDACS_1102999_1_0001/20241031T160509_20241031T160509_T17QNE"
+      },
+      {
+        "file": "pseudo_016106.pt",
+        "group": "GDACS_1102867",
+        "source": "GDACS_1102867_1_0001/20230912T072621_20230912T073904_T37PHP"
+      },
+      {
+        "file": "pseudo_007409.pt",
+        "group": "GDACS_1101278",
+        "source": "GDACS_1101278_1_0003/20220115T134211_20220115T134211_T21HWB"
+      },
+      {
+        "file": "pseudo_000240.pt",
+        "group": "GDACS_1000051",
+        "source": "GDACS_1000051_1_0001/20160802T075222_20160802T075556_T36LWK"
+      },
+      {
+        "file": "pseudo_005482.pt",
+        "group": "GDACS_1100918",
+        "source": "GDACS_1100918_1_0001/20210617T032539_20210617T033934_T48QXH"
+      },
+      {
+        "file": "pseudo_007692.pt",
+        "group": "GDACS_1101330",
+        "source": "GDACS_1101330_1_0001/20220324T055641_20220324T055935_T43TCF"
+      },
+      {
+        "file": "pseudo_001686.pt",
+        "group": "GDACS_1100223",
+        "source": "GDACS_1100223_1_0001/20191003T072731_20191003T073705_T38PKB"
+      },
+      {
+        "file": "pseudo_002421.pt",
+        "group": "GDACS_1100348",
+        "source": "GDACS_1100348_1_0003/20190225T031719_20190225T033702_T48NUG"
+      },
+      {
+        "file": "pseudo_023259.pt",
+        "group": "GDACS_4379",
+        "source": "GDACS_4379_2_0002/20160719T000222_20160719T000812_T55GDP"
+      },
+      {
+        "file": "pseudo_002869.pt",
+        "group": "GDACS_1100426",
+        "source": "GDACS_1100426_1_0002/20190317T090721_20190317T091355_T34SFJ"
+      },
+      {
+        "file": "pseudo_018201.pt",
+        "group": "GDACS_1103235",
+        "source": "GDACS_1103235_1_0001/20250425T044231_20250425T044819_T45RXM"
+      }
+    ]
+  },
+  "feature_pools_sha256": "d173862576491dc434258dd2fce5f6012964e310d02556c27ee7e3b405acecf3",
+  "graph": "A3",
+  "index": "/data1/schmalstieg/flooddistill/revision_20261005/original_N2500_recovered_20261006/data/original_N2500_index.json",
+  "overlap_plan": "/home/schmalstieg/repos/FloodDistill/experiments/revision/prompt5_closure/overlap_exclusion_plan.json",
+  "precision": "W4A4",
+  "protocols": {
+    "s11": "S11_TEST512_LEGACY",
+    "sturm": "P3_STURM_FINITE_SIX_BAND_SUPPORT_MASK_V1",
+    "wf": "P3_WF_NATIVE_ZERO_PAD512_V1"
+  },
+  "pseudo": "/data1/schmalstieg/flooddistill/revision_20261005/original_N2500_recovered_20261006/data/pseudo",
+  "ptq_precisions": {
+    "W4A4": [
+      4,
+      4
+    ],
+    "W4A8": [
+      4,
+      8
+    ],
+    "W8A8": [
+      8,
+      8
+    ]
+  },
+  "quantizer_calibration_ids": [
+    "Ghana_1033830_S2Hand.tif",
+    "Ghana_124834_S2Hand.tif",
+    "Ghana_132163_S2Hand.tif",
+    "Ghana_142312_S2Hand.tif",
+    "Ghana_234935_S2Hand.tif",
+    "Ghana_277_S2Hand.tif",
+    "Ghana_308249_S2Hand.tif",
+    "Ghana_495107_S2Hand.tif",
+    "Ghana_5079_S2Hand.tif",
+    "Ghana_868803_S2Hand.tif",
+    "Ghana_895194_S2Hand.tif",
+    "India_1018317_S2Hand.tif",
+    "India_1050276_S2Hand.tif",
+    "India_1068117_S2Hand.tif",
+    "India_118868_S2Hand.tif",
+    "India_164336_S2Hand.tif",
+    "India_180633_S2Hand.tif",
+    "India_244057_S2Hand.tif",
+    "India_533192_S2Hand.tif",
+    "India_691027_S2Hand.tif",
+    "India_70352_S2Hand.tif",
+    "India_764946_S2Hand.tif",
+    "India_769408_S2Hand.tif",
+    "India_833266_S2Hand.tif",
+    "India_869358_S2Hand.tif",
+    "Mekong_1149855_S2Hand.tif",
+    "Mekong_1413877_S2Hand.tif",
+    "Mekong_293769_S2Hand.tif",
+    "Mekong_474783_S2Hand.tif",
+    "Mekong_977338_S2Hand.tif",
+    "Mekong_98310_S2Hand.tif",
+    "Nigeria_1095404_S2Hand.tif",
+    "Nigeria_31096_S2Hand.tif",
+    "Nigeria_820924_S2Hand.tif",
+    "Nigeria_984831_S2Hand.tif",
+    "Pakistan_1027214_S2Hand.tif",
+    "Pakistan_210595_S2Hand.tif",
+    "Pakistan_336228_S2Hand.tif",
+    "Pakistan_43105_S2Hand.tif",
+    "Pakistan_94095_S2Hand.tif",
+    "Pakistan_9684_S2Hand.tif",
+    "Paraguay_1019808_S2Hand.tif",
+    "Paraguay_153941_S2Hand.tif",
+    "Paraguay_172476_S2Hand.tif",
+    "Paraguay_205585_S2Hand.tif",
+    "Paraguay_252217_S2Hand.tif",
+    "Paraguay_284928_S2Hand.tif",
+    "Paraguay_305760_S2Hand.tif",
+    "Paraguay_581976_S2Hand.tif",
+    "Paraguay_648632_S2Hand.tif",
+    "Paraguay_657443_S2Hand.tif",
+    "Paraguay_76868_S2Hand.tif",
+    "Paraguay_7894_S2Hand.tif",
+    "Paraguay_896458_S2Hand.tif",
+    "Paraguay_934240_S2Hand.tif",
+    "Somalia_12849_S2Hand.tif",
+    "Somalia_167787_S2Hand.tif",
+    "Somalia_256539_S2Hand.tif",
+    "Somalia_61368_S2Hand.tif",
+    "Somalia_649376_S2Hand.tif",
+    "Spain_1199913_S2Hand.tif",
+    "Spain_4282030_S2Hand.tif",
+    "Spain_6537196_S2Hand.tif",
+    "Spain_7604243_S2Hand.tif",
+    "Spain_8372658_S2Hand.tif",
+    "Spain_8565131_S2Hand.tif",
+    "Sri-Lanka_101973_S2Hand.tif",
+    "Sri-Lanka_132922_S2Hand.tif",
+    "Sri-Lanka_236030_S2Hand.tif",
+    "Sri-Lanka_236628_S2Hand.tif",
+    "Sri-Lanka_31559_S2Hand.tif",
+    "Sri-Lanka_321316_S2Hand.tif",
+    "Sri-Lanka_612594_S2Hand.tif",
+    "Sri-Lanka_63307_S2Hand.tif",
+    "Sri-Lanka_85652_S2Hand.tif",
+    "USA_1039203_S2Hand.tif",
+    "USA_1082482_S2Hand.tif",
+    "USA_19225_S2Hand.tif",
+    "USA_225017_S2Hand.tif",
+    "USA_251323_S2Hand.tif",
+    "USA_275372_S2Hand.tif",
+    "USA_308150_S2Hand.tif",
+    "USA_366607_S2Hand.tif",
+    "USA_646878_S2Hand.tif",
+    "USA_741073_S2Hand.tif",
+    "USA_741178_S2Hand.tif",
+    "USA_761032_S2Hand.tif",
+    "USA_826217_S2Hand.tif",
+    "USA_986268_S2Hand.tif"
+  ],
+  "roots": {
+    "s11": "/home/schmalstieg/data/sen1floods11",
+    "sturm": "/home/schmalstieg/data/STURM-Flood/Dataset",
+    "wf": "/home/schmalstieg/data/WorldFloodsv2"
+  },
+  "seed": 107,
+  "select_gate_cell": true,
+  "smallest_tap_dimension": 32,
+  "teacher": "/home/schmalstieg/.cache/huggingface/hub/models--ibm-nasa-geospatial--Prithvi-EO-2.0-300M-TL-Sen1Floods11/snapshots/918b9f140bb1783716664a2421ea3253d806017d/Prithvi-EO-V2-300M-TL-Sen1Floods11.pt",
+  "teacher_sha256": "3675e9c2b52547de8ff8a19f4881c28573e6d4d2f0805d866f4fc48c1e517d60",
+  "transform_receipt": "/home/schmalstieg/repos/FloodDistill/experiments/revision/compression_v2_20261007/results/teacher_feature_transform.json",
+  "warmup_receipt": "/home/schmalstieg/repos/FloodDistill/experiments/revision/compression_v2_20261007/results/confirmation_s107_FP.json",
+  "workers": 2
+}

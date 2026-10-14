@@ -1,0 +1,23 @@
+# V10 authorized recovery —14October2026
+
+Parent: research_v10_gpu_20261013T183509Z. User requested fixes and restart of necessary experiments. Older runs and interrupted checkpoints remain immutable. This new snapshot preserves training inputs, objectives, seeds42/64/91/107, update budgets, selection and calibration conventions. Source-only decisions remain source-only. Exposed/sealed benchmarks remain non-confirmatory research readouts after prior exposure.
+
+Execution: fresh12-hour window, two independently UUID-locked GPU jobs at most, cumulative shared40GPU-hour cap retained (no spend reset),7200GPU-seconds protected for final evaluation,24physicalCPU-core allocation including dataloaders; GPU main BLAS/torch2threads plus original6SUP or2GDACS workers within each8-core affinityslot. CPU-only stages use8threads.
+
+Priority: GPU preflight and teacher parity; exact eight-view FP32 teacher cache and independent four-seed R4 W4A4 parent preparation; finish incomplete R2 cohorts; complete R4SUP, UNetSUP and A5 four-seed cohorts; required R4QAT controls; budget-gated B1/fullcalibration/secondarypoint and TierC; final frozen readout and collection. No optional task may spend protected final-evaluation capacity. Every planned four-seed group remains intact; resource exhaustion is incomplete execution, never scientific failure.
+
+Repairs: R1 mixed-bit requests leave its lone FP32 logits convolution unchanged because no body remains; label these exact floating aliases, not4bit results. Strict W8A8 still quantizes the single layer. Empty reference support is excluded from dry-window alarms in CPU/GPU evaluators. Prepared R4QAT checkpoints are immutable and exact state-checked before reuse by later controls. A5 is not a scientific prerequisite for the fixed historical R4W4A4 parents, so only that scheduling edge is removed.
+
+Reuse: six verified complete GPU training receipts plus eight matching GPU smokes. R2CE seed64 and R2SUP seed42 restart fromseed because complete loader/augmentation RNG state is unavailable; historical partial outputs are retained. Teacher-cache files are reused only after input/teacher identity, shape, dtype, finite-value and fresh geometric-view checks.
+
+Detailed original recipe is preserved in source_frozen_protocol_v10.md; prompt_v10_cpu_followup.md Revision3 and existing user-approved GPU/eight-viewFP32 overrides remain controlling except the explicit recovery changes above.
+
+Recovery B inherits the original recovery launch/deadline and cumulative GPU budget. Whole four-seed cohorts reserve remaining command ceilings atomically before the first new seed. Active A providers finish once; B waits for their hashed completion receipts.
+
+Teacher-cache numerical correction: CPU2 and CPU8 outputs were identical; default GPU differences versusCPU reached0.00450754rawlogit while T4probability maxdifference was0.000243694 on one TRAIN diagnostic tile. GPUbatch8 versusGPUbatch1 also exceeded0.001rawlogit. No numerical tolerance is relaxed. Fresh homogeneousGPUFP32/TF32off targets use canonicalbatch8 for cachegeneration and fresh-forwardchecks on all8views of5TRAINtiles; every check retains maxabs<0.001. CPU/GPU identity is not claimed, and CPU shards are not mixed. Five-tile CPU/GPU diagnostics remain descriptive and never control downstream model selection. Original hardlabels, teacherweights, TRAIN cohort, augmentation geometry, offlineKD formula and student recipe remain fixed.
+
+Recovery C inherits B/A launch, deadline and cumulative costs. Completed B cache (all2500filehashes independentlyverified) is consumed through an explicit C teacher_logits directory alias to the immutable B provider; V11 continues using B. All completedBjobs are reused, and one activeR4SUPseed is awaited by atomiccompletionreceipt.
+
+Actual B cached-distillation smokes failed before training because frozenTrainer.fit unconditionally moves loss._teacher to the device, while the offline-loss adapter lacked that attribute. C binds a parameter-free, nonregistered sentinel implementing only the device hook; attempting any online teacher forward raises an error. The unchanged offlineKD/soft-target loss still consumes precomputed logits. A full one-update CPU integration test through the frozenTrainer verifies forward/backward, optimizer update, best/last checkpoint and reload without an online teacher. B failure records remain immutable.
+
+C finalreadout adds source-only timing admission and resumable exact aggregate publication, with processedwindowIDs preventing duplicate counts; evaluator implementation and tests are frozen separately with this snapshot.
