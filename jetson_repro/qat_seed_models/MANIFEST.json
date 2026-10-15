@@ -1,0 +1,199 @@
+{
+ "status": "workstation_candidates_for_Jetson_validation",
+ "fully_integer_verified": false,
+ "recipe": "experiments/revision/qat_seeds_20261015 (Jetson integer recipe of 14 Oct, 128 QAT updates, torch 2 threads)",
+ "files": {
+  "b0_s42_qat128.pt": {
+   "sha256": "9c59bf5bebb31dc2da42d4da42297f0c96a734ab270e8b77fbafcd1701de2924",
+   "bytes": 3093589,
+   "source_path": "experiments/revision/qat_seeds_20261015/B0_s42/bundle/B0/qat128/checkpoint_qat.pt",
+   "parent": "/data1/schmalstieg/flooddistill/runs_repro/pseudo_evit_relu6_ofa_N2500_s42/best.pt",
+   "source_validation": {
+    "float_mIoU": 0.8594943460009921,
+    "qat_mIoU": 0.8670426098971538,
+    "qat_pooled_delta": 0.0075482638961617,
+    "qat_equal_event_delta": 0.004186407796884173,
+    "qat_acceptable": true,
+    "strict_logit_parity": false
+   }
+  },
+  "b0_s42_int8_qat128.onnx": {
+   "sha256": "5bcbd1bad6e5ab7aedc716d8d638f4cd7561ce16f51afc6702cfd51dd92ba47b",
+   "bytes": 3068929,
+   "source_path": "experiments/revision/qat_seeds_20261015/B0_s42/bundle/B0/qat128/model_qdq.onnx",
+   "parent": "/data1/schmalstieg/flooddistill/runs_repro/pseudo_evit_relu6_ofa_N2500_s42/best.pt"
+  },
+  "b0_s64_qat128.pt": {
+   "sha256": "7b972e071e40277722097f9b3f974320652bb1d935be7fc918881804e9dc1df7",
+   "bytes": 3093589,
+   "source_path": "experiments/revision/qat_seeds_20261015/B0_s64/bundle/B0/qat128/checkpoint_qat.pt",
+   "parent": "/data1/schmalstieg/flooddistill/runs_repro/pseudo_evit_relu6_ofa_N2500_s64/best.pt",
+   "source_validation": {
+    "float_mIoU": 0.8702965340674891,
+    "qat_mIoU": 0.8495889634396444,
+    "qat_pooled_delta": -0.020707570627844674,
+    "qat_equal_event_delta": -0.017034964593126034,
+    "qat_acceptable": false,
+    "strict_logit_parity": false
+   }
+  },
+  "b0_s64_int8_qat128.onnx": {
+   "sha256": "bf6c4d93c1278a3efb5cd525c2d29d91bf6edfe81352359e2c54b8431815c326",
+   "bytes": 3068929,
+   "source_path": "experiments/revision/qat_seeds_20261015/B0_s64/bundle/B0/qat128/model_qdq.onnx",
+   "parent": "/data1/schmalstieg/flooddistill/runs_repro/pseudo_evit_relu6_ofa_N2500_s64/best.pt"
+  },
+  "b0_s91_qat128.pt": {
+   "sha256": "bdbee21013d8e9845e596b68aac7b74215224e2263a38fb3630b804a8f47d7bf",
+   "bytes": 3093589,
+   "source_path": "experiments/revision/qat_seeds_20261015/B0_s91/bundle/B0/qat128/checkpoint_qat.pt",
+   "parent": "/data1/schmalstieg/flooddistill/runs_repro/pseudo_evit_relu6_ofa_N2500_s91/best.pt",
+   "source_validation": {
+    "float_mIoU": 0.8577856475579893,
+    "qat_mIoU": 0.8451007719340409,
+    "qat_pooled_delta": -0.012684875623948377,
+    "qat_equal_event_delta": -0.009186786134232405,
+    "qat_acceptable": false,
+    "strict_logit_parity": false
+   }
+  },
+  "b0_s91_int8_qat128.onnx": {
+   "sha256": "e468001b16f563354b98cae8ca7d7efd6ce5a51d97a683e11118705092dbc485",
+   "bytes": 3068154,
+   "source_path": "experiments/revision/qat_seeds_20261015/B0_s91/bundle/B0/qat128/model_qdq.onnx",
+   "parent": "/data1/schmalstieg/flooddistill/runs_repro/pseudo_evit_relu6_ofa_N2500_s91/best.pt"
+  },
+  "b0_s107_qat128.pt": {
+   "sha256": "5e40765898626e5874ebb211d4572e31a6ab2a415da61223cdbf74cf194efd70",
+   "bytes": 3093589,
+   "source_path": "experiments/revision/qat_seeds_20261015/B0_s107/bundle/B0/qat128/checkpoint_qat.pt",
+   "parent": "/data1/schmalstieg/flooddistill/runs_repro/pseudo_evit_relu6_ofa_N2500_s107/best.pt",
+   "source_validation": {
+    "float_mIoU": 0.862423049760626,
+    "qat_mIoU": 0.8554962809727862,
+    "qat_pooled_delta": -0.006926768787839821,
+    "qat_equal_event_delta": -0.008733498382231253,
+    "qat_acceptable": true,
+    "strict_logit_parity": false
+   }
+  },
+  "b0_s107_int8_qat128.onnx": {
+   "sha256": "2e9cfa68e31305ee0ec0294719130f46d7473e97dbd171b73f96111d5880773f",
+   "bytes": 3068154,
+   "source_path": "experiments/revision/qat_seeds_20261015/B0_s107/bundle/B0/qat128/model_qdq.onnx",
+   "parent": "/data1/schmalstieg/flooddistill/runs_repro/pseudo_evit_relu6_ofa_N2500_s107/best.pt"
+  },
+  "r4_s42_qat128.pt": {
+   "sha256": "3733397c2c0a8a26b2720d51af44a7dbe33a36072462f0ec5440c2436cd1b8a1",
+   "bytes": 101641,
+   "source_path": "experiments/revision/qat_seeds_20261015/R4_s42/bundle/R4/qat128/checkpoint_qat.pt",
+   "parent": "/data1/schmalstieg/flooddistill/revision_20261005/capacity_v4_20261008/v5/fl_R4_lr5e-3_s42/best.pt",
+   "source_validation": {
+    "float_mIoU": 0.8801440638714488,
+    "qat_mIoU": 0.8656427836780936,
+    "qat_pooled_delta": -0.014501280193355282,
+    "qat_equal_event_delta": -0.01596102073790462,
+    "qat_acceptable": false,
+    "strict_logit_parity": true,
+    "ptq_mIoU": 0.881788729191131,
+    "ptq_acceptable": true
+   }
+  },
+  "r4_s42_int8_qat128.onnx": {
+   "sha256": "150bcb504631a1baf3217c892cbfd9bbb3aa77c06e063d6bdad48f3133ea9c87",
+   "bytes": 82938,
+   "source_path": "experiments/revision/qat_seeds_20261015/R4_s42/bundle/R4/qat128/model_qdq.onnx",
+   "parent": "/data1/schmalstieg/flooddistill/revision_20261005/capacity_v4_20261008/v5/fl_R4_lr5e-3_s42/best.pt"
+  },
+  "r4_s42_int8_ptq.onnx": {
+   "sha256": "f46aee69fea13334760cb1f2078160862247c48ec1d09d027fe2fefe58b1aad5",
+   "bytes": 101639,
+   "source_path": "experiments/revision/qat_seeds_20261015/R4_s42/bundle/R4/percentile_pc.onnx",
+   "parent": "/data1/schmalstieg/flooddistill/revision_20261005/capacity_v4_20261008/v5/fl_R4_lr5e-3_s42/best.pt"
+  },
+  "r4_s64_qat128.pt": {
+   "sha256": "742c7f0aafb0f99dd5c0125614c9057d82d9bd48bcd0272b18c2eb48b7a60974",
+   "bytes": 101641,
+   "source_path": "experiments/revision/qat_seeds_20261015/R4_s64/bundle/R4/qat128/checkpoint_qat.pt",
+   "parent": "/data1/schmalstieg/flooddistill/revision_20261005/capacity_v4_20261008/v5/fl_R4_sel_s64/best.pt",
+   "source_validation": {
+    "float_mIoU": 0.8731883210763305,
+    "qat_mIoU": 0.8645529746263585,
+    "qat_pooled_delta": -0.008635346449971992,
+    "qat_equal_event_delta": -0.00946725071208454,
+    "qat_acceptable": true,
+    "strict_logit_parity": false,
+    "ptq_mIoU": 0.8733169711959821,
+    "ptq_acceptable": true
+   }
+  },
+  "r4_s64_int8_qat128.onnx": {
+   "sha256": "6081038bd2b560a743a68218fba8bce5f4e26aebb9b3aa22c527ebc3cfaa85e4",
+   "bytes": 83046,
+   "source_path": "experiments/revision/qat_seeds_20261015/R4_s64/bundle/R4/qat128/model_qdq.onnx",
+   "parent": "/data1/schmalstieg/flooddistill/revision_20261005/capacity_v4_20261008/v5/fl_R4_sel_s64/best.pt"
+  },
+  "r4_s64_int8_ptq.onnx": {
+   "sha256": "5c30a0b178bbad7330a789b3edaa5c9966799023130b075e12e7a8d9be577649",
+   "bytes": 101639,
+   "source_path": "experiments/revision/qat_seeds_20261015/R4_s64/bundle/R4/percentile_pc.onnx",
+   "parent": "/data1/schmalstieg/flooddistill/revision_20261005/capacity_v4_20261008/v5/fl_R4_sel_s64/best.pt"
+  },
+  "r4_s91_qat128.pt": {
+   "sha256": "a3ef8e3940b38b9ce266ae160fc1f53a88ed9c89c385a95401b6dd33dc3aee1f",
+   "bytes": 101641,
+   "source_path": "experiments/revision/qat_seeds_20261015/R4_s91/bundle/R4/qat128/checkpoint_qat.pt",
+   "parent": "/data1/schmalstieg/flooddistill/revision_20261005/capacity_v4_20261008/v5/fl_R4_sel_s91/best.pt",
+   "source_validation": {
+    "float_mIoU": 0.8812176789066071,
+    "qat_mIoU": 0.8644222976475064,
+    "qat_pooled_delta": -0.016795381259100628,
+    "qat_equal_event_delta": -0.018587817082114322,
+    "qat_acceptable": false,
+    "strict_logit_parity": true,
+    "ptq_mIoU": 0.5216382851244605,
+    "ptq_acceptable": false
+   }
+  },
+  "r4_s91_int8_qat128.onnx": {
+   "sha256": "d1cb3ab08f6019db6016ed1a84e2b56cec69aacab70fd9aacbbaa121626ee379",
+   "bytes": 84013,
+   "source_path": "experiments/revision/qat_seeds_20261015/R4_s91/bundle/R4/qat128/model_qdq.onnx",
+   "parent": "/data1/schmalstieg/flooddistill/revision_20261005/capacity_v4_20261008/v5/fl_R4_sel_s91/best.pt"
+  },
+  "r4_s91_int8_ptq.onnx": {
+   "sha256": "308d91d2de7dd70c43008fb8356e51bb8aad09e36bacb4a1e18cc3a71b510acd",
+   "bytes": 101639,
+   "source_path": "experiments/revision/qat_seeds_20261015/R4_s91/bundle/R4/percentile_pc.onnx",
+   "parent": "/data1/schmalstieg/flooddistill/revision_20261005/capacity_v4_20261008/v5/fl_R4_sel_s91/best.pt"
+  },
+  "r4_s107_qat128.pt": {
+   "sha256": "4d953653771a58639c45227726d89be6b136efa3e97e1d80906ce5c43d3ba671",
+   "bytes": 101641,
+   "source_path": "experiments/revision/qat_seeds_20261015/R4_s107/bundle/R4/qat128/checkpoint_qat.pt",
+   "parent": "/data1/schmalstieg/flooddistill/revision_20261005/capacity_v4_20261008/v5/fl_R4_sel_s107/best.pt",
+   "source_validation": {
+    "float_mIoU": 0.8830481725961097,
+    "qat_mIoU": 0.8730877068518417,
+    "qat_pooled_delta": -0.00996046574426801,
+    "qat_equal_event_delta": -0.009379253288495759,
+    "qat_acceptable": true,
+    "strict_logit_parity": false,
+    "ptq_mIoU": 0.878696724346797,
+    "ptq_acceptable": true
+   }
+  },
+  "r4_s107_int8_qat128.onnx": {
+   "sha256": "700403d5f9c4a97d785e8935e76bc8f5736cbeb6bb7dcea8b6e53050c17c038f",
+   "bytes": 83545,
+   "source_path": "experiments/revision/qat_seeds_20261015/R4_s107/bundle/R4/qat128/model_qdq.onnx",
+   "parent": "/data1/schmalstieg/flooddistill/revision_20261005/capacity_v4_20261008/v5/fl_R4_sel_s107/best.pt"
+  },
+  "r4_s107_int8_ptq.onnx": {
+   "sha256": "3a43ac93fa548fb52241b781ff500fede090d06998e4ad53618b91b2ecf60db8",
+   "bytes": 101639,
+   "source_path": "experiments/revision/qat_seeds_20261015/R4_s107/bundle/R4/percentile_pc.onnx",
+   "parent": "/data1/schmalstieg/flooddistill/revision_20261005/capacity_v4_20261008/v5/fl_R4_sel_s107/best.pt"
+  }
+ }
+}
