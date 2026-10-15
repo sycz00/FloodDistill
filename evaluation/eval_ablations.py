@@ -327,6 +327,7 @@ def main():
             root=str(STURM_ROOT), sensor="S2", batch_size=BATCH_SIZE,
             num_workers=NUM_WORKERS, img_size=512, normalize=args.sturm_normalize,
             sim_gain=args.sturm_gain, sim_offset=args.sturm_offset, sim_haze=args.sturm_haze,
+            protocol="flood_paper",
         )
         if args.sturm_gain != 1.0 or args.sturm_offset != 0.0:
             print(f"[setup] E5 perturbation: reflectance -> {args.sturm_gain}*x + {args.sturm_offset}")

@@ -269,8 +269,15 @@ Three models are scored on the same data: `model_float.onnx` and
 
 - Sen1Floods11: val split, 512x512, S11 band statistics.
 - STURM-Flood S2: 9 bands mapped to 6, `normalize=original` (DN inverse from the paper), 512.
-- WorldFloods-v2: test split tiled at 512, clouds ignored, JRC permanent water ignored
-  (flood only). `--wf_include_permanent` gives the old protocol; don't mix the two.
+- WorldFloods-v2: test split tiled at 512, clouds ignored.
+- Labels follow `--protocol` (same for STURM and WF; don't mix protocols in one table):
+  - `surface_water` (default since 2026-10-15): every water pixel counts, as in Sen1Floods11.
+    WF flood + JRC permanent water = water (836 windows, edge windows zero-padded); STURM
+    classes 1-5 = water, pixels without finite input ignored.
+  - `flood_p3`: flood only (WF permanent water and STURM classes 3-5 ignored), same
+    geometry; the revision P3 tables (785 WF windows).
+  - `flood_paper`: flood only with resized WF edge windows and no STURM finite-support mask;
+    the submitted paper's tables. `--wf_include_permanent` was removed.
 
 Each dataset is reported micro (one pooled confusion matrix) and macro (mean over scenes
 that contain flood). The script also times each model (median of 50 runs) at the end.

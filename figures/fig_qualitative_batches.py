@@ -98,14 +98,14 @@ def make_loaders(ds, axis, img_size, display_size):
     if ds == "sturm":
         f = lambda sz, **k: get_sturm_flood_dataloader(STURM, sensor="S2", batch_size=8,
                                                        num_workers=6, img_size=sz,
-                                                       normalize="original", **k)
+                                                       normalize="original", protocol="flood_paper", **k)
         md = pd.read_csv(f"{STURM}/Sentinel2_metadata.csv")
         scene_of = dict(zip(md["tile_id"].astype(str), md["floodmap_id"].astype(str)))
         return (f(img_size), f(img_size, **kw), f(display_size), f(display_size, **kw),
                 (lambda fn: scene_of.get(fn, fn)), True)
     f = lambda sz, **k: get_worldfloods_dataloader(root=WF, split="test", batch_size=4,
                                                    num_workers=6, img_size=sz, tile_size=sz,
-                                                   normalize="s11", **k)
+                                                   normalize="s11", protocol="flood_paper", **k)
     return (f(img_size), f(img_size, **kw), f(img_size), f(img_size, **kw),
             (lambda fn: fn.split("#")[0]), False)
 

@@ -171,7 +171,7 @@ def main() -> None:
     loader  = get_sturm_flood_dataloader(
         root=args.sturm_root, sensor="S2",
         batch_size=BATCH_SIZE, num_workers=NUM_WORKERS, img_size=EVAL_SIZE,
-        normalize=args.sturm_normalize,
+        normalize=args.sturm_normalize, protocol="flood_paper",
     )
     adapter = sturm_s2_adapter(target_channels=IN_CHANNELS).to(device)
 

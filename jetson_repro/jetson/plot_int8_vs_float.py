@@ -86,7 +86,7 @@ def build_datasets(args) -> list[DatasetSpec]:
         eval_img_size=args.eval_img_size)
     sturm_dl = get_sturm_flood_dataloader(
         root=args.sturm_root, sensor="S2", batch_size=1, num_workers=0,
-        img_size=args.eval_img_size, normalize="original")
+        img_size=args.eval_img_size, normalize="original", protocol="flood_paper")
     wf_dl = get_worldfloods_dataloader(
         root=args.wf_root, split="test", batch_size=1, num_workers=0,
         img_size=args.eval_img_size, tile_size=args.eval_img_size, normalize="s11",

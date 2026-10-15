@@ -17,6 +17,7 @@ import numpy as np
 import rasterio
 from rasterio.windows import Window
 from albumentations.pytorch import ToTensorV2
+import torch
 from torch import Tensor
 from torch.utils.data import DataLoader, Dataset
 
@@ -73,6 +74,48 @@ WF_NORM_MEAN = [0.1139, 0.1089, 0.0925, 0.2280, 0.1531, 0.0875]
 WF_NORM_STD  = [0.0315, 0.0376, 0.0544, 0.1253, 0.1023, 0.0712]
 
 
+# Evaluation protocols. The default "surface_water" scores every water pixel, permanent water
+# included, as Sen1Floods11 does (approved 2026-10-15; experiments/revision/
+# surface_water_eval_20261014/PROTOCOL.md). The flood-only protocols remain for the paper tables.
+#   WF:    name -> (JRC permanent water, edge-window geometry)
+#   STURM: name -> (class mapping, ignore pixels without finite input in the six model bands)
+WF_PROTOCOLS = {
+    "surface_water": ("water", "pad"),
+    "flood_p3": ("ignore", "pad"),
+    "flood_paper": ("ignore", "resize"),
+    "operational": ("background", "resize"),
+}
+STURM_PROTOCOLS = {
+    "surface_water": ("surface", True),
+    "flood_p3": ("paper", True),
+    "flood_paper": ("paper", False),
+    "operational": ("operational", False),
+}
+DEFAULT_PROTOCOL = "surface_water"
+# STURM 9-band order [B2,B3,B4,B5,B6,B7,B8A,B11,B12] -> model bands B2,B3,B4,B8A,B11,B12
+_STURM_MODEL_BANDS = [0, 1, 2, 6, 7, 8]
+
+
+def _wf_resolve_protocol(protocol, ignore_permanent_water, permanent_water_as):
+    """Return (name, permanent-water handling, edge geometry). The old keyword arguments
+    reproduce the pre-2026-10-15 behaviour, including resized edge windows."""
+    legacy = ignore_permanent_water is not None or permanent_water_as is not None
+    if protocol is not None:
+        if legacy:
+            raise ValueError("pass either protocol or ignore_permanent_water/permanent_water_as")
+        if protocol not in WF_PROTOCOLS:
+            raise ValueError(f"protocol must be one of {sorted(WF_PROTOCOLS)}, got {protocol!r}")
+        return (protocol,) + WF_PROTOCOLS[protocol]
+    if not legacy:
+        return (DEFAULT_PROTOCOL,) + WF_PROTOCOLS[DEFAULT_PROTOCOL]
+    pwa = "ignore" if permanent_water_as is None else permanent_water_as
+    if pwa not in ("ignore", "background"):
+        raise ValueError(f"permanent_water_as must be 'ignore' or 'background', got {pwa!r}")
+    if ignore_permanent_water is False:
+        return "legacy_include_permanent", "water", "resize"
+    return ("flood_paper", "ignore", "resize") if pwa == "ignore" else ("operational", "background", "resize")
+
+
 def _wf_detect_layout(root: Path, split: str) -> tuple[str, Path]:
     """Return ("v2", split_dir) for WorldFloodsv2 or ("v1", data_dir) for the old Zenodo subset.
 
@@ -103,9 +146,19 @@ class WorldFloodsDataset(Dataset):
       * normalize="s11" (default): Sen1Floods11 training statistics
       * scenes are split into non-overlapping `tile_size` windows at 10 m
       * labels: land -> 0, water -> 1, invalid -> ignore; cloud -> ignore if exclude_clouds
-      * ignore_permanent_water=True: JRC permanent water (3) -> ignore, i.e. flood-only
-        scoring as for STURM. Seasonal water stays scorable.
       * tiles with valid fraction <= min_valid_frac are dropped
+
+    protocol (see WF_PROTOCOLS; default "surface_water" since 2026-10-15):
+      * "surface_water": all gt water (flood + JRC permanent) is water, as in Sen1Floods11;
+        partial edge windows are normalized at native size and zero-padded to tile_size
+        (mask padded with ignore). 836 test windows at tile_size=512.
+      * "flood_p3": JRC permanent water (3) -> ignore, zero-padded edge windows
+        (revision protocol P3_WF_NATIVE_ZERO_PAD512_V1, 785 windows).
+      * "flood_paper": JRC permanent water -> ignore, edge windows resized (submitted paper).
+      * "operational": JRC permanent water -> land, edge windows resized.
+    The old arguments ignore_permanent_water / permanent_water_as still work and select
+    the old behaviour exactly (edge windows resized); they cannot be combined with protocol.
+    partial_windows ("pad" or "resize") overrides the protocol's edge-window geometry.
 
     The older v1 subset (Zenodo 8298840, *_S2.tif / *_CLASS.tif; 1 -> land, 2 -> water) is
     still read for older results.
@@ -125,23 +178,28 @@ class WorldFloodsDataset(Dataset):
         sim_offset: float = 0.0,
         sim_haze: float = 0.0,
         sim_gain_bands=None,
-        ignore_permanent_water: bool = True,
-        permanent_water_as: str = "ignore",
+        protocol: str | None = None,
+        partial_windows: str | None = None,
+        ignore_permanent_water: bool | None = None,
+        permanent_water_as: str | None = None,
     ) -> None:
         super().__init__()
-        if permanent_water_as not in ("ignore", "background"):
-            raise ValueError(f"permanent_water_as must be 'ignore' or 'background', "
-                             f"got {permanent_water_as!r}")
-        # "ignore" (default): flood-only protocol. "background": JRC permanent water is
-        # scored and counts as not-flood (operational protocol).
-        self.permanent_water_as = permanent_water_as
+        self.protocol, permanent, geometry = _wf_resolve_protocol(
+            protocol, ignore_permanent_water, permanent_water_as)
+        if partial_windows is not None:
+            geometry = partial_windows
+        if geometry not in ("pad", "resize"):
+            raise ValueError(f"partial_windows must be 'pad' or 'resize', got {geometry!r}")
+        self.partial_windows = geometry
+        # JRC permanent water (3): "water" keeps the gt label, "ignore" masks it (flood-only),
+        # "background" scores it as land (operational).
+        self.ignore_permanent_water = permanent != "water"
+        self.permanent_water_as = "background" if permanent == "background" else "ignore"
         if normalize not in ("s11", "dataset"):
             raise ValueError(f"normalize must be 's11' or 'dataset', got '{normalize}'")
         self.normalize = normalize
         self.tile_size = tile_size
         self.exclude_clouds = exclude_clouds
-        # Flood-only protocol (STURM-aligned): mask JRC permanent water to ignore.
-        self.ignore_permanent_water = ignore_permanent_water
         # Radiometric perturbation reflectance' = sim_gain*reflectance + sim_offset, applied
         # before the S11 normalisation as in the STURM loader.
         self.sim_gain = float(sim_gain)
@@ -176,6 +234,13 @@ class WorldFloodsDataset(Dataset):
             ops += [A.HorizontalFlip(p=0.5), A.VerticalFlip(p=0.5)]
         ops.append(ToTensorV2())
         self.transform = A.Compose(ops)
+        # Zero-padded edge windows: normalize at native size, pad to tile_size, then resize
+        # (only if img_size != tile_size) and flip (same as evaluation.revision_native_border).
+        self._normalize = A.Normalize(mean=_m, std=_s, max_pixel_value=1.0)
+        pad_ops = [] if img_size == tile_size else [A.Resize(img_size, img_size)]
+        if augment:
+            pad_ops += [A.HorizontalFlip(p=0.5), A.VerticalFlip(p=0.5)]
+        self._pad_transform = A.Compose(pad_ops + [ToTensorV2()])
 
     # v1 (legacy *_S2.tif / *_CLASS.tif)
     def _init_v1(self, data_dir: Path) -> None:
@@ -309,7 +374,15 @@ class WorldFloodsDataset(Dataset):
             # additive wavelength-weighted haze (Makarau 2014); no clip, mirroring sim_gain
             image = image + self.sim_haze * _HAZE_W_6[:, None, None]
 
-        result = self.transform(image=image.transpose(1, 2, 0), mask=mapped)
+        ts = self.tile_size
+        if window is not None and self.partial_windows == "pad" and mapped.shape != (ts, ts):
+            h, w = mapped.shape
+            image = self._normalize(image=image.transpose(1, 2, 0))["image"]
+            image = np.pad(image, ((0, ts - h), (0, ts - w), (0, 0)), constant_values=0.0)
+            mapped = np.pad(mapped, ((0, ts - h), (0, ts - w)), constant_values=-1)
+            result = self._pad_transform(image=image, mask=mapped)
+        else:
+            result = self.transform(image=image.transpose(1, 2, 0), mask=mapped)
         return {
             "image":    result["image"].float(),
             "mask":     result["mask"].long(),
@@ -332,8 +405,10 @@ def get_worldfloods_dataloader(
     sim_offset: float = 0.0,
     sim_haze: float = 0.0,
     sim_gain_bands=None,
-    ignore_permanent_water: bool = True,
-    permanent_water_as: str = "ignore",
+    protocol: str | None = None,
+    partial_windows: str | None = None,
+    ignore_permanent_water: bool | None = None,
+    permanent_water_as: str | None = None,
 ) -> DataLoader:
     """Evaluation DataLoader for WorldFloods (v1 subset or v2).
 
@@ -342,15 +417,16 @@ def get_worldfloods_dataloader(
     tile_size: window size for v2 scenes (default 256).
     exclude_clouds: ignore cloud pixels (default True).
     min_valid_frac: drop tiles with a smaller valid fraction (default 0.01).
-    ignore_permanent_water: ignore JRC permanent water, flood-only protocol (default True).
-    permanent_water_as: "ignore" (default) or "background" (operational protocol).
+    protocol: WF_PROTOCOLS key; default "surface_water" (flood + permanent water = water).
+    partial_windows: "pad" or "resize" edge windows; None = the protocol's choice.
+    ignore_permanent_water / permanent_water_as: old arguments, old behaviour (see class).
     sim_gain_bands: per-band gain in model band order [B2,B3,B4,B8A,B11,B12]; None = off.
     """
     ds = WorldFloodsDataset(
         root=root, split=split, img_size=img_size, augment=False, normalize=normalize,
         tile_size=tile_size, exclude_clouds=exclude_clouds, min_valid_frac=min_valid_frac,
         sim_gain=sim_gain, sim_offset=sim_offset, sim_haze=sim_haze,
-        sim_gain_bands=sim_gain_bands,
+        sim_gain_bands=sim_gain_bands, protocol=protocol, partial_windows=partial_windows,
         ignore_permanent_water=ignore_permanent_water,
         permanent_water_as=permanent_water_as,
     )
@@ -538,8 +614,18 @@ class STURMFloodDataset(Dataset):
         <root>/Sentinel1/Floodmaps/
 
     Labels: 0 background, 1 flooded, 2 river-related features, 3 open water, 4 reservoirs,
-    5 lakes, 99 no data. The paper mapping uses 1-2 -> flood and 3-5 -> ignore
-    (`include_possible` keeps its old name).
+    5 lakes, 99 no data.
+
+    protocol (see STURM_PROTOCOLS; default "surface_water" since 2026-10-15):
+      * "surface_water": classes 1-5 are water (STURM's own definition), 0 land, 99 ignore;
+        pixels whose six model bands are not all finite are ignored (at img_size != 128 the
+        bilinear footprint of the non-finite pixels, as in the image resize).
+      * "flood_p3": 1-2 -> flood, 3-5 -> ignore, non-finite pixels ignored (revision P3).
+      * "flood_paper": 1-2 -> flood, 3-5 -> ignore, no finite-support mask (submitted paper).
+      * "operational": 1-2 -> flood, 3-5 -> land.
+    The old argument class_mapping ("paper", "published", "operational") selects the old
+    behaviour exactly (no finite-support mask); `include_possible` only affects "paper".
+    The finite-support mask is evaluation-only and cannot be combined with augment=True.
 
     normalize: "percentile" (loader default, older fitted P2/P98 stretch), "original"
     (paper protocol, 0.04 + 0.12*v with NaN guard) or "clip".
@@ -559,10 +645,25 @@ class STURMFloodDataset(Dataset):
         sim_offset: float = 0.0,
         sim_haze: float = 0.0,
         sim_gain_bands=None,
-        class_mapping: str = "paper",
+        protocol: str | None = None,
+        class_mapping: str | None = None,
     ) -> None:
         super().__init__()
         root = Path(root)
+        if protocol is not None and class_mapping is not None:
+            raise ValueError("pass either protocol or class_mapping")
+        if class_mapping is not None:
+            self.protocol, mask_nonfinite = f"legacy_{class_mapping}", False
+        else:
+            self.protocol = DEFAULT_PROTOCOL if protocol is None else protocol
+            if self.protocol not in STURM_PROTOCOLS:
+                raise ValueError(f"protocol must be one of {sorted(STURM_PROTOCOLS)}, "
+                                 f"got {self.protocol!r}")
+            class_mapping, mask_nonfinite = STURM_PROTOCOLS[self.protocol]
+        if mask_nonfinite and augment:
+            raise ValueError("the finite-support mask is evaluation-only; use augment=False")
+        self.mask_nonfinite = mask_nonfinite
+        self.img_size = img_size
         if sensor not in ("S1", "S2"):
             raise ValueError(f"sensor must be 'S1' or 'S2', got '{sensor}'")
         if normalize not in ("percentile", "clip", "original"):
@@ -583,13 +684,13 @@ class STURMFloodDataset(Dataset):
         # T1 per-band gain in STURM's native order [B2,B3,B4,B5,B6,B7,B8A,B11,B12] (nine
         # entries). B5-B7 are dropped by sturm_s2_adapter; perscene_eval._sturm9 builds the vector.
         self.sim_gain_bands = _as_band_gain(sim_gain_bands, self.N_BANDS[sensor])
-        # Class mappings: "paper" (default): 0 -> background, 1-2 -> flood, 3-5 -> ignore.
-        # "published": STURM's own mapping, classes 1-5 are water. "operational": 3-5 count
-        # as background. Do not mix them in one table.
-        if class_mapping not in ("paper", "published", "operational"):
+        # Class mappings: "paper": 0 -> background, 1-2 -> flood, 3-5 -> ignore.
+        # "published"/"surface": STURM's own mapping, classes 1-5 are water. "operational":
+        # 3-5 count as background. Do not mix them in one table.
+        if class_mapping not in ("paper", "published", "surface", "operational"):
             raise ValueError(f"class_mapping must be 'paper', 'published' or 'operational', "
                              f"got {class_mapping!r}")
-        self.class_mapping = class_mapping
+        self.class_mapping = "published" if class_mapping == "surface" else class_mapping
 
         sensor_num = "1" if sensor == "S1" else "2"
         sensor_dir = root / f"Sentinel{sensor_num}"
@@ -642,6 +743,15 @@ class STURMFloodDataset(Dataset):
         with rasterio.open(lbl_path) as src:
             mask = src.read(1).astype(np.int64)
 
+        nonfinite = None
+        if self.mask_nonfinite:
+            bands = _STURM_MODEL_BANDS if self.sensor == "S2" else slice(None)
+            nonfinite = ~np.isfinite(image[bands]).all(axis=0)
+            if nonfinite.shape != (self.img_size, self.img_size):
+                import cv2
+                nonfinite = cv2.resize(nonfinite.astype(np.float32), (self.img_size, self.img_size),
+                                       interpolation=cv2.INTER_LINEAR) > 0
+
         if self.normalize == "original":
             # About 0.6% of STURM tiles contain NaN pixels; set them to 0 ("original" only).
             image = np.nan_to_num(image, nan=0.0, posinf=0.0, neginf=0.0)
@@ -683,6 +793,8 @@ class STURMFloodDataset(Dataset):
                    np.where(mask == 2, flood_val, -1))).astype(np.int64)
 
         result = self.transform(image=image.transpose(1, 2, 0), mask=mask)
+        if nonfinite is not None:
+            result["mask"][torch.from_numpy(nonfinite)] = -1
         return {
             "image":    result["image"].float(),
             "mask":     result["mask"].long(),
@@ -703,20 +815,22 @@ def get_sturm_flood_dataloader(
     sim_offset: float = 0.0,
     sim_haze: float = 0.0,
     sim_gain_bands=None,
-    class_mapping: str = "paper",
+    protocol: str | None = None,
+    class_mapping: str | None = None,
 ) -> DataLoader:
     """Evaluation DataLoader for STURM-Flood.
 
     normalize: "percentile" (default), "original" (paper protocol) or "clip".
     sim_gain / sim_offset: reflectance' = sim_gain*reflectance + sim_offset; (1.0, 0.0) = off.
     sim_gain_bands: per-band gain in STURM order [B2,B3,B4,B5,B6,B7,B8A,B11,B12]; None = off.
-    class_mapping: "paper" (default), "published" (classes 1-5 water) or "operational".
+    protocol: STURM_PROTOCOLS key; default "surface_water" (classes 1-5 water).
+    class_mapping: old argument, "paper", "published" or "operational" (old behaviour).
     """
     ds = STURMFloodDataset(
         root=root, sensor=sensor, img_size=img_size,
         augment=False, include_possible=include_possible,
         normalize=normalize, sim_gain=sim_gain, sim_offset=sim_offset, sim_haze=sim_haze,
-        sim_gain_bands=sim_gain_bands, class_mapping=class_mapping,
+        sim_gain_bands=sim_gain_bands, protocol=protocol, class_mapping=class_mapping,
     )
     return DataLoader(ds, batch_size=batch_size, shuffle=shuffle,
                       num_workers=num_workers, pin_memory=True, drop_last=False)

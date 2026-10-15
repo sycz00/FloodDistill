@@ -1,8 +1,9 @@
 """Evaluate ONNX and TensorRT models on the Jetson Xavier NX.
 
 S11 uses the validation split and the rasterio-only loader. STURM uses its
-original DN inverse and the six-band adapter. WorldFloods ignores clouds and
-JRC permanent water. Both external datasets use 512x512 inputs and S11 stats.
+original DN inverse and the six-band adapter. WorldFloods ignores clouds. Labels follow
+--protocol: surface_water (default; all water, as Sen1Floods11) or the flood-only tables.
+Both external datasets use 512x512 inputs and S11 stats.
 
 Micro scores pool confusion cells. Macro scores average flood-containing
 scenes (STURM flood maps; WorldFloods AOIs). Robustness applies gain and haze
@@ -96,13 +97,15 @@ parser.add_argument("--s1s2w_root",  default=os.path.expanduser("~/data/S1S2Wate
                     help="S1S2Water root (default ~/data/S1S2Water)")
 parser.add_argument("--wf_root",     default=os.path.expanduser("~/data/WorldFloodsv2"),
                     help="WorldFloods-v2 root (default ~/data/WorldFloodsv2)")
-parser.add_argument("--wf_include_permanent", action="store_true",
-                    help="Score JRC permanent water as water on WF (pre-2026-07-29 "
-                         "protocol). Default OFF: permanent water (JRC value 3, "
-                         "<split>/PERMANENTWATERJRC/) is ignored so WF is flood-only, "
-                         "matching STURM's protocol (open water/reservoirs/lakes -> "
-                         "ignore). Requires the PERMANENTWATERJRC folder on disk "
-                         "unless this flag is set.")
+parser.add_argument("--protocol", default="surface_water",
+                    choices=["surface_water", "flood_p3", "flood_paper"],
+                    help="Label protocol for STURM and WF (data/ood_datasets.py). 'surface_water' "
+                         "(default since 2026-10-15): every water pixel counts, as in Sen1Floods11 "
+                         "(WF flood + JRC permanent water; STURM classes 1-5), non-finite STURM "
+                         "pixels ignored, WF edge windows zero-padded. 'flood_p3': flood only "
+                         "(WF permanent water and STURM classes 3-5 ignored), same geometry, the "
+                         "revision P3 tables. 'flood_paper': flood only with resized WF edge windows "
+                         "and no STURM finite-support mask, the submitted paper's tables.")
 # Backward-compat alias: --data_root <path> acts as --s11_root <path>
 parser.add_argument("--data_root",   default=None,
                     help="[deprecated] alias for --s11_root")
@@ -576,18 +579,16 @@ def _sturm_dl(gain=1.0, haze=0.0):
     return _sturm_dl_fn(
         args.sturm_root, sensor="S2", batch_size=2, num_workers=2,
         img_size=IMG_SIZE, normalize=args.sturm_normalize,
-        sim_gain=gain, sim_haze=haze)
+        sim_gain=gain, sim_haze=haze, protocol=args.protocol)
 
 
 def _wf_dl(gain=1.0, haze=0.0):
-    # WorldFloods-v2: scenes are tiled at native 10 m into 512x512 windows. Flood-only by
-    # default (JRC permanent water ignored, like STURM); --wf_include_permanent gives the
-    # legacy flood + permanent scoring.
+    # WorldFloods-v2: scenes are tiled at native 10 m into 512x512 windows; --protocol sets
+    # whether JRC permanent water counts as water (surface_water) or is ignored (flood_*).
     return _wf_dl_fn(
         args.wf_root, split="test", batch_size=2, num_workers=2,
         img_size=IMG_SIZE, tile_size=IMG_SIZE, normalize="s11",
-        sim_gain=gain, sim_haze=haze,
-        ignore_permanent_water=not args.wf_include_permanent)
+        sim_gain=gain, sim_haze=haze, protocol=args.protocol)
 
 
 if "s11" in _SEL:
@@ -733,7 +734,7 @@ def _get(label, ds, key):
 
 
 _PROTOCOL = (f"PROTOCOL: STURM normalize={args.sturm_normalize} · "
-             f"WF {'flood+permanent (legacy)' if args.wf_include_permanent else 'flood-only'} · "
+             f"labels {args.protocol} · "
              f"{IMG_SIZE}×{IMG_SIZE}" + (f" · QUICK {args.quick} batches/dataset" if args.quick else ""))
 
 
@@ -808,7 +809,8 @@ if args.json_out:
     payload = {"accuracy": _acc_results, "latency": _lat_results,
                "robustness": _rob_results,
                "config": {"img_size": IMG_SIZE, "sturm_normalize": args.sturm_normalize,
-                          "wf_flood_only": not args.wf_include_permanent,
+                          "protocol": args.protocol,
+                          "wf_flood_only": args.protocol != "surface_water",
                           "datasets": sorted(_SEL), "gains": _GAINS, "hazes": _HAZES,
                           "robust_datasets": sorted(_ROBUST_SEL) if args.robustness else [],
                           "robustness_metric": "worstDrop = clean - min over envelope",

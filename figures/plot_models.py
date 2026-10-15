@@ -90,7 +90,7 @@ def build_datasets(args: argparse.Namespace) -> list[DatasetSpec]:
     # Set normalize="original" (0.04 + 0.12*v) explicitly; the loader default is "percentile".
     sturm_dl = get_sturm_flood_dataloader(
         root=args.sturm_root, sensor="S2", batch_size=1, num_workers=0,
-        img_size=args.eval_img_size, normalize="original",
+        img_size=args.eval_img_size, normalize="original", protocol="flood_paper",
     )
     specs.append(DatasetSpec("STURM-S2", sturm_dl.dataset, sturm_s2_adapter(6), True))
 

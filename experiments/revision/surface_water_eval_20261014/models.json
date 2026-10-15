@@ -1,0 +1,1159 @@
+{
+ "created": "2026-10-14",
+ "models": [
+  {
+   "id": "teacher",
+   "family": "teacher",
+   "arch": "teacher",
+   "loader": "pe",
+   "seed": null,
+   "checkpoint": "/home/schmalstieg/.cache/huggingface/hub/models--ibm-nasa-geospatial--Prithvi-EO-2.0-300M-TL-Sen1Floods11/blobs/3675e9c2b52547de8ff8a19f4881c28573e6d4d2f0805d866f4fc48c1e517d60",
+   "provenance": "public Prithvi-EO-2.0-300M-TL-Sen1Floods11 (pinned blob used by v7/V9)",
+   "sha256": "3675e9c2b52547de8ff8a19f4881c28573e6d4d2f0805d866f4fc48c1e517d60"
+  },
+  {
+   "id": "O4_efficientvit_b0_historical_lkd_clip0_N2500_s107",
+   "family": "O4_efficientvit_b0_historical_lkd_clip0_N2500",
+   "arch": "efficientvit_b0",
+   "loader": "pe",
+   "seed": 107,
+   "checkpoint": "/data1/schmalstieg/flooddistill/revision_20261005/original_N2500_recovered_20261006/training/O4_train_efficientvit_b0_historical_lkd_clip0_N2500_s107/best.pt",
+   "provenance": "prompt4/5 recovered original cohort (O4)",
+   "sha256": "eecb91c3712e0e460890f814ad33d97300cd4e0f1a1d542744a3f19b5ee0d0d8"
+  },
+  {
+   "id": "O4_efficientvit_b0_historical_lkd_clip0_N2500_s42",
+   "family": "O4_efficientvit_b0_historical_lkd_clip0_N2500",
+   "arch": "efficientvit_b0",
+   "loader": "pe",
+   "seed": 42,
+   "checkpoint": "/data1/schmalstieg/flooddistill/revision_20261005/original_N2500_recovered_20261006/training/O4_train_efficientvit_b0_historical_lkd_clip0_N2500_s42/best.pt",
+   "provenance": "prompt4/5 recovered original cohort (O4)",
+   "sha256": "0a393107605100eceaf795d15d4143d85197697a08c2c9c04c67600269dd3daa"
+  },
+  {
+   "id": "O4_efficientvit_b0_historical_lkd_clip0_N2500_s64",
+   "family": "O4_efficientvit_b0_historical_lkd_clip0_N2500",
+   "arch": "efficientvit_b0",
+   "loader": "pe",
+   "seed": 64,
+   "checkpoint": "/data1/schmalstieg/flooddistill/revision_20261005/original_N2500_recovered_20261006/training/O4_train_efficientvit_b0_historical_lkd_clip0_N2500_s64/best.pt",
+   "provenance": "prompt4/5 recovered original cohort (O4)",
+   "sha256": "e442199c31c9636d7176dfa133c62e8553c028063c1968ef8571ddb334ebdbb5"
+  },
+  {
+   "id": "O4_efficientvit_b0_historical_lkd_clip0_N2500_s91",
+   "family": "O4_efficientvit_b0_historical_lkd_clip0_N2500",
+   "arch": "efficientvit_b0",
+   "loader": "pe",
+   "seed": 91,
+   "checkpoint": "/data1/schmalstieg/flooddistill/revision_20261005/original_N2500_recovered_20261006/training/O4_train_efficientvit_b0_historical_lkd_clip0_N2500_s91/best.pt",
+   "provenance": "prompt4/5 recovered original cohort (O4)",
+   "sha256": "c966e2f42f75b2f32e5137d01f0685f6286c1092403f4f1bf1426ffd2acd2802"
+  },
+  {
+   "id": "O4_efficientvit_b0_historical_ofa_clip5_allvalid_N2500_s107",
+   "family": "O4_efficientvit_b0_historical_ofa_clip5_allvalid_N2500",
+   "arch": "efficientvit_b0",
+   "loader": "pe",
+   "seed": 107,
+   "checkpoint": "/data1/schmalstieg/flooddistill/revision_20261005/original_N2500_recovered_20261006/training/O4_train_efficientvit_b0_historical_ofa_clip5_allvalid_N2500_s107/best.pt",
+   "provenance": "prompt4/5 recovered original cohort (O4)",
+   "sha256": "f33a027e85dbe3e4b76d39eb701797ffe093a5ea1830d61d2426305a01668535"
+  },
+  {
+   "id": "O4_efficientvit_b0_historical_ofa_clip5_allvalid_N2500_s42",
+   "family": "O4_efficientvit_b0_historical_ofa_clip5_allvalid_N2500",
+   "arch": "efficientvit_b0",
+   "loader": "pe",
+   "seed": 42,
+   "checkpoint": "/data1/schmalstieg/flooddistill/revision_20261005/original_N2500_recovered_20261006/training/O4_train_efficientvit_b0_historical_ofa_clip5_allvalid_N2500_s42/best.pt",
+   "provenance": "prompt4/5 recovered original cohort (O4)",
+   "sha256": "f7908ec48a6a46461a8c45d5813658aebd48a3fd5f55dd430515a83fe3191c52"
+  },
+  {
+   "id": "O4_efficientvit_b0_historical_ofa_clip5_allvalid_N2500_s64",
+   "family": "O4_efficientvit_b0_historical_ofa_clip5_allvalid_N2500",
+   "arch": "efficientvit_b0",
+   "loader": "pe",
+   "seed": 64,
+   "checkpoint": "/data1/schmalstieg/flooddistill/revision_20261005/original_N2500_recovered_20261006/training/O4_train_efficientvit_b0_historical_ofa_clip5_allvalid_N2500_s64/best.pt",
+   "provenance": "prompt4/5 recovered original cohort (O4)",
+   "sha256": "01ab891107f5329fd021bbbce595b402027e968195e678d743b9e17e9ff508a8"
+  },
+  {
+   "id": "O4_efficientvit_b0_historical_ofa_clip5_allvalid_N2500_s91",
+   "family": "O4_efficientvit_b0_historical_ofa_clip5_allvalid_N2500",
+   "arch": "efficientvit_b0",
+   "loader": "pe",
+   "seed": 91,
+   "checkpoint": "/data1/schmalstieg/flooddistill/revision_20261005/original_N2500_recovered_20261006/training/O4_train_efficientvit_b0_historical_ofa_clip5_allvalid_N2500_s91/best.pt",
+   "provenance": "prompt4/5 recovered original cohort (O4)",
+   "sha256": "5a89fb969556d71d9a43f844fbb01dbc99da3cb983af67b78f29cae50343fc64"
+  },
+  {
+   "id": "O4_efficientvit_b0_historical_true_ce_clip0_N2500_s107",
+   "family": "O4_efficientvit_b0_historical_true_ce_clip0_N2500",
+   "arch": "efficientvit_b0",
+   "loader": "pe",
+   "seed": 107,
+   "checkpoint": "/data1/schmalstieg/flooddistill/revision_20261005/original_N2500_recovered_20261006/training/O4_train_efficientvit_b0_historical_true_ce_clip0_N2500_s107/best.pt",
+   "provenance": "prompt4/5 recovered original cohort (O4)",
+   "sha256": "786f6099f52be6e0f7996d6197067bb3292c5235e838e7462a4346f09d662329"
+  },
+  {
+   "id": "O4_efficientvit_b0_historical_true_ce_clip0_N2500_s42",
+   "family": "O4_efficientvit_b0_historical_true_ce_clip0_N2500",
+   "arch": "efficientvit_b0",
+   "loader": "pe",
+   "seed": 42,
+   "checkpoint": "/data1/schmalstieg/flooddistill/revision_20261005/original_N2500_recovered_20261006/training/O4_train_efficientvit_b0_historical_true_ce_clip0_N2500_s42/best.pt",
+   "provenance": "prompt4/5 recovered original cohort (O4)",
+   "sha256": "65b37a84e043450bd40a726c54f164feca0780702d25c49f8687ad959d834086"
+  },
+  {
+   "id": "O4_efficientvit_b0_historical_true_ce_clip0_N2500_s64",
+   "family": "O4_efficientvit_b0_historical_true_ce_clip0_N2500",
+   "arch": "efficientvit_b0",
+   "loader": "pe",
+   "seed": 64,
+   "checkpoint": "/data1/schmalstieg/flooddistill/revision_20261005/original_N2500_recovered_20261006/training/O4_train_efficientvit_b0_historical_true_ce_clip0_N2500_s64/best.pt",
+   "provenance": "prompt4/5 recovered original cohort (O4)",
+   "sha256": "4120f5c27296761d94a1e324d0d88f3388fbd6ef9333a4e0dab11d4ac26ae085"
+  },
+  {
+   "id": "O4_efficientvit_b0_historical_true_ce_clip0_N2500_s91",
+   "family": "O4_efficientvit_b0_historical_true_ce_clip0_N2500",
+   "arch": "efficientvit_b0",
+   "loader": "pe",
+   "seed": 91,
+   "checkpoint": "/data1/schmalstieg/flooddistill/revision_20261005/original_N2500_recovered_20261006/training/O4_train_efficientvit_b0_historical_true_ce_clip0_N2500_s91/best.pt",
+   "provenance": "prompt4/5 recovered original cohort (O4)",
+   "sha256": "03e211eef62a9dff19c3b3ab2f2d78666b48ae6662c87027a7ada516ae091ee2"
+  },
+  {
+   "id": "O4_efficientvit_b0_matched_focal_g2_clip5_N2500_s107",
+   "family": "O4_efficientvit_b0_matched_focal_g2_clip5_N2500",
+   "arch": "efficientvit_b0",
+   "loader": "pe",
+   "seed": 107,
+   "checkpoint": "/data1/schmalstieg/flooddistill/revision_20261005/original_N2500_recovered_20261006/training/O4_train_efficientvit_b0_matched_focal_g2_clip5_N2500_s107/best.pt",
+   "provenance": "prompt4/5 recovered original cohort (O4)",
+   "sha256": "0a12fabe4611c2307a284a47f06ab453e9cd47d92b6e60bc6ede3019feb69f97"
+  },
+  {
+   "id": "O4_efficientvit_b0_matched_focal_g2_clip5_N2500_s42",
+   "family": "O4_efficientvit_b0_matched_focal_g2_clip5_N2500",
+   "arch": "efficientvit_b0",
+   "loader": "pe",
+   "seed": 42,
+   "checkpoint": "/data1/schmalstieg/flooddistill/revision_20261005/original_N2500_recovered_20261006/training/O4_train_efficientvit_b0_matched_focal_g2_clip5_N2500_s42/best.pt",
+   "provenance": "prompt4/5 recovered original cohort (O4)",
+   "sha256": "232aadcb7db3077db5beedbab7620ef855ac042bfdf15e7bd821c46387425d52"
+  },
+  {
+   "id": "O4_efficientvit_b0_matched_focal_g2_clip5_N2500_s64",
+   "family": "O4_efficientvit_b0_matched_focal_g2_clip5_N2500",
+   "arch": "efficientvit_b0",
+   "loader": "pe",
+   "seed": 64,
+   "checkpoint": "/data1/schmalstieg/flooddistill/revision_20261005/original_N2500_recovered_20261006/training/O4_train_efficientvit_b0_matched_focal_g2_clip5_N2500_s64/best.pt",
+   "provenance": "prompt4/5 recovered original cohort (O4)",
+   "sha256": "801fa28c17a8fbfc9ef3152ee984e7617a64749ced6e731a0a84b1dc57bbb096"
+  },
+  {
+   "id": "O4_efficientvit_b0_matched_focal_g2_clip5_N2500_s91",
+   "family": "O4_efficientvit_b0_matched_focal_g2_clip5_N2500",
+   "arch": "efficientvit_b0",
+   "loader": "pe",
+   "seed": 91,
+   "checkpoint": "/data1/schmalstieg/flooddistill/revision_20261005/original_N2500_recovered_20261006/training/O4_train_efficientvit_b0_matched_focal_g2_clip5_N2500_s91/best.pt",
+   "provenance": "prompt4/5 recovered original cohort (O4)",
+   "sha256": "f798d15ed31eb99f6a04cfab79eab104cb7b99372b4da27d5b14bee603b7ef98"
+  },
+  {
+   "id": "O4_efficientvit_b0_matched_lkd_clip5_valid_N100_s107",
+   "family": "O4_efficientvit_b0_matched_lkd_clip5_valid_N100",
+   "arch": "efficientvit_b0",
+   "loader": "pe",
+   "seed": 107,
+   "checkpoint": "/data1/schmalstieg/flooddistill/revision_20261005/original_N2500_recovered_20261006/training/O4_train_efficientvit_b0_matched_lkd_clip5_valid_N100_s107/best.pt",
+   "provenance": "prompt4/5 recovered original cohort (O4)",
+   "sha256": "9e14eb63b085bb71fc541725b1800eee07abd1f092cf91aa4330e9e040acb73a"
+  },
+  {
+   "id": "O4_efficientvit_b0_matched_lkd_clip5_valid_N100_s42",
+   "family": "O4_efficientvit_b0_matched_lkd_clip5_valid_N100",
+   "arch": "efficientvit_b0",
+   "loader": "pe",
+   "seed": 42,
+   "checkpoint": "/data1/schmalstieg/flooddistill/revision_20261005/original_N2500_recovered_20261006/training/O4_train_efficientvit_b0_matched_lkd_clip5_valid_N100_s42/best.pt",
+   "provenance": "prompt4/5 recovered original cohort (O4)",
+   "sha256": "4c256ffe6736b33c5501bd2c14ba4bc1a426ecf9b742331e1380364ba84d4a3d"
+  },
+  {
+   "id": "O4_efficientvit_b0_matched_lkd_clip5_valid_N100_s64",
+   "family": "O4_efficientvit_b0_matched_lkd_clip5_valid_N100",
+   "arch": "efficientvit_b0",
+   "loader": "pe",
+   "seed": 64,
+   "checkpoint": "/data1/schmalstieg/flooddistill/revision_20261005/original_N2500_recovered_20261006/training/O4_train_efficientvit_b0_matched_lkd_clip5_valid_N100_s64/best.pt",
+   "provenance": "prompt4/5 recovered original cohort (O4)",
+   "sha256": "a073d8a3ad2baaeb2d2b78524ead0be9d0aa71560d532e058d14d17b9083b559"
+  },
+  {
+   "id": "O4_efficientvit_b0_matched_lkd_clip5_valid_N100_s91",
+   "family": "O4_efficientvit_b0_matched_lkd_clip5_valid_N100",
+   "arch": "efficientvit_b0",
+   "loader": "pe",
+   "seed": 91,
+   "checkpoint": "/data1/schmalstieg/flooddistill/revision_20261005/original_N2500_recovered_20261006/training/O4_train_efficientvit_b0_matched_lkd_clip5_valid_N100_s91/best.pt",
+   "provenance": "prompt4/5 recovered original cohort (O4)",
+   "sha256": "df4633a42b313dd548bdcd6b5a3271936ce7699f94bf5e1b93cc08a3ef28eee3"
+  },
+  {
+   "id": "O4_efficientvit_b0_matched_lkd_clip5_valid_N2500_s107",
+   "family": "O4_efficientvit_b0_matched_lkd_clip5_valid_N2500",
+   "arch": "efficientvit_b0",
+   "loader": "pe",
+   "seed": 107,
+   "checkpoint": "/data1/schmalstieg/flooddistill/revision_20261005/original_N2500_recovered_20261006/training/O4_train_efficientvit_b0_matched_lkd_clip5_valid_N2500_s107/best.pt",
+   "provenance": "prompt4/5 recovered original cohort (O4)",
+   "sha256": "d3708703160f132bbc3c8764d55ba443d698f8b90efd5922b8e6758315457b9e"
+  },
+  {
+   "id": "O4_efficientvit_b0_matched_lkd_clip5_valid_N2500_s42",
+   "family": "O4_efficientvit_b0_matched_lkd_clip5_valid_N2500",
+   "arch": "efficientvit_b0",
+   "loader": "pe",
+   "seed": 42,
+   "checkpoint": "/data1/schmalstieg/flooddistill/revision_20261005/original_N2500_recovered_20261006/training/O4_train_efficientvit_b0_matched_lkd_clip5_valid_N2500_s42/best.pt",
+   "provenance": "prompt4/5 recovered original cohort (O4)",
+   "sha256": "42b431e3b713962bc068d529ec1e7b37ec419b28aa62a64ab63b19a1ce8757cb"
+  },
+  {
+   "id": "O4_efficientvit_b0_matched_lkd_clip5_valid_N2500_s64",
+   "family": "O4_efficientvit_b0_matched_lkd_clip5_valid_N2500",
+   "arch": "efficientvit_b0",
+   "loader": "pe",
+   "seed": 64,
+   "checkpoint": "/data1/schmalstieg/flooddistill/revision_20261005/original_N2500_recovered_20261006/training/O4_train_efficientvit_b0_matched_lkd_clip5_valid_N2500_s64/best.pt",
+   "provenance": "prompt4/5 recovered original cohort (O4)",
+   "sha256": "f322fb08813b241d8b3140470a4d2e2c08a77ffa508019cc40a868342e063e13"
+  },
+  {
+   "id": "O4_efficientvit_b0_matched_lkd_clip5_valid_N2500_s91",
+   "family": "O4_efficientvit_b0_matched_lkd_clip5_valid_N2500",
+   "arch": "efficientvit_b0",
+   "loader": "pe",
+   "seed": 91,
+   "checkpoint": "/data1/schmalstieg/flooddistill/revision_20261005/original_N2500_recovered_20261006/training/O4_train_efficientvit_b0_matched_lkd_clip5_valid_N2500_s91/best.pt",
+   "provenance": "prompt4/5 recovered original cohort (O4)",
+   "sha256": "9d58207caff60e80102fa2440ec90b357550518bbf9e8da41a560f094b26b694"
+  },
+  {
+   "id": "O4_efficientvit_b0_matched_ofa_clip5_valid_N100_s107",
+   "family": "O4_efficientvit_b0_matched_ofa_clip5_valid_N100",
+   "arch": "efficientvit_b0",
+   "loader": "pe",
+   "seed": 107,
+   "checkpoint": "/data1/schmalstieg/flooddistill/revision_20261005/original_N2500_recovered_20261006/training/O4_train_efficientvit_b0_matched_ofa_clip5_valid_N100_s107/best.pt",
+   "provenance": "prompt4/5 recovered original cohort (O4)",
+   "sha256": "f467a71e362070b80e103a8a0defc1288fb8b1628cfd74c649383a3b75b8cbac"
+  },
+  {
+   "id": "O4_efficientvit_b0_matched_ofa_clip5_valid_N100_s42",
+   "family": "O4_efficientvit_b0_matched_ofa_clip5_valid_N100",
+   "arch": "efficientvit_b0",
+   "loader": "pe",
+   "seed": 42,
+   "checkpoint": "/data1/schmalstieg/flooddistill/revision_20261005/original_N2500_recovered_20261006/training/O4_train_efficientvit_b0_matched_ofa_clip5_valid_N100_s42/best.pt",
+   "provenance": "prompt4/5 recovered original cohort (O4)",
+   "sha256": "da176005f5e594bb64008f68956d07cf5a5db7485da75ab8b0eb71d0ee0410ae"
+  },
+  {
+   "id": "O4_efficientvit_b0_matched_ofa_clip5_valid_N100_s64",
+   "family": "O4_efficientvit_b0_matched_ofa_clip5_valid_N100",
+   "arch": "efficientvit_b0",
+   "loader": "pe",
+   "seed": 64,
+   "checkpoint": "/data1/schmalstieg/flooddistill/revision_20261005/original_N2500_recovered_20261006/training/O4_train_efficientvit_b0_matched_ofa_clip5_valid_N100_s64/best.pt",
+   "provenance": "prompt4/5 recovered original cohort (O4)",
+   "sha256": "86224225ed84005c1284c3c311b5d5153417230b20c5987cd28e53badb4063b7"
+  },
+  {
+   "id": "O4_efficientvit_b0_matched_ofa_clip5_valid_N100_s91",
+   "family": "O4_efficientvit_b0_matched_ofa_clip5_valid_N100",
+   "arch": "efficientvit_b0",
+   "loader": "pe",
+   "seed": 91,
+   "checkpoint": "/data1/schmalstieg/flooddistill/revision_20261005/original_N2500_recovered_20261006/training/O4_train_efficientvit_b0_matched_ofa_clip5_valid_N100_s91/best.pt",
+   "provenance": "prompt4/5 recovered original cohort (O4)",
+   "sha256": "7e1f0ef3f4e5233d8bf110cf622d485d0615ce19c6d865e9c94f0f6cae83dbba"
+  },
+  {
+   "id": "O4_lightformer_resnet18_matched_lkd_clip5_valid_N2500_s107",
+   "family": "O4_lightformer_resnet18_matched_lkd_clip5_valid_N2500",
+   "arch": "lightformer_resnet18",
+   "loader": "pe",
+   "seed": 107,
+   "checkpoint": "/data1/schmalstieg/flooddistill/revision_20261005/original_N2500_recovered_20261006/training/O4_train_lightformer_resnet18_matched_lkd_clip5_valid_N2500_s107/best.pt",
+   "provenance": "prompt4/5 recovered original cohort (O4)",
+   "sha256": "8b66a01c59c19ea72126d1e120d38e12715d776fe16c86bde7ab774be840be5d"
+  },
+  {
+   "id": "O4_lightformer_resnet18_matched_lkd_clip5_valid_N2500_s42",
+   "family": "O4_lightformer_resnet18_matched_lkd_clip5_valid_N2500",
+   "arch": "lightformer_resnet18",
+   "loader": "pe",
+   "seed": 42,
+   "checkpoint": "/data1/schmalstieg/flooddistill/revision_20261005/original_N2500_recovered_20261006/training/O4_train_lightformer_resnet18_matched_lkd_clip5_valid_N2500_s42/best.pt",
+   "provenance": "prompt4/5 recovered original cohort (O4)",
+   "sha256": "2a687adc4cf38fee43ec3863510711306838912c0c862b79dd3b4df895a29a86"
+  },
+  {
+   "id": "O4_lightformer_resnet18_matched_lkd_clip5_valid_N2500_s64",
+   "family": "O4_lightformer_resnet18_matched_lkd_clip5_valid_N2500",
+   "arch": "lightformer_resnet18",
+   "loader": "pe",
+   "seed": 64,
+   "checkpoint": "/data1/schmalstieg/flooddistill/revision_20261005/original_N2500_recovered_20261006/training/O4_train_lightformer_resnet18_matched_lkd_clip5_valid_N2500_s64/best.pt",
+   "provenance": "prompt4/5 recovered original cohort (O4)",
+   "sha256": "102fad2b74fc842839574bef3d3dad9cf725154223c8eb5477d5ae9e0e53336a"
+  },
+  {
+   "id": "O4_lightformer_resnet18_matched_lkd_clip5_valid_N2500_s91",
+   "family": "O4_lightformer_resnet18_matched_lkd_clip5_valid_N2500",
+   "arch": "lightformer_resnet18",
+   "loader": "pe",
+   "seed": 91,
+   "checkpoint": "/data1/schmalstieg/flooddistill/revision_20261005/original_N2500_recovered_20261006/training/O4_train_lightformer_resnet18_matched_lkd_clip5_valid_N2500_s91/best.pt",
+   "provenance": "prompt4/5 recovered original cohort (O4)",
+   "sha256": "f869782c5b31469bb63bf9e92d1f7d52924699dfcecf5e58218590e0fb102207"
+  },
+  {
+   "id": "O4_lightformer_resnet18_matched_ofa_clip5_valid_N2500_s107",
+   "family": "O4_lightformer_resnet18_matched_ofa_clip5_valid_N2500",
+   "arch": "lightformer_resnet18",
+   "loader": "pe",
+   "seed": 107,
+   "checkpoint": "/data1/schmalstieg/flooddistill/revision_20261005/original_N2500_recovered_20261006/training/O4_train_lightformer_resnet18_matched_ofa_clip5_valid_N2500_s107/best.pt",
+   "provenance": "prompt4/5 recovered original cohort (O4)",
+   "sha256": "95ddcf05d5311951f99dd95ee3d575a22da140b7a4bc2a99ef1524f16db6ddf7"
+  },
+  {
+   "id": "O4_lightformer_resnet18_matched_ofa_clip5_valid_N2500_s42",
+   "family": "O4_lightformer_resnet18_matched_ofa_clip5_valid_N2500",
+   "arch": "lightformer_resnet18",
+   "loader": "pe",
+   "seed": 42,
+   "checkpoint": "/data1/schmalstieg/flooddistill/revision_20261005/original_N2500_recovered_20261006/training/O4_train_lightformer_resnet18_matched_ofa_clip5_valid_N2500_s42/best.pt",
+   "provenance": "prompt4/5 recovered original cohort (O4)",
+   "sha256": "37cf7fe954d85740458d4b42e673e4821871cc3ef63f1e369493bc7779c175dc"
+  },
+  {
+   "id": "O4_lightformer_resnet18_matched_ofa_clip5_valid_N2500_s64",
+   "family": "O4_lightformer_resnet18_matched_ofa_clip5_valid_N2500",
+   "arch": "lightformer_resnet18",
+   "loader": "pe",
+   "seed": 64,
+   "checkpoint": "/data1/schmalstieg/flooddistill/revision_20261005/original_N2500_recovered_20261006/training/O4_train_lightformer_resnet18_matched_ofa_clip5_valid_N2500_s64/best.pt",
+   "provenance": "prompt4/5 recovered original cohort (O4)",
+   "sha256": "875dd933a7d1521a2fe46002e097f40180f833f4438e4b18296550d5ae20863c"
+  },
+  {
+   "id": "O4_lightformer_resnet18_matched_ofa_clip5_valid_N2500_s91",
+   "family": "O4_lightformer_resnet18_matched_ofa_clip5_valid_N2500",
+   "arch": "lightformer_resnet18",
+   "loader": "pe",
+   "seed": 91,
+   "checkpoint": "/data1/schmalstieg/flooddistill/revision_20261005/original_N2500_recovered_20261006/training/O4_train_lightformer_resnet18_matched_ofa_clip5_valid_N2500_s91/best.pt",
+   "provenance": "prompt4/5 recovered original cohort (O4)",
+   "sha256": "2122685897c8c17363f19e4bd3ba991e6ce4f9abed48fd4164c5f1470a799cd4"
+  },
+  {
+   "id": "O4_mobilenet_v3_small_matched_lkd_clip5_valid_N2500_s107",
+   "family": "O4_mobilenet_v3_small_matched_lkd_clip5_valid_N2500",
+   "arch": "mobilenet_v3_small",
+   "loader": "pe",
+   "seed": 107,
+   "checkpoint": "/data1/schmalstieg/flooddistill/revision_20261005/original_N2500_recovered_20261006/training/O4_train_mobilenet_v3_small_matched_lkd_clip5_valid_N2500_s107/best.pt",
+   "provenance": "prompt4/5 recovered original cohort (O4)",
+   "sha256": "60eb5a6da65f82f2a3dd3430f6f9a56f0f4cb72105a55a7145a47cceb6c3a3b2"
+  },
+  {
+   "id": "O4_mobilenet_v3_small_matched_lkd_clip5_valid_N2500_s42",
+   "family": "O4_mobilenet_v3_small_matched_lkd_clip5_valid_N2500",
+   "arch": "mobilenet_v3_small",
+   "loader": "pe",
+   "seed": 42,
+   "checkpoint": "/data1/schmalstieg/flooddistill/revision_20261005/original_N2500_recovered_20261006/training/O4_train_mobilenet_v3_small_matched_lkd_clip5_valid_N2500_s42/best.pt",
+   "provenance": "prompt4/5 recovered original cohort (O4)",
+   "sha256": "52232e34470b9fcdfb5face19a5681c9a3d65c44e29c12d774493c9a84aed4e2"
+  },
+  {
+   "id": "O4_mobilenet_v3_small_matched_lkd_clip5_valid_N2500_s64",
+   "family": "O4_mobilenet_v3_small_matched_lkd_clip5_valid_N2500",
+   "arch": "mobilenet_v3_small",
+   "loader": "pe",
+   "seed": 64,
+   "checkpoint": "/data1/schmalstieg/flooddistill/revision_20261005/original_N2500_recovered_20261006/training/O4_train_mobilenet_v3_small_matched_lkd_clip5_valid_N2500_s64/best.pt",
+   "provenance": "prompt4/5 recovered original cohort (O4)",
+   "sha256": "ae43d33d93185ea6aec9924ff72ebaff63dddebc6918c8190296e0f7c7a8b87a"
+  },
+  {
+   "id": "O4_mobilenet_v3_small_matched_lkd_clip5_valid_N2500_s91",
+   "family": "O4_mobilenet_v3_small_matched_lkd_clip5_valid_N2500",
+   "arch": "mobilenet_v3_small",
+   "loader": "pe",
+   "seed": 91,
+   "checkpoint": "/data1/schmalstieg/flooddistill/revision_20261005/original_N2500_recovered_20261006/training/O4_train_mobilenet_v3_small_matched_lkd_clip5_valid_N2500_s91/best.pt",
+   "provenance": "prompt4/5 recovered original cohort (O4)",
+   "sha256": "c075f0188a0bb8df71a7d036c66c723837ee06ede957ada8745f33e588c241b1"
+  },
+  {
+   "id": "O4_mobilenet_v3_small_matched_ofa_clip5_valid_N2500_s107",
+   "family": "O4_mobilenet_v3_small_matched_ofa_clip5_valid_N2500",
+   "arch": "mobilenet_v3_small",
+   "loader": "pe",
+   "seed": 107,
+   "checkpoint": "/data1/schmalstieg/flooddistill/revision_20261005/original_N2500_recovered_20261006/training/O4_train_mobilenet_v3_small_matched_ofa_clip5_valid_N2500_s107/best.pt",
+   "provenance": "prompt4/5 recovered original cohort (O4)",
+   "sha256": "28c9f195ff81a6c96f917ca709077d819f0bd0aa6c1aca3e7dfff085334e12ab"
+  },
+  {
+   "id": "O4_mobilenet_v3_small_matched_ofa_clip5_valid_N2500_s42",
+   "family": "O4_mobilenet_v3_small_matched_ofa_clip5_valid_N2500",
+   "arch": "mobilenet_v3_small",
+   "loader": "pe",
+   "seed": 42,
+   "checkpoint": "/data1/schmalstieg/flooddistill/revision_20261005/original_N2500_recovered_20261006/training/O4_train_mobilenet_v3_small_matched_ofa_clip5_valid_N2500_s42/best.pt",
+   "provenance": "prompt4/5 recovered original cohort (O4)",
+   "sha256": "50487b13ea60d280c5c304d2aa961e8aeb0336f9f0ac9540b3a9aa4f6c5f954e"
+  },
+  {
+   "id": "O4_mobilenet_v3_small_matched_ofa_clip5_valid_N2500_s64",
+   "family": "O4_mobilenet_v3_small_matched_ofa_clip5_valid_N2500",
+   "arch": "mobilenet_v3_small",
+   "loader": "pe",
+   "seed": 64,
+   "checkpoint": "/data1/schmalstieg/flooddistill/revision_20261005/original_N2500_recovered_20261006/training/O4_train_mobilenet_v3_small_matched_ofa_clip5_valid_N2500_s64/best.pt",
+   "provenance": "prompt4/5 recovered original cohort (O4)",
+   "sha256": "4603625c98ea2786e7110743a4825d9f9e0da639bc3f1d139865621421530cd1"
+  },
+  {
+   "id": "O4_mobilenet_v3_small_matched_ofa_clip5_valid_N2500_s91",
+   "family": "O4_mobilenet_v3_small_matched_ofa_clip5_valid_N2500",
+   "arch": "mobilenet_v3_small",
+   "loader": "pe",
+   "seed": 91,
+   "checkpoint": "/data1/schmalstieg/flooddistill/revision_20261005/original_N2500_recovered_20261006/training/O4_train_mobilenet_v3_small_matched_ofa_clip5_valid_N2500_s91/best.pt",
+   "provenance": "prompt4/5 recovered original cohort (O4)",
+   "sha256": "0d4310036b5959549c2209f1f8b5d50bc57bd1d9deed86515c9645f0f1af0f41"
+  },
+  {
+   "id": "RR_pseudo_evit_ce_N252_s107",
+   "family": "RR_pseudo_evit_ce_N252",
+   "arch": "efficientvit_b0",
+   "loader": "pe",
+   "seed": 107,
+   "checkpoint": "/data1/schmalstieg/flooddistill/runs_repro/pseudo_evit_ce_N252_s107/best.pt",
+   "provenance": "runs_repro (Sept 2026 reproduction of the paper recipe)",
+   "sha256": "073e224262fa73895cff60e057e59de19213af75b7379cffd369fe564229dff2"
+  },
+  {
+   "id": "RR_pseudo_evit_ce_N252_s42",
+   "family": "RR_pseudo_evit_ce_N252",
+   "arch": "efficientvit_b0",
+   "loader": "pe",
+   "seed": 42,
+   "checkpoint": "/data1/schmalstieg/flooddistill/runs_repro/pseudo_evit_ce_N252_s42/best.pt",
+   "provenance": "runs_repro (Sept 2026 reproduction of the paper recipe)",
+   "sha256": "aae4bf7e176458c26b78db9104fe0336d9308a52ea907adc377769432d38de92"
+  },
+  {
+   "id": "RR_pseudo_evit_ce_N252_s64",
+   "family": "RR_pseudo_evit_ce_N252",
+   "arch": "efficientvit_b0",
+   "loader": "pe",
+   "seed": 64,
+   "checkpoint": "/data1/schmalstieg/flooddistill/runs_repro/pseudo_evit_ce_N252_s64/best.pt",
+   "provenance": "runs_repro (Sept 2026 reproduction of the paper recipe)",
+   "sha256": "de81bb8e961055732af4185bf3966f65bf294a5d4649ef9dd6897f1cc6565797"
+  },
+  {
+   "id": "RR_pseudo_evit_ce_N252_s91",
+   "family": "RR_pseudo_evit_ce_N252",
+   "arch": "efficientvit_b0",
+   "loader": "pe",
+   "seed": 91,
+   "checkpoint": "/data1/schmalstieg/flooddistill/runs_repro/pseudo_evit_ce_N252_s91/best.pt",
+   "provenance": "runs_repro (Sept 2026 reproduction of the paper recipe)",
+   "sha256": "056ccdfdcb6270d13e19ab2ac0ad4dcf648f76ba2712ce9b257d1a34fde6082e"
+  },
+  {
+   "id": "RR_pseudo_evit_lkd_N252_s107",
+   "family": "RR_pseudo_evit_lkd_N252",
+   "arch": "efficientvit_b0",
+   "loader": "pe",
+   "seed": 107,
+   "checkpoint": "/data1/schmalstieg/flooddistill/runs_repro/pseudo_evit_lkd_N252_s107/best.pt",
+   "provenance": "runs_repro (Sept 2026 reproduction of the paper recipe)",
+   "sha256": "1d588677ce74d4278296be2f9dae30c69fdb177b5d11ea2ac659210664c5fcde"
+  },
+  {
+   "id": "RR_pseudo_evit_lkd_N252_s42",
+   "family": "RR_pseudo_evit_lkd_N252",
+   "arch": "efficientvit_b0",
+   "loader": "pe",
+   "seed": 42,
+   "checkpoint": "/data1/schmalstieg/flooddistill/runs_repro/pseudo_evit_lkd_N252_s42/best.pt",
+   "provenance": "runs_repro (Sept 2026 reproduction of the paper recipe)",
+   "sha256": "844408df60493f4c43ba94d1e4ccea85f554b293f61c11d592b18b597eda2843"
+  },
+  {
+   "id": "RR_pseudo_evit_lkd_N252_s64",
+   "family": "RR_pseudo_evit_lkd_N252",
+   "arch": "efficientvit_b0",
+   "loader": "pe",
+   "seed": 64,
+   "checkpoint": "/data1/schmalstieg/flooddistill/runs_repro/pseudo_evit_lkd_N252_s64/best.pt",
+   "provenance": "runs_repro (Sept 2026 reproduction of the paper recipe)",
+   "sha256": "7adc3025d2a60069f1c9dfb2ab782bdaeb715f73123ac7cb0d4c7f3d0021560a"
+  },
+  {
+   "id": "RR_pseudo_evit_lkd_N252_s91",
+   "family": "RR_pseudo_evit_lkd_N252",
+   "arch": "efficientvit_b0",
+   "loader": "pe",
+   "seed": 91,
+   "checkpoint": "/data1/schmalstieg/flooddistill/runs_repro/pseudo_evit_lkd_N252_s91/best.pt",
+   "provenance": "runs_repro (Sept 2026 reproduction of the paper recipe)",
+   "sha256": "d05a5e34a2d78447381e6285b427039dd7cee0f1f74281e0321635ea2d523d03"
+  },
+  {
+   "id": "RR_pseudo_evit_ofa_N252_s107",
+   "family": "RR_pseudo_evit_ofa_N252",
+   "arch": "efficientvit_b0",
+   "loader": "pe",
+   "seed": 107,
+   "checkpoint": "/data1/schmalstieg/flooddistill/runs_repro/pseudo_evit_ofa_N252_s107/best.pt",
+   "provenance": "runs_repro (Sept 2026 reproduction of the paper recipe)",
+   "sha256": "01f183bd7538ab5c8579a8c7da3beeb0ff76064747bf939677ef5b2b1d609227"
+  },
+  {
+   "id": "RR_pseudo_evit_ofa_N252_s42",
+   "family": "RR_pseudo_evit_ofa_N252",
+   "arch": "efficientvit_b0",
+   "loader": "pe",
+   "seed": 42,
+   "checkpoint": "/data1/schmalstieg/flooddistill/runs_repro/pseudo_evit_ofa_N252_s42/best.pt",
+   "provenance": "runs_repro (Sept 2026 reproduction of the paper recipe)",
+   "sha256": "fc1bcf1c81ec6a844d92c270218113b41579e02eca3ae22aa1e5b6799bcb6ff2"
+  },
+  {
+   "id": "RR_pseudo_evit_ofa_N252_s64",
+   "family": "RR_pseudo_evit_ofa_N252",
+   "arch": "efficientvit_b0",
+   "loader": "pe",
+   "seed": 64,
+   "checkpoint": "/data1/schmalstieg/flooddistill/runs_repro/pseudo_evit_ofa_N252_s64/best.pt",
+   "provenance": "runs_repro (Sept 2026 reproduction of the paper recipe)",
+   "sha256": "a26b79f5dbb979826fa6b161f3c4983fcbccff291ec0f3e50ce8baca1ba49f46"
+  },
+  {
+   "id": "RR_pseudo_evit_ofa_N252_s91",
+   "family": "RR_pseudo_evit_ofa_N252",
+   "arch": "efficientvit_b0",
+   "loader": "pe",
+   "seed": 91,
+   "checkpoint": "/data1/schmalstieg/flooddistill/runs_repro/pseudo_evit_ofa_N252_s91/best.pt",
+   "provenance": "runs_repro (Sept 2026 reproduction of the paper recipe)",
+   "sha256": "f8a2d1cb7e6fbab9e5cfa097fc176222d8a730f18b8cfc4430d4e1522f37626b"
+  },
+  {
+   "id": "RR_pseudo_evit_relu6_ofa_N2500_s107",
+   "family": "RR_pseudo_evit_relu6_ofa_N2500",
+   "arch": "efficientvit_b0_relu6",
+   "loader": "pe",
+   "seed": 107,
+   "checkpoint": "/data1/schmalstieg/flooddistill/runs_repro/pseudo_evit_relu6_ofa_N2500_s107/best.pt",
+   "provenance": "runs_repro (Sept 2026 reproduction of the paper recipe)",
+   "sha256": "6de743bb685228e247cde2dfb03f769c07257a64706e5a0f0c29a633723a8355"
+  },
+  {
+   "id": "RR_pseudo_evit_relu6_ofa_N2500_s42",
+   "family": "RR_pseudo_evit_relu6_ofa_N2500",
+   "arch": "efficientvit_b0_relu6",
+   "loader": "pe",
+   "seed": 42,
+   "checkpoint": "/data1/schmalstieg/flooddistill/runs_repro/pseudo_evit_relu6_ofa_N2500_s42/best.pt",
+   "provenance": "runs_repro (Sept 2026 reproduction of the paper recipe)",
+   "sha256": "d2a6c75ae464ebf5198b9bd4ac4bb0e9937c5676fd0e8a73b09697081d8b078b"
+  },
+  {
+   "id": "RR_pseudo_evit_relu6_ofa_N2500_s64",
+   "family": "RR_pseudo_evit_relu6_ofa_N2500",
+   "arch": "efficientvit_b0_relu6",
+   "loader": "pe",
+   "seed": 64,
+   "checkpoint": "/data1/schmalstieg/flooddistill/runs_repro/pseudo_evit_relu6_ofa_N2500_s64/best.pt",
+   "provenance": "runs_repro (Sept 2026 reproduction of the paper recipe)",
+   "sha256": "da6137e38a56d9c538b4ca93c6fa100d2441fc82e9a47b5be4377aecb4b18d67"
+  },
+  {
+   "id": "RR_pseudo_evit_relu6_ofa_N2500_s91",
+   "family": "RR_pseudo_evit_relu6_ofa_N2500",
+   "arch": "efficientvit_b0_relu6",
+   "loader": "pe",
+   "seed": 91,
+   "checkpoint": "/data1/schmalstieg/flooddistill/runs_repro/pseudo_evit_relu6_ofa_N2500_s91/best.pt",
+   "provenance": "runs_repro (Sept 2026 reproduction of the paper recipe)",
+   "sha256": "7532b5d4b520eb87fbb77e5015166d399a27059a953ccb951a091e1a7fbbe561"
+  },
+  {
+   "id": "RR_pseudo_unet_ce_N252_s107",
+   "family": "RR_pseudo_unet_ce_N252",
+   "arch": "unet_resnet50",
+   "loader": "pe",
+   "seed": 107,
+   "checkpoint": "/data1/schmalstieg/flooddistill/runs_repro/pseudo_unet_ce_N252_s107/best.pt",
+   "provenance": "runs_repro (Sept 2026 reproduction of the paper recipe)",
+   "sha256": "7346c40d86755eb7d2678c83f2e3a9fb62fe2127f0dcb6cb88279ffb6f9977c4"
+  },
+  {
+   "id": "RR_pseudo_unet_ce_N252_s42",
+   "family": "RR_pseudo_unet_ce_N252",
+   "arch": "unet_resnet50",
+   "loader": "pe",
+   "seed": 42,
+   "checkpoint": "/data1/schmalstieg/flooddistill/runs_repro/pseudo_unet_ce_N252_s42/best.pt",
+   "provenance": "runs_repro (Sept 2026 reproduction of the paper recipe)",
+   "sha256": "37874a40956d65ef149cb436dbb2466dc6d8ffbd10e4fcf3abcaa444147aabf2"
+  },
+  {
+   "id": "RR_pseudo_unet_ce_N252_s64",
+   "family": "RR_pseudo_unet_ce_N252",
+   "arch": "unet_resnet50",
+   "loader": "pe",
+   "seed": 64,
+   "checkpoint": "/data1/schmalstieg/flooddistill/runs_repro/pseudo_unet_ce_N252_s64/best.pt",
+   "provenance": "runs_repro (Sept 2026 reproduction of the paper recipe)",
+   "sha256": "0436e87bb9f42cce510e1bc98c99a9c220930060e6706c58243aecca11983561"
+  },
+  {
+   "id": "RR_pseudo_unet_ce_N252_s91",
+   "family": "RR_pseudo_unet_ce_N252",
+   "arch": "unet_resnet50",
+   "loader": "pe",
+   "seed": 91,
+   "checkpoint": "/data1/schmalstieg/flooddistill/runs_repro/pseudo_unet_ce_N252_s91/best.pt",
+   "provenance": "runs_repro (Sept 2026 reproduction of the paper recipe)",
+   "sha256": "6316674ff8f67392b9c0009192f43b4895116a0c89d26b16589c63365084a85f"
+  },
+  {
+   "id": "RR_pseudo_unet_lkd_N252_s107",
+   "family": "RR_pseudo_unet_lkd_N252",
+   "arch": "unet_resnet50",
+   "loader": "pe",
+   "seed": 107,
+   "checkpoint": "/data1/schmalstieg/flooddistill/runs_repro/pseudo_unet_lkd_N252_s107/best.pt",
+   "provenance": "runs_repro (Sept 2026 reproduction of the paper recipe)",
+   "sha256": "74d66c72af0cc4cdd6d1b99eaae874c064cd1ac4a02f493c5a8c73d8df169ec5"
+  },
+  {
+   "id": "RR_pseudo_unet_lkd_N252_s42",
+   "family": "RR_pseudo_unet_lkd_N252",
+   "arch": "unet_resnet50",
+   "loader": "pe",
+   "seed": 42,
+   "checkpoint": "/data1/schmalstieg/flooddistill/runs_repro/pseudo_unet_lkd_N252_s42/best.pt",
+   "provenance": "runs_repro (Sept 2026 reproduction of the paper recipe)",
+   "sha256": "46572597528a386bcde44cc61aacc2d64ffda6742ef4e37f2aa1b1b175e176a4"
+  },
+  {
+   "id": "RR_pseudo_unet_lkd_N252_s64",
+   "family": "RR_pseudo_unet_lkd_N252",
+   "arch": "unet_resnet50",
+   "loader": "pe",
+   "seed": 64,
+   "checkpoint": "/data1/schmalstieg/flooddistill/runs_repro/pseudo_unet_lkd_N252_s64/best.pt",
+   "provenance": "runs_repro (Sept 2026 reproduction of the paper recipe)",
+   "sha256": "18bd1f7ca44a7cac5015c746047c39ffdb7b2c9d35489c01191c3220a5fa453e"
+  },
+  {
+   "id": "RR_pseudo_unet_lkd_N252_s91",
+   "family": "RR_pseudo_unet_lkd_N252",
+   "arch": "unet_resnet50",
+   "loader": "pe",
+   "seed": 91,
+   "checkpoint": "/data1/schmalstieg/flooddistill/runs_repro/pseudo_unet_lkd_N252_s91/best.pt",
+   "provenance": "runs_repro (Sept 2026 reproduction of the paper recipe)",
+   "sha256": "6cb2879935067161c5422f005de1c45923fcd6890716cdb4b13287e3e2555e95"
+  },
+  {
+   "id": "RR_s11_evit_ce_N252_s107",
+   "family": "RR_s11_evit_ce_N252",
+   "arch": "efficientvit_b0",
+   "loader": "pe",
+   "seed": 107,
+   "checkpoint": "/data1/schmalstieg/flooddistill/runs_repro/s11_evit_ce_N252_s107/best.pt",
+   "provenance": "runs_repro (Sept 2026 reproduction of the paper recipe)",
+   "sha256": "94f1016c9453c48c4ea960a94138413557e166e5e02d7f9cdc96a26239227678"
+  },
+  {
+   "id": "RR_s11_evit_ce_N252_s42",
+   "family": "RR_s11_evit_ce_N252",
+   "arch": "efficientvit_b0",
+   "loader": "pe",
+   "seed": 42,
+   "checkpoint": "/data1/schmalstieg/flooddistill/runs_repro/s11_evit_ce_N252_s42/best.pt",
+   "provenance": "runs_repro (Sept 2026 reproduction of the paper recipe)",
+   "sha256": "9f33a47690835e484c69f7db6aabec2acafbb1770a74237324b60b56ff2b36ba"
+  },
+  {
+   "id": "RR_s11_evit_ce_N252_s64",
+   "family": "RR_s11_evit_ce_N252",
+   "arch": "efficientvit_b0",
+   "loader": "pe",
+   "seed": 64,
+   "checkpoint": "/data1/schmalstieg/flooddistill/runs_repro/s11_evit_ce_N252_s64/best.pt",
+   "provenance": "runs_repro (Sept 2026 reproduction of the paper recipe)",
+   "sha256": "66e05a710d05fe08a9716d3a6ed24f855dfa28a6943938d11b9adc20db4a89f9"
+  },
+  {
+   "id": "RR_s11_evit_ce_N252_s91",
+   "family": "RR_s11_evit_ce_N252",
+   "arch": "efficientvit_b0",
+   "loader": "pe",
+   "seed": 91,
+   "checkpoint": "/data1/schmalstieg/flooddistill/runs_repro/s11_evit_ce_N252_s91/best.pt",
+   "provenance": "runs_repro (Sept 2026 reproduction of the paper recipe)",
+   "sha256": "1b89af789a6471024dc805d1763ecc2f70a6932fccf28a78d565f3d43e61aa7b"
+  },
+  {
+   "id": "RR_s11_evit_lkd_N252_s107",
+   "family": "RR_s11_evit_lkd_N252",
+   "arch": "efficientvit_b0",
+   "loader": "pe",
+   "seed": 107,
+   "checkpoint": "/data1/schmalstieg/flooddistill/runs_repro/s11_evit_lkd_N252_s107/best.pt",
+   "provenance": "runs_repro (Sept 2026 reproduction of the paper recipe)",
+   "sha256": "0026c60e6f73f5d3259c2a2fabd66d159df88211197e812d848f1cb5b993e157"
+  },
+  {
+   "id": "RR_s11_evit_lkd_N252_s42",
+   "family": "RR_s11_evit_lkd_N252",
+   "arch": "efficientvit_b0",
+   "loader": "pe",
+   "seed": 42,
+   "checkpoint": "/data1/schmalstieg/flooddistill/runs_repro/s11_evit_lkd_N252_s42/best.pt",
+   "provenance": "runs_repro (Sept 2026 reproduction of the paper recipe)",
+   "sha256": "e6bd7003ad80e2be37c75cce6ac1ff1352b94e6e3b44b0d90b793958e38796d7"
+  },
+  {
+   "id": "RR_s11_evit_lkd_N252_s64",
+   "family": "RR_s11_evit_lkd_N252",
+   "arch": "efficientvit_b0",
+   "loader": "pe",
+   "seed": 64,
+   "checkpoint": "/data1/schmalstieg/flooddistill/runs_repro/s11_evit_lkd_N252_s64/best.pt",
+   "provenance": "runs_repro (Sept 2026 reproduction of the paper recipe)",
+   "sha256": "7f6af101acf5b1a3603ac2cae1c70a083d2cee89848df79d09a8a6b1b0e63b60"
+  },
+  {
+   "id": "RR_s11_evit_lkd_N252_s91",
+   "family": "RR_s11_evit_lkd_N252",
+   "arch": "efficientvit_b0",
+   "loader": "pe",
+   "seed": 91,
+   "checkpoint": "/data1/schmalstieg/flooddistill/runs_repro/s11_evit_lkd_N252_s91/best.pt",
+   "provenance": "runs_repro (Sept 2026 reproduction of the paper recipe)",
+   "sha256": "d320340394e595d9e38e9c89fa4911f0a2042a9f7a6e165b246e816a086f9bd9"
+  },
+  {
+   "id": "RR_s11_evit_ofa_N252_s107",
+   "family": "RR_s11_evit_ofa_N252",
+   "arch": "efficientvit_b0",
+   "loader": "pe",
+   "seed": 107,
+   "checkpoint": "/data1/schmalstieg/flooddistill/runs_repro/s11_evit_ofa_N252_s107/best.pt",
+   "provenance": "runs_repro (Sept 2026 reproduction of the paper recipe)",
+   "sha256": "6cf7019ef6a2a852438bb1a6f137d4c187deec9baf0dfb8f6121a1e540a3ff36"
+  },
+  {
+   "id": "RR_s11_evit_ofa_N252_s42",
+   "family": "RR_s11_evit_ofa_N252",
+   "arch": "efficientvit_b0",
+   "loader": "pe",
+   "seed": 42,
+   "checkpoint": "/data1/schmalstieg/flooddistill/runs_repro/s11_evit_ofa_N252_s42/best.pt",
+   "provenance": "runs_repro (Sept 2026 reproduction of the paper recipe)",
+   "sha256": "ab9557e94536a8d6cd10b40ce0c59aa28c8a1048dd9c7f99951a58a57307286d"
+  },
+  {
+   "id": "RR_s11_evit_ofa_N252_s64",
+   "family": "RR_s11_evit_ofa_N252",
+   "arch": "efficientvit_b0",
+   "loader": "pe",
+   "seed": 64,
+   "checkpoint": "/data1/schmalstieg/flooddistill/runs_repro/s11_evit_ofa_N252_s64/best.pt",
+   "provenance": "runs_repro (Sept 2026 reproduction of the paper recipe)",
+   "sha256": "82755bf5064794a2e2e9f2207fed275b2c6c83758f13f103e2e2c748e63a6bd0"
+  },
+  {
+   "id": "RR_s11_evit_ofa_N252_s91",
+   "family": "RR_s11_evit_ofa_N252",
+   "arch": "efficientvit_b0",
+   "loader": "pe",
+   "seed": 91,
+   "checkpoint": "/data1/schmalstieg/flooddistill/runs_repro/s11_evit_ofa_N252_s91/best.pt",
+   "provenance": "runs_repro (Sept 2026 reproduction of the paper recipe)",
+   "sha256": "44ab00acbb4a127f3c5958936ddaccaa7ae639596dd93f81459dc5d91ed62422"
+  },
+  {
+   "id": "RR_s11_unet_ce_N252_s107",
+   "family": "RR_s11_unet_ce_N252",
+   "arch": "unet_resnet50",
+   "loader": "pe",
+   "seed": 107,
+   "checkpoint": "/data1/schmalstieg/flooddistill/runs_repro/s11_unet_ce_N252_s107/best.pt",
+   "provenance": "runs_repro (Sept 2026 reproduction of the paper recipe)",
+   "sha256": "8d19273be6f2818572d97fdbf1888208e727120112b80684e525d92588f911b2"
+  },
+  {
+   "id": "RR_s11_unet_ce_N252_s42",
+   "family": "RR_s11_unet_ce_N252",
+   "arch": "unet_resnet50",
+   "loader": "pe",
+   "seed": 42,
+   "checkpoint": "/data1/schmalstieg/flooddistill/runs_repro/s11_unet_ce_N252_s42/best.pt",
+   "provenance": "runs_repro (Sept 2026 reproduction of the paper recipe)",
+   "sha256": "24d25c2096763561fbe8287401fbdcd06c60e64d26aa78cb291738e53b54f5b3"
+  },
+  {
+   "id": "RR_s11_unet_ce_N252_s64",
+   "family": "RR_s11_unet_ce_N252",
+   "arch": "unet_resnet50",
+   "loader": "pe",
+   "seed": 64,
+   "checkpoint": "/data1/schmalstieg/flooddistill/runs_repro/s11_unet_ce_N252_s64/best.pt",
+   "provenance": "runs_repro (Sept 2026 reproduction of the paper recipe)",
+   "sha256": "be2538871c12baa9a73fe73c41b9a7fe66cece34d26bc91ff275dd0796b6c8f0"
+  },
+  {
+   "id": "RR_s11_unet_ce_N252_s91",
+   "family": "RR_s11_unet_ce_N252",
+   "arch": "unet_resnet50",
+   "loader": "pe",
+   "seed": 91,
+   "checkpoint": "/data1/schmalstieg/flooddistill/runs_repro/s11_unet_ce_N252_s91/best.pt",
+   "provenance": "runs_repro (Sept 2026 reproduction of the paper recipe)",
+   "sha256": "c667bd28b0cad00eafd37ddb173c9ed3932345a2275649f83570c3dd913c54ff"
+  },
+  {
+   "id": "RR_s11_unet_lkd_N252_s107",
+   "family": "RR_s11_unet_lkd_N252",
+   "arch": "unet_resnet50",
+   "loader": "pe",
+   "seed": 107,
+   "checkpoint": "/data1/schmalstieg/flooddistill/runs_repro/s11_unet_lkd_N252_s107/best.pt",
+   "provenance": "runs_repro (Sept 2026 reproduction of the paper recipe)",
+   "sha256": "c5dbb34ce880eee1e6df41713898fbfa333c0483d1f3482a1ba3f3e2a18eb2e1"
+  },
+  {
+   "id": "RR_s11_unet_lkd_N252_s42",
+   "family": "RR_s11_unet_lkd_N252",
+   "arch": "unet_resnet50",
+   "loader": "pe",
+   "seed": 42,
+   "checkpoint": "/data1/schmalstieg/flooddistill/runs_repro/s11_unet_lkd_N252_s42/best.pt",
+   "provenance": "runs_repro (Sept 2026 reproduction of the paper recipe)",
+   "sha256": "c3be779f50251a2e75ecf17a5665e82e323c723a26d421d36f0bfaae2c79e12b"
+  },
+  {
+   "id": "RR_s11_unet_lkd_N252_s64",
+   "family": "RR_s11_unet_lkd_N252",
+   "arch": "unet_resnet50",
+   "loader": "pe",
+   "seed": 64,
+   "checkpoint": "/data1/schmalstieg/flooddistill/runs_repro/s11_unet_lkd_N252_s64/best.pt",
+   "provenance": "runs_repro (Sept 2026 reproduction of the paper recipe)",
+   "sha256": "424ddf220023be487f1b3951da0ccd7d9ee21bcc207c4b27e39b1e6f18e124eb"
+  },
+  {
+   "id": "RR_s11_unet_lkd_N252_s91",
+   "family": "RR_s11_unet_lkd_N252",
+   "arch": "unet_resnet50",
+   "loader": "pe",
+   "seed": 91,
+   "checkpoint": "/data1/schmalstieg/flooddistill/runs_repro/s11_unet_lkd_N252_s91/best.pt",
+   "provenance": "runs_repro (Sept 2026 reproduction of the paper recipe)",
+   "sha256": "9db8f53d5a8122e1e3a2a2d63aa290b72f87f519f071d66b44bc6bd43c0563ac"
+  },
+  {
+   "id": "V7_R4_LKD_s42",
+   "family": "V7_R4_LKD",
+   "arch": "R4",
+   "loader": "rungs",
+   "seed": 42,
+   "checkpoint": "/data1/schmalstieg/flooddistill/revision_20261005/capacity_v4_20261008/v5/fl_R4_lr5e-3_s42/best.pt",
+   "expected_sha256": "182c64cce20f01630f1a1dc7ae792ff8a45c38154d0cfafaf2a4275bb8a49ab9",
+   "provenance": "capacity v5/v7 selected checkpoint (results.csv)",
+   "sha256": "182c64cce20f01630f1a1dc7ae792ff8a45c38154d0cfafaf2a4275bb8a49ab9"
+  },
+  {
+   "id": "V7_R4_LKD_s64",
+   "family": "V7_R4_LKD",
+   "arch": "R4",
+   "loader": "rungs",
+   "seed": 64,
+   "checkpoint": "/data1/schmalstieg/flooddistill/revision_20261005/capacity_v4_20261008/v5/fl_R4_sel_s64/best.pt",
+   "expected_sha256": "2534edf68f40828cbff87f23aaf14bf1257427f0f42538754f19d6d16f3b1d4a",
+   "provenance": "capacity v5/v7 selected checkpoint (results.csv)",
+   "sha256": "2534edf68f40828cbff87f23aaf14bf1257427f0f42538754f19d6d16f3b1d4a"
+  },
+  {
+   "id": "V7_R4_LKD_s91",
+   "family": "V7_R4_LKD",
+   "arch": "R4",
+   "loader": "rungs",
+   "seed": 91,
+   "checkpoint": "/data1/schmalstieg/flooddistill/revision_20261005/capacity_v4_20261008/v5/fl_R4_sel_s91/best.pt",
+   "expected_sha256": "50c3182ee2087735c501ae38099e91b508ba5e70a6b81150d7bb8f326f6d5afd",
+   "provenance": "capacity v5/v7 selected checkpoint (results.csv)",
+   "sha256": "50c3182ee2087735c501ae38099e91b508ba5e70a6b81150d7bb8f326f6d5afd"
+  },
+  {
+   "id": "V7_R4_LKD_s107",
+   "family": "V7_R4_LKD",
+   "arch": "R4",
+   "loader": "rungs",
+   "seed": 107,
+   "checkpoint": "/data1/schmalstieg/flooddistill/revision_20261005/capacity_v4_20261008/v5/fl_R4_sel_s107/best.pt",
+   "expected_sha256": "f3b82c3e4e4f2c1e50116f4094836ba538ba548988dc6421aa9119dac98a381e",
+   "provenance": "capacity v5/v7 selected checkpoint (results.csv)",
+   "sha256": "f3b82c3e4e4f2c1e50116f4094836ba538ba548988dc6421aa9119dac98a381e"
+  },
+  {
+   "id": "V7_A3_LKD_s42",
+   "family": "V7_A3_LKD",
+   "arch": "A3",
+   "loader": "rungs",
+   "seed": 42,
+   "checkpoint": "/data1/schmalstieg/flooddistill/revision_20261005/capacity_v4_20261008/v5/fl_A3_lr5e-3_s42/best.pt",
+   "expected_sha256": "25fd331d6daf50e52beb5e0fafa0ac97b7d5a8109554d95606cee44956b4bc9b",
+   "provenance": "capacity v5/v7 selected checkpoint (results.csv)",
+   "sha256": "25fd331d6daf50e52beb5e0fafa0ac97b7d5a8109554d95606cee44956b4bc9b"
+  },
+  {
+   "id": "V7_A3_LKD_s64",
+   "family": "V7_A3_LKD",
+   "arch": "A3",
+   "loader": "rungs",
+   "seed": 64,
+   "checkpoint": "/data1/schmalstieg/flooddistill/revision_20261005/capacity_v4_20261008/v5/fl_A3_sel_s64/best.pt",
+   "expected_sha256": "3133f15ed6284daeb67d9a970d92388334f64383cf6dba8ad88f28d05e1d5535",
+   "provenance": "capacity v5/v7 selected checkpoint (results.csv)",
+   "sha256": "3133f15ed6284daeb67d9a970d92388334f64383cf6dba8ad88f28d05e1d5535"
+  },
+  {
+   "id": "V7_A3_LKD_s91",
+   "family": "V7_A3_LKD",
+   "arch": "A3",
+   "loader": "rungs",
+   "seed": 91,
+   "checkpoint": "/data1/schmalstieg/flooddistill/revision_20261005/capacity_v4_20261008/v5/fl_A3_sel_s91/best.pt",
+   "expected_sha256": "da958524c47230959e0c3d2d503d4d8fcbdc25850a92e653c78cd39634fcd591",
+   "provenance": "capacity v5/v7 selected checkpoint (results.csv)",
+   "sha256": "da958524c47230959e0c3d2d503d4d8fcbdc25850a92e653c78cd39634fcd591"
+  },
+  {
+   "id": "V7_A3_LKD_s107",
+   "family": "V7_A3_LKD",
+   "arch": "A3",
+   "loader": "rungs",
+   "seed": 107,
+   "checkpoint": "/data1/schmalstieg/flooddistill/revision_20261005/capacity_v4_20261008/v5/fl_A3_sel_s107/best.pt",
+   "expected_sha256": "b53dbbfbfb5db6c4217877e57e93f7cb8b2dc1e1d570e0fd07c9ae49d77e1f7c",
+   "provenance": "capacity v5/v7 selected checkpoint (results.csv)",
+   "sha256": "b53dbbfbfb5db6c4217877e57e93f7cb8b2dc1e1d570e0fd07c9ae49d77e1f7c"
+  },
+  {
+   "id": "V7_A3N_LKD_s42",
+   "family": "V7_A3N_LKD",
+   "arch": "A3N",
+   "loader": "rungs",
+   "seed": 42,
+   "checkpoint": "/data1/schmalstieg/flooddistill/revision_20261005/capacity_v4_20261008/v5/fl_A3N_lr5e-3_s42/best.pt",
+   "expected_sha256": "3526dca4fae498e24c7b9ad2213d527ce422e20bab9b5e68504105f4942695f0",
+   "provenance": "capacity v5/v7 selected checkpoint (results.csv)",
+   "sha256": "3526dca4fae498e24c7b9ad2213d527ce422e20bab9b5e68504105f4942695f0"
+  },
+  {
+   "id": "V7_A3N_LKD_s64",
+   "family": "V7_A3N_LKD",
+   "arch": "A3N",
+   "loader": "rungs",
+   "seed": 64,
+   "checkpoint": "/data1/schmalstieg/flooddistill/revision_20261005/capacity_v4_20261008/v5/fl_A3N_sel_s64/best.pt",
+   "expected_sha256": "02aa8dbd39f88f9133a029c0a168c20159a31c3709c6c5b570d3ee71292001fd",
+   "provenance": "capacity v5/v7 selected checkpoint (results.csv)",
+   "sha256": "02aa8dbd39f88f9133a029c0a168c20159a31c3709c6c5b570d3ee71292001fd"
+  },
+  {
+   "id": "V7_A3N_LKD_s91",
+   "family": "V7_A3N_LKD",
+   "arch": "A3N",
+   "loader": "rungs",
+   "seed": 91,
+   "checkpoint": "/data1/schmalstieg/flooddistill/revision_20261005/capacity_v4_20261008/v5/fl_A3N_sel_s91/best.pt",
+   "expected_sha256": "d984c0588c17c120134f4c56a9c0bf740c8c64476df03e52725b7c5eba058f2c",
+   "provenance": "capacity v5/v7 selected checkpoint (results.csv)",
+   "sha256": "d984c0588c17c120134f4c56a9c0bf740c8c64476df03e52725b7c5eba058f2c"
+  },
+  {
+   "id": "V7_A3N_LKD_s107",
+   "family": "V7_A3N_LKD",
+   "arch": "A3N",
+   "loader": "rungs",
+   "seed": 107,
+   "checkpoint": "/data1/schmalstieg/flooddistill/revision_20261005/capacity_v4_20261008/v5/fl_A3N_sel_s107/best.pt",
+   "expected_sha256": "92b296bb1fd002a0c60a0deb4525ba9166697bfe7e8af490c657b0795739fc2b",
+   "provenance": "capacity v5/v7 selected checkpoint (results.csv)",
+   "sha256": "92b296bb1fd002a0c60a0deb4525ba9166697bfe7e8af490c657b0795739fc2b"
+  },
+  {
+   "id": "V7_A0_LKD_reanchored_s42",
+   "family": "V7_A0_LKD_reanchored",
+   "arch": "A0",
+   "loader": "rungs",
+   "seed": 42,
+   "checkpoint": "/home/schmalstieg/repos/FloodDistill/experiments/revision/capacity_v7_20261011T210730Z/runs/A0_lr5e-3_s42/best.pt",
+   "expected_sha256": "777154a0c5fd7a30bc6c5ad46f852245a7049b6ee32318a3c2867697817b21c3",
+   "provenance": "capacity v5/v7 selected checkpoint (results.csv)",
+   "sha256": "777154a0c5fd7a30bc6c5ad46f852245a7049b6ee32318a3c2867697817b21c3"
+  },
+  {
+   "id": "V7_A0_LKD_reanchored_s107",
+   "family": "V7_A0_LKD_reanchored",
+   "arch": "A0",
+   "loader": "rungs",
+   "seed": 107,
+   "checkpoint": "/home/schmalstieg/repos/FloodDistill/experiments/revision/capacity_v7_20261011T210730Z/runs/A0_selected_s107/best.pt",
+   "expected_sha256": "0205d8a488187e3ee375c87ee894cd6183d37c489f06c78c2d1826d45b04e5b4",
+   "provenance": "capacity v5/v7 selected checkpoint (results.csv)",
+   "sha256": "0205d8a488187e3ee375c87ee894cd6183d37c489f06c78c2d1826d45b04e5b4"
+  },
+  {
+   "id": "V7_A0_LKD_reanchored_s64",
+   "family": "V7_A0_LKD_reanchored",
+   "arch": "A0",
+   "loader": "rungs",
+   "seed": 64,
+   "checkpoint": "/home/schmalstieg/repos/FloodDistill/experiments/revision/capacity_v7_20261011T210730Z/runs/A0_selected_s64/best.pt",
+   "expected_sha256": "dd4d0da0137ab0158d2efac56edc758667f91e20d96aa83713eee93e5e93cb04",
+   "provenance": "capacity v5/v7 selected checkpoint (results.csv)",
+   "sha256": "dd4d0da0137ab0158d2efac56edc758667f91e20d96aa83713eee93e5e93cb04"
+  },
+  {
+   "id": "V7_A0_LKD_reanchored_s91",
+   "family": "V7_A0_LKD_reanchored",
+   "arch": "A0",
+   "loader": "rungs",
+   "seed": 91,
+   "checkpoint": "/home/schmalstieg/repos/FloodDistill/experiments/revision/capacity_v7_20261011T210730Z/runs/A0_selected_s91/best.pt",
+   "expected_sha256": "413780bbe7da6270e6ee8efa9312fc75b638d881ab3f4584aae139c504fb854b",
+   "provenance": "capacity v5/v7 selected checkpoint (results.csv)",
+   "sha256": "413780bbe7da6270e6ee8efa9312fc75b638d881ab3f4584aae139c504fb854b"
+  },
+  {
+   "id": "V7_A3_CE_s107",
+   "family": "V7_A3_CE",
+   "arch": "A3",
+   "loader": "rungs",
+   "seed": 107,
+   "checkpoint": "/home/schmalstieg/repos/FloodDistill/experiments/revision/capacity_v7_20261011T210730Z/runs/A3_CE_optimized_s107/best.pt",
+   "expected_sha256": "797aed6df72cc095288538e3104d80bd610bd8a3b0f4d3bedf817c97841b369d",
+   "provenance": "capacity v5/v7 selected checkpoint (results.csv)",
+   "sha256": "797aed6df72cc095288538e3104d80bd610bd8a3b0f4d3bedf817c97841b369d"
+  },
+  {
+   "id": "V7_A3_CE_s42",
+   "family": "V7_A3_CE",
+   "arch": "A3",
+   "loader": "rungs",
+   "seed": 42,
+   "checkpoint": "/home/schmalstieg/repos/FloodDistill/experiments/revision/capacity_v7_20261011T210730Z/runs/A3_CE_optimized_s42/best.pt",
+   "expected_sha256": "8611d33518d0e4e03255e3e6ee6473d097b463b61927f686011bcaa1d5f6555e",
+   "provenance": "capacity v5/v7 selected checkpoint (results.csv)",
+   "sha256": "8611d33518d0e4e03255e3e6ee6473d097b463b61927f686011bcaa1d5f6555e"
+  },
+  {
+   "id": "V7_A3_CE_s64",
+   "family": "V7_A3_CE",
+   "arch": "A3",
+   "loader": "rungs",
+   "seed": 64,
+   "checkpoint": "/home/schmalstieg/repos/FloodDistill/experiments/revision/capacity_v7_20261011T210730Z/runs/A3_CE_optimized_s64/best.pt",
+   "expected_sha256": "2348d461471c3533bbe5321987fb36313907a7aea560f30a879fc30942abcb9b",
+   "provenance": "capacity v5/v7 selected checkpoint (results.csv)",
+   "sha256": "2348d461471c3533bbe5321987fb36313907a7aea560f30a879fc30942abcb9b"
+  },
+  {
+   "id": "V7_A3_CE_s91",
+   "family": "V7_A3_CE",
+   "arch": "A3",
+   "loader": "rungs",
+   "seed": 91,
+   "checkpoint": "/home/schmalstieg/repos/FloodDistill/experiments/revision/capacity_v7_20261011T210730Z/runs/A3_CE_optimized_s91/best.pt",
+   "expected_sha256": "566fd540e6e98f26a2b92217d900695bf38e308ff555ed7003e7e0d0997859e9",
+   "provenance": "capacity v5/v7 selected checkpoint (results.csv)",
+   "sha256": "566fd540e6e98f26a2b92217d900695bf38e308ff555ed7003e7e0d0997859e9"
+  },
+  {
+   "id": "V7_R4_CE_s107",
+   "family": "V7_R4_CE",
+   "arch": "R4",
+   "loader": "rungs",
+   "seed": 107,
+   "checkpoint": "/home/schmalstieg/repos/FloodDistill/experiments/revision/capacity_v7_20261011T210730Z/runs/R4_CE_s107/best.pt",
+   "expected_sha256": "79ce823e3189da1a47e172ffd35f700bbb01ba506cbb4522b92543325588ced1",
+   "provenance": "capacity v5/v7 selected checkpoint (results.csv)",
+   "sha256": "79ce823e3189da1a47e172ffd35f700bbb01ba506cbb4522b92543325588ced1"
+  },
+  {
+   "id": "V7_R4_CE_s42",
+   "family": "V7_R4_CE",
+   "arch": "R4",
+   "loader": "rungs",
+   "seed": 42,
+   "checkpoint": "/home/schmalstieg/repos/FloodDistill/experiments/revision/capacity_v7_20261011T210730Z/runs/R4_CE_s42/best.pt",
+   "expected_sha256": "1eec3154a845458f8864c3d96151a32002ce8711728cb747dcd54948daf8d665",
+   "provenance": "capacity v5/v7 selected checkpoint (results.csv)",
+   "sha256": "1eec3154a845458f8864c3d96151a32002ce8711728cb747dcd54948daf8d665"
+  },
+  {
+   "id": "V7_R4_CE_s64",
+   "family": "V7_R4_CE",
+   "arch": "R4",
+   "loader": "rungs",
+   "seed": 64,
+   "checkpoint": "/home/schmalstieg/repos/FloodDistill/experiments/revision/capacity_v7_20261011T210730Z/runs/R4_CE_s64/best.pt",
+   "expected_sha256": "9c9e98776d914f3f8981240f8a9a10709a9aa602f2e2a480fa6c75286d087959",
+   "provenance": "capacity v5/v7 selected checkpoint (results.csv)",
+   "sha256": "9c9e98776d914f3f8981240f8a9a10709a9aa602f2e2a480fa6c75286d087959"
+  },
+  {
+   "id": "V7_R4_CE_s91",
+   "family": "V7_R4_CE",
+   "arch": "R4",
+   "loader": "rungs",
+   "seed": 91,
+   "checkpoint": "/home/schmalstieg/repos/FloodDistill/experiments/revision/capacity_v7_20261011T210730Z/runs/R4_CE_s91/best.pt",
+   "expected_sha256": "d01e805947a145bac1f556ff45533335099cbc243bd6cfa28233df13f918b87e",
+   "provenance": "capacity v5/v7 selected checkpoint (results.csv)",
+   "sha256": "d01e805947a145bac1f556ff45533335099cbc243bd6cfa28233df13f918b87e"
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+{
+ "identity": {
+  "script_sha256": "4311c40664a9699c9ab60e39214da62ceecf0a0c5f7a81aaad0df436ecd4af51",
+  "models_sha256": "1d6bc6bc35aba52ef05852bac1a12927abc281eca5a01013eeb06a61f4baca70",
+  "only": "",
+  "limit": 0,
+  "torch": "2.10.0+cu128",
+  "cudnn_allow_tf32": true,
+  "matmul_allow_tf32": false
+ },
+ "thresholds": {
+  "MNDWI": 0.14794921875,
+  "NDWI": -0.12548828125,
+  "AWEInsh": 0.01171875,
+  "AWEIsh": 0.050537109375,
+  "WI2015": 3.45703125
+ },
+ "criterion": "max pooled water IoU",
+ "data": "Sen1Floods11 train (252) + validation (89) hand labels; no test data",
+ "created": 1792054173.1954353
+}

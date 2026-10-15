@@ -135,7 +135,8 @@ if "sturm" in _SELECTED:
     sturm_dl = get_sturm_flood_dataloader(str(STURM_ROOT), sensor="S2",
                                           batch_size=BATCH_SIZE, num_workers=NUM_WORKERS, img_size=512,
                                           normalize=_cli.sturm_normalize,
-                                          sim_gain=_cli.gain, sim_offset=_cli.offset, sim_haze=_cli.haze)
+                                          sim_gain=_cli.gain, sim_offset=_cli.offset, sim_haze=_cli.haze,
+                                          protocol="flood_paper")
     adapter = sturm_s2_adapter(target_channels=6).to(DEVICE)
     print("[STURM] Evaluating ...", end=" ", flush=True)
     m = evaluate(teacher, sturm_dl, adapter=adapter)
@@ -157,7 +158,8 @@ if "wf" in _SELECTED:
     print("[WF] Loading dataloader ...")
     wf_dl = get_worldfloods_dataloader(str(WF_ROOT), split="test", batch_size=BATCH_SIZE,
                                        num_workers=NUM_WORKERS, img_size=_cli.wf_size, tile_size=_cli.wf_size,
-                                       sim_gain=_cli.gain, sim_offset=_cli.offset, sim_haze=_cli.haze)
+                                       sim_gain=_cli.gain, sim_offset=_cli.offset, sim_haze=_cli.haze,
+                                       protocol="flood_paper")
     print("[WF] Evaluating ...", end=" ", flush=True)
     m = evaluate(teacher, wf_dl)
     print(fmt(m))

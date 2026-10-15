@@ -164,7 +164,7 @@ def build_dataset(dataset=None, **sim):
         from data.ood_datasets import get_sturm_flood_dataloader
         dl = get_sturm_flood_dataloader(
             args.sturm_root, sensor="S2", batch_size=1, num_workers=0,
-            img_size=args.img_size, normalize=args.sturm_normalize, **sim)
+            img_size=args.img_size, normalize=args.sturm_normalize, protocol="flood_paper", **sim)
         return dl.dataset, True
     if dataset == "wf":
         from data.ood_datasets import get_worldfloods_dataloader

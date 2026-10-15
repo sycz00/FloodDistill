@@ -1,0 +1,52 @@
+{
+ "wf_default_vs_evaluator": {
+  "windows": 836,
+  "flood_p3_windows": 785,
+  "mismatches": []
+ },
+ "sturm512_default_vs_evaluator": {
+  "chips": 2675,
+  "mismatches": []
+ },
+ "sturm128_default_vs_evaluator": {
+  "chips": 2675,
+  "mismatches": []
+ },
+ "legacy_wf_permanent_water_as=ignore": {
+  "checked": 785,
+  "total": 785,
+  "mismatches": []
+ },
+ "legacy_wf_permanent_water_as=background": {
+  "checked": 785,
+  "total": 785,
+  "mismatches": []
+ },
+ "legacy_wf_ignore_permanent_water=True": {
+  "checked": 785,
+  "total": 785,
+  "mismatches": []
+ },
+ "legacy_wf_ignore_permanent_water=False": {
+  "checked": 836,
+  "total": 836,
+  "mismatches": []
+ },
+ "legacy_sturm_class_mapping=paper": {
+  "checked": 2675,
+  "total": 2675,
+  "mismatches": []
+ },
+ "legacy_sturm_class_mapping=published": {
+  "checked": 2675,
+  "total": 2675,
+  "mismatches": []
+ },
+ "legacy_sturm_class_mapping=operational": {
+  "checked": 2675,
+  "total": 2675,
+  "mismatches": []
+ },
+ "old_rev": "364428473e621df78e9bf4a0592361b36b463337",
+ "all_pass": true
+}

@@ -99,6 +99,7 @@ def _eval_float_ood(model, args, device, label_prefix=""):
             num_workers = args.num_workers,
             img_size    = args.eval_img_size,
             normalize   = _sturm_norm,
+            protocol    = "flood_paper",
         )
         from data.channel_adapter import sturm_s2_adapter as _sturm_s2_adapter
         _sadapt = _sturm_s2_adapter(target_channels=6).to(device)
@@ -154,6 +155,7 @@ def _eval_trt_ood(engine_path, args, device_id):
             num_workers = args.num_workers,
             img_size    = args.eval_img_size,
             normalize   = _sturm_norm,
+            protocol    = "flood_paper",
         )
         from data.channel_adapter import sturm_s2_adapter as _sturm_s2_adapter
         _sadapt = _sturm_s2_adapter(target_channels=6)
