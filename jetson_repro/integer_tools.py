@@ -81,20 +81,45 @@ def build(args):
             raise RuntimeError('; '.join(str(parser.get_error(i)) for i in range(parser.num_errors)))
         config = builder.create_builder_config()
         config.max_workspace_size = int(args.workspace_mib) * 1048576
-        config.set_flag(trt.BuilderFlag.INT8)
+        # fp32/fp16 are float reference arms: they must NOT set the INT8 flag, otherwise
+        # TensorRT may still place quantizable layers in INT8 and the comparison is void.
+        if args.mode not in ('fp32', 'fp16'):
+            config.set_flag(trt.BuilderFlag.INT8)
+            record['int8_enabled'] = True
+        else:
+            record['int8_enabled'] = False
         config.clear_flag(trt.BuilderFlag.TF32)
-        if args.mode == 'mixed':
+        if args.mode in ('mixed', 'fp16'):
             config.set_flag(trt.BuilderFlag.FP16)
             record['fp16_enabled'] = True
         config.profiling_verbosity = trt.ProfilingVerbosity.DETAILED
         forced = []
-        if args.mode == 'strict':
+        if args.mode in ('strict', 'strict_except_resize', 'strict_compute_only'):
             config.set_flag(trt.BuilderFlag.OBEY_PRECISION_CONSTRAINTS)
             structural = {'CONSTANT', 'SHAPE', 'SHUFFLE', 'QUANTIZE', 'DEQUANTIZE', 'IDENTITY'}
+            # TensorRT 8.4 has no INT8-obedient Resize implementation. Forcing INT8 on a
+            # Resize aborts the build in the optimizer (isPolymorphic assertion), so the
+            # registered bilinear upsampling makes 'strict' unsatisfiable by construction.
+            # 'strict_except_resize' is a SEPARATE diagnostic recipe that still demands
+            # INT8 obedience for every other compute layer and leaves Resize to the
+            # builder, where the audit then discloses it as a floating compute layer.
+            exempt = set(structural)
+            if args.mode == 'strict_except_resize':
+                exempt.add('RESIZE')
+            if args.mode == 'strict_compute_only':
+                # Slice/Concat/Gather move data, they do not compute. Forcing an INT8
+                # output type on them makes TensorRT clone the feeding Dequantize and
+                # then fail to find an implementation for the clone, which says nothing
+                # about arithmetic precision. Exempting them keeps the constraint on
+                # every genuine compute layer (Convolution, Deconvolution, Activation,
+                # ElementWise, MatrixMultiply, Resize, ...) and lets the audit report
+                # what the data-movement layers actually carry.
+                exempt |= {'SLICE', 'CONCATENATION', 'GATHER'}
+            record['unforced_layer_types'] = sorted(exempt)
             for i in range(network.num_layers):
                 layer = network.get_layer(i)
                 kind = str(layer.type).split('.')[-1]
-                if kind in structural:
+                if kind in exempt:
                     continue
                 layer.precision = trt.int8
                 for j in range(layer.num_outputs):
@@ -120,6 +145,19 @@ def build(args):
         record['status'] = 'built'
         if args.mode == 'strict' and not record['precision_audit']['full_integer_tensor_path']:
             record['status'] = 'strict_certification_failed'
+        if args.mode == 'strict_compute_only':
+            audit = record['precision_audit']
+            record['certification'] = (
+                'INT8 obedience demanded for every compute layer; data-movement layers '
+                '(Slice/Concat/Gather) left to the builder. floating_compute_layers=%d, '
+                'boundary_reformats=%d. Zero floating compute with only host-IO boundary '
+                'reformats means all arithmetic is INT8; it is still not a kernel-level '
+                'certificate.' % (len(audit['floating_compute_layers']),
+                                  len(audit['boundary_reformats'])))
+        if args.mode == 'strict_except_resize':
+            record['certification'] = ('partial: INT8 obedience demanded for every compute layer '
+                                       'except RESIZE; resize stays floating by construction, so '
+                                       'this is not a fully integer engine')
         record['full_integer_execution'] = 'unverified_kernel_audit_required'
     except Exception as error:
         record['reason'] = repr(error)
@@ -129,11 +167,26 @@ def build(args):
     return 0 if record['status'] == 'built' else 2
 
 
+def _restore_numpy_aliases_for_trt84():
+    """TensorRT 8.4's Python bindings call `np.bool` inside `nptype()`.
+
+    NumPy removed that alias in 1.24, and the preserved environment pins NumPy
+    1.24.4, so every `trt.nptype(...)` raises AttributeError and no engine can be
+    bound. `np.bool` was only ever an alias for the builtin `bool` - NumPy's own
+    removal note states restoring it "will not modify any behavior" - so this
+    reinstates it instead of editing the JetPack system package or downgrading
+    NumPy. Engine arithmetic and dtypes are untouched.
+    """
+    if not hasattr(np, 'bool'):
+        np.bool = bool
+
+
 class TrtRunner:
     def __init__(self, path):
         import tensorrt as trt
         import pycuda.driver as cuda
         import pycuda.autoinit  # Context kept alive while device buffers exist.
+        _restore_numpy_aliases_for_trt84()
         self.cuda = cuda
         self.runtime = trt.Runtime(trt.Logger(trt.Logger.WARNING))
         self.engine = self.runtime.deserialize_cuda_engine(Path(path).read_bytes())
@@ -250,7 +303,8 @@ def main():
     p.add_argument('--model', type=Path, required=True)
     p.add_argument('--engine', type=Path, required=True)
     p.add_argument('--receipt', type=Path, required=True)
-    p.add_argument('--mode', choices=['strict', 'no_fp16', 'mixed'], default='strict')
+    p.add_argument('--mode', choices=['strict', 'strict_except_resize', 'strict_compute_only',
+                                      'no_fp16', 'mixed', 'fp32', 'fp16'], default='strict')
     p.add_argument('--workspace-mib', type=int, default=1024)
     p = sub.add_parser('run')
     p.add_argument('--model', type=Path, required=True)
