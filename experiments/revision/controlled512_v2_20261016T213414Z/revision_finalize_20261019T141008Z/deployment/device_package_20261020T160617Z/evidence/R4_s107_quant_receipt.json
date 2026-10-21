@@ -1,0 +1,53 @@
+{
+  "architecture": "R4",
+  "seed": 107,
+  "checkpoint": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/tiny/ladder/runs/R4_gdacs_N2500_LOGIT_KD_T512_S512_epochs50_filtered_fps_E512_native_H512_s107_lr005/best.pt",
+  "config": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/tiny/ladder/configs/R4_gdacs_N2500_LOGIT_KD_T512_S512_epochs50_filtered_fps_E512_native_H512_s107_lr005.json",
+  "float_onnx": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/deployment/quant_author_tools/R4_gdacs_N2500_LOGIT_KD_T512_S512_epochs50_filtered_fps_E512_native_H512_s107_lr005/float.onnx",
+  "float_export_parity_pass": true,
+  "candidate_onnx": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/deployment/quant_author_tools/R4_gdacs_N2500_LOGIT_KD_T512_S512_epochs50_filtered_fps_E512_native_H512_s107_lr005/percentile_pc.onnx",
+  "candidate_type": "PTQ",
+  "acceptable": true,
+  "receipt": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/deployment/quant_author_tools/R4_gdacs_N2500_LOGIT_KD_T512_S512_epochs50_filtered_fps_E512_native_H512_s107_lr005/RECEIPT.json",
+  "pure_onnx": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/deployment/quant_author_tools/R4_gdacs_N2500_LOGIT_KD_T512_S512_epochs50_filtered_fps_E512_native_H512_s107_lr005/pure_int8_io.onnx",
+  "pure_acceptable": true,
+  "pure_status": "COMPLETED_VALID",
+  "protocol": {
+    "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/deployment/quant_author_tools/PROTOCOL.json",
+    "sha256": "d62c3853784677ac26abd223959aa6186bfa61c860fd9dc45b886688777d59e4"
+  },
+  "status": "COMPLETED_VALID",
+  "pure_source_receipt": {
+    "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/deployment/quant_author_tools/R4_gdacs_N2500_LOGIT_KD_T512_S512_epochs50_filtered_fps_E512_native_H512_s107_lr005/PURE_SOURCE.json",
+    "sha256": "f922f2a8d7a43d8835a8063b975723b5ae4e251cfdbf66909efe99a5e9ce9ffe"
+  },
+  "pure_sha256": "bc9c82ff8f4c52ef2ca681392a4480e6077980a7fba0987c297be47ea99b6635",
+  "pure_conversion_receipt": {
+    "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/deployment/quant_author_tools/R4_gdacs_N2500_LOGIT_KD_T512_S512_epochs50_filtered_fps_E512_native_H512_s107_lr005/PURE_CONVERSION.json",
+    "sha256": "0d1798c45a882b14b4384758ffb88de6a63cb4ed92645be16fa7b15a0d9db08b"
+  },
+  "pure_io_receipt": {
+    "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/deployment/quant_author_tools/R4_gdacs_N2500_LOGIT_KD_T512_S512_epochs50_filtered_fps_E512_native_H512_s107_lr005/PURE_IO.json",
+    "sha256": "547e0ce71025dc3c5099fdaf465d194eff42e5a103510aedefcf6184e446e467"
+  },
+  "pure_cpu_receipt": {
+    "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/deployment/quant_author_tools/R4_gdacs_N2500_LOGIT_KD_T512_S512_epochs50_filtered_fps_E512_native_H512_s107_lr005/PURE_CPU.json",
+    "sha256": "aca67b939443ce64fad4eb13613dd5615d578650d17dd57262ca6a696c70e593"
+  },
+  "artifact_receipts": {
+    "FLOAT_PARITY.json": {
+      "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/deployment/quant_author_tools/R4_gdacs_N2500_LOGIT_KD_T512_S512_epochs50_filtered_fps_E512_native_H512_s107_lr005/FLOAT_PARITY.json",
+      "sha256": "fdac5fbdd0f248a4a74f33be79ddf8b408ac121c0637ed03d47b48f6f0cb28c8"
+    },
+    "FLOAT_EVALUATION.json": {
+      "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/deployment/quant_author_tools/R4_gdacs_N2500_LOGIT_KD_T512_S512_epochs50_filtered_fps_E512_native_H512_s107_lr005/FLOAT_EVALUATION.json",
+      "sha256": "0dfa1da6a6eabb66094e935d5dc8bdc3096eff863f2db756f078b90383e4b210"
+    },
+    "PTQ_RECEIPT.json": {
+      "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/deployment/quant_author_tools/R4_gdacs_N2500_LOGIT_KD_T512_S512_epochs50_filtered_fps_E512_native_H512_s107_lr005/PTQ_RECEIPT.json",
+      "sha256": "c2abb53392ad570ab4f59da541289c765401fd8a857e95cda97f0bdd664647d7"
+    }
+  },
+  "float_sha256": "6584e565825240e8d113c29d4446571e6e32bda38b56bb6a26088a0a834311e3",
+  "candidate_sha256": "7e85982eaf6b0a879cbe543a090771a25b5b84d6c16f6b91383e217d9f04a231"
+}

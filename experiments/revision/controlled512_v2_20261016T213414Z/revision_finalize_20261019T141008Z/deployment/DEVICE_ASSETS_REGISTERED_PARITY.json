@@ -1,0 +1,1585 @@
+{
+  "status": "COMPLETED_VALID",
+  "recorded_utc": "2026-10-19T14:48:07.461002+00:00",
+  "normalized_inputs_bitwise_equal": true,
+  "surface_water_masks_bitwise_equal_after_lossless_int8_cast": true,
+  "all_events_equal": true,
+  "splits": [
+    {
+      "split": "val",
+      "images": 89,
+      "inventory": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/data_audit/s11val_inventory.jsonl",
+      "inventory_sha256": "77a449f74bc7e9e2aef27b52bbf988da2f9d69a8bb5866beeb81901e3c0c35fc",
+      "rows": [
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Ghana_1033830.npz",
+          "asset_sha256": "c4fce91c78b4d5efd77aa77ccbdbdd951df0cff48dc61e0498a71236d711b8a3",
+          "name": "Ghana_1033830_S2Hand.tif",
+          "input_sha256": "fad67bc3e7572dc3d1e439e67deb02b676416e08c3590c2cefd7d9fe537ab160",
+          "mask_sha256": "97b25714050b8a33384b09cb1e7660dc429bfd45b13ddadadd63c8cf8b0c7354",
+          "event": "Ghana"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Ghana_124834.npz",
+          "asset_sha256": "e2b715a92d4698d43634deb475e5422cb3e852d8c1995912d7720d6beef6daeb",
+          "name": "Ghana_124834_S2Hand.tif",
+          "input_sha256": "238d9d9f99ef633cc68bfc03abe748970081076e16e7df9224bd15737bd515d5",
+          "mask_sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90",
+          "event": "Ghana"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Ghana_132163.npz",
+          "asset_sha256": "c35cd6b436dd726c5edb9b660091f7ee414b4aae749b8a459d50636fa786c546",
+          "name": "Ghana_132163_S2Hand.tif",
+          "input_sha256": "f2865f93dede87747a780ac20a87c28cfa51c230c9ae240201eb896ea2f66d84",
+          "mask_sha256": "6ce3932dc856a1832d1bbcf1782fda8d73aa5c925d726df033f02144938463ee",
+          "event": "Ghana"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Ghana_142312.npz",
+          "asset_sha256": "fab2aa68877e91914031249bb29bd7fe9be95a8290815f3f84f4051472e8b4e5",
+          "name": "Ghana_142312_S2Hand.tif",
+          "input_sha256": "cf9d97f4e67a3f6358cd015c41b5d8beb8d284178a95f2d8f5fb76509e21ddba",
+          "mask_sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90",
+          "event": "Ghana"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Ghana_234935.npz",
+          "asset_sha256": "dceda3d01366f636abf0495c202a8900920c52502007d67c19b16d2e9b679c02",
+          "name": "Ghana_234935_S2Hand.tif",
+          "input_sha256": "a3615023d13494bd7c542204756fa9f53bed813385006ba0ff5aa5652e8812fb",
+          "mask_sha256": "3b874d3ba46c638fc3094f8e92fb744ca974893873f8885f54e23760f9b6311b",
+          "event": "Ghana"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Ghana_277.npz",
+          "asset_sha256": "1f741295e07b75503541b39b5f4a2e2042e13876b816a5083b316b180491b324",
+          "name": "Ghana_277_S2Hand.tif",
+          "input_sha256": "bdef6911e43ca0dfec9138a96bff9d16892263df4f50bcfdda6a88e0c3f53496",
+          "mask_sha256": "3b874d3ba46c638fc3094f8e92fb744ca974893873f8885f54e23760f9b6311b",
+          "event": "Ghana"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Ghana_308249.npz",
+          "asset_sha256": "d3e01a425c0d2d8142431892b51035110f90b9380388863185758400e01ba662",
+          "name": "Ghana_308249_S2Hand.tif",
+          "input_sha256": "dde402746861812afccb6f07df155165bbb4d4d6f344366de136d7822339e096",
+          "mask_sha256": "8c6bed3133290449e56481651801ab4d3189e59e8d601fa1ae8585762d6dda12",
+          "event": "Ghana"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Ghana_495107.npz",
+          "asset_sha256": "ec33da33ba9d3d0bd459e6a102e7bacbb7f8c6faa461f77afad0b636fb524029",
+          "name": "Ghana_495107_S2Hand.tif",
+          "input_sha256": "9c93a9038d4a82bd3c09b21d83d15a60d3eabd4fa7b822c24296c49f6067ac19",
+          "mask_sha256": "0b3f750a171495c07d23435aeb23a5c098ed9798261a1f1ec7ac96190654bed9",
+          "event": "Ghana"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Ghana_5079.npz",
+          "asset_sha256": "8343c1329fdf69f663ddeeb8871dd508e9a976d7f95779be6f89bec9c29acd30",
+          "name": "Ghana_5079_S2Hand.tif",
+          "input_sha256": "aa2f797a889fc016fc20304e9d8139b0839359019e6f11a5533b3b8d50f9ada4",
+          "mask_sha256": "3b874d3ba46c638fc3094f8e92fb744ca974893873f8885f54e23760f9b6311b",
+          "event": "Ghana"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Ghana_868803.npz",
+          "asset_sha256": "49b106217d0768ab5a1642b003dbec205a8cc4e1251c07b8792281264667ecbc",
+          "name": "Ghana_868803_S2Hand.tif",
+          "input_sha256": "806b59be4e05f8b66b7b29a7a9a9d40f1bedc6691a8bba8a235a8af9daa2c7b2",
+          "mask_sha256": "b4ad6ad03c424118ede3f1a10ee1f2c5d13e97e6665beef43e9c57de65ad8890",
+          "event": "Ghana"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Ghana_895194.npz",
+          "asset_sha256": "c53ae4e62eabbe2d5a03b8a18a482fbd806fcc717a3c6aa3fc320259275f3564",
+          "name": "Ghana_895194_S2Hand.tif",
+          "input_sha256": "30af5ddbda90298b90c79416be78d9a5de8d7e1715ed5931b67c8a332d93ee41",
+          "mask_sha256": "4250ffb7c95486c6400bf00f3225b81887788f80f51b6ecaedbfaebb773bad02",
+          "event": "Ghana"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/India_1018317.npz",
+          "asset_sha256": "b8f2e9842ea8c17bfd8ed295164d3fdb741897407b4ba9a67ecd0ea1a8cf4395",
+          "name": "India_1018317_S2Hand.tif",
+          "input_sha256": "1565821836e850cbc9b1b19517de819dc7e2305f5f145070a8e09c3134c51c7c",
+          "mask_sha256": "afcd3d8e20c11f67bf5fa56ca282d9794a171fac650a71bfff3d5d4699c03ff8",
+          "event": "India"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/India_1050276.npz",
+          "asset_sha256": "0beb44550a2086e147a18b7fa99d3d0db2ed023dc3f2f770d6104a6a8a75f306",
+          "name": "India_1050276_S2Hand.tif",
+          "input_sha256": "1b0bab70d8490272ba0c768c7277d019693781d7f8312a9bde8e0f891e41b447",
+          "mask_sha256": "370e6ba859d8ab84ac56f63a9a785d39177c3f46b1c7b0fd6e59aba98465954c",
+          "event": "India"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/India_1068117.npz",
+          "asset_sha256": "3cf0e1de24a420da3a559ddacf1d53897c8d8df66b65ae89093d801b9f41d9f0",
+          "name": "India_1068117_S2Hand.tif",
+          "input_sha256": "d4bd6cfd1b3886a1f79af8926d2260e946ab500e48402580c4bc7c6cee31309e",
+          "mask_sha256": "a4985de8d4a16cd1e4efc0d8ad01a4f280cd184e0e2f4f78acbcc1142857a6d4",
+          "event": "India"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/India_118868.npz",
+          "asset_sha256": "9f600fddea33b5e1291d6d9d39577a303110e1cff2294217c5d23ac632df20f2",
+          "name": "India_118868_S2Hand.tif",
+          "input_sha256": "582e477cee7006f27e72eb4c8d2715adf0201189095a6eea97a90ed2725e065f",
+          "mask_sha256": "df373b993b903d38d9310bc8233ced14475a704ba7ede0ae969bf756bdab1f75",
+          "event": "India"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/India_164336.npz",
+          "asset_sha256": "a61b04b2f2f5e4280963a5d93a7c48cca12f8d3cea1963303b9f819185ef3818",
+          "name": "India_164336_S2Hand.tif",
+          "input_sha256": "f736f294bc47864a928f214d05bd04b2195a310a4a4653d87e655916176e5bcd",
+          "mask_sha256": "c265d1ca02760425ee6cca239c5495c4f530044a30ff4223f3454c12b4e1a7c1",
+          "event": "India"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/India_180633.npz",
+          "asset_sha256": "8ea315c847fd774b3c3902c453bf16b87e9c00890ffae1f92a1ad89e6fb3238f",
+          "name": "India_180633_S2Hand.tif",
+          "input_sha256": "cee064a0eaf1c5a21e22d1555211f2cbfbc98055155735c4e4776778b4d7be50",
+          "mask_sha256": "b98959797728cf1026abce46a9e94b4339a185d12c141a3a9b21ca6b19268cbf",
+          "event": "India"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/India_244057.npz",
+          "asset_sha256": "d0c191f07f3718de81e6919961a13c237802838d67ddc19a3c4b68d2baf22f5a",
+          "name": "India_244057_S2Hand.tif",
+          "input_sha256": "071c68f874acb1bc4d6c04a1cc6b692826e2ed533946343a636e8998644eb805",
+          "mask_sha256": "e5a3b87811e7492f24411d6bf9d9beda29f99a14e034c1c9f01d66c58e5dcd2a",
+          "event": "India"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/India_533192.npz",
+          "asset_sha256": "92dec182ba8423210c00c59c5e14e9e704615561d2ba09212d10ea6a762f67ae",
+          "name": "India_533192_S2Hand.tif",
+          "input_sha256": "545dd5eee5cd72f62a20909a9d14077b97881dbdbf0576d772f2bc6efbf9c027",
+          "mask_sha256": "8bda6d7fbeca449fca10d44cf25341a6ee13f610221e6c221bb758bed617b65d",
+          "event": "India"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/India_691027.npz",
+          "asset_sha256": "ebbfcf9d32ec531cedfd494d1c5b00271b7fb65a43ca374417ce832325d9cbc9",
+          "name": "India_691027_S2Hand.tif",
+          "input_sha256": "dccda7563257ae53499e056d96e4ac2e0eaffbc0afa3ac6730f7888bc767851e",
+          "mask_sha256": "d647d9a69c9c7fd7653892be3f57d81eb5edc59ef58c335b1e266d5d16908e2c",
+          "event": "India"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/India_70352.npz",
+          "asset_sha256": "c49d7955b91afd771bfb7b96ef1431d477412ba2f7e221f0f5fee0d38aafa299",
+          "name": "India_70352_S2Hand.tif",
+          "input_sha256": "c8bd99acd9e3145485d117452b75eb22e76cafb176d9505efaa002c6081acd16",
+          "mask_sha256": "41e63b0e9be8d25d1cda108913f8cd4b2d074f6f11655e1f99029712274c21b3",
+          "event": "India"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/India_764946.npz",
+          "asset_sha256": "d4a1b4f25b733eb29a2ced19dbccaadac799f24556b6311aa49d0bfa77f45201",
+          "name": "India_764946_S2Hand.tif",
+          "input_sha256": "d67f2a2f28a4c73649b6d3f3b887e99c44099f205ba168dc5a8be49f21ca0dd6",
+          "mask_sha256": "cec7586f58e377546318833350934107515d231a3872b4d4a099041b883c801a",
+          "event": "India"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/India_769408.npz",
+          "asset_sha256": "d19f70de2413d2e92f43b678fcdb4537921327c015bb1b14fc50448dae182a2d",
+          "name": "India_769408_S2Hand.tif",
+          "input_sha256": "739ea317b7c3fbbe50635db3685c6ce65865fa3edea1706a3b190793caa01f62",
+          "mask_sha256": "f4ead434aea32198071eb57bfc2385a32136e3bcc8cd72d88c92c3df3f5f9a64",
+          "event": "India"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/India_833266.npz",
+          "asset_sha256": "d05639649db7db092fc1d62a73c891fd3ae5651483534603179fe56b994ee648",
+          "name": "India_833266_S2Hand.tif",
+          "input_sha256": "57141f0ba2ff5233d486e024ce451a6f2499117242d49cb8f126bccf59f772a2",
+          "mask_sha256": "35c184e99ebdd604aa3f24c4795e408df81c85d6e7d499ab9cc2d94983c49fa8",
+          "event": "India"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/India_869358.npz",
+          "asset_sha256": "0e00fa9c7cc0806321c8cbcef23c8eb655c7c8d044bb9b28c3721ae38f443c29",
+          "name": "India_869358_S2Hand.tif",
+          "input_sha256": "ffc59037061c08f34235b608969ad2fd37f141f4008d03c89d07fe2b44cbdf92",
+          "mask_sha256": "9f430d43a04a7a59f036fef8208aa35c6ecda30492b0c6837098f7591b2d7095",
+          "event": "India"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Mekong_1149855.npz",
+          "asset_sha256": "753bae397aa27d2a879778c21940a4af9b71b82f489358f984c86c3d68f7b5f1",
+          "name": "Mekong_1149855_S2Hand.tif",
+          "input_sha256": "e1fd7086f663955953d6b5a177f06352fc76999ada112af2744c0293a5a7f70a",
+          "mask_sha256": "7049cd65427a4f47f9e032fa3f2fb8cc9f269563a68cfe44836bdd6ebd83d0b7",
+          "event": "Mekong"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Mekong_1413877.npz",
+          "asset_sha256": "99dcbdbd5ea9404dfd3c3a17b5e1dbc9a925b65e615368923a21696595191386",
+          "name": "Mekong_1413877_S2Hand.tif",
+          "input_sha256": "58c07134d538a3cbed802a14d3886e72c9620151cb115e590e75f7ce26bab16d",
+          "mask_sha256": "86c0be04ff62ca6e1a6c74879c9ff75136fafc6d2d512337e5c61a3c9b0d8c2f",
+          "event": "Mekong"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Mekong_293769.npz",
+          "asset_sha256": "ccd86939e5699c83736435ac5905d7591d09e2536ed4642445c7a8529f316260",
+          "name": "Mekong_293769_S2Hand.tif",
+          "input_sha256": "7398c71888df7872ac641b9d25d8d1e319e414c61857ce4f605660db8b23fa0c",
+          "mask_sha256": "6845e25ef5fe2f9506670267978b77d9f832691b3c07f97d2650ba0125431cd1",
+          "event": "Mekong"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Mekong_474783.npz",
+          "asset_sha256": "0610b3653f31cd46300429f88ec1eb921621471180e5cf1e870f78f55b8b6c36",
+          "name": "Mekong_474783_S2Hand.tif",
+          "input_sha256": "0028873eb34bc945f9c94c0cb6fd68455a206c01532ccff7ae750aa7ced16553",
+          "mask_sha256": "774270025bce32d44c4ef7e7ca3cf3f04408f13d1614fc6eaf3e02d13e3c7784",
+          "event": "Mekong"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Mekong_977338.npz",
+          "asset_sha256": "19d9b28df217ca1208d369c92e7da8f68c99beb6c7fa0a2f945a21e34f13de5b",
+          "name": "Mekong_977338_S2Hand.tif",
+          "input_sha256": "f0e3820484aa35b6d0401e95380019709bc4b6f60676667bcfec454b98905b92",
+          "mask_sha256": "08ac109be865c9fc45c4dde3553f70606f6eba136079fe4809b9d1144fef5a04",
+          "event": "Mekong"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Mekong_98310.npz",
+          "asset_sha256": "0ef1a187ee61cee6be01aa632bc1ba2fdc5bf3e5ac77734758cd0fb874466ae0",
+          "name": "Mekong_98310_S2Hand.tif",
+          "input_sha256": "60753542f3a464218849761f3376abff08d2d90e4a38e71368814bc5ccdb0b0d",
+          "mask_sha256": "4a42257ce3f6d4c776b14d310829b194e639ac41afb5d7efd4aa166efffe08f6",
+          "event": "Mekong"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Nigeria_1095404.npz",
+          "asset_sha256": "9bffe038482114d349d41e0e0e0c55500c46ff98fd0a6cc824d94827b03116b3",
+          "name": "Nigeria_1095404_S2Hand.tif",
+          "input_sha256": "cbe28c063b06959b432b8630dd9970877001638da042e3a700b777e6971c9375",
+          "mask_sha256": "3d46c655d1e6c8093a135b2b72672702a93bb567fdbbee188a958bd0aa10e6f9",
+          "event": "Nigeria"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Nigeria_31096.npz",
+          "asset_sha256": "daf8a80e7c3b1dd11e4d014d340807384ff298ac1e42f7df9409130626cfeb4f",
+          "name": "Nigeria_31096_S2Hand.tif",
+          "input_sha256": "9ea3c0b412e783dd412b9888dd8a18e299489647662b24a6eb7289cce6c24cbb",
+          "mask_sha256": "3314e7d157bb92f485c90453054c5dbb370ef3b58f3e1f0ccbfb82a8c9501b7c",
+          "event": "Nigeria"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Nigeria_820924.npz",
+          "asset_sha256": "975cdf13041ceba9f69dfea1e49361b8f1806b22450a6fb07cac6f3794a528ea",
+          "name": "Nigeria_820924_S2Hand.tif",
+          "input_sha256": "c253438143c2ecb97db89ed22071a1cb035e360ed9c79ae477abb615fc3187fc",
+          "mask_sha256": "68f4c21471ef60c849167a01f099b1252d38950b9adb2e57caa5c2da48516d93",
+          "event": "Nigeria"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Nigeria_984831.npz",
+          "asset_sha256": "44dce8883c033f8bf24d375afb850fdcaf08ddd0765108703b55345bbe0d713d",
+          "name": "Nigeria_984831_S2Hand.tif",
+          "input_sha256": "0da18e632d30e360441b1ac410f1a3180dbc6a47894bf0d4ce01502537dcd545",
+          "mask_sha256": "fc2655e1d691888261e6f90c6e616045d7766c1a93b6d88a1d58be5c4601dad2",
+          "event": "Nigeria"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Pakistan_1027214.npz",
+          "asset_sha256": "477049acf2c4d74bd1b6a6fe9dd1cda8d9025f8d02d9a5ecb4dcac8d3521875a",
+          "name": "Pakistan_1027214_S2Hand.tif",
+          "input_sha256": "32863fbbcf867f9c09f79d385483e1cd4f47fda5e0da4ff199675bb3475b4ae9",
+          "mask_sha256": "bfd06c22619b3bb77ecdbd74a89f77607306c65139c43a9357ed577d1edea921",
+          "event": "Pakistan"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Pakistan_210595.npz",
+          "asset_sha256": "084699463e07d8dc27078da22e86a73756e856a413ba460411e93ffd2a66d444",
+          "name": "Pakistan_210595_S2Hand.tif",
+          "input_sha256": "03d0bb3b9c0becb0e3ca7be43b670f1f64ac75583efc6add986a5bb6b7c4642d",
+          "mask_sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90",
+          "event": "Pakistan"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Pakistan_336228.npz",
+          "asset_sha256": "19f6fe6e8f8ee971fdbf3d2f19da41406a33d6b7d94ab8c814278c47677f2338",
+          "name": "Pakistan_336228_S2Hand.tif",
+          "input_sha256": "f508d24f0f8931f6120ba221881ba7f766b46da8a8181f5d3f9f084e4e1bd827",
+          "mask_sha256": "b783d1cedaea7c550c7d9a4508a2d9807fd86fa0066f94e06fbb4744d222356d",
+          "event": "Pakistan"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Pakistan_43105.npz",
+          "asset_sha256": "b750a4f331dbfd5dd2affd9c5a9b7b13930b488e16b76b5b45ecbd7bb640acab",
+          "name": "Pakistan_43105_S2Hand.tif",
+          "input_sha256": "b2b189ab2abfac7e25e5011c256325ade36cb498e8b60afd3ad405c8d1c15b49",
+          "mask_sha256": "13ca69e9214941ec9fdf500a0533a1d70d15cb6442a789e67aec988763a870f4",
+          "event": "Pakistan"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Pakistan_94095.npz",
+          "asset_sha256": "b8d63a7b939ad52cfb3b78c848557b270f4d9a3140bd40fffe65e3a15e811f38",
+          "name": "Pakistan_94095_S2Hand.tif",
+          "input_sha256": "09ce55fbddb526bf7ece09abdccfc03916b57346cf071c85c16658499ee5b6fe",
+          "mask_sha256": "c0e81b249e97fcaa5ef183558ecc6a6020644d2a17d49b797965780e43dbc3c8",
+          "event": "Pakistan"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Pakistan_9684.npz",
+          "asset_sha256": "5dc8287f3307162ef39fa8cb5bfd11869c15e8bbb15f7a5602785ef41d57db93",
+          "name": "Pakistan_9684_S2Hand.tif",
+          "input_sha256": "9f12c08230732db78aeca609cd78198d6991342bf6aa7128f0864953f0897f26",
+          "mask_sha256": "5752572cb52cae051760029b8db040c51c67ae46ad351120866ef48b56d3e3d0",
+          "event": "Pakistan"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Paraguay_1019808.npz",
+          "asset_sha256": "581e4e3df14ae5de55e7a6515fbfcef58d1633fc6b16696f3bd1b096afd2e0cf",
+          "name": "Paraguay_1019808_S2Hand.tif",
+          "input_sha256": "7494624f26fa07d3b9394d8d94b943da02daefdc836bd581aa1d32c2613093b4",
+          "mask_sha256": "2aee85164badf180f53398bec2628e8b85f46119e774f8890209597e92cb660d",
+          "event": "Paraguay"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Paraguay_153941.npz",
+          "asset_sha256": "942dfabed4c28a0d71b69f713de0e19c47e03083272c68b2e0faefcb33361d27",
+          "name": "Paraguay_153941_S2Hand.tif",
+          "input_sha256": "255d69c738856cd4aa54f6baab0494f1ff44bf95388f2c8f1312b8aaaa380468",
+          "mask_sha256": "b54990c972c0ce30169d218b35595d6edb202154c6787679877a77eeceb2e97c",
+          "event": "Paraguay"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Paraguay_172476.npz",
+          "asset_sha256": "79bf9416669360725ad2dc643b6c39495c6ba0221cb6ed2bd835915fdb19b140",
+          "name": "Paraguay_172476_S2Hand.tif",
+          "input_sha256": "3a7d1febc4a17877c72135772813ebbe53194d5ae8a35552f1120cb8404c5749",
+          "mask_sha256": "5ee1fb26384a8cf60304aea23ca91fa9e494061dd3905e583fd90d825966f756",
+          "event": "Paraguay"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Paraguay_205585.npz",
+          "asset_sha256": "c9b3d91a85fa3aec5548573a94f9cc8b6c04e12ccca6f8d4c0f3a1162e3d3d43",
+          "name": "Paraguay_205585_S2Hand.tif",
+          "input_sha256": "1d39b20a66167e39252c3ed2ca3db814d3364cae3be5c59f86de4eb1534be8f7",
+          "mask_sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90",
+          "event": "Paraguay"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Paraguay_252217.npz",
+          "asset_sha256": "ccb35cddfaebb56165845c58ab84121120b7a5d5707d14a2735f33bcba702935",
+          "name": "Paraguay_252217_S2Hand.tif",
+          "input_sha256": "974dd3cc031885d34161b32617141af3edd0ab6b177d3d8e15ed338a3b92539f",
+          "mask_sha256": "6bd930a7ca58f5f576d05a65b0aa70b99f1cae44afe5581a32038a5474b82043",
+          "event": "Paraguay"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Paraguay_284928.npz",
+          "asset_sha256": "670093968cddd3d34b6c6affb2a54fc7f908f1004ef711f6fe7c4c6928a14f06",
+          "name": "Paraguay_284928_S2Hand.tif",
+          "input_sha256": "74c856ab04b12740255153d0f1c2d52c526d2a483854bce593436de51faf07e1",
+          "mask_sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90",
+          "event": "Paraguay"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Paraguay_305760.npz",
+          "asset_sha256": "af2173e37935d4b57eb2c13ef4cddd022065634cf9b84f09d6e8f15cd14111c2",
+          "name": "Paraguay_305760_S2Hand.tif",
+          "input_sha256": "a4f5ec14c8abd6fad54f42712ee68da759508e8732589e52755aaaf3a45ca6b4",
+          "mask_sha256": "8d4ca3ee3dedf8a093734ee7225082dffb3b7beaeef3cb1f8b044d5b3fe86025",
+          "event": "Paraguay"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Paraguay_581976.npz",
+          "asset_sha256": "f375b0a264fd96545635a06f2813aae389a9e67efdb76670ad2c95dbc3ce61cb",
+          "name": "Paraguay_581976_S2Hand.tif",
+          "input_sha256": "a265d15e1ca1d864e278eea3e9ec47d798b03c4f68c6f1d1c2f27fe7173986bf",
+          "mask_sha256": "c03710daecbffdb460b2f3ebb0b32490014e170f51bb14ded701bcf51333f293",
+          "event": "Paraguay"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Paraguay_648632.npz",
+          "asset_sha256": "43c6b60778ccc95848bcd6b97db2d31200d8c594ef90c589853d499b14fd21ef",
+          "name": "Paraguay_648632_S2Hand.tif",
+          "input_sha256": "f0843bc5ef2e4bb28a84dd464db6e6f9f478dc7203dd727ea1e8a57e9c97fec2",
+          "mask_sha256": "2307f827138fc4a02c4101fd1a4566efb43e8a75c2b07c144cb7db47336dc56c",
+          "event": "Paraguay"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Paraguay_657443.npz",
+          "asset_sha256": "46d5f7c085a456590c7b0b24ebed0d2ac0a8ae659d1160f3f0724a52b7ed9208",
+          "name": "Paraguay_657443_S2Hand.tif",
+          "input_sha256": "97675f3c8e4bdb2fec4f2e84d78173e0b0b84d1e300e6264d5c6e1f2b401bd9c",
+          "mask_sha256": "a2e43c2056f268811266fca668f41cdc18bfc401096762428ed04253ef038736",
+          "event": "Paraguay"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Paraguay_76868.npz",
+          "asset_sha256": "8de9ec57ffd9770ebc63b75b8e3061fcb459b4ff971028d48d3019f78417956a",
+          "name": "Paraguay_76868_S2Hand.tif",
+          "input_sha256": "d56bb67086a3cbff7031665e902e609242f54cfc0d8ca0a78aa1c79ecdbc485b",
+          "mask_sha256": "6e906999eed95dc8e2d80e67ffebf48456268138349ae2338a5d7f20118f0206",
+          "event": "Paraguay"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Paraguay_7894.npz",
+          "asset_sha256": "214ccf25a9488ce0ae3b9a73baaeffa400c29b881ea6d8049a2790d7189b1060",
+          "name": "Paraguay_7894_S2Hand.tif",
+          "input_sha256": "51357c4251d2364b542a01d2a613c6c0ccc17566558c71b1e1333d27078e5259",
+          "mask_sha256": "d0b67b7d6181c2486665d6bb123352468d8cad231f2418fe70d8a379102be52d",
+          "event": "Paraguay"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Paraguay_896458.npz",
+          "asset_sha256": "b4baa0d3819dc393bdf161bb948b7fbce2049fc745546f8152e5eae061566492",
+          "name": "Paraguay_896458_S2Hand.tif",
+          "input_sha256": "2846e9b5467020d436dd810a49c257e1d680fbdcddae378286b755e4bc016144",
+          "mask_sha256": "787430d894692a416148e5d6a2f4ccd3bdfe3464bc93e712536a31c6b0a62ceb",
+          "event": "Paraguay"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Paraguay_934240.npz",
+          "asset_sha256": "50cdc732572da24d5d42f15ddf264a4033daf22c338af8654e3f24eafce92e88",
+          "name": "Paraguay_934240_S2Hand.tif",
+          "input_sha256": "128e2044c01f9b0a84ec007412b723ad97c940f7c9e94bbd8e5167db7bf78a28",
+          "mask_sha256": "d88fa33359f37f1f472834b8121bddb9721c479381ac0be027dd6f56a17b8c7e",
+          "event": "Paraguay"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Somalia_12849.npz",
+          "asset_sha256": "beae1f892f88c189d90946ab3a6aeb7b279db1ec39d1a6e4bca5bb3393403b75",
+          "name": "Somalia_12849_S2Hand.tif",
+          "input_sha256": "facfd420c18f7b863a8b562d6f480ee39f0b9fad51cd0b7e7481172d7e687383",
+          "mask_sha256": "49aa0a953427aee02cede77739d701e952df0fcfa187372e3833f10127aa0a54",
+          "event": "Somalia"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Somalia_167787.npz",
+          "asset_sha256": "124882fa47f4d0c45e7870f8de7163d256dc0adffeac2c2c7f49707408590129",
+          "name": "Somalia_167787_S2Hand.tif",
+          "input_sha256": "61a584bfd4ec943061e74c6266cb7836887ed9c679a3da4c98cecd3d79a82449",
+          "mask_sha256": "ef31dca1176fc774d7c2f74341de77dbaf3584b2c0fcc0486072a0c427797956",
+          "event": "Somalia"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Somalia_256539.npz",
+          "asset_sha256": "e209017ca7fce81072aab15eb67638c26c5148477b4b2dc248e051aba15eb2eb",
+          "name": "Somalia_256539_S2Hand.tif",
+          "input_sha256": "99826c947e4a478df97c64e347ea9e89961f31c93faa39a71bfe6b3ac1d4bc56",
+          "mask_sha256": "b5ca6e91ac34ca65e663385ce94b1a31b6da08b336b77768e1e84a5f097ffbfc",
+          "event": "Somalia"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Somalia_61368.npz",
+          "asset_sha256": "6f3534ffac145c63e8bc30388617776a7fe44b99a27d12e86eb2fc308614d72f",
+          "name": "Somalia_61368_S2Hand.tif",
+          "input_sha256": "2281cc1d0e684ebd87da90756bd1b8f2af3850cf41fb91ca8dfb43aa526a95ac",
+          "mask_sha256": "22e8659343bfd4a0e7d8316f87b2fc0352bda4b12c41743c20b1adbeaa2f0ef6",
+          "event": "Somalia"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Somalia_649376.npz",
+          "asset_sha256": "c6f429abcdd5c9212e242086ac33f874e1e0ba1981b93a00f860d6ff6f46870e",
+          "name": "Somalia_649376_S2Hand.tif",
+          "input_sha256": "146bbce9aaa6fe3c8c4719803bd1122885c1eba1dca05efe9fd329ae24194abf",
+          "mask_sha256": "daeb9b58c6143575736d9be690669f4aeb47e6a7fa27d370c30c2217c21339b3",
+          "event": "Somalia"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Spain_1199913.npz",
+          "asset_sha256": "bcdfcb418c48ccf0db96a5cdc2543940bb1aba3ab87742e1c4a1bf553fd09708",
+          "name": "Spain_1199913_S2Hand.tif",
+          "input_sha256": "88286606171e7e789eb543102b1e3d0bbf830c224ef02fd5a0414606ba4b44e1",
+          "mask_sha256": "498121d9714120fe3234db0219834ed7b3027c3d01e8d9136dd592f9551e2878",
+          "event": "Spain"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Spain_4282030.npz",
+          "asset_sha256": "dd1cb50923ae4f125ee3db21057c5da23055875b33056d18fa70f5129549edba",
+          "name": "Spain_4282030_S2Hand.tif",
+          "input_sha256": "1176493ddfa40a638bdce8e9fe57153a89e93adb3ab00d26163268413b4beaaf",
+          "mask_sha256": "643310191ac38f8f470f6746b585a75b789ed0cab117ce9baf4f6125e803febd",
+          "event": "Spain"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Spain_6537196.npz",
+          "asset_sha256": "524eccb6dfd4bde22f4fb4673d20e0044ed3ee8af1ca34a449d48aac3969c7f0",
+          "name": "Spain_6537196_S2Hand.tif",
+          "input_sha256": "2c6fae06296b4eedd2b637b7b0723f8559d4e45eba0e2ed1655959bb47eed924",
+          "mask_sha256": "b86252b449da636c32761ff99c9803b67aeef1059cb574078866598b35fb2510",
+          "event": "Spain"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Spain_7604243.npz",
+          "asset_sha256": "ddd899631bc0477d3b03429bceaa5840cef0913709cfa61d95ba98a470ec8a33",
+          "name": "Spain_7604243_S2Hand.tif",
+          "input_sha256": "bf77e44cf996cbb4979398a3920712710c75e471725b92fa55329fe0ebda3473",
+          "mask_sha256": "ff805e946f42f6d83a263f1fa46b68372ce36fc4fd956e7225645e7a4e192f0c",
+          "event": "Spain"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Spain_8372658.npz",
+          "asset_sha256": "f022b5e7ab10c70a1fbfa653807cb347282eeda4a6e235f50ed980205bfc638b",
+          "name": "Spain_8372658_S2Hand.tif",
+          "input_sha256": "d4be7d899fcce40c4f7311da7c84745f3028377401a690da0906971b339cda8e",
+          "mask_sha256": "fe46dc1508a8143649c77e6007eb07a2530a7de16b71903858be54631ef7a8cf",
+          "event": "Spain"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Spain_8565131.npz",
+          "asset_sha256": "e852de093b89a50dd29de779bd4332f22eb6317ac474f51b56579a05627df48b",
+          "name": "Spain_8565131_S2Hand.tif",
+          "input_sha256": "ae721d1d44f8605937cfe22d07741fadd6f0c184e594679fb988a7cde3e263d4",
+          "mask_sha256": "21460e26083a555d5780aaf79f14130d6d4b0a4d76b664b297c028675450f8ce",
+          "event": "Spain"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Sri-Lanka_101973.npz",
+          "asset_sha256": "7d4414f1387f0de30e696c16293c499ffc52266d9fdd8dbab8cd280e53ad02b1",
+          "name": "Sri-Lanka_101973_S2Hand.tif",
+          "input_sha256": "c5941cccab80bd15a0afe21687ddf6d87d4ea637a48b0d50b7b1434ac68c5ced",
+          "mask_sha256": "bb9f57b9be50a3957172ce5598a259ee972772830dd28bb307fe9b353c6a3139",
+          "event": "Sri-Lanka"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Sri-Lanka_132922.npz",
+          "asset_sha256": "a4c4d29ba679242fa0cf7c59aa971fc073688ac4bfe2e5553eb1deecd419a4cf",
+          "name": "Sri-Lanka_132922_S2Hand.tif",
+          "input_sha256": "68cd6ebcc0869d2fffda033b4d7af0d67543e29421c9f4f7e6ef3f9d43db6457",
+          "mask_sha256": "8fba031d6e12558c75d4042c9f3f53f48f138004b89009f7a34fb5e883ad1487",
+          "event": "Sri-Lanka"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Sri-Lanka_236030.npz",
+          "asset_sha256": "ef8952b0203f137b595434f9799e6869b1fd0870262ac7ad5866677f5adb4ba0",
+          "name": "Sri-Lanka_236030_S2Hand.tif",
+          "input_sha256": "694aad7ffb0770927d0efa395ceacab4ab0535658fe3436479e8bf568f5d1bcf",
+          "mask_sha256": "3d67449c30e348b2178945b0240550edc86278cd1cc6ce0b640b4401682fdbc9",
+          "event": "Sri-Lanka"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Sri-Lanka_236628.npz",
+          "asset_sha256": "0a150f8deb54fab287c4479cf09f3b9f57aa268d46675426bb6cc883ccdb915a",
+          "name": "Sri-Lanka_236628_S2Hand.tif",
+          "input_sha256": "bf3fb136a5c03c8a76fafd4b0e1b690dcde08979e73386688984ebf615b7c2ba",
+          "mask_sha256": "0bb74a7fc265e289ca7635e95f2e8ce88e7d17197e9ffd8b7c11e7825f9d4db9",
+          "event": "Sri-Lanka"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Sri-Lanka_31559.npz",
+          "asset_sha256": "905e722f46ac391835acc5447cf972b364ae860730cae66eb6d5c8638f7638b2",
+          "name": "Sri-Lanka_31559_S2Hand.tif",
+          "input_sha256": "431db5d96a3fe767b033e20bfb15c4bed2b6a0bf33c95dbd48a82bc7dc4b1d73",
+          "mask_sha256": "9a31b85918d1b4744c6629b1e8031a5e01b66e9e442fa7497a0bf246b7c88e45",
+          "event": "Sri-Lanka"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Sri-Lanka_321316.npz",
+          "asset_sha256": "bd8e85e28ed44802d049c08d6ebb9eaa0e378efdfd31d9881b0a58b28d17dd33",
+          "name": "Sri-Lanka_321316_S2Hand.tif",
+          "input_sha256": "4051ba3dc5c9ba56977bd426ad277aab3054f1c3e5d52f0ff2b3a26cbc17c057",
+          "mask_sha256": "e837f3bfc95094304e84bf0e044eb46e2db93fc26ebd9406bce81551fa28d9b9",
+          "event": "Sri-Lanka"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Sri-Lanka_612594.npz",
+          "asset_sha256": "b146b1e5560c64b34e4885ef6852dbe3bf5ae4d376332cbde6e79b0fe4a70489",
+          "name": "Sri-Lanka_612594_S2Hand.tif",
+          "input_sha256": "ce36c08985e18f10f501d8bfb2f042a33a3618a4d6fd95a3f1e17da11c2a2c5f",
+          "mask_sha256": "a4f75e02645976cdcc3f72049e677bece09c03170f8b1e144ed789925ab29845",
+          "event": "Sri-Lanka"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Sri-Lanka_63307.npz",
+          "asset_sha256": "120fa4c11e7123e3d37a84d93404ad89254c46741fa937a761cabed5480c92fc",
+          "name": "Sri-Lanka_63307_S2Hand.tif",
+          "input_sha256": "d7ad49dcb56377cf4c371727b3be7c0de38f519924a1be9d2120979aace725a6",
+          "mask_sha256": "76b83f945a9dc74e5c2e8a7aefaeeea44eea697679f8a3e3196f5b859a94fbfa",
+          "event": "Sri-Lanka"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/Sri-Lanka_85652.npz",
+          "asset_sha256": "2cfe5175d985f832c664b6015e9b293b8355b7b27bdfea847bf1bb615be6327d",
+          "name": "Sri-Lanka_85652_S2Hand.tif",
+          "input_sha256": "ee885f75cd52943f89d1015937dfd9d6fe3f343de9687f690ac8a4769c988028",
+          "mask_sha256": "fd41ef660aab9a0d504f6de01c2c220067068e980fbd379858131fcf19aa6cb4",
+          "event": "Sri-Lanka"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/USA_1039203.npz",
+          "asset_sha256": "f5176d165fda1febb1e026a9d5d1d9471ee8bd3e5410802cc46cb75cce485afe",
+          "name": "USA_1039203_S2Hand.tif",
+          "input_sha256": "582327b3e80ee80c1769abf58cb331180405f9f73c7a692216eaecdd96317792",
+          "mask_sha256": "cc6dd7c8f9fed473fdb5a29934c7cf25367c1a3d66602fbf5417f4626f0cc8dc",
+          "event": "USA"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/USA_1082482.npz",
+          "asset_sha256": "cf1eb6da24e8af31044f4af79725191c4b144d7b617389d7518e1d6a3986f631",
+          "name": "USA_1082482_S2Hand.tif",
+          "input_sha256": "aceba2b1d901f582c7689f25a08b969216dd9dd2cc1e674fd3109773dbb4e3fd",
+          "mask_sha256": "2848e770ef1ca7ef9094d78c65f1e6ded95424faab23b217e6d93e27e5743eed",
+          "event": "USA"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/USA_19225.npz",
+          "asset_sha256": "af86d388e629907ad76f4b0d439f779c34e2fe31a951809ceca71c2ae0e81ac0",
+          "name": "USA_19225_S2Hand.tif",
+          "input_sha256": "d88c5a61a5a644c9037a6329845fa0e0cd600fc2e202f51290d0c65e0872a3bc",
+          "mask_sha256": "03c97c48eac45e4a800abde0c4774751a99b9f4f1e93c59882d6cc5ed9dba8ee",
+          "event": "USA"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/USA_225017.npz",
+          "asset_sha256": "7681aa150d7ea96580c0bcd76f65e2f271a22f6ca0dde9747a44a763219a6571",
+          "name": "USA_225017_S2Hand.tif",
+          "input_sha256": "e4661871f08241739130f362e6b1257fc50e48ae73c214ae5cbc30a298ed604a",
+          "mask_sha256": "ca3dc19b8e024b1265ec0060f6a8e69cf137f89921910b3624694a179abe21e3",
+          "event": "USA"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/USA_251323.npz",
+          "asset_sha256": "650d48b88a017c8c782a8e203ee0a357cb5b52f9e7c82b0bb63bd138d0f53790",
+          "name": "USA_251323_S2Hand.tif",
+          "input_sha256": "68b669f856dd8042f9f09634ec98ad416d75378b5b9f3d4a8c1e0da4450853b6",
+          "mask_sha256": "75c07b2fde71380ab14680c522641b84cdd497b99285b771eafbf8cce02cbca4",
+          "event": "USA"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/USA_275372.npz",
+          "asset_sha256": "aaf0e665dd43c34f8d4aeb1fd611cb8c6b61f70a0dbb8a0fd0f574fe06711bb0",
+          "name": "USA_275372_S2Hand.tif",
+          "input_sha256": "c556a5cfaca01265e82d0462fba556efb7b8182f18b8d3c9939332700a12ab50",
+          "mask_sha256": "18770d4582d1cd10fbef040153b067b3f6aa7fd61c893c301388761844f571cd",
+          "event": "USA"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/USA_308150.npz",
+          "asset_sha256": "7308cbd893d6c160b9bb4cd63ab1398ef8cc278d98b2f01031e2b62202e681c0",
+          "name": "USA_308150_S2Hand.tif",
+          "input_sha256": "d03cdfb15ca8986307da1bcd67f50e177df2bfe3f17ee0f378b2b49c9dbb1c00",
+          "mask_sha256": "1221cc065423afb0bc05ebeff51cae2344e8311f89ca897f9968d988ee8484ca",
+          "event": "USA"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/USA_366607.npz",
+          "asset_sha256": "e74b476295bd4fd2c8c75b164d9325356ebbba56584cec525fa0529c2ee8ac05",
+          "name": "USA_366607_S2Hand.tif",
+          "input_sha256": "8a38d288ad7368cf76f77e23fecbc2963238b47e5675fd16f59006f4427dd874",
+          "mask_sha256": "d4cddedbff14c1786f2227a7a0ee73eea647066804a5f6c9cd8423014535c4e1",
+          "event": "USA"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/USA_646878.npz",
+          "asset_sha256": "487ccadfbdd858df12cb29d3813269d2317629204424086657372ecbc388079d",
+          "name": "USA_646878_S2Hand.tif",
+          "input_sha256": "636eae4962e6ff66330faf6837982946537c81904197fc679bc3ebff0d35951d",
+          "mask_sha256": "164170ec605d0e3553718b9580b85ed5a6678abf495acd6a2c373ba500881036",
+          "event": "USA"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/USA_741073.npz",
+          "asset_sha256": "f943319bafa64ea1a37917b8d7e1d527c5accd1ade7c7161c51c7fad0c921686",
+          "name": "USA_741073_S2Hand.tif",
+          "input_sha256": "a04d9fe8faf8582ceb27fb93f12c20071e3d1c3d18a5d4775a3cd52c8be6f64c",
+          "mask_sha256": "d79a54e509764da63b808b07fa8f76986945cac3683fa316dc21d33747c2927d",
+          "event": "USA"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/USA_741178.npz",
+          "asset_sha256": "b496aeb72ff2c8f7b8b1912cdc274003d2c6977023d914e1431790c4beb882ae",
+          "name": "USA_741178_S2Hand.tif",
+          "input_sha256": "334b85ceed36ab2597176ced392887276166411cbfcc29467dd6fef8f5aa7a1a",
+          "mask_sha256": "616cc75e0b5996ed73efc2a32fb276da3b3fdc064c3773bcce3527b8c689bd2e",
+          "event": "USA"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/USA_761032.npz",
+          "asset_sha256": "990da2bf43591059e96e5b7efdacd11a1b3686f6a6557ff9234cee6d883f22cd",
+          "name": "USA_761032_S2Hand.tif",
+          "input_sha256": "5a05a12b19b41ab0877d60948f8879800f45580e4e8781c95deb3678f48a7256",
+          "mask_sha256": "3f5c52319ece3bf6fc7201c733f8dd954ea802c5031b6b1b3cad69c37c14203a",
+          "event": "USA"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/USA_826217.npz",
+          "asset_sha256": "701950062e67a1f82a5239a131aaf665b47b02d78ec84a77c89efbb0fd07bc86",
+          "name": "USA_826217_S2Hand.tif",
+          "input_sha256": "f0b2154d8d6750f31dd91eb4a82135933cf3fe7b08585320d3f8712ea39dc3fd",
+          "mask_sha256": "b12bd3317087ee5c66c01e2bb5e3dbe1368d25d09ebb21e1f3ef4ea30334d50b",
+          "event": "USA"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_val/USA_986268.npz",
+          "asset_sha256": "7888acebd4e8e595bb6328944d60d999386267d5f7554d221e9880411f541bdb",
+          "name": "USA_986268_S2Hand.tif",
+          "input_sha256": "c7ee0965279e9d8aaa4081ac8fb940f194664c0f7c400a1a6d0094b5516d0323",
+          "mask_sha256": "e87719d8b31c73b39fb8cbaf829ef3403aad316e3069259058aed1a4e43afa0e",
+          "event": "USA"
+        }
+      ]
+    },
+    {
+      "split": "test",
+      "images": 90,
+      "inventory": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/data_audit/s11test_inventory.jsonl",
+      "inventory_sha256": "62ebfc573163ffdd966a49910021efd400560d4d08d99a1fcfcdddd0c2139109",
+      "rows": [
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Ghana_1078550.npz",
+          "asset_sha256": "7afd0c6e9ab874abf88e7858ae5322fc0718ff87f5e2c7598c83262c2624961a",
+          "name": "Ghana_1078550_S2Hand.tif",
+          "input_sha256": "f296cf04891898c5b7134f1d6371ed2a31a1e5fc41a4e6583adde2b597384a81",
+          "mask_sha256": "cacbddf124068132c0bbee9389d54ab9b2a0112e2cfe992f02a01c0066a23d5c",
+          "event": "Ghana"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Ghana_141271.npz",
+          "asset_sha256": "f89e9f6b513b8403751613ae85680162074767b3236cfa228d5e1cee55c805ea",
+          "name": "Ghana_141271_S2Hand.tif",
+          "input_sha256": "a5ca1bced8071076756d8a1b2f7de865eeb8e7639851ccda3e16b7521885b5aa",
+          "mask_sha256": "1714501432d2a7626d788c144153b4d1c5b31ad75dae62e3bc2990970297364c",
+          "event": "Ghana"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Ghana_167233.npz",
+          "asset_sha256": "fb259d1791ef1af2bc808065f3ad4bbb9c24c74ea4ab00cd14892b7befac7594",
+          "name": "Ghana_167233_S2Hand.tif",
+          "input_sha256": "28787386294dbcc7662b6588acdd73acf7397f7acaba3216fc26333378497cd2",
+          "mask_sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90",
+          "event": "Ghana"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Ghana_313799.npz",
+          "asset_sha256": "c264cc6ed81a4e0f3603ef081a0a0eaece4665be14d99e503bdafe3e984afd8d",
+          "name": "Ghana_313799_S2Hand.tif",
+          "input_sha256": "ba70e76bfa0b721521deac90c444326016c60cb58034e7785c2634fc4b50ad2e",
+          "mask_sha256": "3b74d897d5f760efc838089f6d1cdacd2ba0b950cd0a61812e4205290023156f",
+          "event": "Ghana"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Ghana_319168.npz",
+          "asset_sha256": "b175304c8847c1565406cb45768f827c047e95f281f3d74a4c0a057c6f77fb8d",
+          "name": "Ghana_319168_S2Hand.tif",
+          "input_sha256": "df71e0180a05533c0dfe22d2bf174e7d22a17468f97a5edd7dc03227a2819796",
+          "mask_sha256": "f21266fdaa3cd8465d7ecfe5b788829bf842ef98814326f4224fcb50ee4ed978",
+          "event": "Ghana"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Ghana_359826.npz",
+          "asset_sha256": "c7d94e9e42e7655c0fa14750c566d789e8966169b74b82a342f31ef39dd94d22",
+          "name": "Ghana_359826_S2Hand.tif",
+          "input_sha256": "4e6c8ae6a24f2f9e09b843e897f807eb12e5cf8e81253487d3b6ab22e5aaff44",
+          "mask_sha256": "b44a4f04f230e41446819023f88a88bc855235dcb24c1b8c5c3f5e84d0ad0945",
+          "event": "Ghana"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Ghana_406026.npz",
+          "asset_sha256": "2a612587d406ae781b64e77a821ece51ba7fcee740bc47cc385cb2174806c250",
+          "name": "Ghana_406026_S2Hand.tif",
+          "input_sha256": "01e26a49fabd2fa92b1ff72c37c66ab32ac13efa77c792f73bb8e0e3165892ff",
+          "mask_sha256": "f689b4e39a97a90bd4b219aba38575461746541083684613d0a0e534abedfecf",
+          "event": "Ghana"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Ghana_53713.npz",
+          "asset_sha256": "f32aa3cbaa23f12143500b5236d7af0a3499cf4909a0321e69c78fa335f849fa",
+          "name": "Ghana_53713_S2Hand.tif",
+          "input_sha256": "843130decfb79296dfa439c2d6026d05d538f14b24fcb2553ba31bc98c4a1675",
+          "mask_sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90",
+          "event": "Ghana"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Ghana_83483.npz",
+          "asset_sha256": "3eb61efd83dbc0b82ef1ab02f0a62f1b1a2b13c20a1a14fbe30c3c907c08293b",
+          "name": "Ghana_83483_S2Hand.tif",
+          "input_sha256": "2ce377bbf3406537fb49c4c13e92c121f357bbc72cb12e6914b6796134c0b107",
+          "mask_sha256": "3b874d3ba46c638fc3094f8e92fb744ca974893873f8885f54e23760f9b6311b",
+          "event": "Ghana"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Ghana_866994.npz",
+          "asset_sha256": "dd8b9dc05a337f58c6a30b06a785a83d90e7db5ece2a361a9cad22dfc8dc9775",
+          "name": "Ghana_866994_S2Hand.tif",
+          "input_sha256": "a640c6dcc1ff4e3e2b1013ed4afcf9313262ee74975f57f83544f66f857ae953",
+          "mask_sha256": "c163f1acf47fb41df716529d841efeefc204dcb6df8784ba57881ad95298496b",
+          "event": "Ghana"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Ghana_97059.npz",
+          "asset_sha256": "328fa21af2af6e4dd99b5f508942c52c363522a617f2400ceb8a0e39bfc05bc8",
+          "name": "Ghana_97059_S2Hand.tif",
+          "input_sha256": "d24c80bd6f75292f3646ab64968c0a4f8dc0638bdcff703e5b8c1149f55d1d8b",
+          "mask_sha256": "5085eaeaac1192996f295941391ce4ce8f7e08e4c9dd77d9d660782045283196",
+          "event": "Ghana"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/India_1018327.npz",
+          "asset_sha256": "da19a32dbdc20cd02e49fa896f9850e7023db0967d3e4c0462cb4aad24cc9583",
+          "name": "India_1018327_S2Hand.tif",
+          "input_sha256": "e8f5ca035ed391e0099eada190dece3f05ab12d640a4c1b51b33bf36459cb550",
+          "mask_sha256": "43cae0c56c536dedb6a27cb3e67b73fecb5c386dde10412ac161f447b15eb11c",
+          "event": "India"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/India_399883.npz",
+          "asset_sha256": "57c091ea620b2fa607725000cc881d54d3e2eea70d182ccea509ae0c94edcc12",
+          "name": "India_399883_S2Hand.tif",
+          "input_sha256": "265726bba8649b7433306e755638865e9ce78cb155680075a7ca2e9bab0d3bd6",
+          "mask_sha256": "64f0d7f445e8edc241b88427d894d526a822a6ea6972e0fa7c659688b0bf35ba",
+          "event": "India"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/India_44475.npz",
+          "asset_sha256": "86964d61a9e4833b056e834c9c85720b51e535d82663e48760d19be664af9ba3",
+          "name": "India_44475_S2Hand.tif",
+          "input_sha256": "1c89b5ecb7bbd560703d37a75ac6c4994266fdace2e8219d7f43b98b9ba8d756",
+          "mask_sha256": "5ee209e9ed3ac2cd7d12ed761f4e9ce3ca027ea17206f43c2b921debe54a059d",
+          "event": "India"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/India_570384.npz",
+          "asset_sha256": "a004bad1968480ab6355230e0eb3cf9fa27ec8a458d20d4e9526ae3c4783e0cb",
+          "name": "India_570384_S2Hand.tif",
+          "input_sha256": "e402a4499d06deb93c10826c60044033fdbe614bcb23003481e9a8cd6c3a6eb5",
+          "mask_sha256": "b2a60a6b3976f88583dbae23e0b6a4c1e80bd2984f71f5b9f9d1d4d70d228bb2",
+          "event": "India"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/India_591317.npz",
+          "asset_sha256": "23e5400b945deba7994a15fff443a5bd0b45ff871ebf84c7235c7f83ba66e38f",
+          "name": "India_591317_S2Hand.tif",
+          "input_sha256": "621a0b090dbd1f0c30145513006f8079dac876d82273171ef68a23a4084ef038",
+          "mask_sha256": "156ce7f2e91fa10cb87d907bd0d783b0c58cb24d84e539d3ad8f10dbde9a4a1d",
+          "event": "India"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/India_592446.npz",
+          "asset_sha256": "635c528c695efdc4569c2a2cd8d5d458e872eb79c047bdf8423ad9585f91b69d",
+          "name": "India_592446_S2Hand.tif",
+          "input_sha256": "26f79ef35b24c9054f28ab5a3b9cd796cba706bcc0fcd08b3f5a95ba72166132",
+          "mask_sha256": "de8e2622a5140b37fd2aac487366667d07b9e8147926c40fafdca73a73fca8c5",
+          "event": "India"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/India_631692.npz",
+          "asset_sha256": "3851f3446e17132287740a514205a83df14d919129c3128b976ad85db8fd4b20",
+          "name": "India_631692_S2Hand.tif",
+          "input_sha256": "1d1c29ff0e0b9762be0dec53d4e71be7dd2b2d37e1600766a225b25895186690",
+          "mask_sha256": "2ba329f006777db7933027f6d78ebdabba365a83904b1de516c4be63e26a3df6",
+          "event": "India"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/India_747992.npz",
+          "asset_sha256": "feb89215895a7c94311b524cc16de380e7aac140a6c5033f1e86458719703dae",
+          "name": "India_747992_S2Hand.tif",
+          "input_sha256": "025b30ef14b9978d957cde55f532077759df50d57f5657676c3838be8e73ad06",
+          "mask_sha256": "411e8118d6373cd877abcbef8de9d5c5b8aa2e4a6ddc8c3ac56262f0f6f758eb",
+          "event": "India"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/India_772630.npz",
+          "asset_sha256": "3d2e547106777a487720a61f094b608fc8b3fa638306bd0c13644563baf9baac",
+          "name": "India_772630_S2Hand.tif",
+          "input_sha256": "507c3508d9cbe6c2998a6f2e763fd80ca13a2c4d3a7187fff601c36dbb31d237",
+          "mask_sha256": "5bc521fe847c7ffdcfec0b56feb238f5d8bdbc4d1505cd3cf7678276e7b7dcac",
+          "event": "India"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/India_79637.npz",
+          "asset_sha256": "876f89517332a1c4fae59c986d849614d5d6bce0c5e698e0c1d4fb3f759eac4a",
+          "name": "India_79637_S2Hand.tif",
+          "input_sha256": "fb3e1173159c122418b4b0b2271ed48117ad7519aaa1fe87da60d947f92bfe8f",
+          "mask_sha256": "f2931f5ba0e4c5d6ac9f50df46cad7918b17afee667a3de5c5efa04eb01b380a",
+          "event": "India"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/India_80221.npz",
+          "asset_sha256": "19730eae42751651163b0820ada48cf4d1ce15d08abdee82ef75a3fb7f9a59b4",
+          "name": "India_80221_S2Hand.tif",
+          "input_sha256": "fbcc57d3e6b1d4bb9fd98f75872c7dc52bab310f0d43fcf55bae54294153e2ba",
+          "mask_sha256": "6e6f105dbb6a2ea38862eca653a9b88da2e853b2eef0303b57acd0f1f3596a8e",
+          "event": "India"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/India_828067.npz",
+          "asset_sha256": "cc84f27c0d2dd719159a5cf2e54881e8912dd43e35b0bbf1b7eac0eb21252616",
+          "name": "India_828067_S2Hand.tif",
+          "input_sha256": "42a43d5f2ddb5314ab58a63ba8963d7612ade23219bb260eacb833f95e8572f5",
+          "mask_sha256": "be00d75fae0a399dbac797a3f3fa9ab02ad7065726bf67962193e033e2172919",
+          "event": "India"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/India_900498.npz",
+          "asset_sha256": "f8ca8d42064a9c1b20358829e812c9a5dfbcea8c804c5ca152a37200512cbcf2",
+          "name": "India_900498_S2Hand.tif",
+          "input_sha256": "152d10499d005b98f38799700ba389919d23925824e1ecb4e64c7bc66abc8e28",
+          "mask_sha256": "ac4265034246d3a0e57cf39c50e55e71d826e7234f95429770a663a1e54e389d",
+          "event": "India"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/India_952728.npz",
+          "asset_sha256": "e633d6ab642c38f85eefd9b58beb50f4127f28e59a91b0cde300fcde70b35011",
+          "name": "India_952728_S2Hand.tif",
+          "input_sha256": "046d49f8851abcd7c6485403bfa164864115e77d01d33fcafd962e34607752e9",
+          "mask_sha256": "9762bc5a236b0c9ad809444f87fd64ffa059acbf99298596409949fae4874226",
+          "event": "India"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Mekong_1443339.npz",
+          "asset_sha256": "29a3b3badc8031e00db2aec35c417596142bef45e907180f287f6d5612e8f24e",
+          "name": "Mekong_1443339_S2Hand.tif",
+          "input_sha256": "a0d71da8ead58f7bcfbecc1acdcb52ce109e76c6b1fea94725eb5abfcb982942",
+          "mask_sha256": "4e650f75db8b9ade25c124c921dfdaa0c53735f20dffd01328605fba9256b7af",
+          "event": "Mekong"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Mekong_254910.npz",
+          "asset_sha256": "1d0587fcfb1f5ccfdf32ba1362aaa970c64ffa43237b914292ed765eab7b28ad",
+          "name": "Mekong_254910_S2Hand.tif",
+          "input_sha256": "9526e8c8e5f217f8a0e285db90d3868d788eb7c5b138b6bfe9b6286247f91740",
+          "mask_sha256": "6696ebf1478bf0772d0e8a88d655af428f6b35612510f54a8b95061d3b33e83a",
+          "event": "Mekong"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Mekong_333434.npz",
+          "asset_sha256": "c4bda2e999aaac71478c931e0e6f4f7076e56a2bb21585f95d88c4f26576d518",
+          "name": "Mekong_333434_S2Hand.tif",
+          "input_sha256": "7259c85cf38c2418d269955793dd03c7598c27f463d5c6445b1d4f12325190c0",
+          "mask_sha256": "570b549936c387a02ea471be0020f180740f6d9c210168e99aa86e33fb063405",
+          "event": "Mekong"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Mekong_382276.npz",
+          "asset_sha256": "28ab3a59a857d5d784c139e45ef7715e9973297b69dd6abfb8325ab400466c98",
+          "name": "Mekong_382276_S2Hand.tif",
+          "input_sha256": "68636561415342712af58150380c23acfb40aedbebc9062eb099f03ecc2f2611",
+          "mask_sha256": "8e26d95c6eb617c8108930ba25ce2ef065f7baaa5cb26e7aada98dd89d1233f4",
+          "event": "Mekong"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Mekong_424793.npz",
+          "asset_sha256": "d39b6c8022911375d2777662d8c54997e7ac4d284b7d53a0055687cb83175868",
+          "name": "Mekong_424793_S2Hand.tif",
+          "input_sha256": "311749718a8cf674db691f99fa2d6271db130a4ec0706d35964ab554744fb256",
+          "mask_sha256": "e49fac3737ca86dae3efceeac93525d024b36087ee80800ea8ed4eba744b4ec5",
+          "event": "Mekong"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Mekong_45934.npz",
+          "asset_sha256": "20a4c175f49b7bfca20fbb7653664ac6bc3e85bacbd2115314c7b5d2cb4f4a8d",
+          "name": "Mekong_45934_S2Hand.tif",
+          "input_sha256": "fd8208ecc77ede869a73e47858d3b58e66084e0f23c6d680116a4ecb92ea0fb7",
+          "mask_sha256": "3a9709e0c44c8b040efcb3d96d5f1e39ad1dcb66d44c547a40322501644c1c88",
+          "event": "Mekong"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Nigeria_22088.npz",
+          "asset_sha256": "f3420ca8c288992b340eb0f1b423bdd9ee7a44607b7efa2bc8ec8f8a946517b1",
+          "name": "Nigeria_22088_S2Hand.tif",
+          "input_sha256": "9607e310fdc870edf6e16fce78bb7a1cfa5b5d32155f7f301f0d59f4264450e1",
+          "mask_sha256": "54448f053d26c42ec01ccf0050f81aa82649e85cb047406435a49ba6a66aa5dc",
+          "event": "Nigeria"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Nigeria_225131.npz",
+          "asset_sha256": "3d9bb1ce8cee83ff117ed7973bda9e8f9f01884e9ab17b844b79c1c505ec34c0",
+          "name": "Nigeria_225131_S2Hand.tif",
+          "input_sha256": "d4b12a211a60ec4e526cd89abb3e413e32681ee0454f25d098e410390ba3301a",
+          "mask_sha256": "c39811353f98eca37b4b8066dc8bb3e714c9f748d92c4fe55d4e4858f220a7cf",
+          "event": "Nigeria"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Nigeria_417184.npz",
+          "asset_sha256": "94c22a51844c4c01b5b58ffe067656db4b182633104c01c2c15ffeb0c3350736",
+          "name": "Nigeria_417184_S2Hand.tif",
+          "input_sha256": "c87c7e6cdf1ad259a69a511c07ce038a33de2aad74edf079c7f72fb7ed53ad4f",
+          "mask_sha256": "1aeb28921094c56816cb84e794d5f925ede644132402f972eb113e3a396d65c2",
+          "event": "Nigeria"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Nigeria_812045.npz",
+          "asset_sha256": "975f5dc605ffdef2da8044c161cf354999a205f0940a819e77c9c9be2067eaac",
+          "name": "Nigeria_812045_S2Hand.tif",
+          "input_sha256": "cd0526002cbf2a395fbccf0381883cbc4e7ac789e80f7e4fe7af97760e791247",
+          "mask_sha256": "3ef91b869aefd8f949756f5bce30ce01a79a7da5f86668ba048c549684c8a37a",
+          "event": "Nigeria"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Pakistan_167553.npz",
+          "asset_sha256": "043ef2df00855bfbd0ef5bd3d83a48d7737a4bfb6c8da0a0f91f08672227d83a",
+          "name": "Pakistan_167553_S2Hand.tif",
+          "input_sha256": "986cee801bbe9fc7a564b5fe35fe5edf7886d391aa9466e0b0f0356a710f00f2",
+          "mask_sha256": "4004f070157c0923b2f308389a97c18ed2e95cfc0cd76d77cce9bc90c0a96bab",
+          "event": "Pakistan"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Pakistan_528249.npz",
+          "asset_sha256": "e9cd868a8272c08ff735dc103351948e981fe747f64ba7ee43fee5941572e462",
+          "name": "Pakistan_528249_S2Hand.tif",
+          "input_sha256": "03727024b1ff22b4cae51f8f6c02f99887e97e68ece2e81248d199dea8a896f8",
+          "mask_sha256": "40c12109f58f69da16ed3bd5bf10b8be091cb94b78adeb1f9e6ed8ee8f61e19d",
+          "event": "Pakistan"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Pakistan_664885.npz",
+          "asset_sha256": "2ea6be2becadb5d28a1595f2685d98d9ef6347b849bd94b946bb8cf7ad0262bc",
+          "name": "Pakistan_664885_S2Hand.tif",
+          "input_sha256": "b9a1be60f24b79d524d7d4d6f8f86901aaba3ea48d921802dee3e3d2b7fa63dd",
+          "mask_sha256": "3cd94aa9f220345f100f36beab278322dbd506a3ae5cf12bd61f41daba1ffe73",
+          "event": "Pakistan"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Pakistan_694942.npz",
+          "asset_sha256": "52902092737597eb2c562493ef2ac2fd095ca59a1c7aae739282b4dba5be0ea4",
+          "name": "Pakistan_694942_S2Hand.tif",
+          "input_sha256": "b7c6656cb56c0835405adcf9a5dd339f1d9c514ff3a910182f137f108eb580de",
+          "mask_sha256": "babc1668d26025ecdc03efe1d065b60753950ea48def217114ed9cd01161c0e1",
+          "event": "Pakistan"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Pakistan_70625.npz",
+          "asset_sha256": "8cd31994e68edf825782f924d745999caf2866c72b2dc61c5ef739ed43e4dddd",
+          "name": "Pakistan_70625_S2Hand.tif",
+          "input_sha256": "4b111e3c942c6b7360dfe082e07f9c9e8912f734a95472832f5dd3f8cb163e03",
+          "mask_sha256": "fc7127cc1af7866df8bb7352b1b97aff8b54af5b061595ad0bf3c050cb496f37",
+          "event": "Pakistan"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Pakistan_849790.npz",
+          "asset_sha256": "1b272b70bbf876450f62600cf3c2d50acacab9936572d72c5e8c15f793871d9b",
+          "name": "Pakistan_849790_S2Hand.tif",
+          "input_sha256": "37e8df1dd062792ccf52a77f2106f182a105ae6d3dd7dbde57c7a486106c0d6d",
+          "mask_sha256": "51e54a3b6dedd73e672b1c6b39e4ee97565d2f208cac04fe388563916a5a3c88",
+          "event": "Pakistan"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Paraguay_1029191.npz",
+          "asset_sha256": "d8f428b6d733ca680267a5d6d5faadee11aa4f48c1dcf3bc51efc563d852a411",
+          "name": "Paraguay_1029191_S2Hand.tif",
+          "input_sha256": "06ba4ee41ead11d411971a172ed10c50a4e52f79631847996ace34ebaf2d853f",
+          "mask_sha256": "d3a3bb6577ce47e0a5d9f90272c355cdc4e1759d186d2ff7b6bd8ff828edff45",
+          "event": "Paraguay"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Paraguay_232281.npz",
+          "asset_sha256": "0c676e63dc43ceda77e06f039d5b30ba21567b8525fa7eccf74758b8199de65c",
+          "name": "Paraguay_232281_S2Hand.tif",
+          "input_sha256": "42e9af87dabf4e0a1942f2548531d12dc5efe8259e19e18b3ef4221c10934f91",
+          "mask_sha256": "63882fc304c22a59c9de599a400708079b9eff532cf5441db3545220fd3e26e7",
+          "event": "Paraguay"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Paraguay_271769.npz",
+          "asset_sha256": "8da50cb43b119baf18fedca3e26931586e0af6b7205747a93df99291a90de328",
+          "name": "Paraguay_271769_S2Hand.tif",
+          "input_sha256": "1eaa9b0cd7ff8498ede537921f9bdeb353bf06ee5c396770dc9238e62744c908",
+          "mask_sha256": "77198745479f9e68b9ac1037824195c8cb2e3b2589689891c84bd59a5f9e8491",
+          "event": "Paraguay"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Paraguay_280900.npz",
+          "asset_sha256": "25fa18fca1a5a60a68516dc879cee491ebd8a9f13203d06ada51d0726b1e4a44",
+          "name": "Paraguay_280900_S2Hand.tif",
+          "input_sha256": "39b44659c78e1b6b2fe7d4fcfaac6d8e84175aff374f64a8fbae6763217c28c9",
+          "mask_sha256": "5ab3eafee052bafac5ff53f8c7946d8a036c5453fde078d9c78b9aa10e43e0e4",
+          "event": "Paraguay"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Paraguay_34417.npz",
+          "asset_sha256": "b1fd239f5f836bee2f08950e5e979346307cd4f7d62b5590afd80266b109b598",
+          "name": "Paraguay_34417_S2Hand.tif",
+          "input_sha256": "1bd3e3fd69c887ab97d974b06e169cf4f90d3f9dea675e54bd925d65d5a6e5cf",
+          "mask_sha256": "f11e05d8af3d199d61e9059b2fff81fdb410ed7166920247d1ab91dcc2c0c77b",
+          "event": "Paraguay"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Paraguay_40936.npz",
+          "asset_sha256": "cb94263515ce61fac11c193527f083acbd3f9388925c35b9bdf0c693999c16a8",
+          "name": "Paraguay_40936_S2Hand.tif",
+          "input_sha256": "1cb242290818b3665abab851c361f3a6aa4f788026dcfa1a0c7967086738d81f",
+          "mask_sha256": "fb8f898539b77089c8b1253b0cf006a0b391006753834271bbef99a9e843fafb",
+          "event": "Paraguay"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Paraguay_511199.npz",
+          "asset_sha256": "6955b76451423eeb2bd6a8932088a82ffab0972f20410ae2d4203e69fbe976a0",
+          "name": "Paraguay_511199_S2Hand.tif",
+          "input_sha256": "5070b642d41c07323a9acd7143e6c403015b7d8aaa807986077c1bf28ab25bc9",
+          "mask_sha256": "0c3a218ff627768c59cc7ee0d2fbf49ec10768a6e22df46e0cb7b4d9aaef2f5e",
+          "event": "Paraguay"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Paraguay_59731.npz",
+          "asset_sha256": "0e6a2af717ec85f90a61811fb8d5f0459851a82b86e9b067814a1ff53221328d",
+          "name": "Paraguay_59731_S2Hand.tif",
+          "input_sha256": "63ab91d0e46b8dccf9a4e0f8efff037b7956fc4aeb39060c5be9ea9eb961c97a",
+          "mask_sha256": "7ceda703ac0b4cede69ddc517dba42cb526c55bb8cd914013549cc5ef59b57f6",
+          "event": "Paraguay"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Paraguay_651904.npz",
+          "asset_sha256": "85253cb9d5bec4bf1586c1d1642a44e444e0e2a6d77ff437369e22ea7d5b6f5f",
+          "name": "Paraguay_651904_S2Hand.tif",
+          "input_sha256": "bc4830d59cefba31d1d199c23bfc13eb6967e2c693874a8a2df8f68d03e3b034",
+          "mask_sha256": "dbe3cb88e0a19e88f1ec5c405ac6f393850d80ec43ec96bb4606b0d934447306",
+          "event": "Paraguay"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Paraguay_683296.npz",
+          "asset_sha256": "6e03d52c5b937dbf0a80f7f5802b080833f20d1999da9a8a938e8dd3219bee98",
+          "name": "Paraguay_683296_S2Hand.tif",
+          "input_sha256": "e7d297bbc8913c42bf6d209d9355028f5c35a46dbc0c013bdf6af137404a1032",
+          "mask_sha256": "54ea08242f5480dabc639ebb5a83096860a7d1524a9d16359e98cc6b31676097",
+          "event": "Paraguay"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Paraguay_790830.npz",
+          "asset_sha256": "66309da380a02e069fd4d82b4d962f9f179ea30e51e58c627000ff2990a9ae43",
+          "name": "Paraguay_790830_S2Hand.tif",
+          "input_sha256": "f8c6098be83484078b7e25fa4a7cf1e41ca680a78e1e2041da3bed848a1f30b6",
+          "mask_sha256": "361bd2a918197df70a6ba9b32fda0b4819fd5fb249d5583350e92bf8913e5559",
+          "event": "Paraguay"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Paraguay_80102.npz",
+          "asset_sha256": "8a09d6a1e6550dddbc876cc581e873d00aa60ac5ad30cb38a0f12488e737454a",
+          "name": "Paraguay_80102_S2Hand.tif",
+          "input_sha256": "55e7303a66025f1ad637ca7a9f0133791e1276fc77f52f06d5a798b99dae1c36",
+          "mask_sha256": "039b0cc4a7d03604f11fe474b38e10d91d06ad8a1941edb12a7e80bc6fe5303f",
+          "event": "Paraguay"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Paraguay_868895.npz",
+          "asset_sha256": "6fa8e4c0093e2c1cc2ca6e781368bf6d85e294f85d350a3106c303d1644cc41c",
+          "name": "Paraguay_868895_S2Hand.tif",
+          "input_sha256": "3aaadfc906bc213e2692407eed88980efa69f1c20c7dd6a52207d5133a81bda1",
+          "mask_sha256": "0cfe6a720590ef6af75096964511eb3d0170fed212cb9b173b25f8e7a60e9095",
+          "event": "Paraguay"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Paraguay_913449.npz",
+          "asset_sha256": "a24127bbe074bdd4492d7dd64044ef5ad4132b9a50b4be23fddf3aeda658dcb2",
+          "name": "Paraguay_913449_S2Hand.tif",
+          "input_sha256": "45417b069e3d6ef2d157ae273c000283547e785db847986825b95ef61926a0cb",
+          "mask_sha256": "d43a8bdb116d7c16dff600842160e7172476793a74ff974c9fb7361983ba744f",
+          "event": "Paraguay"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Somalia_166342.npz",
+          "asset_sha256": "9eebb212712020f4311f85a5507d8e195c8508791286d805d173f9edb22e8cfe",
+          "name": "Somalia_166342_S2Hand.tif",
+          "input_sha256": "ff610a8d70072ab5416360e9b4c69d3a050b9ba3d19e887fa732a9dcdbd28c72",
+          "mask_sha256": "b41d686ab88cad2c1b434e90d5ee864d0147cf8ceeb1a3506453b534428527cc",
+          "event": "Somalia"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Somalia_322855.npz",
+          "asset_sha256": "97e75f846044875e3ca3150fb0670ae6ac00b1a9bac8938ce41ea21c4330e62b",
+          "name": "Somalia_322855_S2Hand.tif",
+          "input_sha256": "9755c23c8d0b6c620da94d6edfdc6ebda5fbfdb0a4255f1e90ee08673dae201e",
+          "mask_sha256": "ff0b8bd265990bdc3f5892e7a25fd7f3ab32c0116f19c88a6ef555c439e90c8c",
+          "event": "Somalia"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Somalia_60129.npz",
+          "asset_sha256": "f4fc47b3e12bf6c1f270a18d36dba29129e4b9d6263962a42badd87c34507db7",
+          "name": "Somalia_60129_S2Hand.tif",
+          "input_sha256": "bde2a8e1a938c00473135f1ef9b34f8855c171b6f3bbc5c34eb4c093f11fbef1",
+          "mask_sha256": "fe16a57efe55e5f5481df1deaf3804f44fe2c4c35eac5a9772923553fd95ea51",
+          "event": "Somalia"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Somalia_685158.npz",
+          "asset_sha256": "78eee24fc8bd5f8877bbcf17bd1712c46aac9d2e26bbda0101252df72cc5bbc5",
+          "name": "Somalia_685158_S2Hand.tif",
+          "input_sha256": "014dac23e2aa7c799a59da92acc01b82b01c50753ac61b91a223bfc0e9b07fb9",
+          "mask_sha256": "30f53720380451cd7a3c7be5f499a763e3659e4d14d215a0e6c77dc9ba19977f",
+          "event": "Somalia"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Somalia_699062.npz",
+          "asset_sha256": "ae7a8d2b7b771c6c569b030c0a8161846cbb70aac67ea2cf73a21ba53dcd3f14",
+          "name": "Somalia_699062_S2Hand.tif",
+          "input_sha256": "4965da432bfab659c3f98afb481fa70f1e96062413d8307a4cc138fd93f453a6",
+          "mask_sha256": "1040cbe71bbabc47f3dff5f7b54acadebf2e7bee89693abb67837e3be80c103b",
+          "event": "Somalia"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Somalia_94102.npz",
+          "asset_sha256": "541d7aacc828d2efc4c0d6c6571cfd44eaa97465648c7187a1b8c12dff637e21",
+          "name": "Somalia_94102_S2Hand.tif",
+          "input_sha256": "2d5fbd1951e4b01b0900034773230cc5ccabc0d3a72db4208579828a1adacfe3",
+          "mask_sha256": "ccbfa14a8ceb3cb3c75bc15ad95c220ff36d1d91986e0eb080c41522bf5f3632",
+          "event": "Somalia"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Spain_5650136.npz",
+          "asset_sha256": "786cdf7818307b6f30dbd1141036ca86faeed20a3fa8dcdb3d7f385336d402b1",
+          "name": "Spain_5650136_S2Hand.tif",
+          "input_sha256": "f5f4530173ceda050fd0ab7fdd48c4e4dec7a8977e6d72b9fb2e76e62d2e4e8d",
+          "mask_sha256": "39a5acbb0d583753fe828c0b748e3dfd37fe8681e7fbcb1fcdf8ff7a9fd3876d",
+          "event": "Spain"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Spain_6095801.npz",
+          "asset_sha256": "b78d78eb736dccd4e6391ae2119dd7df2b08322d5d2f820cab9845c2842b49d9",
+          "name": "Spain_6095801_S2Hand.tif",
+          "input_sha256": "ab12a1c7d989449a56805733324288174710bb0b1542a1407a26eb5653e5204a",
+          "mask_sha256": "0f628877fcbac4fe16dad02babc3ec2dab73b00a3e95b82868a296f2e5e27602",
+          "event": "Spain"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Spain_6860600.npz",
+          "asset_sha256": "df34003b9becbeb964c37da77498d9b0f3b05475be4ebc96ce3234a77fe01d1c",
+          "name": "Spain_6860600_S2Hand.tif",
+          "input_sha256": "cbb08a1a7a56eaada830bf1784592163ab053b8ee90060e1fdf866bb6e819a38",
+          "mask_sha256": "857f46970c65a1774b6f85c3afd072c94c77962e7a412fa031dea8e0a107c242",
+          "event": "Spain"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Spain_7370579.npz",
+          "asset_sha256": "314cc7194171f4b10d7522f52fa2799455410490aa26979bab2fcddbf7683f1c",
+          "name": "Spain_7370579_S2Hand.tif",
+          "input_sha256": "9a62b3c4089e3dd6c0eb8e95bd9ca7f7a25c25317f73c6cdded69e5617a4003f",
+          "mask_sha256": "92df581c143ac98b7daa105113e5132ab6d8317c9275d8aeb056c71fd14927be",
+          "event": "Spain"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Spain_7387658.npz",
+          "asset_sha256": "45217d8be401824cb81ae8ed1d08729b65e5a66554045e6037e3b87cf155170f",
+          "name": "Spain_7387658_S2Hand.tif",
+          "input_sha256": "c8ff3ea732b5142f228859a906878f7bc8df96f97ae2c3e4bb81e503e29869a2",
+          "mask_sha256": "d88a9f13e171afb41f1eac875b859ab7b433eb1cdae013eaab3878bb4057efaa",
+          "event": "Spain"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Spain_7558720.npz",
+          "asset_sha256": "63160c6f200a3c28c0c8ea2b2ab2b142218e30c5927eb4152c073db8c553f561",
+          "name": "Spain_7558720_S2Hand.tif",
+          "input_sha256": "fb81b1715156bd75a03727a6c2ce52fd1f43f49225b17efdad97f8b98a5daa26",
+          "mask_sha256": "711fee0220478737f51404c640e91bb68639e241d1eb76f2d17b39cc68e1473f",
+          "event": "Spain"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Sri-Lanka_1049830.npz",
+          "asset_sha256": "3bb6f5d5a149ae1d809f45f5335c570c8f57ecd02588f7c214674f27e0310e6d",
+          "name": "Sri-Lanka_1049830_S2Hand.tif",
+          "input_sha256": "fb3ba24dca953d74792347390e187ad767c8d194fb16792649c3a2738e80569c",
+          "mask_sha256": "2a9b584fa4066f0d14ba6a161920acea96f07c2879d77101d5feb1484fdc6b2f",
+          "event": "Sri-Lanka"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Sri-Lanka_117737.npz",
+          "asset_sha256": "410b5ad752d79dc252296096098f68696a4d079a5573b1fca003c421797429eb",
+          "name": "Sri-Lanka_117737_S2Hand.tif",
+          "input_sha256": "de963dd27c2826c35b5efa83dafb40be61f343c90534520ab03b2f95a9a199fe",
+          "mask_sha256": "2c6fc00b9f69012d19d6a91766ca4600d78b7bb45eba0d44ab82107b1a5c5cb5",
+          "event": "Sri-Lanka"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Sri-Lanka_377277.npz",
+          "asset_sha256": "0227f6ab2b6fadabbca71c064d77e1cf47578601158eb0375ee62dfc4d64c6f7",
+          "name": "Sri-Lanka_377277_S2Hand.tif",
+          "input_sha256": "682dc63df12def6522f8fd99bc714794efdd97eecee681b1c7655648ce511bf9",
+          "mask_sha256": "18c51e91839f7fd3d97052edc42df0efbab6e6f79f3dc4fa11e8fc0ba359dd7c",
+          "event": "Sri-Lanka"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Sri-Lanka_450918.npz",
+          "asset_sha256": "4f0e82376f72263312ef761aa35e8535319237545016194b272caa53a4e27798",
+          "name": "Sri-Lanka_450918_S2Hand.tif",
+          "input_sha256": "9fa32ba352965f5d5951046f5de0d81a24e0fd3567b3f46d36c9b2fcf4e6a0fa",
+          "mask_sha256": "004a09297b29adcf8d9e7c7df11a6a29b2f130314bf13966a3e3d2463fd6a234",
+          "event": "Sri-Lanka"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Sri-Lanka_534068.npz",
+          "asset_sha256": "9d982d34c4097447173d2adcfcd012b0271282d2aab641e4648d0e5ae3323d5f",
+          "name": "Sri-Lanka_534068_S2Hand.tif",
+          "input_sha256": "8ce1ca44b30ecfcb894f0a50b5352e4b807e91634dbca32f8d86cddcbac58298",
+          "mask_sha256": "a03fab4a25f106a8e8ac188df49711b068b82d5a6d20a447888af53ad27cdc5f",
+          "event": "Sri-Lanka"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Sri-Lanka_649970.npz",
+          "asset_sha256": "1baf8f28639896b5bae5a6e9b96de9f7e4d174728b00ef39a5c4077641ca6ab9",
+          "name": "Sri-Lanka_649970_S2Hand.tif",
+          "input_sha256": "94a932e79c6688719d585b9d28aa1d88ff97622abd7ef04b108558d8592d7e99",
+          "mask_sha256": "e660c4addf626d2275e743c19dd0c8dd14b7b5c30cf5d6a856971745a2dec65d",
+          "event": "Sri-Lanka"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Sri-Lanka_713926.npz",
+          "asset_sha256": "612448084ec051cb80000be3ff03c1c306e521aa08595fb94ff7385aa4c0e533",
+          "name": "Sri-Lanka_713926_S2Hand.tif",
+          "input_sha256": "14c3a41131f28a26fde73ef9fbf3db16d64a023933a42b45f6e928e1ada85567",
+          "mask_sha256": "6848b343446288b2c2b76ef4dc8c393b035153f7b8d5717f04eeb0108b9470b7",
+          "event": "Sri-Lanka"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Sri-Lanka_849649.npz",
+          "asset_sha256": "7c467ae544c1f3d6bf3b1e368f8a617bc56bbc564c40e62e4d82bc98936294d8",
+          "name": "Sri-Lanka_849649_S2Hand.tif",
+          "input_sha256": "a3d9e03d8e780375bbf0710fdb1d2a06ab1c173b528cffe50357a4f31b49c654",
+          "mask_sha256": "9b84beaa393f7185b4efd7b677da44c3aab5805d8397e2fecbbc670d8d8fc5aa",
+          "event": "Sri-Lanka"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/Sri-Lanka_922192.npz",
+          "asset_sha256": "1b9fa278bdcb1ed1316aaf8c52c4b308eeae6ee86c15822f41c82d7c8fa3de45",
+          "name": "Sri-Lanka_922192_S2Hand.tif",
+          "input_sha256": "da80514b6c06ebb288f845dcb251c48b7ace0915eb64334fe40aa1535d2084cc",
+          "mask_sha256": "f93b1ac1c894ef346089b6d20447a18b76bea33569e4ec5d84949e76a95c4363",
+          "event": "Sri-Lanka"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/USA_1049586.npz",
+          "asset_sha256": "c5e6d562c94409d7150a4423b1159d83ffe2d5569dcf2ae59a011f159c8aa7c7",
+          "name": "USA_1049586_S2Hand.tif",
+          "input_sha256": "331b419843b32a26f6d1877788cca3ceb0b89fb8e69d8a68a8d2bb8f120f418b",
+          "mask_sha256": "4b6d46ac1ca71e8a7e50ba146592031acb65559ea5589d50c82eabaa15feda98",
+          "event": "USA"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/USA_350244.npz",
+          "asset_sha256": "744f2b60e2d60853ae2a29ed393e971aaf39f04fd695fa33e4c44830d697b395",
+          "name": "USA_350244_S2Hand.tif",
+          "input_sha256": "e95760b6102e5c11cf716d8372c5b1f25492170a130de62eb6d1b3f048897017",
+          "mask_sha256": "396e737245bdee99cd5fa6c1238f1196944460092cf37d7456aac4d31ac6c978",
+          "event": "USA"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/USA_430764.npz",
+          "asset_sha256": "9e5e6b75be4442aaabd9687928a953915ef53e953dd981ea798ad7468d6680a6",
+          "name": "USA_430764_S2Hand.tif",
+          "input_sha256": "a2c34254901890e1e5bd67f56610c6cdfe1d4a8ff271817b75d5942632a807c1",
+          "mask_sha256": "ccb0fcd06e380f82a7d4ed668f5ab8ec67414494deaf30af58a2f47bcce47c39",
+          "event": "USA"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/USA_504150.npz",
+          "asset_sha256": "f0f0669506898bd714517da156bec5e587ad77c57ddf76951f0ff8e02a745f71",
+          "name": "USA_504150_S2Hand.tif",
+          "input_sha256": "3992e8086712dfa6211d699b52e2da7753a42f76ef836d7dd01612a4601d1823",
+          "mask_sha256": "6c1eca51bf0cfc5fbdc7f328e7211641221db5bd92c3aee619415340751c1631",
+          "event": "USA"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/USA_519181.npz",
+          "asset_sha256": "0ec67f0985726067cf69b066b00fc6db4a7a96869c92512d4764fa74910a976e",
+          "name": "USA_519181_S2Hand.tif",
+          "input_sha256": "58497a43f5794c63dc1c3dac76f26d91a6daabc4e0ca517ae1e18456a848ead6",
+          "mask_sha256": "2b1bc42a58217b815079030617f2a685df084162e4c9bbef4281c1e8fcc86261",
+          "event": "USA"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/USA_527077.npz",
+          "asset_sha256": "959006ad8f34f344e6318f93ad9bfbfb75ecbcca6ee785559e163689ce8189a4",
+          "name": "USA_527077_S2Hand.tif",
+          "input_sha256": "e0773acfeb7b07e3fb093d7d74f8221b47fb67e7cd478c3a55c003f7a38fcfc1",
+          "mask_sha256": "dbef132857b815c6dbe7f7c6642ab4ed66b43e4ca6088478dd5ebd0d013b6aaa",
+          "event": "USA"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/USA_595451.npz",
+          "asset_sha256": "8afa3eba0ebb0e7d04124b170da2acb4df302977bcb77b5bd1c53a8d450d9a72",
+          "name": "USA_595451_S2Hand.tif",
+          "input_sha256": "c0a3e93a5ea43fb3b8044bd6f325bfc582d8b3b76781669339eec50c0671af62",
+          "mask_sha256": "9eb5e32319039f5026388ed42bdb8c70959e67852badc472112d73d2f4b85f6e",
+          "event": "USA"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/USA_66511.npz",
+          "asset_sha256": "33683c33dbcc73c01b622dd66f2cc6e4d47541fb3fdad20b144e650ae1f5ec7b",
+          "name": "USA_66511_S2Hand.tif",
+          "input_sha256": "14f3b2f9d69980aff6dfa04fb9c190919cd6d99401ddf185786b5399e0d8f477",
+          "mask_sha256": "0ce30e045a10b465f76c48ef174811b98f4323a802006816f4b0fcc3689c4c17",
+          "event": "USA"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/USA_670826.npz",
+          "asset_sha256": "8615bebce842276c79b7d118f66f2c87c9dce370ab5af17570d217803c5844c5",
+          "name": "USA_670826_S2Hand.tif",
+          "input_sha256": "231a4503ec2d0db32588e5dda966667431c0de5762ff53bb042fff369037d846",
+          "mask_sha256": "91bf0097c70310ad70d16aaa895f9dafcbc01c815186b91e889b1faa4eca09f1",
+          "event": "USA"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/USA_67102.npz",
+          "asset_sha256": "6a75e8211ebf693a24f4748afb9bcb43626c65f6292451067cfd3e16dd803f4b",
+          "name": "USA_67102_S2Hand.tif",
+          "input_sha256": "17014779cf444dc0a49573e537d18fa7115d858ee16aee3e95aeff9e91721c60",
+          "mask_sha256": "44d149349725b4e8d5cdc21a911282ea7d5d742386bf9ee146623ce05f80b3a3",
+          "event": "USA"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/USA_758178.npz",
+          "asset_sha256": "763b5e6021f93f3041ffab52316a34712a0549d1f0174e60ede8ac762604a63e",
+          "name": "USA_758178_S2Hand.tif",
+          "input_sha256": "4ce946b0b197af7149293618c3a5b525bc9fc7bd34638023a83e5ac62b953d21",
+          "mask_sha256": "ae831c8890a6605bea504805ee976e1e760d096d57bd032e37ec627fb9fc2edb",
+          "event": "USA"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/USA_778194.npz",
+          "asset_sha256": "75f9d3d55f973cc2749963b3d42989fd2ac83b7ee2bb243876dd883bd2127545",
+          "name": "USA_778194_S2Hand.tif",
+          "input_sha256": "78256e24ab5ccc77aee3e79fcabfaa1d691c25cffe2c640612988dafd7e3d482",
+          "mask_sha256": "8d770f8bfc5395d549046fe547bd7b29ea0412e299fb9227e83600c1ca8a27c3",
+          "event": "USA"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/USA_905409.npz",
+          "asset_sha256": "0503a5521107680ec85eac866f5e085ad674fafc698c6d7dfecf93b3793bafba",
+          "name": "USA_905409_S2Hand.tif",
+          "input_sha256": "be0cff45573a69d3b9a8063106ef122d9215dd06fec6c5c56caf2ef4c7db402b",
+          "mask_sha256": "66e2a03fd3b9246051f2b8cfdbf040d6c10072c08f1f24da7e1c647e0107c52b",
+          "event": "USA"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_test/USA_933610.npz",
+          "asset_sha256": "8e2e490562aec407e057861a6c7faa4d86f39c414ce21fb8d28281041aafac71",
+          "name": "USA_933610_S2Hand.tif",
+          "input_sha256": "0822f7570895d612619b07222e1bcecf63fac03f1960a923e075edac90b81eb5",
+          "mask_sha256": "d0de0f083642987338176f45a175c5412202e439e5444f7081d074fe736daed1",
+          "event": "USA"
+        }
+      ]
+    },
+    {
+      "split": "bolivia",
+      "images": 15,
+      "inventory": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/data_audit/bolivia_inventory.jsonl",
+      "inventory_sha256": "dc7dd1d74a5a8bd37216ba844a32324c3a5e8196e607af1a6483dff6d3f6ba78",
+      "rows": [
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_bolivia/Bolivia_103757.npz",
+          "asset_sha256": "3ba95ebc28737728746dc5c721119756774ffcdf796b9179fa32772d10a40e0a",
+          "name": "Bolivia_103757_S2Hand.tif",
+          "input_sha256": "75166388a1b9ff13d84b30873f7b9f2d9081decd65374442ca56536f2aec1b14",
+          "mask_sha256": "add65508507de9587dedce8361108dbb0ff34d7666ec095e680960bb3ce79fcb",
+          "event": "Bolivia"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_bolivia/Bolivia_129334.npz",
+          "asset_sha256": "f0eba58a9a68c92ecddb90ccebecb5809c2e630ebac22e5c675ab4f5438fb53a",
+          "name": "Bolivia_129334_S2Hand.tif",
+          "input_sha256": "707ba046785c367f93d2bd15d02a45c83b091efd43db06461ac01a9a602482dc",
+          "mask_sha256": "4e532bbe2553be93317cdfa2e7934786a2b9ca9e0c9a7c63b16e5022c79df429",
+          "event": "Bolivia"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_bolivia/Bolivia_195474.npz",
+          "asset_sha256": "9774b84d62497127281e23da246f5ff19fcd0360643dd992ca8c8de62a86f5a8",
+          "name": "Bolivia_195474_S2Hand.tif",
+          "input_sha256": "bf232f19c2ad759f31dde9fa6843c3a37cba3f60015985a6be67aee0b88aa384",
+          "mask_sha256": "64c6934162f0c8b3406ed4c36999f32502087625dbe2fd73b2ad0b6e3c08e6b0",
+          "event": "Bolivia"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_bolivia/Bolivia_23014.npz",
+          "asset_sha256": "58a9c595c9417de95e3425ac7c9e05e1d8713ff5d5811c123c27170fc130ec53",
+          "name": "Bolivia_23014_S2Hand.tif",
+          "input_sha256": "13d2350f579d977516e8f0d676e104a012b159545850cfb9311f76c7fe9ffd25",
+          "mask_sha256": "687b08609be47ad742e1f314a532088db90a5991df55a6eb5ca281708d7fc788",
+          "event": "Bolivia"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_bolivia/Bolivia_233925.npz",
+          "asset_sha256": "7b68dea3a032ea34080607361f7c6f9def4c8cce99893f1278b360c565b3a047",
+          "name": "Bolivia_233925_S2Hand.tif",
+          "input_sha256": "792e89c7a2c8f19205348c8f5fc7b1e3e95b966f9e17a28e868b69348f20b283",
+          "mask_sha256": "4b8613da0fc5bb6a9fe879f9d341060c9a22959c21e79d8ba6b71ec02e71ddf8",
+          "event": "Bolivia"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_bolivia/Bolivia_242570.npz",
+          "asset_sha256": "e3d642470c468f803de7336c972512efbee6c723a1c29c055bd870b81d9fa9de",
+          "name": "Bolivia_242570_S2Hand.tif",
+          "input_sha256": "528d4d48f9383df7d560a91f3318e7f61e3e3e8ab27ca74714cd833691e08af3",
+          "mask_sha256": "3b10fba5058afca1ecc89c99e015c8b847cde3cbb670464e869848fd56b2fd4d",
+          "event": "Bolivia"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_bolivia/Bolivia_290290.npz",
+          "asset_sha256": "37ec9878ed38b3f5a47e68ae25f33f232d8811fbe380457f1c14e76f6f7088c7",
+          "name": "Bolivia_290290_S2Hand.tif",
+          "input_sha256": "2349c5493e8b9e74c8a4d6b83d7c018e1b9d600dfa4c9aece0dc0277a101d28b",
+          "mask_sha256": "c1b050ae0dc1155c56265e7bb90c2466d601af54ac7848108bc0cbf2b7451070",
+          "event": "Bolivia"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_bolivia/Bolivia_294583.npz",
+          "asset_sha256": "b74745407c3f8e8e4a20f25044419561ef115eb8ae092f428cec01e752e36f15",
+          "name": "Bolivia_294583_S2Hand.tif",
+          "input_sha256": "002d53c71f6a52165f08f856fc6f5a96e54904b426023c0ff08907377276f5af",
+          "mask_sha256": "38ae36127b77c7c28fa6b284263c0cc19fd2ab1062930107937db6d3695f5e3b",
+          "event": "Bolivia"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_bolivia/Bolivia_312675.npz",
+          "asset_sha256": "3e8144edcac01a29fe69908f7d80f67e85c188ca0280b7af22d883353348d2e1",
+          "name": "Bolivia_312675_S2Hand.tif",
+          "input_sha256": "40652029f4661c225870eafd9dab27cf1c310bcae2fc80e2337caa5e10c73f44",
+          "mask_sha256": "d0c25f48ee1ce83d725e6c9aecd27719af51282e7f17b0d32321e76bd344d260",
+          "event": "Bolivia"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_bolivia/Bolivia_314919.npz",
+          "asset_sha256": "b6d828830a36f56d3f1bc08300c44daab2b741674a96903f7ec5c94f9a5bf6a9",
+          "name": "Bolivia_314919_S2Hand.tif",
+          "input_sha256": "8f6cb2d2bd78603ed9209f70bed52a74cbc453cc6e336045ca36870514f687d8",
+          "mask_sha256": "6d8c507c02888ac57209593dbfcda06a6964fd9d9a0e2b50f17799ea276b7d29",
+          "event": "Bolivia"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_bolivia/Bolivia_360519.npz",
+          "asset_sha256": "2afaa7f3457e958a55596aed72e017bc861234a6491476f04424ce46639dfed1",
+          "name": "Bolivia_360519_S2Hand.tif",
+          "input_sha256": "a461453e90fb67ec0aa35da61feada518976dd98df0dc30225d1c8daff7839ab",
+          "mask_sha256": "7ea694f1429a69427e2fb3d9c5486febbba6c028a4fa7d67858ef41a0c747622",
+          "event": "Bolivia"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_bolivia/Bolivia_379434.npz",
+          "asset_sha256": "d8b460f750ce91139afea1212cd642356147b2f530fbd4900c3ee52a7df27aea",
+          "name": "Bolivia_379434_S2Hand.tif",
+          "input_sha256": "fa2eab1e9f6efebeab55a34826b111b407d89df2ebacd40d964eab82652538b4",
+          "mask_sha256": "56abf46f0a933a12f939ad11ee9287163d3f8aa771b2f6a8f6a12f979c8536e5",
+          "event": "Bolivia"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_bolivia/Bolivia_432776.npz",
+          "asset_sha256": "2df357bd4042db7573ff5e0ddf3945619b7515f815d750759488e1695f3c9ee3",
+          "name": "Bolivia_432776_S2Hand.tif",
+          "input_sha256": "2aeb9b4c2c3f86bf82cae490f260b301b30289dcaecd1a4b0446a86854913038",
+          "mask_sha256": "2c799a77c0c853b03d21b89ec93a60681fd87dd19950bdfc857d22fe8c654a43",
+          "event": "Bolivia"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_bolivia/Bolivia_60373.npz",
+          "asset_sha256": "8770ebc1f6e8d7fea4568c4219df11932a94b2c7bf444d9f3a9bc53c4c0f1b00",
+          "name": "Bolivia_60373_S2Hand.tif",
+          "input_sha256": "0bbcc445602406d8d8361f0e5addc5a032d76fd1a9a715f5a775b57f95ca398c",
+          "mask_sha256": "41a2d2f3fd781fc1f2ae9608d8844604c0de5be1629fd3ebfded9d614f9b643f",
+          "event": "Bolivia"
+        },
+        {
+          "asset": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/source_bolivia/Bolivia_76104.npz",
+          "asset_sha256": "838e7520143f854536ecb0fced22520314d8ba93e3378bd2fa7a1cb63f04fb0c",
+          "name": "Bolivia_76104_S2Hand.tif",
+          "input_sha256": "9843616d28e8a69c71ce45200a1886012be8694c7b17ccdad1ff60318ba63cbe",
+          "mask_sha256": "1514cdc6d1ff4335ed2443c4a39f83a51a3efcc355102f7468300eca51725b55",
+          "event": "Bolivia"
+        }
+      ]
+    }
+  ]
+}

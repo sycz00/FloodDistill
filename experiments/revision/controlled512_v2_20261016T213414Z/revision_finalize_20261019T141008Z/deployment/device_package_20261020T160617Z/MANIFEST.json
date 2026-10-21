@@ -1,0 +1,820 @@
+{
+  "status": "PREPARED_WITH_EXPLICIT_BLOCKERS",
+  "native_device_execution": false,
+  "models": [
+    {
+      "id": "original_B0_s42_mixed",
+      "onnx": "models/original_B0_s42_mixed.onnx",
+      "mode": "mixed",
+      "admitted": true,
+      "integer_io": false,
+      "scope": "Original-protocol seed42 only; four-repeat QAT passed2/4; linear Resize graph variant. This session requests mixed INT8/FP16; imported no_fp16 timing is a different build."
+    },
+    {
+      "id": "original_B0_s42_fp32",
+      "mode": "fp32",
+      "admitted": false,
+      "integer_io": false,
+      "source_receipt": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/deployment/float_parents/B0_s42/receipt.json",
+      "reason": "Full89 true-parent export parity failed",
+      "scope": "Original-protocol float-trained B0 weights; separately validated linear Resize graph variant; native device execution unverified",
+      "gate_receipt": "evidence/original_B0_s42_float_linear_gate.json"
+    },
+    {
+      "id": "original_B0_s42_fp16",
+      "mode": "fp16",
+      "admitted": false,
+      "integer_io": false,
+      "source_receipt": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/deployment/float_parents/B0_s42/receipt.json",
+      "reason": "Full89 true-parent export parity failed",
+      "scope": "Original-protocol float-trained B0 weights; separately validated linear Resize graph variant; native device execution unverified",
+      "gate_receipt": "evidence/original_B0_s42_float_linear_gate.json"
+    },
+    {
+      "id": "original_B0_s64_fp32",
+      "mode": "fp32",
+      "admitted": false,
+      "integer_io": false,
+      "source_receipt": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/deployment/float_parents/B0_s64/receipt.json",
+      "reason": "Full89 true-parent export parity failed",
+      "scope": "Original-protocol float-trained B0 weights; separately validated linear Resize graph variant; native device execution unverified",
+      "gate_receipt": "evidence/original_B0_s64_float_linear_gate.json"
+    },
+    {
+      "id": "original_B0_s64_fp16",
+      "mode": "fp16",
+      "admitted": false,
+      "integer_io": false,
+      "source_receipt": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/deployment/float_parents/B0_s64/receipt.json",
+      "reason": "Full89 true-parent export parity failed",
+      "scope": "Original-protocol float-trained B0 weights; separately validated linear Resize graph variant; native device execution unverified",
+      "gate_receipt": "evidence/original_B0_s64_float_linear_gate.json"
+    },
+    {
+      "id": "original_B0_s91_fp32",
+      "mode": "fp32",
+      "admitted": true,
+      "integer_io": false,
+      "source_receipt": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/deployment/float_parents/B0_s91/receipt.json",
+      "reason": "",
+      "scope": "Original-protocol float-trained B0 weights; separately validated linear Resize graph variant; native device execution unverified",
+      "gate_receipt": "evidence/original_B0_s91_float_linear_gate.json",
+      "onnx": "models/original_B0_s91_float_linear.onnx"
+    },
+    {
+      "id": "original_B0_s91_fp16",
+      "mode": "fp16",
+      "admitted": true,
+      "integer_io": false,
+      "source_receipt": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/deployment/float_parents/B0_s91/receipt.json",
+      "reason": "",
+      "scope": "Original-protocol float-trained B0 weights; separately validated linear Resize graph variant; native device execution unverified",
+      "gate_receipt": "evidence/original_B0_s91_float_linear_gate.json",
+      "onnx": "models/original_B0_s91_float_linear.onnx"
+    },
+    {
+      "id": "original_B0_s107_fp32",
+      "mode": "fp32",
+      "admitted": true,
+      "integer_io": false,
+      "source_receipt": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/deployment/float_parents/B0_s107/receipt.json",
+      "reason": "",
+      "scope": "Original-protocol float-trained B0 weights; separately validated linear Resize graph variant; native device execution unverified",
+      "gate_receipt": "evidence/original_B0_s107_float_linear_gate.json",
+      "onnx": "models/original_B0_s107_float_linear.onnx"
+    },
+    {
+      "id": "original_B0_s107_fp16",
+      "mode": "fp16",
+      "admitted": true,
+      "integer_io": false,
+      "source_receipt": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/deployment/float_parents/B0_s107/receipt.json",
+      "reason": "",
+      "scope": "Original-protocol float-trained B0 weights; separately validated linear Resize graph variant; native device execution unverified",
+      "gate_receipt": "evidence/original_B0_s107_float_linear_gate.json",
+      "onnx": "models/original_B0_s107_float_linear.onnx"
+    },
+    {
+      "id": "R4_s42_fp32",
+      "mode": "fp32",
+      "admitted": true,
+      "integer_io": false,
+      "reason": "",
+      "scope": "New tiny/R4 source-selected parent; CPU admission only",
+      "onnx": "models/R4_s42_float.onnx"
+    },
+    {
+      "id": "R4_s42_fp16",
+      "mode": "fp16",
+      "admitted": true,
+      "integer_io": false,
+      "reason": "",
+      "scope": "New tiny/R4 source-selected parent; CPU admission only",
+      "onnx": "models/R4_s42_float.onnx"
+    },
+    {
+      "id": "R4_s42_mixed",
+      "mode": "mixed",
+      "admitted": true,
+      "integer_io": false,
+      "reason": "",
+      "scope": "CPU-qualified mixed INT8/FP16 request; precision and native accuracy require device receipts",
+      "onnx": "models/R4_s42_mixed.onnx"
+    },
+    {
+      "id": "R4_s42_pure",
+      "mode": "no_fp16",
+      "admitted": false,
+      "integer_io": true,
+      "reason": "COMPLETED_NEGATIVE",
+      "scope": "Zero-edge ConvTranspose graph variant with integer IO; CPU accuracy-qualified only; layer tensor formats and native accuracy remain unverified"
+    },
+    {
+      "id": "R4_s64_fp32",
+      "mode": "fp32",
+      "admitted": true,
+      "integer_io": false,
+      "reason": "",
+      "scope": "New tiny/R4 source-selected parent; CPU admission only",
+      "onnx": "models/R4_s64_float.onnx"
+    },
+    {
+      "id": "R4_s64_fp16",
+      "mode": "fp16",
+      "admitted": true,
+      "integer_io": false,
+      "reason": "",
+      "scope": "New tiny/R4 source-selected parent; CPU admission only",
+      "onnx": "models/R4_s64_float.onnx"
+    },
+    {
+      "id": "R4_s64_mixed",
+      "mode": "mixed",
+      "admitted": true,
+      "integer_io": false,
+      "reason": "",
+      "scope": "CPU-qualified mixed INT8/FP16 request; precision and native accuracy require device receipts",
+      "onnx": "models/R4_s64_mixed.onnx"
+    },
+    {
+      "id": "R4_s64_pure",
+      "mode": "no_fp16",
+      "admitted": true,
+      "integer_io": true,
+      "reason": "",
+      "scope": "Zero-edge ConvTranspose graph variant with integer IO; CPU accuracy-qualified only; layer tensor formats and native accuracy remain unverified",
+      "onnx": "models/R4_s64_pure.onnx",
+      "io_receipt": "models/R4_s64_io.json",
+      "gate_receipts": {
+        "pure_source_receipt": "evidence/R4_s64_pure_source_receipt.json",
+        "pure_conversion_receipt": "evidence/R4_s64_pure_conversion_receipt.json",
+        "pure_io_receipt": "evidence/R4_s64_pure_io_receipt.json",
+        "pure_cpu_receipt": "evidence/R4_s64_pure_cpu_receipt.json"
+      }
+    },
+    {
+      "id": "R4_s91_fp32",
+      "mode": "fp32",
+      "admitted": true,
+      "integer_io": false,
+      "reason": "",
+      "scope": "New tiny/R4 source-selected parent; CPU admission only",
+      "onnx": "models/R4_s91_float.onnx"
+    },
+    {
+      "id": "R4_s91_fp16",
+      "mode": "fp16",
+      "admitted": true,
+      "integer_io": false,
+      "reason": "",
+      "scope": "New tiny/R4 source-selected parent; CPU admission only",
+      "onnx": "models/R4_s91_float.onnx"
+    },
+    {
+      "id": "R4_s91_mixed",
+      "mode": "mixed",
+      "admitted": true,
+      "integer_io": false,
+      "reason": "",
+      "scope": "CPU-qualified mixed INT8/FP16 request; precision and native accuracy require device receipts",
+      "onnx": "models/R4_s91_mixed.onnx"
+    },
+    {
+      "id": "R4_s91_pure",
+      "mode": "no_fp16",
+      "admitted": false,
+      "integer_io": true,
+      "reason": "COMPLETED_NEGATIVE",
+      "scope": "Zero-edge ConvTranspose graph variant with integer IO; CPU accuracy-qualified only; layer tensor formats and native accuracy remain unverified"
+    },
+    {
+      "id": "R4_s107_fp32",
+      "mode": "fp32",
+      "admitted": true,
+      "integer_io": false,
+      "reason": "",
+      "scope": "New tiny/R4 source-selected parent; CPU admission only",
+      "onnx": "models/R4_s107_float.onnx"
+    },
+    {
+      "id": "R4_s107_fp16",
+      "mode": "fp16",
+      "admitted": true,
+      "integer_io": false,
+      "reason": "",
+      "scope": "New tiny/R4 source-selected parent; CPU admission only",
+      "onnx": "models/R4_s107_float.onnx"
+    },
+    {
+      "id": "R4_s107_mixed",
+      "mode": "mixed",
+      "admitted": true,
+      "integer_io": false,
+      "reason": "",
+      "scope": "CPU-qualified mixed INT8/FP16 request; precision and native accuracy require device receipts",
+      "onnx": "models/R4_s107_mixed.onnx"
+    },
+    {
+      "id": "R4_s107_pure",
+      "mode": "no_fp16",
+      "admitted": true,
+      "integer_io": true,
+      "reason": "",
+      "scope": "Zero-edge ConvTranspose graph variant with integer IO; CPU accuracy-qualified only; layer tensor formats and native accuracy remain unverified",
+      "onnx": "models/R4_s107_pure.onnx",
+      "io_receipt": "models/R4_s107_io.json",
+      "gate_receipts": {
+        "pure_source_receipt": "evidence/R4_s107_pure_source_receipt.json",
+        "pure_conversion_receipt": "evidence/R4_s107_pure_conversion_receipt.json",
+        "pure_io_receipt": "evidence/R4_s107_pure_io_receipt.json",
+        "pure_cpu_receipt": "evidence/R4_s107_pure_cpu_receipt.json"
+      }
+    }
+  ],
+  "assets": {
+    "val": {
+      "Ghana_1033830.npz": "c4fce91c78b4d5efd77aa77ccbdbdd951df0cff48dc61e0498a71236d711b8a3",
+      "Ghana_124834.npz": "e2b715a92d4698d43634deb475e5422cb3e852d8c1995912d7720d6beef6daeb",
+      "Ghana_132163.npz": "c35cd6b436dd726c5edb9b660091f7ee414b4aae749b8a459d50636fa786c546",
+      "Ghana_142312.npz": "fab2aa68877e91914031249bb29bd7fe9be95a8290815f3f84f4051472e8b4e5",
+      "Ghana_234935.npz": "dceda3d01366f636abf0495c202a8900920c52502007d67c19b16d2e9b679c02",
+      "Ghana_277.npz": "1f741295e07b75503541b39b5f4a2e2042e13876b816a5083b316b180491b324",
+      "Ghana_308249.npz": "d3e01a425c0d2d8142431892b51035110f90b9380388863185758400e01ba662",
+      "Ghana_495107.npz": "ec33da33ba9d3d0bd459e6a102e7bacbb7f8c6faa461f77afad0b636fb524029",
+      "Ghana_5079.npz": "8343c1329fdf69f663ddeeb8871dd508e9a976d7f95779be6f89bec9c29acd30",
+      "Ghana_868803.npz": "49b106217d0768ab5a1642b003dbec205a8cc4e1251c07b8792281264667ecbc",
+      "Ghana_895194.npz": "c53ae4e62eabbe2d5a03b8a18a482fbd806fcc717a3c6aa3fc320259275f3564",
+      "India_1018317.npz": "b8f2e9842ea8c17bfd8ed295164d3fdb741897407b4ba9a67ecd0ea1a8cf4395",
+      "India_1050276.npz": "0beb44550a2086e147a18b7fa99d3d0db2ed023dc3f2f770d6104a6a8a75f306",
+      "India_1068117.npz": "3cf0e1de24a420da3a559ddacf1d53897c8d8df66b65ae89093d801b9f41d9f0",
+      "India_118868.npz": "9f600fddea33b5e1291d6d9d39577a303110e1cff2294217c5d23ac632df20f2",
+      "India_164336.npz": "a61b04b2f2f5e4280963a5d93a7c48cca12f8d3cea1963303b9f819185ef3818",
+      "India_180633.npz": "8ea315c847fd774b3c3902c453bf16b87e9c00890ffae1f92a1ad89e6fb3238f",
+      "India_244057.npz": "d0c191f07f3718de81e6919961a13c237802838d67ddc19a3c4b68d2baf22f5a",
+      "India_533192.npz": "92dec182ba8423210c00c59c5e14e9e704615561d2ba09212d10ea6a762f67ae",
+      "India_691027.npz": "ebbfcf9d32ec531cedfd494d1c5b00271b7fb65a43ca374417ce832325d9cbc9",
+      "India_70352.npz": "c49d7955b91afd771bfb7b96ef1431d477412ba2f7e221f0f5fee0d38aafa299",
+      "India_764946.npz": "d4a1b4f25b733eb29a2ced19dbccaadac799f24556b6311aa49d0bfa77f45201",
+      "India_769408.npz": "d19f70de2413d2e92f43b678fcdb4537921327c015bb1b14fc50448dae182a2d",
+      "India_833266.npz": "d05639649db7db092fc1d62a73c891fd3ae5651483534603179fe56b994ee648",
+      "India_869358.npz": "0e00fa9c7cc0806321c8cbcef23c8eb655c7c8d044bb9b28c3721ae38f443c29",
+      "Mekong_1149855.npz": "753bae397aa27d2a879778c21940a4af9b71b82f489358f984c86c3d68f7b5f1",
+      "Mekong_1413877.npz": "99dcbdbd5ea9404dfd3c3a17b5e1dbc9a925b65e615368923a21696595191386",
+      "Mekong_293769.npz": "ccd86939e5699c83736435ac5905d7591d09e2536ed4642445c7a8529f316260",
+      "Mekong_474783.npz": "0610b3653f31cd46300429f88ec1eb921621471180e5cf1e870f78f55b8b6c36",
+      "Mekong_977338.npz": "19d9b28df217ca1208d369c92e7da8f68c99beb6c7fa0a2f945a21e34f13de5b",
+      "Mekong_98310.npz": "0ef1a187ee61cee6be01aa632bc1ba2fdc5bf3e5ac77734758cd0fb874466ae0",
+      "Nigeria_1095404.npz": "9bffe038482114d349d41e0e0e0c55500c46ff98fd0a6cc824d94827b03116b3",
+      "Nigeria_31096.npz": "daf8a80e7c3b1dd11e4d014d340807384ff298ac1e42f7df9409130626cfeb4f",
+      "Nigeria_820924.npz": "975cdf13041ceba9f69dfea1e49361b8f1806b22450a6fb07cac6f3794a528ea",
+      "Nigeria_984831.npz": "44dce8883c033f8bf24d375afb850fdcaf08ddd0765108703b55345bbe0d713d",
+      "Pakistan_1027214.npz": "477049acf2c4d74bd1b6a6fe9dd1cda8d9025f8d02d9a5ecb4dcac8d3521875a",
+      "Pakistan_210595.npz": "084699463e07d8dc27078da22e86a73756e856a413ba460411e93ffd2a66d444",
+      "Pakistan_336228.npz": "19f6fe6e8f8ee971fdbf3d2f19da41406a33d6b7d94ab8c814278c47677f2338",
+      "Pakistan_43105.npz": "b750a4f331dbfd5dd2affd9c5a9b7b13930b488e16b76b5b45ecbd7bb640acab",
+      "Pakistan_94095.npz": "b8d63a7b939ad52cfb3b78c848557b270f4d9a3140bd40fffe65e3a15e811f38",
+      "Pakistan_9684.npz": "5dc8287f3307162ef39fa8cb5bfd11869c15e8bbb15f7a5602785ef41d57db93",
+      "Paraguay_1019808.npz": "581e4e3df14ae5de55e7a6515fbfcef58d1633fc6b16696f3bd1b096afd2e0cf",
+      "Paraguay_153941.npz": "942dfabed4c28a0d71b69f713de0e19c47e03083272c68b2e0faefcb33361d27",
+      "Paraguay_172476.npz": "79bf9416669360725ad2dc643b6c39495c6ba0221cb6ed2bd835915fdb19b140",
+      "Paraguay_205585.npz": "c9b3d91a85fa3aec5548573a94f9cc8b6c04e12ccca6f8d4c0f3a1162e3d3d43",
+      "Paraguay_252217.npz": "ccb35cddfaebb56165845c58ab84121120b7a5d5707d14a2735f33bcba702935",
+      "Paraguay_284928.npz": "670093968cddd3d34b6c6affb2a54fc7f908f1004ef711f6fe7c4c6928a14f06",
+      "Paraguay_305760.npz": "af2173e37935d4b57eb2c13ef4cddd022065634cf9b84f09d6e8f15cd14111c2",
+      "Paraguay_581976.npz": "f375b0a264fd96545635a06f2813aae389a9e67efdb76670ad2c95dbc3ce61cb",
+      "Paraguay_648632.npz": "43c6b60778ccc95848bcd6b97db2d31200d8c594ef90c589853d499b14fd21ef",
+      "Paraguay_657443.npz": "46d5f7c085a456590c7b0b24ebed0d2ac0a8ae659d1160f3f0724a52b7ed9208",
+      "Paraguay_76868.npz": "8de9ec57ffd9770ebc63b75b8e3061fcb459b4ff971028d48d3019f78417956a",
+      "Paraguay_7894.npz": "214ccf25a9488ce0ae3b9a73baaeffa400c29b881ea6d8049a2790d7189b1060",
+      "Paraguay_896458.npz": "b4baa0d3819dc393bdf161bb948b7fbce2049fc745546f8152e5eae061566492",
+      "Paraguay_934240.npz": "50cdc732572da24d5d42f15ddf264a4033daf22c338af8654e3f24eafce92e88",
+      "Somalia_12849.npz": "beae1f892f88c189d90946ab3a6aeb7b279db1ec39d1a6e4bca5bb3393403b75",
+      "Somalia_167787.npz": "124882fa47f4d0c45e7870f8de7163d256dc0adffeac2c2c7f49707408590129",
+      "Somalia_256539.npz": "e209017ca7fce81072aab15eb67638c26c5148477b4b2dc248e051aba15eb2eb",
+      "Somalia_61368.npz": "6f3534ffac145c63e8bc30388617776a7fe44b99a27d12e86eb2fc308614d72f",
+      "Somalia_649376.npz": "c6f429abcdd5c9212e242086ac33f874e1e0ba1981b93a00f860d6ff6f46870e",
+      "Spain_1199913.npz": "bcdfcb418c48ccf0db96a5cdc2543940bb1aba3ab87742e1c4a1bf553fd09708",
+      "Spain_4282030.npz": "dd1cb50923ae4f125ee3db21057c5da23055875b33056d18fa70f5129549edba",
+      "Spain_6537196.npz": "524eccb6dfd4bde22f4fb4673d20e0044ed3ee8af1ca34a449d48aac3969c7f0",
+      "Spain_7604243.npz": "ddd899631bc0477d3b03429bceaa5840cef0913709cfa61d95ba98a470ec8a33",
+      "Spain_8372658.npz": "f022b5e7ab10c70a1fbfa653807cb347282eeda4a6e235f50ed980205bfc638b",
+      "Spain_8565131.npz": "e852de093b89a50dd29de779bd4332f22eb6317ac474f51b56579a05627df48b",
+      "Sri-Lanka_101973.npz": "7d4414f1387f0de30e696c16293c499ffc52266d9fdd8dbab8cd280e53ad02b1",
+      "Sri-Lanka_132922.npz": "a4c4d29ba679242fa0cf7c59aa971fc073688ac4bfe2e5553eb1deecd419a4cf",
+      "Sri-Lanka_236030.npz": "ef8952b0203f137b595434f9799e6869b1fd0870262ac7ad5866677f5adb4ba0",
+      "Sri-Lanka_236628.npz": "0a150f8deb54fab287c4479cf09f3b9f57aa268d46675426bb6cc883ccdb915a",
+      "Sri-Lanka_31559.npz": "905e722f46ac391835acc5447cf972b364ae860730cae66eb6d5c8638f7638b2",
+      "Sri-Lanka_321316.npz": "bd8e85e28ed44802d049c08d6ebb9eaa0e378efdfd31d9881b0a58b28d17dd33",
+      "Sri-Lanka_612594.npz": "b146b1e5560c64b34e4885ef6852dbe3bf5ae4d376332cbde6e79b0fe4a70489",
+      "Sri-Lanka_63307.npz": "120fa4c11e7123e3d37a84d93404ad89254c46741fa937a761cabed5480c92fc",
+      "Sri-Lanka_85652.npz": "2cfe5175d985f832c664b6015e9b293b8355b7b27bdfea847bf1bb615be6327d",
+      "USA_1039203.npz": "f5176d165fda1febb1e026a9d5d1d9471ee8bd3e5410802cc46cb75cce485afe",
+      "USA_1082482.npz": "cf1eb6da24e8af31044f4af79725191c4b144d7b617389d7518e1d6a3986f631",
+      "USA_19225.npz": "af86d388e629907ad76f4b0d439f779c34e2fe31a951809ceca71c2ae0e81ac0",
+      "USA_225017.npz": "7681aa150d7ea96580c0bcd76f65e2f271a22f6ca0dde9747a44a763219a6571",
+      "USA_251323.npz": "650d48b88a017c8c782a8e203ee0a357cb5b52f9e7c82b0bb63bd138d0f53790",
+      "USA_275372.npz": "aaf0e665dd43c34f8d4aeb1fd611cb8c6b61f70a0dbb8a0fd0f574fe06711bb0",
+      "USA_308150.npz": "7308cbd893d6c160b9bb4cd63ab1398ef8cc278d98b2f01031e2b62202e681c0",
+      "USA_366607.npz": "e74b476295bd4fd2c8c75b164d9325356ebbba56584cec525fa0529c2ee8ac05",
+      "USA_646878.npz": "487ccadfbdd858df12cb29d3813269d2317629204424086657372ecbc388079d",
+      "USA_741073.npz": "f943319bafa64ea1a37917b8d7e1d527c5accd1ade7c7161c51c7fad0c921686",
+      "USA_741178.npz": "b496aeb72ff2c8f7b8b1912cdc274003d2c6977023d914e1431790c4beb882ae",
+      "USA_761032.npz": "990da2bf43591059e96e5b7efdacd11a1b3686f6a6557ff9234cee6d883f22cd",
+      "USA_826217.npz": "701950062e67a1f82a5239a131aaf665b47b02d78ec84a77c89efbb0fd07bc86",
+      "USA_986268.npz": "7888acebd4e8e595bb6328944d60d999386267d5f7554d221e9880411f541bdb"
+    },
+    "test": {
+      "Ghana_1078550.npz": "7afd0c6e9ab874abf88e7858ae5322fc0718ff87f5e2c7598c83262c2624961a",
+      "Ghana_141271.npz": "f89e9f6b513b8403751613ae85680162074767b3236cfa228d5e1cee55c805ea",
+      "Ghana_167233.npz": "fb259d1791ef1af2bc808065f3ad4bbb9c24c74ea4ab00cd14892b7befac7594",
+      "Ghana_313799.npz": "c264cc6ed81a4e0f3603ef081a0a0eaece4665be14d99e503bdafe3e984afd8d",
+      "Ghana_319168.npz": "b175304c8847c1565406cb45768f827c047e95f281f3d74a4c0a057c6f77fb8d",
+      "Ghana_359826.npz": "c7d94e9e42e7655c0fa14750c566d789e8966169b74b82a342f31ef39dd94d22",
+      "Ghana_406026.npz": "2a612587d406ae781b64e77a821ece51ba7fcee740bc47cc385cb2174806c250",
+      "Ghana_53713.npz": "f32aa3cbaa23f12143500b5236d7af0a3499cf4909a0321e69c78fa335f849fa",
+      "Ghana_83483.npz": "3eb61efd83dbc0b82ef1ab02f0a62f1b1a2b13c20a1a14fbe30c3c907c08293b",
+      "Ghana_866994.npz": "dd8b9dc05a337f58c6a30b06a785a83d90e7db5ece2a361a9cad22dfc8dc9775",
+      "Ghana_97059.npz": "328fa21af2af6e4dd99b5f508942c52c363522a617f2400ceb8a0e39bfc05bc8",
+      "India_1018327.npz": "da19a32dbdc20cd02e49fa896f9850e7023db0967d3e4c0462cb4aad24cc9583",
+      "India_399883.npz": "57c091ea620b2fa607725000cc881d54d3e2eea70d182ccea509ae0c94edcc12",
+      "India_44475.npz": "86964d61a9e4833b056e834c9c85720b51e535d82663e48760d19be664af9ba3",
+      "India_570384.npz": "a004bad1968480ab6355230e0eb3cf9fa27ec8a458d20d4e9526ae3c4783e0cb",
+      "India_591317.npz": "23e5400b945deba7994a15fff443a5bd0b45ff871ebf84c7235c7f83ba66e38f",
+      "India_592446.npz": "635c528c695efdc4569c2a2cd8d5d458e872eb79c047bdf8423ad9585f91b69d",
+      "India_631692.npz": "3851f3446e17132287740a514205a83df14d919129c3128b976ad85db8fd4b20",
+      "India_747992.npz": "feb89215895a7c94311b524cc16de380e7aac140a6c5033f1e86458719703dae",
+      "India_772630.npz": "3d2e547106777a487720a61f094b608fc8b3fa638306bd0c13644563baf9baac",
+      "India_79637.npz": "876f89517332a1c4fae59c986d849614d5d6bce0c5e698e0c1d4fb3f759eac4a",
+      "India_80221.npz": "19730eae42751651163b0820ada48cf4d1ce15d08abdee82ef75a3fb7f9a59b4",
+      "India_828067.npz": "cc84f27c0d2dd719159a5cf2e54881e8912dd43e35b0bbf1b7eac0eb21252616",
+      "India_900498.npz": "f8ca8d42064a9c1b20358829e812c9a5dfbcea8c804c5ca152a37200512cbcf2",
+      "India_952728.npz": "e633d6ab642c38f85eefd9b58beb50f4127f28e59a91b0cde300fcde70b35011",
+      "Mekong_1443339.npz": "29a3b3badc8031e00db2aec35c417596142bef45e907180f287f6d5612e8f24e",
+      "Mekong_254910.npz": "1d0587fcfb1f5ccfdf32ba1362aaa970c64ffa43237b914292ed765eab7b28ad",
+      "Mekong_333434.npz": "c4bda2e999aaac71478c931e0e6f4f7076e56a2bb21585f95d88c4f26576d518",
+      "Mekong_382276.npz": "28ab3a59a857d5d784c139e45ef7715e9973297b69dd6abfb8325ab400466c98",
+      "Mekong_424793.npz": "d39b6c8022911375d2777662d8c54997e7ac4d284b7d53a0055687cb83175868",
+      "Mekong_45934.npz": "20a4c175f49b7bfca20fbb7653664ac6bc3e85bacbd2115314c7b5d2cb4f4a8d",
+      "Nigeria_22088.npz": "f3420ca8c288992b340eb0f1b423bdd9ee7a44607b7efa2bc8ec8f8a946517b1",
+      "Nigeria_225131.npz": "3d9bb1ce8cee83ff117ed7973bda9e8f9f01884e9ab17b844b79c1c505ec34c0",
+      "Nigeria_417184.npz": "94c22a51844c4c01b5b58ffe067656db4b182633104c01c2c15ffeb0c3350736",
+      "Nigeria_812045.npz": "975f5dc605ffdef2da8044c161cf354999a205f0940a819e77c9c9be2067eaac",
+      "Pakistan_167553.npz": "043ef2df00855bfbd0ef5bd3d83a48d7737a4bfb6c8da0a0f91f08672227d83a",
+      "Pakistan_528249.npz": "e9cd868a8272c08ff735dc103351948e981fe747f64ba7ee43fee5941572e462",
+      "Pakistan_664885.npz": "2ea6be2becadb5d28a1595f2685d98d9ef6347b849bd94b946bb8cf7ad0262bc",
+      "Pakistan_694942.npz": "52902092737597eb2c562493ef2ac2fd095ca59a1c7aae739282b4dba5be0ea4",
+      "Pakistan_70625.npz": "8cd31994e68edf825782f924d745999caf2866c72b2dc61c5ef739ed43e4dddd",
+      "Pakistan_849790.npz": "1b272b70bbf876450f62600cf3c2d50acacab9936572d72c5e8c15f793871d9b",
+      "Paraguay_1029191.npz": "d8f428b6d733ca680267a5d6d5faadee11aa4f48c1dcf3bc51efc563d852a411",
+      "Paraguay_232281.npz": "0c676e63dc43ceda77e06f039d5b30ba21567b8525fa7eccf74758b8199de65c",
+      "Paraguay_271769.npz": "8da50cb43b119baf18fedca3e26931586e0af6b7205747a93df99291a90de328",
+      "Paraguay_280900.npz": "25fa18fca1a5a60a68516dc879cee491ebd8a9f13203d06ada51d0726b1e4a44",
+      "Paraguay_34417.npz": "b1fd239f5f836bee2f08950e5e979346307cd4f7d62b5590afd80266b109b598",
+      "Paraguay_40936.npz": "cb94263515ce61fac11c193527f083acbd3f9388925c35b9bdf0c693999c16a8",
+      "Paraguay_511199.npz": "6955b76451423eeb2bd6a8932088a82ffab0972f20410ae2d4203e69fbe976a0",
+      "Paraguay_59731.npz": "0e6a2af717ec85f90a61811fb8d5f0459851a82b86e9b067814a1ff53221328d",
+      "Paraguay_651904.npz": "85253cb9d5bec4bf1586c1d1642a44e444e0e2a6d77ff437369e22ea7d5b6f5f",
+      "Paraguay_683296.npz": "6e03d52c5b937dbf0a80f7f5802b080833f20d1999da9a8a938e8dd3219bee98",
+      "Paraguay_790830.npz": "66309da380a02e069fd4d82b4d962f9f179ea30e51e58c627000ff2990a9ae43",
+      "Paraguay_80102.npz": "8a09d6a1e6550dddbc876cc581e873d00aa60ac5ad30cb38a0f12488e737454a",
+      "Paraguay_868895.npz": "6fa8e4c0093e2c1cc2ca6e781368bf6d85e294f85d350a3106c303d1644cc41c",
+      "Paraguay_913449.npz": "a24127bbe074bdd4492d7dd64044ef5ad4132b9a50b4be23fddf3aeda658dcb2",
+      "Somalia_166342.npz": "9eebb212712020f4311f85a5507d8e195c8508791286d805d173f9edb22e8cfe",
+      "Somalia_322855.npz": "97e75f846044875e3ca3150fb0670ae6ac00b1a9bac8938ce41ea21c4330e62b",
+      "Somalia_60129.npz": "f4fc47b3e12bf6c1f270a18d36dba29129e4b9d6263962a42badd87c34507db7",
+      "Somalia_685158.npz": "78eee24fc8bd5f8877bbcf17bd1712c46aac9d2e26bbda0101252df72cc5bbc5",
+      "Somalia_699062.npz": "ae7a8d2b7b771c6c569b030c0a8161846cbb70aac67ea2cf73a21ba53dcd3f14",
+      "Somalia_94102.npz": "541d7aacc828d2efc4c0d6c6571cfd44eaa97465648c7187a1b8c12dff637e21",
+      "Spain_5650136.npz": "786cdf7818307b6f30dbd1141036ca86faeed20a3fa8dcdb3d7f385336d402b1",
+      "Spain_6095801.npz": "b78d78eb736dccd4e6391ae2119dd7df2b08322d5d2f820cab9845c2842b49d9",
+      "Spain_6860600.npz": "df34003b9becbeb964c37da77498d9b0f3b05475be4ebc96ce3234a77fe01d1c",
+      "Spain_7370579.npz": "314cc7194171f4b10d7522f52fa2799455410490aa26979bab2fcddbf7683f1c",
+      "Spain_7387658.npz": "45217d8be401824cb81ae8ed1d08729b65e5a66554045e6037e3b87cf155170f",
+      "Spain_7558720.npz": "63160c6f200a3c28c0c8ea2b2ab2b142218e30c5927eb4152c073db8c553f561",
+      "Sri-Lanka_1049830.npz": "3bb6f5d5a149ae1d809f45f5335c570c8f57ecd02588f7c214674f27e0310e6d",
+      "Sri-Lanka_117737.npz": "410b5ad752d79dc252296096098f68696a4d079a5573b1fca003c421797429eb",
+      "Sri-Lanka_377277.npz": "0227f6ab2b6fadabbca71c064d77e1cf47578601158eb0375ee62dfc4d64c6f7",
+      "Sri-Lanka_450918.npz": "4f0e82376f72263312ef761aa35e8535319237545016194b272caa53a4e27798",
+      "Sri-Lanka_534068.npz": "9d982d34c4097447173d2adcfcd012b0271282d2aab641e4648d0e5ae3323d5f",
+      "Sri-Lanka_649970.npz": "1baf8f28639896b5bae5a6e9b96de9f7e4d174728b00ef39a5c4077641ca6ab9",
+      "Sri-Lanka_713926.npz": "612448084ec051cb80000be3ff03c1c306e521aa08595fb94ff7385aa4c0e533",
+      "Sri-Lanka_849649.npz": "7c467ae544c1f3d6bf3b1e368f8a617bc56bbc564c40e62e4d82bc98936294d8",
+      "Sri-Lanka_922192.npz": "1b9fa278bdcb1ed1316aaf8c52c4b308eeae6ee86c15822f41c82d7c8fa3de45",
+      "USA_1049586.npz": "c5e6d562c94409d7150a4423b1159d83ffe2d5569dcf2ae59a011f159c8aa7c7",
+      "USA_350244.npz": "744f2b60e2d60853ae2a29ed393e971aaf39f04fd695fa33e4c44830d697b395",
+      "USA_430764.npz": "9e5e6b75be4442aaabd9687928a953915ef53e953dd981ea798ad7468d6680a6",
+      "USA_504150.npz": "f0f0669506898bd714517da156bec5e587ad77c57ddf76951f0ff8e02a745f71",
+      "USA_519181.npz": "0ec67f0985726067cf69b066b00fc6db4a7a96869c92512d4764fa74910a976e",
+      "USA_527077.npz": "959006ad8f34f344e6318f93ad9bfbfb75ecbcca6ee785559e163689ce8189a4",
+      "USA_595451.npz": "8afa3eba0ebb0e7d04124b170da2acb4df302977bcb77b5bd1c53a8d450d9a72",
+      "USA_66511.npz": "33683c33dbcc73c01b622dd66f2cc6e4d47541fb3fdad20b144e650ae1f5ec7b",
+      "USA_670826.npz": "8615bebce842276c79b7d118f66f2c87c9dce370ab5af17570d217803c5844c5",
+      "USA_67102.npz": "6a75e8211ebf693a24f4748afb9bcb43626c65f6292451067cfd3e16dd803f4b",
+      "USA_758178.npz": "763b5e6021f93f3041ffab52316a34712a0549d1f0174e60ede8ac762604a63e",
+      "USA_778194.npz": "75f9d3d55f973cc2749963b3d42989fd2ac83b7ee2bb243876dd883bd2127545",
+      "USA_905409.npz": "0503a5521107680ec85eac866f5e085ad674fafc698c6d7dfecf93b3793bafba",
+      "USA_933610.npz": "8e2e490562aec407e057861a6c7faa4d86f39c414ce21fb8d28281041aafac71"
+    },
+    "bolivia": {
+      "Bolivia_103757.npz": "3ba95ebc28737728746dc5c721119756774ffcdf796b9179fa32772d10a40e0a",
+      "Bolivia_129334.npz": "f0eba58a9a68c92ecddb90ccebecb5809c2e630ebac22e5c675ab4f5438fb53a",
+      "Bolivia_195474.npz": "9774b84d62497127281e23da246f5ff19fcd0360643dd992ca8c8de62a86f5a8",
+      "Bolivia_23014.npz": "58a9c595c9417de95e3425ac7c9e05e1d8713ff5d5811c123c27170fc130ec53",
+      "Bolivia_233925.npz": "7b68dea3a032ea34080607361f7c6f9def4c8cce99893f1278b360c565b3a047",
+      "Bolivia_242570.npz": "e3d642470c468f803de7336c972512efbee6c723a1c29c055bd870b81d9fa9de",
+      "Bolivia_290290.npz": "37ec9878ed38b3f5a47e68ae25f33f232d8811fbe380457f1c14e76f6f7088c7",
+      "Bolivia_294583.npz": "b74745407c3f8e8e4a20f25044419561ef115eb8ae092f428cec01e752e36f15",
+      "Bolivia_312675.npz": "3e8144edcac01a29fe69908f7d80f67e85c188ca0280b7af22d883353348d2e1",
+      "Bolivia_314919.npz": "b6d828830a36f56d3f1bc08300c44daab2b741674a96903f7ec5c94f9a5bf6a9",
+      "Bolivia_360519.npz": "2afaa7f3457e958a55596aed72e017bc861234a6491476f04424ce46639dfed1",
+      "Bolivia_379434.npz": "d8b460f750ce91139afea1212cd642356147b2f530fbd4900c3ee52a7df27aea",
+      "Bolivia_432776.npz": "2df357bd4042db7573ff5e0ddf3945619b7515f815d750759488e1695f3c9ee3",
+      "Bolivia_60373.npz": "8770ebc1f6e8d7fea4568c4219df11932a94b2c7bf444d9f3a9bc53c4c0f1b00",
+      "Bolivia_76104.npz": "838e7520143f854536ecb0fced22520314d8ba93e3378bd2fa7a1cb63f04fb0c"
+    }
+  },
+  "quant_status": "COMPLETED_VALID",
+  "source_provenance": [
+    {
+      "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/jetson_integer_20261014T101741Z/device/outputs/B0/attempt2/no_fp16_build.json",
+      "sha256": "3a65f0f9273d5dc6bc147a7df05c9847f5957b04fe052fdc39618e66a0da11b0",
+      "packaged": "evidence/original_B0_no_fp16_build.json"
+    },
+    {
+      "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/deployment/audit.json",
+      "sha256": "e5f9eb6f276ed1119bea9e8eafe68e50af0a9d3b45d48b4727ff6ffbbb0a19f9",
+      "packaged": "evidence/audit.json"
+    },
+    {
+      "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/deployment/device_rows.csv",
+      "sha256": "cba764c8bd87b77e6871370f7dbad155476252db51f52dc9df67c11b0f9e27e5",
+      "packaged": "evidence/device_rows.csv"
+    },
+    {
+      "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/deployment/device_cross_split.csv",
+      "sha256": "b69f16914f6c293a549f7b916099fdec67301a519ded95a400c42af2f05bbf93",
+      "packaged": "evidence/device_cross_split.csv"
+    },
+    {
+      "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/deployment/float_linear/B0_s42/receipt.json",
+      "sha256": "e7138a777db952f94605710fb8b5d9eff4b2c9abbf95fdb51d708c9f96d0fc68",
+      "packaged": "evidence/original_B0_s42_float_linear_gate.json"
+    },
+    {
+      "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/deployment/float_linear/B0_s64/receipt.json",
+      "sha256": "c64a3fe5087631e49c4cad314213288383ff6d04b88d3ea8fde6e9fb469cda7a",
+      "packaged": "evidence/original_B0_s64_float_linear_gate.json"
+    },
+    {
+      "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/deployment/float_linear/B0_s91/receipt.json",
+      "sha256": "25db8e7778b23220f9256aacc60026a39dde9f2ee84032a0cbf97bc95de4d881",
+      "packaged": "evidence/original_B0_s91_float_linear_gate.json"
+    },
+    {
+      "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/deployment/float_linear/B0_s107/receipt.json",
+      "sha256": "f7172fa34fdb0f440c3def4aa792acf5ea521fefb9ac647d65b2de4b29d46a48",
+      "packaged": "evidence/original_B0_s107_float_linear_gate.json"
+    },
+    {
+      "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/deployment/quant_author_tools/summary.json",
+      "sha256": "3e0b9ec1a1b670e2d7d8fec405472dd4102890fe65d3be9130d2fcde45b9f1ba",
+      "packaged": "evidence/selected_quant_summary.json"
+    },
+    {
+      "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/deployment/quant_author_tools/R4_gdacs_N2500_LOGIT_KD_T512_S512_epochs50_filtered_fps_E512_native_H512_s42_lr005/RECEIPT.json",
+      "sha256": "2482c0c441cb27830917041cae143591d0ed92628c5e9847f19db25081407e05",
+      "packaged": "evidence/R4_s42_quant_receipt.json"
+    },
+    {
+      "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/deployment/quant_author_tools/R4_gdacs_N2500_LOGIT_KD_T512_S512_epochs50_filtered_fps_E512_native_H512_s42_lr005/FLOAT_PARITY.json",
+      "sha256": "541838abc3ca4b0a3bd8f2cc4fe048281fc791d0b4ab4da0aabd9a6d54d5e9b9",
+      "packaged": "evidence/R4_s42_float_parity.json"
+    },
+    {
+      "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/deployment/quant_author_tools/R4_gdacs_N2500_LOGIT_KD_T512_S512_epochs50_filtered_fps_E512_native_H512_s42_lr005/PTQ_RECEIPT.json",
+      "sha256": "a90dbe92a647b164819045e1661e07de69e498ed19c50fe210b9b5889a0bc8fd",
+      "packaged": "evidence/R4_s42_candidate_gate.json"
+    },
+    {
+      "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/deployment/quant_author_tools/R4_gdacs_N2500_LOGIT_KD_T512_S512_epochs50_filtered_fps_E512_native_H512_s64_lr005/RECEIPT.json",
+      "sha256": "40b31643e6ef24fca337fda46e78fe5c5e352bc43d3d45fd9be15fff57ded8ae",
+      "packaged": "evidence/R4_s64_quant_receipt.json"
+    },
+    {
+      "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/deployment/quant_author_tools/R4_gdacs_N2500_LOGIT_KD_T512_S512_epochs50_filtered_fps_E512_native_H512_s64_lr005/FLOAT_PARITY.json",
+      "sha256": "c1c560a7e6e6dc83e00c67a9d34f8e8a8ce1e52ad5d7994d3b98f7459afa9bca",
+      "packaged": "evidence/R4_s64_float_parity.json"
+    },
+    {
+      "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/deployment/quant_author_tools/R4_gdacs_N2500_LOGIT_KD_T512_S512_epochs50_filtered_fps_E512_native_H512_s64_lr005/PTQ_RECEIPT.json",
+      "sha256": "dca09d082f076056e3291bffb89e2237b9bba49679ff60503d8fb5a22fd638ec",
+      "packaged": "evidence/R4_s64_candidate_gate.json"
+    },
+    {
+      "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/deployment/quant_author_tools/R4_gdacs_N2500_LOGIT_KD_T512_S512_epochs50_filtered_fps_E512_native_H512_s64_lr005/PURE_SOURCE.json",
+      "sha256": "d9fa969db15bcb2765bd3d4a0b4d7c7f1ad5ff20f69ddd6c7ef255227e2d2314",
+      "packaged": "evidence/R4_s64_pure_source_receipt.json"
+    },
+    {
+      "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/deployment/quant_author_tools/R4_gdacs_N2500_LOGIT_KD_T512_S512_epochs50_filtered_fps_E512_native_H512_s64_lr005/PURE_CONVERSION.json",
+      "sha256": "3a2058ff0003db06e56bb6f4483d5f0f1402c210389a57380cc633753f3cdc73",
+      "packaged": "evidence/R4_s64_pure_conversion_receipt.json"
+    },
+    {
+      "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/deployment/quant_author_tools/R4_gdacs_N2500_LOGIT_KD_T512_S512_epochs50_filtered_fps_E512_native_H512_s64_lr005/PURE_IO.json",
+      "sha256": "b5a28e93682cc8c905131ac1808dd5f7340cca06d74c797a346ead7ba2e7534d",
+      "packaged": "evidence/R4_s64_pure_io_receipt.json"
+    },
+    {
+      "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/deployment/quant_author_tools/R4_gdacs_N2500_LOGIT_KD_T512_S512_epochs50_filtered_fps_E512_native_H512_s64_lr005/PURE_CPU.json",
+      "sha256": "9d7921396b76db57a6dc8161bf2fe96c372a533177e65dac6c3c86c74ea73491",
+      "packaged": "evidence/R4_s64_pure_cpu_receipt.json"
+    },
+    {
+      "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/deployment/quant_author_tools/R4_gdacs_N2500_LOGIT_KD_T512_S512_epochs50_filtered_fps_E512_native_H512_s91_lr005/RECEIPT.json",
+      "sha256": "461712451801c6f824b1784859e10f71ee47740fb0d7d1d0d8eba7d97f1366d1",
+      "packaged": "evidence/R4_s91_quant_receipt.json"
+    },
+    {
+      "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/deployment/quant_author_tools/R4_gdacs_N2500_LOGIT_KD_T512_S512_epochs50_filtered_fps_E512_native_H512_s91_lr005/FLOAT_PARITY.json",
+      "sha256": "b8ef6e0682148b11d0103fd83b03d82b5e82c1ae68deb4303ef71832315a75ed",
+      "packaged": "evidence/R4_s91_float_parity.json"
+    },
+    {
+      "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/deployment/quant_author_tools/R4_gdacs_N2500_LOGIT_KD_T512_S512_epochs50_filtered_fps_E512_native_H512_s91_lr005/PTQ_RECEIPT.json",
+      "sha256": "3c0db624a53c7b23e1802a23e632b74dcaf986e7ff1e12194d4de80585bf87d5",
+      "packaged": "evidence/R4_s91_candidate_gate.json"
+    },
+    {
+      "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/deployment/quant_author_tools/R4_gdacs_N2500_LOGIT_KD_T512_S512_epochs50_filtered_fps_E512_native_H512_s107_lr005/RECEIPT.json",
+      "sha256": "fa8a7eea742028f0aa43f6273afdac0a608db46f1806015053d7d372ca24347d",
+      "packaged": "evidence/R4_s107_quant_receipt.json"
+    },
+    {
+      "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/deployment/quant_author_tools/R4_gdacs_N2500_LOGIT_KD_T512_S512_epochs50_filtered_fps_E512_native_H512_s107_lr005/FLOAT_PARITY.json",
+      "sha256": "fdac5fbdd0f248a4a74f33be79ddf8b408ac121c0637ed03d47b48f6f0cb28c8",
+      "packaged": "evidence/R4_s107_float_parity.json"
+    },
+    {
+      "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/deployment/quant_author_tools/R4_gdacs_N2500_LOGIT_KD_T512_S512_epochs50_filtered_fps_E512_native_H512_s107_lr005/PTQ_RECEIPT.json",
+      "sha256": "c2abb53392ad570ab4f59da541289c765401fd8a857e95cda97f0bdd664647d7",
+      "packaged": "evidence/R4_s107_candidate_gate.json"
+    },
+    {
+      "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/deployment/quant_author_tools/R4_gdacs_N2500_LOGIT_KD_T512_S512_epochs50_filtered_fps_E512_native_H512_s107_lr005/PURE_SOURCE.json",
+      "sha256": "f922f2a8d7a43d8835a8063b975723b5ae4e251cfdbf66909efe99a5e9ce9ffe",
+      "packaged": "evidence/R4_s107_pure_source_receipt.json"
+    },
+    {
+      "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/deployment/quant_author_tools/R4_gdacs_N2500_LOGIT_KD_T512_S512_epochs50_filtered_fps_E512_native_H512_s107_lr005/PURE_CONVERSION.json",
+      "sha256": "0d1798c45a882b14b4384758ffb88de6a63cb4ed92645be16fa7b15a0d9db08b",
+      "packaged": "evidence/R4_s107_pure_conversion_receipt.json"
+    },
+    {
+      "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/deployment/quant_author_tools/R4_gdacs_N2500_LOGIT_KD_T512_S512_epochs50_filtered_fps_E512_native_H512_s107_lr005/PURE_IO.json",
+      "sha256": "547e0ce71025dc3c5099fdaf465d194eff42e5a103510aedefcf6184e446e467",
+      "packaged": "evidence/R4_s107_pure_io_receipt.json"
+    },
+    {
+      "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/deployment/quant_author_tools/R4_gdacs_N2500_LOGIT_KD_T512_S512_epochs50_filtered_fps_E512_native_H512_s107_lr005/PURE_CPU.json",
+      "sha256": "aca67b939443ce64fad4eb13613dd5615d578650d17dd57262ca6a696c70e593",
+      "packaged": "evidence/R4_s107_pure_cpu_receipt.json"
+    }
+  ],
+  "tools": {
+    "original_integer_tools": "/home/schmalstieg/repos/FloodDistill/jetson_repro/integer_tools.py",
+    "original_sha256": "056b97980aa41d48c3d0e8c4ae6ecbb4c856c6d64b19e9c23e1434c32dbbaddc",
+    "copied_unchanged": true,
+    "adaptation": "Separate measurement adapter adds p99, explicit author-matched integer input encoding, and per-image accuracy receipts"
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "35a8833214f1866b1a366d2efeddfafcf0a0d7b5300b785810e97a72a20a0244"
+    },
+    {
+      "path": "device_runtime.py",
+      "sha256": "0580e883d4fbde2506f0ed9c72660650fc637d0fd1b4687127adaa4c132a7a87"
+    },
+    {
+      "path": "device_session.py",
+      "sha256": "988a248e29372fd6c4fe5805cdc2effc6493414a66ab446c82bbaa3e1e066657"
+    },
+    {
+      "path": "evidence/R4_s107_candidate_gate.json",
+      "sha256": "c2abb53392ad570ab4f59da541289c765401fd8a857e95cda97f0bdd664647d7"
+    },
+    {
+      "path": "evidence/R4_s107_float_parity.json",
+      "sha256": "fdac5fbdd0f248a4a74f33be79ddf8b408ac121c0637ed03d47b48f6f0cb28c8"
+    },
+    {
+      "path": "evidence/R4_s107_pure_conversion_receipt.json",
+      "sha256": "0d1798c45a882b14b4384758ffb88de6a63cb4ed92645be16fa7b15a0d9db08b"
+    },
+    {
+      "path": "evidence/R4_s107_pure_cpu_receipt.json",
+      "sha256": "aca67b939443ce64fad4eb13613dd5615d578650d17dd57262ca6a696c70e593"
+    },
+    {
+      "path": "evidence/R4_s107_pure_io_receipt.json",
+      "sha256": "547e0ce71025dc3c5099fdaf465d194eff42e5a103510aedefcf6184e446e467"
+    },
+    {
+      "path": "evidence/R4_s107_pure_source_receipt.json",
+      "sha256": "f922f2a8d7a43d8835a8063b975723b5ae4e251cfdbf66909efe99a5e9ce9ffe"
+    },
+    {
+      "path": "evidence/R4_s107_quant_receipt.json",
+      "sha256": "fa8a7eea742028f0aa43f6273afdac0a608db46f1806015053d7d372ca24347d"
+    },
+    {
+      "path": "evidence/R4_s42_candidate_gate.json",
+      "sha256": "a90dbe92a647b164819045e1661e07de69e498ed19c50fe210b9b5889a0bc8fd"
+    },
+    {
+      "path": "evidence/R4_s42_float_parity.json",
+      "sha256": "541838abc3ca4b0a3bd8f2cc4fe048281fc791d0b4ab4da0aabd9a6d54d5e9b9"
+    },
+    {
+      "path": "evidence/R4_s42_quant_receipt.json",
+      "sha256": "2482c0c441cb27830917041cae143591d0ed92628c5e9847f19db25081407e05"
+    },
+    {
+      "path": "evidence/R4_s64_candidate_gate.json",
+      "sha256": "dca09d082f076056e3291bffb89e2237b9bba49679ff60503d8fb5a22fd638ec"
+    },
+    {
+      "path": "evidence/R4_s64_float_parity.json",
+      "sha256": "c1c560a7e6e6dc83e00c67a9d34f8e8a8ce1e52ad5d7994d3b98f7459afa9bca"
+    },
+    {
+      "path": "evidence/R4_s64_pure_conversion_receipt.json",
+      "sha256": "3a2058ff0003db06e56bb6f4483d5f0f1402c210389a57380cc633753f3cdc73"
+    },
+    {
+      "path": "evidence/R4_s64_pure_cpu_receipt.json",
+      "sha256": "9d7921396b76db57a6dc8161bf2fe96c372a533177e65dac6c3c86c74ea73491"
+    },
+    {
+      "path": "evidence/R4_s64_pure_io_receipt.json",
+      "sha256": "b5a28e93682cc8c905131ac1808dd5f7340cca06d74c797a346ead7ba2e7534d"
+    },
+    {
+      "path": "evidence/R4_s64_pure_source_receipt.json",
+      "sha256": "d9fa969db15bcb2765bd3d4a0b4d7c7f1ad5ff20f69ddd6c7ef255227e2d2314"
+    },
+    {
+      "path": "evidence/R4_s64_quant_receipt.json",
+      "sha256": "40b31643e6ef24fca337fda46e78fe5c5e352bc43d3d45fd9be15fff57ded8ae"
+    },
+    {
+      "path": "evidence/R4_s91_candidate_gate.json",
+      "sha256": "3c0db624a53c7b23e1802a23e632b74dcaf986e7ff1e12194d4de80585bf87d5"
+    },
+    {
+      "path": "evidence/R4_s91_float_parity.json",
+      "sha256": "b8ef6e0682148b11d0103fd83b03d82b5e82c1ae68deb4303ef71832315a75ed"
+    },
+    {
+      "path": "evidence/R4_s91_quant_receipt.json",
+      "sha256": "461712451801c6f824b1784859e10f71ee47740fb0d7d1d0d8eba7d97f1366d1"
+    },
+    {
+      "path": "evidence/audit.json",
+      "sha256": "e5f9eb6f276ed1119bea9e8eafe68e50af0a9d3b45d48b4727ff6ffbbb0a19f9"
+    },
+    {
+      "path": "evidence/device_cross_split.csv",
+      "sha256": "b69f16914f6c293a549f7b916099fdec67301a519ded95a400c42af2f05bbf93"
+    },
+    {
+      "path": "evidence/device_rows.csv",
+      "sha256": "cba764c8bd87b77e6871370f7dbad155476252db51f52dc9df67c11b0f9e27e5"
+    },
+    {
+      "path": "evidence/original_B0_no_fp16_build.json",
+      "sha256": "3a65f0f9273d5dc6bc147a7df05c9847f5957b04fe052fdc39618e66a0da11b0"
+    },
+    {
+      "path": "evidence/original_B0_s107_float_linear_gate.json",
+      "sha256": "f7172fa34fdb0f440c3def4aa792acf5ea521fefb9ac647d65b2de4b29d46a48"
+    },
+    {
+      "path": "evidence/original_B0_s42_float_linear_gate.json",
+      "sha256": "e7138a777db952f94605710fb8b5d9eff4b2c9abbf95fdb51d708c9f96d0fc68"
+    },
+    {
+      "path": "evidence/original_B0_s64_float_linear_gate.json",
+      "sha256": "c64a3fe5087631e49c4cad314213288383ff6d04b88d3ea8fde6e9fb469cda7a"
+    },
+    {
+      "path": "evidence/original_B0_s91_float_linear_gate.json",
+      "sha256": "25db8e7778b23220f9256aacc60026a39dde9f2ee84032a0cbf97bc95de4d881"
+    },
+    {
+      "path": "evidence/selected_quant_summary.json",
+      "sha256": "3e0b9ec1a1b670e2d7d8fec405472dd4102890fe65d3be9130d2fcde45b9f1ba"
+    },
+    {
+      "path": "integer_tools.py",
+      "sha256": "056b97980aa41d48c3d0e8c4ae6ecbb4c856c6d64b19e9c23e1434c32dbbaddc"
+    },
+    {
+      "path": "models/R4_s107_float.onnx",
+      "sha256": "6584e565825240e8d113c29d4446571e6e32bda38b56bb6a26088a0a834311e3"
+    },
+    {
+      "path": "models/R4_s107_io.json",
+      "sha256": "547e0ce71025dc3c5099fdaf465d194eff42e5a103510aedefcf6184e446e467"
+    },
+    {
+      "path": "models/R4_s107_mixed.onnx",
+      "sha256": "7e85982eaf6b0a879cbe543a090771a25b5b84d6c16f6b91383e217d9f04a231"
+    },
+    {
+      "path": "models/R4_s107_pure.onnx",
+      "sha256": "bc9c82ff8f4c52ef2ca681392a4480e6077980a7fba0987c297be47ea99b6635"
+    },
+    {
+      "path": "models/R4_s42_float.onnx",
+      "sha256": "bfc63fd7f574422d286038f3066f37598a554d2009d9bc41388279c84c91b354"
+    },
+    {
+      "path": "models/R4_s42_mixed.onnx",
+      "sha256": "38d44cbb9d4af2f1555779654f664740413c35322aebbdfaa84c123dc02d1ad4"
+    },
+    {
+      "path": "models/R4_s64_float.onnx",
+      "sha256": "6ec8ab70f437e79b26aef4d177ca02c0cbfc0060de7b5ff4cdebbd1ed46ddcab"
+    },
+    {
+      "path": "models/R4_s64_io.json",
+      "sha256": "b5a28e93682cc8c905131ac1808dd5f7340cca06d74c797a346ead7ba2e7534d"
+    },
+    {
+      "path": "models/R4_s64_mixed.onnx",
+      "sha256": "682ee6c378afc2a628f5f986c9b2a2c9972be12484b46eeb0ea7e984ea2234ab"
+    },
+    {
+      "path": "models/R4_s64_pure.onnx",
+      "sha256": "811d3b37a3374308e329ee44adc5286ed7e835da8776894442715822991f3b67"
+    },
+    {
+      "path": "models/R4_s91_float.onnx",
+      "sha256": "dd8b2b166c7ea9fccbe258f9431c81b28a5117c71d416c5b490572290d6ba080"
+    },
+    {
+      "path": "models/R4_s91_mixed.onnx",
+      "sha256": "fffca6ec6f2b4c5879f3e82fd65b86c3562ffb65df9065a4c88421a63329c6c5"
+    },
+    {
+      "path": "models/original_B0_s107_float_cubic_DIAGNOSTIC.onnx",
+      "sha256": "720f5be8fd2789824f1e2a583c4564d58ab90900c35b4bb85e733b99bc55fe70"
+    },
+    {
+      "path": "models/original_B0_s107_float_linear.onnx",
+      "sha256": "b59e5eadf74615c7c9efe8f74e0e05af5ada2739e2757cfdb1af71dfb0231435"
+    },
+    {
+      "path": "models/original_B0_s42_float_cubic_DIAGNOSTIC.onnx",
+      "sha256": "5a3277774809cc612704fe8f654c8f49c673c017460d59c49f461905f24ee7d1"
+    },
+    {
+      "path": "models/original_B0_s42_mixed.onnx",
+      "sha256": "497288e1bf5b16b85f3ecaa42f1bae1b1a7a72da3604a4da603720c17bdde280"
+    },
+    {
+      "path": "models/original_B0_s64_float_cubic_DIAGNOSTIC.onnx",
+      "sha256": "67ae547a6c44137fde57f45b1f5da3e3b9714e488dda56c315fa33c2e6a20223"
+    },
+    {
+      "path": "models/original_B0_s91_float_cubic_DIAGNOSTIC.onnx",
+      "sha256": "a39ae549e2b171cda149847d4091c86685d3f299c01a83e9ae595c5bbb428485"
+    },
+    {
+      "path": "models/original_B0_s91_float_linear.onnx",
+      "sha256": "07e38fd19d87a389ca78ad99ca11d1725ca056f80c7d5c40249b1fe197438773"
+    }
+  ]
+}

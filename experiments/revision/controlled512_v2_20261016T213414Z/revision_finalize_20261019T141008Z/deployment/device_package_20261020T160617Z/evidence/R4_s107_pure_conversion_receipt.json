@@ -1,0 +1,72 @@
+{
+  "status": "derived_variant",
+  "recipe": "integer_upsample_deconv_zero",
+  "is_registered_candidate": false,
+  "source_model": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/deployment/quant_author_tools/R4_gdacs_N2500_LOGIT_KD_T512_S512_epochs50_filtered_fps_E512_native_H512_s107_lr005/percentile_pc.onnx",
+  "source_sha256": "7e85982eaf6b0a879cbe543a090771a25b5b84d6c16f6b91383e217d9f04a231",
+  "variant_model": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/deployment/quant_author_tools/R4_gdacs_N2500_LOGIT_KD_T512_S512_epochs50_filtered_fps_E512_native_H512_s107_lr005/pure_edge_zero.onnx",
+  "variant_sha256": "17a4a27e8fea306b58cf752e927a3b7df71cb9fe324f77c213b6c343d2d8e568",
+  "weight_scale": 0.0078125,
+  "weights_exact_on_int8_grid": true,
+  "replaced": [
+    {
+      "resize_node": "/Resize",
+      "channels": 16,
+      "scale": 2,
+      "in_hw": [
+        32,
+        32
+      ],
+      "out_hw": [
+        64,
+        64
+      ],
+      "deconv": "Resize_Deconv",
+      "kernel": 4,
+      "stride": 2,
+      "pads": 1,
+      "peak_int8_weight": 72,
+      "edge": "zero"
+    },
+    {
+      "resize_node": "/Resize_1",
+      "channels": 16,
+      "scale": 2,
+      "in_hw": [
+        64,
+        64
+      ],
+      "out_hw": [
+        128,
+        128
+      ],
+      "deconv": "Resize_1_Deconv",
+      "kernel": 4,
+      "stride": 2,
+      "pads": 1,
+      "peak_int8_weight": 72,
+      "edge": "zero"
+    },
+    {
+      "resize_node": "/Resize_2",
+      "channels": 2,
+      "scale": 4,
+      "in_hw": [
+        128,
+        128
+      ],
+      "out_hw": [
+        512,
+        512
+      ],
+      "deconv": "Resize_2_Deconv",
+      "kernel": 8,
+      "stride": 4,
+      "pads": 2,
+      "peak_int8_weight": 98,
+      "edge": "zero"
+    }
+  ],
+  "rationale": "TensorRT 8.4 has no INT8 Resize in any mode; dense ConvTranspose is INT8. For integer factors, bilinear == transposed convolution with the separable triangular kernel, so the substitution is an identity in the interior.",
+  "caveat": "Graph change: a new variant requiring CPU source validation against the unpatched candidate. Border handling differs from Resize unless edge=replicate."
+}

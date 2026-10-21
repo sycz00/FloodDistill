@@ -1,0 +1,23 @@
+{
+  "seed": 42,
+  "parent_receipt": {
+    "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/deployment/float_parents/B0_s42/receipt.json",
+    "sha256": "fed4baf0aa2738265a2f6ba1c4f538116398e6abfc6a409cc1a9fe10f9bed063"
+  },
+  "protocol": {
+    "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/deployment/float_linear/PROTOCOL.json",
+    "sha256": "205541b83e82f47dac006985f23a923772ff8a1425918699c6a7b8e509fbbad2"
+  },
+  "source_model": {
+    "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/deployment/float_parents/B0_s42/float.onnx",
+    "sha256": "5a3277774809cc612704fe8f654c8f49c673c017460d59c49f461905f24ee7d1"
+  },
+  "checkpoint": {
+    "path": "/data1/schmalstieg/flooddistill/runs_repro/pseudo_evit_relu6_ofa_N2500_s42/best.pt",
+    "sha256": "d2a6c75ae464ebf5198b9bd4ac4bb0e9937c5676fd0e8a73b09697081d8b078b"
+  },
+  "status": "BLOCKED_FLOAT_EXPORT_PARITY",
+  "acceptable": false,
+  "graph_variant": true,
+  "true_float_trained_parent": true
+}

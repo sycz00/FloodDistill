@@ -1,0 +1,11 @@
+# Author device session
+
+Copy this directory to the Jetson unchanged. Use the preserved flood environment with TensorRT 8.4 bindings. No software install, clock change, power change or power measurement is requested.
+
+Run `python device_session.py --assets-root PATH_TO_IMPORTED_DEVICE_FOLDER --attempt UNIQUE_NAME`. The assets root contains source_val, source_test and source_bolivia; all file hashes are verified before any build. Run from a detached terminal with stdin closed and logs redirected.
+
+Each admitted model is built on the device and evaluated on all three splits at batch 1, 512 pixels. Kernel and transfer-inclusive wall p50/p95/p99 are separate. Timing percentiles describe repeated execution of one identified image, not a distribution across images. Wall time includes explicit host input quantization for integer IO, H2D, inference and D2H, and excludes normalization, disk IO and argmax. Layer JSON and engine/build/evaluation hashes are retained. Failed builds are retained; do not choose another precision silently. Copy the whole outputs/attempt directory back by 27 October 2026. No new device claim is allowed until these records are checked.
+
+The supplied author conversion tools have arrived. New tiny/R4 exports remain blocked until their source-selection and CPU conversion gates pass. Pure variants use the documented zero-edge replacement and integer IO, with the author's float32-scale rounding and [-127,127] clipping. CPU admission does not certify native integer execution. Shared output quantization can create ties; exact argmax preservation is not claimed. The layer report certifies tensor formats, not kernel accumulator arithmetic.
+
+Original B0 mixed uses seed 42 only because four-repeat QAT acceptance is 2/4. Its mixed session mode enables FP16; previously imported no_fp16 timings are a separate INT8/FP32 build. True float-trained B0 parents are included only when full89 strict export parity and a separate linear Resize accuracy gate both pass. These linear graphs are distinct variants, not numerically identical exports. Other cubic float files are diagnostic and not built. Stripping quantizers from QAT weights is never used as a true float parent. New 512-pixel B0 models are not quantized. Power is not measured in this session.

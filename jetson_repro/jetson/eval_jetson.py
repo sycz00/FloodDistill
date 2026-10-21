@@ -1,6 +1,7 @@
 """Evaluate ONNX and TensorRT models on the Jetson Xavier NX.
 
-S11 uses the validation split and the rasterio-only loader. STURM uses its
+S11 defaults to the test split (--s11_split val selects source validation) and uses
+the rasterio-only loader. STURM uses its
 original DN inverse and the six-band adapter. WorldFloods ignores clouds. Labels follow
 --protocol: surface_water (default; all water, as Sen1Floods11) or the flood-only tables.
 Both external datasets use 512x512 inputs and S11 stats.
@@ -79,9 +80,13 @@ parser.add_argument("--warmup", type=int, default=10,
                     help="Warm-up runs discarded before timing (default 10)")
 parser.add_argument("--no_latency", action="store_true",
                     help="Skip latency measurement — accuracy only")
+parser.add_argument("--num_workers", type=int, default=2,
+                    help="DataLoader workers (default 2; use 0 where worker IPC is unavailable)")
 # Data roots - defaults match the standard Jetson layout from deploy_jetson.sh
 parser.add_argument("--s11_root",    default=os.path.expanduser("~/data/sen1floods11"),
                     help="Sen1Floods11 root (default ~/data/sen1floods11)")
+parser.add_argument("--s11_split", choices=["test", "val"], default="test",
+                    help="S11 split: test for reporting (default), val for source selection/checks")
 parser.add_argument("--sturm_root",  default=os.path.expanduser("~/data/STURM-Flood/Dataset"),
                     help="STURM-Flood Dataset dir (default ~/data/STURM-Flood/Dataset)")
 parser.add_argument("--sturm_normalize", default="original",
@@ -101,7 +106,7 @@ parser.add_argument("--protocol", default="surface_water",
                     choices=["surface_water", "flood_p3", "flood_paper"],
                     help="Label protocol for STURM and WF (data/ood_datasets.py). 'surface_water' "
                          "(default since 2026-10-15): every water pixel counts, as in Sen1Floods11 "
-                         "(WF flood + JRC permanent water; STURM classes 1-5), non-finite STURM "
+                         "(WF ground-truth water including permanent water; STURM classes 1-5), non-finite STURM "
                          "pixels ignored, WF edge windows zero-padded. 'flood_p3': flood only "
                          "(WF permanent water and STURM classes 3-5 ignored), same geometry, the "
                          "revision P3 tables. 'flood_paper': flood only with resized WF edge windows "
@@ -129,6 +134,8 @@ parser.add_argument("--robust_datasets", default="sturm,wf",
 parser.add_argument("--json_out", default=None,
                     help="Write all accuracy/latency/robustness results to this JSON path.")
 args = parser.parse_args()
+if args.num_workers < 0:
+    parser.error("--num_workers must be nonnegative")
 
 _SEL = {s.strip() for s in args.datasets.split(",") if s.strip()}
 _ROBUST_SEL = {s.strip() for s in args.robust_datasets.split(",") if s.strip()}
@@ -541,12 +548,18 @@ def eval_all(dl_factory, adapter=None, ds_key="?"):
     kf = _scene_keyfn(ds_key)
     for label, path in onnx_models:
         m = eval_onnx(path, _stream(dl_factory(), adapter, args.quick), keyfn=kf)
+        m["protocol"] = args.protocol if ds_key in ("sturm", "wf") else "native_surface_water"
+        if ds_key == "s1f":
+            m["split"] = args.s11_split
         kf.report()
         print(_row(label, m))
         _acc_results.setdefault(label.strip(), {})[ds_key] = m
         gc.collect()
     for _lbl, _be in _trt_backends:
         m = eval_trt_engine(_be, _stream(dl_factory(), adapter, args.quick), keyfn=kf)
+        m["protocol"] = args.protocol if ds_key in ("sturm", "wf") else "native_surface_water"
+        if ds_key == "s1f":
+            m["split"] = args.s11_split
         kf.report()
         print(_row(_lbl, m))
         _acc_results.setdefault(_lbl, {})[ds_key] = m
@@ -561,7 +574,7 @@ def eval_all(dl_factory, adapter=None, ds_key="?"):
 # [B2,B3,B4,B8A,B11,B12]. Gain/haze perturbations are applied in reflectance space before
 # normalization on both sets, so the robustness axis is physically the same.
 
-from data.sen1floods11 import get_dataloaders as _s11_get_dataloaders   # resolves to the nodep module
+from data.sen1floods11 import get_eval_dataloader as _s11_get_eval_dataloader
 from data.ood_datasets import get_sturm_flood_dataloader as _sturm_dl_fn
 from data.ood_datasets import get_worldfloods_dataloader as _wf_dl_fn
 
@@ -569,15 +582,15 @@ _sturm_adapter = sturm_s2_adapter(target_channels=6)
 
 
 def _s11_dl():
-    _, val_dl, _ = _s11_get_dataloaders(
-        args.s11_root, batch_size=2, num_workers=2, eval_img_size=IMG_SIZE)
-    return val_dl
+    return _s11_get_eval_dataloader(
+        args.s11_root, split=args.s11_split, batch_size=2, num_workers=args.num_workers,
+        eval_img_size=IMG_SIZE)
 
 
 def _sturm_dl(gain=1.0, haze=0.0):
     # root = <STURM-Flood>/Dataset/ (contains Sentinel1/, Sentinel2/, *.csv)
     return _sturm_dl_fn(
-        args.sturm_root, sensor="S2", batch_size=2, num_workers=2,
+        args.sturm_root, sensor="S2", batch_size=2, num_workers=args.num_workers,
         img_size=IMG_SIZE, normalize=args.sturm_normalize,
         sim_gain=gain, sim_haze=haze, protocol=args.protocol)
 
@@ -586,13 +599,13 @@ def _wf_dl(gain=1.0, haze=0.0):
     # WorldFloods-v2: scenes are tiled at native 10 m into 512x512 windows; --protocol sets
     # whether JRC permanent water counts as water (surface_water) or is ignored (flood_*).
     return _wf_dl_fn(
-        args.wf_root, split="test", batch_size=2, num_workers=2,
+        args.wf_root, split="test", batch_size=2, num_workers=args.num_workers,
         img_size=IMG_SIZE, tile_size=IMG_SIZE, normalize="s11",
         sim_gain=gain, sim_haze=haze, protocol=args.protocol)
 
 
 if "s11" in _SEL:
-    print("\n=== Sen1Floods11 (in-distribution, val split) ===")
+    print("\n=== Sen1Floods11 (%s split) ===" % args.s11_split)
     eval_all(_s11_dl, ds_key="s1f")
 
 if "sturm" in _SEL:
@@ -607,7 +620,7 @@ if "s1s2w" in _SEL:
     # S1S2Water is already 6-band Sentinel-2 L1C - no channel adapter needed.
     print("\n=== S1S2Water (OOD) ===")
     from data.ood_datasets import get_s1s2water_dataloader as _s1s2w_dl_fn
-    eval_all(lambda: _s1s2w_dl_fn(args.s1s2w_root, batch_size=1, num_workers=2,
+    eval_all(lambda: _s1s2w_dl_fn(args.s1s2w_root, batch_size=1, num_workers=args.num_workers,
                                   img_size=IMG_SIZE), ds_key="s1s2w")
 
 
@@ -735,6 +748,7 @@ def _get(label, ds, key):
 
 _PROTOCOL = (f"PROTOCOL: STURM normalize={args.sturm_normalize} · "
              f"labels {args.protocol} · "
+             f"S11 split={args.s11_split} · "
              f"{IMG_SIZE}×{IMG_SIZE}" + (f" · QUICK {args.quick} batches/dataset" if args.quick else ""))
 
 
@@ -747,7 +761,7 @@ def _summary_table(agg_key, agg_name):
     print(f"AGGREGATION: {agg_name}")
     print(_PROTOCOL)
     print(f"{'Model':<26}  {'Size':>6}  {'Latency':>9}  {'Throughput':>10}"
-          f"    {'Sen1Fl':>7}  {'STURM':>7}  {'WFv2':>7}  {'S1S2W':>7}")
+          f"    {'S11-' + args.s11_split:>8}  {'STURM':>7}  {'WFv2':>7}  {'S1S2W':>7}")
     print(f"{'':26}  {'(MB)':>6}  {'(ms)':>9}  {'(img/s)':>10}"
           f"    {'mIoU':>7}  {'mIoU':>7}  {'mIoU':>7}  {'mIoU':>7}")
     print("-" * W)
@@ -803,12 +817,13 @@ if args.robustness and _rob_results:
 # JSON dump
 if args.json_out:
     import json
-    # Store the protocol: sturm_normalize and wf_flood_only each change what is measured.
-    # Both are needed to compare this JSON with the workstation table.
-    # wf_flood_only=True <-> the workstation's wf_fo_* keys.
+    # Preserve the historical s1f key, but identify its split in both each result and config.
+    # Split, label protocol and preprocessing must match before combining result files.
     payload = {"accuracy": _acc_results, "latency": _lat_results,
                "robustness": _rob_results,
                "config": {"img_size": IMG_SIZE, "sturm_normalize": args.sturm_normalize,
+                          "s11_split": args.s11_split,
+                          "num_workers": args.num_workers,
                           "protocol": args.protocol,
                           "wf_flood_only": args.protocol != "surface_water",
                           "datasets": sorted(_SEL), "gains": _GAINS, "hazes": _HAZES,

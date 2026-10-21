@@ -98,6 +98,26 @@ class Sen1Floods11Dataset(Dataset):
         }
 
 
+def get_eval_dataloader(
+    data_root: str,
+    split: str = "test",
+    batch_size: int = 8,
+    num_workers: int = 4,
+    eval_img_size: int = 512,
+):
+    """Load only the requested reporting/test or source-validation split."""
+    if split not in ("test", "val"):
+        raise ValueError("Evaluation split must be 'test' or 'val'")
+    transform = A.Compose([
+        A.Resize(eval_img_size, eval_img_size),
+        A.Normalize(mean=NORM_MEAN, std=NORM_STD, max_pixel_value=1.0),
+        ToTensorV2(),
+    ])
+    dataset = Sen1Floods11Dataset(data_root, split=split, transform=transform)
+    return DataLoader(dataset, batch_size=batch_size, num_workers=num_workers,
+                      shuffle=False, drop_last=False, pin_memory=False)
+
+
 def get_dataloaders(
     data_root: str,
     batch_size: int = 8,

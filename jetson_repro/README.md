@@ -262,17 +262,23 @@ evaluation, so `eval_jetson.py` only picks up the INT8 engine.
 python jetson/eval_jetson.py --model_dir runs/deploy_qat/docker_qat/ \
     --engine runs/deploy_qat/docker_qat/model_int8_qat.engine \
     --sturm_normalize original --datasets s11,sturm,wf \
+    --s11_split test --protocol surface_water \
     --json_out results/docker_qat/eval.json
 ```
 Three models are scored on the same data: `model_float.onnx` and
 `model_qdq_trt_no_out.onnx` in onnxruntime (CPU), and the TRT INT8 engine.
 
-- Sen1Floods11: val split, 512x512, S11 band statistics.
+- Sen1Floods11: **test split by default**, 512x512, S11 band statistics. Use
+  `--s11_split val` explicitly for source-validation checks/selection; keep those outputs
+  separate from test reporting. Only the requested split is loaded. The JSON retains the
+  historical `s1f` result key and records `split` in each S11 result plus `config.s11_split`.
+  `--num_workers 0` runs loading in the main process when worker IPC is unavailable.
 - STURM-Flood S2: 9 bands mapped to 6, `normalize=original` (DN inverse from the paper), 512.
 - WorldFloods-v2: test split tiled at 512, clouds ignored.
 - Labels follow `--protocol` (same for STURM and WF; don't mix protocols in one table):
   - `surface_water` (default since 2026-10-15): every water pixel counts, as in Sen1Floods11.
-    WF flood + JRC permanent water = water (836 windows, edge windows zero-padded); STURM
+    WF ground-truth water includes permanent water (836 windows, edge windows zero-padded);
+    JRC classifications do not overwrite ground-truth land. STURM
     classes 1-5 = water, pixels without finite input ignored.
   - `flood_p3`: flood only (WF permanent water and STURM classes 3-5 ignored), same
     geometry; the revision P3 tables (785 WF windows).

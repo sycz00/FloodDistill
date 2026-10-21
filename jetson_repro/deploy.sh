@@ -73,12 +73,13 @@ park_float_engines() {
     return 0
 }
 
-# 4. accuracy on S11 (val), STURM-S2 and WorldFloods-v2 (test), ORT float + ORT INT8 + TRT INT8
+# 4. report accuracy on S11 test and external surface water, ORT float + ORT INT8 + TRT INT8
 if has eval; then
     park_float_engines
     $PYTHON jetson/eval_jetson.py --model_dir "$RUN/" \
         --engine "$RUN/model_int8_qat.engine" \
         --sturm_normalize original --datasets s11,sturm,wf \
+        --s11_split test --protocol surface_water \
         --quick "$QUICK" $DATA_ARGS \
         --json_out "$OUT/eval.json" 2>&1 | tee "$OUT/eval.log"
 fi
@@ -89,6 +90,7 @@ if has robust; then
     $PYTHON jetson/eval_jetson.py --model_dir "$RUN/" \
         --engine "$RUN/model_int8_qat.engine" \
         --sturm_normalize original --datasets s11,sturm,wf \
+        --s11_split test --protocol surface_water \
         --robustness --robust_datasets sturm,wf \
         --gains 0.80,1.00,1.20,1.30 --hazes 0.00,0.05,0.10,0.20 \
         --quick "$QUICK" $DATA_ARGS \
