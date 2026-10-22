@@ -6,7 +6,7 @@
   "archive_prefix": "8_jetson_export_20261022",
   "repository_path": "jetson_repro/finalize_f_20261022/device_handoff",
   "committed_scope": "models, IO, full source gates/references, inventories, exact native R4 engines/build receipts/raw accuracy, runtime and prompts,159 exact prepared dry tiles with validity masks",
-  "external_inputs": "159 dry tiles are now Git-tracked;194 prepared S11/Bolivia arrays still imported from the existing transfer bundle; raw WF/STURM datasets remain external",
+  "external_inputs": "159 dry tiles are Git-tracked;194 exact prepared S11/Bolivia arrays may be imported from any local source root only when all frozen per-file hashes match, or from the pinned original transfer bundle; raw WF/STURM datasets remain external",
   "new_native_work": "PENDING_JETSON: four recovered mixed B0 exports plus FP32 attention/classifier constraints",
   "transport_normalization": "CSV line endings normalized to LF and one trailing blank source line removed; model/engine/raw-evaluation bytes retained",
   "mixed_repair_source": "MajorRev/revision_package_20261021/10_b0_mixed_repair_20261022",
@@ -19,5 +19,11 @@
     "contents": "float32 six-band512x512 model inputs and boolean validity masks",
     "primary": "49 author-retained:28 ordinary,21 stress",
     "check": "python3 prepare_inputs.py --check-dry"
+  },
+  "existing_source_input_route": {
+    "command": "python3 prepare_inputs.py --source-root /actual/existing/root [--link]",
+    "layout": "root/assets/source_val,source_test,source_bolivia or root/source_val,source_test,source_bolivia",
+    "admission": "all194 current ASSET_SHA256SUMS entries match; committed dry159 verified first; final all353 verification required",
+    "package_date_alone": "NOT_EVIDENCE"
   }
 }

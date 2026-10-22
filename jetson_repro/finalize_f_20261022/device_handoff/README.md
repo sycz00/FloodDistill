@@ -24,9 +24,15 @@ python3 runtime/evaluate_native.py \
 
 For integer-I/O engines also pass their exact `--io` JSON. Follow [JETSON_PROMPT.md](JETSON_PROMPT.md) for the complete multi-model run, environment checks and result collection.
 
-The remaining 194 prepared S11 validation/test/Bolivia inputs and workstation training history remain in the unified `MajorRev/revision_package_20261021/` transfer bundle, identified by [SOURCE_PACKAGE.json](SOURCE_PACKAGE.json). Importing the original complete bundle reuses matching committed dry files:
+The [user-relayed device report](provenance/JETSON_AGENT_STATUS_20261022.md) records an older handoff with missing dry data and zero new runs. The dry inputs were added in `5cd7c9e`, after the reported `cabfc13` files. Preserve the Jetson's local commits and deleted/relocated prompt. A separate verified handoff export may be used by setting `HANDOFF_ROOT` in the prompt, leaving the existing checkout untouched.
+
+The remaining 194 prepared S11 validation/test/Bolivia inputs and workstation training history remain in the unified `MajorRev/revision_package_20261021/` transfer bundle, identified by [SOURCE_PACKAGE.json](SOURCE_PACKAGE.json). Existing source arrays from any dated package may be reused only if all 194 exact file hashes match the frozen manifest. `--source-root` accepts a directory containing `source_val/`, `source_test/`, `source_bolivia/`, directly or beneath `assets/`. It checks all candidates/destinations before writing, then verifies all 353 arrays. The committed 159 dry inputs must already pass. These checks preserve the controller's full preflight. Choose one import route:
 
 ```bash
+# Exact existing source arrays; directory age/name is not proof of compatibility.
+python3 prepare_inputs.py --source-root /actual/existing/source_root
+# Optional: add --link if that verified directory will remain in place.
+# Alternatively, import the original complete bundle:
 python3 prepare_inputs.py --bundle-root /actual/path/to/8_jetson_export_20261022
 # Alternatively: python3 prepare_inputs.py --archive /actual/path/to/Jetson_export_20261022.tar.gz
 python3 prepare_inputs.py --check
@@ -37,3 +43,5 @@ The import still checks all 353 file hashes and preserves conflicting existing a
 The runner additionally verifies reused integer certificates, full result inventories and benchmark return codes/steady samples. New FP32 source wiring is checked before external evaluation. The corrected B0 graphs have new identities. The 48-slot matrix, tiny/micro graphs, prepared-data archive, source tolerances and historical observations are preserved. Use a new native attempt for this updated package; the runner rejects resuming results from the earlier package hash.
 
 The complete repaired export `MajorRev/revision_package_20261021/Jetson_mixed_repair_20261022.tar.gz` includes the 353 arrays; after unpacking, run `prepare_inputs.py --check` directly. The `--archive` importer accepts only the original pinned transfer archive, not this repaired handoff archive.
+
+For the reported device with an older dirty checkout, the separate `Jetson_input_recovery_20261022.tar.gz` export contains the current models/runtime and all 159 dry inputs, plus its Git export identity. Unpack it into a fresh directory and set `HANDOFF_ROOT` to its `device_handoff` directory. Reuse the 194 local source files through `--source-root` only after their frozen hashes match; no full archive is required for that route. The source-root importer was verified on the canonical workstation cache, not on the user-reported older Jetson files.

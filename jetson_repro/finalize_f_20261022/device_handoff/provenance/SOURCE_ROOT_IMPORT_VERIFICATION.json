@@ -1,0 +1,19 @@
+{
+  "status": "PASS_SOURCE_ROOT_IMPORT",
+  "source_arrays": 194,
+  "dry_arrays": 159,
+  "final_arrays": 353,
+  "semantic_input_and_mask_hashes": {
+    "s11val": 89,
+    "s11test": 90,
+    "bolivia": 15
+  },
+  "missing_source_rejected_before_write": true,
+  "mismatching_source_rejected_before_write": true,
+  "conflicting_destination_preserved_before_write": true,
+  "root_with_or_without_assets_supported": true,
+  "existing_matching_destinations_reused": true,
+  "source_scope": "canonical workstation cache only; the reported194 older Jetson files are NOT independently verified here",
+  "native_execution": "NOT_RUN",
+  "test_directory": "/tmp/jetson_source_import_ravt2dqu"
+}

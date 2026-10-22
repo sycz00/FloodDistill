@@ -1,19 +1,22 @@
 # Jetson task: finish the current 512-pixel model matrix
 
-Use the `research` checkout containing `jetson_repro/finalize_f_20261022/device_handoff/`. Read this prompt and that folder's `README.md`, `SOURCE_PACKAGE.json`, `RUN_MANIFEST.json` and `DATASETS.json`. Execute the remaining work and collect results; do not stop at a plan.
+Use the existing `research` checkout and the latest provided `device_handoff`, either under `jetson_repro/finalize_f_20261022/` or in a separate verified export. Read this prompt and that folder's `README.md`, `SOURCE_PACKAGE.json`, `RUN_MANIFEST.json` and `DATASETS.json`. Execute the remaining work and collect results; do not stop at a plan.
 
 This prompt includes the corrected mixed B0 handoff from `10_b0_mixed_repair_20261022` and supersedes the earlier handoff in commit `cf315e5`, which contained failed B0 QAT candidates. The 159 supplementary dry arrays are now Git-tracked at `assets/dry159/` and need no archive import. Use this updated package with a new attempt name; never resume an older attempt against these changed package hashes. The workstation has now prepared all supplied ONNX candidates. **Do not repeat PTQ calibration, QAT training, checkpoint selection or architecture searches on Jetson.** Use the exact committed graphs. Preserve existing work, failed attempts and the closed 97-event panel. Do not install or upgrade software, change clocks or power mode, use DLA, or commit/push results.
 
+Read [the user-relayed Jetson status](provenance/JETSON_AGENT_STATUS_20261022.md). It describes an older `cabfc13` handoff on device HEAD `175c98c`, before the dry-data commit `5cd7c9e` arrived. That report records `INPUTS_MISSING` and zero new runs. Preserve its four local commits, deleted/relocated repository prompt and untracked folders. Use this folder's `JETSON_PROMPT.md` as the execution copy. The result of the reported background raw-data check has not been supplied; recheck its process/log before treating it as completed or starting another full scan.
+
 ## 1. Establish the checkout and inputs
 
-Work from the existing FloodDistill repository. Confirm that its branch is `research`, record its HEAD and dirty state, and preserve unrelated changes. Do not reset, clean, force-checkout or pull over local changes. The workstation commit must first be available in this checkout; if the handoff directory is absent, report that exact missing prerequisite.
+Work from the existing FloodDistill repository. Confirm that its branch is `research`, record its HEAD and dirty state, and preserve unrelated changes. Do not reset, clean, force-checkout or pull over local changes. Use the updated committed handoff or a separately unpacked, hash-verified workstation export beside the existing checkout. For an export, set `HANDOFF_ROOT` to its `device_handoff` directory and record the supplied `GIT_EXPORT_IDENTITY.json` from its parent. Keep the existing dirty checkout untouched; do not merge, reset or restore its intentionally deleted prompt just to obtain these files. If neither updated handoff is available, report that exact missing prerequisite.
 
 ```bash
 REPO_ROOT="$(git rev-parse --show-toplevel)"
 git branch --show-current
 git rev-parse HEAD
 git status --short
-cd "$REPO_ROOT/jetson_repro/finalize_f_20261022/device_handoff"
+HANDOFF_ROOT="${HANDOFF_ROOT:-$REPO_ROOT/jetson_repro/finalize_f_20261022/device_handoff}"
+cd "$HANDOFF_ROOT"
 sha256sum -c SHA256SUMS
 ```
 
@@ -36,28 +39,34 @@ This check needs no archive, source arrays or raw external datasets. The committ
 
 For a dry-only extension of an existing certified engine, `runtime/evaluate_native.py --only-dry` needs `--engine`, a fresh `--out`, and the exact `--io` for integer-I/O engines; it does not require WF/STURM roots. The folder README gives a complete runnable example. The full controller below still evaluates every declared model/dataset and benchmarks it.
 
-For the full matrix, the other 194 prepared S11 validation/test/Bolivia arrays remain external. Import from an existing unpacked `8_jetson_export_20261022` directory or the original `Jetson_export_20261022.tar.gz`. Set the applicable variable to its actual path and run **one** route. Matching committed dry files are reused without replacement:
+For the full matrix, the other 194 prepared S11 validation/test/Bolivia arrays remain external. The reported 14-October copies may be reused **only when every file matches the current frozen `ASSET_SHA256SUMS`**. Package name/date alone neither qualifies nor disqualifies identical bytes. No regeneration, recompression, label changes or hash bypass is allowed.
+
+Prefer Route C when the 194 existing files are available. `SOURCE_INPUT_ROOT` contains either `assets/source_val`, `assets/source_test`, `assets/source_bolivia`, or those three `source_*` directories directly. If the old layout differs, create a separate staging directory of symlinks using these exact names, preserving the originals. The importer verifies all 194 candidates and existing destinations before writing, requires the committed dry159 check to pass, and then verifies all 353 arrays. A missing/mismatching input remains blocked. Otherwise use the original complete bundle/archive. Run **one** route; matching committed dry files are reused without replacement:
 
 ```bash
+# Route C: exact existing source arrays, including older copies only if hashes match.
+"$JETSON_PYTHON" prepare_inputs.py --source-root "$SOURCE_INPUT_ROOT"
+# Add --link only if this verified source directory will remain in place.
+
 # Route A: an already unpacked transfer directory.
 "$JETSON_PYTHON" prepare_inputs.py --bundle-root "$TRANSFER_BUNDLE_ROOT"
 
 # Route B: the original transfer archive; its pinned SHA256 is checked first.
 "$JETSON_PYTHON" prepare_inputs.py --archive "$TRANSFER_ARCHIVE"
 
-# After either route, verify all 353 arrays.
+# After the chosen route, verify all 353 arrays.
 "$JETSON_PYTHON" prepare_inputs.py --check
 ```
 
-If the complete repaired handoff archive already supplied all of `assets/`, run `prepare_inputs.py --check` and skip both import routes after it passes. The `--archive` importer accepts the original pinned archive only; unpack the complete repaired handoff normally. The 200 water-free WorldFloods windows are derived separately from full WF evaluation and still require the existing WorldFloods dataset.
+If the complete repaired handoff archive already supplied all of `assets/`, run `prepare_inputs.py --check` and skip all import routes after it passes. The `--archive` importer accepts the original pinned archive only; unpack the complete repaired handoff normally. The 200 water-free WorldFloods windows are derived separately from full WF evaluation and still require the existing WorldFloods dataset.
 
-`TRANSFER_BUNDLE_ROOT` means the directory containing `assets/`, not `assets/` itself. `--link` may be added to Route A to reuse verified arrays without copying; that source directory must then remain in place. The pinned transfer-archive SHA256 is `37acef126307b7bec899728b3d95e609cfa68d5514a9cd8d892deb40e95fca5c`. Do not use a different archive, recompress arrays, regenerate labels or bypass a hash mismatch. If these arrays have not reached Jetson, report `INPUTS_MISSING` with the missing archive/directory; finish the checkout/environment checks and do not claim the runs started.
+`TRANSFER_BUNDLE_ROOT` means the directory containing `assets/`, not `assets/` itself. `--link` may be added to Route A to reuse verified arrays without copying; that source directory must then remain in place. The pinned transfer-archive SHA256 is `37acef126307b7bec899728b3d95e609cfa68d5514a9cd8d892deb40e95fca5c`. The original-archive importer accepts only that pinned archive; Route C admits individual source files solely by their frozen hashes. Do not recompress arrays, regenerate labels or bypass a hash mismatch. If no route supplies matching inputs, report `INPUTS_MISSING` with the missing paths or mismatching hashes; finish the checkout/environment checks and do not claim the runs started.
 
 Locate the complete existing raw datasets. Defaults are `$HOME/data/STURM-Flood/Dataset` and `$HOME/data/WorldFloodsv2`; pass their actual roots if different. No workstation absolute path is required. The controller verifies all frozen input/mask hashes on all five datasets before any model work. The 97-event panel is outside this task.
 
 ## 2. Launch one durable finite run
 
-Inspect current device work, memory, hardware identity and observed clock/power state. Wait if another heavy job is running. Do not kill, suspend or reconfigure another worker. Run one heavy job at a time. A package-wide lock prevents two controllers from this handoff running concurrently; it does not lock other projects.
+Inspect current device work, memory, hardware identity and observed clock/power state. Wait if another heavy job is running. Do not kill, suspend or reconfigure another worker. First resolve the reported read-only raw-dataset check from its existing log/process; reuse a completed matching result as context, but the controller still performs its own mandatory preflight. Do not launch duplicate raw scans while the existing check is active, or claim its result from the earlier running report. Preserve the reported environment, clocks and power mode. Run one heavy job at a time. A package-wide lock prevents two controllers from this handoff running concurrently; it does not lock other projects.
 
 From the handoff directory, start a new immutable attempt, replacing dataset-root arguments only if their actual locations differ:
 
