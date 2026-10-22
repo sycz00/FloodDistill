@@ -16,5 +16,8 @@
   "source_input_preflight": "CPU_INPUTS_VERIFIED_NATIVE_PENDING",
   "b0_fp32_island_negative_guards": "PASS",
   "b0_repaired_source_candidates": 4,
-  "quantizer_structural_precision_guard": "PASS"
+  "quantizer_structural_precision_guard": "PASS",
+  "committed_dry_arrays": 159,
+  "dry_array_hashes_and_valid_support": "PASS",
+  "dry_only_without_external_roots": "PASS"
 }

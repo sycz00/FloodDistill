@@ -22,8 +22,13 @@ def summarize(rows):
     mean=lambda k:float(np.mean([r[k] for r in event if r[k] is not None])) if any(r[k] is not None for r in event) else None
     return dict(images=len(rows),events=len(groups),valid_pixels=sum(sum(r['counts_tn_fp_fn_tp']) for r in rows),pooled=scores(np.sum([r['counts_tn_fp_fn_tp'] for r in rows],axis=0)),equal_event={k:mean(k) for k in ('water_iou','miou','precision','recall')},per_event=event,rows=rows)
 
+def parse_args(argv=None):
+    p=argparse.ArgumentParser();p.add_argument('--engine',type=Path,required=True);p.add_argument('--io',type=Path);p.add_argument('--out',type=Path,required=True);p.add_argument('--sturm-root',type=Path);p.add_argument('--wf-root',type=Path);p.add_argument('--only-dry',action='store_true');p.add_argument('--resume',action='store_true');p.add_argument('--source-reference',type=Path);a=p.parse_args(argv)
+    if not a.only_dry and (a.sturm_root is None or a.wf_root is None):p.error('--sturm-root and --wf-root are required unless --only-dry is used')
+    return a
+
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--engine',type=Path,required=True);p.add_argument('--io',type=Path);p.add_argument('--out',type=Path,required=True);p.add_argument('--sturm-root',type=Path,required=True);p.add_argument('--wf-root',type=Path,required=True);p.add_argument('--only-dry',action='store_true');p.add_argument('--resume',action='store_true');p.add_argument('--source-reference',type=Path);a=p.parse_args()
+    a=parse_args()
     # Preserve the known Jetson TLS import order before albumentations/cv2.
     import torch
     import tensorrt as trt

@@ -2,7 +2,7 @@
 
 Use the `research` checkout containing `jetson_repro/finalize_f_20261022/device_handoff/`. Read this prompt and that folder's `README.md`, `SOURCE_PACKAGE.json`, `RUN_MANIFEST.json` and `DATASETS.json`. Execute the remaining work and collect results; do not stop at a plan.
 
-This prompt includes the corrected mixed B0 handoff from `10_b0_mixed_repair_20261022` and supersedes the earlier handoff in commit `cf315e5`, which contained failed B0 QAT candidates. Use this updated package with a new attempt name; never resume an older attempt against these changed package hashes. The workstation has now prepared all supplied ONNX candidates. **Do not repeat PTQ calibration, QAT training, checkpoint selection or architecture searches on Jetson.** Use the exact committed graphs. Preserve existing work, failed attempts and the closed 97-event panel. Do not install or upgrade software, change clocks or power mode, use DLA, or commit/push results.
+This prompt includes the corrected mixed B0 handoff from `10_b0_mixed_repair_20261022` and supersedes the earlier handoff in commit `cf315e5`, which contained failed B0 QAT candidates. The 159 supplementary dry arrays are now Git-tracked at `assets/dry159/` and need no archive import. Use this updated package with a new attempt name; never resume an older attempt against these changed package hashes. The workstation has now prepared all supplied ONNX candidates. **Do not repeat PTQ calibration, QAT training, checkpoint selection or architecture searches on Jetson.** Use the exact committed graphs. Preserve existing work, failed attempts and the closed 97-event panel. Do not install or upgrade software, change clocks or power mode, use DLA, or commit/push results.
 
 ## 1. Establish the checkout and inputs
 
@@ -26,20 +26,30 @@ export OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2
 export PYTHONUNBUFFERED=1
 ```
 
-The Git handoff contains all models, integer-I/O scales, inventories, reference scores, source gates and the existing 16 tiny engines/native accuracy records. Large datasets are external inputs. The 353 exact prepared arrays (194 S11 and 159 dry) must be imported from the existing transfer bundle. Locate either its unpacked `8_jetson_export_20261022` directory or `Jetson_export_20261022.tar.gz`. Set the variable below to the actual existing path and run **one** import route:
+The Git handoff contains all models, integer-I/O scales, inventories, reference scores, source gates, the existing 16 tiny engines/native accuracy records, and the 159 supplementary dry tiles with boolean validity masks at `assets/dry159/*.npz`. Verify the dry inputs immediately after checkout:
+
+```bash
+"$JETSON_PYTHON" prepare_inputs.py --check-dry
+```
+
+This check needs no archive, source arrays or raw external datasets. The committed arrays are the exact prepared six-band 512x512 model inputs. Original raw-scene absolute paths in `inventories/dry159_manifest.json` are provenance only. Keep the 49 author-retained primary scenes (28 ordinary, 21 stress), their masks and all 159 sensitivity tiles exactly as declared. Do not describe all 159 as independently verified dry ground truth.
+
+For a dry-only extension of an existing certified engine, `runtime/evaluate_native.py --only-dry` needs `--engine`, a fresh `--out`, and the exact `--io` for integer-I/O engines; it does not require WF/STURM roots. The folder README gives a complete runnable example. The full controller below still evaluates every declared model/dataset and benchmarks it.
+
+For the full matrix, the other 194 prepared S11 validation/test/Bolivia arrays remain external. Import from an existing unpacked `8_jetson_export_20261022` directory or the original `Jetson_export_20261022.tar.gz`. Set the applicable variable to its actual path and run **one** route. Matching committed dry files are reused without replacement:
 
 ```bash
 # Route A: an already unpacked transfer directory.
 "$JETSON_PYTHON" prepare_inputs.py --bundle-root "$TRANSFER_BUNDLE_ROOT"
 
-# Route B: the original transfer archive; the script checks its pinned SHA256 first.
+# Route B: the original transfer archive; its pinned SHA256 is checked first.
 "$JETSON_PYTHON" prepare_inputs.py --archive "$TRANSFER_ARCHIVE"
 
 # After either route, verify all 353 arrays.
 "$JETSON_PYTHON" prepare_inputs.py --check
 ```
 
-If the complete repaired handoff archive already supplied `assets/`, run `prepare_inputs.py --check` and skip both import routes after it passes. The import `--archive` route above accepts the original pinned archive only; unpack the complete repaired handoff normally.
+If the complete repaired handoff archive already supplied all of `assets/`, run `prepare_inputs.py --check` and skip both import routes after it passes. The `--archive` importer accepts the original pinned archive only; unpack the complete repaired handoff normally. The 200 water-free WorldFloods windows are derived separately from full WF evaluation and still require the existing WorldFloods dataset.
 
 `TRANSFER_BUNDLE_ROOT` means the directory containing `assets/`, not `assets/` itself. `--link` may be added to Route A to reuse verified arrays without copying; that source directory must then remain in place. The pinned transfer-archive SHA256 is `37acef126307b7bec899728b3d95e609cfa68d5514a9cd8d892deb40e95fca5c`. Do not use a different archive, recompress arrays, regenerate labels or bypass a hash mismatch. If these arrays have not reached Jetson, report `INPUTS_MISSING` with the missing archive/directory; finish the checkout/environment checks and do not claim the runs started.
 

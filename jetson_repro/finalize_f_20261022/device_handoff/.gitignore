@@ -1,4 +1,7 @@
-/assets/
+/assets/*
+!/assets/dry159/
+/assets/dry159/*
+!/assets/dry159/*.npz
 /results/
 /results_logs/
 /ASSETS_READY.json

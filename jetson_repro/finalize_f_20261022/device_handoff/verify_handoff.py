@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Offline checks for deployment identities, full inventories and failure handling."""
-import ast,copy,csv,hashlib,io,json,subprocess,sys,tempfile
+import ast,contextlib,copy,csv,hashlib,io,json,subprocess,sys,tempfile
 from pathlib import Path
 ROOT=Path(__file__).resolve().parent
 sys.path.insert(0,str(ROOT/'runtime'))
@@ -10,10 +10,30 @@ import collect_native
 from validate_results import validate_rows,benchmark_receipts_valid
 import prepare_inputs
 import precision_islands
+import dataset_io
+from evaluate_native import parse_args
 
 def read(p):return json.loads(Path(p).read_text())
 def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
 def main():
+    dry_check=prepare_inputs.verify(dry_only=True);assert dry_check['arrays']==159
+    dry_manifest=read(ROOT/'inventories/dry159_manifest.json')['rows']
+    assert {f.stem for f in (ROOT/'assets/dry159').glob('*.npz')}=={r['tile_id'] for r in dry_manifest}
+    dry_count=0
+    for image,valid,rec in dataset_io.dry():
+        assert image.shape==(6,512,512) and image.dtype==np.float32 and np.isfinite(image).all()
+        assert valid.shape==(512,512) and valid.dtype==np.bool_
+        assert int(valid.sum())==rec['full_valid_pixels'] and int(valid[124:388,124:388].sum())==rec['central_valid_pixels']
+        dry_count+=1
+    assert dry_count==159
+    accepted=[r for r in dry_manifest if r['decision']=='kept_dry']
+    assert len(accepted)==49 and sum(r['group']=='ordinary' for r in accepted)==28 and sum(r['group']=='stress' for r in accepted)==21
+    dry_args=parse_args(['--engine','fixture.engine','--out','fixture_output','--only-dry'])
+    assert dry_args.only_dry and dry_args.sturm_root is None and dry_args.wf_root is None
+    with contextlib.redirect_stderr(io.StringIO()):
+        try:parse_args(['--engine','fixture.engine','--out','fixture_output'])
+        except SystemExit as error:assert error.code==2
+        else:raise AssertionError('Full evaluation admitted without external dataset roots')
     m=read(ROOT/'RUN_MANIFEST.json');models=m['engines'];slots=m['primary_matrix'];assert len(models)==51 and len(slots)==48
     assert {(s['architecture'],s['seed'],s['precision']) for s in slots}=={(a,s,p) for a in ('R4','R4_micro','B0') for s in (42,64,91,107) for p in ('fp32','fp16','mixed','pure')}
     assert sum(s['engine'] is None for s in slots)==4 and all(s['architecture']=='B0' and s['precision']=='pure' for s in slots if s['engine'] is None)
@@ -134,6 +154,6 @@ def main():
     assert not benchmark_receipts_valid(profile,dict(steady,steady_samples=0),state)
     assert not benchmark_receipts_valid(profile,dict(steady,steady_energy_mJ_per_image=None),state)
     assert not benchmark_receipts_valid(profile,dict(steady,steady_energy_mJ_per_image=1),state)
-    report=dict(status='PASS_OFFLINE_HANDOFF',engine_entries=51,primary_slots=48,unavailable_b0_pure=4,reused_native_engines=16,new_build_attempts=35,full_source_float_parity_records=12,old_native_accuracy_rows_reproduced=80,wrong_asset_hash_and_overwrite_guard='PASS',changed_cached_counts_guard='PASS',failed_or_incomplete_benchmark_guard='PASS',missing_native_work_guard='PASS',python38_syntax_and_cli='PASS',native_execution='PENDING_JETSON',source_input_preflight=read(ROOT/'provenance/HANDOFF_INPUT_PARITY.json')['status'],b0_fp32_island_negative_guards='PASS',b0_repaired_source_candidates=4,quantizer_structural_precision_guard='PASS')
+    report=dict(status='PASS_OFFLINE_HANDOFF',engine_entries=51,primary_slots=48,unavailable_b0_pure=4,reused_native_engines=16,new_build_attempts=35,full_source_float_parity_records=12,old_native_accuracy_rows_reproduced=80,wrong_asset_hash_and_overwrite_guard='PASS',changed_cached_counts_guard='PASS',failed_or_incomplete_benchmark_guard='PASS',missing_native_work_guard='PASS',python38_syntax_and_cli='PASS',native_execution='PENDING_JETSON',source_input_preflight=read(ROOT/'provenance/HANDOFF_INPUT_PARITY.json')['status'],b0_fp32_island_negative_guards='PASS',b0_repaired_source_candidates=4,quantizer_structural_precision_guard='PASS',committed_dry_arrays=159,dry_array_hashes_and_valid_support='PASS',dry_only_without_external_roots='PASS')
     (ROOT/'provenance/HANDOFF_VALIDATION.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps(report,indent=2))
 if __name__=='__main__':main()

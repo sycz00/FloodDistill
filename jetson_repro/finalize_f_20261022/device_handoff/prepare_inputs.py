@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Import the353 frozen arrays from the existing transfer bundle, then verify them."""
+"""Verify committed dry inputs or import/verify all 353 frozen arrays."""
 import argparse,hashlib,json,os,shutil,tarfile
 from pathlib import Path
 ROOT=Path(__file__).resolve().parent
@@ -20,13 +20,17 @@ def expected():
     if len(rows)!=353:raise ValueError('Require194 source and159 dry arrays')
     return rows
 
-def verify():
+def verify(dry_only=False):
     rows=expected()
+    if dry_only:
+        rows={name:digest for name,digest in rows.items() if name.startswith('assets/dry159/')}
+        if len(rows)!=159:raise ValueError('Require 159 frozen dry arrays')
     missing=[name for name in rows if not (ROOT/name).is_file()]
+    if missing and dry_only:raise FileNotFoundError(str(len(missing))+' committed dry arrays missing; update the research checkout containing assets/dry159/; first missing '+missing[0])
     if missing:raise FileNotFoundError(str(len(missing))+' frozen arrays missing; run prepare_inputs.py --bundle-root /path/to/8_jetson_export_20261022 or --archive /path/to/Jetson_export_20261022.tar.gz; first missing '+missing[0])
     for name,digest in rows.items():
         if sha(ROOT/name)!=digest:raise ValueError('Frozen array hash mismatch '+name)
-    return dict(status='PASS',arrays=353,asset_manifest_sha256=sha(ROOT/'ASSET_SHA256SUMS'))
+    return dict(status='PASS',arrays=len(rows),asset_manifest_sha256=sha(ROOT/'ASSET_SHA256SUMS'))
 
 def write_file(name,digest,stream):
     dest=ROOT/name;dest.parent.mkdir(parents=True,exist_ok=True)
@@ -42,7 +46,7 @@ def write_file(name,digest,stream):
         if temp.exists():temp.unlink()
 
 def main():
-    p=argparse.ArgumentParser(description=__doc__);g=p.add_mutually_exclusive_group(required=True);g.add_argument('--bundle-root',type=Path);g.add_argument('--archive',type=Path);g.add_argument('--check',action='store_true');p.add_argument('--link',action='store_true',help='Use verified symlinks to an existing unpacked bundle, which must remain in place');a=p.parse_args()
+    p=argparse.ArgumentParser(description=__doc__);g=p.add_mutually_exclusive_group(required=True);g.add_argument('--bundle-root',type=Path);g.add_argument('--archive',type=Path);g.add_argument('--check',action='store_true');g.add_argument('--check-dry',action='store_true',help='Verify only the 159 committed dry tiles; no transfer archive or external datasets needed');p.add_argument('--link',action='store_true',help='Use verified symlinks to an existing unpacked bundle, which must remain in place');a=p.parse_args()
     if a.link and not a.bundle_root:p.error('--link requires --bundle-root')
     rows=expected();source=None
     if a.bundle_root:
@@ -73,7 +77,7 @@ def main():
                 with stream:write_file(name,rows[name],stream)
                 seen.add(name)
         if seen!=set(rows):raise ValueError('Archive missing required assets')
-    result=verify()
+    result=verify(dry_only=a.check_dry)
     if source is not None:
         result.update(source=source,linked=bool(a.link));temp=ROOT/'ASSETS_READY.json.tmp';temp.write_text(json.dumps(result,indent=2)+'\n');temp.replace(ROOT/'ASSETS_READY.json')
     print(json.dumps(result,indent=2));return 0
