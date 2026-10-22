@@ -1,0 +1,46 @@
+{
+  "status": "FOUR_FLOAT_EXPORTS_FULL_SOURCE_PARITY_PASSED",
+  "seeds": [
+    42,
+    64,
+    91,
+    107
+  ],
+  "artifacts": [
+    {
+      "path": "s107/EXPORT_RECEIPT.json",
+      "sha256": "522a3023262caa339466174bb60486adc79f3e04d6b41f7b9888ab7281bac139"
+    },
+    {
+      "path": "s107/R4_micro_s107_float.onnx",
+      "sha256": "6264fe598fad381222bd6a3ceaeea8965874843433ee7095e57c54b6fe753e34"
+    },
+    {
+      "path": "s42/EXPORT_RECEIPT.json",
+      "sha256": "4254d2686275a2a15e59f700448b1c7a7b81abfdb71101bd3e5e35ab390c6563"
+    },
+    {
+      "path": "s42/R4_micro_s42_float.onnx",
+      "sha256": "e2091914df4901cff034386fb285a460ca072060f1104c2ed82a388d35a0bcf0"
+    },
+    {
+      "path": "s64/EXPORT_RECEIPT.json",
+      "sha256": "753c5422fcccd46e4b8dd0796606e89e051877f3f9374175ca1c08489e33df87"
+    },
+    {
+      "path": "s64/R4_micro_s64_float.onnx",
+      "sha256": "e6618b4c0f53237c9afe25020a5370760d8cfeb10ee3b38823dbe59d3e2c1aaf"
+    },
+    {
+      "path": "s91/EXPORT_RECEIPT.json",
+      "sha256": "b236a2d23d6ffa68c18a72453cce2b2c47a6cd4143b933e72a9d10b44fdba443"
+    },
+    {
+      "path": "s91/R4_micro_s91_float.onnx",
+      "sha256": "d963e64601697712a511ba3fc8373d9867fcd49416423431b2d1d7bbf91260fd"
+    }
+  ],
+  "training_launched": false,
+  "device_status": "NOT_RUN",
+  "ptq_status": "NOT_RUN"
+}
