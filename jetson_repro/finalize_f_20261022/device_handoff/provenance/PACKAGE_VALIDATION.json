@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "primary_slots": 48,
+  "supplied_primary_candidates": 44,
+  "unavailable_b0_pure": 4,
+  "engine_entries": 51,
+  "new_build_attempts": 35,
+  "parents": 12,
+  "b0_completed128_update_fits": 8,
+  "b0_source_qualified_qat": 0,
+  "s11_assets": {
+    "s11val": 89,
+    "s11test": 90,
+    "bolivia": 15
+  },
+  "dry_assets": 159,
+  "old_native_accuracy_rows_reproduced": 80,
+  "onnx_graphs_and_io_checked": 51,
+  "device_cli_and_python38_syntax": "PASS",
+  "negative_missing_work_fixture": "PASS",
+  "raw_external_loader_parity": {
+    "status": "PASS",
+    "inventories": {
+      "wf": 836,
+      "sturm512": 2675
+    },
+    "elapsed_seconds": 85.79279065132141,
+    "source_only_no_model_inference": true
+  },
+  "native_new_builds": "PENDING_JETSON",
+  "strict_qat_logit_parity": "FAILURES_PRESERVED"
+}

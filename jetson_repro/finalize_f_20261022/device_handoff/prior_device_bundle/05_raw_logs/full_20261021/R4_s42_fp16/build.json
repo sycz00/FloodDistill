@@ -1,0 +1,3295 @@
+{
+  "status": "built",
+  "model_sha256": "bfc63fd7f574422d286038f3066f37598a554d2009d9bc41388279c84c91b354",
+  "mode": "fp16",
+  "host": "Linux-5.10.104-tegra-aarch64-with-glibc2.17",
+  "python": "3.8.20 | packaged by conda-forge | (default, Sep 30 2024, 17:47:05) \n[GCC 13.3.0]",
+  "started": 1792620459.1239944,
+  "calibration": "embedded QDQ; no random ranges and no calibrator",
+  "fp16_enabled": true,
+  "tensorrt": "8.4.1.5",
+  "int8_enabled": false,
+  "forced_layers": [],
+  "precision_audit": {
+    "layer_count": 25,
+    "int8_tensor_layers": 0,
+    "floating_layers": [
+      {
+        "Name": "/stem/stem.0/Conv + PWN(/stem/stem.2/Clip)",
+        "LayerType": "CaskConvolution",
+        "Inputs": [
+          {
+            "Name": "image",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              6,
+              512,
+              512
+            ],
+            "Format/Datatype": "Row major linear FP32"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "/stem/stem.2/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              12,
+              256,
+              256
+            ],
+            "Format/Datatype": "Row major linear FP32"
+          }
+        ],
+        "ParameterType": "Convolution",
+        "Kernel": [
+          3,
+          3
+        ],
+        "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+        "PrePadding": [
+          1,
+          1
+        ],
+        "PostPadding": [
+          1,
+          1
+        ],
+        "Stride": [
+          2,
+          2
+        ],
+        "Dilation": [
+          1,
+          1
+        ],
+        "OutMaps": 12,
+        "Groups": 1,
+        "Weights": {
+          "Type": "Float",
+          "Count": 648
+        },
+        "Bias": {
+          "Type": "Float",
+          "Count": 12
+        },
+        "HasSparseWeights": 0,
+        "Activation": "CLIPPED_RELU",
+        "ParameterSubType": "[0.000000,6.000000]",
+        "HasBias": 1,
+        "HasReLU": 0,
+        "TacticName": "volta_scudnn_128x32_relu_small_nn_v1",
+        "TacticValue": "0xc939b7b0a4d5a05f"
+      },
+      {
+        "Name": "Reformatting CopyNode for Input Tensor 0 to /s1/s1.0/dw/dw.0/Conv + PWN(/s1/s1.0/dw/dw.2/Clip)",
+        "LayerType": "Reformat",
+        "Inputs": [
+          {
+            "Name": "/stem/stem.2/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              12,
+              256,
+              256
+            ],
+            "Format/Datatype": "Row major linear FP32"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "Reformatted Input Tensor 0 to /s1/s1.0/dw/dw.0/Conv + PWN(/s1/s1.0/dw/dw.2/Clip)",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              12,
+              256,
+              256
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "ParameterType": "Reformat",
+        "Origin": "REFORMAT",
+        "TacticValue": "0x0000000000000000"
+      },
+      {
+        "Name": "/s1/s1.0/dw/dw.0/Conv + PWN(/s1/s1.0/dw/dw.2/Clip)",
+        "LayerType": "CudaDepthwiseConvolution",
+        "Inputs": [
+          {
+            "Name": "Reformatted Input Tensor 0 to /s1/s1.0/dw/dw.0/Conv + PWN(/s1/s1.0/dw/dw.2/Clip)",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              12,
+              256,
+              256
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "/s1/s1.0/dw/dw.2/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              12,
+              128,
+              128
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "ParameterType": "Convolution",
+        "Kernel": [
+          3,
+          3
+        ],
+        "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+        "PrePadding": [
+          1,
+          1
+        ],
+        "PostPadding": [
+          1,
+          1
+        ],
+        "Stride": [
+          2,
+          2
+        ],
+        "Dilation": [
+          1,
+          1
+        ],
+        "OutMaps": 12,
+        "Groups": 12,
+        "Weights": {
+          "Type": "Half",
+          "Count": 108
+        },
+        "Bias": {
+          "Type": "Half",
+          "Count": 12
+        },
+        "HasSparseWeights": 0,
+        "Activation": "CLIPPED_RELU",
+        "ParameterSubType": "[0.000000,6.000000]",
+        "HasBias": 1,
+        "TacticValue": "0xfffffffffffffffe"
+      },
+      {
+        "Name": "/s1/s1.0/pw/pw.0/Conv + PWN(/s1/s1.0/Clip)",
+        "LayerType": "CaskConvolution",
+        "Inputs": [
+          {
+            "Name": "/s1/s1.0/dw/dw.2/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              12,
+              128,
+              128
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "/s1/s1.0/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "ParameterType": "Convolution",
+        "Kernel": [
+          1,
+          1
+        ],
+        "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+        "PrePadding": [
+          0,
+          0
+        ],
+        "PostPadding": [
+          0,
+          0
+        ],
+        "Stride": [
+          1,
+          1
+        ],
+        "Dilation": [
+          1,
+          1
+        ],
+        "OutMaps": 16,
+        "Groups": 1,
+        "Weights": {
+          "Type": "Half",
+          "Count": 192
+        },
+        "Bias": {
+          "Type": "Half",
+          "Count": 16
+        },
+        "HasSparseWeights": 0,
+        "Activation": "CLIPPED_RELU",
+        "ParameterSubType": "[0.000000,6.000000]",
+        "HasBias": 1,
+        "HasReLU": 0,
+        "TacticName": "sm70_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize128x32x32_stage1_warpsize4x1x1_g1_tensor8x8x4_simple_t1r1s1",
+        "TacticValue": "0x911cdd8d308bed5c"
+      },
+      {
+        "Name": "/s1/s1.1/dw/dw.0/Conv + PWN(/s1/s1.1/dw/dw.2/Clip)",
+        "LayerType": "CudaDepthwiseConvolution",
+        "Inputs": [
+          {
+            "Name": "/s1/s1.0/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "/s1/s1.1/dw/dw.2/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "ParameterType": "Convolution",
+        "Kernel": [
+          3,
+          3
+        ],
+        "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+        "PrePadding": [
+          1,
+          1
+        ],
+        "PostPadding": [
+          1,
+          1
+        ],
+        "Stride": [
+          1,
+          1
+        ],
+        "Dilation": [
+          1,
+          1
+        ],
+        "OutMaps": 16,
+        "Groups": 16,
+        "Weights": {
+          "Type": "Half",
+          "Count": 144
+        },
+        "Bias": {
+          "Type": "Half",
+          "Count": 16
+        },
+        "HasSparseWeights": 0,
+        "Activation": "CLIPPED_RELU",
+        "ParameterSubType": "[0.000000,6.000000]",
+        "HasBias": 1,
+        "TacticValue": "0xfffffffffffffffe"
+      },
+      {
+        "Name": "/s1/s1.1/pw/pw.0/Conv + /s1/s1.1/Add + PWN(/s1/s1.1/Clip)",
+        "LayerType": "CaskConvolution",
+        "Inputs": [
+          {
+            "Name": "/s1/s1.1/dw/dw.2/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          },
+          {
+            "Name": "/s1/s1.0/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "/s1/s1.1/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "ParameterType": "Convolution",
+        "Kernel": [
+          1,
+          1
+        ],
+        "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+        "PrePadding": [
+          0,
+          0
+        ],
+        "PostPadding": [
+          0,
+          0
+        ],
+        "Stride": [
+          1,
+          1
+        ],
+        "Dilation": [
+          1,
+          1
+        ],
+        "OutMaps": 16,
+        "Groups": 1,
+        "Weights": {
+          "Type": "Half",
+          "Count": 256
+        },
+        "Bias": {
+          "Type": "Half",
+          "Count": 16
+        },
+        "HasSparseWeights": 0,
+        "Activation": "CLIPPED_RELU",
+        "ParameterSubType": "[0.000000,6.000000]",
+        "HasBias": 1,
+        "HasReLU": 0,
+        "TacticName": "sm70_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize128x32x32_stage1_warpsize4x1x1_g1_tensor8x8x4_simple_t1r1s1",
+        "TacticValue": "0x911cdd8d308bed5c"
+      },
+      {
+        "Name": "/s2/s2.0/dw/dw.0/Conv + PWN(/s2/s2.0/dw/dw.2/Clip)",
+        "LayerType": "CudaDepthwiseConvolution",
+        "Inputs": [
+          {
+            "Name": "/s1/s1.1/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "/s2/s2.0/dw/dw.2/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              64,
+              64
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "ParameterType": "Convolution",
+        "Kernel": [
+          3,
+          3
+        ],
+        "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+        "PrePadding": [
+          1,
+          1
+        ],
+        "PostPadding": [
+          1,
+          1
+        ],
+        "Stride": [
+          2,
+          2
+        ],
+        "Dilation": [
+          1,
+          1
+        ],
+        "OutMaps": 16,
+        "Groups": 16,
+        "Weights": {
+          "Type": "Half",
+          "Count": 144
+        },
+        "Bias": {
+          "Type": "Half",
+          "Count": 16
+        },
+        "HasSparseWeights": 0,
+        "Activation": "CLIPPED_RELU",
+        "ParameterSubType": "[0.000000,6.000000]",
+        "HasBias": 1,
+        "TacticValue": "0xfffffffffffffffe"
+      },
+      {
+        "Name": "/s2/s2.0/pw/pw.0/Conv + PWN(/s2/s2.0/Clip)",
+        "LayerType": "CaskConvolution",
+        "Inputs": [
+          {
+            "Name": "/s2/s2.0/dw/dw.2/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              64,
+              64
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "/s2/s2.0/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              24,
+              64,
+              64
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "ParameterType": "Convolution",
+        "Kernel": [
+          1,
+          1
+        ],
+        "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+        "PrePadding": [
+          0,
+          0
+        ],
+        "PostPadding": [
+          0,
+          0
+        ],
+        "Stride": [
+          1,
+          1
+        ],
+        "Dilation": [
+          1,
+          1
+        ],
+        "OutMaps": 24,
+        "Groups": 1,
+        "Weights": {
+          "Type": "Half",
+          "Count": 384
+        },
+        "Bias": {
+          "Type": "Half",
+          "Count": 24
+        },
+        "HasSparseWeights": 0,
+        "Activation": "CLIPPED_RELU",
+        "ParameterSubType": "[0.000000,6.000000]",
+        "HasBias": 1,
+        "HasReLU": 0,
+        "TacticName": "sm70_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize256x32x32_stage1_warpsize4x1x1_g1_tensor8x8x4_simple_t1r1s1",
+        "TacticValue": "0x83b35618df65874c"
+      },
+      {
+        "Name": "/s2/s2.1/dw/dw.0/Conv + PWN(/s2/s2.1/dw/dw.2/Clip)",
+        "LayerType": "CudaDepthwiseConvolution",
+        "Inputs": [
+          {
+            "Name": "/s2/s2.0/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              24,
+              64,
+              64
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "/s2/s2.1/dw/dw.2/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              24,
+              64,
+              64
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "ParameterType": "Convolution",
+        "Kernel": [
+          3,
+          3
+        ],
+        "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+        "PrePadding": [
+          1,
+          1
+        ],
+        "PostPadding": [
+          1,
+          1
+        ],
+        "Stride": [
+          1,
+          1
+        ],
+        "Dilation": [
+          1,
+          1
+        ],
+        "OutMaps": 24,
+        "Groups": 24,
+        "Weights": {
+          "Type": "Half",
+          "Count": 216
+        },
+        "Bias": {
+          "Type": "Half",
+          "Count": 24
+        },
+        "HasSparseWeights": 0,
+        "Activation": "CLIPPED_RELU",
+        "ParameterSubType": "[0.000000,6.000000]",
+        "HasBias": 1,
+        "TacticValue": "0xfffffffffffffffe"
+      },
+      {
+        "Name": "/s2/s2.1/pw/pw.0/Conv + /s2/s2.1/Add + PWN(/s2/s2.1/Clip)",
+        "LayerType": "CaskConvolution",
+        "Inputs": [
+          {
+            "Name": "/s2/s2.1/dw/dw.2/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              24,
+              64,
+              64
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          },
+          {
+            "Name": "/s2/s2.0/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              24,
+              64,
+              64
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "/s2/s2.1/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              24,
+              64,
+              64
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "ParameterType": "Convolution",
+        "Kernel": [
+          1,
+          1
+        ],
+        "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+        "PrePadding": [
+          0,
+          0
+        ],
+        "PostPadding": [
+          0,
+          0
+        ],
+        "Stride": [
+          1,
+          1
+        ],
+        "Dilation": [
+          1,
+          1
+        ],
+        "OutMaps": 24,
+        "Groups": 1,
+        "Weights": {
+          "Type": "Half",
+          "Count": 576
+        },
+        "Bias": {
+          "Type": "Half",
+          "Count": 24
+        },
+        "HasSparseWeights": 0,
+        "Activation": "CLIPPED_RELU",
+        "ParameterSubType": "[0.000000,6.000000]",
+        "HasBias": 1,
+        "HasReLU": 0,
+        "TacticName": "sm70_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize256x32x32_stage1_warpsize4x1x1_g1_tensor8x8x4_simple_t1r1s1",
+        "TacticValue": "0x83b35618df65874c"
+      },
+      {
+        "Name": "/s3/s3.0/dw/dw.0/Conv + PWN(/s3/s3.0/dw/dw.2/Clip)",
+        "LayerType": "CudaDepthwiseConvolution",
+        "Inputs": [
+          {
+            "Name": "/s2/s2.1/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              24,
+              64,
+              64
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "/s3/s3.0/dw/dw.2/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              24,
+              32,
+              32
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "ParameterType": "Convolution",
+        "Kernel": [
+          3,
+          3
+        ],
+        "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+        "PrePadding": [
+          1,
+          1
+        ],
+        "PostPadding": [
+          1,
+          1
+        ],
+        "Stride": [
+          2,
+          2
+        ],
+        "Dilation": [
+          1,
+          1
+        ],
+        "OutMaps": 24,
+        "Groups": 24,
+        "Weights": {
+          "Type": "Half",
+          "Count": 216
+        },
+        "Bias": {
+          "Type": "Half",
+          "Count": 24
+        },
+        "HasSparseWeights": 0,
+        "Activation": "CLIPPED_RELU",
+        "ParameterSubType": "[0.000000,6.000000]",
+        "HasBias": 1,
+        "TacticValue": "0xfffffffffffffffe"
+      },
+      {
+        "Name": "/s3/s3.0/pw/pw.0/Conv + PWN(/s3/s3.0/Clip)",
+        "LayerType": "CaskConvolution",
+        "Inputs": [
+          {
+            "Name": "/s3/s3.0/dw/dw.2/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              24,
+              32,
+              32
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "/s3/s3.0/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              40,
+              32,
+              32
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "ParameterType": "Convolution",
+        "Kernel": [
+          1,
+          1
+        ],
+        "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+        "PrePadding": [
+          0,
+          0
+        ],
+        "PostPadding": [
+          0,
+          0
+        ],
+        "Stride": [
+          1,
+          1
+        ],
+        "Dilation": [
+          1,
+          1
+        ],
+        "OutMaps": 40,
+        "Groups": 1,
+        "Weights": {
+          "Type": "Half",
+          "Count": 960
+        },
+        "Bias": {
+          "Type": "Half",
+          "Count": 40
+        },
+        "HasSparseWeights": 0,
+        "Activation": "CLIPPED_RELU",
+        "ParameterSubType": "[0.000000,6.000000]",
+        "HasBias": 1,
+        "HasReLU": 0,
+        "TacticName": "sm70_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize128x64x32_stage1_warpsize2x2x1_g1_tensor8x8x4_simple_t1r1s1",
+        "TacticValue": "0xb26ad7a19a3195cc"
+      },
+      {
+        "Name": "/s3/s3.1/dw/dw.0/Conv + PWN(/s3/s3.1/dw/dw.2/Clip)",
+        "LayerType": "CudaDepthwiseConvolution",
+        "Inputs": [
+          {
+            "Name": "/s3/s3.0/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              40,
+              32,
+              32
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "/s3/s3.1/dw/dw.2/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              40,
+              32,
+              32
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "ParameterType": "Convolution",
+        "Kernel": [
+          3,
+          3
+        ],
+        "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+        "PrePadding": [
+          1,
+          1
+        ],
+        "PostPadding": [
+          1,
+          1
+        ],
+        "Stride": [
+          1,
+          1
+        ],
+        "Dilation": [
+          1,
+          1
+        ],
+        "OutMaps": 40,
+        "Groups": 40,
+        "Weights": {
+          "Type": "Half",
+          "Count": 360
+        },
+        "Bias": {
+          "Type": "Half",
+          "Count": 40
+        },
+        "HasSparseWeights": 0,
+        "Activation": "CLIPPED_RELU",
+        "ParameterSubType": "[0.000000,6.000000]",
+        "HasBias": 1,
+        "TacticValue": "0xfffffffffffffffe"
+      },
+      {
+        "Name": "/s3/s3.1/pw/pw.0/Conv + /s3/s3.1/Add + PWN(/s3/s3.1/Clip)",
+        "LayerType": "CaskConvolution",
+        "Inputs": [
+          {
+            "Name": "/s3/s3.1/dw/dw.2/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              40,
+              32,
+              32
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          },
+          {
+            "Name": "/s3/s3.0/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              40,
+              32,
+              32
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "/s3/s3.1/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              40,
+              32,
+              32
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "ParameterType": "Convolution",
+        "Kernel": [
+          1,
+          1
+        ],
+        "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+        "PrePadding": [
+          0,
+          0
+        ],
+        "PostPadding": [
+          0,
+          0
+        ],
+        "Stride": [
+          1,
+          1
+        ],
+        "Dilation": [
+          1,
+          1
+        ],
+        "OutMaps": 40,
+        "Groups": 1,
+        "Weights": {
+          "Type": "Half",
+          "Count": 1600
+        },
+        "Bias": {
+          "Type": "Half",
+          "Count": 40
+        },
+        "HasSparseWeights": 0,
+        "Activation": "CLIPPED_RELU",
+        "ParameterSubType": "[0.000000,6.000000]",
+        "HasBias": 1,
+        "HasReLU": 0,
+        "TacticName": "sm70_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize64x64x64_stage1_warpsize2x2x1_g1_tensor8x8x4_simple_t1r1s1",
+        "TacticValue": "0x3693535b668f43cb"
+      },
+      {
+        "Name": "/s3/s3.2/dw/dw.0/Conv + PWN(/s3/s3.2/dw/dw.2/Clip)",
+        "LayerType": "CudaDepthwiseConvolution",
+        "Inputs": [
+          {
+            "Name": "/s3/s3.1/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              40,
+              32,
+              32
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "/s3/s3.2/dw/dw.2/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              40,
+              32,
+              32
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "ParameterType": "Convolution",
+        "Kernel": [
+          3,
+          3
+        ],
+        "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+        "PrePadding": [
+          1,
+          1
+        ],
+        "PostPadding": [
+          1,
+          1
+        ],
+        "Stride": [
+          1,
+          1
+        ],
+        "Dilation": [
+          1,
+          1
+        ],
+        "OutMaps": 40,
+        "Groups": 40,
+        "Weights": {
+          "Type": "Half",
+          "Count": 360
+        },
+        "Bias": {
+          "Type": "Half",
+          "Count": 40
+        },
+        "HasSparseWeights": 0,
+        "Activation": "CLIPPED_RELU",
+        "ParameterSubType": "[0.000000,6.000000]",
+        "HasBias": 1,
+        "TacticValue": "0xfffffffffffffffe"
+      },
+      {
+        "Name": "/s3/s3.2/pw/pw.0/Conv + /s3/s3.2/Add + PWN(/s3/s3.2/Clip)",
+        "LayerType": "CaskConvolution",
+        "Inputs": [
+          {
+            "Name": "/s3/s3.2/dw/dw.2/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              40,
+              32,
+              32
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          },
+          {
+            "Name": "/s3/s3.1/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              40,
+              32,
+              32
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "/s3/s3.2/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              40,
+              32,
+              32
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "ParameterType": "Convolution",
+        "Kernel": [
+          1,
+          1
+        ],
+        "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+        "PrePadding": [
+          0,
+          0
+        ],
+        "PostPadding": [
+          0,
+          0
+        ],
+        "Stride": [
+          1,
+          1
+        ],
+        "Dilation": [
+          1,
+          1
+        ],
+        "OutMaps": 40,
+        "Groups": 1,
+        "Weights": {
+          "Type": "Half",
+          "Count": 1600
+        },
+        "Bias": {
+          "Type": "Half",
+          "Count": 40
+        },
+        "HasSparseWeights": 0,
+        "Activation": "CLIPPED_RELU",
+        "ParameterSubType": "[0.000000,6.000000]",
+        "HasBias": 1,
+        "HasReLU": 0,
+        "TacticName": "sm70_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize64x64x64_stage1_warpsize2x2x1_g1_tensor8x8x4_simple_t1r1s1",
+        "TacticValue": "0x3693535b668f43cb"
+      },
+      {
+        "Name": "/l3/Conv",
+        "LayerType": "CaskConvolution",
+        "Inputs": [
+          {
+            "Name": "/s3/s3.2/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              40,
+              32,
+              32
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "/l3/Conv_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              32,
+              32
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "ParameterType": "Convolution",
+        "Kernel": [
+          1,
+          1
+        ],
+        "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+        "PrePadding": [
+          0,
+          0
+        ],
+        "PostPadding": [
+          0,
+          0
+        ],
+        "Stride": [
+          1,
+          1
+        ],
+        "Dilation": [
+          1,
+          1
+        ],
+        "OutMaps": 16,
+        "Groups": 1,
+        "Weights": {
+          "Type": "Half",
+          "Count": 640
+        },
+        "Bias": {
+          "Type": "Half",
+          "Count": 16
+        },
+        "HasSparseWeights": 0,
+        "Activation": "NONE",
+        "HasBias": 1,
+        "HasReLU": 0,
+        "TacticName": "sm70_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize64x32x64_stage1_warpsize2x1x2_g1_tensor8x8x4_simple_t1r1s1",
+        "TacticValue": "0x81a7be09ad63581a"
+      },
+      {
+        "Name": "/Resize",
+        "LayerType": "Resize",
+        "Inputs": [
+          {
+            "Name": "/l3/Conv_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              32,
+              32
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "/Resize_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              64,
+              64
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "ParameterType": "Resize",
+        "ResizeMode": "LINEAR",
+        "ResizeScales": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "CoordTransform": "kHALF_PIXEL",
+        "ResizeSelector": "kFORMULA",
+        "NNRounding": "kFLOOR",
+        "TacticValue": "0x0000000000000006"
+      },
+      {
+        "Name": "/l2/Conv + /Add",
+        "LayerType": "CaskConvolution",
+        "Inputs": [
+          {
+            "Name": "/s2/s2.1/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              24,
+              64,
+              64
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          },
+          {
+            "Name": "/Resize_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              64,
+              64
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "/Add_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              64,
+              64
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "ParameterType": "Convolution",
+        "Kernel": [
+          1,
+          1
+        ],
+        "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+        "PrePadding": [
+          0,
+          0
+        ],
+        "PostPadding": [
+          0,
+          0
+        ],
+        "Stride": [
+          1,
+          1
+        ],
+        "Dilation": [
+          1,
+          1
+        ],
+        "OutMaps": 16,
+        "Groups": 1,
+        "Weights": {
+          "Type": "Half",
+          "Count": 384
+        },
+        "Bias": {
+          "Type": "Half",
+          "Count": 16
+        },
+        "HasSparseWeights": 0,
+        "Activation": "NONE",
+        "HasBias": 1,
+        "HasReLU": 0,
+        "TacticName": "sm70_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize256x32x32_stage1_warpsize4x1x1_g1_tensor8x8x4_simple_t1r1s1",
+        "TacticValue": "0x83b35618df65874c"
+      },
+      {
+        "Name": "/Resize_1",
+        "LayerType": "Resize",
+        "Inputs": [
+          {
+            "Name": "/Add_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              64,
+              64
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "/Resize_1_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "ParameterType": "Resize",
+        "ResizeMode": "LINEAR",
+        "ResizeScales": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "CoordTransform": "kHALF_PIXEL",
+        "ResizeSelector": "kFORMULA",
+        "NNRounding": "kFLOOR",
+        "TacticValue": "0x0000000000000006"
+      },
+      {
+        "Name": "/l1/Conv + /Add_1",
+        "LayerType": "CaskConvolution",
+        "Inputs": [
+          {
+            "Name": "/s1/s1.1/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          },
+          {
+            "Name": "/Resize_1_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "/Add_1_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "ParameterType": "Convolution",
+        "Kernel": [
+          1,
+          1
+        ],
+        "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+        "PrePadding": [
+          0,
+          0
+        ],
+        "PostPadding": [
+          0,
+          0
+        ],
+        "Stride": [
+          1,
+          1
+        ],
+        "Dilation": [
+          1,
+          1
+        ],
+        "OutMaps": 16,
+        "Groups": 1,
+        "Weights": {
+          "Type": "Half",
+          "Count": 256
+        },
+        "Bias": {
+          "Type": "Half",
+          "Count": 16
+        },
+        "HasSparseWeights": 0,
+        "Activation": "NONE",
+        "HasBias": 1,
+        "HasReLU": 0,
+        "TacticName": "sm70_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize128x32x32_stage1_warpsize4x1x1_g1_tensor8x8x4_simple_t1r1s1",
+        "TacticValue": "0x911cdd8d308bed5c"
+      },
+      {
+        "Name": "/fuse/fuse.0/Conv + PWN(/fuse/fuse.2/Clip)",
+        "LayerType": "CaskConvolution",
+        "Inputs": [
+          {
+            "Name": "/Add_1_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "/fuse/fuse.2/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "ParameterType": "Convolution",
+        "Kernel": [
+          3,
+          3
+        ],
+        "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+        "PrePadding": [
+          1,
+          1
+        ],
+        "PostPadding": [
+          1,
+          1
+        ],
+        "Stride": [
+          1,
+          1
+        ],
+        "Dilation": [
+          1,
+          1
+        ],
+        "OutMaps": 16,
+        "Groups": 1,
+        "Weights": {
+          "Type": "Half",
+          "Count": 2304
+        },
+        "Bias": {
+          "Type": "Half",
+          "Count": 16
+        },
+        "HasSparseWeights": 0,
+        "Activation": "CLIPPED_RELU",
+        "ParameterSubType": "[0.000000,6.000000]",
+        "HasBias": 1,
+        "HasReLU": 0,
+        "TacticName": "sm70_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize256x32x32_stage1_warpsize4x1x1_g1_tensor8x8x4",
+        "TacticValue": "0x1b9cb8d78519a728"
+      },
+      {
+        "Name": "/cls/Conv",
+        "LayerType": "CaskConvolution",
+        "Inputs": [
+          {
+            "Name": "/fuse/fuse.2/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "/cls/Conv_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              2,
+              128,
+              128
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "ParameterType": "Convolution",
+        "Kernel": [
+          1,
+          1
+        ],
+        "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+        "PrePadding": [
+          0,
+          0
+        ],
+        "PostPadding": [
+          0,
+          0
+        ],
+        "Stride": [
+          1,
+          1
+        ],
+        "Dilation": [
+          1,
+          1
+        ],
+        "OutMaps": 2,
+        "Groups": 1,
+        "Weights": {
+          "Type": "Half",
+          "Count": 32
+        },
+        "Bias": {
+          "Type": "Half",
+          "Count": 2
+        },
+        "HasSparseWeights": 0,
+        "Activation": "NONE",
+        "HasBias": 1,
+        "HasReLU": 0,
+        "TacticName": "sm70_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize128x32x32_stage1_warpsize4x1x1_g1_tensor8x8x4_simple_t1r1s1",
+        "TacticValue": "0x911cdd8d308bed5c"
+      },
+      {
+        "Name": "Reformatting CopyNode for Input Tensor 0 to /Resize_2",
+        "LayerType": "Reformat",
+        "Inputs": [
+          {
+            "Name": "/cls/Conv_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              2,
+              128,
+              128
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "Reformatted Input Tensor 0 to /Resize_2",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              2,
+              128,
+              128
+            ],
+            "Format/Datatype": "Row major linear FP32"
+          }
+        ],
+        "ParameterType": "Reformat",
+        "Origin": "REFORMAT",
+        "TacticValue": "0x0000000000000000"
+      },
+      {
+        "Name": "/Resize_2",
+        "LayerType": "Resize",
+        "Inputs": [
+          {
+            "Name": "Reformatted Input Tensor 0 to /Resize_2",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              2,
+              128,
+              128
+            ],
+            "Format/Datatype": "Row major linear FP32"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "logits",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              2,
+              512,
+              512
+            ],
+            "Format/Datatype": "Row major linear FP32"
+          }
+        ],
+        "ParameterType": "Resize",
+        "ResizeMode": "LINEAR",
+        "ResizeScales": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "CoordTransform": "kHALF_PIXEL",
+        "ResizeSelector": "kFORMULA",
+        "NNRounding": "kFLOOR",
+        "TacticValue": "0x0000000000000001"
+      }
+    ],
+    "boundary_reformats": [],
+    "floating_compute_layers": [
+      {
+        "Name": "/stem/stem.0/Conv + PWN(/stem/stem.2/Clip)",
+        "LayerType": "CaskConvolution",
+        "Inputs": [
+          {
+            "Name": "image",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              6,
+              512,
+              512
+            ],
+            "Format/Datatype": "Row major linear FP32"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "/stem/stem.2/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              12,
+              256,
+              256
+            ],
+            "Format/Datatype": "Row major linear FP32"
+          }
+        ],
+        "ParameterType": "Convolution",
+        "Kernel": [
+          3,
+          3
+        ],
+        "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+        "PrePadding": [
+          1,
+          1
+        ],
+        "PostPadding": [
+          1,
+          1
+        ],
+        "Stride": [
+          2,
+          2
+        ],
+        "Dilation": [
+          1,
+          1
+        ],
+        "OutMaps": 12,
+        "Groups": 1,
+        "Weights": {
+          "Type": "Float",
+          "Count": 648
+        },
+        "Bias": {
+          "Type": "Float",
+          "Count": 12
+        },
+        "HasSparseWeights": 0,
+        "Activation": "CLIPPED_RELU",
+        "ParameterSubType": "[0.000000,6.000000]",
+        "HasBias": 1,
+        "HasReLU": 0,
+        "TacticName": "volta_scudnn_128x32_relu_small_nn_v1",
+        "TacticValue": "0xc939b7b0a4d5a05f"
+      },
+      {
+        "Name": "Reformatting CopyNode for Input Tensor 0 to /s1/s1.0/dw/dw.0/Conv + PWN(/s1/s1.0/dw/dw.2/Clip)",
+        "LayerType": "Reformat",
+        "Inputs": [
+          {
+            "Name": "/stem/stem.2/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              12,
+              256,
+              256
+            ],
+            "Format/Datatype": "Row major linear FP32"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "Reformatted Input Tensor 0 to /s1/s1.0/dw/dw.0/Conv + PWN(/s1/s1.0/dw/dw.2/Clip)",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              12,
+              256,
+              256
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "ParameterType": "Reformat",
+        "Origin": "REFORMAT",
+        "TacticValue": "0x0000000000000000"
+      },
+      {
+        "Name": "/s1/s1.0/dw/dw.0/Conv + PWN(/s1/s1.0/dw/dw.2/Clip)",
+        "LayerType": "CudaDepthwiseConvolution",
+        "Inputs": [
+          {
+            "Name": "Reformatted Input Tensor 0 to /s1/s1.0/dw/dw.0/Conv + PWN(/s1/s1.0/dw/dw.2/Clip)",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              12,
+              256,
+              256
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "/s1/s1.0/dw/dw.2/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              12,
+              128,
+              128
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "ParameterType": "Convolution",
+        "Kernel": [
+          3,
+          3
+        ],
+        "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+        "PrePadding": [
+          1,
+          1
+        ],
+        "PostPadding": [
+          1,
+          1
+        ],
+        "Stride": [
+          2,
+          2
+        ],
+        "Dilation": [
+          1,
+          1
+        ],
+        "OutMaps": 12,
+        "Groups": 12,
+        "Weights": {
+          "Type": "Half",
+          "Count": 108
+        },
+        "Bias": {
+          "Type": "Half",
+          "Count": 12
+        },
+        "HasSparseWeights": 0,
+        "Activation": "CLIPPED_RELU",
+        "ParameterSubType": "[0.000000,6.000000]",
+        "HasBias": 1,
+        "TacticValue": "0xfffffffffffffffe"
+      },
+      {
+        "Name": "/s1/s1.0/pw/pw.0/Conv + PWN(/s1/s1.0/Clip)",
+        "LayerType": "CaskConvolution",
+        "Inputs": [
+          {
+            "Name": "/s1/s1.0/dw/dw.2/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              12,
+              128,
+              128
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "/s1/s1.0/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "ParameterType": "Convolution",
+        "Kernel": [
+          1,
+          1
+        ],
+        "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+        "PrePadding": [
+          0,
+          0
+        ],
+        "PostPadding": [
+          0,
+          0
+        ],
+        "Stride": [
+          1,
+          1
+        ],
+        "Dilation": [
+          1,
+          1
+        ],
+        "OutMaps": 16,
+        "Groups": 1,
+        "Weights": {
+          "Type": "Half",
+          "Count": 192
+        },
+        "Bias": {
+          "Type": "Half",
+          "Count": 16
+        },
+        "HasSparseWeights": 0,
+        "Activation": "CLIPPED_RELU",
+        "ParameterSubType": "[0.000000,6.000000]",
+        "HasBias": 1,
+        "HasReLU": 0,
+        "TacticName": "sm70_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize128x32x32_stage1_warpsize4x1x1_g1_tensor8x8x4_simple_t1r1s1",
+        "TacticValue": "0x911cdd8d308bed5c"
+      },
+      {
+        "Name": "/s1/s1.1/dw/dw.0/Conv + PWN(/s1/s1.1/dw/dw.2/Clip)",
+        "LayerType": "CudaDepthwiseConvolution",
+        "Inputs": [
+          {
+            "Name": "/s1/s1.0/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "/s1/s1.1/dw/dw.2/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "ParameterType": "Convolution",
+        "Kernel": [
+          3,
+          3
+        ],
+        "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+        "PrePadding": [
+          1,
+          1
+        ],
+        "PostPadding": [
+          1,
+          1
+        ],
+        "Stride": [
+          1,
+          1
+        ],
+        "Dilation": [
+          1,
+          1
+        ],
+        "OutMaps": 16,
+        "Groups": 16,
+        "Weights": {
+          "Type": "Half",
+          "Count": 144
+        },
+        "Bias": {
+          "Type": "Half",
+          "Count": 16
+        },
+        "HasSparseWeights": 0,
+        "Activation": "CLIPPED_RELU",
+        "ParameterSubType": "[0.000000,6.000000]",
+        "HasBias": 1,
+        "TacticValue": "0xfffffffffffffffe"
+      },
+      {
+        "Name": "/s1/s1.1/pw/pw.0/Conv + /s1/s1.1/Add + PWN(/s1/s1.1/Clip)",
+        "LayerType": "CaskConvolution",
+        "Inputs": [
+          {
+            "Name": "/s1/s1.1/dw/dw.2/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          },
+          {
+            "Name": "/s1/s1.0/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "/s1/s1.1/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "ParameterType": "Convolution",
+        "Kernel": [
+          1,
+          1
+        ],
+        "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+        "PrePadding": [
+          0,
+          0
+        ],
+        "PostPadding": [
+          0,
+          0
+        ],
+        "Stride": [
+          1,
+          1
+        ],
+        "Dilation": [
+          1,
+          1
+        ],
+        "OutMaps": 16,
+        "Groups": 1,
+        "Weights": {
+          "Type": "Half",
+          "Count": 256
+        },
+        "Bias": {
+          "Type": "Half",
+          "Count": 16
+        },
+        "HasSparseWeights": 0,
+        "Activation": "CLIPPED_RELU",
+        "ParameterSubType": "[0.000000,6.000000]",
+        "HasBias": 1,
+        "HasReLU": 0,
+        "TacticName": "sm70_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize128x32x32_stage1_warpsize4x1x1_g1_tensor8x8x4_simple_t1r1s1",
+        "TacticValue": "0x911cdd8d308bed5c"
+      },
+      {
+        "Name": "/s2/s2.0/dw/dw.0/Conv + PWN(/s2/s2.0/dw/dw.2/Clip)",
+        "LayerType": "CudaDepthwiseConvolution",
+        "Inputs": [
+          {
+            "Name": "/s1/s1.1/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "/s2/s2.0/dw/dw.2/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              64,
+              64
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "ParameterType": "Convolution",
+        "Kernel": [
+          3,
+          3
+        ],
+        "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+        "PrePadding": [
+          1,
+          1
+        ],
+        "PostPadding": [
+          1,
+          1
+        ],
+        "Stride": [
+          2,
+          2
+        ],
+        "Dilation": [
+          1,
+          1
+        ],
+        "OutMaps": 16,
+        "Groups": 16,
+        "Weights": {
+          "Type": "Half",
+          "Count": 144
+        },
+        "Bias": {
+          "Type": "Half",
+          "Count": 16
+        },
+        "HasSparseWeights": 0,
+        "Activation": "CLIPPED_RELU",
+        "ParameterSubType": "[0.000000,6.000000]",
+        "HasBias": 1,
+        "TacticValue": "0xfffffffffffffffe"
+      },
+      {
+        "Name": "/s2/s2.0/pw/pw.0/Conv + PWN(/s2/s2.0/Clip)",
+        "LayerType": "CaskConvolution",
+        "Inputs": [
+          {
+            "Name": "/s2/s2.0/dw/dw.2/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              64,
+              64
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "/s2/s2.0/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              24,
+              64,
+              64
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "ParameterType": "Convolution",
+        "Kernel": [
+          1,
+          1
+        ],
+        "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+        "PrePadding": [
+          0,
+          0
+        ],
+        "PostPadding": [
+          0,
+          0
+        ],
+        "Stride": [
+          1,
+          1
+        ],
+        "Dilation": [
+          1,
+          1
+        ],
+        "OutMaps": 24,
+        "Groups": 1,
+        "Weights": {
+          "Type": "Half",
+          "Count": 384
+        },
+        "Bias": {
+          "Type": "Half",
+          "Count": 24
+        },
+        "HasSparseWeights": 0,
+        "Activation": "CLIPPED_RELU",
+        "ParameterSubType": "[0.000000,6.000000]",
+        "HasBias": 1,
+        "HasReLU": 0,
+        "TacticName": "sm70_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize256x32x32_stage1_warpsize4x1x1_g1_tensor8x8x4_simple_t1r1s1",
+        "TacticValue": "0x83b35618df65874c"
+      },
+      {
+        "Name": "/s2/s2.1/dw/dw.0/Conv + PWN(/s2/s2.1/dw/dw.2/Clip)",
+        "LayerType": "CudaDepthwiseConvolution",
+        "Inputs": [
+          {
+            "Name": "/s2/s2.0/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              24,
+              64,
+              64
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "/s2/s2.1/dw/dw.2/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              24,
+              64,
+              64
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "ParameterType": "Convolution",
+        "Kernel": [
+          3,
+          3
+        ],
+        "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+        "PrePadding": [
+          1,
+          1
+        ],
+        "PostPadding": [
+          1,
+          1
+        ],
+        "Stride": [
+          1,
+          1
+        ],
+        "Dilation": [
+          1,
+          1
+        ],
+        "OutMaps": 24,
+        "Groups": 24,
+        "Weights": {
+          "Type": "Half",
+          "Count": 216
+        },
+        "Bias": {
+          "Type": "Half",
+          "Count": 24
+        },
+        "HasSparseWeights": 0,
+        "Activation": "CLIPPED_RELU",
+        "ParameterSubType": "[0.000000,6.000000]",
+        "HasBias": 1,
+        "TacticValue": "0xfffffffffffffffe"
+      },
+      {
+        "Name": "/s2/s2.1/pw/pw.0/Conv + /s2/s2.1/Add + PWN(/s2/s2.1/Clip)",
+        "LayerType": "CaskConvolution",
+        "Inputs": [
+          {
+            "Name": "/s2/s2.1/dw/dw.2/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              24,
+              64,
+              64
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          },
+          {
+            "Name": "/s2/s2.0/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              24,
+              64,
+              64
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "/s2/s2.1/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              24,
+              64,
+              64
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "ParameterType": "Convolution",
+        "Kernel": [
+          1,
+          1
+        ],
+        "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+        "PrePadding": [
+          0,
+          0
+        ],
+        "PostPadding": [
+          0,
+          0
+        ],
+        "Stride": [
+          1,
+          1
+        ],
+        "Dilation": [
+          1,
+          1
+        ],
+        "OutMaps": 24,
+        "Groups": 1,
+        "Weights": {
+          "Type": "Half",
+          "Count": 576
+        },
+        "Bias": {
+          "Type": "Half",
+          "Count": 24
+        },
+        "HasSparseWeights": 0,
+        "Activation": "CLIPPED_RELU",
+        "ParameterSubType": "[0.000000,6.000000]",
+        "HasBias": 1,
+        "HasReLU": 0,
+        "TacticName": "sm70_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize256x32x32_stage1_warpsize4x1x1_g1_tensor8x8x4_simple_t1r1s1",
+        "TacticValue": "0x83b35618df65874c"
+      },
+      {
+        "Name": "/s3/s3.0/dw/dw.0/Conv + PWN(/s3/s3.0/dw/dw.2/Clip)",
+        "LayerType": "CudaDepthwiseConvolution",
+        "Inputs": [
+          {
+            "Name": "/s2/s2.1/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              24,
+              64,
+              64
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "/s3/s3.0/dw/dw.2/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              24,
+              32,
+              32
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "ParameterType": "Convolution",
+        "Kernel": [
+          3,
+          3
+        ],
+        "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+        "PrePadding": [
+          1,
+          1
+        ],
+        "PostPadding": [
+          1,
+          1
+        ],
+        "Stride": [
+          2,
+          2
+        ],
+        "Dilation": [
+          1,
+          1
+        ],
+        "OutMaps": 24,
+        "Groups": 24,
+        "Weights": {
+          "Type": "Half",
+          "Count": 216
+        },
+        "Bias": {
+          "Type": "Half",
+          "Count": 24
+        },
+        "HasSparseWeights": 0,
+        "Activation": "CLIPPED_RELU",
+        "ParameterSubType": "[0.000000,6.000000]",
+        "HasBias": 1,
+        "TacticValue": "0xfffffffffffffffe"
+      },
+      {
+        "Name": "/s3/s3.0/pw/pw.0/Conv + PWN(/s3/s3.0/Clip)",
+        "LayerType": "CaskConvolution",
+        "Inputs": [
+          {
+            "Name": "/s3/s3.0/dw/dw.2/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              24,
+              32,
+              32
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "/s3/s3.0/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              40,
+              32,
+              32
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "ParameterType": "Convolution",
+        "Kernel": [
+          1,
+          1
+        ],
+        "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+        "PrePadding": [
+          0,
+          0
+        ],
+        "PostPadding": [
+          0,
+          0
+        ],
+        "Stride": [
+          1,
+          1
+        ],
+        "Dilation": [
+          1,
+          1
+        ],
+        "OutMaps": 40,
+        "Groups": 1,
+        "Weights": {
+          "Type": "Half",
+          "Count": 960
+        },
+        "Bias": {
+          "Type": "Half",
+          "Count": 40
+        },
+        "HasSparseWeights": 0,
+        "Activation": "CLIPPED_RELU",
+        "ParameterSubType": "[0.000000,6.000000]",
+        "HasBias": 1,
+        "HasReLU": 0,
+        "TacticName": "sm70_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize128x64x32_stage1_warpsize2x2x1_g1_tensor8x8x4_simple_t1r1s1",
+        "TacticValue": "0xb26ad7a19a3195cc"
+      },
+      {
+        "Name": "/s3/s3.1/dw/dw.0/Conv + PWN(/s3/s3.1/dw/dw.2/Clip)",
+        "LayerType": "CudaDepthwiseConvolution",
+        "Inputs": [
+          {
+            "Name": "/s3/s3.0/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              40,
+              32,
+              32
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "/s3/s3.1/dw/dw.2/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              40,
+              32,
+              32
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "ParameterType": "Convolution",
+        "Kernel": [
+          3,
+          3
+        ],
+        "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+        "PrePadding": [
+          1,
+          1
+        ],
+        "PostPadding": [
+          1,
+          1
+        ],
+        "Stride": [
+          1,
+          1
+        ],
+        "Dilation": [
+          1,
+          1
+        ],
+        "OutMaps": 40,
+        "Groups": 40,
+        "Weights": {
+          "Type": "Half",
+          "Count": 360
+        },
+        "Bias": {
+          "Type": "Half",
+          "Count": 40
+        },
+        "HasSparseWeights": 0,
+        "Activation": "CLIPPED_RELU",
+        "ParameterSubType": "[0.000000,6.000000]",
+        "HasBias": 1,
+        "TacticValue": "0xfffffffffffffffe"
+      },
+      {
+        "Name": "/s3/s3.1/pw/pw.0/Conv + /s3/s3.1/Add + PWN(/s3/s3.1/Clip)",
+        "LayerType": "CaskConvolution",
+        "Inputs": [
+          {
+            "Name": "/s3/s3.1/dw/dw.2/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              40,
+              32,
+              32
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          },
+          {
+            "Name": "/s3/s3.0/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              40,
+              32,
+              32
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "/s3/s3.1/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              40,
+              32,
+              32
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "ParameterType": "Convolution",
+        "Kernel": [
+          1,
+          1
+        ],
+        "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+        "PrePadding": [
+          0,
+          0
+        ],
+        "PostPadding": [
+          0,
+          0
+        ],
+        "Stride": [
+          1,
+          1
+        ],
+        "Dilation": [
+          1,
+          1
+        ],
+        "OutMaps": 40,
+        "Groups": 1,
+        "Weights": {
+          "Type": "Half",
+          "Count": 1600
+        },
+        "Bias": {
+          "Type": "Half",
+          "Count": 40
+        },
+        "HasSparseWeights": 0,
+        "Activation": "CLIPPED_RELU",
+        "ParameterSubType": "[0.000000,6.000000]",
+        "HasBias": 1,
+        "HasReLU": 0,
+        "TacticName": "sm70_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize64x64x64_stage1_warpsize2x2x1_g1_tensor8x8x4_simple_t1r1s1",
+        "TacticValue": "0x3693535b668f43cb"
+      },
+      {
+        "Name": "/s3/s3.2/dw/dw.0/Conv + PWN(/s3/s3.2/dw/dw.2/Clip)",
+        "LayerType": "CudaDepthwiseConvolution",
+        "Inputs": [
+          {
+            "Name": "/s3/s3.1/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              40,
+              32,
+              32
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "/s3/s3.2/dw/dw.2/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              40,
+              32,
+              32
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "ParameterType": "Convolution",
+        "Kernel": [
+          3,
+          3
+        ],
+        "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+        "PrePadding": [
+          1,
+          1
+        ],
+        "PostPadding": [
+          1,
+          1
+        ],
+        "Stride": [
+          1,
+          1
+        ],
+        "Dilation": [
+          1,
+          1
+        ],
+        "OutMaps": 40,
+        "Groups": 40,
+        "Weights": {
+          "Type": "Half",
+          "Count": 360
+        },
+        "Bias": {
+          "Type": "Half",
+          "Count": 40
+        },
+        "HasSparseWeights": 0,
+        "Activation": "CLIPPED_RELU",
+        "ParameterSubType": "[0.000000,6.000000]",
+        "HasBias": 1,
+        "TacticValue": "0xfffffffffffffffe"
+      },
+      {
+        "Name": "/s3/s3.2/pw/pw.0/Conv + /s3/s3.2/Add + PWN(/s3/s3.2/Clip)",
+        "LayerType": "CaskConvolution",
+        "Inputs": [
+          {
+            "Name": "/s3/s3.2/dw/dw.2/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              40,
+              32,
+              32
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          },
+          {
+            "Name": "/s3/s3.1/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              40,
+              32,
+              32
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "/s3/s3.2/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              40,
+              32,
+              32
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "ParameterType": "Convolution",
+        "Kernel": [
+          1,
+          1
+        ],
+        "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+        "PrePadding": [
+          0,
+          0
+        ],
+        "PostPadding": [
+          0,
+          0
+        ],
+        "Stride": [
+          1,
+          1
+        ],
+        "Dilation": [
+          1,
+          1
+        ],
+        "OutMaps": 40,
+        "Groups": 1,
+        "Weights": {
+          "Type": "Half",
+          "Count": 1600
+        },
+        "Bias": {
+          "Type": "Half",
+          "Count": 40
+        },
+        "HasSparseWeights": 0,
+        "Activation": "CLIPPED_RELU",
+        "ParameterSubType": "[0.000000,6.000000]",
+        "HasBias": 1,
+        "HasReLU": 0,
+        "TacticName": "sm70_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize64x64x64_stage1_warpsize2x2x1_g1_tensor8x8x4_simple_t1r1s1",
+        "TacticValue": "0x3693535b668f43cb"
+      },
+      {
+        "Name": "/l3/Conv",
+        "LayerType": "CaskConvolution",
+        "Inputs": [
+          {
+            "Name": "/s3/s3.2/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              40,
+              32,
+              32
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "/l3/Conv_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              32,
+              32
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "ParameterType": "Convolution",
+        "Kernel": [
+          1,
+          1
+        ],
+        "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+        "PrePadding": [
+          0,
+          0
+        ],
+        "PostPadding": [
+          0,
+          0
+        ],
+        "Stride": [
+          1,
+          1
+        ],
+        "Dilation": [
+          1,
+          1
+        ],
+        "OutMaps": 16,
+        "Groups": 1,
+        "Weights": {
+          "Type": "Half",
+          "Count": 640
+        },
+        "Bias": {
+          "Type": "Half",
+          "Count": 16
+        },
+        "HasSparseWeights": 0,
+        "Activation": "NONE",
+        "HasBias": 1,
+        "HasReLU": 0,
+        "TacticName": "sm70_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize64x32x64_stage1_warpsize2x1x2_g1_tensor8x8x4_simple_t1r1s1",
+        "TacticValue": "0x81a7be09ad63581a"
+      },
+      {
+        "Name": "/Resize",
+        "LayerType": "Resize",
+        "Inputs": [
+          {
+            "Name": "/l3/Conv_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              32,
+              32
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "/Resize_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              64,
+              64
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "ParameterType": "Resize",
+        "ResizeMode": "LINEAR",
+        "ResizeScales": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "CoordTransform": "kHALF_PIXEL",
+        "ResizeSelector": "kFORMULA",
+        "NNRounding": "kFLOOR",
+        "TacticValue": "0x0000000000000006"
+      },
+      {
+        "Name": "/l2/Conv + /Add",
+        "LayerType": "CaskConvolution",
+        "Inputs": [
+          {
+            "Name": "/s2/s2.1/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              24,
+              64,
+              64
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          },
+          {
+            "Name": "/Resize_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              64,
+              64
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "/Add_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              64,
+              64
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "ParameterType": "Convolution",
+        "Kernel": [
+          1,
+          1
+        ],
+        "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+        "PrePadding": [
+          0,
+          0
+        ],
+        "PostPadding": [
+          0,
+          0
+        ],
+        "Stride": [
+          1,
+          1
+        ],
+        "Dilation": [
+          1,
+          1
+        ],
+        "OutMaps": 16,
+        "Groups": 1,
+        "Weights": {
+          "Type": "Half",
+          "Count": 384
+        },
+        "Bias": {
+          "Type": "Half",
+          "Count": 16
+        },
+        "HasSparseWeights": 0,
+        "Activation": "NONE",
+        "HasBias": 1,
+        "HasReLU": 0,
+        "TacticName": "sm70_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize256x32x32_stage1_warpsize4x1x1_g1_tensor8x8x4_simple_t1r1s1",
+        "TacticValue": "0x83b35618df65874c"
+      },
+      {
+        "Name": "/Resize_1",
+        "LayerType": "Resize",
+        "Inputs": [
+          {
+            "Name": "/Add_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              64,
+              64
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "/Resize_1_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "ParameterType": "Resize",
+        "ResizeMode": "LINEAR",
+        "ResizeScales": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "CoordTransform": "kHALF_PIXEL",
+        "ResizeSelector": "kFORMULA",
+        "NNRounding": "kFLOOR",
+        "TacticValue": "0x0000000000000006"
+      },
+      {
+        "Name": "/l1/Conv + /Add_1",
+        "LayerType": "CaskConvolution",
+        "Inputs": [
+          {
+            "Name": "/s1/s1.1/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          },
+          {
+            "Name": "/Resize_1_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "/Add_1_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "ParameterType": "Convolution",
+        "Kernel": [
+          1,
+          1
+        ],
+        "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+        "PrePadding": [
+          0,
+          0
+        ],
+        "PostPadding": [
+          0,
+          0
+        ],
+        "Stride": [
+          1,
+          1
+        ],
+        "Dilation": [
+          1,
+          1
+        ],
+        "OutMaps": 16,
+        "Groups": 1,
+        "Weights": {
+          "Type": "Half",
+          "Count": 256
+        },
+        "Bias": {
+          "Type": "Half",
+          "Count": 16
+        },
+        "HasSparseWeights": 0,
+        "Activation": "NONE",
+        "HasBias": 1,
+        "HasReLU": 0,
+        "TacticName": "sm70_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize128x32x32_stage1_warpsize4x1x1_g1_tensor8x8x4_simple_t1r1s1",
+        "TacticValue": "0x911cdd8d308bed5c"
+      },
+      {
+        "Name": "/fuse/fuse.0/Conv + PWN(/fuse/fuse.2/Clip)",
+        "LayerType": "CaskConvolution",
+        "Inputs": [
+          {
+            "Name": "/Add_1_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "/fuse/fuse.2/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "ParameterType": "Convolution",
+        "Kernel": [
+          3,
+          3
+        ],
+        "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+        "PrePadding": [
+          1,
+          1
+        ],
+        "PostPadding": [
+          1,
+          1
+        ],
+        "Stride": [
+          1,
+          1
+        ],
+        "Dilation": [
+          1,
+          1
+        ],
+        "OutMaps": 16,
+        "Groups": 1,
+        "Weights": {
+          "Type": "Half",
+          "Count": 2304
+        },
+        "Bias": {
+          "Type": "Half",
+          "Count": 16
+        },
+        "HasSparseWeights": 0,
+        "Activation": "CLIPPED_RELU",
+        "ParameterSubType": "[0.000000,6.000000]",
+        "HasBias": 1,
+        "HasReLU": 0,
+        "TacticName": "sm70_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize256x32x32_stage1_warpsize4x1x1_g1_tensor8x8x4",
+        "TacticValue": "0x1b9cb8d78519a728"
+      },
+      {
+        "Name": "/cls/Conv",
+        "LayerType": "CaskConvolution",
+        "Inputs": [
+          {
+            "Name": "/fuse/fuse.2/Clip_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "/cls/Conv_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              2,
+              128,
+              128
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "ParameterType": "Convolution",
+        "Kernel": [
+          1,
+          1
+        ],
+        "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+        "PrePadding": [
+          0,
+          0
+        ],
+        "PostPadding": [
+          0,
+          0
+        ],
+        "Stride": [
+          1,
+          1
+        ],
+        "Dilation": [
+          1,
+          1
+        ],
+        "OutMaps": 2,
+        "Groups": 1,
+        "Weights": {
+          "Type": "Half",
+          "Count": 32
+        },
+        "Bias": {
+          "Type": "Half",
+          "Count": 2
+        },
+        "HasSparseWeights": 0,
+        "Activation": "NONE",
+        "HasBias": 1,
+        "HasReLU": 0,
+        "TacticName": "sm70_xmma_fprop_implicit_gemm_f16f16_f16f16_f16_nhwckrsc_nhwc_tilesize128x32x32_stage1_warpsize4x1x1_g1_tensor8x8x4_simple_t1r1s1",
+        "TacticValue": "0x911cdd8d308bed5c"
+      },
+      {
+        "Name": "Reformatting CopyNode for Input Tensor 0 to /Resize_2",
+        "LayerType": "Reformat",
+        "Inputs": [
+          {
+            "Name": "/cls/Conv_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              2,
+              128,
+              128
+            ],
+            "Format/Datatype": "Channel major FP16 format where channel % 8 == 0"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "Reformatted Input Tensor 0 to /Resize_2",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              2,
+              128,
+              128
+            ],
+            "Format/Datatype": "Row major linear FP32"
+          }
+        ],
+        "ParameterType": "Reformat",
+        "Origin": "REFORMAT",
+        "TacticValue": "0x0000000000000000"
+      },
+      {
+        "Name": "/Resize_2",
+        "LayerType": "Resize",
+        "Inputs": [
+          {
+            "Name": "Reformatted Input Tensor 0 to /Resize_2",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              2,
+              128,
+              128
+            ],
+            "Format/Datatype": "Row major linear FP32"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "logits",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              2,
+              512,
+              512
+            ],
+            "Format/Datatype": "Row major linear FP32"
+          }
+        ],
+        "ParameterType": "Resize",
+        "ResizeMode": "LINEAR",
+        "ResizeScales": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "CoordTransform": "kHALF_PIXEL",
+        "ResizeSelector": "kFORMULA",
+        "NNRounding": "kFLOOR",
+        "TacticValue": "0x0000000000000001"
+      }
+    ],
+    "unknown_layers": [],
+    "full_integer_tensor_path": false,
+    "full_integer_arithmetic": "not_certified_by_tensor_formats_alone",
+    "remaining_validation": "Inspect tactics/kernel implementation for floating arithmetic; INT32 accumulators/bias are permitted."
+  },
+  "engine_device_memory_bytes": 6045696,
+  "engine_bytes": 452847,
+  "engine_sha256": "77888d063ec26bc076d968d3cc8de96e4ea0f38acbfd67f112697d7d8401ed8f",
+  "full_integer_execution": "unverified_kernel_audit_required",
+  "elapsed_seconds": 22.332748108077794
+}

@@ -1,0 +1,1606 @@
+{
+  "status": "evaluated",
+  "backend": "TensorRT",
+  "model_sha256": "327fb3d737529e5142da93491fa98af434b517692127032c3810ddc9c903befe",
+  "batch": 1,
+  "shape": [
+    1,
+    6,
+    512,
+    512
+  ],
+  "rows": [
+    {
+      "file": "Ghana_1078550.npz",
+      "event": "Ghana",
+      "source_sha256": "7afd0c6e9ab874abf88e7858ae5322fc0718ff87f5e2c7598c83262c2624961a",
+      "confusion": [
+        [
+          260731,
+          6
+        ],
+        [
+          1309,
+          98
+        ]
+      ]
+    },
+    {
+      "file": "Ghana_141271.npz",
+      "event": "Ghana",
+      "source_sha256": "f89e9f6b513b8403751613ae85680162074767b3236cfa228d5e1cee55c805ea",
+      "confusion": [
+        [
+          260508,
+          0
+        ],
+        [
+          1636,
+          0
+        ]
+      ]
+    },
+    {
+      "file": "Ghana_167233.npz",
+      "event": "Ghana",
+      "source_sha256": "fb259d1791ef1af2bc808065f3ad4bbb9c24c74ea4ab00cd14892b7befac7594",
+      "confusion": [
+        [
+          262144,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "file": "Ghana_313799.npz",
+      "event": "Ghana",
+      "source_sha256": "c264cc6ed81a4e0f3603ef081a0a0eaece4665be14d99e503bdafe3e984afd8d",
+      "confusion": [
+        [
+          228795,
+          736
+        ],
+        [
+          8798,
+          6135
+        ]
+      ]
+    },
+    {
+      "file": "Ghana_319168.npz",
+      "event": "Ghana",
+      "source_sha256": "b175304c8847c1565406cb45768f827c047e95f281f3d74a4c0a057c6f77fb8d",
+      "confusion": [
+        [
+          130242,
+          1861
+        ],
+        [
+          9660,
+          29861
+        ]
+      ]
+    },
+    {
+      "file": "Ghana_359826.npz",
+      "event": "Ghana",
+      "source_sha256": "c7d94e9e42e7655c0fa14750c566d789e8966169b74b82a342f31ef39dd94d22",
+      "confusion": [
+        [
+          258385,
+          263
+        ],
+        [
+          1379,
+          2117
+        ]
+      ]
+    },
+    {
+      "file": "Ghana_406026.npz",
+      "event": "Ghana",
+      "source_sha256": "2a612587d406ae781b64e77a821ece51ba7fcee740bc47cc385cb2174806c250",
+      "confusion": [
+        [
+          257697,
+          142
+        ],
+        [
+          1080,
+          3225
+        ]
+      ]
+    },
+    {
+      "file": "Ghana_53713.npz",
+      "event": "Ghana",
+      "source_sha256": "f32aa3cbaa23f12143500b5236d7af0a3499cf4909a0321e69c78fa335f849fa",
+      "confusion": [
+        [
+          262144,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "file": "Ghana_83483.npz",
+      "event": "Ghana",
+      "source_sha256": "3eb61efd83dbc0b82ef1ab02f0a62f1b1a2b13c20a1a14fbe30c3c907c08293b",
+      "confusion": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "file": "Ghana_866994.npz",
+      "event": "Ghana",
+      "source_sha256": "dd8b9dc05a337f58c6a30b06a785a83d90e7db5ece2a361a9cad22dfc8dc9775",
+      "confusion": [
+        [
+          1069,
+          10471
+        ],
+        [
+          45645,
+          60326
+        ]
+      ]
+    },
+    {
+      "file": "Ghana_97059.npz",
+      "event": "Ghana",
+      "source_sha256": "328fa21af2af6e4dd99b5f508942c52c363522a617f2400ceb8a0e39bfc05bc8",
+      "confusion": [
+        [
+          27394,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "file": "India_1018327.npz",
+      "event": "India",
+      "source_sha256": "da19a32dbdc20cd02e49fa896f9850e7023db0967d3e4c0462cb4aad24cc9583",
+      "confusion": [
+        [
+          221174,
+          4319
+        ],
+        [
+          7039,
+          29610
+        ]
+      ]
+    },
+    {
+      "file": "India_399883.npz",
+      "event": "India",
+      "source_sha256": "57c091ea620b2fa607725000cc881d54d3e2eea70d182ccea509ae0c94edcc12",
+      "confusion": [
+        [
+          120636,
+          5191
+        ],
+        [
+          5671,
+          130621
+        ]
+      ]
+    },
+    {
+      "file": "India_44475.npz",
+      "event": "India",
+      "source_sha256": "86964d61a9e4833b056e834c9c85720b51e535d82663e48760d19be664af9ba3",
+      "confusion": [
+        [
+          260175,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "file": "India_570384.npz",
+      "event": "India",
+      "source_sha256": "a004bad1968480ab6355230e0eb3cf9fa27ec8a458d20d4e9526ae3c4783e0cb",
+      "confusion": [
+        [
+          224874,
+          2578
+        ],
+        [
+          4877,
+          9671
+        ]
+      ]
+    },
+    {
+      "file": "India_591317.npz",
+      "event": "India",
+      "source_sha256": "23e5400b945deba7994a15fff443a5bd0b45ff871ebf84c7235c7f83ba66e38f",
+      "confusion": [
+        [
+          128777,
+          3233
+        ],
+        [
+          4144,
+          109895
+        ]
+      ]
+    },
+    {
+      "file": "India_592446.npz",
+      "event": "India",
+      "source_sha256": "635c528c695efdc4569c2a2cd8d5d458e872eb79c047bdf8423ad9585f91b69d",
+      "confusion": [
+        [
+          214581,
+          730
+        ],
+        [
+          3052,
+          5992
+        ]
+      ]
+    },
+    {
+      "file": "India_631692.npz",
+      "event": "India",
+      "source_sha256": "3851f3446e17132287740a514205a83df14d919129c3128b976ad85db8fd4b20",
+      "confusion": [
+        [
+          261317,
+          25
+        ],
+        [
+          603,
+          199
+        ]
+      ]
+    },
+    {
+      "file": "India_747992.npz",
+      "event": "India",
+      "source_sha256": "feb89215895a7c94311b524cc16de380e7aac140a6c5033f1e86458719703dae",
+      "confusion": [
+        [
+          133461,
+          11304
+        ],
+        [
+          8660,
+          108662
+        ]
+      ]
+    },
+    {
+      "file": "India_772630.npz",
+      "event": "India",
+      "source_sha256": "3d2e547106777a487720a61f094b608fc8b3fa638306bd0c13644563baf9baac",
+      "confusion": [
+        [
+          153954,
+          33
+        ],
+        [
+          1135,
+          210
+        ]
+      ]
+    },
+    {
+      "file": "India_79637.npz",
+      "event": "India",
+      "source_sha256": "876f89517332a1c4fae59c986d849614d5d6bce0c5e698e0c1d4fb3f759eac4a",
+      "confusion": [
+        [
+          256253,
+          726
+        ],
+        [
+          4241,
+          924
+        ]
+      ]
+    },
+    {
+      "file": "India_80221.npz",
+      "event": "India",
+      "source_sha256": "19730eae42751651163b0820ada48cf4d1ce15d08abdee82ef75a3fb7f9a59b4",
+      "confusion": [
+        [
+          33966,
+          3321
+        ],
+        [
+          1613,
+          112893
+        ]
+      ]
+    },
+    {
+      "file": "India_828067.npz",
+      "event": "India",
+      "source_sha256": "cc84f27c0d2dd719159a5cf2e54881e8912dd43e35b0bbf1b7eac0eb21252616",
+      "confusion": [
+        [
+          175500,
+          626
+        ],
+        [
+          3186,
+          3808
+        ]
+      ]
+    },
+    {
+      "file": "India_900498.npz",
+      "event": "India",
+      "source_sha256": "f8ca8d42064a9c1b20358829e812c9a5dfbcea8c804c5ca152a37200512cbcf2",
+      "confusion": [
+        [
+          130001,
+          8038
+        ],
+        [
+          4511,
+          119442
+        ]
+      ]
+    },
+    {
+      "file": "India_952728.npz",
+      "event": "India",
+      "source_sha256": "e633d6ab642c38f85eefd9b58beb50f4127f28e59a91b0cde300fcde70b35011",
+      "confusion": [
+        [
+          177942,
+          4926
+        ],
+        [
+          3282,
+          2566
+        ]
+      ]
+    },
+    {
+      "file": "Mekong_1443339.npz",
+      "event": "Mekong",
+      "source_sha256": "29a3b3badc8031e00db2aec35c417596142bef45e907180f287f6d5612e8f24e",
+      "confusion": [
+        [
+          62078,
+          7274
+        ],
+        [
+          7077,
+          185706
+        ]
+      ]
+    },
+    {
+      "file": "Mekong_254910.npz",
+      "event": "Mekong",
+      "source_sha256": "1d0587fcfb1f5ccfdf32ba1362aaa970c64ffa43237b914292ed765eab7b28ad",
+      "confusion": [
+        [
+          205337,
+          23
+        ],
+        [
+          135,
+          0
+        ]
+      ]
+    },
+    {
+      "file": "Mekong_333434.npz",
+      "event": "Mekong",
+      "source_sha256": "c4bda2e999aaac71478c931e0e6f4f7076e56a2bb21585f95d88c4f26576d518",
+      "confusion": [
+        [
+          199543,
+          306
+        ],
+        [
+          2681,
+          603
+        ]
+      ]
+    },
+    {
+      "file": "Mekong_382276.npz",
+      "event": "Mekong",
+      "source_sha256": "28ab3a59a857d5d784c139e45ef7715e9973297b69dd6abfb8325ab400466c98",
+      "confusion": [
+        [
+          251755,
+          548
+        ],
+        [
+          183,
+          9625
+        ]
+      ]
+    },
+    {
+      "file": "Mekong_424793.npz",
+      "event": "Mekong",
+      "source_sha256": "d39b6c8022911375d2777662d8c54997e7ac4d284b7d53a0055687cb83175868",
+      "confusion": [
+        [
+          254155,
+          329
+        ],
+        [
+          1980,
+          2023
+        ]
+      ]
+    },
+    {
+      "file": "Mekong_45934.npz",
+      "event": "Mekong",
+      "source_sha256": "20a4c175f49b7bfca20fbb7653664ac6bc3e85bacbd2115314c7b5d2cb4f4a8d",
+      "confusion": [
+        [
+          261549,
+          14
+        ],
+        [
+          257,
+          39
+        ]
+      ]
+    },
+    {
+      "file": "Nigeria_22088.npz",
+      "event": "Nigeria",
+      "source_sha256": "f3420ca8c288992b340eb0f1b423bdd9ee7a44607b7efa2bc8ec8f8a946517b1",
+      "confusion": [
+        [
+          221956,
+          61
+        ],
+        [
+          414,
+          215
+        ]
+      ]
+    },
+    {
+      "file": "Nigeria_225131.npz",
+      "event": "Nigeria",
+      "source_sha256": "3d9bb1ce8cee83ff117ed7973bda9e8f9f01884e9ab17b844b79c1c505ec34c0",
+      "confusion": [
+        [
+          239980,
+          144
+        ],
+        [
+          615,
+          516
+        ]
+      ]
+    },
+    {
+      "file": "Nigeria_417184.npz",
+      "event": "Nigeria",
+      "source_sha256": "94c22a51844c4c01b5b58ffe067656db4b182633104c01c2c15ffeb0c3350736",
+      "confusion": [
+        [
+          57685,
+          0
+        ],
+        [
+          1384,
+          0
+        ]
+      ]
+    },
+    {
+      "file": "Nigeria_812045.npz",
+      "event": "Nigeria",
+      "source_sha256": "975f5dc605ffdef2da8044c161cf354999a205f0940a819e77c9c9be2067eaac",
+      "confusion": [
+        [
+          112327,
+          4689
+        ],
+        [
+          2658,
+          117460
+        ]
+      ]
+    },
+    {
+      "file": "Pakistan_167553.npz",
+      "event": "Pakistan",
+      "source_sha256": "043ef2df00855bfbd0ef5bd3d83a48d7737a4bfb6c8da0a0f91f08672227d83a",
+      "confusion": [
+        [
+          245647,
+          0
+        ],
+        [
+          1458,
+          0
+        ]
+      ]
+    },
+    {
+      "file": "Pakistan_528249.npz",
+      "event": "Pakistan",
+      "source_sha256": "e9cd868a8272c08ff735dc103351948e981fe747f64ba7ee43fee5941572e462",
+      "confusion": [
+        [
+          76833,
+          149
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "file": "Pakistan_664885.npz",
+      "event": "Pakistan",
+      "source_sha256": "2ea6be2becadb5d28a1595f2685d98d9ef6347b849bd94b946bb8cf7ad0262bc",
+      "confusion": [
+        [
+          69630,
+          997
+        ],
+        [
+          449,
+          1934
+        ]
+      ]
+    },
+    {
+      "file": "Pakistan_694942.npz",
+      "event": "Pakistan",
+      "source_sha256": "52902092737597eb2c562493ef2ac2fd095ca59a1c7aae739282b4dba5be0ea4",
+      "confusion": [
+        [
+          172848,
+          115
+        ],
+        [
+          618,
+          17863
+        ]
+      ]
+    },
+    {
+      "file": "Pakistan_70625.npz",
+      "event": "Pakistan",
+      "source_sha256": "8cd31994e68edf825782f924d745999caf2866c72b2dc61c5ef739ed43e4dddd",
+      "confusion": [
+        [
+          256840,
+          637
+        ],
+        [
+          3119,
+          1548
+        ]
+      ]
+    },
+    {
+      "file": "Pakistan_849790.npz",
+      "event": "Pakistan",
+      "source_sha256": "1b272b70bbf876450f62600cf3c2d50acacab9936572d72c5e8c15f793871d9b",
+      "confusion": [
+        [
+          75151,
+          10180
+        ],
+        [
+          38321,
+          133587
+        ]
+      ]
+    },
+    {
+      "file": "Paraguay_1029191.npz",
+      "event": "Paraguay",
+      "source_sha256": "d8f428b6d733ca680267a5d6d5faadee11aa4f48c1dcf3bc51efc563d852a411",
+      "confusion": [
+        [
+          202406,
+          1195
+        ],
+        [
+          2525,
+          47811
+        ]
+      ]
+    },
+    {
+      "file": "Paraguay_232281.npz",
+      "event": "Paraguay",
+      "source_sha256": "0c676e63dc43ceda77e06f039d5b30ba21567b8525fa7eccf74758b8199de65c",
+      "confusion": [
+        [
+          220158,
+          12509
+        ],
+        [
+          4505,
+          24972
+        ]
+      ]
+    },
+    {
+      "file": "Paraguay_271769.npz",
+      "event": "Paraguay",
+      "source_sha256": "8da50cb43b119baf18fedca3e26931586e0af6b7205747a93df99291a90de328",
+      "confusion": [
+        [
+          259432,
+          99
+        ],
+        [
+          1897,
+          716
+        ]
+      ]
+    },
+    {
+      "file": "Paraguay_280900.npz",
+      "event": "Paraguay",
+      "source_sha256": "25fa18fca1a5a60a68516dc879cee491ebd8a9f13203d06ada51d0726b1e4a44",
+      "confusion": [
+        [
+          254769,
+          788
+        ],
+        [
+          1942,
+          4643
+        ]
+      ]
+    },
+    {
+      "file": "Paraguay_34417.npz",
+      "event": "Paraguay",
+      "source_sha256": "b1fd239f5f836bee2f08950e5e979346307cd4f7d62b5590afd80266b109b598",
+      "confusion": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          50026
+        ]
+      ]
+    },
+    {
+      "file": "Paraguay_40936.npz",
+      "event": "Paraguay",
+      "source_sha256": "cb94263515ce61fac11c193527f083acbd3f9388925c35b9bdf0c693999c16a8",
+      "confusion": [
+        [
+          215331,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "file": "Paraguay_511199.npz",
+      "event": "Paraguay",
+      "source_sha256": "6955b76451423eeb2bd6a8932088a82ffab0972f20410ae2d4203e69fbe976a0",
+      "confusion": [
+        [
+          246466,
+          4134
+        ],
+        [
+          4679,
+          6865
+        ]
+      ]
+    },
+    {
+      "file": "Paraguay_59731.npz",
+      "event": "Paraguay",
+      "source_sha256": "0e6a2af717ec85f90a61811fb8d5f0459851a82b86e9b067814a1ff53221328d",
+      "confusion": [
+        [
+          252503,
+          383
+        ],
+        [
+          358,
+          2412
+        ]
+      ]
+    },
+    {
+      "file": "Paraguay_651904.npz",
+      "event": "Paraguay",
+      "source_sha256": "85253cb9d5bec4bf1586c1d1642a44e444e0e2a6d77ff437369e22ea7d5b6f5f",
+      "confusion": [
+        [
+          233771,
+          1217
+        ],
+        [
+          6535,
+          20621
+        ]
+      ]
+    },
+    {
+      "file": "Paraguay_683296.npz",
+      "event": "Paraguay",
+      "source_sha256": "6e03d52c5b937dbf0a80f7f5802b080833f20d1999da9a8a938e8dd3219bee98",
+      "confusion": [
+        [
+          251385,
+          784
+        ],
+        [
+          1762,
+          5647
+        ]
+      ]
+    },
+    {
+      "file": "Paraguay_790830.npz",
+      "event": "Paraguay",
+      "source_sha256": "66309da380a02e069fd4d82b4d962f9f179ea30e51e58c627000ff2990a9ae43",
+      "confusion": [
+        [
+          228709,
+          543
+        ],
+        [
+          1207,
+          30740
+        ]
+      ]
+    },
+    {
+      "file": "Paraguay_80102.npz",
+      "event": "Paraguay",
+      "source_sha256": "8a09d6a1e6550dddbc876cc581e873d00aa60ac5ad30cb38a0f12488e737454a",
+      "confusion": [
+        [
+          262121,
+          0
+        ],
+        [
+          22,
+          0
+        ]
+      ]
+    },
+    {
+      "file": "Paraguay_868895.npz",
+      "event": "Paraguay",
+      "source_sha256": "6fa8e4c0093e2c1cc2ca6e781368bf6d85e294f85d350a3106c303d1644cc41c",
+      "confusion": [
+        [
+          149216,
+          10462
+        ],
+        [
+          4001,
+          11786
+        ]
+      ]
+    },
+    {
+      "file": "Paraguay_913449.npz",
+      "event": "Paraguay",
+      "source_sha256": "a24127bbe074bdd4492d7dd64044ef5ad4132b9a50b4be23fddf3aeda658dcb2",
+      "confusion": [
+        [
+          256615,
+          12
+        ],
+        [
+          5399,
+          118
+        ]
+      ]
+    },
+    {
+      "file": "Somalia_166342.npz",
+      "event": "Somalia",
+      "source_sha256": "9eebb212712020f4311f85a5507d8e195c8508791286d805d173f9edb22e8cfe",
+      "confusion": [
+        [
+          220565,
+          0
+        ],
+        [
+          12,
+          0
+        ]
+      ]
+    },
+    {
+      "file": "Somalia_322855.npz",
+      "event": "Somalia",
+      "source_sha256": "97e75f846044875e3ca3150fb0670ae6ac00b1a9bac8938ce41ea21c4330e62b",
+      "confusion": [
+        [
+          202346,
+          7961
+        ],
+        [
+          3525,
+          41212
+        ]
+      ]
+    },
+    {
+      "file": "Somalia_60129.npz",
+      "event": "Somalia",
+      "source_sha256": "f4fc47b3e12bf6c1f270a18d36dba29129e4b9d6263962a42badd87c34507db7",
+      "confusion": [
+        [
+          221639,
+          0
+        ],
+        [
+          677,
+          0
+        ]
+      ]
+    },
+    {
+      "file": "Somalia_685158.npz",
+      "event": "Somalia",
+      "source_sha256": "78eee24fc8bd5f8877bbcf17bd1712c46aac9d2e26bbda0101252df72cc5bbc5",
+      "confusion": [
+        [
+          153564,
+          5354
+        ],
+        [
+          2346,
+          22908
+        ]
+      ]
+    },
+    {
+      "file": "Somalia_699062.npz",
+      "event": "Somalia",
+      "source_sha256": "ae7a8d2b7b771c6c569b030c0a8161846cbb70aac67ea2cf73a21ba53dcd3f14",
+      "confusion": [
+        [
+          199657,
+          262
+        ],
+        [
+          1408,
+          1882
+        ]
+      ]
+    },
+    {
+      "file": "Somalia_94102.npz",
+      "event": "Somalia",
+      "source_sha256": "541d7aacc828d2efc4c0d6c6571cfd44eaa97465648c7187a1b8c12dff637e21",
+      "confusion": [
+        [
+          227245,
+          1421
+        ],
+        [
+          319,
+          12375
+        ]
+      ]
+    },
+    {
+      "file": "Spain_5650136.npz",
+      "event": "Spain",
+      "source_sha256": "786cdf7818307b6f30dbd1141036ca86faeed20a3fa8dcdb3d7f385336d402b1",
+      "confusion": [
+        [
+          62696,
+          4693
+        ],
+        [
+          3857,
+          100350
+        ]
+      ]
+    },
+    {
+      "file": "Spain_6095801.npz",
+      "event": "Spain",
+      "source_sha256": "b78d78eb736dccd4e6391ae2119dd7df2b08322d5d2f820cab9845c2842b49d9",
+      "confusion": [
+        [
+          235189,
+          4137
+        ],
+        [
+          7347,
+          15389
+        ]
+      ]
+    },
+    {
+      "file": "Spain_6860600.npz",
+      "event": "Spain",
+      "source_sha256": "df34003b9becbeb964c37da77498d9b0f3b05475be4ebc96ce3234a77fe01d1c",
+      "confusion": [
+        [
+          261723,
+          0
+        ],
+        [
+          246,
+          0
+        ]
+      ]
+    },
+    {
+      "file": "Spain_7370579.npz",
+      "event": "Spain",
+      "source_sha256": "314cc7194171f4b10d7522f52fa2799455410490aa26979bab2fcddbf7683f1c",
+      "confusion": [
+        [
+          177145,
+          14865
+        ],
+        [
+          8364,
+          61671
+        ]
+      ]
+    },
+    {
+      "file": "Spain_7387658.npz",
+      "event": "Spain",
+      "source_sha256": "45217d8be401824cb81ae8ed1d08729b65e5a66554045e6037e3b87cf155170f",
+      "confusion": [
+        [
+          90739,
+          18312
+        ],
+        [
+          8875,
+          144131
+        ]
+      ]
+    },
+    {
+      "file": "Spain_7558720.npz",
+      "event": "Spain",
+      "source_sha256": "63160c6f200a3c28c0c8ea2b2ab2b142218e30c5927eb4152c073db8c553f561",
+      "confusion": [
+        [
+          259311,
+          536
+        ],
+        [
+          1296,
+          841
+        ]
+      ]
+    },
+    {
+      "file": "Sri-Lanka_1049830.npz",
+      "event": "Sri-Lanka",
+      "source_sha256": "3bb6f5d5a149ae1d809f45f5335c570c8f57ecd02588f7c214674f27e0310e6d",
+      "confusion": [
+        [
+          187325,
+          331
+        ],
+        [
+          1323,
+          1254
+        ]
+      ]
+    },
+    {
+      "file": "Sri-Lanka_117737.npz",
+      "event": "Sri-Lanka",
+      "source_sha256": "410b5ad752d79dc252296096098f68696a4d079a5573b1fca003c421797429eb",
+      "confusion": [
+        [
+          254822,
+          591
+        ],
+        [
+          5492,
+          1239
+        ]
+      ]
+    },
+    {
+      "file": "Sri-Lanka_377277.npz",
+      "event": "Sri-Lanka",
+      "source_sha256": "0227f6ab2b6fadabbca71c064d77e1cf47578601158eb0375ee62dfc4d64c6f7",
+      "confusion": [
+        [
+          250728,
+          57
+        ],
+        [
+          7334,
+          1269
+        ]
+      ]
+    },
+    {
+      "file": "Sri-Lanka_450918.npz",
+      "event": "Sri-Lanka",
+      "source_sha256": "4f0e82376f72263312ef761aa35e8535319237545016194b272caa53a4e27798",
+      "confusion": [
+        [
+          87139,
+          7710
+        ],
+        [
+          1177,
+          3100
+        ]
+      ]
+    },
+    {
+      "file": "Sri-Lanka_534068.npz",
+      "event": "Sri-Lanka",
+      "source_sha256": "9d982d34c4097447173d2adcfcd012b0271282d2aab641e4648d0e5ae3323d5f",
+      "confusion": [
+        [
+          4482,
+          394
+        ],
+        [
+          125,
+          257143
+        ]
+      ]
+    },
+    {
+      "file": "Sri-Lanka_649970.npz",
+      "event": "Sri-Lanka",
+      "source_sha256": "1baf8f28639896b5bae5a6e9b96de9f7e4d174728b00ef39a5c4077641ca6ab9",
+      "confusion": [
+        [
+          242362,
+          1150
+        ],
+        [
+          8920,
+          8423
+        ]
+      ]
+    },
+    {
+      "file": "Sri-Lanka_713926.npz",
+      "event": "Sri-Lanka",
+      "source_sha256": "612448084ec051cb80000be3ff03c1c306e521aa08595fb94ff7385aa4c0e533",
+      "confusion": [
+        [
+          180703,
+          895
+        ],
+        [
+          906,
+          79600
+        ]
+      ]
+    },
+    {
+      "file": "Sri-Lanka_849649.npz",
+      "event": "Sri-Lanka",
+      "source_sha256": "7c467ae544c1f3d6bf3b1e368f8a617bc56bbc564c40e62e4d82bc98936294d8",
+      "confusion": [
+        [
+          216260,
+          55
+        ],
+        [
+          950,
+          942
+        ]
+      ]
+    },
+    {
+      "file": "Sri-Lanka_922192.npz",
+      "event": "Sri-Lanka",
+      "source_sha256": "1b9fa278bdcb1ed1316aaf8c52c4b308eeae6ee86c15822f41c82d7c8fa3de45",
+      "confusion": [
+        [
+          238437,
+          316
+        ],
+        [
+          754,
+          276
+        ]
+      ]
+    },
+    {
+      "file": "USA_1049586.npz",
+      "event": "USA",
+      "source_sha256": "c5e6d562c94409d7150a4423b1159d83ffe2d5569dcf2ae59a011f159c8aa7c7",
+      "confusion": [
+        [
+          259855,
+          84
+        ],
+        [
+          730,
+          1392
+        ]
+      ]
+    },
+    {
+      "file": "USA_350244.npz",
+      "event": "USA",
+      "source_sha256": "744f2b60e2d60853ae2a29ed393e971aaf39f04fd695fa33e4c44830d697b395",
+      "confusion": [
+        [
+          260691,
+          144
+        ],
+        [
+          940,
+          345
+        ]
+      ]
+    },
+    {
+      "file": "USA_430764.npz",
+      "event": "USA",
+      "source_sha256": "9e5e6b75be4442aaabd9687928a953915ef53e953dd981ea798ad7468d6680a6",
+      "confusion": [
+        [
+          244850,
+          1848
+        ],
+        [
+          4149,
+          11290
+        ]
+      ]
+    },
+    {
+      "file": "USA_504150.npz",
+      "event": "USA",
+      "source_sha256": "f0f0669506898bd714517da156bec5e587ad77c57ddf76951f0ff8e02a745f71",
+      "confusion": [
+        [
+          258638,
+          226
+        ],
+        [
+          1259,
+          2003
+        ]
+      ]
+    },
+    {
+      "file": "USA_519181.npz",
+      "event": "USA",
+      "source_sha256": "0ec67f0985726067cf69b066b00fc6db4a7a96869c92512d4764fa74910a976e",
+      "confusion": [
+        [
+          259575,
+          400
+        ],
+        [
+          1107,
+          1045
+        ]
+      ]
+    },
+    {
+      "file": "USA_527077.npz",
+      "event": "USA",
+      "source_sha256": "959006ad8f34f344e6318f93ad9bfbfb75ecbcca6ee785559e163689ce8189a4",
+      "confusion": [
+        [
+          260445,
+          36
+        ],
+        [
+          912,
+          734
+        ]
+      ]
+    },
+    {
+      "file": "USA_595451.npz",
+      "event": "USA",
+      "source_sha256": "8afa3eba0ebb0e7d04124b170da2acb4df302977bcb77b5bd1c53a8d450d9a72",
+      "confusion": [
+        [
+          240084,
+          1521
+        ],
+        [
+          6661,
+          13870
+        ]
+      ]
+    },
+    {
+      "file": "USA_66511.npz",
+      "event": "USA",
+      "source_sha256": "33683c33dbcc73c01b622dd66f2cc6e4d47541fb3fdad20b144e650ae1f5ec7b",
+      "confusion": [
+        [
+          259404,
+          5
+        ],
+        [
+          2638,
+          89
+        ]
+      ]
+    },
+    {
+      "file": "USA_670826.npz",
+      "event": "USA",
+      "source_sha256": "8615bebce842276c79b7d118f66f2c87c9dce370ab5af17570d217803c5844c5",
+      "confusion": [
+        [
+          259101,
+          21
+        ],
+        [
+          2763,
+          247
+        ]
+      ]
+    },
+    {
+      "file": "USA_67102.npz",
+      "event": "USA",
+      "source_sha256": "6a75e8211ebf693a24f4748afb9bcb43626c65f6292451067cfd3e16dd803f4b",
+      "confusion": [
+        [
+          252311,
+          289
+        ],
+        [
+          1009,
+          8482
+        ]
+      ]
+    },
+    {
+      "file": "USA_758178.npz",
+      "event": "USA",
+      "source_sha256": "763b5e6021f93f3041ffab52316a34712a0549d1f0174e60ede8ac762604a63e",
+      "confusion": [
+        [
+          260386,
+          130
+        ],
+        [
+          1097,
+          520
+        ]
+      ]
+    },
+    {
+      "file": "USA_778194.npz",
+      "event": "USA",
+      "source_sha256": "75f9d3d55f973cc2749963b3d42989fd2ac83b7ee2bb243876dd883bd2127545",
+      "confusion": [
+        [
+          258084,
+          148
+        ],
+        [
+          1038,
+          2800
+        ]
+      ]
+    },
+    {
+      "file": "USA_905409.npz",
+      "event": "USA",
+      "source_sha256": "0503a5521107680ec85eac866f5e085ad674fafc698c6d7dfecf93b3793bafba",
+      "confusion": [
+        [
+          217103,
+          529
+        ],
+        [
+          1178,
+          43289
+        ]
+      ]
+    },
+    {
+      "file": "USA_933610.npz",
+      "event": "USA",
+      "source_sha256": "8e2e490562aec407e057861a6c7faa4d86f39c414ce21fb8d28281041aafac71",
+      "confusion": [
+        [
+          258012,
+          192
+        ],
+        [
+          776,
+          3047
+        ]
+      ]
+    }
+  ],
+  "confusion": [
+    [
+      17760532,
+      190734
+    ],
+    [
+      309212,
+      2256889
+    ]
+  ],
+  "mIoU": 0.8956368019901078,
+  "water_IoU": 0.81865218629334,
+  "warmup": 20,
+  "iterations": 100,
+  "engine_bytes": 635868,
+  "engine_device_memory_bytes": 3904512,
+  "integer_io": true,
+  "wall_boundary": "includes H2D, inference, D2H and explicit host input quantization for integer I/O; excludes normalization, disk I/O and argmax",
+  "timing_input": {
+    "file": "USA_933610.npz",
+    "sha256": "8e2e490562aec407e057861a6c7faa4d86f39c414ce21fb8d28281041aafac71",
+    "sampling": "Repeated execution of the final lexicographically sorted prepared image; percentiles are across iterations, not images"
+  },
+  "timing_samples_ms": {
+    "kernel": [
+      1.751744031906128,
+      1.7486720085144043,
+      1.7583039999008179,
+      1.7508800029754639,
+      1.776576042175293,
+      1.761247992515564,
+      1.7309759855270386,
+      1.7585920095443726,
+      1.7425600290298462,
+      1.7388800382614136,
+      1.7325439453125,
+      1.7462079524993896,
+      1.767840027809143,
+      1.7418240308761597,
+      1.7531520128250122,
+      1.7393280267715454,
+      1.727936029434204,
+      1.7732160091400146,
+      1.7541760206222534,
+      1.7439039945602417,
+      1.748576045036316,
+      1.7391999959945679,
+      1.7404160499572754,
+      1.747167944908142,
+      1.7462719678878784,
+      1.762943983078003,
+      1.729632019996643,
+      1.7306560277938843,
+      1.806272029876709,
+      1.7496960163116455,
+      1.7348480224609375,
+      1.7286399602890015,
+      1.7562559843063354,
+      1.8425920009613037,
+      1.742527961730957,
+      1.749951958656311,
+      1.7771519422531128,
+      1.74726402759552,
+      1.7380479574203491,
+      1.7327040433883667,
+      1.7711679935455322,
+      1.753600001335144,
+      1.739840030670166,
+      1.780735969543457,
+      1.7571840286254883,
+      1.734976053237915,
+      2.1306240558624268,
+      1.7428799867630005,
+      1.748960018157959,
+      1.7385920286178589,
+      1.7349120378494263,
+      1.7390079498291016,
+      1.7392959594726562,
+      1.7384320497512817,
+      1.7459520101547241,
+      1.7286399602890015,
+      1.734336018562317,
+      1.7321280241012573,
+      1.7355200052261353,
+      1.73471999168396,
+      1.7352319955825806,
+      1.7446719408035278,
+      1.7320640087127686,
+      1.7533440589904785,
+      1.7530560493469238,
+      1.7452800273895264,
+      1.7307840585708618,
+      1.734495997428894,
+      1.7562559843063354,
+      1.7457599639892578,
+      1.7396800518035889,
+      1.7352639436721802,
+      1.7883520126342773,
+      1.7514560222625732,
+      1.732159972190857,
+      1.7380800247192383,
+      1.7304960489273071,
+      1.7677760124206543,
+      1.77401602268219,
+      1.7292159795761108,
+      1.7410880327224731,
+      1.7362240552902222,
+      1.743615984916687,
+      1.7338240146636963,
+      1.7822400331497192,
+      1.727776050567627,
+      1.7302720546722412,
+      1.7391680479049683,
+      1.7791359424591064,
+      1.731935977935791,
+      1.7298879623413086,
+      1.7319040298461914,
+      1.7366399765014648,
+      1.7440639734268188,
+      1.7288320064544678,
+      1.7276159524917603,
+      1.7303359508514404,
+      1.7232320308685303,
+      1.7331839799880981,
+      1.7555840015411377
+    ],
+    "wall": [
+      9.533178992569447,
+      8.63224605564028,
+      8.509716019034386,
+      10.175485978834331,
+      8.919895044527948,
+      8.451316971331835,
+      8.363218978047371,
+      8.12181003857404,
+      8.599316934123635,
+      8.513589040376246,
+      9.52457101084292,
+      9.160376037470996,
+      8.526517078280449,
+      8.920343010686338,
+      8.713493007235229,
+      9.577243006788194,
+      8.545365068130195,
+      8.687925059348345,
+      8.21089802775532,
+      8.702517952769995,
+      8.368819952011108,
+      8.342836052179337,
+      9.458233951590955,
+      8.945335983298719,
+      9.246136993169785,
+      8.30283504910767,
+      9.730043937452137,
+      8.490931941196322,
+      8.923959918320179,
+      9.489913936704397,
+      8.90175101812929,
+      9.61586693301797,
+      8.37909197434783,
+      8.593525039032102,
+      8.480565040372312,
+      8.643285022117198,
+      9.635324007831514,
+      8.56245297472924,
+      8.616148959845304,
+      10.46899298671633,
+      8.870167075656354,
+      8.756245952099562,
+      8.247410994954407,
+      8.709974004887044,
+      8.246322977356613,
+      8.874422986991704,
+      10.099231032654643,
+      8.490356034599245,
+      12.395308935083449,
+      8.673365926370025,
+      8.591989055275917,
+      8.51410103496164,
+      8.533108979463577,
+      8.15099396277219,
+      8.905399008654058,
+      8.838999085128307,
+      8.573076920583844,
+      8.600789005868137,
+      9.161625057458878,
+      8.385460008867085,
+      8.81151098292321,
+      9.335128939710557,
+      8.918647072277963,
+      9.12101601716131,
+      8.570389007218182,
+      8.490229025483131,
+      8.887670934200287,
+      8.941750973463058,
+      8.29512404743582,
+      8.283538976684213,
+      9.4900110270828,
+      8.986358996480703,
+      9.173496044240892,
+      8.647734066471457,
+      8.421492064371705,
+      8.670710027217865,
+      9.035128052346408,
+      8.506067912094295,
+      8.38830799330026,
+      8.664789958857,
+      8.6046609794721,
+      8.523093070834875,
+      8.62235703971237,
+      9.288152912631631,
+      8.811831008642912,
+      8.658548933453858,
+      9.509850991889834,
+      8.82610201369971,
+      8.830358972772956,
+      9.236088953912258,
+      8.888310985639691,
+      9.311801986768842,
+      9.177273022942245,
+      8.55250097811222,
+      8.523604017682374,
+      9.494491037912667,
+      10.153023060411215,
+      8.723606006242335,
+      8.87701497413218,
+      8.997720084153116
+    ]
+  },
+  "host_input_encoding": "float32 scale; rint round-to-even; clip [-127,127]; int8; zero point 0",
+  "io_receipt_sha256": "5b694761d59e2351f0957e08e2c4b51df4d2b8dd9eec977c475dbc7d59732ec6",
+  "software": {
+    "python": "3.8.20",
+    "numpy": "1.24.4",
+    "tensorrt": "8.4.1.5"
+  },
+  "kernel_ms_p50": 1.7414560317993164,
+  "kernel_ms_p95": 1.78081117272377,
+  "kernel_ms_p99": 1.8454723215103164,
+  "wall_ms_p50": 8.711733506061137,
+  "wall_ms_p95": 9.748503292212261,
+  "wall_ms_p99": 10.488256146200012
+}

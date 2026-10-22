@@ -1,0 +1,132 @@
+{
+  "authority": {
+    "path": "/home/schmalstieg/repos/MajorRev/prompts/finalize_f.md",
+    "sha256": "5a8fc0f46db7941e02628697a74c9df62154a8fcb7757050964853943367a358"
+  },
+  "user_amendment": "22 October: perform B0 QAT all4; PTQ tiny/micro and QAT fallback on 0.02 degradation; one export directory",
+  "cohort": "Existing real512 original-selected-N2500 LOGIT_KD, not untrained GDACS-SW512-v3; same current cohort as manuscript and tiny ladder",
+  "entries": [
+    {
+      "seed": 42,
+      "config": {
+        "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/configs/efficientvit_b0_gdacs_N2500_LOGIT_KD_T512_S512_epochs50_filtered_fps_E512_native_H512_s42.json",
+        "sha256": "f685ad30a6ead0ebc29b1f5f6b576c6c50b88c3ee6b1655e51f647e7ce2915a6"
+      },
+      "checkpoint": {
+        "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/runs/efficientvit_b0_gdacs_N2500_LOGIT_KD_T512_S512_epochs50_filtered_fps_E512_native_H512_s42/best.pt",
+        "sha256": "51b4b2911e59718a2ff0807aa6232d4532fa2f528ccc5e7d08032993b4e0f99a"
+      },
+      "training_receipt": {
+        "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/runs/efficientvit_b0_gdacs_N2500_LOGIT_KD_T512_S512_epochs50_filtered_fps_E512_native_H512_s42/COMPLETE.json",
+        "sha256": "4eb4ce5a26f0a2ec78de8de6a0217d2b8c598c9f58de85ac83795d4ea5654759"
+      }
+    },
+    {
+      "seed": 64,
+      "config": {
+        "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/configs/efficientvit_b0_gdacs_N2500_LOGIT_KD_T512_S512_epochs50_filtered_fps_E512_native_H512_s64.json",
+        "sha256": "a32e9f1b974c5cdb2ee4ddce1395d5c7a716db364545c1836a7279a16416d266"
+      },
+      "checkpoint": {
+        "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/runs/efficientvit_b0_gdacs_N2500_LOGIT_KD_T512_S512_epochs50_filtered_fps_E512_native_H512_s64/best.pt",
+        "sha256": "f9d098740c06bb943b777ead8873777ba4c4e75a4934c9321489cb926f4e3b7b"
+      },
+      "training_receipt": {
+        "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/runs/efficientvit_b0_gdacs_N2500_LOGIT_KD_T512_S512_epochs50_filtered_fps_E512_native_H512_s64/COMPLETE.json",
+        "sha256": "ec3e3c42961fa22c2b8b59ab4ebc2eb9c54a57cbc05b3249a5a5570fff16c37d"
+      }
+    },
+    {
+      "seed": 91,
+      "config": {
+        "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/configs/efficientvit_b0_gdacs_N2500_LOGIT_KD_T512_S512_epochs50_filtered_fps_E512_native_H512_s91.json",
+        "sha256": "52dc879c30e4729f432b314b1f5f26345f62fc21e5945dcada10e61cd1a552a1"
+      },
+      "checkpoint": {
+        "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/runs/efficientvit_b0_gdacs_N2500_LOGIT_KD_T512_S512_epochs50_filtered_fps_E512_native_H512_s91/best.pt",
+        "sha256": "452af09dea6c7fcc523597dc83726f629ce80a44af55d8c3f087c5456aac8721"
+      },
+      "training_receipt": {
+        "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/runs/efficientvit_b0_gdacs_N2500_LOGIT_KD_T512_S512_epochs50_filtered_fps_E512_native_H512_s91/COMPLETE.json",
+        "sha256": "c0cb40d98da3cdc01bfb3e6de9d04691a29c21102a57b252a10f3af0967f8c6b"
+      }
+    },
+    {
+      "seed": 107,
+      "config": {
+        "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/configs/efficientvit_b0_gdacs_N2500_LOGIT_KD_T512_S512_epochs50_filtered_fps_E512_native_H512_s107.json",
+        "sha256": "5d8569c30687c5407d6aa1fd021a3afa224b1d483baff6c8efba24323cdff740"
+      },
+      "checkpoint": {
+        "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/runs/efficientvit_b0_gdacs_N2500_LOGIT_KD_T512_S512_epochs50_filtered_fps_E512_native_H512_s107/best.pt",
+        "sha256": "becaf55d65266816aa226ae39f22d5764d4abf8f8bf72e72ed1e2b52088e826c"
+      },
+      "training_receipt": {
+        "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/runs/efficientvit_b0_gdacs_N2500_LOGIT_KD_T512_S512_epochs50_filtered_fps_E512_native_H512_s107/COMPLETE.json",
+        "sha256": "aac717af4dbb6cde54c3bff976c7b4835cf7ecd391b2ba02b28cdcb689b1e1f9"
+      }
+    }
+  ],
+  "inherited_protocol": {
+    "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/deployment/quant_author_tools/PROTOCOL.json",
+    "sha256": "d62c3853784677ac26abd223959aa6186bfa61c860fd9dc45b886688777d59e4"
+  },
+  "qat": {
+    "max_updates": 128,
+    "batch_size": 4,
+    "lr": 0.0001,
+    "weight_decay": 0.05,
+    "seed": 1729,
+    "optimizer": "AdamW",
+    "focal_gamma": 2,
+    "clip": 5,
+    "calibration": "first8 lexicographically selected QAT tiles, all convolutions including head, per_tensor activations/per_channel weights",
+    "checkpoint": "final update only",
+    "bn": "folded before calibration and training",
+    "target": "cached current512 teacher hard labels; no soft-target retraining or outside labels"
+  },
+  "ptq": {
+    "id": "percentile_pc",
+    "method": "Percentile",
+    "per_channel": true,
+    "symmetric": true,
+    "operators": [
+      "Conv",
+      "MatMul",
+      "Add"
+    ]
+  },
+  "user_accuracy_tolerance": {
+    "pooled_mIoU_max_drop": 0.02,
+    "equal_event_mIoU_max_drop": 0.02,
+    "pooled_water_IoU_max_drop": 0.02
+  },
+  "float_admission": {
+    "images": 89,
+    "atol": 0.001,
+    "rtol": 0.001,
+    "backends": [
+      "ORT semantic",
+      "ORT optimized"
+    ],
+    "full_source_required": true,
+    "no_exclusions": true
+  },
+  "qat_parity": "Retain strict QDQ discontinuity failures at .001; require inherited full-source unrounded structural checks and actual exported-runtime source accuracy. Do not claim strict parity when false.",
+  "selection": "source validation only; final128 QAT updates; no LR sweep; all4 attempted and all failures retained",
+  "code": [
+    {
+      "path": "/home/schmalstieg/repos/MajorRev/revision_package_20261021/8_jetson_export_20261022/workstation/code/prepare_b0.py",
+      "sha256": "e9ee2693b71137619357a688ec595dd3cf08bca53a32fec4f700ea0b09f20cf2"
+    },
+    {
+      "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/code/experiment_quant.py",
+      "sha256": "f14234cf3386a3d9b6cebf7dbda29a7625d9b4ee580fcf9b8fe2b1fc8c6eedfe"
+    },
+    {
+      "path": "/home/schmalstieg/repos/FloodDistill/quantization/jetson_integer.py",
+      "sha256": "d583ad7330f7b54782c387b5198afebd553f4d01838d4e98044812b52a647bab"
+    }
+  ],
+  "native_execution": false
+}

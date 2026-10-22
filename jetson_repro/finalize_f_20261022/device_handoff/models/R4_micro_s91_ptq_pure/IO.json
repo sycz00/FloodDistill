@@ -1,0 +1,17 @@
+{
+  "status": "derived_variant",
+  "recipe": "integer_io",
+  "is_registered_candidate": false,
+  "source_model": "/home/schmalstieg/repos/MajorRev/analysis/finalize_f_20261022/outputs/r4_micro/deployment/quant_author_tools/R4_micro_gdacs_N2500_LOGIT_KD_T512_S512_epochs50_filtered_fps_E512_native_H512_s91_lr005/pure_edge_zero.onnx",
+  "source_sha256": "4594a3052208529237fc64b927e96da4d11b6f924bcb6b0a522080d420c03d93",
+  "variant_model": "/home/schmalstieg/repos/MajorRev/analysis/finalize_f_20261022/outputs/r4_micro/deployment/quant_author_tools/R4_micro_gdacs_N2500_LOGIT_KD_T512_S512_epochs50_filtered_fps_E512_native_H512_s91_lr005/pure_int8_io.onnx",
+  "variant_sha256": "25bc955973fabc0ef9f332b6ab08e203c03aae9596daaf6438323a8294f3550a",
+  "input_binding": "int8",
+  "output_binding": "int8",
+  "host_input_scale": 0.09205003082752228,
+  "host_input_zero_point": 0,
+  "output_scale": 0.08130305260419846,
+  "output_zero_point": 0,
+  "argmax_preserved": "a single shared positive output scale is monotonic, so per-pixel class order is unchanged",
+  "caveat": "changes the model interface; new variant requiring source validation"
+}

@@ -1,0 +1,1275 @@
+{
+  "rows": [
+    {
+      "file": "Ghana_1033830_S2Hand.tif",
+      "event": "Ghana",
+      "confusion": [
+        [
+          130870,
+          5548
+        ],
+        [
+          2177,
+          94634
+        ]
+      ]
+    },
+    {
+      "file": "Ghana_124834_S2Hand.tif",
+      "event": "Ghana",
+      "confusion": [
+        [
+          262144,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "file": "Ghana_132163_S2Hand.tif",
+      "event": "Ghana",
+      "confusion": [
+        [
+          55761,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "file": "Ghana_142312_S2Hand.tif",
+      "event": "Ghana",
+      "confusion": [
+        [
+          262144,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "file": "Ghana_234935_S2Hand.tif",
+      "event": "Ghana",
+      "confusion": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "file": "Ghana_277_S2Hand.tif",
+      "event": "Ghana",
+      "confusion": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "file": "Ghana_308249_S2Hand.tif",
+      "event": "Ghana",
+      "confusion": [
+        [
+          252515,
+          1599
+        ],
+        [
+          1132,
+          6898
+        ]
+      ]
+    },
+    {
+      "file": "Ghana_495107_S2Hand.tif",
+      "event": "Ghana",
+      "confusion": [
+        [
+          257553,
+          632
+        ],
+        [
+          2712,
+          1247
+        ]
+      ]
+    },
+    {
+      "file": "Ghana_5079_S2Hand.tif",
+      "event": "Ghana",
+      "confusion": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "file": "Ghana_868803_S2Hand.tif",
+      "event": "Ghana",
+      "confusion": [
+        [
+          111612,
+          6481
+        ],
+        [
+          2094,
+          141957
+        ]
+      ]
+    },
+    {
+      "file": "Ghana_895194_S2Hand.tif",
+      "event": "Ghana",
+      "confusion": [
+        [
+          243710,
+          299
+        ],
+        [
+          2990,
+          5707
+        ]
+      ]
+    },
+    {
+      "file": "India_1018317_S2Hand.tif",
+      "event": "India",
+      "confusion": [
+        [
+          41096,
+          5171
+        ],
+        [
+          1087,
+          149623
+        ]
+      ]
+    },
+    {
+      "file": "India_1050276_S2Hand.tif",
+      "event": "India",
+      "confusion": [
+        [
+          202989,
+          3191
+        ],
+        [
+          26558,
+          22447
+        ]
+      ]
+    },
+    {
+      "file": "India_1068117_S2Hand.tif",
+      "event": "India",
+      "confusion": [
+        [
+          173993,
+          7759
+        ],
+        [
+          13932,
+          34028
+        ]
+      ]
+    },
+    {
+      "file": "India_118868_S2Hand.tif",
+      "event": "India",
+      "confusion": [
+        [
+          151309,
+          57
+        ],
+        [
+          10424,
+          358
+        ]
+      ]
+    },
+    {
+      "file": "India_164336_S2Hand.tif",
+      "event": "India",
+      "confusion": [
+        [
+          257142,
+          78
+        ],
+        [
+          1831,
+          50
+        ]
+      ]
+    },
+    {
+      "file": "India_180633_S2Hand.tif",
+      "event": "India",
+      "confusion": [
+        [
+          85644,
+          3148
+        ],
+        [
+          3874,
+          71889
+        ]
+      ]
+    },
+    {
+      "file": "India_244057_S2Hand.tif",
+      "event": "India",
+      "confusion": [
+        [
+          160408,
+          124
+        ],
+        [
+          5,
+          0
+        ]
+      ]
+    },
+    {
+      "file": "India_533192_S2Hand.tif",
+      "event": "India",
+      "confusion": [
+        [
+          82931,
+          3256
+        ],
+        [
+          5886,
+          43184
+        ]
+      ]
+    },
+    {
+      "file": "India_691027_S2Hand.tif",
+      "event": "India",
+      "confusion": [
+        [
+          244187,
+          1453
+        ],
+        [
+          4549,
+          3845
+        ]
+      ]
+    },
+    {
+      "file": "India_70352_S2Hand.tif",
+      "event": "India",
+      "confusion": [
+        [
+          225217,
+          824
+        ],
+        [
+          1906,
+          11282
+        ]
+      ]
+    },
+    {
+      "file": "India_764946_S2Hand.tif",
+      "event": "India",
+      "confusion": [
+        [
+          239094,
+          262
+        ],
+        [
+          1749,
+          1397
+        ]
+      ]
+    },
+    {
+      "file": "India_769408_S2Hand.tif",
+      "event": "India",
+      "confusion": [
+        [
+          166195,
+          1130
+        ],
+        [
+          6805,
+          1777
+        ]
+      ]
+    },
+    {
+      "file": "India_833266_S2Hand.tif",
+      "event": "India",
+      "confusion": [
+        [
+          200133,
+          1279
+        ],
+        [
+          12440,
+          5822
+        ]
+      ]
+    },
+    {
+      "file": "India_869358_S2Hand.tif",
+      "event": "India",
+      "confusion": [
+        [
+          256678,
+          416
+        ],
+        [
+          4167,
+          883
+        ]
+      ]
+    },
+    {
+      "file": "Mekong_1149855_S2Hand.tif",
+      "event": "Mekong",
+      "confusion": [
+        [
+          204600,
+          2915
+        ],
+        [
+          5268,
+          11992
+        ]
+      ]
+    },
+    {
+      "file": "Mekong_1413877_S2Hand.tif",
+      "event": "Mekong",
+      "confusion": [
+        [
+          253926,
+          530
+        ],
+        [
+          1473,
+          1039
+        ]
+      ]
+    },
+    {
+      "file": "Mekong_293769_S2Hand.tif",
+      "event": "Mekong",
+      "confusion": [
+        [
+          199204,
+          1179
+        ],
+        [
+          1939,
+          28738
+        ]
+      ]
+    },
+    {
+      "file": "Mekong_474783_S2Hand.tif",
+      "event": "Mekong",
+      "confusion": [
+        [
+          255555,
+          784
+        ],
+        [
+          3868,
+          1912
+        ]
+      ]
+    },
+    {
+      "file": "Mekong_977338_S2Hand.tif",
+      "event": "Mekong",
+      "confusion": [
+        [
+          108964,
+          2427
+        ],
+        [
+          569,
+          64998
+        ]
+      ]
+    },
+    {
+      "file": "Mekong_98310_S2Hand.tif",
+      "event": "Mekong",
+      "confusion": [
+        [
+          94591,
+          2513
+        ],
+        [
+          3279,
+          82388
+        ]
+      ]
+    },
+    {
+      "file": "Nigeria_1095404_S2Hand.tif",
+      "event": "Nigeria",
+      "confusion": [
+        [
+          198345,
+          7847
+        ],
+        [
+          5107,
+          40984
+        ]
+      ]
+    },
+    {
+      "file": "Nigeria_31096_S2Hand.tif",
+      "event": "Nigeria",
+      "confusion": [
+        [
+          216630,
+          41
+        ],
+        [
+          816,
+          0
+        ]
+      ]
+    },
+    {
+      "file": "Nigeria_820924_S2Hand.tif",
+      "event": "Nigeria",
+      "confusion": [
+        [
+          260640,
+          327
+        ],
+        [
+          704,
+          472
+        ]
+      ]
+    },
+    {
+      "file": "Nigeria_984831_S2Hand.tif",
+      "event": "Nigeria",
+      "confusion": [
+        [
+          11869,
+          6609
+        ],
+        [
+          5339,
+          216341
+        ]
+      ]
+    },
+    {
+      "file": "Pakistan_1027214_S2Hand.tif",
+      "event": "Pakistan",
+      "confusion": [
+        [
+          134176,
+          912
+        ],
+        [
+          5966,
+          17904
+        ]
+      ]
+    },
+    {
+      "file": "Pakistan_210595_S2Hand.tif",
+      "event": "Pakistan",
+      "confusion": [
+        [
+          262144,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "file": "Pakistan_336228_S2Hand.tif",
+      "event": "Pakistan",
+      "confusion": [
+        [
+          132471,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "file": "Pakistan_43105_S2Hand.tif",
+      "event": "Pakistan",
+      "confusion": [
+        [
+          260607,
+          797
+        ],
+        [
+          271,
+          0
+        ]
+      ]
+    },
+    {
+      "file": "Pakistan_94095_S2Hand.tif",
+      "event": "Pakistan",
+      "confusion": [
+        [
+          105802,
+          21202
+        ],
+        [
+          4629,
+          48937
+        ]
+      ]
+    },
+    {
+      "file": "Pakistan_9684_S2Hand.tif",
+      "event": "Pakistan",
+      "confusion": [
+        [
+          112346,
+          8
+        ],
+        [
+          1100,
+          96
+        ]
+      ]
+    },
+    {
+      "file": "Paraguay_1019808_S2Hand.tif",
+      "event": "Paraguay",
+      "confusion": [
+        [
+          256459,
+          515
+        ],
+        [
+          2314,
+          2856
+        ]
+      ]
+    },
+    {
+      "file": "Paraguay_153941_S2Hand.tif",
+      "event": "Paraguay",
+      "confusion": [
+        [
+          261503,
+          0
+        ],
+        [
+          641,
+          0
+        ]
+      ]
+    },
+    {
+      "file": "Paraguay_172476_S2Hand.tif",
+      "event": "Paraguay",
+      "confusion": [
+        [
+          258568,
+          760
+        ],
+        [
+          1978,
+          837
+        ]
+      ]
+    },
+    {
+      "file": "Paraguay_205585_S2Hand.tif",
+      "event": "Paraguay",
+      "confusion": [
+        [
+          262144,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "file": "Paraguay_252217_S2Hand.tif",
+      "event": "Paraguay",
+      "confusion": [
+        [
+          255478,
+          0
+        ],
+        [
+          300,
+          0
+        ]
+      ]
+    },
+    {
+      "file": "Paraguay_284928_S2Hand.tif",
+      "event": "Paraguay",
+      "confusion": [
+        [
+          259066,
+          3078
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "file": "Paraguay_305760_S2Hand.tif",
+      "event": "Paraguay",
+      "confusion": [
+        [
+          211366,
+          6987
+        ],
+        [
+          11381,
+          32410
+        ]
+      ]
+    },
+    {
+      "file": "Paraguay_581976_S2Hand.tif",
+      "event": "Paraguay",
+      "confusion": [
+        [
+          112831,
+          505
+        ],
+        [
+          74036,
+          74772
+        ]
+      ]
+    },
+    {
+      "file": "Paraguay_648632_S2Hand.tif",
+      "event": "Paraguay",
+      "confusion": [
+        [
+          243095,
+          655
+        ],
+        [
+          12269,
+          6125
+        ]
+      ]
+    },
+    {
+      "file": "Paraguay_657443_S2Hand.tif",
+      "event": "Paraguay",
+      "confusion": [
+        [
+          193543,
+          3627
+        ],
+        [
+          4462,
+          60512
+        ]
+      ]
+    },
+    {
+      "file": "Paraguay_76868_S2Hand.tif",
+      "event": "Paraguay",
+      "confusion": [
+        [
+          243509,
+          929
+        ],
+        [
+          1624,
+          16059
+        ]
+      ]
+    },
+    {
+      "file": "Paraguay_7894_S2Hand.tif",
+      "event": "Paraguay",
+      "confusion": [
+        [
+          202187,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "file": "Paraguay_896458_S2Hand.tif",
+      "event": "Paraguay",
+      "confusion": [
+        [
+          189494,
+          1885
+        ],
+        [
+          4100,
+          45199
+        ]
+      ]
+    },
+    {
+      "file": "Paraguay_934240_S2Hand.tif",
+      "event": "Paraguay",
+      "confusion": [
+        [
+          241506,
+          280
+        ],
+        [
+          18516,
+          1842
+        ]
+      ]
+    },
+    {
+      "file": "Somalia_12849_S2Hand.tif",
+      "event": "Somalia",
+      "confusion": [
+        [
+          149238,
+          4872
+        ],
+        [
+          8909,
+          28283
+        ]
+      ]
+    },
+    {
+      "file": "Somalia_167787_S2Hand.tif",
+      "event": "Somalia",
+      "confusion": [
+        [
+          220256,
+          24
+        ],
+        [
+          225,
+          0
+        ]
+      ]
+    },
+    {
+      "file": "Somalia_256539_S2Hand.tif",
+      "event": "Somalia",
+      "confusion": [
+        [
+          221217,
+          19
+        ],
+        [
+          23,
+          0
+        ]
+      ]
+    },
+    {
+      "file": "Somalia_61368_S2Hand.tif",
+      "event": "Somalia",
+      "confusion": [
+        [
+          212964,
+          5
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "file": "Somalia_649376_S2Hand.tif",
+      "event": "Somalia",
+      "confusion": [
+        [
+          208321,
+          421
+        ],
+        [
+          2537,
+          2650
+        ]
+      ]
+    },
+    {
+      "file": "Spain_1199913_S2Hand.tif",
+      "event": "Spain",
+      "confusion": [
+        [
+          251474,
+          579
+        ],
+        [
+          2729,
+          7361
+        ]
+      ]
+    },
+    {
+      "file": "Spain_4282030_S2Hand.tif",
+      "event": "Spain",
+      "confusion": [
+        [
+          156005,
+          7987
+        ],
+        [
+          18506,
+          79625
+        ]
+      ]
+    },
+    {
+      "file": "Spain_6537196_S2Hand.tif",
+      "event": "Spain",
+      "confusion": [
+        [
+          258959,
+          101
+        ],
+        [
+          2861,
+          185
+        ]
+      ]
+    },
+    {
+      "file": "Spain_7604243_S2Hand.tif",
+      "event": "Spain",
+      "confusion": [
+        [
+          240816,
+          345
+        ],
+        [
+          933,
+          19986
+        ]
+      ]
+    },
+    {
+      "file": "Spain_8372658_S2Hand.tif",
+      "event": "Spain",
+      "confusion": [
+        [
+          160136,
+          8789
+        ],
+        [
+          7886,
+          85218
+        ]
+      ]
+    },
+    {
+      "file": "Spain_8565131_S2Hand.tif",
+      "event": "Spain",
+      "confusion": [
+        [
+          205634,
+          4094
+        ],
+        [
+          11009,
+          41347
+        ]
+      ]
+    },
+    {
+      "file": "Sri-Lanka_101973_S2Hand.tif",
+      "event": "Sri-Lanka",
+      "confusion": [
+        [
+          259145,
+          40
+        ],
+        [
+          2634,
+          324
+        ]
+      ]
+    },
+    {
+      "file": "Sri-Lanka_132922_S2Hand.tif",
+      "event": "Sri-Lanka",
+      "confusion": [
+        [
+          240855,
+          3446
+        ],
+        [
+          9413,
+          8430
+        ]
+      ]
+    },
+    {
+      "file": "Sri-Lanka_236030_S2Hand.tif",
+      "event": "Sri-Lanka",
+      "confusion": [
+        [
+          203389,
+          986
+        ],
+        [
+          695,
+          1018
+        ]
+      ]
+    },
+    {
+      "file": "Sri-Lanka_236628_S2Hand.tif",
+      "event": "Sri-Lanka",
+      "confusion": [
+        [
+          258632,
+          429
+        ],
+        [
+          1620,
+          1461
+        ]
+      ]
+    },
+    {
+      "file": "Sri-Lanka_31559_S2Hand.tif",
+      "event": "Sri-Lanka",
+      "confusion": [
+        [
+          218195,
+          136
+        ],
+        [
+          464,
+          0
+        ]
+      ]
+    },
+    {
+      "file": "Sri-Lanka_321316_S2Hand.tif",
+      "event": "Sri-Lanka",
+      "confusion": [
+        [
+          163898,
+          1330
+        ],
+        [
+          8939,
+          87966
+        ]
+      ]
+    },
+    {
+      "file": "Sri-Lanka_612594_S2Hand.tif",
+      "event": "Sri-Lanka",
+      "confusion": [
+        [
+          217045,
+          1974
+        ],
+        [
+          562,
+          42563
+        ]
+      ]
+    },
+    {
+      "file": "Sri-Lanka_63307_S2Hand.tif",
+      "event": "Sri-Lanka",
+      "confusion": [
+        [
+          255101,
+          38
+        ],
+        [
+          6435,
+          570
+        ]
+      ]
+    },
+    {
+      "file": "Sri-Lanka_85652_S2Hand.tif",
+      "event": "Sri-Lanka",
+      "confusion": [
+        [
+          195022,
+          405
+        ],
+        [
+          1941,
+          0
+        ]
+      ]
+    },
+    {
+      "file": "USA_1039203_S2Hand.tif",
+      "event": "USA",
+      "confusion": [
+        [
+          260196,
+          305
+        ],
+        [
+          728,
+          883
+        ]
+      ]
+    },
+    {
+      "file": "USA_1082482_S2Hand.tif",
+      "event": "USA",
+      "confusion": [
+        [
+          259704,
+          220
+        ],
+        [
+          1206,
+          1000
+        ]
+      ]
+    },
+    {
+      "file": "USA_19225_S2Hand.tif",
+      "event": "USA",
+      "confusion": [
+        [
+          260615,
+          116
+        ],
+        [
+          761,
+          630
+        ]
+      ]
+    },
+    {
+      "file": "USA_225017_S2Hand.tif",
+      "event": "USA",
+      "confusion": [
+        [
+          244462,
+          896
+        ],
+        [
+          2619,
+          14161
+        ]
+      ]
+    },
+    {
+      "file": "USA_251323_S2Hand.tif",
+      "event": "USA",
+      "confusion": [
+        [
+          258952,
+          1391
+        ],
+        [
+          681,
+          14
+        ]
+      ]
+    },
+    {
+      "file": "USA_275372_S2Hand.tif",
+      "event": "USA",
+      "confusion": [
+        [
+          259302,
+          114
+        ],
+        [
+          1987,
+          735
+        ]
+      ]
+    },
+    {
+      "file": "USA_308150_S2Hand.tif",
+      "event": "USA",
+      "confusion": [
+        [
+          258759,
+          361
+        ],
+        [
+          1114,
+          1793
+        ]
+      ]
+    },
+    {
+      "file": "USA_366607_S2Hand.tif",
+      "event": "USA",
+      "confusion": [
+        [
+          210528,
+          2286
+        ],
+        [
+          1819,
+          47506
+        ]
+      ]
+    },
+    {
+      "file": "USA_646878_S2Hand.tif",
+      "event": "USA",
+      "confusion": [
+        [
+          247333,
+          3217
+        ],
+        [
+          1229,
+          1195
+        ]
+      ]
+    },
+    {
+      "file": "USA_741073_S2Hand.tif",
+      "event": "USA",
+      "confusion": [
+        [
+          258496,
+          244
+        ],
+        [
+          1959,
+          1416
+        ]
+      ]
+    },
+    {
+      "file": "USA_741178_S2Hand.tif",
+      "event": "USA",
+      "confusion": [
+        [
+          260542,
+          129
+        ],
+        [
+          1043,
+          403
+        ]
+      ]
+    },
+    {
+      "file": "USA_761032_S2Hand.tif",
+      "event": "USA",
+      "confusion": [
+        [
+          248452,
+          1556
+        ],
+        [
+          5443,
+          6674
+        ]
+      ]
+    },
+    {
+      "file": "USA_826217_S2Hand.tif",
+      "event": "USA",
+      "confusion": [
+        [
+          257291,
+          337
+        ],
+        [
+          890,
+          3608
+        ]
+      ]
+    },
+    {
+      "file": "USA_986268_S2Hand.tif",
+      "event": "USA",
+      "confusion": [
+        [
+          251510,
+          1521
+        ],
+        [
+          2055,
+          7037
+        ]
+      ]
+    }
+  ],
+  "mIoU": 0.8706043155520448,
+  "water_IoU": 0.7709612629609275,
+  "confusion": [
+    [
+      17898388,
+      158732
+    ],
+    [
+      390122,
+      1847483
+    ]
+  ],
+  "equal_event_mIoU": 0.8653212269850364,
+  "events": [
+    "Ghana",
+    "India",
+    "Mekong",
+    "Nigeria",
+    "Pakistan",
+    "Paraguay",
+    "Somalia",
+    "Spain",
+    "Sri-Lanka",
+    "USA"
+  ]
+}

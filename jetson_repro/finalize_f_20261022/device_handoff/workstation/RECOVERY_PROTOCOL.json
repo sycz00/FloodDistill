@@ -1,0 +1,21 @@
+{
+  "authority": {
+    "path": "/home/schmalstieg/repos/MajorRev/revision_package_20261021/8_jetson_export_20261022/workstation/PROTOCOL.json",
+    "sha256": "f5e21563736bb8a63770b28642a4f437ce8d3740db278dcc05e0578bfa011b34"
+  },
+  "reason": "128-update1e-4 inherited QAT failed source qualification; existing quantization/qat.py recommends lr<=1e-5. One fixed lower-LR attempt per seed, from the same float parent.",
+  "rule": "Same full89 float admission and .001 export checks. Actual runtime gate max0.02 drop on pooled/eventmIoU and pooledwaterIoU; no external selection.",
+  "updates": 128,
+  "lr": 1e-05,
+  "batch": 4,
+  "weight_decay": 0.05,
+  "seed": 1729,
+  "optimizer": "AdamW",
+  "loss": "cached current512 teacher-hard focal gamma2",
+  "checkpoint": "final128 only",
+  "source": {
+    "path": "/home/schmalstieg/repos/MajorRev/revision_package_20261021/8_jetson_export_20261022/workstation/code/b0_recovery.py",
+    "sha256": "f9c5e4b9bebf314bc7ead5711f3aa99cd790200f15db30d5c84b9290f48f7e6c"
+  },
+  "extra_recipe_search": false
+}

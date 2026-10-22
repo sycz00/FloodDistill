@@ -1,251 +1,141 @@
-# Objective
+# Jetson task: finish the current 512-pixel model matrix
 
-You are working inside the existing research project and must act as an experienced ML systems researcher, quantization expert, and software engineer. Your goal is to address the remaining reviewer concern regarding mixed precision inference while producing artifacts that are directly usable for the paper revision and the upcoming Jetson Xavier NX validation.
+Use the `research` checkout containing `jetson_repro/finalize_f_20261022/device_handoff/`. Read this prompt and that folder's `README.md`, `SOURCE_PACKAGE.json`, `RUN_MANIFEST.json` and `DATASETS.json`. Execute the remaining work and collect results; do not stop at a plan.
 
-This is **not** exploratory research. The goal is to produce evidence, reproducible pipelines, and practical implementations while minimizing unnecessary engineering. Reuse the existing project infrastructure whenever possible.
+This prompt supersedes the older exploratory Jetson task and the unexecuted QAT plan in the parent directory. The workstation has now prepared all supplied ONNX candidates. **Do not repeat PTQ calibration, QAT training, checkpoint selection or architecture searches on Jetson.** Use the exact committed graphs. Preserve existing work, failed attempts and the closed 97-event panel. Do not install or upgrade software, change clocks or power mode, use DLA, or commit/push results.
 
-Do not introduce new frameworks unless there is a strong technical justification. Respect the existing project structure and previous experiments.
+## 1. Establish the checkout and inputs
 
----
+Work from the existing FloodDistill repository. Confirm that its branch is `research`, record its HEAD and dirty state, and preserve unrelated changes. Do not reset, clean, force-checkout or pull over local changes. The workstation commit must first be available in this checkout; if the handoff directory is absent, report that exact missing prerequisite.
 
-# Research Goal
+```bash
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+git branch --show-current
+git rev-parse HEAD
+git status --short
+cd "$REPO_ROOT/jetson_repro/finalize_f_20261022/device_handoff"
+sha256sum -c SHA256SUMS
+```
 
-Demonstrate whether our proposed compressed models can operate with fully integer inference while maintaining acceptable accuracy.
+Use the already established Python 3.8 environment with PyTorch, TensorRT 8.4.x, PyCUDA, ONNX, NumPy, rasterio, albumentations and the existing dataset-loader dependencies. The received native session used JetPack 5.0.2 / TensorRT 8.4.1.5 on Xavier NX. Activate that existing environment and retain any required system TensorRT `PYTHONPATH`; do not create another environment. Resolve and record the actual interpreter:
 
-The reviewer concern is specifically about mixed precision (INT8 + FP16). We therefore want to investigate whether mixed precision can be removed or significantly reduced.
+```bash
+export JETSON_PYTHON="$(command -v python3)"
+"$JETSON_PYTHON" -c 'import sys, torch, tensorrt; print(sys.executable); print(sys.version); print(torch.__version__, tensorrt.__version__)'
+export OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2
+export PYTHONUNBUFFERED=1
+```
 
-This work should generate publishable evidence regardless of outcome.
+The Git handoff contains all models, integer-I/O scales, inventories, reference scores, source gates and the existing 16 tiny engines/native accuracy records. Large datasets are external inputs. The 353 exact prepared arrays (194 S11 and 159 dry) must be imported from the existing transfer bundle. Locate either its unpacked `8_jetson_export_20261022` directory or `Jetson_export_20261022.tar.gz`. Set the variable below to the actual existing path and run **one** import route:
 
----
+```bash
+# Route A: an already unpacked transfer directory.
+"$JETSON_PYTHON" prepare_inputs.py --bundle-root "$TRANSFER_BUNDLE_ROOT"
 
-# Tasks
+# Route B: the original transfer archive; the script checks its pinned SHA256 first.
+"$JETSON_PYTHON" prepare_inputs.py --archive "$TRANSFER_ARCHIVE"
 
-## Task 1 — EfficientViT-B0 OFA Full INT8
+# After either route, verify all 353 arrays.
+"$JETSON_PYTHON" prepare_inputs.py --check
+```
 
-Investigate how to obtain a fully INT8 EfficientViT-B0 OFA model.
+`TRANSFER_BUNDLE_ROOT` means the directory containing `assets/`, not `assets/` itself. `--link` may be added to Route A to reuse verified arrays without copying; that source directory must then remain in place. The pinned transfer-archive SHA256 is `37acef126307b7bec899728b3d95e609cfa68d5514a9cd8d892deb40e95fca5c`. Do not use a different archive, recompress arrays, regenerate labels or bypass a hash mismatch. If these arrays have not reached Jetson, report `INPUTS_MISSING` with the missing archive/directory; finish the checkout/environment checks and do not claim the runs started.
 
-Current goal:
+Locate the complete existing raw datasets. Defaults are `$HOME/data/STURM-Flood/Dataset` and `$HOME/data/WorldFloodsv2`; pass their actual roots if different. No workstation absolute path is required. The controller verifies all frozen input/mask hashes on all five datasets before any model work. The 97-event panel is outside this task.
 
-- remove FP16 computations from remaining layers
-- eliminate mixed precision wherever possible
-- preserve accuracy as much as possible
+## 2. Launch one durable finite run
 
-Study existing implementations and known deployment techniques before modifying the code.
+Inspect current device work, memory, hardware identity and observed clock/power state. Wait if another heavy job is running. Do not kill, suspend or reconfigure another worker. Run one heavy job at a time. A package-wide lock prevents two controllers from this handoff running concurrently; it does not lock other projects.
 
-Possible approaches include (when applicable):
+From the handoff directory, start a new immutable attempt, replacing dataset-root arguments only if their actual locations differ:
 
-- integer output heads
-- integer LayerNorm replacements
-- BatchNorm folding
-- activation rescaling
-- quantized residual paths
-- quantization-aware graph transformations
-- TensorRT compatible integer operators
-- alternative calibration procedures
-- QAT if PTQ alone is insufficient
+```bash
+ATTEMPT="native_$(date -u +%Y%m%dT%H%M%SZ)"
+mkdir -p results_logs
+setsid "$JETSON_PYTHON" runtime/run_remaining.py --attempt "$ATTEMPT" \
+  --sturm-root "$HOME/data/STURM-Flood/Dataset" \
+  --wf-root "$HOME/data/WorldFloodsv2" \
+  </dev/null >"results_logs/$ATTEMPT.log" 2>&1 &
+CONTROLLER_PID=$!
+printf '%s\n' "$CONTROLLER_PID" >"results_logs/$ATTEMPT.pid"
+printf '%s\n' "$ATTEMPT" >results_logs/latest_attempt.txt
+```
 
-Do not blindly implement everything.
+Verify that the controller PID is alive, `results/<attempt>/HEARTBEAT.json` advances and its recorded child log grows. Do not infer launch success from the shell exit code. Initial preflight checks all 353 prepared arrays, the full external inventories, target TensorRT compatibility, and deserialization/precision receipts of the 16 reused engines. A failed preflight admits no model work; retain its receipt and log.
 
-Instead:
+Controls, from the same folder, using the recorded attempt name:
 
-- identify promising methods
-- justify why they should work
-- implement only the most promising ones
-- compare them experimentally
+```bash
+# Status and current child.
+cat "results/$ATTEMPT/HEARTBEAT.json"
+cat "results/$ATTEMPT/STATUS.json"
 
-Document:
+# Pause after the current model finishes its evaluation/benchmarks.
+touch "results/$ATTEMPT/PAUSE"
+# Continue.
+rm -f "results/$ATTEMPT/PAUSE"
+# Gracefully stop after the current model.
+touch "results/$ATTEMPT/STOP"
+```
 
-- unsupported operators
-- precision bottlenecks
-- TensorRT limitations
-- ONNX export issues
-- accuracy changes
-- latency changes
+To resume a controlled stop, remove `STOP` and any `PAUSE`, then rerun the original launch command with the same `--attempt` and add `--resume`. Preserve the earlier controller log; write the resumed controller output to a new `.resume.log`. Resume checks package, dataset-root and engine identities and reuses complete atomic datasets/builds. It refuses a previously owned child that is still running. Completed build/evaluation/benchmark failures remain terminal; do not silently retry a scientific failure or change its graph. Report such failures and retain the remaining successful work.
 
----
+## 3. Execute the declared matrix and preserve distinctions
 
-## Task 2 — Fully Quantize the 12k Parameter Network
+The primary matrix has **48 slots**: R4 tiny, R4_micro and current-protocol EfficientViT-B0 × seeds 42, 64, 91, 107 × FP32, FP16, mixed INT8/float and pure integer. There are 44 supplied primary candidates; **four B0 pure-integer slots have no eligible candidate**. The manifest contains 51 engine entries, comprising 16 existing tiny engines and **35 new build attempts**, including diagnostic controls.
 
-Take the smallest (~12k parameter) student network.
+- Reuse the exact 16 committed tiny engines and their previous complete five-dataset measurements/benchmarks. Extend each with dry159. Verify engine hashes and the original build/precision receipts.
+- Build and evaluate all 35 new entries from their supplied ONNX and I/O specifications. Never substitute FP32 after a requested integer build fails.
+- Tiny mixed retains PTQ for all four seeds. Tiny pure retains PTQ for 64/91/107 and measures QAT42 as its fallback; the old PTQ42 pure failure remains a diagnostic. Tiny QAT42 mixed is an additional diagnostic.
+- Micro uses PTQ for 42/64/91 and QAT107 fallback candidates in both quantized slots. Failed micro107 mixed PTQ remains a diagnostic baseline.
+- All current B0 PTQ/QAT candidates failed the workstation source-accuracy limit. Measure the supplied B0 graphs as diagnostics; do not describe them as recovered or deployment-qualified. Both completed QAT recipes and all failures remain in the workstation transfer bundle. Do not train another recipe here.
 
-Attempt full INT8 inference.
+The current parents use the real 512-pixel original-selected 2,500-image LOGIT_KD cohort. They are not the untrained broader GDACS-SW512-v3 arm, nor the distinct update-scheduled data-policy comparison controls. Genuine FP32/FP16 graphs retain their own original parent weights. Do not create float baselines by removing quantizers from a QAT graph.
 
-Start with PTQ using best practices.
+B0 uses explicitly scored cubic-to-linear Resize variants for TensorRT 8.4; retain that graph identity. Its attention remains floating. The controller runs a target-version synthetic attention capability probe. Preserve its full output. A synthetic success does not establish a complete all-integer B0 graph: leave all four pure B0 slots unavailable. Do not label mixed attention full INT8.
 
-If degradation is too large, investigate QAT.
+For supplied pure R4/micro graphs, require the exact integer-I/O scales and an actual inspector certificate with no floating or unknown tensor formats. A missing certificate fails that cell. It certifies tensor formats, not every kernel's internal arithmetic. Keep INT32 bias/accumulation and shape operations distinct. Do not enable FP16 to make a pure build succeed.
 
-Experiment with:
+## 4. Evaluate every image and benchmark every available cell
 
-- calibration datasets
-- calibration methods
-- per-channel vs per-tensor quantization
-- symmetric vs asymmetric quantization
-- activation calibration strategies
-- weight equalization if appropriate
+Every new engine must evaluate the complete frozen surface-water protocol:
 
-Only add complexity when required.
+| Dataset | Images/windows/chips | Events |
+|---|---:|---:|
+| S11 validation | 89 | 10 |
+| S11 test | 90 | 10 |
+| Bolivia | 15 | 1 |
+| WorldFloods test | 836 | 11 |
+| STURM512 | 2,675 | 29 |
 
-Produce:
+Input images, masks, event identities, valid/water totals and all names must match the inventories. Do not change normalization, channel order, interpolation, label mapping, split or mask to improve a result. New FP32 engines must match the corresponding CPU deployment-graph reference on full source validation within 0.005 pooled mIoU before external evaluation; a failure is retained and blocks that engine's external readout.
 
-- accuracy comparison
-- latency comparison
-- model size
-- memory footprint
-- operator compatibility
+Evaluate all 159 supplementary dry tiles. Report author-retained 49 central-264 results as primary (28 ordinary, 21 stress), author49 full512 sensitivity and map159 central264 sensitivity. Preserve ordinary/stress groups, uncertain/zero-support masks and undefined denominators. These are author-reviewed scenes, not independent expert ratings. Also derive the fixed 200 water-free WorldFloods windows from nine events from the full WorldFloods masks. Do not use the erroneous historical STURM dry-window list. The scene alarm is false-water fraction strictly greater than 1%.
 
----
+Report raw per-image confusion counts, summed per-event counts, equal-event/pooled water IoU and mIoU, precision and recall. Keep all four seeds, including negative results; a missing seed prevents a four-seed aggregate. Use paired whole-event bootstrap intervals with 10,000 draws and seed 1729, conditional on the four fitted seeds. Report seed SD separately. Bolivia is one descriptive event with no event-bootstrap interval. Undefined water scores stay undefined.
 
-## Task 3 — Investigate INT4
+The user's 22-October accuracy limit is an absolute drop of at most **0.02 on each** source-validation pooled mIoU, equal-event mIoU and pooled water IoU against the same-seed genuine FP32 parent. Preserve the original .01/.01/.02 verdict separately; do not call the amended rule preregistered. No external result selects a model. Tiny42/micro107 QAT fallback candidates passed CPU accuracy but failed strict QDQ logit parity at atol=rtol=.001. Keep those failures explicit even if actual native accuracy passes. No accuracy check proves strict export equivalence.
 
-Only continue to INT4 if Task 2 demonstrates that INT8 is successful with only minor degradation.
+For batch-one 512-pixel inference, retain GPU kernel p50/p95/p99, host wall p50/p95/p99, trtexec throughput and layer profiles, engine size, device/activation memory and steady power/energy with raw samples. Wall timing includes host INT8 encoding and both transfers; it excludes disk, normalization and argmax. Output remains two-channel INT8 logits for integer-I/O models, not a uint8 mask. Optional mask-transfer and alternate-upsampling experiments are outside this finite task.
 
-Do not waste time on INT4 if INT8 remains unsolved.
+Use the steady inference power window; startup-diluted averages remain secondary. Retain rail identity uncertainty and read labels if permitted. Do not infer matched hardware conditions from the old bundle's inaccurate clock summary. Record actual states, disclose differences between sessions and avoid unsupported cross-architecture speed/energy claims. Failed trtexec commands, missing steady samples or inconsistent energy receipts must remain failed benchmarks.
 
-For INT4:
+## 5. Collect, verify and return
 
-Investigate realistic deployment options supported by Jetson Xavier NX.
+The controller collects automatically after all declared attempts resolve. Collection can be rerun without model execution:
 
-Evaluate:
+```bash
+"$JETSON_PYTHON" runtime/collect_native.py --attempt "$ATTEMPT"
+```
 
-- partial INT4 quantization
-- mixed INT4/INT8
-- weight-only INT4
-- activation INT8 + weight INT4
-- TensorRT support
-- simulated execution on workstation
+Return the entire `results/<attempt>/` directory and all controller/resume logs, including preflight, environment, probe, failed builds, layer inspectors, raw evaluations, timing/power samples and these tables:
 
-The objective is not perfect performance but determining feasibility.
+- `accuracy.csv` and `accuracy_four_seed_summary.csv`
+- `benchmark.csv` and `benchmark_four_seed_summary.csv`
+- `dry_scene_summary.csv` and `wf_dry_per_image.csv`
+- `coverage_matrix.csv`, `paired_event_intervals.csv` and `wiring_check.csv`
+- `COLLECTION_RECEIPT.json` and `ATTEMPTS_RESOLVED.json`
 
-Clearly distinguish between:
+Check all 48 primary slots and all 51 declared attempts. Enumerate every failed, missing or unavailable model/seed/precision/dataset/benchmark. `ALL_SUPPORTED_CELLS_OBSERVED` describes measured coverage of the 44 supplied primary cells, not accuracy/export qualification. Report observation, accuracy, strict export parity and integer-format certification separately. Do not claim complete native B0 recovery or 48 successful cells.
 
-- simulated results
-- deployable results
-- unsupported configurations
-
----
-
-## Task 4 — Prepare Jetson Deployment
-
-The workstation should prepare everything required for later execution on the Jetson Xavier NX.
-
-Prepare reproducible pipelines for both:
-
-- EfficientViT-B0 OFA
-- 12k parameter student
-
-Support:
-
-- PTQ
-- QAT
-
-Ensure the generated artifacts can later be transferred to Jetson with minimal modification.
-
-This includes:
-
-- exported checkpoints
-- ONNX models
-- calibration assets
-- TensorRT conversion scripts if needed
-- evaluation scripts
-- inference scripts
-- documentation of required commands
-
-Avoid Jetson-specific assumptions unless verified.
-
----
-
-## Task 5 — Respect Jetson Environment
-
-Inspect the existing
-
-jetson_repro/
-
-folder.
-
-Understand:
-
-- library versions
-- TensorRT version
-- CUDA version
-- PyTorch version
-- ONNX version
-- existing deployment scripts
-- unsupported APIs
-
-Do not overwrite or modernize the environment.
-
-Instead adapt the workstation outputs to remain compatible with the Jetson environment.
-
-Document every incompatibility discovered.
-
----
-
-## Task 6 — Handover for Jetson Agent
-
-Produce a concise but complete handover document for another autonomous agent working exclusively on the Jetson Xavier NX.
-
-The handover should contain:
-
-- project objective
-- current status
-- completed workstation work
-- exported artifacts
-- remaining Jetson tasks
-- execution order
-- expected outputs
-- validation checklist
-- debugging hints
-- TensorRT conversion procedure
-- benchmarking protocol
-- expected directory structure
-- known limitations
-- known incompatibilities
-
-The Jetson agent should be able to continue without requiring additional context.
-
----
-
-# Experimental Protocol
-
-Every experiment must include:
-
-- motivation
-- implementation details
-- configuration
-- reproducibility information
-- quantitative results
-- failures
-- interpretation
-
-Negative results are valuable.
-
-Do not discard failed approaches.
-
-Explain why they failed and what that implies.
-
----
-
-# Success Criteria
-
-Highest priority:
-
-1. Fully INT8 EfficientViT-B0 OFA.
-2. Fully INT8 12k parameter network.
-3. Robust PTQ pipeline.
-4. Robust QAT pipeline.
-5. Jetson-ready deployment artifacts.
-6. Complete Jetson handover.
-
-Only investigate INT4 after INT8 has been demonstrated to work with acceptable degradation.
-
----
-
-# Constraints
-
-- Reuse existing project code whenever possible.
-- Avoid unnecessary refactoring.
-- Avoid introducing new dependencies unless clearly justified.
-- Keep implementations reproducible.
-- Prefer robust engineering over experimental hacks.
-- Preserve compatibility with the existing project and previous experiments.
-- Keep detailed notes suitable for inclusion in the reviewer response and supplementary material.
+Archive the returned results/logs outside the input folder or in ignored `results_logs/`, add a SHA256, and provide its path plus a short completed/failed/unavailable summary. Do not push, edit immutable manifests or overwrite old results.

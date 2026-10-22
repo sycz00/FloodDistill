@@ -1,0 +1,7 @@
+/assets/
+/results/
+/results_logs/
+/ASSETS_READY.json
+/.controller.lock
+__pycache__/
+*.py[cod]

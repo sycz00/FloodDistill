@@ -1,0 +1,1572 @@
+{
+  "Layers": [
+    {
+      "Name": "/stem/stem.0/Conv + PWN(/stem/stem.2/Clip)",
+      "LayerType": "CaskConvolution",
+      "Inputs": [
+        {
+          "Name": "image",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            6,
+            512,
+            512
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "/stem/stem.2/Clip_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            12,
+            256,
+            256
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "ParameterType": "Convolution",
+      "Kernel": [
+        3,
+        3
+      ],
+      "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+      "PrePadding": [
+        1,
+        1
+      ],
+      "PostPadding": [
+        1,
+        1
+      ],
+      "Stride": [
+        2,
+        2
+      ],
+      "Dilation": [
+        1,
+        1
+      ],
+      "OutMaps": 12,
+      "Groups": 1,
+      "Weights": {
+        "Type": "Float",
+        "Count": 648
+      },
+      "Bias": {
+        "Type": "Float",
+        "Count": 12
+      },
+      "HasSparseWeights": 0,
+      "Activation": "CLIPPED_RELU",
+      "ParameterSubType": "[0.000000,6.000000]",
+      "HasBias": 1,
+      "HasReLU": 0,
+      "TacticName": "volta_scudnn_128x32_relu_small_nn_v1",
+      "TacticValue": "0xc939b7b0a4d5a05f"
+    },
+    {
+      "Name": "/s1/s1.0/dw/dw.0/Conv + PWN(/s1/s1.0/dw/dw.2/Clip)",
+      "LayerType": "CudnnConvolution",
+      "Inputs": [
+        {
+          "Name": "/stem/stem.2/Clip_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            12,
+            256,
+            256
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "/s1/s1.0/dw/dw.2/Clip_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            12,
+            128,
+            128
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "ParameterType": "Convolution",
+      "Kernel": [
+        3,
+        3
+      ],
+      "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+      "PrePadding": [
+        1,
+        1
+      ],
+      "PostPadding": [
+        1,
+        1
+      ],
+      "Stride": [
+        2,
+        2
+      ],
+      "Dilation": [
+        1,
+        1
+      ],
+      "OutMaps": 12,
+      "Groups": 12,
+      "Weights": {
+        "Type": "Float",
+        "Count": 108
+      },
+      "Bias": {
+        "Type": "Float",
+        "Count": 12
+      },
+      "HasSparseWeights": 0,
+      "Activation": "CLIPPED_RELU",
+      "ParameterSubType": "[0.000000,6.000000]",
+      "HasBias": 1,
+      "TacticValue": "0x0000000000000000"
+    },
+    {
+      "Name": "/s1/s1.0/pw/pw.0/Conv + PWN(/s1/s1.0/Clip)",
+      "LayerType": "CaskConvolution",
+      "Inputs": [
+        {
+          "Name": "/s1/s1.0/dw/dw.2/Clip_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            12,
+            128,
+            128
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "/s1/s1.0/Clip_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            16,
+            128,
+            128
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "ParameterType": "Convolution",
+      "Kernel": [
+        1,
+        1
+      ],
+      "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+      "PrePadding": [
+        0,
+        0
+      ],
+      "PostPadding": [
+        0,
+        0
+      ],
+      "Stride": [
+        1,
+        1
+      ],
+      "Dilation": [
+        1,
+        1
+      ],
+      "OutMaps": 16,
+      "Groups": 1,
+      "Weights": {
+        "Type": "Float",
+        "Count": 192
+      },
+      "Bias": {
+        "Type": "Float",
+        "Count": 16
+      },
+      "HasSparseWeights": 0,
+      "Activation": "CLIPPED_RELU",
+      "ParameterSubType": "[0.000000,6.000000]",
+      "HasBias": 1,
+      "HasReLU": 0,
+      "TacticName": "volta_scudnn_128x32_relu_interior_nn_v1",
+      "TacticValue": "0x25eed4cfa195d49d"
+    },
+    {
+      "Name": "/s1/s1.1/dw/dw.0/Conv + PWN(/s1/s1.1/dw/dw.2/Clip)",
+      "LayerType": "CudaDepthwiseConvolution",
+      "Inputs": [
+        {
+          "Name": "/s1/s1.0/Clip_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            16,
+            128,
+            128
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "/s1/s1.1/dw/dw.2/Clip_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            16,
+            128,
+            128
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "ParameterType": "Convolution",
+      "Kernel": [
+        3,
+        3
+      ],
+      "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+      "PrePadding": [
+        1,
+        1
+      ],
+      "PostPadding": [
+        1,
+        1
+      ],
+      "Stride": [
+        1,
+        1
+      ],
+      "Dilation": [
+        1,
+        1
+      ],
+      "OutMaps": 16,
+      "Groups": 16,
+      "Weights": {
+        "Type": "Float",
+        "Count": 144
+      },
+      "Bias": {
+        "Type": "Float",
+        "Count": 16
+      },
+      "HasSparseWeights": 0,
+      "Activation": "CLIPPED_RELU",
+      "ParameterSubType": "[0.000000,6.000000]",
+      "HasBias": 1,
+      "TacticValue": "0xffffffffffffffff"
+    },
+    {
+      "Name": "/s1/s1.1/pw/pw.0/Conv + /s1/s1.1/Add + PWN(/s1/s1.1/Clip)",
+      "LayerType": "CaskConvolution",
+      "Inputs": [
+        {
+          "Name": "/s1/s1.1/dw/dw.2/Clip_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            16,
+            128,
+            128
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        },
+        {
+          "Name": "/s1/s1.0/Clip_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            16,
+            128,
+            128
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "/s1/s1.1/Clip_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            16,
+            128,
+            128
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "ParameterType": "Convolution",
+      "Kernel": [
+        1,
+        1
+      ],
+      "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+      "PrePadding": [
+        0,
+        0
+      ],
+      "PostPadding": [
+        0,
+        0
+      ],
+      "Stride": [
+        1,
+        1
+      ],
+      "Dilation": [
+        1,
+        1
+      ],
+      "OutMaps": 16,
+      "Groups": 1,
+      "Weights": {
+        "Type": "Float",
+        "Count": 256
+      },
+      "Bias": {
+        "Type": "Float",
+        "Count": 16
+      },
+      "HasSparseWeights": 0,
+      "Activation": "CLIPPED_RELU",
+      "ParameterSubType": "[0.000000,6.000000]",
+      "HasBias": 1,
+      "HasReLU": 0,
+      "TacticName": "volta_scudnn_128x32_relu_small_nn_v1",
+      "TacticValue": "0xc939b7b0a4d5a05f"
+    },
+    {
+      "Name": "/s2/s2.0/dw/dw.0/Conv + PWN(/s2/s2.0/dw/dw.2/Clip)",
+      "LayerType": "CudaDepthwiseConvolution",
+      "Inputs": [
+        {
+          "Name": "/s1/s1.1/Clip_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            16,
+            128,
+            128
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "/s2/s2.0/dw/dw.2/Clip_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            16,
+            64,
+            64
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "ParameterType": "Convolution",
+      "Kernel": [
+        3,
+        3
+      ],
+      "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+      "PrePadding": [
+        1,
+        1
+      ],
+      "PostPadding": [
+        1,
+        1
+      ],
+      "Stride": [
+        2,
+        2
+      ],
+      "Dilation": [
+        1,
+        1
+      ],
+      "OutMaps": 16,
+      "Groups": 16,
+      "Weights": {
+        "Type": "Float",
+        "Count": 144
+      },
+      "Bias": {
+        "Type": "Float",
+        "Count": 16
+      },
+      "HasSparseWeights": 0,
+      "Activation": "CLIPPED_RELU",
+      "ParameterSubType": "[0.000000,6.000000]",
+      "HasBias": 1,
+      "TacticValue": "0xffffffffffffffff"
+    },
+    {
+      "Name": "/s2/s2.0/pw/pw.0/Conv + PWN(/s2/s2.0/Clip)",
+      "LayerType": "CaskConvolution",
+      "Inputs": [
+        {
+          "Name": "/s2/s2.0/dw/dw.2/Clip_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            16,
+            64,
+            64
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "/s2/s2.0/Clip_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            24,
+            64,
+            64
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "ParameterType": "Convolution",
+      "Kernel": [
+        1,
+        1
+      ],
+      "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+      "PrePadding": [
+        0,
+        0
+      ],
+      "PostPadding": [
+        0,
+        0
+      ],
+      "Stride": [
+        1,
+        1
+      ],
+      "Dilation": [
+        1,
+        1
+      ],
+      "OutMaps": 24,
+      "Groups": 1,
+      "Weights": {
+        "Type": "Float",
+        "Count": 384
+      },
+      "Bias": {
+        "Type": "Float",
+        "Count": 24
+      },
+      "HasSparseWeights": 0,
+      "Activation": "CLIPPED_RELU",
+      "ParameterSubType": "[0.000000,6.000000]",
+      "HasBias": 1,
+      "HasReLU": 0,
+      "TacticName": "volta_scudnn_128x32_relu_interior_nn_v1",
+      "TacticValue": "0x25eed4cfa195d49d"
+    },
+    {
+      "Name": "/s2/s2.1/dw/dw.0/Conv + PWN(/s2/s2.1/dw/dw.2/Clip)",
+      "LayerType": "CudaDepthwiseConvolution",
+      "Inputs": [
+        {
+          "Name": "/s2/s2.0/Clip_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            24,
+            64,
+            64
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "/s2/s2.1/dw/dw.2/Clip_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            24,
+            64,
+            64
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "ParameterType": "Convolution",
+      "Kernel": [
+        3,
+        3
+      ],
+      "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+      "PrePadding": [
+        1,
+        1
+      ],
+      "PostPadding": [
+        1,
+        1
+      ],
+      "Stride": [
+        1,
+        1
+      ],
+      "Dilation": [
+        1,
+        1
+      ],
+      "OutMaps": 24,
+      "Groups": 24,
+      "Weights": {
+        "Type": "Float",
+        "Count": 216
+      },
+      "Bias": {
+        "Type": "Float",
+        "Count": 24
+      },
+      "HasSparseWeights": 0,
+      "Activation": "CLIPPED_RELU",
+      "ParameterSubType": "[0.000000,6.000000]",
+      "HasBias": 1,
+      "TacticValue": "0xffffffffffffffff"
+    },
+    {
+      "Name": "/s2/s2.1/pw/pw.0/Conv + /s2/s2.1/Add + PWN(/s2/s2.1/Clip)",
+      "LayerType": "CaskConvolution",
+      "Inputs": [
+        {
+          "Name": "/s2/s2.1/dw/dw.2/Clip_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            24,
+            64,
+            64
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        },
+        {
+          "Name": "/s2/s2.0/Clip_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            24,
+            64,
+            64
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "/s2/s2.1/Clip_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            24,
+            64,
+            64
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "ParameterType": "Convolution",
+      "Kernel": [
+        1,
+        1
+      ],
+      "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+      "PrePadding": [
+        0,
+        0
+      ],
+      "PostPadding": [
+        0,
+        0
+      ],
+      "Stride": [
+        1,
+        1
+      ],
+      "Dilation": [
+        1,
+        1
+      ],
+      "OutMaps": 24,
+      "Groups": 1,
+      "Weights": {
+        "Type": "Float",
+        "Count": 576
+      },
+      "Bias": {
+        "Type": "Float",
+        "Count": 24
+      },
+      "HasSparseWeights": 0,
+      "Activation": "CLIPPED_RELU",
+      "ParameterSubType": "[0.000000,6.000000]",
+      "HasBias": 1,
+      "HasReLU": 0,
+      "TacticName": "volta_scudnn_128x32_relu_interior_nn_v1",
+      "TacticValue": "0x25eed4cfa195d49d"
+    },
+    {
+      "Name": "/s3/s3.0/dw/dw.0/Conv + PWN(/s3/s3.0/dw/dw.2/Clip)",
+      "LayerType": "CudaDepthwiseConvolution",
+      "Inputs": [
+        {
+          "Name": "/s2/s2.1/Clip_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            24,
+            64,
+            64
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "/s3/s3.0/dw/dw.2/Clip_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            24,
+            32,
+            32
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "ParameterType": "Convolution",
+      "Kernel": [
+        3,
+        3
+      ],
+      "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+      "PrePadding": [
+        1,
+        1
+      ],
+      "PostPadding": [
+        1,
+        1
+      ],
+      "Stride": [
+        2,
+        2
+      ],
+      "Dilation": [
+        1,
+        1
+      ],
+      "OutMaps": 24,
+      "Groups": 24,
+      "Weights": {
+        "Type": "Float",
+        "Count": 216
+      },
+      "Bias": {
+        "Type": "Float",
+        "Count": 24
+      },
+      "HasSparseWeights": 0,
+      "Activation": "CLIPPED_RELU",
+      "ParameterSubType": "[0.000000,6.000000]",
+      "HasBias": 1,
+      "TacticValue": "0xffffffffffffffff"
+    },
+    {
+      "Name": "/s3/s3.0/pw/pw.0/Conv + PWN(/s3/s3.0/Clip)",
+      "LayerType": "CaskConvolution",
+      "Inputs": [
+        {
+          "Name": "/s3/s3.0/dw/dw.2/Clip_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            24,
+            32,
+            32
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "/s3/s3.0/Clip_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            40,
+            32,
+            32
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "ParameterType": "Convolution",
+      "Kernel": [
+        1,
+        1
+      ],
+      "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+      "PrePadding": [
+        0,
+        0
+      ],
+      "PostPadding": [
+        0,
+        0
+      ],
+      "Stride": [
+        1,
+        1
+      ],
+      "Dilation": [
+        1,
+        1
+      ],
+      "OutMaps": 40,
+      "Groups": 1,
+      "Weights": {
+        "Type": "Float",
+        "Count": 960
+      },
+      "Bias": {
+        "Type": "Float",
+        "Count": 40
+      },
+      "HasSparseWeights": 0,
+      "Activation": "CLIPPED_RELU",
+      "ParameterSubType": "[0.000000,6.000000]",
+      "HasBias": 1,
+      "HasReLU": 0,
+      "TacticName": "volta_scudnn_128x32_relu_medium_nn_v1",
+      "TacticValue": "0xc2a5fc6b5e7cef5e"
+    },
+    {
+      "Name": "/s3/s3.1/dw/dw.0/Conv + PWN(/s3/s3.1/dw/dw.2/Clip)",
+      "LayerType": "CudaDepthwiseConvolution",
+      "Inputs": [
+        {
+          "Name": "/s3/s3.0/Clip_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            40,
+            32,
+            32
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "/s3/s3.1/dw/dw.2/Clip_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            40,
+            32,
+            32
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "ParameterType": "Convolution",
+      "Kernel": [
+        3,
+        3
+      ],
+      "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+      "PrePadding": [
+        1,
+        1
+      ],
+      "PostPadding": [
+        1,
+        1
+      ],
+      "Stride": [
+        1,
+        1
+      ],
+      "Dilation": [
+        1,
+        1
+      ],
+      "OutMaps": 40,
+      "Groups": 40,
+      "Weights": {
+        "Type": "Float",
+        "Count": 360
+      },
+      "Bias": {
+        "Type": "Float",
+        "Count": 40
+      },
+      "HasSparseWeights": 0,
+      "Activation": "CLIPPED_RELU",
+      "ParameterSubType": "[0.000000,6.000000]",
+      "HasBias": 1,
+      "TacticValue": "0xffffffffffffffff"
+    },
+    {
+      "Name": "/s3/s3.1/pw/pw.0/Conv + /s3/s3.1/Add + PWN(/s3/s3.1/Clip)",
+      "LayerType": "CaskConvolution",
+      "Inputs": [
+        {
+          "Name": "/s3/s3.1/dw/dw.2/Clip_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            40,
+            32,
+            32
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        },
+        {
+          "Name": "/s3/s3.0/Clip_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            40,
+            32,
+            32
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "/s3/s3.1/Clip_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            40,
+            32,
+            32
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "ParameterType": "Convolution",
+      "Kernel": [
+        1,
+        1
+      ],
+      "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+      "PrePadding": [
+        0,
+        0
+      ],
+      "PostPadding": [
+        0,
+        0
+      ],
+      "Stride": [
+        1,
+        1
+      ],
+      "Dilation": [
+        1,
+        1
+      ],
+      "OutMaps": 40,
+      "Groups": 1,
+      "Weights": {
+        "Type": "Float",
+        "Count": 1600
+      },
+      "Bias": {
+        "Type": "Float",
+        "Count": 40
+      },
+      "HasSparseWeights": 0,
+      "Activation": "CLIPPED_RELU",
+      "ParameterSubType": "[0.000000,6.000000]",
+      "HasBias": 1,
+      "HasReLU": 0,
+      "TacticName": "volta_scudnn_128x32_relu_medium_nn_v1",
+      "TacticValue": "0xc2a5fc6b5e7cef5e"
+    },
+    {
+      "Name": "/s3/s3.2/dw/dw.0/Conv + PWN(/s3/s3.2/dw/dw.2/Clip)",
+      "LayerType": "CudaDepthwiseConvolution",
+      "Inputs": [
+        {
+          "Name": "/s3/s3.1/Clip_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            40,
+            32,
+            32
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "/s3/s3.2/dw/dw.2/Clip_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            40,
+            32,
+            32
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "ParameterType": "Convolution",
+      "Kernel": [
+        3,
+        3
+      ],
+      "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+      "PrePadding": [
+        1,
+        1
+      ],
+      "PostPadding": [
+        1,
+        1
+      ],
+      "Stride": [
+        1,
+        1
+      ],
+      "Dilation": [
+        1,
+        1
+      ],
+      "OutMaps": 40,
+      "Groups": 40,
+      "Weights": {
+        "Type": "Float",
+        "Count": 360
+      },
+      "Bias": {
+        "Type": "Float",
+        "Count": 40
+      },
+      "HasSparseWeights": 0,
+      "Activation": "CLIPPED_RELU",
+      "ParameterSubType": "[0.000000,6.000000]",
+      "HasBias": 1,
+      "TacticValue": "0xffffffffffffffff"
+    },
+    {
+      "Name": "/s3/s3.2/pw/pw.0/Conv + /s3/s3.2/Add + PWN(/s3/s3.2/Clip)",
+      "LayerType": "CaskConvolution",
+      "Inputs": [
+        {
+          "Name": "/s3/s3.2/dw/dw.2/Clip_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            40,
+            32,
+            32
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        },
+        {
+          "Name": "/s3/s3.1/Clip_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            40,
+            32,
+            32
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "/s3/s3.2/Clip_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            40,
+            32,
+            32
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "ParameterType": "Convolution",
+      "Kernel": [
+        1,
+        1
+      ],
+      "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+      "PrePadding": [
+        0,
+        0
+      ],
+      "PostPadding": [
+        0,
+        0
+      ],
+      "Stride": [
+        1,
+        1
+      ],
+      "Dilation": [
+        1,
+        1
+      ],
+      "OutMaps": 40,
+      "Groups": 1,
+      "Weights": {
+        "Type": "Float",
+        "Count": 1600
+      },
+      "Bias": {
+        "Type": "Float",
+        "Count": 40
+      },
+      "HasSparseWeights": 0,
+      "Activation": "CLIPPED_RELU",
+      "ParameterSubType": "[0.000000,6.000000]",
+      "HasBias": 1,
+      "HasReLU": 0,
+      "TacticName": "volta_scudnn_128x32_relu_medium_nn_v1",
+      "TacticValue": "0xc2a5fc6b5e7cef5e"
+    },
+    {
+      "Name": "/l3/Conv",
+      "LayerType": "CaskConvolution",
+      "Inputs": [
+        {
+          "Name": "/s3/s3.2/Clip_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            40,
+            32,
+            32
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "/l3/Conv_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            16,
+            32,
+            32
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "ParameterType": "Convolution",
+      "Kernel": [
+        1,
+        1
+      ],
+      "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+      "PrePadding": [
+        0,
+        0
+      ],
+      "PostPadding": [
+        0,
+        0
+      ],
+      "Stride": [
+        1,
+        1
+      ],
+      "Dilation": [
+        1,
+        1
+      ],
+      "OutMaps": 16,
+      "Groups": 1,
+      "Weights": {
+        "Type": "Float",
+        "Count": 640
+      },
+      "Bias": {
+        "Type": "Float",
+        "Count": 16
+      },
+      "HasSparseWeights": 0,
+      "Activation": "NONE",
+      "HasBias": 1,
+      "HasReLU": 0,
+      "TacticName": "volta_scudnn_128x32_relu_medium_nn_v1",
+      "TacticValue": "0xc2a5fc6b5e7cef5e"
+    },
+    {
+      "Name": "/Resize",
+      "LayerType": "Resize",
+      "Inputs": [
+        {
+          "Name": "/l3/Conv_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            16,
+            32,
+            32
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "/Resize_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            16,
+            64,
+            64
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "ParameterType": "Resize",
+      "ResizeMode": "LINEAR",
+      "ResizeScales": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "CoordTransform": "kHALF_PIXEL",
+      "ResizeSelector": "kFORMULA",
+      "NNRounding": "kFLOOR",
+      "TacticValue": "0x0000000000000001"
+    },
+    {
+      "Name": "/l2/Conv + /Add",
+      "LayerType": "CaskConvolution",
+      "Inputs": [
+        {
+          "Name": "/s2/s2.1/Clip_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            24,
+            64,
+            64
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        },
+        {
+          "Name": "/Resize_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            16,
+            64,
+            64
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "/Add_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            16,
+            64,
+            64
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "ParameterType": "Convolution",
+      "Kernel": [
+        1,
+        1
+      ],
+      "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+      "PrePadding": [
+        0,
+        0
+      ],
+      "PostPadding": [
+        0,
+        0
+      ],
+      "Stride": [
+        1,
+        1
+      ],
+      "Dilation": [
+        1,
+        1
+      ],
+      "OutMaps": 16,
+      "Groups": 1,
+      "Weights": {
+        "Type": "Float",
+        "Count": 384
+      },
+      "Bias": {
+        "Type": "Float",
+        "Count": 16
+      },
+      "HasSparseWeights": 0,
+      "Activation": "NONE",
+      "HasBias": 1,
+      "HasReLU": 0,
+      "TacticName": "volta_scudnn_128x32_relu_interior_nn_v1",
+      "TacticValue": "0x25eed4cfa195d49d"
+    },
+    {
+      "Name": "/Resize_1",
+      "LayerType": "Resize",
+      "Inputs": [
+        {
+          "Name": "/Add_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            16,
+            64,
+            64
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "/Resize_1_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            16,
+            128,
+            128
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "ParameterType": "Resize",
+      "ResizeMode": "LINEAR",
+      "ResizeScales": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "CoordTransform": "kHALF_PIXEL",
+      "ResizeSelector": "kFORMULA",
+      "NNRounding": "kFLOOR",
+      "TacticValue": "0x0000000000000001"
+    },
+    {
+      "Name": "/l1/Conv + /Add_1",
+      "LayerType": "CaskConvolution",
+      "Inputs": [
+        {
+          "Name": "/s1/s1.1/Clip_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            16,
+            128,
+            128
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        },
+        {
+          "Name": "/Resize_1_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            16,
+            128,
+            128
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "/Add_1_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            16,
+            128,
+            128
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "ParameterType": "Convolution",
+      "Kernel": [
+        1,
+        1
+      ],
+      "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+      "PrePadding": [
+        0,
+        0
+      ],
+      "PostPadding": [
+        0,
+        0
+      ],
+      "Stride": [
+        1,
+        1
+      ],
+      "Dilation": [
+        1,
+        1
+      ],
+      "OutMaps": 16,
+      "Groups": 1,
+      "Weights": {
+        "Type": "Float",
+        "Count": 256
+      },
+      "Bias": {
+        "Type": "Float",
+        "Count": 16
+      },
+      "HasSparseWeights": 0,
+      "Activation": "NONE",
+      "HasBias": 1,
+      "HasReLU": 0,
+      "TacticName": "volta_scudnn_128x32_relu_small_nn_v1",
+      "TacticValue": "0xc939b7b0a4d5a05f"
+    },
+    {
+      "Name": "/fuse/fuse.0/Conv + PWN(/fuse/fuse.2/Clip)",
+      "LayerType": "CaskConvolution",
+      "Inputs": [
+        {
+          "Name": "/Add_1_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            16,
+            128,
+            128
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "/fuse/fuse.2/Clip_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            16,
+            128,
+            128
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "ParameterType": "Convolution",
+      "Kernel": [
+        3,
+        3
+      ],
+      "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+      "PrePadding": [
+        1,
+        1
+      ],
+      "PostPadding": [
+        1,
+        1
+      ],
+      "Stride": [
+        1,
+        1
+      ],
+      "Dilation": [
+        1,
+        1
+      ],
+      "OutMaps": 16,
+      "Groups": 1,
+      "Weights": {
+        "Type": "Float",
+        "Count": 2304
+      },
+      "Bias": {
+        "Type": "Float",
+        "Count": 16
+      },
+      "HasSparseWeights": 0,
+      "Activation": "CLIPPED_RELU",
+      "ParameterSubType": "[0.000000,6.000000]",
+      "HasBias": 1,
+      "HasReLU": 0,
+      "TacticName": "volta_scudnn_winograd_128x128_ldg1_ldg4_relu_tile148t_nt_v1",
+      "TacticValue": "0x268494f0a1c83de3"
+    },
+    {
+      "Name": "/cls/Conv",
+      "LayerType": "CudnnConvolution",
+      "Inputs": [
+        {
+          "Name": "/fuse/fuse.2/Clip_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            16,
+            128,
+            128
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "/cls/Conv_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            2,
+            128,
+            128
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "ParameterType": "Convolution",
+      "Kernel": [
+        1,
+        1
+      ],
+      "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+      "PrePadding": [
+        0,
+        0
+      ],
+      "PostPadding": [
+        0,
+        0
+      ],
+      "Stride": [
+        1,
+        1
+      ],
+      "Dilation": [
+        1,
+        1
+      ],
+      "OutMaps": 2,
+      "Groups": 1,
+      "Weights": {
+        "Type": "Float",
+        "Count": 32
+      },
+      "Bias": {
+        "Type": "Float",
+        "Count": 2
+      },
+      "HasSparseWeights": 0,
+      "Activation": "NONE",
+      "HasBias": 1,
+      "TacticValue": "0x0000000000000039"
+    },
+    {
+      "Name": "/Resize_2",
+      "LayerType": "Resize",
+      "Inputs": [
+        {
+          "Name": "/cls/Conv_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            2,
+            128,
+            128
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "logits",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            2,
+            512,
+            512
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "ParameterType": "Resize",
+      "ResizeMode": "LINEAR",
+      "ResizeScales": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "CoordTransform": "kHALF_PIXEL",
+      "ResizeSelector": "kFORMULA",
+      "NNRounding": "kFLOOR",
+      "TacticValue": "0x0000000000000001"
+    }
+  ],
+  "Bindings": [
+    "image",
+    "logits"
+  ]
+}

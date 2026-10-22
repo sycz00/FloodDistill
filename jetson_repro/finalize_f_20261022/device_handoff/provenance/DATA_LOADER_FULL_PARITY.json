@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "inventories": {
+    "wf": 836,
+    "sturm512": 2675
+  },
+  "elapsed_seconds": 85.79279065132141,
+  "source_only_no_model_inference": true
+}

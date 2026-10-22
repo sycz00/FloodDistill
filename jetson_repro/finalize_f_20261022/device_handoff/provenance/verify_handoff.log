@@ -1,0 +1,32 @@
+Integer boundary rounding/clipping fixture passed
+{
+  "status": "INCOMPLETE_OR_WIRING_FAILURE",
+  "matrix_slots": 48,
+  "observed_complete_primary_cells": 0,
+  "unsupported_or_unavailable_slots": 4,
+  "engine_attempts": 51,
+  "all_declared_attempts_resolved": false,
+  "invalid_results": [],
+  "accuracy_qualified_primary_cells": 15,
+  "failed_attempts": [],
+  "source_qualification_and_native_acceptance": "Separate; neither overrides a recorded export/source failure",
+  "power": "Use steady rail values; rail identity inferred; startup-diluted averages are secondary only",
+  "heldback97": "NOT_READ"
+}
+{
+  "status": "PASS_OFFLINE_HANDOFF",
+  "engine_entries": 51,
+  "primary_slots": 48,
+  "unavailable_b0_pure": 4,
+  "reused_native_engines": 16,
+  "new_build_attempts": 35,
+  "full_source_float_parity_records": 12,
+  "old_native_accuracy_rows_reproduced": 80,
+  "wrong_asset_hash_and_overwrite_guard": "PASS",
+  "changed_cached_counts_guard": "PASS",
+  "failed_or_incomplete_benchmark_guard": "PASS",
+  "missing_native_work_guard": "PASS",
+  "python38_syntax_and_cli": "PASS",
+  "native_execution": "PENDING_JETSON",
+  "source_input_preflight": "CPU_INPUTS_VERIFIED_NATIVE_PENDING"
+}

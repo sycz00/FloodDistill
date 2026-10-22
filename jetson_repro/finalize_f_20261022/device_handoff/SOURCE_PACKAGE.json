@@ -1,0 +1,12 @@
+{
+  "source": "MajorRev/revision_package_20261021/8_jetson_export_20261022",
+  "source_package_sha256": "bce5255c6f54bcd7a188adbdfe4138af3d24f687035d70adffd81e20e8c9ebf9",
+  "transfer_archive": "Jetson_export_20261022.tar.gz",
+  "transfer_archive_sha256": "37acef126307b7bec899728b3d95e609cfa68d5514a9cd8d892deb40e95fca5c",
+  "archive_prefix": "8_jetson_export_20261022",
+  "repository_path": "jetson_repro/finalize_f_20261022/device_handoff",
+  "committed_scope": "models, IO, full source gates/references, inventories, exact native R4 engines/build receipts/raw accuracy, runtime and prompts",
+  "external_inputs": "353 exact prepared arrays imported from existing transfer bundle; raw WF/STURM datasets remain external",
+  "new_native_work": "PENDING_JETSON",
+  "transport_normalization": "CSV line endings normalized to LF and one trailing blank source line removed; model/engine/raw-evaluation bytes retained"
+}

@@ -1,3 +1,5 @@
+> Current execution handoff: [device_handoff/README.md](device_handoff/README.md) and [the Jetson prompt](../../prompts/jetson_prompt.md). The section below records the earlier preparation stage. QAT/PTQ candidates are now supplied in the current handoff; do not rerun its legacy training plan.
+
 # Jetson follow-up prepared on 22 October 2026
 
 This directory adds four existing R4-micro float ONNX exports, their complete

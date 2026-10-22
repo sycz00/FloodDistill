@@ -1,0 +1,29 @@
+{
+  "status": "built",
+  "model_sha256": "811d3b37a3374308e329ee44adc5286ed7e835da8776894442715822991f3b67",
+  "mode": "no_fp16",
+  "host": "Linux-5.10.104-tegra-aarch64-with-glibc2.17",
+  "python": "3.8.20 | packaged by conda-forge | (default, Sep 30 2024, 17:47:05) \n[GCC 13.3.0]",
+  "started": 1792621565.3901622,
+  "calibration": "embedded QDQ; no random ranges and no calibrator",
+  "fp16_enabled": false,
+  "tensorrt": "8.4.1.5",
+  "int8_enabled": true,
+  "forced_layers": [],
+  "precision_audit": {
+    "layer_count": 43,
+    "int8_tensor_layers": 43,
+    "floating_layers": [],
+    "boundary_reformats": [],
+    "floating_compute_layers": [],
+    "unknown_layers": [],
+    "full_integer_tensor_path": true,
+    "full_integer_arithmetic": "not_certified_by_tensor_formats_alone",
+    "remaining_validation": "Inspect tactics/kernel implementation for floating arithmetic; INT32 accumulators/bias are permitted."
+  },
+  "engine_device_memory_bytes": 3904512,
+  "engine_bytes": 610797,
+  "engine_sha256": "fb856ca55ce01202144371e6c81fec197f15d630e3a736027a2b049428440a23",
+  "full_integer_execution": "unverified_kernel_audit_required",
+  "elapsed_seconds": 459.8000701139681
+}

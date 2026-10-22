@@ -1,0 +1,17 @@
+{
+  "status": "derived_variant",
+  "recipe": "integer_io",
+  "is_registered_candidate": false,
+  "source_model": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/deployment/quant_author_tools/R4_gdacs_N2500_LOGIT_KD_T512_S512_epochs50_filtered_fps_E512_native_H512_s107_lr005/pure_edge_zero.onnx",
+  "source_sha256": "17a4a27e8fea306b58cf752e927a3b7df71cb9fe324f77c213b6c343d2d8e568",
+  "variant_model": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/deployment/quant_author_tools/R4_gdacs_N2500_LOGIT_KD_T512_S512_epochs50_filtered_fps_E512_native_H512_s107_lr005/pure_int8_io.onnx",
+  "variant_sha256": "bc9c82ff8f4c52ef2ca681392a4480e6077980a7fba0987c297be47ea99b6635",
+  "input_binding": "int8",
+  "output_binding": "int8",
+  "host_input_scale": 0.09205003082752228,
+  "host_input_zero_point": 0,
+  "output_scale": 0.0808638259768486,
+  "output_zero_point": 0,
+  "argmax_preserved": "a single shared positive output scale is monotonic, so per-pixel class order is unchanged",
+  "caveat": "changes the model interface; new variant requiring source validation"
+}

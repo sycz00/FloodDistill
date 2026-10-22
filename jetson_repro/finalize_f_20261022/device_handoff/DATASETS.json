@@ -1,0 +1,50 @@
+{
+  "primary": [
+    {
+      "id": "s11val",
+      "images": 89,
+      "events": 10,
+      "assets": "assets/source_val",
+      "inventory": "inventories/s11val.jsonl"
+    },
+    {
+      "id": "s11test",
+      "images": 90,
+      "events": 10,
+      "assets": "assets/source_test",
+      "inventory": "inventories/s11test.jsonl"
+    },
+    {
+      "id": "bolivia",
+      "images": 15,
+      "events": 1,
+      "assets": "assets/source_bolivia",
+      "inventory": "inventories/bolivia.jsonl"
+    },
+    {
+      "id": "sturm512",
+      "images": 2675,
+      "events": 29,
+      "assets": null,
+      "inventory": "inventories/sturm512.jsonl"
+    },
+    {
+      "id": "wf",
+      "images": 836,
+      "events": 11,
+      "assets": null,
+      "inventory": "inventories/wf.jsonl"
+    }
+  ],
+  "dry": {
+    "images": 159,
+    "assets": "assets/dry159",
+    "manifest": "inventories/dry159_manifest.json",
+    "accepted": 49,
+    "ordinary_accepted": 28,
+    "stress_accepted": 21,
+    "reference": "author visual screening and map-selected central footprints, not expert ground truth"
+  },
+  "wf_dry": "Derive the frozen200 surface-water-free windows/9events from the same836 WF readouts",
+  "heldback97": "EXCLUDED_FROM_THIS_EXECUTION_AND_FURTHER_TUNING"
+}

@@ -1,0 +1,704 @@
+{
+  "status": "built",
+  "model_sha256": "fffca6ec6f2b4c5879f3e82fd65b86c3562ffb65df9065a4c88421a63329c6c5",
+  "mode": "mixed",
+  "host": "Linux-5.10.104-tegra-aarch64-with-glibc2.17",
+  "python": "3.8.20 | packaged by conda-forge | (default, Sep 30 2024, 17:47:05) \n[GCC 13.3.0]",
+  "started": 1792622127.0343552,
+  "calibration": "embedded QDQ; no random ranges and no calibrator",
+  "fp16_enabled": true,
+  "tensorrt": "8.4.1.5",
+  "int8_enabled": true,
+  "forced_layers": [],
+  "precision_audit": {
+    "layer_count": 46,
+    "int8_tensor_layers": 43,
+    "floating_layers": [
+      {
+        "Name": "image_QuantizeLinear",
+        "LayerType": "Reformat",
+        "Inputs": [
+          {
+            "Name": "image",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              6,
+              512,
+              512
+            ],
+            "Format/Datatype": "Row major linear FP32"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "image_QuantizeLinear_Output",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              6,
+              512,
+              512
+            ],
+            "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+          }
+        ],
+        "ParameterType": "Reformat",
+        "Origin": "QDQ",
+        "TacticValue": "0x0000000000000000"
+      },
+      {
+        "Name": "/l3/Conv_output_0_DequantizeLinear",
+        "LayerType": "Reformat",
+        "Inputs": [
+          {
+            "Name": "/l3/Conv_output_0_QuantizeLinear_Output",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              32,
+              32
+            ],
+            "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "/l3/Conv_output_0_DequantizeLinear_Output",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              32,
+              32
+            ],
+            "Format/Datatype": "Row major linear FP32"
+          }
+        ],
+        "ParameterType": "Reformat",
+        "Origin": "QDQ",
+        "TacticValue": "0x0000000000000000"
+      },
+      {
+        "Name": "/Resize",
+        "LayerType": "Resize",
+        "Inputs": [
+          {
+            "Name": "/l3/Conv_output_0_DequantizeLinear_Output",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              32,
+              32
+            ],
+            "Format/Datatype": "Row major linear FP32"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "/Resize_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              64,
+              64
+            ],
+            "Format/Datatype": "Row major linear FP32"
+          }
+        ],
+        "ParameterType": "Resize",
+        "ResizeMode": "LINEAR",
+        "ResizeScales": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "CoordTransform": "kHALF_PIXEL",
+        "ResizeSelector": "kFORMULA",
+        "NNRounding": "kFLOOR",
+        "TacticValue": "0x0000000000000001"
+      },
+      {
+        "Name": "/Resize_output_0_QuantizeLinear",
+        "LayerType": "Reformat",
+        "Inputs": [
+          {
+            "Name": "/Resize_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              64,
+              64
+            ],
+            "Format/Datatype": "Row major linear FP32"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "/Resize_output_0_QuantizeLinear_Output",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              64,
+              64
+            ],
+            "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+          }
+        ],
+        "ParameterType": "Reformat",
+        "Origin": "QDQ",
+        "TacticValue": "0x0000000000000000"
+      },
+      {
+        "Name": "/Add_output_0_DequantizeLinear",
+        "LayerType": "Reformat",
+        "Inputs": [
+          {
+            "Name": "/Add_output_0_QuantizeLinear_Output",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              64,
+              64
+            ],
+            "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "/Add_output_0_DequantizeLinear_Output",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              64,
+              64
+            ],
+            "Format/Datatype": "Row major linear FP32"
+          }
+        ],
+        "ParameterType": "Reformat",
+        "Origin": "QDQ",
+        "TacticValue": "0x0000000000000000"
+      },
+      {
+        "Name": "/Resize_1",
+        "LayerType": "Resize",
+        "Inputs": [
+          {
+            "Name": "/Add_output_0_DequantizeLinear_Output",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              64,
+              64
+            ],
+            "Format/Datatype": "Row major linear FP32"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "/Resize_1_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "Format/Datatype": "Row major linear FP32"
+          }
+        ],
+        "ParameterType": "Resize",
+        "ResizeMode": "LINEAR",
+        "ResizeScales": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "CoordTransform": "kHALF_PIXEL",
+        "ResizeSelector": "kFORMULA",
+        "NNRounding": "kFLOOR",
+        "TacticValue": "0x0000000000000001"
+      },
+      {
+        "Name": "/Resize_1_output_0_QuantizeLinear",
+        "LayerType": "Reformat",
+        "Inputs": [
+          {
+            "Name": "/Resize_1_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "Format/Datatype": "Row major linear FP32"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "/Resize_1_output_0_QuantizeLinear_Output",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+          }
+        ],
+        "ParameterType": "Reformat",
+        "Origin": "QDQ",
+        "TacticValue": "0x0000000000000000"
+      },
+      {
+        "Name": "/cls/Conv_output_0_DequantizeLinear",
+        "LayerType": "Reformat",
+        "Inputs": [
+          {
+            "Name": "/cls/Conv_output_0_QuantizeLinear_Output",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              2,
+              128,
+              128
+            ],
+            "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "/cls/Conv_output_0_DequantizeLinear_Output",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              2,
+              128,
+              128
+            ],
+            "Format/Datatype": "Row major linear FP32"
+          }
+        ],
+        "ParameterType": "Reformat",
+        "Origin": "QDQ",
+        "TacticValue": "0x0000000000000000"
+      },
+      {
+        "Name": "/Resize_2",
+        "LayerType": "Resize",
+        "Inputs": [
+          {
+            "Name": "/cls/Conv_output_0_DequantizeLinear_Output",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              2,
+              128,
+              128
+            ],
+            "Format/Datatype": "Row major linear FP32"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "logits",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              2,
+              512,
+              512
+            ],
+            "Format/Datatype": "Row major linear FP32"
+          }
+        ],
+        "ParameterType": "Resize",
+        "ResizeMode": "LINEAR",
+        "ResizeScales": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "CoordTransform": "kHALF_PIXEL",
+        "ResizeSelector": "kFORMULA",
+        "NNRounding": "kFLOOR",
+        "TacticValue": "0x0000000000000001"
+      }
+    ],
+    "boundary_reformats": [
+      {
+        "Name": "image_QuantizeLinear",
+        "LayerType": "Reformat",
+        "Inputs": [
+          {
+            "Name": "image",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              6,
+              512,
+              512
+            ],
+            "Format/Datatype": "Row major linear FP32"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "image_QuantizeLinear_Output",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              6,
+              512,
+              512
+            ],
+            "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+          }
+        ],
+        "ParameterType": "Reformat",
+        "Origin": "QDQ",
+        "TacticValue": "0x0000000000000000"
+      }
+    ],
+    "floating_compute_layers": [
+      {
+        "Name": "/l3/Conv_output_0_DequantizeLinear",
+        "LayerType": "Reformat",
+        "Inputs": [
+          {
+            "Name": "/l3/Conv_output_0_QuantizeLinear_Output",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              32,
+              32
+            ],
+            "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "/l3/Conv_output_0_DequantizeLinear_Output",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              32,
+              32
+            ],
+            "Format/Datatype": "Row major linear FP32"
+          }
+        ],
+        "ParameterType": "Reformat",
+        "Origin": "QDQ",
+        "TacticValue": "0x0000000000000000"
+      },
+      {
+        "Name": "/Resize",
+        "LayerType": "Resize",
+        "Inputs": [
+          {
+            "Name": "/l3/Conv_output_0_DequantizeLinear_Output",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              32,
+              32
+            ],
+            "Format/Datatype": "Row major linear FP32"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "/Resize_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              64,
+              64
+            ],
+            "Format/Datatype": "Row major linear FP32"
+          }
+        ],
+        "ParameterType": "Resize",
+        "ResizeMode": "LINEAR",
+        "ResizeScales": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "CoordTransform": "kHALF_PIXEL",
+        "ResizeSelector": "kFORMULA",
+        "NNRounding": "kFLOOR",
+        "TacticValue": "0x0000000000000001"
+      },
+      {
+        "Name": "/Resize_output_0_QuantizeLinear",
+        "LayerType": "Reformat",
+        "Inputs": [
+          {
+            "Name": "/Resize_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              64,
+              64
+            ],
+            "Format/Datatype": "Row major linear FP32"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "/Resize_output_0_QuantizeLinear_Output",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              64,
+              64
+            ],
+            "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+          }
+        ],
+        "ParameterType": "Reformat",
+        "Origin": "QDQ",
+        "TacticValue": "0x0000000000000000"
+      },
+      {
+        "Name": "/Add_output_0_DequantizeLinear",
+        "LayerType": "Reformat",
+        "Inputs": [
+          {
+            "Name": "/Add_output_0_QuantizeLinear_Output",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              64,
+              64
+            ],
+            "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "/Add_output_0_DequantizeLinear_Output",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              64,
+              64
+            ],
+            "Format/Datatype": "Row major linear FP32"
+          }
+        ],
+        "ParameterType": "Reformat",
+        "Origin": "QDQ",
+        "TacticValue": "0x0000000000000000"
+      },
+      {
+        "Name": "/Resize_1",
+        "LayerType": "Resize",
+        "Inputs": [
+          {
+            "Name": "/Add_output_0_DequantizeLinear_Output",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              64,
+              64
+            ],
+            "Format/Datatype": "Row major linear FP32"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "/Resize_1_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "Format/Datatype": "Row major linear FP32"
+          }
+        ],
+        "ParameterType": "Resize",
+        "ResizeMode": "LINEAR",
+        "ResizeScales": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "CoordTransform": "kHALF_PIXEL",
+        "ResizeSelector": "kFORMULA",
+        "NNRounding": "kFLOOR",
+        "TacticValue": "0x0000000000000001"
+      },
+      {
+        "Name": "/Resize_1_output_0_QuantizeLinear",
+        "LayerType": "Reformat",
+        "Inputs": [
+          {
+            "Name": "/Resize_1_output_0",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "Format/Datatype": "Row major linear FP32"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "/Resize_1_output_0_QuantizeLinear_Output",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              16,
+              128,
+              128
+            ],
+            "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+          }
+        ],
+        "ParameterType": "Reformat",
+        "Origin": "QDQ",
+        "TacticValue": "0x0000000000000000"
+      },
+      {
+        "Name": "/cls/Conv_output_0_DequantizeLinear",
+        "LayerType": "Reformat",
+        "Inputs": [
+          {
+            "Name": "/cls/Conv_output_0_QuantizeLinear_Output",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              2,
+              128,
+              128
+            ],
+            "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "/cls/Conv_output_0_DequantizeLinear_Output",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              2,
+              128,
+              128
+            ],
+            "Format/Datatype": "Row major linear FP32"
+          }
+        ],
+        "ParameterType": "Reformat",
+        "Origin": "QDQ",
+        "TacticValue": "0x0000000000000000"
+      },
+      {
+        "Name": "/Resize_2",
+        "LayerType": "Resize",
+        "Inputs": [
+          {
+            "Name": "/cls/Conv_output_0_DequantizeLinear_Output",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              2,
+              128,
+              128
+            ],
+            "Format/Datatype": "Row major linear FP32"
+          }
+        ],
+        "Outputs": [
+          {
+            "Name": "logits",
+            "Location": "Device",
+            "Dimensions": [
+              1,
+              2,
+              512,
+              512
+            ],
+            "Format/Datatype": "Row major linear FP32"
+          }
+        ],
+        "ParameterType": "Resize",
+        "ResizeMode": "LINEAR",
+        "ResizeScales": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "CoordTransform": "kHALF_PIXEL",
+        "ResizeSelector": "kFORMULA",
+        "NNRounding": "kFLOOR",
+        "TacticValue": "0x0000000000000001"
+      }
+    ],
+    "unknown_layers": [],
+    "full_integer_tensor_path": false,
+    "full_integer_arithmetic": "not_certified_by_tensor_formats_alone",
+    "remaining_validation": "Inspect tactics/kernel implementation for floating arithmetic; INT32 accumulators/bias are permitted."
+  },
+  "engine_device_memory_bytes": 3284992,
+  "engine_bytes": 462396,
+  "engine_sha256": "a3a0269f005a847d1b3686d9b17e9b3f9a6c6b14d170206bb9f8173e8b701c48",
+  "full_integer_execution": "unverified_kernel_audit_required",
+  "elapsed_seconds": 466.9541441950714
+}

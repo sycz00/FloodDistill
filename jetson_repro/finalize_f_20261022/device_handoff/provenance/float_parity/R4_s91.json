@@ -1,0 +1,908 @@
+{
+  "status": "COMPLETED_VALID",
+  "atol": 0.001,
+  "rtol": 0.001,
+  "n_images": 89,
+  "semantic": [
+    {
+      "file": "Ghana_1033830_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 4.291534423828125e-06
+    },
+    {
+      "file": "Ghana_124834_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.1920928955078125e-06
+    },
+    {
+      "file": "Ghana_132163_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.5944242477416992e-06
+    },
+    {
+      "file": "Ghana_142312_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.1920928955078125e-06
+    },
+    {
+      "file": "Ghana_234935_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.3113021850585938e-06
+    },
+    {
+      "file": "Ghana_277_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.6093254089355469e-06
+    },
+    {
+      "file": "Ghana_308249_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.9073486328125e-06
+    },
+    {
+      "file": "Ghana_495107_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.1920928955078125e-06
+    },
+    {
+      "file": "Ghana_5079_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.3113021850585938e-06
+    },
+    {
+      "file": "Ghana_868803_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 6.67572021484375e-06
+    },
+    {
+      "file": "Ghana_895194_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.9669532775878906e-06
+    },
+    {
+      "file": "India_1018317_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.1444091796875e-05
+    },
+    {
+      "file": "India_1050276_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 2.384185791015625e-06
+    },
+    {
+      "file": "India_1068117_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.7285346984863281e-06
+    },
+    {
+      "file": "India_118868_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 2.86102294921875e-06
+    },
+    {
+      "file": "India_164336_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.430511474609375e-06
+    },
+    {
+      "file": "India_180633_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.049041748046875e-05
+    },
+    {
+      "file": "India_244057_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 2.86102294921875e-06
+    },
+    {
+      "file": "India_533192_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 4.76837158203125e-06
+    },
+    {
+      "file": "India_691027_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.5497207641601562e-06
+    },
+    {
+      "file": "India_70352_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.9073486328125e-06
+    },
+    {
+      "file": "India_764946_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 2.384185791015625e-06
+    },
+    {
+      "file": "India_769408_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 3.814697265625e-06
+    },
+    {
+      "file": "India_833266_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 2.86102294921875e-06
+    },
+    {
+      "file": "India_869358_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.6689300537109375e-06
+    },
+    {
+      "file": "Mekong_1149855_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 3.814697265625e-06
+    },
+    {
+      "file": "Mekong_1413877_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.3113021850585938e-06
+    },
+    {
+      "file": "Mekong_293769_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.52587890625e-05
+    },
+    {
+      "file": "Mekong_474783_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.6689300537109375e-06
+    },
+    {
+      "file": "Mekong_977338_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 6.198883056640625e-06
+    },
+    {
+      "file": "Mekong_98310_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 8.106231689453125e-06
+    },
+    {
+      "file": "Nigeria_1095404_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 3.814697265625e-06
+    },
+    {
+      "file": "Nigeria_31096_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 2.384185791015625e-06
+    },
+    {
+      "file": "Nigeria_820924_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.1920928955078125e-06
+    },
+    {
+      "file": "Nigeria_984831_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.52587890625e-05
+    },
+    {
+      "file": "Pakistan_1027214_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 2.1457672119140625e-06
+    },
+    {
+      "file": "Pakistan_210595_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.6689300537109375e-06
+    },
+    {
+      "file": "Pakistan_336228_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.7583370208740234e-06
+    },
+    {
+      "file": "Pakistan_43105_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.6093254089355469e-06
+    },
+    {
+      "file": "Pakistan_94095_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 3.814697265625e-06
+    },
+    {
+      "file": "Pakistan_9684_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.7881393432617188e-06
+    },
+    {
+      "file": "Paraguay_1019808_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.6689300537109375e-06
+    },
+    {
+      "file": "Paraguay_153941_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.430511474609375e-06
+    },
+    {
+      "file": "Paraguay_172476_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.430511474609375e-06
+    },
+    {
+      "file": "Paraguay_205585_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.1920928955078125e-06
+    },
+    {
+      "file": "Paraguay_252217_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.430511474609375e-06
+    },
+    {
+      "file": "Paraguay_284928_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 4.410743713378906e-06
+    },
+    {
+      "file": "Paraguay_305760_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 5.602836608886719e-06
+    },
+    {
+      "file": "Paraguay_581976_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 4.5299530029296875e-06
+    },
+    {
+      "file": "Paraguay_648632_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 4.664063453674316e-06
+    },
+    {
+      "file": "Paraguay_657443_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 6.198883056640625e-06
+    },
+    {
+      "file": "Paraguay_76868_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 5.7220458984375e-06
+    },
+    {
+      "file": "Paraguay_7894_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 2.384185791015625e-06
+    },
+    {
+      "file": "Paraguay_896458_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 8.58306884765625e-06
+    },
+    {
+      "file": "Paraguay_934240_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 2.7026981115341187e-06
+    },
+    {
+      "file": "Somalia_12849_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.6689300537109375e-06
+    },
+    {
+      "file": "Somalia_167787_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.9073486328125e-06
+    },
+    {
+      "file": "Somalia_256539_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.430511474609375e-06
+    },
+    {
+      "file": "Somalia_61368_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 4.76837158203125e-06
+    },
+    {
+      "file": "Somalia_649376_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.9669532775878906e-06
+    },
+    {
+      "file": "Spain_1199913_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.9073486328125e-06
+    },
+    {
+      "file": "Spain_4282030_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 4.76837158203125e-06
+    },
+    {
+      "file": "Spain_6537196_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.3113021850585938e-06
+    },
+    {
+      "file": "Spain_7604243_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 7.62939453125e-06
+    },
+    {
+      "file": "Spain_8372658_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 6.198883056640625e-06
+    },
+    {
+      "file": "Spain_8565131_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 7.152557373046875e-06
+    },
+    {
+      "file": "Sri-Lanka_101973_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.1920928955078125e-06
+    },
+    {
+      "file": "Sri-Lanka_132922_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.6242265701293945e-06
+    },
+    {
+      "file": "Sri-Lanka_236030_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.817941665649414e-06
+    },
+    {
+      "file": "Sri-Lanka_236628_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.430511474609375e-06
+    },
+    {
+      "file": "Sri-Lanka_31559_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 2.86102294921875e-06
+    },
+    {
+      "file": "Sri-Lanka_321316_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 7.152557373046875e-06
+    },
+    {
+      "file": "Sri-Lanka_612594_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 7.62939453125e-06
+    },
+    {
+      "file": "Sri-Lanka_63307_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.3113021850585938e-06
+    },
+    {
+      "file": "Sri-Lanka_85652_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.9073486328125e-06
+    },
+    {
+      "file": "USA_1039203_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.1920928955078125e-06
+    },
+    {
+      "file": "USA_1082482_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.430511474609375e-06
+    },
+    {
+      "file": "USA_19225_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.1920928955078125e-06
+    },
+    {
+      "file": "USA_225017_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 2.1457672119140625e-06
+    },
+    {
+      "file": "USA_251323_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.1920928955078125e-06
+    },
+    {
+      "file": "USA_275372_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.1920928955078125e-06
+    },
+    {
+      "file": "USA_308150_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.3113021850585938e-06
+    },
+    {
+      "file": "USA_366607_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 8.106231689453125e-06
+    },
+    {
+      "file": "USA_646878_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 3.337860107421875e-06
+    },
+    {
+      "file": "USA_741073_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.1920928955078125e-06
+    },
+    {
+      "file": "USA_741178_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.3709068298339844e-06
+    },
+    {
+      "file": "USA_761032_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.430511474609375e-06
+    },
+    {
+      "file": "USA_826217_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.6689300537109375e-06
+    },
+    {
+      "file": "USA_986268_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.430511474609375e-06
+    }
+  ],
+  "optimized": [
+    {
+      "file": "Ghana_1033830_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 3.5762786865234375e-06
+    },
+    {
+      "file": "Ghana_124834_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.1920928955078125e-06
+    },
+    {
+      "file": "Ghana_132163_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.385807991027832e-06
+    },
+    {
+      "file": "Ghana_142312_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.1920928955078125e-06
+    },
+    {
+      "file": "Ghana_234935_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.1920928955078125e-06
+    },
+    {
+      "file": "Ghana_277_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.3709068298339844e-06
+    },
+    {
+      "file": "Ghana_308249_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.430511474609375e-06
+    },
+    {
+      "file": "Ghana_495107_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.3113021850585938e-06
+    },
+    {
+      "file": "Ghana_5079_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.3113021850585938e-06
+    },
+    {
+      "file": "Ghana_868803_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 4.76837158203125e-06
+    },
+    {
+      "file": "Ghana_895194_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.430511474609375e-06
+    },
+    {
+      "file": "India_1018317_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 8.58306884765625e-06
+    },
+    {
+      "file": "India_1050276_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.6093254089355469e-06
+    },
+    {
+      "file": "India_1068117_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.7285346984863281e-06
+    },
+    {
+      "file": "India_118868_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 5.245208740234375e-06
+    },
+    {
+      "file": "India_164336_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.3113021850585938e-06
+    },
+    {
+      "file": "India_180633_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 9.5367431640625e-06
+    },
+    {
+      "file": "India_244057_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 3.814697265625e-06
+    },
+    {
+      "file": "India_533192_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 6.198883056640625e-06
+    },
+    {
+      "file": "India_691027_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.6689300537109375e-06
+    },
+    {
+      "file": "India_70352_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.430511474609375e-06
+    },
+    {
+      "file": "India_764946_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 2.86102294921875e-06
+    },
+    {
+      "file": "India_769408_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 2.86102294921875e-06
+    },
+    {
+      "file": "India_833266_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 2.86102294921875e-06
+    },
+    {
+      "file": "India_869358_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.1920928955078125e-06
+    },
+    {
+      "file": "Mekong_1149855_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 4.76837158203125e-06
+    },
+    {
+      "file": "Mekong_1413877_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.1920928955078125e-06
+    },
+    {
+      "file": "Mekong_293769_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 6.198883056640625e-06
+    },
+    {
+      "file": "Mekong_474783_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.430511474609375e-06
+    },
+    {
+      "file": "Mekong_977338_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 4.291534423828125e-06
+    },
+    {
+      "file": "Mekong_98310_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 7.62939453125e-06
+    },
+    {
+      "file": "Nigeria_1095404_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 3.337860107421875e-06
+    },
+    {
+      "file": "Nigeria_31096_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.6689300537109375e-06
+    },
+    {
+      "file": "Nigeria_820924_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.3113021850585938e-06
+    },
+    {
+      "file": "Nigeria_984831_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.1444091796875e-05
+    },
+    {
+      "file": "Pakistan_1027214_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.4901161193847656e-06
+    },
+    {
+      "file": "Pakistan_210595_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.6689300537109375e-06
+    },
+    {
+      "file": "Pakistan_336228_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.5497207641601562e-06
+    },
+    {
+      "file": "Pakistan_43105_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.7881393432617188e-06
+    },
+    {
+      "file": "Pakistan_94095_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 2.86102294921875e-06
+    },
+    {
+      "file": "Pakistan_9684_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.430511474609375e-06
+    },
+    {
+      "file": "Paraguay_1019808_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.5497207641601562e-06
+    },
+    {
+      "file": "Paraguay_153941_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.1920928955078125e-06
+    },
+    {
+      "file": "Paraguay_172476_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.1920928955078125e-06
+    },
+    {
+      "file": "Paraguay_205585_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.1920928955078125e-06
+    },
+    {
+      "file": "Paraguay_252217_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.430511474609375e-06
+    },
+    {
+      "file": "Paraguay_284928_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 4.351139068603516e-06
+    },
+    {
+      "file": "Paraguay_305760_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 3.814697265625e-06
+    },
+    {
+      "file": "Paraguay_581976_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 2.9802322387695312e-06
+    },
+    {
+      "file": "Paraguay_648632_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 3.200024366378784e-06
+    },
+    {
+      "file": "Paraguay_657443_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 6.67572021484375e-06
+    },
+    {
+      "file": "Paraguay_76868_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 4.76837158203125e-06
+    },
+    {
+      "file": "Paraguay_7894_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 2.1457672119140625e-06
+    },
+    {
+      "file": "Paraguay_896458_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 4.291534423828125e-06
+    },
+    {
+      "file": "Paraguay_934240_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 2.518296241760254e-06
+    },
+    {
+      "file": "Somalia_12849_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.6689300537109375e-06
+    },
+    {
+      "file": "Somalia_167787_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.9073486328125e-06
+    },
+    {
+      "file": "Somalia_256539_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.6987323760986328e-06
+    },
+    {
+      "file": "Somalia_61368_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 4.76837158203125e-06
+    },
+    {
+      "file": "Somalia_649376_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.650303602218628e-06
+    },
+    {
+      "file": "Spain_1199913_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.9073486328125e-06
+    },
+    {
+      "file": "Spain_4282030_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 4.76837158203125e-06
+    },
+    {
+      "file": "Spain_6537196_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.1920928955078125e-06
+    },
+    {
+      "file": "Spain_7604243_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 5.7220458984375e-06
+    },
+    {
+      "file": "Spain_8372658_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 3.814697265625e-06
+    },
+    {
+      "file": "Spain_8565131_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 3.814697265625e-06
+    },
+    {
+      "file": "Sri-Lanka_101973_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.1920928955078125e-06
+    },
+    {
+      "file": "Sri-Lanka_132922_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.3113021850585938e-06
+    },
+    {
+      "file": "Sri-Lanka_236030_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.5497207641601562e-06
+    },
+    {
+      "file": "Sri-Lanka_236628_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.430511474609375e-06
+    },
+    {
+      "file": "Sri-Lanka_31559_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 2.86102294921875e-06
+    },
+    {
+      "file": "Sri-Lanka_321316_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 7.62939453125e-06
+    },
+    {
+      "file": "Sri-Lanka_612594_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 6.67572021484375e-06
+    },
+    {
+      "file": "Sri-Lanka_63307_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.1920928955078125e-06
+    },
+    {
+      "file": "Sri-Lanka_85652_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.9073486328125e-06
+    },
+    {
+      "file": "USA_1039203_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.1920928955078125e-06
+    },
+    {
+      "file": "USA_1082482_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.1920928955078125e-06
+    },
+    {
+      "file": "USA_19225_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.430511474609375e-06
+    },
+    {
+      "file": "USA_225017_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.6689300537109375e-06
+    },
+    {
+      "file": "USA_251323_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 2.384185791015625e-06
+    },
+    {
+      "file": "USA_275372_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.1920928955078125e-06
+    },
+    {
+      "file": "USA_308150_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.1920928955078125e-06
+    },
+    {
+      "file": "USA_366607_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 9.5367431640625e-06
+    },
+    {
+      "file": "USA_646878_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 3.814697265625e-06
+    },
+    {
+      "file": "USA_741073_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.1920928955078125e-06
+    },
+    {
+      "file": "USA_741178_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.1920928955078125e-06
+    },
+    {
+      "file": "USA_761032_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.1920928955078125e-06
+    },
+    {
+      "file": "USA_826217_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 2.1457672119140625e-06
+    },
+    {
+      "file": "USA_986268_S2Hand.tif",
+      "strict_logit_parity_pass": true,
+      "max_abs": 1.1920928955078125e-06
+    }
+  ],
+  "float_onnx": {
+    "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/deployment/quant_author_tools/R4_gdacs_N2500_LOGIT_KD_T512_S512_epochs50_filtered_fps_E512_native_H512_s91_lr005/float.onnx",
+    "sha256": "dd8b2b166c7ea9fccbe258f9431c81b28a5117c71d416c5b490572290d6ba080"
+  },
+  "parent_checkpoint": {
+    "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/tiny/ladder/runs/R4_gdacs_N2500_LOGIT_KD_T512_S512_epochs50_filtered_fps_E512_native_H512_s91_lr005/best.pt",
+    "sha256": "3a294a8d10219b31079d5010b93754c5b8c91417815de745fc9d6f505bbe34f0"
+  }
+}

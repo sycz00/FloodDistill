@@ -1,0 +1,30 @@
+s11val 89 input/mask hashes verified
+s11test 90 input/mask hashes verified
+bolivia 15 input/mask hashes verified
+/home/schmalstieg/miniconda3/envs/esi/lib/python3.10/site-packages/albumentations/check_version.py:147: UserWarning: Error fetching version info <urlopen error [Errno -3] Temporary failure in name resolution>
+  data = fetch_version_info()
+/home/schmalstieg/miniconda3/envs/esi/lib/python3.10/site-packages/torch/utils/data/dataloader.py:775: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+  super().__init__(loader)
+wf 836 input/mask hashes verified
+/home/schmalstieg/miniconda3/envs/esi/lib/python3.10/site-packages/torch/utils/data/dataloader.py:775: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+  super().__init__(loader)
+sturm512 2675 input/mask hashes verified
+{
+  "status": "CPU_INPUTS_VERIFIED_NATIVE_PENDING",
+  "prepared": {
+    "status": "PASS",
+    "arrays": 353,
+    "asset_manifest_sha256": "0fb0dd908ce8170a5029cbfb66a13b5c4c3c6fd084b8be5dd6dd2d324843a827"
+  },
+  "full_input_inventory": {
+    "s11val": 89,
+    "s11test": 90,
+    "bolivia": 15,
+    "wf": 836,
+    "sturm512": 2675,
+    "dry159": 159
+  },
+  "native": {},
+  "elapsed_seconds": 97.21474981307983,
+  "heldback97": "NOT_READ"
+}
