@@ -1037,7 +1037,9 @@
       "source_accuracy_pass": true,
       "strict_logit_parity_all89": null,
       "unrounded_structure_all89": true,
-      "diagnostic_extra": false
+      "diagnostic_extra": false,
+      "fp32_islands": "models/B0_s42_fp32/FP32_ISLANDS.json",
+      "fp32_islands_sha256": "79121035f71982432b395588235721096c7bc727891f7674e8803a34769c6068"
     },
     {
       "id": "B0_s42_fp16",
@@ -1053,7 +1055,9 @@
       "source_accuracy_pass": true,
       "strict_logit_parity_all89": null,
       "unrounded_structure_all89": true,
-      "diagnostic_extra": false
+      "diagnostic_extra": false,
+      "fp32_islands": "models/B0_s42_fp16/FP32_ISLANDS.json",
+      "fp32_islands_sha256": "79121035f71982432b395588235721096c7bc727891f7674e8803a34769c6068"
     },
     {
       "id": "B0_s42_ptq_mixed",
@@ -1070,26 +1074,34 @@
       "strict_logit_parity_all89": null,
       "unrounded_structure_all89": true,
       "diagnostic_extra": true,
-      "source_gate": "models/B0_s42_ptq_mixed/SOURCE_GATE.json"
+      "source_gate": "models/B0_s42_ptq_mixed/SOURCE_GATE.json",
+      "fp32_islands": "models/B0_s42_ptq_mixed/FP32_ISLANDS.json",
+      "fp32_islands_sha256": "0252b15ec48dffa76577fcac4e803a530091e72ac060d199b27d5284ac55c45f"
     },
     {
-      "id": "B0_s42_qat_mixed",
+      "id": "B0_s42_qat_mixed_repaired",
       "architecture": "B0",
       "seed": 42,
       "precision": "mixed",
       "method": "QAT",
       "mode": "mixed",
-      "onnx": "models/B0_s42_qat_mixed/model.onnx",
-      "onnx_sha256": "89a16057be0efc129bc5900e1b4f7980bc3a99c522b67f7f177a84cb792c92b0",
-      "source_admission": "SOURCE_ACCURACY_REJECTED",
-      "source_reference": "models/B0_s42_qat_mixed/SOURCE_REFERENCE.json",
-      "source_accuracy_pass": false,
+      "onnx": "models/B0_s42_qat_mixed_repaired/model.onnx",
+      "onnx_sha256": "07f194b440bcd6ddfe8e098d08f640141de6c9b747542a7858427ed2ba0b8754",
+      "source_admission": "SOURCE_ACCURACY_PASS_STRICT_QDQ_DIAGNOSTIC",
+      "source_reference": "models/B0_s42_qat_mixed_repaired/SOURCE_REFERENCE.json",
+      "source_accuracy_pass": true,
       "strict_logit_parity_all89": false,
       "unrounded_structure_all89": true,
       "diagnostic_extra": false,
-      "source_gate": "models/B0_s42_qat_mixed/SOURCE_GATE.json",
-      "qat_series": "recovery",
-      "graph_variant": "cubic Resize replaced by explicitly source-scored linear Resize; attention remains floating"
+      "source_gate": "models/B0_s42_qat_mixed_repaired/SOURCE_GATE.json",
+      "qat_series": "mixed_smooth_repair",
+      "graph_variant": "linear Resize, scalar activation QDQ, per-channel weight QDQ, floating attention and classifier",
+      "fp32_islands": "models/B0_s42_qat_mixed_repaired/FP32_ISLANDS.json",
+      "training_receipt": "workstation/B0_mixed_repair_s42/TRAINING_RECEIPT.json",
+      "deployment_quantized_convs": 56,
+      "floating_conv_exceptions": [],
+      "qat_objective": "CE on frozen cached teacher-hard512",
+      "fp32_islands_sha256": "79121035f71982432b395588235721096c7bc727891f7674e8803a34769c6068"
     },
     {
       "id": "B0_s64_fp32",
@@ -1105,7 +1117,9 @@
       "source_accuracy_pass": true,
       "strict_logit_parity_all89": null,
       "unrounded_structure_all89": true,
-      "diagnostic_extra": false
+      "diagnostic_extra": false,
+      "fp32_islands": "models/B0_s64_fp32/FP32_ISLANDS.json",
+      "fp32_islands_sha256": "79121035f71982432b395588235721096c7bc727891f7674e8803a34769c6068"
     },
     {
       "id": "B0_s64_fp16",
@@ -1121,7 +1135,9 @@
       "source_accuracy_pass": true,
       "strict_logit_parity_all89": null,
       "unrounded_structure_all89": true,
-      "diagnostic_extra": false
+      "diagnostic_extra": false,
+      "fp32_islands": "models/B0_s64_fp16/FP32_ISLANDS.json",
+      "fp32_islands_sha256": "79121035f71982432b395588235721096c7bc727891f7674e8803a34769c6068"
     },
     {
       "id": "B0_s64_ptq_mixed",
@@ -1138,26 +1154,34 @@
       "strict_logit_parity_all89": null,
       "unrounded_structure_all89": true,
       "diagnostic_extra": true,
-      "source_gate": "models/B0_s64_ptq_mixed/SOURCE_GATE.json"
+      "source_gate": "models/B0_s64_ptq_mixed/SOURCE_GATE.json",
+      "fp32_islands": "models/B0_s64_ptq_mixed/FP32_ISLANDS.json",
+      "fp32_islands_sha256": "0252b15ec48dffa76577fcac4e803a530091e72ac060d199b27d5284ac55c45f"
     },
     {
-      "id": "B0_s64_qat_mixed",
+      "id": "B0_s64_qat_mixed_repaired",
       "architecture": "B0",
       "seed": 64,
       "precision": "mixed",
       "method": "QAT",
       "mode": "mixed",
-      "onnx": "models/B0_s64_qat_mixed/model.onnx",
-      "onnx_sha256": "006927b8e5fdff76bc4cd13fd7cbd31e7dc5becb0679a1aff5e611c429bb3a08",
-      "source_admission": "SOURCE_ACCURACY_REJECTED",
-      "source_reference": "models/B0_s64_qat_mixed/SOURCE_REFERENCE.json",
-      "source_accuracy_pass": false,
+      "onnx": "models/B0_s64_qat_mixed_repaired/model.onnx",
+      "onnx_sha256": "24b87ae629af7e2e5fe9bcf6747dc97a0edb9e8e77e7f295faf970374802dd01",
+      "source_admission": "SOURCE_ACCURACY_PASS_STRICT_QDQ_DIAGNOSTIC",
+      "source_reference": "models/B0_s64_qat_mixed_repaired/SOURCE_REFERENCE.json",
+      "source_accuracy_pass": true,
       "strict_logit_parity_all89": false,
       "unrounded_structure_all89": true,
       "diagnostic_extra": false,
-      "source_gate": "models/B0_s64_qat_mixed/SOURCE_GATE.json",
-      "qat_series": "inherited",
-      "graph_variant": "cubic Resize replaced by explicitly source-scored linear Resize; attention remains floating"
+      "source_gate": "models/B0_s64_qat_mixed_repaired/SOURCE_GATE.json",
+      "qat_series": "mixed_smooth_repair",
+      "graph_variant": "linear Resize, scalar activation QDQ, per-channel weight QDQ, floating attention and classifier",
+      "fp32_islands": "models/B0_s64_qat_mixed_repaired/FP32_ISLANDS.json",
+      "training_receipt": "workstation/B0_mixed_repair_s64/TRAINING_RECEIPT.json",
+      "deployment_quantized_convs": 56,
+      "floating_conv_exceptions": [],
+      "qat_objective": "CE on frozen cached teacher-hard512",
+      "fp32_islands_sha256": "79121035f71982432b395588235721096c7bc727891f7674e8803a34769c6068"
     },
     {
       "id": "B0_s91_fp32",
@@ -1173,7 +1197,9 @@
       "source_accuracy_pass": true,
       "strict_logit_parity_all89": null,
       "unrounded_structure_all89": true,
-      "diagnostic_extra": false
+      "diagnostic_extra": false,
+      "fp32_islands": "models/B0_s91_fp32/FP32_ISLANDS.json",
+      "fp32_islands_sha256": "79121035f71982432b395588235721096c7bc727891f7674e8803a34769c6068"
     },
     {
       "id": "B0_s91_fp16",
@@ -1189,7 +1215,9 @@
       "source_accuracy_pass": true,
       "strict_logit_parity_all89": null,
       "unrounded_structure_all89": true,
-      "diagnostic_extra": false
+      "diagnostic_extra": false,
+      "fp32_islands": "models/B0_s91_fp16/FP32_ISLANDS.json",
+      "fp32_islands_sha256": "79121035f71982432b395588235721096c7bc727891f7674e8803a34769c6068"
     },
     {
       "id": "B0_s91_ptq_mixed",
@@ -1206,26 +1234,34 @@
       "strict_logit_parity_all89": null,
       "unrounded_structure_all89": true,
       "diagnostic_extra": true,
-      "source_gate": "models/B0_s91_ptq_mixed/SOURCE_GATE.json"
+      "source_gate": "models/B0_s91_ptq_mixed/SOURCE_GATE.json",
+      "fp32_islands": "models/B0_s91_ptq_mixed/FP32_ISLANDS.json",
+      "fp32_islands_sha256": "0252b15ec48dffa76577fcac4e803a530091e72ac060d199b27d5284ac55c45f"
     },
     {
-      "id": "B0_s91_qat_mixed",
+      "id": "B0_s91_qat_mixed_repaired",
       "architecture": "B0",
       "seed": 91,
       "precision": "mixed",
       "method": "QAT",
       "mode": "mixed",
-      "onnx": "models/B0_s91_qat_mixed/model.onnx",
-      "onnx_sha256": "5af065762784621dfb49c59cb9ba9f782f1747c61b509c20f5b6960d0c13fe7f",
-      "source_admission": "SOURCE_ACCURACY_REJECTED",
-      "source_reference": "models/B0_s91_qat_mixed/SOURCE_REFERENCE.json",
-      "source_accuracy_pass": false,
+      "onnx": "models/B0_s91_qat_mixed_repaired/model.onnx",
+      "onnx_sha256": "929657e6dbee063e11a3a92575aedf0d4eb4fb58cff23a2c637fe73a3372039c",
+      "source_admission": "SOURCE_ACCURACY_PASS_STRICT_QDQ_DIAGNOSTIC",
+      "source_reference": "models/B0_s91_qat_mixed_repaired/SOURCE_REFERENCE.json",
+      "source_accuracy_pass": true,
       "strict_logit_parity_all89": false,
       "unrounded_structure_all89": true,
       "diagnostic_extra": false,
-      "source_gate": "models/B0_s91_qat_mixed/SOURCE_GATE.json",
-      "qat_series": "recovery",
-      "graph_variant": "cubic Resize replaced by explicitly source-scored linear Resize; attention remains floating"
+      "source_gate": "models/B0_s91_qat_mixed_repaired/SOURCE_GATE.json",
+      "qat_series": "mixed_smooth_repair",
+      "graph_variant": "linear Resize, scalar activation QDQ, per-channel weight QDQ, floating attention and classifier",
+      "fp32_islands": "models/B0_s91_qat_mixed_repaired/FP32_ISLANDS.json",
+      "training_receipt": "workstation/B0_mixed_repair_s91/TRAINING_RECEIPT.json",
+      "deployment_quantized_convs": 56,
+      "floating_conv_exceptions": [],
+      "qat_objective": "KL temperature2 to frozen genuine parent plus0.01 squared logit-margin error; same512 images; masks provide valid support only; no new foundation teacher inference",
+      "fp32_islands_sha256": "79121035f71982432b395588235721096c7bc727891f7674e8803a34769c6068"
     },
     {
       "id": "B0_s107_fp32",
@@ -1241,7 +1277,9 @@
       "source_accuracy_pass": true,
       "strict_logit_parity_all89": null,
       "unrounded_structure_all89": true,
-      "diagnostic_extra": false
+      "diagnostic_extra": false,
+      "fp32_islands": "models/B0_s107_fp32/FP32_ISLANDS.json",
+      "fp32_islands_sha256": "79121035f71982432b395588235721096c7bc727891f7674e8803a34769c6068"
     },
     {
       "id": "B0_s107_fp16",
@@ -1257,7 +1295,9 @@
       "source_accuracy_pass": true,
       "strict_logit_parity_all89": null,
       "unrounded_structure_all89": true,
-      "diagnostic_extra": false
+      "diagnostic_extra": false,
+      "fp32_islands": "models/B0_s107_fp16/FP32_ISLANDS.json",
+      "fp32_islands_sha256": "79121035f71982432b395588235721096c7bc727891f7674e8803a34769c6068"
     },
     {
       "id": "B0_s107_ptq_mixed",
@@ -1274,26 +1314,34 @@
       "strict_logit_parity_all89": null,
       "unrounded_structure_all89": true,
       "diagnostic_extra": true,
-      "source_gate": "models/B0_s107_ptq_mixed/SOURCE_GATE.json"
+      "source_gate": "models/B0_s107_ptq_mixed/SOURCE_GATE.json",
+      "fp32_islands": "models/B0_s107_ptq_mixed/FP32_ISLANDS.json",
+      "fp32_islands_sha256": "0252b15ec48dffa76577fcac4e803a530091e72ac060d199b27d5284ac55c45f"
     },
     {
-      "id": "B0_s107_qat_mixed",
+      "id": "B0_s107_qat_mixed_repaired",
       "architecture": "B0",
       "seed": 107,
       "precision": "mixed",
       "method": "QAT",
       "mode": "mixed",
-      "onnx": "models/B0_s107_qat_mixed/model.onnx",
-      "onnx_sha256": "71220b0f0d8f7252fe5d7ab2bc80a516c6978e4a245ff6f62d4511175cc253a0",
-      "source_admission": "SOURCE_ACCURACY_REJECTED",
-      "source_reference": "models/B0_s107_qat_mixed/SOURCE_REFERENCE.json",
-      "source_accuracy_pass": false,
+      "onnx": "models/B0_s107_qat_mixed_repaired/model.onnx",
+      "onnx_sha256": "1267f8515530484c768065b1da88ad9cb2b6d6ce3a1b3d59b09163f44ff7326a",
+      "source_admission": "SOURCE_ACCURACY_PASS_STRICT_QDQ_DIAGNOSTIC",
+      "source_reference": "models/B0_s107_qat_mixed_repaired/SOURCE_REFERENCE.json",
+      "source_accuracy_pass": true,
       "strict_logit_parity_all89": false,
       "unrounded_structure_all89": true,
       "diagnostic_extra": false,
-      "source_gate": "models/B0_s107_qat_mixed/SOURCE_GATE.json",
-      "qat_series": "inherited",
-      "graph_variant": "cubic Resize replaced by explicitly source-scored linear Resize; attention remains floating"
+      "source_gate": "models/B0_s107_qat_mixed_repaired/SOURCE_GATE.json",
+      "qat_series": "mixed_smooth_repair",
+      "graph_variant": "linear Resize, scalar activation QDQ, per-channel weight QDQ, floating attention and classifier",
+      "fp32_islands": "models/B0_s107_qat_mixed_repaired/FP32_ISLANDS.json",
+      "training_receipt": "workstation/B0_mixed_repair_s107/TRAINING_RECEIPT.json",
+      "deployment_quantized_convs": 56,
+      "floating_conv_exceptions": [],
+      "qat_objective": "CE on frozen cached teacher-hard512",
+      "fp32_islands_sha256": "79121035f71982432b395588235721096c7bc727891f7674e8803a34769c6068"
     }
   ],
   "primary_matrix": [
@@ -1505,7 +1553,8 @@
       "architecture": "B0",
       "seed": 42,
       "precision": "mixed",
-      "engine": "B0_s42_qat_mixed"
+      "engine": "B0_s42_qat_mixed_repaired",
+      "status": "SOURCE_ACCURACY_PASS_STRICT_QDQ_DIAGNOSTIC"
     },
     {
       "architecture": "B0",
@@ -1530,7 +1579,8 @@
       "architecture": "B0",
       "seed": 64,
       "precision": "mixed",
-      "engine": "B0_s64_qat_mixed"
+      "engine": "B0_s64_qat_mixed_repaired",
+      "status": "SOURCE_ACCURACY_PASS_STRICT_QDQ_DIAGNOSTIC"
     },
     {
       "architecture": "B0",
@@ -1555,7 +1605,8 @@
       "architecture": "B0",
       "seed": 91,
       "precision": "mixed",
-      "engine": "B0_s91_qat_mixed"
+      "engine": "B0_s91_qat_mixed_repaired",
+      "status": "SOURCE_ACCURACY_PASS_STRICT_QDQ_DIAGNOSTIC"
     },
     {
       "architecture": "B0",
@@ -1580,7 +1631,8 @@
       "architecture": "B0",
       "seed": 107,
       "precision": "mixed",
-      "engine": "B0_s107_qat_mixed"
+      "engine": "B0_s107_qat_mixed_repaired",
+      "status": "SOURCE_ACCURACY_PASS_STRICT_QDQ_DIAGNOSTIC"
     },
     {
       "architecture": "B0",
@@ -1627,5 +1679,88 @@
     "reused_engines": 16,
     "new_build_attempts": 35
   },
-  "heldback97": "NOT_READ"
+  "heldback97": "NOT_READ",
+  "retired_diagnostics": [
+    {
+      "id": "B0_s42_qat_mixed",
+      "architecture": "B0",
+      "seed": 42,
+      "precision": "mixed",
+      "method": "QAT",
+      "mode": "mixed",
+      "onnx": "models/B0_s42_qat_mixed/model.onnx",
+      "onnx_sha256": "89a16057be0efc129bc5900e1b4f7980bc3a99c522b67f7f177a84cb792c92b0",
+      "source_admission": "SOURCE_ACCURACY_REJECTED",
+      "source_reference": "models/B0_s42_qat_mixed/SOURCE_REFERENCE.json",
+      "source_accuracy_pass": false,
+      "strict_logit_parity_all89": false,
+      "unrounded_structure_all89": true,
+      "diagnostic_extra": false,
+      "source_gate": "models/B0_s42_qat_mixed/SOURCE_GATE.json",
+      "qat_series": "recovery",
+      "graph_variant": "cubic Resize replaced by explicitly source-scored linear Resize; attention remains floating",
+      "fp32_islands": "models/B0_s42_qat_mixed/FP32_ISLANDS.json"
+    },
+    {
+      "id": "B0_s64_qat_mixed",
+      "architecture": "B0",
+      "seed": 64,
+      "precision": "mixed",
+      "method": "QAT",
+      "mode": "mixed",
+      "onnx": "models/B0_s64_qat_mixed/model.onnx",
+      "onnx_sha256": "006927b8e5fdff76bc4cd13fd7cbd31e7dc5becb0679a1aff5e611c429bb3a08",
+      "source_admission": "SOURCE_ACCURACY_REJECTED",
+      "source_reference": "models/B0_s64_qat_mixed/SOURCE_REFERENCE.json",
+      "source_accuracy_pass": false,
+      "strict_logit_parity_all89": false,
+      "unrounded_structure_all89": true,
+      "diagnostic_extra": false,
+      "source_gate": "models/B0_s64_qat_mixed/SOURCE_GATE.json",
+      "qat_series": "inherited",
+      "graph_variant": "cubic Resize replaced by explicitly source-scored linear Resize; attention remains floating",
+      "fp32_islands": "models/B0_s64_qat_mixed/FP32_ISLANDS.json"
+    },
+    {
+      "id": "B0_s91_qat_mixed",
+      "architecture": "B0",
+      "seed": 91,
+      "precision": "mixed",
+      "method": "QAT",
+      "mode": "mixed",
+      "onnx": "models/B0_s91_qat_mixed/model.onnx",
+      "onnx_sha256": "5af065762784621dfb49c59cb9ba9f782f1747c61b509c20f5b6960d0c13fe7f",
+      "source_admission": "SOURCE_ACCURACY_REJECTED",
+      "source_reference": "models/B0_s91_qat_mixed/SOURCE_REFERENCE.json",
+      "source_accuracy_pass": false,
+      "strict_logit_parity_all89": false,
+      "unrounded_structure_all89": true,
+      "diagnostic_extra": false,
+      "source_gate": "models/B0_s91_qat_mixed/SOURCE_GATE.json",
+      "qat_series": "recovery",
+      "graph_variant": "cubic Resize replaced by explicitly source-scored linear Resize; attention remains floating",
+      "fp32_islands": "models/B0_s91_qat_mixed/FP32_ISLANDS.json"
+    },
+    {
+      "id": "B0_s107_qat_mixed",
+      "architecture": "B0",
+      "seed": 107,
+      "precision": "mixed",
+      "method": "QAT",
+      "mode": "mixed",
+      "onnx": "models/B0_s107_qat_mixed/model.onnx",
+      "onnx_sha256": "71220b0f0d8f7252fe5d7ab2bc80a516c6978e4a245ff6f62d4511175cc253a0",
+      "source_admission": "SOURCE_ACCURACY_REJECTED",
+      "source_reference": "models/B0_s107_qat_mixed/SOURCE_REFERENCE.json",
+      "source_accuracy_pass": false,
+      "strict_logit_parity_all89": false,
+      "unrounded_structure_all89": true,
+      "diagnostic_extra": false,
+      "source_gate": "models/B0_s107_qat_mixed/SOURCE_GATE.json",
+      "qat_series": "inherited",
+      "graph_variant": "cubic Resize replaced by explicitly source-scored linear Resize; attention remains floating",
+      "fp32_islands": "models/B0_s107_qat_mixed/FP32_ISLANDS.json"
+    }
+  ],
+  "b0_mixed_repair": "Original four failed QAT graphs retained as historical records; replaced primary entries have fresh identities. New source-qualified accuracy candidates retain strict parity diagnostics and require native FP32 island certification."
 }

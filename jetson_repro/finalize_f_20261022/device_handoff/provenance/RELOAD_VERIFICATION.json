@@ -1,0 +1,58 @@
+{
+  "status": "PASS",
+  "process_isolation": "One frozen runtime per seed; original multi-seed verifier stopped on PyTorch interop-thread reinitialization after seed42. No scientific results changed.",
+  "rows": [
+    {
+      "seed": 42,
+      "checkpoint_sha256": "d0c5626ebbc2b4ac768d307bd32864805d4750b38d2e320b0a5b6019cf89e627",
+      "onnx_sha256": "07f194b440bcd6ddfe8e098d08f640141de6c9b747542a7858427ed2ba0b8754",
+      "full89_torch_counts_reproduced": true,
+      "full89_ort_counts_reproduced": true,
+      "quantized_convs": 56,
+      "total_convs": 57,
+      "head_float": true,
+      "attention_float": true,
+      "recalibration": false,
+      "optimizer_updates": 640
+    },
+    {
+      "seed": 64,
+      "checkpoint_sha256": "0c190092b7c9b6a77d161fead679975830440826818bdf4bbaed68b058bf65fa",
+      "onnx_sha256": "24b87ae629af7e2e5fe9bcf6747dc97a0edb9e8e77e7f295faf970374802dd01",
+      "full89_torch_counts_reproduced": true,
+      "full89_ort_counts_reproduced": true,
+      "quantized_convs": 56,
+      "total_convs": 57,
+      "head_float": true,
+      "attention_float": true,
+      "recalibration": false,
+      "optimizer_updates": 640
+    },
+    {
+      "seed": 91,
+      "checkpoint_sha256": "ae986d883710f797aafe5b920065131b45c6eba5eef44c88a32729aad219ce65",
+      "onnx_sha256": "929657e6dbee063e11a3a92575aedf0d4eb4fb58cff23a2c637fe73a3372039c",
+      "full89_torch_counts_reproduced": true,
+      "full89_ort_counts_reproduced": true,
+      "quantized_convs": 56,
+      "total_convs": 57,
+      "head_float": true,
+      "attention_float": true,
+      "recalibration": false,
+      "optimizer_updates": 1664
+    },
+    {
+      "seed": 107,
+      "checkpoint_sha256": "849c244437fcb777606a43385963400c22b6a1e052f3157c66befc5abdaedb40",
+      "onnx_sha256": "1267f8515530484c768065b1da88ad9cb2b6d6ce3a1b3d59b09163f44ff7326a",
+      "full89_torch_counts_reproduced": true,
+      "full89_ort_counts_reproduced": true,
+      "quantized_convs": 56,
+      "total_convs": 57,
+      "head_float": true,
+      "attention_float": true,
+      "recalibration": false,
+      "optimizer_updates": 384
+    }
+  ]
+}

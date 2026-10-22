@@ -13,5 +13,8 @@
   "missing_native_work_guard": "PASS",
   "python38_syntax_and_cli": "PASS",
   "native_execution": "PENDING_JETSON",
-  "source_input_preflight": "CPU_INPUTS_VERIFIED_NATIVE_PENDING"
+  "source_input_preflight": "CPU_INPUTS_VERIFIED_NATIVE_PENDING",
+  "b0_fp32_island_negative_guards": "PASS",
+  "b0_repaired_source_candidates": 4,
+  "quantizer_structural_precision_guard": "PASS"
 }

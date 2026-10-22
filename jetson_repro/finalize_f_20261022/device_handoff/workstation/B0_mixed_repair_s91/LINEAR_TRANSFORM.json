@@ -1,0 +1,45 @@
+{
+  "status": "derived_variant",
+  "recipe": "trt84_linear_resize",
+  "is_registered_candidate": false,
+  "source_model": "/home/schmalstieg/repos/MajorRev/revision_package_20261021/10_b0_mixed_repair_20261022/parent_match_cpu_s91/candidate_epoch3/qat.onnx",
+  "source_sha256": "67660c15bce1e48c4c3f5b56b79282964ad68bfb687e64c6dbf4aefb0bb5e54f",
+  "variant_model": "/home/schmalstieg/repos/MajorRev/revision_package_20261021/10_b0_mixed_repair_20261022/parent_match_cpu_s91/candidate_epoch3/qat_linear.onnx",
+  "variant_sha256": "929657e6dbee063e11a3a92575aedf0d4eb4fb58cff23a2c637fe73a3372039c",
+  "resize_modes_before": [
+    {
+      "node": "/model/head/input_ops.0/op_list.1/Resize",
+      "mode": "cubic"
+    },
+    {
+      "node": "/model/head/input_ops.1/op_list.1/Resize",
+      "mode": "cubic"
+    },
+    {
+      "node": "/Resize",
+      "mode": "linear"
+    }
+  ],
+  "resize_modes_after": [
+    {
+      "node": "/model/head/input_ops.0/op_list.1/Resize",
+      "mode": "linear"
+    },
+    {
+      "node": "/model/head/input_ops.1/op_list.1/Resize",
+      "mode": "linear"
+    },
+    {
+      "node": "/Resize",
+      "mode": "linear"
+    }
+  ],
+  "changed_nodes": [
+    "/model/head/input_ops.0/op_list.1/Resize",
+    "/model/head/input_ops.1/op_list.1/Resize"
+  ],
+  "changed_count": 2,
+  "reason": "TensorRT 8.4 ONNX parser rejects mode=\"cubic\" Resize (importResize: \"This version of TensorRT does not support cubic interpolation!\")",
+  "provenance": "jetson/fix_qdq_onnx.py::patch_cubic_resize (documented TRT 8.4 repair)",
+  "caveat": "Changes the registered interpolation; requires CPU source validation against the unpatched candidate. Device numbers from this graph must not be aliased with the registered candidate."
+}

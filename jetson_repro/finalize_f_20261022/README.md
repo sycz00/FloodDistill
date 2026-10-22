@@ -1,4 +1,4 @@
-> Current execution handoff: [device_handoff/README.md](device_handoff/README.md) and [the Jetson prompt](../../prompts/jetson_prompt.md). The section below records the earlier preparation stage. QAT/PTQ candidates are now supplied in the current handoff; do not rerun its legacy training plan.
+> Current execution handoff: [device_handoff/README.md](device_handoff/README.md) and [the Jetson prompt](../../prompts/jetson_prompt.md). The section below records the earlier preparation stage. QAT/PTQ candidates are now supplied in the current handoff; do not rerun its legacy training plan. The corrected mixed B0 exports now pass the amended source-accuracy limit for all four seeds; native validation and strict export-equivalence diagnostics remain separate.
 
 # Jetson follow-up prepared on 22 October 2026
 

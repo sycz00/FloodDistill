@@ -1,0 +1,1252 @@
+{
+  "strict_all89": false,
+  "unrounded_structure_all89": true,
+  "rows": [
+    {
+      "file": "Ghana_1033830_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.6863069534301758,
+      "optimized_max_abs": 0.6863069534301758,
+      "optimized_argmax_agreement": 0.99432373046875,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 5.245208740234375e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Ghana_124834_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.5206873416900635,
+      "optimized_max_abs": 0.5206875801086426,
+      "optimized_argmax_agreement": 1.0,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 1.2874603271484375e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Ghana_132163_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.5141432285308838,
+      "optimized_max_abs": 0.5141432285308838,
+      "optimized_argmax_agreement": 0.9885330200195312,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 1.8715858459472656e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Ghana_142312_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.5949623584747314,
+      "optimized_max_abs": 0.5949623584747314,
+      "optimized_argmax_agreement": 1.0,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 2.0742416381835938e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Ghana_234935_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.542863130569458,
+      "optimized_max_abs": 0.5428633689880371,
+      "optimized_argmax_agreement": 0.9954757690429688,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 3.743171691894531e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Ghana_277_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.576717734336853,
+      "optimized_max_abs": 0.5767177939414978,
+      "optimized_argmax_agreement": 0.97882080078125,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 7.56978988647461e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Ghana_308249_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.7229957580566406,
+      "optimized_max_abs": 0.7229957580566406,
+      "optimized_argmax_agreement": 0.9991645812988281,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 1.0728836059570312e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Ghana_495107_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.6252655982971191,
+      "optimized_max_abs": 0.6252655982971191,
+      "optimized_argmax_agreement": 0.9992828369140625,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 2.4557113647460938e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Ghana_5079_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.589684009552002,
+      "optimized_max_abs": 0.589684009552002,
+      "optimized_argmax_agreement": 0.9971275329589844,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 1.9669532775878906e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Ghana_868803_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.7052850723266602,
+      "optimized_max_abs": 0.7052850723266602,
+      "optimized_argmax_agreement": 0.9976081848144531,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 5.3882598876953125e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Ghana_895194_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.8642756938934326,
+      "optimized_max_abs": 0.8642756938934326,
+      "optimized_argmax_agreement": 0.9990196228027344,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 1.9073486328125e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "India_1018317_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.9921278953552246,
+      "optimized_max_abs": 0.9921278953552246,
+      "optimized_argmax_agreement": 0.9945449829101562,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 6.198883056640625e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "India_1050276_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.5212059020996094,
+      "optimized_max_abs": 0.5212059020996094,
+      "optimized_argmax_agreement": 0.9936065673828125,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 1.5020370483398438e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "India_1068117_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.6509065628051758,
+      "optimized_max_abs": 0.6509065628051758,
+      "optimized_argmax_agreement": 0.9929237365722656,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 1.3589859008789062e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "India_118868_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 1.1176376342773438,
+      "optimized_max_abs": 1.1176376342773438,
+      "optimized_argmax_agreement": 0.994476318359375,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 0.0002696514129638672,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "India_164336_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.673027515411377,
+      "optimized_max_abs": 0.673027515411377,
+      "optimized_argmax_agreement": 0.9997978210449219,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 1.3828277587890625e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "India_180633_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.8049921989440918,
+      "optimized_max_abs": 0.8049921989440918,
+      "optimized_argmax_agreement": 0.9930076599121094,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 6.103515625e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "India_244057_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.83003830909729,
+      "optimized_max_abs": 0.83003830909729,
+      "optimized_argmax_agreement": 0.9952812194824219,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 2.86102294921875e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "India_533192_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 1.5800352096557617,
+      "optimized_max_abs": 1.5800352096557617,
+      "optimized_argmax_agreement": 0.9908561706542969,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 0.00032404065132141113,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "India_691027_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.6242148876190186,
+      "optimized_max_abs": 0.6242148876190186,
+      "optimized_argmax_agreement": 0.998077392578125,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 1.2874603271484375e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "India_70352_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.6139192581176758,
+      "optimized_max_abs": 0.6139190196990967,
+      "optimized_argmax_agreement": 0.9984893798828125,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 1.5735626220703125e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "India_764946_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.5857785940170288,
+      "optimized_max_abs": 0.5857785940170288,
+      "optimized_argmax_agreement": 0.9990158081054688,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 2.288818359375e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "India_769408_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.653545618057251,
+      "optimized_max_abs": 0.653545618057251,
+      "optimized_argmax_agreement": 0.9960060119628906,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 4.1961669921875e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "India_833266_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.6852635145187378,
+      "optimized_max_abs": 0.6852635145187378,
+      "optimized_argmax_agreement": 0.9964218139648438,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 2.47955322265625e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "India_869358_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.5901670455932617,
+      "optimized_max_abs": 0.5901670455932617,
+      "optimized_argmax_agreement": 0.9994087219238281,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 2.0265579223632812e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Mekong_1149855_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 1.1564974784851074,
+      "optimized_max_abs": 1.1564974784851074,
+      "optimized_argmax_agreement": 0.9959983825683594,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 3.337860107421875e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Mekong_1413877_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.8898053169250488,
+      "optimized_max_abs": 0.8898053169250488,
+      "optimized_argmax_agreement": 0.9992256164550781,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 9.626150131225586e-06,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Mekong_293769_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.8901443481445312,
+      "optimized_max_abs": 0.8901443481445312,
+      "optimized_argmax_agreement": 0.9981040954589844,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 5.817413330078125e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Mekong_474783_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.5099854469299316,
+      "optimized_max_abs": 0.5099854469299316,
+      "optimized_argmax_agreement": 0.9993057250976562,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 1.6689300537109375e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Mekong_977338_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.9743814468383789,
+      "optimized_max_abs": 0.9743814468383789,
+      "optimized_argmax_agreement": 0.9943313598632812,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 5.054473876953125e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Mekong_98310_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.9294843673706055,
+      "optimized_max_abs": 0.9294834136962891,
+      "optimized_argmax_agreement": 0.9962387084960938,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 4.5299530029296875e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Nigeria_1095404_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.6145577430725098,
+      "optimized_max_abs": 0.6145577430725098,
+      "optimized_argmax_agreement": 0.994720458984375,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 2.384185791015625e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Nigeria_31096_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.9869871139526367,
+      "optimized_max_abs": 0.9869866371154785,
+      "optimized_argmax_agreement": 0.9979782104492188,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 6.461143493652344e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Nigeria_820924_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.6527831554412842,
+      "optimized_max_abs": 0.6527831554412842,
+      "optimized_argmax_agreement": 0.9995841979980469,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 1.239776611328125e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Nigeria_984831_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.8243484497070312,
+      "optimized_max_abs": 0.8243484497070312,
+      "optimized_argmax_agreement": 0.99517822265625,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 5.245208740234375e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Pakistan_1027214_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.5571017265319824,
+      "optimized_max_abs": 0.5571017265319824,
+      "optimized_argmax_agreement": 0.9920806884765625,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 0.0006603896617889404,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Pakistan_210595_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.5915555953979492,
+      "optimized_max_abs": 0.5915555953979492,
+      "optimized_argmax_agreement": 1.0,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 2.6226043701171875e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Pakistan_336228_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.4830179214477539,
+      "optimized_max_abs": 0.48301786184310913,
+      "optimized_argmax_agreement": 0.9908714294433594,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 2.9653310775756836e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Pakistan_43105_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.47908544540405273,
+      "optimized_max_abs": 0.47908544540405273,
+      "optimized_argmax_agreement": 0.9986686706542969,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 1.5974044799804688e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Pakistan_94095_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.8190336227416992,
+      "optimized_max_abs": 0.8190336227416992,
+      "optimized_argmax_agreement": 0.9914474487304688,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 0.00010728836059570312,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Pakistan_9684_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.7628858089447021,
+      "optimized_max_abs": 0.762885332107544,
+      "optimized_argmax_agreement": 0.9951667785644531,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 6.67572021484375e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Paraguay_1019808_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.5447816848754883,
+      "optimized_max_abs": 0.5447816848754883,
+      "optimized_argmax_agreement": 0.9992027282714844,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 2.110004425048828e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Paraguay_153941_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.5772266387939453,
+      "optimized_max_abs": 0.5772266387939453,
+      "optimized_argmax_agreement": 1.0,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 1.4781951904296875e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Paraguay_172476_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.7545228004455566,
+      "optimized_max_abs": 0.7545228004455566,
+      "optimized_argmax_agreement": 0.9994125366210938,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 1.1444091796875e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Paraguay_205585_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.480532169342041,
+      "optimized_max_abs": 0.480532169342041,
+      "optimized_argmax_agreement": 1.0,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 1.9550323486328125e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Paraguay_252217_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.5407228469848633,
+      "optimized_max_abs": 0.5407228469848633,
+      "optimized_argmax_agreement": 0.9995841979980469,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 1.2040138244628906e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Paraguay_284928_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.5643519759178162,
+      "optimized_max_abs": 0.5643519759178162,
+      "optimized_argmax_agreement": 0.9893684387207031,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 1.8090009689331055e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Paraguay_305760_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.5212416648864746,
+      "optimized_max_abs": 0.5212419033050537,
+      "optimized_argmax_agreement": 0.9866485595703125,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 2.9087066650390625e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Paraguay_581976_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.6830284595489502,
+      "optimized_max_abs": 0.6830284595489502,
+      "optimized_argmax_agreement": 0.9772987365722656,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 2.8848648071289062e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Paraguay_648632_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.6656516790390015,
+      "optimized_max_abs": 0.6656516790390015,
+      "optimized_argmax_agreement": 0.9943275451660156,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 3.0517578125e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Paraguay_657443_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.867316722869873,
+      "optimized_max_abs": 0.8673162460327148,
+      "optimized_argmax_agreement": 0.9963035583496094,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 4.00543212890625e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Paraguay_76868_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.7949676513671875,
+      "optimized_max_abs": 0.7949676513671875,
+      "optimized_argmax_agreement": 0.9988975524902344,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 3.147125244140625e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Paraguay_7894_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.8897933959960938,
+      "optimized_max_abs": 0.8897933959960938,
+      "optimized_argmax_agreement": 0.9985389709472656,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 5.507469177246094e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Paraguay_896458_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.7514777183532715,
+      "optimized_max_abs": 0.7514777183532715,
+      "optimized_argmax_agreement": 0.9963874816894531,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 4.100799560546875e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Paraguay_934240_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.5223449468612671,
+      "optimized_max_abs": 0.5223448276519775,
+      "optimized_argmax_agreement": 0.9901390075683594,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 2.059340476989746e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Somalia_12849_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.6462974548339844,
+      "optimized_max_abs": 0.6462974548339844,
+      "optimized_argmax_agreement": 0.9928741455078125,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 2.288818359375e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Somalia_167787_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.4982168674468994,
+      "optimized_max_abs": 0.4982168674468994,
+      "optimized_argmax_agreement": 0.9979476928710938,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 2.574920654296875e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Somalia_256539_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.5885558128356934,
+      "optimized_max_abs": 0.5885553359985352,
+      "optimized_argmax_agreement": 0.9980125427246094,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 5.626678466796875e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Somalia_61368_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.7823178768157959,
+      "optimized_max_abs": 0.7823178768157959,
+      "optimized_argmax_agreement": 0.9975166320800781,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 3.910064697265625e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Somalia_649376_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.5515761375427246,
+      "optimized_max_abs": 0.5515761375427246,
+      "optimized_argmax_agreement": 0.9982986450195312,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 1.5974044799804688e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Spain_1199913_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.6031354665756226,
+      "optimized_max_abs": 0.6031354665756226,
+      "optimized_argmax_agreement": 0.999298095703125,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 1.5020370483398438e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Spain_4282030_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.7476539611816406,
+      "optimized_max_abs": 0.7476541996002197,
+      "optimized_argmax_agreement": 0.99176025390625,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 3.743171691894531e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Spain_6537196_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.584726095199585,
+      "optimized_max_abs": 0.584726095199585,
+      "optimized_argmax_agreement": 0.9998779296875,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 1.3187527656555176e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Spain_7604243_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 1.04815673828125,
+      "optimized_max_abs": 1.04815673828125,
+      "optimized_argmax_agreement": 0.999786376953125,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 4.00543212890625e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Spain_8372658_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.6212522983551025,
+      "optimized_max_abs": 0.6212522983551025,
+      "optimized_argmax_agreement": 0.9950294494628906,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 3.814697265625e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Spain_8565131_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.6072423458099365,
+      "optimized_max_abs": 0.6072423458099365,
+      "optimized_argmax_agreement": 0.9944381713867188,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 2.0503997802734375e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Sri-Lanka_101973_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.5458884239196777,
+      "optimized_max_abs": 0.5458884239196777,
+      "optimized_argmax_agreement": 0.9998931884765625,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 5.424022674560547e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Sri-Lanka_132922_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.615570068359375,
+      "optimized_max_abs": 0.615570068359375,
+      "optimized_argmax_agreement": 0.996124267578125,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 1.2606382369995117e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Sri-Lanka_236030_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.5908322334289551,
+      "optimized_max_abs": 0.590831995010376,
+      "optimized_argmax_agreement": 0.9856109619140625,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 3.0934810638427734e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Sri-Lanka_236628_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.4851924777030945,
+      "optimized_max_abs": 0.4851924777030945,
+      "optimized_argmax_agreement": 0.9973793029785156,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 3.0517578125e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Sri-Lanka_31559_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.7056601047515869,
+      "optimized_max_abs": 0.7056601047515869,
+      "optimized_argmax_agreement": 0.9981346130371094,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 3.0517578125e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Sri-Lanka_321316_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.7914800643920898,
+      "optimized_max_abs": 0.7914810180664062,
+      "optimized_argmax_agreement": 0.9982681274414062,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 7.62939453125e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Sri-Lanka_612594_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.7816863059997559,
+      "optimized_max_abs": 0.7816863059997559,
+      "optimized_argmax_agreement": 0.9988250732421875,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 5.340576171875e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Sri-Lanka_63307_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.4697762727737427,
+      "optimized_max_abs": 0.4697762727737427,
+      "optimized_argmax_agreement": 0.9999198913574219,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 1.1920928955078125e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "Sri-Lanka_85652_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.7004554271697998,
+      "optimized_max_abs": 0.7004554271697998,
+      "optimized_argmax_agreement": 0.9968643188476562,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 2.6702880859375e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "USA_1039203_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.6163411140441895,
+      "optimized_max_abs": 0.6163411140441895,
+      "optimized_argmax_agreement": 0.9997215270996094,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 1.2524425983428955e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "USA_1082482_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.5765254497528076,
+      "optimized_max_abs": 0.5765254497528076,
+      "optimized_argmax_agreement": 0.9997978210449219,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 1.1324882507324219e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "USA_19225_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.5404150485992432,
+      "optimized_max_abs": 0.5404150485992432,
+      "optimized_argmax_agreement": 0.9998664855957031,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 1.0013580322265625e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "USA_225017_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.8392953872680664,
+      "optimized_max_abs": 0.8392951488494873,
+      "optimized_argmax_agreement": 0.998809814453125,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 1.7881393432617188e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "USA_251323_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.5652499198913574,
+      "optimized_max_abs": 0.5652501583099365,
+      "optimized_argmax_agreement": 0.9998817443847656,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 2.3037195205688477e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "USA_275372_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.5193357467651367,
+      "optimized_max_abs": 0.5193359851837158,
+      "optimized_argmax_agreement": 0.999847412109375,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 1.3470649719238281e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "USA_308150_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.6796844005584717,
+      "optimized_max_abs": 0.6796844005584717,
+      "optimized_argmax_agreement": 0.9995956420898438,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 1.1086463928222656e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "USA_366607_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.8602237701416016,
+      "optimized_max_abs": 0.8602237701416016,
+      "optimized_argmax_agreement": 0.9984970092773438,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 4.9591064453125e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "USA_646878_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.8869607448577881,
+      "optimized_max_abs": 0.8869607448577881,
+      "optimized_argmax_agreement": 0.9984283447265625,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 0.00011539459228515625,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "USA_741073_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.5766201019287109,
+      "optimized_max_abs": 0.5766201019287109,
+      "optimized_argmax_agreement": 0.9996147155761719,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 1.2874603271484375e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "USA_741178_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.4995708465576172,
+      "optimized_max_abs": 0.4995708465576172,
+      "optimized_argmax_agreement": 0.9997749328613281,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 9.5367431640625e-06,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "USA_761032_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.5602567195892334,
+      "optimized_max_abs": 0.5602567195892334,
+      "optimized_argmax_agreement": 0.9989891052246094,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 1.1086463928222656e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "USA_826217_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.591315507888794,
+      "optimized_max_abs": 0.591315507888794,
+      "optimized_argmax_agreement": 0.9995613098144531,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 1.71661376953125e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    },
+    {
+      "file": "USA_986268_S2Hand.tif",
+      "strict_logit_parity_pass": false,
+      "semantic_max_abs": 0.6075403690338135,
+      "optimized_max_abs": 0.6075406074523926,
+      "optimized_argmax_agreement": 0.9989471435546875,
+      "tolerance": {
+        "atol": 0.001,
+        "rtol": 0.001
+      },
+      "unrounded_graph_parity_pass": true,
+      "unrounded_graph_max_abs": 1.430511474609375e-05,
+      "requires_actual_runtime_source_accuracy_gate": true
+    }
+  ]
+}

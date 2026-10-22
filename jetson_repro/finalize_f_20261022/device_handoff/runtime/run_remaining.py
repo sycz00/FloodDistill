@@ -81,11 +81,19 @@ def main():
                 b=json.loads(build.read_text());code=0 if b.get('status')=='built' and engine.exists() and b.get('engine_sha256')==sha(engine) else 1
             else:
                 archive_partial(engine)
-                code=command([sys.executable,str(ROOT/'runtime/integer_tools.py'),'build','--model',str(ROOT/model['onnx']),'--engine',str(engine),'--receipt',str(build),'--mode',model['mode']],dest/'build.log',out)
+                cmd=[sys.executable,str(ROOT/'runtime/integer_tools.py'),'build','--model',str(ROOT/model['onnx']),'--engine',str(engine),'--receipt',str(build),'--mode',model['mode']]
+                if model.get('fp32_islands'):cmd+=['--fp32-islands',str(ROOT/model['fp32_islands'])]
+                code=command(cmd,dest/'build.log',out)
             if code or not build.exists() or json.loads(build.read_text()).get('status')!='built':
                 state.update(status='FAILED_BUILD',returncode=code);record(state);continue
             if model['precision']=='pure' and not json.loads(build.read_text())['precision_audit']['full_integer_tensor_path']:
                 state.update(status='FAILED_INTEGER_TENSOR_CERTIFICATE');record(state);continue
+            if model.get('fp32_islands'):
+                from precision_islands import validate_certificate
+                try:
+                    validate_certificate(json.loads(build.read_text()), model, ROOT, json.loads(Path(str(engine)+'.layers.json').read_text()))
+                except (OSError, KeyError, ValueError) as error:
+                    state.update(status='FAILED_FP32_ISLAND_CERTIFICATE',reason=str(error));record(state);continue
             onlydry=False
         cmd=[sys.executable,str(ROOT/'runtime/evaluate_native.py'),'--engine',str(engine),'--out',str(dest/'evaluation'),'--sturm-root',str(a.sturm_root),'--wf-root',str(a.wf_root),'--resume']
         if model.get('io'):cmd+=['--io',str(ROOT/model['io'])]

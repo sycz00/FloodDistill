@@ -1,0 +1,80 @@
+{
+  "status": "FROZEN_CONDITIONAL",
+  "seed": 91,
+  "condition": "All first recipe attempts resolved and seed91 failed its1280 update budget",
+  "policies": [
+    {
+      "id": "decoder_projection",
+      "contains": [
+        "model.head.output_ops.0.op_list.0"
+      ]
+    },
+    {
+      "id": "stem",
+      "contains": [
+        "input_stem"
+      ]
+    },
+    {
+      "id": "decoder",
+      "contains": [
+        "model.head."
+      ]
+    },
+    {
+      "id": "qkv",
+      "contains": [
+        "context_module.main.qkv"
+      ]
+    },
+    {
+      "id": "attention_projections",
+      "contains": [
+        "context_module.main.proj"
+      ]
+    },
+    {
+      "id": "stem_decoder",
+      "contains": [
+        "input_stem",
+        "model.head."
+      ]
+    },
+    {
+      "id": "all_attention_convs",
+      "contains": [
+        "context_module"
+      ]
+    },
+    {
+      "id": "stem_decoder_attention",
+      "contains": [
+        "input_stem",
+        "model.head.",
+        "context_module"
+      ]
+    }
+  ],
+  "selection": "First passing source89 Torch and actual optimized ORT accuracy, then unrounded structure; no external readout; no added optimizer steps; QAT-trained weights retained",
+  "precision": "Remaining QAT Convs stay scalar activation/per-channel weight INT8; additional declared Conv exceptions floating, attention/classifier still floating",
+  "maximum_policies": 8,
+  "code": [
+    {
+      "path": "/home/schmalstieg/repos/MajorRev/revision_package_20261021/10_b0_mixed_repair_20261022/code/mixed_exceptions_v2.py",
+      "sha256": "30793c33c068999971011b14d14334944c91525a8e7c314cfab1007ec9476dca"
+    },
+    {
+      "path": "/home/schmalstieg/repos/MajorRev/revision_package_20261021/10_b0_mixed_repair_20261022/code/mixed_smooth.py",
+      "sha256": "6954872b13e9bf43ac6c2272006bb02502359c3bc77767f4bd1ac4c39a939591"
+    },
+    {
+      "path": "/home/schmalstieg/repos/MajorRev/revision_package_20261021/10_b0_mixed_repair_20261022/code/fit_cpu.py",
+      "sha256": "01503f9c5615c8fb4c109a2ad99285ed355bd1ae2694e8ff36ec2dd4cad7ebc4"
+    },
+    {
+      "path": "/home/schmalstieg/repos/MajorRev/revision_package_20261021/10_b0_mixed_repair_20261022/code/diagnose_unfolded.py",
+      "sha256": "95a1895451c6986e5d8860ac33d90d7d25f8ed0ddf6ccce7fa96954c308f5bc5"
+    }
+  ],
+  "implementation_fix": "Project modules imported after q.runtime establishes the frozen project snapshot; prior attempts failed before evaluation. Scientific protocol unchanged."
+}

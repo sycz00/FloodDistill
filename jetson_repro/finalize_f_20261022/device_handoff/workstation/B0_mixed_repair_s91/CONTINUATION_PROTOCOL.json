@@ -1,0 +1,38 @@
+{
+  "status": "FROZEN",
+  "seed": 91,
+  "condition": "First corrected1280-update fit failed; all8 finite source-only precision policies failed; records preserved",
+  "starting_checkpoint": {
+    "path": "/home/schmalstieg/repos/MajorRev/revision_package_20261021/10_b0_mixed_repair_20261022/fit_cpu_s91/checkpoint_final.pt",
+    "sha256": "29f8d9f42134fc6b3a04e9eca9981c816c2534333181641b4115a2cd6688fb63"
+  },
+  "max_additional_updates": 1024,
+  "epochs": 8,
+  "steps_per_epoch": 128,
+  "batch": 4,
+  "loss": "same CE teacher-hard512 cohort",
+  "optimizer": "fresh AdamW lr1e-5 WD1e-5 constant; clip1",
+  "warmup_epochs": 0,
+  "quantization": "unchanged56 QDQ Convs; attention and classifier float; frozen BN; fixed saved scales",
+  "selection": "first epoch passing source89 Torch and actual optimized ORT three0.02 limits plus unrounded structure; strict flags retained",
+  "external_readout": false,
+  "new_teacher_inference": false,
+  "code": [
+    {
+      "path": "/home/schmalstieg/repos/MajorRev/revision_package_20261021/10_b0_mixed_repair_20261022/code/fit_continue.py",
+      "sha256": "4817963c87f78c959be048af005db1ddffc1f7ab738b24deb9d65b891ad2ee7a"
+    },
+    {
+      "path": "/home/schmalstieg/repos/MajorRev/revision_package_20261021/10_b0_mixed_repair_20261022/code/fit_cpu.py",
+      "sha256": "01503f9c5615c8fb4c109a2ad99285ed355bd1ae2694e8ff36ec2dd4cad7ebc4"
+    },
+    {
+      "path": "/home/schmalstieg/repos/MajorRev/revision_package_20261021/10_b0_mixed_repair_20261022/code/mixed_smooth.py",
+      "sha256": "6954872b13e9bf43ac6c2272006bb02502359c3bc77767f4bd1ac4c39a939591"
+    },
+    {
+      "path": "/home/schmalstieg/repos/MajorRev/revision_package_20261021/10_b0_mixed_repair_20261022/code/diagnose_unfolded.py",
+      "sha256": "95a1895451c6986e5d8860ac33d90d7d25f8ed0ddf6ccce7fa96954c308f5bc5"
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "status": "FOUR_SEED_SOURCE_ACCURACY_RECOVERED",
+  "seeds": [
+    {
+      "seed": 42,
+      "engine": "B0_s42_qat_mixed_repaired",
+      "updates": 640,
+      "drops": {
+        "mIoU": -0.00034831357741671454,
+        "equal_event_mIoU": 0.001750088937696348,
+        "water_IoU": -0.0013848569989057813
+      },
+      "accuracy_pass": true,
+      "strict_logit_parity_all89": false,
+      "unrounded_structure_all89": true,
+      "onnx_sha256": "07f194b440bcd6ddfe8e098d08f640141de6c9b747542a7858427ed2ba0b8754",
+      "checkpoint": {
+        "path": "/home/schmalstieg/repos/MajorRev/revision_package_20261021/10_b0_mixed_repair_20261022/fit_cpu_s42/checkpoint_selected.pt",
+        "sha256": "d0c5626ebbc2b4ac768d307bd32864805d4750b38d2e320b0a5b6019cf89e627"
+      },
+      "native_execution": "PENDING_JETSON",
+      "deployment_quantized_convs": 56,
+      "floating_conv_exceptions": [],
+      "qat_objective": "CE on frozen cached teacher-hard512"
+    },
+    {
+      "seed": 64,
+      "engine": "B0_s64_qat_mixed_repaired",
+      "updates": 640,
+      "drops": {
+        "mIoU": 0.00845666508102072,
+        "equal_event_mIoU": 0.007732565510475076,
+        "water_IoU": 0.015530135083738239
+      },
+      "accuracy_pass": true,
+      "strict_logit_parity_all89": false,
+      "unrounded_structure_all89": true,
+      "onnx_sha256": "24b87ae629af7e2e5fe9bcf6747dc97a0edb9e8e77e7f295faf970374802dd01",
+      "checkpoint": {
+        "path": "/home/schmalstieg/repos/MajorRev/revision_package_20261021/10_b0_mixed_repair_20261022/fit_cpu_s64/checkpoint_selected.pt",
+        "sha256": "0c190092b7c9b6a77d161fead679975830440826818bdf4bbaed68b058bf65fa"
+      },
+      "native_execution": "PENDING_JETSON",
+      "deployment_quantized_convs": 56,
+      "floating_conv_exceptions": [],
+      "qat_objective": "CE on frozen cached teacher-hard512"
+    },
+    {
+      "seed": 91,
+      "engine": "B0_s91_qat_mixed_repaired",
+      "updates": 1664,
+      "drops": {
+        "mIoU": 0.009461538845854545,
+        "equal_event_mIoU": 0.011570277504581727,
+        "water_IoU": 0.016927951587149548
+      },
+      "accuracy_pass": true,
+      "strict_logit_parity_all89": false,
+      "unrounded_structure_all89": true,
+      "onnx_sha256": "929657e6dbee063e11a3a92575aedf0d4eb4fb58cff23a2c637fe73a3372039c",
+      "checkpoint": {
+        "path": "/home/schmalstieg/repos/MajorRev/revision_package_20261021/10_b0_mixed_repair_20261022/parent_match_cpu_s91/checkpoint_selected.pt",
+        "sha256": "ae986d883710f797aafe5b920065131b45c6eba5eef44c88a32729aad219ce65"
+      },
+      "native_execution": "PENDING_JETSON",
+      "deployment_quantized_convs": 56,
+      "floating_conv_exceptions": [],
+      "qat_objective": "KL temperature2 to frozen genuine parent plus0.01 squared logit-margin error; same512 images; masks provide valid support only; no new foundation teacher inference"
+    },
+    {
+      "seed": 107,
+      "engine": "B0_s107_qat_mixed_repaired",
+      "updates": 384,
+      "drops": {
+        "mIoU": -0.0007291095860990637,
+        "equal_event_mIoU": 0.0018723172541308397,
+        "water_IoU": -0.0026851078443222987
+      },
+      "accuracy_pass": true,
+      "strict_logit_parity_all89": false,
+      "unrounded_structure_all89": true,
+      "onnx_sha256": "1267f8515530484c768065b1da88ad9cb2b6d6ce3a1b3d59b09163f44ff7326a",
+      "checkpoint": {
+        "path": "/home/schmalstieg/repos/MajorRev/revision_package_20261021/10_b0_mixed_repair_20261022/fit_cpu_s107/checkpoint_selected.pt",
+        "sha256": "849c244437fcb777606a43385963400c22b6a1e052f3157c66befc5abdaedb40"
+      },
+      "native_execution": "PENDING_JETSON",
+      "deployment_quantized_convs": 56,
+      "floating_conv_exceptions": [],
+      "qat_objective": "CE on frozen cached teacher-hard512"
+    }
+  ],
+  "precision": "Per-seed QDQ Conv count and floating exceptions listed explicitly; one unquantized classifier; all8 attention MatMuls floating; no Conv output QDQ; FP32 attention/normalization/classifier required at native build",
+  "selection": "First source-passing epoch for each recorded fit stage; failed stages retained. No external scores or new foundation-teacher inference; seed91 uses frozen original student logit references on the same512 training images.",
+  "scope": "Actual optimized ORT graph accuracy passes; strict QDQ equivalence and native engine acceptance remain separate"
+}

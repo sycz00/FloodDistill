@@ -128,6 +128,10 @@ def build(args):
                         layer.set_output_type(j, trt.int8)
                 forced.append(dict(name=layer.name, type=kind))
         record['forced_layers'] = forced
+        if args.fp32_islands:
+            import precision_islands
+            island_spec=json.loads(args.fp32_islands.read_text());record['fp32_islands_sha256']=sha(args.fp32_islands)
+            record['fp32_constraints']=precision_islands.constrain(network,config,trt,island_spec)
         engine = builder.build_engine(network, config)
         if engine is None:
             raise RuntimeError('Builder returned no engine; see build log for unsupported precision/operator')
@@ -143,6 +147,9 @@ def build(args):
         record['engine_bytes'] = Path(args.engine).stat().st_size
         record['engine_sha256'] = sha(args.engine)
         record['status'] = 'built'
+        if args.fp32_islands:
+            record['fp32_island_audit']=precision_islands.inspect(layers,island_spec)
+            if not record['fp32_island_audit']['passed']:record['status']='fp32_island_certification_failed'
         if args.mode == 'strict' and not record['precision_audit']['full_integer_tensor_path']:
             record['status'] = 'strict_certification_failed'
         if args.mode == 'strict_compute_only':
@@ -160,6 +167,7 @@ def build(args):
                                        'this is not a fully integer engine')
         record['full_integer_execution'] = 'unverified_kernel_audit_required'
     except Exception as error:
+        record['status'] = 'failed'
         record['reason'] = repr(error)
     record['elapsed_seconds'] = time.monotonic() - start
     save(args.receipt, record)
@@ -306,6 +314,7 @@ def main():
     p.add_argument('--mode', choices=['strict', 'strict_except_resize', 'strict_compute_only',
                                       'no_fp16', 'mixed', 'fp32', 'fp16'], default='strict')
     p.add_argument('--workspace-mib', type=int, default=1024)
+    p.add_argument('--fp32-islands',type=Path)
     p = sub.add_parser('run')
     p.add_argument('--model', type=Path, required=True)
     p.add_argument('--assets', type=Path, required=True)

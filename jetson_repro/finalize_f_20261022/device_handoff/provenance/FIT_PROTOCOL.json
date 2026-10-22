@@ -1,0 +1,70 @@
+{
+  "status": "FROZEN",
+  "authority": "User22October: identify and fix current B0 QAT, retaining mixed attention/classifier precision",
+  "seeds": [
+    42,
+    64,
+    91,
+    107
+  ],
+  "calibration": "all89 S11 validation images, no labels for scale estimation",
+  "conditioning": "existing SmoothQuant alpha0.5 adapted to power-of-two, median-normalized per-conv channel factors; complete89 float parity required",
+  "architecture": "current native Hardswish parents unchanged",
+  "precision": "per-tensor symmetric activation/per-output-channel weightINT8 QDQ; floating classifier, attention and BN; no output QDQ",
+  "qat": {
+    "max_epochs": 10,
+    "max_updates": 1280,
+    "batch": 4,
+    "lr": 1e-05,
+    "weight_decay": 1e-05,
+    "optimizer": "AdamW",
+    "loss": "cross_entropy ignore=-1",
+    "warmup_epochs": 1,
+    "clip": 1,
+    "scheduler": "cosine over10epochs",
+    "training": "same frozen512 selected current-cohort teacher-hard images; no new teacher inference",
+    "seed": 1729
+  },
+  "selection": "source-only; after at least one quantized epoch, stop at first epoch with passing Torch and actual ORT deployment gates, plus all89 unrounded structural checks. Preserve strict logit parity flags at .001",
+  "tolerance": {
+    "mIoU": 0.02,
+    "equal_event_mIoU": 0.02,
+    "water_IoU": 0.02
+  },
+  "code": [
+    {
+      "path": "/home/schmalstieg/repos/MajorRev/revision_package_20261021/10_b0_mixed_repair_20261022/code/fit_cpu.py",
+      "sha256": "01503f9c5615c8fb4c109a2ad99285ed355bd1ae2694e8ff36ec2dd4cad7ebc4"
+    },
+    {
+      "path": "/home/schmalstieg/repos/MajorRev/revision_package_20261021/10_b0_mixed_repair_20261022/code/mixed_smooth.py",
+      "sha256": "6954872b13e9bf43ac6c2272006bb02502359c3bc77767f4bd1ac4c39a939591"
+    },
+    {
+      "path": "/home/schmalstieg/repos/MajorRev/revision_package_20261021/10_b0_mixed_repair_20261022/code/diagnose_unfolded.py",
+      "sha256": "95a1895451c6986e5d8860ac33d90d7d25f8ed0ddf6ccce7fa96954c308f5bc5"
+    },
+    {
+      "path": "/home/schmalstieg/repos/FloodDistill/quantization/qat.py",
+      "sha256": "8bd2dc4bd47a5d3c32fc98bc70cc7d8c29e1ac44483927e6fe12d44ce0da318b"
+    },
+    {
+      "path": "/home/schmalstieg/repos/FloodDistill/quantization/manual.py",
+      "sha256": "5d107a877cadaf18269ac73b7962b71290e19dce601585f30b6d0cb756e86703"
+    },
+    {
+      "path": "/home/schmalstieg/repos/FloodDistill/quantization/jetson_integer.py",
+      "sha256": "d583ad7330f7b54782c387b5198afebd553f4d01838d4e98044812b52a647bab"
+    },
+    {
+      "path": "/home/schmalstieg/repos/FloodDistill/models/compression_quant.py",
+      "sha256": "de8615e198841632708a3d5be5c1ea68590566d5bc9d413fa1e165151cc0fb7a"
+    },
+    {
+      "path": "/home/schmalstieg/repos/FloodDistill/experiments/revision/controlled512_v2_20261016T213414Z/revision_finalize_20261019T141008Z/code/experiment_quant.py",
+      "sha256": "f14234cf3386a3d9b6cebf7dbda29a7625d9b4ee580fcf9b8fe2b1fc8c6eedfe"
+    }
+  ],
+  "device": "CPU2threads; GPU float parity diagnostic failed .001 and is not used for fitting",
+  "external_evaluation": false
+}

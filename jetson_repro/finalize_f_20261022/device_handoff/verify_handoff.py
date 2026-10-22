@@ -9,6 +9,7 @@ import onnx
 import collect_native
 from validate_results import validate_rows,benchmark_receipts_valid
 import prepare_inputs
+import precision_islands
 
 def read(p):return json.loads(Path(p).read_text())
 def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
@@ -25,14 +26,73 @@ def main():
             assert sha(ROOT/e['io'])==e['io_sha256'];o=read(ROOT/e['io']);assert o['host_input_scale']>0 and o['output_scale']>0 and o['host_input_zero_point']==o['output_zero_point']==0
         else:assert g.graph.input[0].type.tensor_type.elem_type==onnx.TensorProto.FLOAT
         if e['precision'] in ('fp32','fp16'):assert not any(n.op_type in ('QuantizeLinear','DequantizeLinear') for n in g.graph.node)
-        if e['method']=='QAT':assert e['strict_logit_parity_all89'] is False
-        if e['architecture']=='B0' and e['method']!='FLOAT':assert e['source_accuracy_pass'] is False
+        if e['method']=='QAT':assert isinstance(e['strict_logit_parity_all89'],bool) and e['unrounded_structure_all89']
+        if e['architecture']=='B0':
+            spec=read(ROOT/e['fp32_islands']);assert sha(ROOT/e['fp32_islands'])==e['fp32_islands_sha256']
+            assert spec==precision_islands.from_onnx(path)
+            assert len(spec['required_compute_nodes'])==13 and spec['attention_matmuls']==8 and spec['normalizers']==4
+            if e['method']=='PTQ':assert e['source_accuracy_pass'] is False
+            if e['method']=='QAT':
+                assert e['source_accuracy_pass'] is True and e['qat_series']=='mixed_smooth_repair'
+                gate=read(ROOT/e['source_gate']);assert gate['accuracy_pass'] and all(v<=.02 for v in gate['drops'].values())
+                assert gate['onnx']['sha256']==e['onnx_sha256']
+                summaries={}
+                for key in ('evaluation','baseline'):
+                    rows=[dict(name=r['file'],event=r['event'],counts_tn_fp_fn_tp=np.asarray(r['confusion']).ravel().tolist()) for r in gate[key]['rows']]
+                    validate_rows(ROOT,'s11val',rows,imported=True);summary=collect_native.summarize(rows)
+                    values=dict(mIoU=summary['pooled']['miou'],equal_event_mIoU=summary['equal_event']['miou'],water_IoU=summary['pooled']['water_iou'])
+                    assert all(abs(values[k]-gate[key][k])<1e-12 for k in values);summaries[key]=values
+                assert all(abs(summaries['baseline'][k]-summaries['evaluation'][k]-v)<1e-12 for k,v in gate['drops'].items())
+
+                producers={t:n for n in g.graph.node for t in n.output};head=next(n for n in g.graph.node if n.name==spec['classifier'])
+                assert producers.get(head.input[0]) is None or producers[head.input[0]].op_type!='DequantizeLinear'
+                assert head.input[1] in {i.name for i in g.graph.initializer}
+
         ref=read(ROOT/e['source_reference']);assert len(ref['rows'])==89
         if e.get('reuse'):
             reuse=e['reuse'];assert sha(ROOT/reuse['engine'])==reuse['engine_sha256'];b=read(ROOT/reuse['build_receipt']);assert b['engine_sha256']==reuse['engine_sha256'] and b['model_sha256']==e['onnx_sha256']
             if e['precision']=='pure':assert b['precision_audit']['full_integer_tensor_path']
             for ds,spec in reuse['evaluations'].items():
                 d=read(ROOT/spec['path']);assert (d.get('engine_sha256') or d.get('model_sha256'))==reuse['engine_sha256']
+    # Native certificates must reject FP16 normalization, missing classifiers and stale policies.
+    sample=next(e for e in models if e['architecture']=='B0' and e['method']=='QAT');spec=read(ROOT/sample['fp32_islands'])
+    layers={'Layers':[{'Name':n,'Outputs':[{'Name':n+':0','Format/Datatype':'Row major linear FP32'}]} for n in spec['required_compute_nodes']]}
+    audit=precision_islands.inspect(layers,spec);assert audit['passed']
+    assert precision_islands.contains_node('PWN(/block/MatMul, /block/Add)', '/block/MatMul')
+    assert not precision_islands.contains_node('/block/MatMul_1', '/block/MatMul')
+    from types import SimpleNamespace
+    class Layer:
+        def __init__(self,name):self.name=name;self.type='LayerType.MATRIX_MULTIPLY';self.num_outputs=1;self.tensor=SimpleNamespace(name=name+':0',is_shape_tensor=False,dtype='float32');self.types={}
+        def get_output(self,index):return self.tensor
+        def set_output_type(self,index,value):self.types[index]=value
+    native_layers=[Layer(n) for n in spec['node_names']]
+    network=SimpleNamespace(num_layers=len(native_layers),get_layer=lambda i:native_layers[i])
+    flags=[];config=SimpleNamespace(set_flag=flags.append);trt=SimpleNamespace(float32='float32',int32='int32',bool='bool',BuilderFlag=SimpleNamespace(OBEY_PRECISION_CONSTRAINTS='OBEY'))
+    precision_islands.constrain(network,config,trt,spec)
+    assert flags==['OBEY'] and all(r.precision=='float32' and r.types[0]=='float32' for r in native_layers)
+    # Embedded negative PTQ controls contain Q/DQ nodes: never demand FLOAT Q outputs.
+    quantizer=Layer('/diagnostic/QuantizeLinear');quantizer.type='LayerType.QUANTIZE';quantizer.tensor.dtype='int8'
+    dequantizer=Layer('/diagnostic/DequantizeLinear');dequantizer.type='LayerType.DEQUANTIZE'
+    test_spec=copy.deepcopy(spec);test_spec['node_names']+=['/diagnostic/QuantizeLinear','/diagnostic/DequantizeLinear']
+    test_layers=native_layers+[quantizer,dequantizer];test_network=SimpleNamespace(num_layers=len(test_layers),get_layer=lambda i:test_layers[i])
+    precision_islands.constrain(test_network,config,trt,test_spec)
+    assert not quantizer.types and not dequantizer.types and not hasattr(quantizer,'precision') and not hasattr(dequantizer,'precision')
+
+    absent=SimpleNamespace(num_layers=0,get_layer=lambda i:None)
+    try:precision_islands.constrain(absent,config,trt,spec)
+    except ValueError:pass
+    else:raise AssertionError('Missing FP32 compute constraints admitted')
+
+    bad=copy.deepcopy(layers);bad['Layers'][0]['Outputs'][0]['Format/Datatype']='Row major linear FP16'
+    assert not precision_islands.inspect(bad,spec)['passed']
+    bad=copy.deepcopy(layers);bad['Layers']=[r for r in bad['Layers'] if r['Name']!=spec['classifier']]
+    assert not precision_islands.inspect(bad,spec)['passed']
+    certificate=dict(status='built',model_sha256=sample['onnx_sha256'],fp32_islands_sha256=sample['fp32_islands_sha256'],fp32_island_audit=audit,fp32_constraints=dict(required=spec['required_compute_nodes']))
+    assert precision_islands.validate_certificate(certificate,sample,ROOT,layers)
+    for bad in (dict(certificate,fp32_islands_sha256='0'*64),dict(certificate,fp32_island_audit={}),dict(certificate,status='fp32_island_certification_failed')):
+        try:precision_islands.validate_certificate(bad,sample,ROOT,layers)
+        except ValueError:pass
+        else:raise AssertionError('Invalid B0 native precision certificate admitted')
     parity=list((ROOT/'provenance/float_parity').glob('*.json'));assert len(parity)==12
     for p in parity:
         d=read(p);assert d['atol']==d['rtol']==.001 and len(d['semantic'])==len(d['optimized'])==89 and all(r['strict_logit_parity_pass'] for r in d['semantic']+d['optimized'])
@@ -74,6 +134,6 @@ def main():
     assert not benchmark_receipts_valid(profile,dict(steady,steady_samples=0),state)
     assert not benchmark_receipts_valid(profile,dict(steady,steady_energy_mJ_per_image=None),state)
     assert not benchmark_receipts_valid(profile,dict(steady,steady_energy_mJ_per_image=1),state)
-    report=dict(status='PASS_OFFLINE_HANDOFF',engine_entries=51,primary_slots=48,unavailable_b0_pure=4,reused_native_engines=16,new_build_attempts=35,full_source_float_parity_records=12,old_native_accuracy_rows_reproduced=80,wrong_asset_hash_and_overwrite_guard='PASS',changed_cached_counts_guard='PASS',failed_or_incomplete_benchmark_guard='PASS',missing_native_work_guard='PASS',python38_syntax_and_cli='PASS',native_execution='PENDING_JETSON',source_input_preflight=read(ROOT/'provenance/HANDOFF_INPUT_PARITY.json')['status'])
+    report=dict(status='PASS_OFFLINE_HANDOFF',engine_entries=51,primary_slots=48,unavailable_b0_pure=4,reused_native_engines=16,new_build_attempts=35,full_source_float_parity_records=12,old_native_accuracy_rows_reproduced=80,wrong_asset_hash_and_overwrite_guard='PASS',changed_cached_counts_guard='PASS',failed_or_incomplete_benchmark_guard='PASS',missing_native_work_guard='PASS',python38_syntax_and_cli='PASS',native_execution='PENDING_JETSON',source_input_preflight=read(ROOT/'provenance/HANDOFF_INPUT_PARITY.json')['status'],b0_fp32_island_negative_guards='PASS',b0_repaired_source_candidates=4,quantizer_structural_precision_guard='PASS')
     (ROOT/'provenance/HANDOFF_VALIDATION.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps(report,indent=2))
 if __name__=='__main__':main()

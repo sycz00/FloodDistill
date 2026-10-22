@@ -1,0 +1,161 @@
+[
+  {
+    "policy": "decoder_projection",
+    "drops": {
+      "mIoU": 0.014443293880281649,
+      "equal_event_mIoU": 0.009308505505597142,
+      "water_IoU": 0.025312046712192893
+    },
+    "torch_accuracy_pass": false,
+    "floating_conv_exceptions": [
+      "model.head.output_ops.0.op_list.0.conv.conv"
+    ]
+  },
+  {
+    "policy": "stem",
+    "drops": {
+      "mIoU": 0.014794470130803594,
+      "equal_event_mIoU": 0.012431986137433237,
+      "water_IoU": 0.02695350293873844
+    },
+    "torch_accuracy_pass": false,
+    "floating_conv_exceptions": [
+      "model.backbone.input_stem.op_list.0.conv.conv",
+      "model.backbone.input_stem.op_list.1.main.depth_conv.conv.conv",
+      "model.backbone.input_stem.op_list.1.main.point_conv.conv.conv"
+    ]
+  },
+  {
+    "policy": "decoder",
+    "drops": {
+      "mIoU": 0.01394270632819461,
+      "equal_event_mIoU": 0.009001429760032487,
+      "water_IoU": 0.024400458488270993
+    },
+    "torch_accuracy_pass": false,
+    "floating_conv_exceptions": [
+      "model.head.input_ops.0.op_list.0.conv.conv",
+      "model.head.input_ops.1.op_list.0.conv.conv",
+      "model.head.input_ops.2.conv.conv",
+      "model.head.middle.op_list.0.main.inverted_conv.conv.conv",
+      "model.head.middle.op_list.0.main.depth_conv.conv.conv",
+      "model.head.middle.op_list.0.main.point_conv.conv.conv",
+      "model.head.output_ops.0.op_list.0.conv.conv"
+    ]
+  },
+  {
+    "policy": "qkv",
+    "drops": {
+      "mIoU": 0.014401631055297792,
+      "equal_event_mIoU": 0.009829002612243287,
+      "water_IoU": 0.025296280348225397
+    },
+    "torch_accuracy_pass": false,
+    "floating_conv_exceptions": [
+      "model.backbone.stages.2.op_list.1.context_module.main.qkv.conv.conv",
+      "model.backbone.stages.2.op_list.2.context_module.main.qkv.conv.conv",
+      "model.backbone.stages.3.op_list.1.context_module.main.qkv.conv.conv",
+      "model.backbone.stages.3.op_list.2.context_module.main.qkv.conv.conv"
+    ]
+  },
+  {
+    "policy": "attention_projections",
+    "drops": {
+      "mIoU": 0.014753223210492439,
+      "equal_event_mIoU": 0.0097000479808379,
+      "water_IoU": 0.025882245661405512
+    },
+    "torch_accuracy_pass": false,
+    "floating_conv_exceptions": [
+      "model.backbone.stages.2.op_list.1.context_module.main.proj.conv.conv",
+      "model.backbone.stages.2.op_list.2.context_module.main.proj.conv.conv",
+      "model.backbone.stages.3.op_list.1.context_module.main.proj.conv.conv",
+      "model.backbone.stages.3.op_list.2.context_module.main.proj.conv.conv"
+    ]
+  },
+  {
+    "policy": "stem_decoder",
+    "drops": {
+      "mIoU": 0.014403809779890642,
+      "equal_event_mIoU": 0.011953556634871965,
+      "water_IoU": 0.026225598820007412
+    },
+    "torch_accuracy_pass": false,
+    "floating_conv_exceptions": [
+      "model.backbone.input_stem.op_list.0.conv.conv",
+      "model.backbone.input_stem.op_list.1.main.depth_conv.conv.conv",
+      "model.backbone.input_stem.op_list.1.main.point_conv.conv.conv",
+      "model.head.input_ops.0.op_list.0.conv.conv",
+      "model.head.input_ops.1.op_list.0.conv.conv",
+      "model.head.input_ops.2.conv.conv",
+      "model.head.middle.op_list.0.main.inverted_conv.conv.conv",
+      "model.head.middle.op_list.0.main.depth_conv.conv.conv",
+      "model.head.middle.op_list.0.main.point_conv.conv.conv",
+      "model.head.output_ops.0.op_list.0.conv.conv"
+    ]
+  },
+  {
+    "policy": "all_attention_convs",
+    "drops": {
+      "mIoU": 0.014569209962201013,
+      "equal_event_mIoU": 0.009726356565899152,
+      "water_IoU": 0.025579932030264096
+    },
+    "torch_accuracy_pass": false,
+    "floating_conv_exceptions": [
+      "model.backbone.stages.2.op_list.1.context_module.main.qkv.conv.conv",
+      "model.backbone.stages.2.op_list.1.context_module.main.aggreg.0.0.conv",
+      "model.backbone.stages.2.op_list.1.context_module.main.aggreg.0.1.conv",
+      "model.backbone.stages.2.op_list.1.context_module.main.proj.conv.conv",
+      "model.backbone.stages.2.op_list.2.context_module.main.qkv.conv.conv",
+      "model.backbone.stages.2.op_list.2.context_module.main.aggreg.0.0.conv",
+      "model.backbone.stages.2.op_list.2.context_module.main.aggreg.0.1.conv",
+      "model.backbone.stages.2.op_list.2.context_module.main.proj.conv.conv",
+      "model.backbone.stages.3.op_list.1.context_module.main.qkv.conv.conv",
+      "model.backbone.stages.3.op_list.1.context_module.main.aggreg.0.0.conv",
+      "model.backbone.stages.3.op_list.1.context_module.main.aggreg.0.1.conv",
+      "model.backbone.stages.3.op_list.1.context_module.main.proj.conv.conv",
+      "model.backbone.stages.3.op_list.2.context_module.main.qkv.conv.conv",
+      "model.backbone.stages.3.op_list.2.context_module.main.aggreg.0.0.conv",
+      "model.backbone.stages.3.op_list.2.context_module.main.aggreg.0.1.conv",
+      "model.backbone.stages.3.op_list.2.context_module.main.proj.conv.conv"
+    ]
+  },
+  {
+    "policy": "stem_decoder_attention",
+    "drops": {
+      "mIoU": 0.014749066280264511,
+      "equal_event_mIoU": 0.012327345062527306,
+      "water_IoU": 0.02682463998928064
+    },
+    "torch_accuracy_pass": false,
+    "floating_conv_exceptions": [
+      "model.backbone.input_stem.op_list.0.conv.conv",
+      "model.backbone.input_stem.op_list.1.main.depth_conv.conv.conv",
+      "model.backbone.input_stem.op_list.1.main.point_conv.conv.conv",
+      "model.backbone.stages.2.op_list.1.context_module.main.qkv.conv.conv",
+      "model.backbone.stages.2.op_list.1.context_module.main.aggreg.0.0.conv",
+      "model.backbone.stages.2.op_list.1.context_module.main.aggreg.0.1.conv",
+      "model.backbone.stages.2.op_list.1.context_module.main.proj.conv.conv",
+      "model.backbone.stages.2.op_list.2.context_module.main.qkv.conv.conv",
+      "model.backbone.stages.2.op_list.2.context_module.main.aggreg.0.0.conv",
+      "model.backbone.stages.2.op_list.2.context_module.main.aggreg.0.1.conv",
+      "model.backbone.stages.2.op_list.2.context_module.main.proj.conv.conv",
+      "model.backbone.stages.3.op_list.1.context_module.main.qkv.conv.conv",
+      "model.backbone.stages.3.op_list.1.context_module.main.aggreg.0.0.conv",
+      "model.backbone.stages.3.op_list.1.context_module.main.aggreg.0.1.conv",
+      "model.backbone.stages.3.op_list.1.context_module.main.proj.conv.conv",
+      "model.backbone.stages.3.op_list.2.context_module.main.qkv.conv.conv",
+      "model.backbone.stages.3.op_list.2.context_module.main.aggreg.0.0.conv",
+      "model.backbone.stages.3.op_list.2.context_module.main.aggreg.0.1.conv",
+      "model.backbone.stages.3.op_list.2.context_module.main.proj.conv.conv",
+      "model.head.input_ops.0.op_list.0.conv.conv",
+      "model.head.input_ops.1.op_list.0.conv.conv",
+      "model.head.input_ops.2.conv.conv",
+      "model.head.middle.op_list.0.main.inverted_conv.conv.conv",
+      "model.head.middle.op_list.0.main.depth_conv.conv.conv",
+      "model.head.middle.op_list.0.main.point_conv.conv.conv",
+      "model.head.output_ops.0.op_list.0.conv.conv"
+    ]
+  }
+]
