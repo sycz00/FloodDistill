@@ -162,3 +162,8 @@ Return the entire `results/<attempt>/` directory and all controller/resume logs,
 Check all 48 primary slots and all 51 declared attempts. Enumerate every failed, missing or unavailable model/seed/precision/dataset/benchmark. `ALL_SUPPORTED_CELLS_OBSERVED` describes measured coverage of the 44 supplied primary cells, not accuracy/export qualification. Report observation, accuracy, strict export parity and integer-format certification separately. Report whether each repaired B0 candidate passes native source accuracy and its required FP32 island audit. Keep its strict export-equivalence failure visible even if native accuracy passes. Four unavailable pure B0 slots remain; do not claim 48 successful cells or native recovery before measurement.
 
 Archive the returned results/logs outside the input folder or in ignored `results_logs/`, add a SHA256, and provide its path plus a short completed/failed/unavailable summary. Do not push, edit immutable manifests or overwrite old results.
+
+
+## Micro pure-INT8 repair follow-up
+
+A later device report flagged micro107 floating fallback/all-background output. Preserve the original 48-slot attempt and failures. After its heavy child has drained, execute the separate [four-seed micro repair prompt](../jetson_repro/finalize_f_20261022/micro_int8_repair_20261022/JETSON_PROMPT.md). It contains four aligned/densified micro candidates plus their four exact FP32 parents. Use a new repair attempt, its independent controller/certificates/source gates and its four-slot addendum collector. Do not edit or resume an old attempt with new models. Native recovery remains pending until the Jetson measures it.

@@ -1,0 +1,8 @@
+{
+  "scope": "MICRO_PURE_REPAIR_ADDENDUM_ONLY",
+  "parent_commit": "2f6640ce134dc2bbe4a8de4d3591b1741037a193",
+  "transfer_archive_sha256": "37acef126307b7bec899728b3d95e609cfa68d5514a9cd8d892deb40e95fca5c",
+  "archive_prefix": "8_jetson_export_20261022",
+  "input_policy": "All353 arrays remain external to this compact repair. Reuse existing prepared assets only by exact ASSET_SHA256SUMS matches.",
+  "native_execution": "PENDING_JETSON"
+}

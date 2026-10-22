@@ -1,0 +1,61 @@
+{
+  "status": "PASS_OFFLINE_MICRO_REPAIR",
+  "repair_candidates": 4,
+  "exact_float_baselines": 4,
+  "source_images_each": 89,
+  "results": [
+    {
+      "seed": 107,
+      "drops": {
+        "mIoU": 0.009228003287797715,
+        "equal_event_mIoU": 0.004719748277461355,
+        "water_IoU": 0.016216493008810895
+      },
+      "unrounded_parity": true,
+      "optimized_exact_all89": false,
+      "semantic_exact_all89": false
+    },
+    {
+      "seed": 42,
+      "drops": {
+        "mIoU": 0.005741392973750203,
+        "equal_event_mIoU": 0.0024780434390766493,
+        "water_IoU": 0.010409510947472445
+      },
+      "unrounded_parity": true,
+      "optimized_exact_all89": true,
+      "semantic_exact_all89": true
+    },
+    {
+      "seed": 64,
+      "drops": {
+        "mIoU": -0.0009555020875297027,
+        "equal_event_mIoU": -0.0017666638772140253,
+        "water_IoU": -0.001925401805411897
+      },
+      "unrounded_parity": true,
+      "optimized_exact_all89": false,
+      "semantic_exact_all89": false
+    },
+    {
+      "seed": 91,
+      "drops": {
+        "mIoU": 0.002734273940474319,
+        "equal_event_mIoU": 0.002919907678274325,
+        "water_IoU": 0.0047780240396709805
+      },
+      "unrounded_parity": true,
+      "optimized_exact_all89": true,
+      "semantic_exact_all89": true
+    }
+  ],
+  "collapsed_water_guard": "PASS",
+  "each_metric_0p02_guard": "PASS",
+  "floating_or_unknown_inspector_guard": "PASS",
+  "model_identity_guard": "PASS",
+  "packed_or_float_binding_guard": "PASS",
+  "missing_native_results_guard": "PASS",
+  "evaluator_stops_before_external_guard": "PASS",
+  "python38_syntax_and_cli": "PASS",
+  "native_execution": "PENDING_JETSON"
+}
