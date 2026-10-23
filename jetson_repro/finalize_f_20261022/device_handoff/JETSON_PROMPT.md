@@ -1,6 +1,6 @@
 # 23-October received-failure follow-up
 
-For the current Jetson window, use [JETSON_WINDOW_PROMPT_20261023.md](JETSON_WINDOW_PROMPT_20261023.md). This version integrates the four aligned16 micro pure candidates, the audited B0 mixed PREFER build policy, and exact received STURM input hashes. Preserve old failures and obtain a fresh handoff directory. Use runtime/chain_evaluations.py to wait for existing evaluations and reuse compatible completed work. For the compact follow-up archive, first link all 353 prepared arrays with prepare_inputs.py --bundle-root OLD_HANDOFF --link, then check SHA256SUMS; images are intentionally omitted from that compact transport.
+For the current Jetson window, use [JETSON_WINDOW_PROMPT_20261023.md](JETSON_WINDOW_PROMPT_20261023.md). This version integrates the four aligned16 micro pure candidates, the audited B0 mixed PREFER build policy, and STURM numerical preprocessing tolerance. Preserve old failures and obtain a fresh handoff directory. Use runtime/chain_evaluations.py to wait for existing evaluations and reuse compatible completed work. For the compact follow-up archive, first link all 353 prepared arrays with prepare_inputs.py --bundle-root OLD_HANDOFF --link, then check SHA256SUMS; images are intentionally omitted from that compact transport.
 
 # Jetson task: finish the current 512-pixel model matrix
 
@@ -66,7 +66,7 @@ If the complete repaired handoff archive already supplied all of `assets/`, run 
 
 `TRANSFER_BUNDLE_ROOT` means the directory containing `assets/`, not `assets/` itself. `--link` may be added to Route A to reuse verified arrays without copying; that source directory must then remain in place. The pinned transfer-archive SHA256 is `37acef126307b7bec899728b3d95e609cfa68d5514a9cd8d892deb40e95fca5c`. The original-archive importer accepts only that pinned archive; Route C admits individual source files solely by their frozen hashes. Do not recompress arrays, regenerate labels or bypass a hash mismatch. If no route supplies matching inputs, report `INPUTS_MISSING` with the missing paths or mismatching hashes; finish the checkout/environment checks and do not claim the runs started.
 
-Locate the complete existing raw datasets. Defaults are `$HOME/data/STURM-Flood/Dataset` and `$HOME/data/WorldFloodsv2`; pass their actual roots if different. No workstation absolute path is required. The controller verifies exact input/mask hashes on all five datasets before model work. For STURM it admits only canonical or the supplied exact per-tile Jetson hash, labels actual input provenance, and retains the unchanged mask hashes. The 97-event panel is outside this task.
+Locate the complete existing raw datasets. Defaults are `$HOME/data/STURM-Flood/Dataset` and `$HOME/data/WorldFloodsv2`; pass their actual roots if different. No workstation absolute path is required. The controller checks every dataset before model work. STURM image hash equality is not required: use absolute tolerance 1e-4 in normalized inputs against a float64 bilinear reference, recording the maximum error and actual hash. Keep STURM masks, event IDs, image count, band order, geometry and normalization fixed. Other dataset checks stay as specified. The 97-event panel is outside this task.
 
 ## 2. Launch one durable finite run
 

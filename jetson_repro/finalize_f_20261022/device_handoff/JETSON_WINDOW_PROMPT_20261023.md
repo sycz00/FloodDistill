@@ -1,6 +1,6 @@
 Use the new 23-October `device_handoff` in a fresh directory beside the old checkout. Preserve local commits, old attempts and failures. Keep the existing flood Python/TensorRT8.4 environment, clocks and power mode.
 
-Fixes: B0 mixed uses PREFER with mandatory FP32 attention/classifier audits; four aligned16 micro pure candidates replace the failed originals; STURM admits only canonical or exact received device hashes, with unchanged masks. Native recovery still needs measurement.
+Fixes: B0 mixed uses PREFER with mandatory FP32 attention/classifier audits; four aligned16 micro pure candidates replace the failed originals; STURM image hashes are informational: accept OpenCV-version upsampling differences within absolute 1e-4 in normalized inputs against the float64 bilinear reference; keep mask checks. Native recovery still needs measurement.
 
 Find the current full-matrix `results/attempt` and resolve the paths below; do not use a smoke folder. Link its exact 353 prepared arrays, verify, then queue:
 

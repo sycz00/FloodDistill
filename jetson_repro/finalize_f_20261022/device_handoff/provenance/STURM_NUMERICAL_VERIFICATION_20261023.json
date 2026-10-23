@@ -1,0 +1,12 @@
+{
+  "status": "PASS_FULL_STURM_NUMERICAL_INPUT_CHECK",
+  "images": 2675,
+  "events": 29,
+  "opencv": "4.11.0",
+  "normalized_absolute_tolerance": 0.0001,
+  "max_observed_abs_error": 1.7924177253547668e-06,
+  "image_hash_equality_required": false,
+  "mask_hashes": "ALL2675_MATCH",
+  "source": "workstation raw STURM; Jetson still verifies its own preprocessing",
+  "seconds": 140.64564561843872
+}

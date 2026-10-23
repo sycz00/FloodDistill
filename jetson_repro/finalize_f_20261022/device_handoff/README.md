@@ -1,6 +1,6 @@
 # 23-October continuation
 
-Use [the brief Jetson window prompt](JETSON_WINDOW_PROMPT_20261023.md) for the received build/input failures. It chains the new version after old workers and reuses only compatible complete receipts. [The audit](provenance/DEVICE_FAILURE_REPAIR_20261023.md) records actual received evidence and native work still pending. Do not update active directories in place. The compact Jetson_failure_followup_20261023.tar.gz omits all 353 arrays; import/link them from the prepared old handoff before checking SHA256SUMS. All original 48 slots remain.
+Use [the brief Jetson window prompt](JETSON_WINDOW_PROMPT_20261023.md) for the received build/input failures. It chains the new version after old workers and reuses only compatible complete receipts. [The audit](provenance/DEVICE_FAILURE_REPAIR_20261023.md) records actual received evidence and native work still pending. Do not update active directories in place. The compact Jetson_opencv_tolerance_20261023.tar.gz omits all 353 arrays; import/link them from the prepared old handoff before checking SHA256SUMS. All original 48 slots remain.
 
 # Current Jetson handoff for research
 

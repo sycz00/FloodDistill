@@ -36,8 +36,9 @@ def external(ds,sturm_root,wf_root):
         if mask.ndim==3 and mask.shape[0]==1:mask=mask[0]
         assert np.isin(mask,[-1,0,1]).all();mask=mask.astype(np.int8)
         rec=by[name];assert image.shape==(6,512,512) and mask.shape==(512,512)
-        from input_profiles import identify
-        rec=identify(ROOT,ds,rec,ah(image))
+        from input_profiles import identify,numerical_sturm,sturm_reference
+        if ds=='sturm512':rec=numerical_sturm(rec,image,sturm_reference(Path(sturm_root)/'Sentinel2/S2'/name))
+        else:rec=identify(ROOT,ds,rec,ah(image))
         assert ah(mask)==rec['mask_sha256'],('mask',ds,name,ah(mask),rec['mask_sha256'])
         seen.add(name);yield image,mask,rec
     assert seen==set(by),('incomplete inventory',ds,len(seen),len(by))

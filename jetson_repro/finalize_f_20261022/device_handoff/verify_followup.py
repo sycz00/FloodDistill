@@ -14,7 +14,7 @@ import numpy as np
 
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT / 'runtime'))
-from input_profiles import device_hashes, identify, validate_input, JETSON
+from input_profiles import identify, validate_input, numerical_sturm, bilinear64, NUMERICAL
 from repair_policy import source_gate
 from evaluate_native import summarize
 import chain_evaluations as chain
@@ -33,21 +33,33 @@ def rejected(fn, *args):
 
 
 def check_profiles():
+    import cv2
+    from data.sen1floods11_nodep import NORM_MEAN, NORM_STD
     inventory = [json.loads(line) for line in (ROOT / 'inventories/sturm512.jsonl').read_text().splitlines()]
-    hashes = device_hashes(str(ROOT))
-    assert len(hashes) == 2675
-    for rec in inventory:
-        canonical = identify(ROOT, 'sturm512', rec, rec['input_sha256'])
-        device = identify(ROOT, 'sturm512', rec, hashes[rec['name']])
-        assert canonical['input_profile'] == 'canonical_workstation'
-        assert device['input_profile'] == JETSON and device['canonical_input_sha256'] == rec['input_sha256']
-        validate_input(ROOT, 'sturm512', device, rec)
+    assert len(inventory) == 2675
+    raw = np.random.default_rng(1729).uniform(0, 1, (6, 128, 128)).astype(np.float32)
+    mean = np.asarray(NORM_MEAN, np.float32)[:, None, None]
+    std = np.asarray(NORM_STD, np.float32)[:, None, None]
+    reference = (bilinear64(raw) - mean) / std
+    actual = cv2.resize(raw.transpose(1,2,0), (512,512)).transpose(2,0,1)
+    actual = (actual - mean) / std
     rec = inventory[0]
-    row = identify(ROOT, 'sturm512', rec, hashes[rec['name']])
-    rejected(identify, ROOT, 'sturm512', rec, '0' * 64)
-    rejected(identify, ROOT, 'wf', rec, hashes[rec['name']])
+    row = numerical_sturm(rec, actual, reference)
+    assert row['input_profile'] == NUMERICAL
+    validate_input(ROOT, 'sturm512', row, rec)
+    # A new OpenCV hash is admitted by numerical agreement, not a hash allowlist.
+    changed = numerical_sturm(rec, actual + np.float32(1e-5), reference)
+    assert changed['input_sha256'] != row['input_sha256']
+    validate_input(ROOT, 'sturm512', changed, rec)
+    rejected(numerical_sturm, rec, actual + .001, reference)
+    rejected(numerical_sturm, rec, actual[::-1], reference)
+    rejected(validate_input, ROOT, 'sturm512', dict(row, input_max_abs_error=.001), rec)
     rejected(validate_input, ROOT, 'sturm512', dict(row, mask_sha256='0' * 64), rec)
-    rejected(validate_input, ROOT, 'sturm512', dict(row, input_profile='unlabelled'), rec)
+    rejected(identify, ROOT, 'wf', rec, '0' * 64)
+    for record in inventory:
+        # Earlier completed measurements keep their old preprocessing receipts;
+        # image hash equality is no longer an admission criterion.
+        validate_input(ROOT, 'sturm512', dict(record, input_sha256='f' * 64), record)
 
 
 def check_received_failures():
@@ -248,7 +260,7 @@ def main():
     check_received_failures()
     check_chain(manifest)
     source = evaluate_sources(manifest, args.input_root.resolve()) if args.input_root else 'NOT_RUN_NO_INPUT_ROOT'
-    proof = dict(status='PASS_OFFLINE_DEVICE_FOLLOWUP', exact_sturm_device_hashes=2675,
+    proof = dict(status='PASS_OFFLINE_DEVICE_FOLLOWUP', sturm_inventory=2675,sturm_normalized_absolute_tolerance=1e-4,image_hash_equality_required=False,
                  mask_and_unknown_input_rejection='PASS', changed_recipe_not_reused='PASS',
                  compatible_complete_reuse='PASS_OFFLINE_FIXTURE', prior_failure_preserved='PASS',
                  incomplete_not_promoted='PASS', predecessor_wait_and_resume_exclusion='PASS_REAL_PROCESS_FIXTURE',

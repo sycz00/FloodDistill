@@ -1873,7 +1873,7 @@
     "date": "2026-10-23",
     "b0_mixed": "PREFER plus mandatory unchanged FP32 island audit",
     "micro_pure": "Four existing aligned16 zero-embedding candidates; original failures retained",
-    "sturm_input_policy": "Exact canonical or received Jetson hash per tile; no floating tolerance bypass",
+    "sturm_input_policy": "Image hashes informational; accept normalized max absolute error <=1e-4 against float64 bilinear reference; masks/counts/events unchanged",
     "chain": "Unchanged complete results may be copied from a drained predecessor after identity checks; changed recipes are new attempts"
   }
 }

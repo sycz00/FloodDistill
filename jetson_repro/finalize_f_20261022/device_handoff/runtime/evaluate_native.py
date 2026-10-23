@@ -70,7 +70,7 @@ def main():
             pred=z[0].argmax(0);valid=(mask>=0)&(mask<2)
             c=np.bincount((2*mask[valid].astype(np.int64)+pred[valid]).ravel(),minlength=4)
             assert int(c.sum())==rec['valid_pixels'] and int(c[2]+c[3])==rec['water_pixels']
-            rows.append(dict(name=rec['name'],event=rec['event'],map_id=rec['map_id'],input_sha256=rec['input_sha256'],mask_sha256=rec['mask_sha256'],counts_tn_fp_fn_tp=c.tolist(),**{k:rec[k] for k in ('input_profile','canonical_input_sha256') if k in rec}))
+            rows.append(dict(name=rec['name'],event=rec['event'],map_id=rec['map_id'],input_sha256=rec['input_sha256'],mask_sha256=rec['mask_sha256'],counts_tn_fp_fn_tp=c.tolist(),**{k:rec[k] for k in ('input_profile','canonical_input_sha256','input_max_abs_error','input_atol') if k in rec}))
         validate_rows(ROOT,ds,rows)
         datasets[ds]=summarize(rows);save(a.out/(ds+'.json'),datasets[ds]);check_source_wiring(ds,datasets[ds]);print(ds,len(rows),'complete',flush=True)
     dry=[]

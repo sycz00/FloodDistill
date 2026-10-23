@@ -1,3 +1,7 @@
+## Superseded STURM admission rule
+
+The user subsequently authorised OpenCV-version tolerance. Current STURM checks do not require image hash equality or a device hash allowlist: normalized inputs must be within absolute1e-4 of a float64 bilinear reference. Actual hashes and errors are recorded; masks and support counts remain unchanged. The older exact-hash discussion below records the earlier policy only.
+
 # Received failure audit and repair — 23 October 2026
 
 Evidence: MajorRev/jetson/workstation_failure_logs_20261022.tar.gz, retained unmodified under the revision package's 14_jetson_failure_repair_20261023/received/. Its archive hash is recorded in SOURCE_PACKAGE.json. These are received device results, not new native execution on this workstation.
