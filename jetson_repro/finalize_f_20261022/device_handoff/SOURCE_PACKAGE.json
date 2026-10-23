@@ -7,7 +7,7 @@
   "repository_path": "jetson_repro/finalize_f_20261022/device_handoff",
   "committed_scope": "models, IO, full source gates/references, inventories, exact native R4 engines/build receipts/raw accuracy, runtime and prompts,159 exact prepared dry tiles with validity masks",
   "external_inputs": "159 dry tiles are Git-tracked;194 exact prepared S11/Bolivia arrays may be imported from any local source root only when all frozen per-file hashes match, or from the pinned original transfer bundle; raw WF/STURM datasets remain external",
-  "new_native_work": "PENDING_JETSON: four recovered mixed B0 exports plus FP32 attention/classifier constraints",
+  "new_native_work": "PENDING_JETSON:23-October received-failure followup, PREFER+audited B0 mixed policy, four aligned16 micro pure graphs, exact received STURM hash profile, chained receipt reuse",
   "transport_normalization": "CSV line endings normalized to LF and one trailing blank source line removed; model/engine/raw-evaluation bytes retained",
   "mixed_repair_source": "MajorRev/revision_package_20261021/10_b0_mixed_repair_20261022",
   "repair_protocol_sha256": "3a06a2b39c3dcc2181ce0b7a9f0c3f3321301cd148c9b7a1cc50f04ddb6d0a7c",
@@ -25,5 +25,13 @@
     "layout": "root/assets/source_val,source_test,source_bolivia or root/source_val,source_test,source_bolivia",
     "admission": "all194 current ASSET_SHA256SUMS entries match; committed dry159 verified first; final all353 verification required",
     "package_date_alone": "NOT_EVIDENCE"
+  },
+  "device_failure_followup": {
+    "source": "MajorRev/jetson/workstation_failure_logs_20261022.tar.gz",
+    "archive_sha256": "a8975e2c222fa85c1413e64a9f17676139dbadb3e87d9f52cd420d9337b518e0",
+    "workstation_root": "MajorRev/revision_package_20261021/14_jetson_failure_repair_20261023",
+    "window_prompt": "JETSON_WINDOW_PROMPT_20261023.md",
+    "compact_export": "Jetson_failure_followup_20261023.tar.gz",
+    "compact_export_arrays": "All353 arrays external; link exact prepared inputs before SHA256SUMS verification"
   }
 }

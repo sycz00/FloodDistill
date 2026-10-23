@@ -87,9 +87,11 @@ def main():
         def set_output_type(self,index,value):self.types[index]=value
     native_layers=[Layer(n) for n in spec['node_names']]
     network=SimpleNamespace(num_layers=len(native_layers),get_layer=lambda i:native_layers[i])
-    flags=[];config=SimpleNamespace(set_flag=flags.append);trt=SimpleNamespace(float32='float32',int32='int32',bool='bool',BuilderFlag=SimpleNamespace(OBEY_PRECISION_CONSTRAINTS='OBEY'))
+    flags=[];cleared=[];config=SimpleNamespace(set_flag=flags.append,clear_flag=cleared.append);trt=SimpleNamespace(float32='float32',int32='int32',bool='bool',BuilderFlag=SimpleNamespace(OBEY_PRECISION_CONSTRAINTS='OBEY',PREFER_PRECISION_CONSTRAINTS='PREFER'))
     precision_islands.constrain(network,config,trt,spec)
     assert flags==['OBEY'] and all(r.precision=='float32' and r.types[0]=='float32' for r in native_layers)
+    flags.clear();result=precision_islands.constrain(network,config,trt,spec,mode='prefer')
+    assert flags==['PREFER'] and cleared==['OBEY'] and result['mode']=='prefer' and all(r.precision=='float32' and r.types[0]=='float32' for r in native_layers)
     # Embedded negative PTQ controls contain Q/DQ nodes: never demand FLOAT Q outputs.
     quantizer=Layer('/diagnostic/QuantizeLinear');quantizer.type='LayerType.QUANTIZE';quantizer.tensor.dtype='int8'
     dequantizer=Layer('/diagnostic/DequantizeLinear');dequantizer.type='LayerType.DEQUANTIZE'
@@ -107,9 +109,9 @@ def main():
     assert not precision_islands.inspect(bad,spec)['passed']
     bad=copy.deepcopy(layers);bad['Layers']=[r for r in bad['Layers'] if r['Name']!=spec['classifier']]
     assert not precision_islands.inspect(bad,spec)['passed']
-    certificate=dict(status='built',model_sha256=sample['onnx_sha256'],fp32_islands_sha256=sample['fp32_islands_sha256'],fp32_island_audit=audit,fp32_constraints=dict(required=spec['required_compute_nodes']))
+    certificate=dict(status='built',model_sha256=sample['onnx_sha256'],fp32_islands_sha256=sample['fp32_islands_sha256'],fp32_island_audit=audit,fp32_constraints=dict(required=spec['required_compute_nodes'],mode=sample.get('island_constraint_mode','obey')))
     assert precision_islands.validate_certificate(certificate,sample,ROOT,layers)
-    for bad in (dict(certificate,fp32_islands_sha256='0'*64),dict(certificate,fp32_island_audit={}),dict(certificate,status='fp32_island_certification_failed')):
+    for bad in (dict(certificate,fp32_constraints=dict(required=spec['required_compute_nodes'],mode='obey')),dict(certificate,fp32_islands_sha256='0'*64),dict(certificate,fp32_island_audit={}),dict(certificate,status='fp32_island_certification_failed')):
         try:precision_islands.validate_certificate(bad,sample,ROOT,layers)
         except ValueError:pass
         else:raise AssertionError('Invalid B0 native precision certificate admitted')
@@ -118,7 +120,7 @@ def main():
         d=read(p);assert d['atol']==d['rtol']==.001 and len(d['semantic'])==len(d['optimized'])==89 and all(r['strict_logit_parity_pass'] for r in d['semantic']+d['optimized'])
     for p in ROOT.rglob('*.py'):
         if '__pycache__' not in p.parts:ast.parse(p.read_text(),feature_version=(3,8))
-    for name in ('runtime/run_remaining.py','runtime/evaluate_native.py','runtime/collect_native.py','runtime/preflight.py','runtime/integer_tools.py','runtime/bench_trtexec.py','runtime/bench_power_steady.py','runtime/probe_int8_attention.py','prepare_inputs.py'):
+    for name in ('runtime/run_remaining.py','runtime/evaluate_native.py','runtime/collect_native.py','runtime/preflight.py','runtime/integer_tools.py','runtime/bench_trtexec.py','runtime/bench_power_steady.py','runtime/probe_int8_attention.py','runtime/chain_evaluations.py','prepare_inputs.py'):
         subprocess.run([sys.executable,str(ROOT/name),'--help'],check=True,stdout=subprocess.DEVNULL)
     subprocess.run([sys.executable,str(ROOT/'runtime/device_runtime.py'),'--self-test'],check=True)
     with tempfile.TemporaryDirectory(prefix='jetson_handoff_fixture_') as folder:

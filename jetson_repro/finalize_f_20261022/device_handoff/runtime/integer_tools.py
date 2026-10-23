@@ -79,6 +79,9 @@ def build(args):
         parser = trt.OnnxParser(network, logger)
         if not parser.parse(Path(args.model).read_bytes()):
             raise RuntimeError('; '.join(str(parser.get_error(i)) for i in range(parser.num_errors)))
+        # Public host buffers are dense NCHW; internal INT8 layouts remain free.
+        for i in range(network.num_inputs):network.get_input(i).allowed_formats=1 << int(trt.TensorFormat.LINEAR)
+        for i in range(network.num_outputs):network.get_output(i).allowed_formats=1 << int(trt.TensorFormat.LINEAR)
         config = builder.create_builder_config()
         config.max_workspace_size = int(args.workspace_mib) * 1048576
         # fp32/fp16 are float reference arms: they must NOT set the INT8 flag, otherwise
@@ -131,10 +134,14 @@ def build(args):
         if args.fp32_islands:
             import precision_islands
             island_spec=json.loads(args.fp32_islands.read_text());record['fp32_islands_sha256']=sha(args.fp32_islands)
-            record['fp32_constraints']=precision_islands.constrain(network,config,trt,island_spec)
+            record['fp32_constraints']=precision_islands.constrain(network,config,trt,island_spec,mode='prefer' if args.mode=='mixed' else 'obey')
         engine = builder.build_engine(network, config)
         if engine is None:
             raise RuntimeError('Builder returned no engine; see build log for unsupported precision/operator')
+        record['bindings']=[dict(name=engine.get_binding_name(i),shape=list(engine.get_binding_shape(i)),input=engine.binding_is_input(i),dtype=str(engine.get_binding_dtype(i)),vectorized_dim=engine.get_binding_vectorized_dim(i),components_per_element=engine.get_binding_components_per_element(i),format=engine.get_binding_format_desc(i)) for i in range(engine.num_bindings)]
+        record['linear_host_bindings']=all(b['vectorized_dim']==-1 and b['components_per_element']==1 for b in record['bindings'])
+        record['integer_host_bindings']=all(engine.get_binding_dtype(i)==trt.int8 for i in range(engine.num_bindings))
+        if not record['linear_host_bindings']:raise RuntimeError('Dense host runner requires LINEAR bindings')
         context = engine.create_execution_context()
         inspector = engine.create_engine_inspector()
         inspector.execution_context = context
@@ -208,6 +215,7 @@ class TrtRunner:
             shape = tuple(self.engine.get_binding_shape(i))
             if any(x < 0 for x in shape):
                 raise RuntimeError('Static bindings required')
+            if self.engine.get_binding_vectorized_dim(i)!=-1 or self.engine.get_binding_components_per_element(i)!=1:raise RuntimeError('Packed binding cannot use the dense host runner')
             dtype = np.dtype(trt.nptype(self.engine.get_binding_dtype(i)))
             host = cuda.pagelocked_empty(shape, dtype)
             device = cuda.mem_alloc(host.nbytes)

@@ -1,0 +1,1308 @@
+{
+ "images": 89,
+ "events": 10,
+ "valid_pixels": 20294725,
+ "pooled": {
+  "water_iou": 1.7876256086306565e-06,
+  "miou": 0.4448732327821353,
+  "precision": 1.0,
+  "recall": 1.7876256086306565e-06
+ },
+ "equal_event": {
+  "water_iou": 1.482783035479291e-06,
+  "miou": 0.4387345604462759,
+  "precision": 1.0,
+  "recall": 1.482783035479291e-06
+ },
+ "per_event": [
+  {
+   "event": "Ghana",
+   "counts_tn_fp_fn_tp": [
+    1590868,
+    0,
+    261548,
+    0
+   ],
+   "water_iou": 0.0,
+   "miou": 0.42940354650359314,
+   "precision": null,
+   "recall": 0.0
+  },
+  {
+   "event": "India",
+   "counts_tn_fp_fn_tp": [
+    2515164,
+    0,
+    441798,
+    0
+   ],
+   "water_iou": 0.0,
+   "miou": 0.42529528617547335,
+   "precision": null,
+   "recall": 0.0
+  },
+  {
+   "event": "Mekong",
+   "counts_tn_fp_fn_tp": [
+    1127188,
+    0,
+    207463,
+    0
+   ],
+   "water_iou": 0.0,
+   "miou": 0.4222781835850721,
+   "precision": null,
+   "recall": 0.0
+  },
+  {
+   "event": "Nigeria",
+   "counts_tn_fp_fn_tp": [
+    702308,
+    0,
+    269759,
+    4
+   ],
+   "water_iou": 1.482783035479291e-05,
+   "miou": 0.36125206063191606,
+   "precision": 1.0,
+   "recall": 1.482783035479291e-05
+  },
+  {
+   "event": "Pakistan",
+   "counts_tn_fp_fn_tp": [
+    1030465,
+    0,
+    78903,
+    0
+   ],
+   "water_iou": 0.0,
+   "miou": 0.4644378601149483,
+   "precision": null,
+   "recall": 0.0
+  },
+  {
+   "event": "Paraguay",
+   "counts_tn_fp_fn_tp": [
+    3209970,
+    0,
+    372233,
+    0
+   ],
+   "water_iou": 0.0,
+   "miou": 0.4480441225692681,
+   "precision": null,
+   "recall": 0.0
+  },
+  {
+   "event": "Somalia",
+   "counts_tn_fp_fn_tp": [
+    1017337,
+    0,
+    42627,
+    0
+   ],
+   "water_iou": 0.0,
+   "miou": 0.4798922416233004,
+   "precision": null,
+   "recall": 0.0
+  },
+  {
+   "event": "Spain",
+   "counts_tn_fp_fn_tp": [
+    1294919,
+    0,
+    277646,
+    0
+   ],
+   "water_iou": 0.0,
+   "miou": 0.4117219320028107,
+   "precision": null,
+   "recall": 0.0
+  },
+  {
+   "event": "Sri-Lanka",
+   "counts_tn_fp_fn_tp": [
+    2020066,
+    0,
+    175035,
+    0
+   ],
+   "water_iou": 0.0,
+   "miou": 0.4601305361347838,
+   "precision": null,
+   "recall": 0.0
+  },
+  {
+   "event": "USA",
+   "counts_tn_fp_fn_tp": [
+    3548835,
+    0,
+    110589,
+    0
+   ],
+   "water_iou": 0.0,
+   "miou": 0.4848898351215929,
+   "precision": null,
+   "recall": 0.0
+  }
+ ],
+ "rows": [
+  {
+   "name": "Ghana_1033830_S2Hand.tif",
+   "event": "Ghana",
+   "map_id": "Ghana_1033830_S2Hand.tif",
+   "input_sha256": "fad67bc3e7572dc3d1e439e67deb02b676416e08c3590c2cefd7d9fe537ab160",
+   "mask_sha256": "97b25714050b8a33384b09cb1e7660dc429bfd45b13ddadadd63c8cf8b0c7354",
+   "counts_tn_fp_fn_tp": [
+    136418,
+    0,
+    96811,
+    0
+   ]
+  },
+  {
+   "name": "Ghana_124834_S2Hand.tif",
+   "event": "Ghana",
+   "map_id": "Ghana_124834_S2Hand.tif",
+   "input_sha256": "238d9d9f99ef633cc68bfc03abe748970081076e16e7df9224bd15737bd515d5",
+   "mask_sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90",
+   "counts_tn_fp_fn_tp": [
+    262144,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Ghana_132163_S2Hand.tif",
+   "event": "Ghana",
+   "map_id": "Ghana_132163_S2Hand.tif",
+   "input_sha256": "f2865f93dede87747a780ac20a87c28cfa51c230c9ae240201eb896ea2f66d84",
+   "mask_sha256": "6ce3932dc856a1832d1bbcf1782fda8d73aa5c925d726df033f02144938463ee",
+   "counts_tn_fp_fn_tp": [
+    55761,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Ghana_142312_S2Hand.tif",
+   "event": "Ghana",
+   "map_id": "Ghana_142312_S2Hand.tif",
+   "input_sha256": "cf9d97f4e67a3f6358cd015c41b5d8beb8d284178a95f2d8f5fb76509e21ddba",
+   "mask_sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90",
+   "counts_tn_fp_fn_tp": [
+    262144,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Ghana_234935_S2Hand.tif",
+   "event": "Ghana",
+   "map_id": "Ghana_234935_S2Hand.tif",
+   "input_sha256": "a3615023d13494bd7c542204756fa9f53bed813385006ba0ff5aa5652e8812fb",
+   "mask_sha256": "3b874d3ba46c638fc3094f8e92fb744ca974893873f8885f54e23760f9b6311b",
+   "counts_tn_fp_fn_tp": [
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Ghana_277_S2Hand.tif",
+   "event": "Ghana",
+   "map_id": "Ghana_277_S2Hand.tif",
+   "input_sha256": "bdef6911e43ca0dfec9138a96bff9d16892263df4f50bcfdda6a88e0c3f53496",
+   "mask_sha256": "3b874d3ba46c638fc3094f8e92fb744ca974893873f8885f54e23760f9b6311b",
+   "counts_tn_fp_fn_tp": [
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Ghana_308249_S2Hand.tif",
+   "event": "Ghana",
+   "map_id": "Ghana_308249_S2Hand.tif",
+   "input_sha256": "dde402746861812afccb6f07df155165bbb4d4d6f344366de136d7822339e096",
+   "mask_sha256": "8c6bed3133290449e56481651801ab4d3189e59e8d601fa1ae8585762d6dda12",
+   "counts_tn_fp_fn_tp": [
+    254114,
+    0,
+    8030,
+    0
+   ]
+  },
+  {
+   "name": "Ghana_495107_S2Hand.tif",
+   "event": "Ghana",
+   "map_id": "Ghana_495107_S2Hand.tif",
+   "input_sha256": "9c93a9038d4a82bd3c09b21d83d15a60d3eabd4fa7b822c24296c49f6067ac19",
+   "mask_sha256": "0b3f750a171495c07d23435aeb23a5c098ed9798261a1f1ec7ac96190654bed9",
+   "counts_tn_fp_fn_tp": [
+    258185,
+    0,
+    3959,
+    0
+   ]
+  },
+  {
+   "name": "Ghana_5079_S2Hand.tif",
+   "event": "Ghana",
+   "map_id": "Ghana_5079_S2Hand.tif",
+   "input_sha256": "aa2f797a889fc016fc20304e9d8139b0839359019e6f11a5533b3b8d50f9ada4",
+   "mask_sha256": "3b874d3ba46c638fc3094f8e92fb744ca974893873f8885f54e23760f9b6311b",
+   "counts_tn_fp_fn_tp": [
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Ghana_868803_S2Hand.tif",
+   "event": "Ghana",
+   "map_id": "Ghana_868803_S2Hand.tif",
+   "input_sha256": "806b59be4e05f8b66b7b29a7a9a9d40f1bedc6691a8bba8a235a8af9daa2c7b2",
+   "mask_sha256": "b4ad6ad03c424118ede3f1a10ee1f2c5d13e97e6665beef43e9c57de65ad8890",
+   "counts_tn_fp_fn_tp": [
+    118093,
+    0,
+    144051,
+    0
+   ]
+  },
+  {
+   "name": "Ghana_895194_S2Hand.tif",
+   "event": "Ghana",
+   "map_id": "Ghana_895194_S2Hand.tif",
+   "input_sha256": "30af5ddbda90298b90c79416be78d9a5de8d7e1715ed5931b67c8a332d93ee41",
+   "mask_sha256": "4250ffb7c95486c6400bf00f3225b81887788f80f51b6ecaedbfaebb773bad02",
+   "counts_tn_fp_fn_tp": [
+    244009,
+    0,
+    8697,
+    0
+   ]
+  },
+  {
+   "name": "India_1018317_S2Hand.tif",
+   "event": "India",
+   "map_id": "India_1018317_S2Hand.tif",
+   "input_sha256": "1565821836e850cbc9b1b19517de819dc7e2305f5f145070a8e09c3134c51c7c",
+   "mask_sha256": "afcd3d8e20c11f67bf5fa56ca282d9794a171fac650a71bfff3d5d4699c03ff8",
+   "counts_tn_fp_fn_tp": [
+    46267,
+    0,
+    150710,
+    0
+   ]
+  },
+  {
+   "name": "India_1050276_S2Hand.tif",
+   "event": "India",
+   "map_id": "India_1050276_S2Hand.tif",
+   "input_sha256": "1b0bab70d8490272ba0c768c7277d019693781d7f8312a9bde8e0f891e41b447",
+   "mask_sha256": "370e6ba859d8ab84ac56f63a9a785d39177c3f46b1c7b0fd6e59aba98465954c",
+   "counts_tn_fp_fn_tp": [
+    206180,
+    0,
+    49005,
+    0
+   ]
+  },
+  {
+   "name": "India_1068117_S2Hand.tif",
+   "event": "India",
+   "map_id": "India_1068117_S2Hand.tif",
+   "input_sha256": "d4bd6cfd1b3886a1f79af8926d2260e946ab500e48402580c4bc7c6cee31309e",
+   "mask_sha256": "a4985de8d4a16cd1e4efc0d8ad01a4f280cd184e0e2f4f78acbcc1142857a6d4",
+   "counts_tn_fp_fn_tp": [
+    181752,
+    0,
+    47960,
+    0
+   ]
+  },
+  {
+   "name": "India_118868_S2Hand.tif",
+   "event": "India",
+   "map_id": "India_118868_S2Hand.tif",
+   "input_sha256": "582e477cee7006f27e72eb4c8d2715adf0201189095a6eea97a90ed2725e065f",
+   "mask_sha256": "df373b993b903d38d9310bc8233ced14475a704ba7ede0ae969bf756bdab1f75",
+   "counts_tn_fp_fn_tp": [
+    151366,
+    0,
+    10782,
+    0
+   ]
+  },
+  {
+   "name": "India_164336_S2Hand.tif",
+   "event": "India",
+   "map_id": "India_164336_S2Hand.tif",
+   "input_sha256": "f736f294bc47864a928f214d05bd04b2195a310a4a4653d87e655916176e5bcd",
+   "mask_sha256": "c265d1ca02760425ee6cca239c5495c4f530044a30ff4223f3454c12b4e1a7c1",
+   "counts_tn_fp_fn_tp": [
+    257220,
+    0,
+    1881,
+    0
+   ]
+  },
+  {
+   "name": "India_180633_S2Hand.tif",
+   "event": "India",
+   "map_id": "India_180633_S2Hand.tif",
+   "input_sha256": "cee064a0eaf1c5a21e22d1555211f2cbfbc98055155735c4e4776778b4d7be50",
+   "mask_sha256": "b98959797728cf1026abce46a9e94b4339a185d12c141a3a9b21ca6b19268cbf",
+   "counts_tn_fp_fn_tp": [
+    88792,
+    0,
+    75763,
+    0
+   ]
+  },
+  {
+   "name": "India_244057_S2Hand.tif",
+   "event": "India",
+   "map_id": "India_244057_S2Hand.tif",
+   "input_sha256": "071c68f874acb1bc4d6c04a1cc6b692826e2ed533946343a636e8998644eb805",
+   "mask_sha256": "e5a3b87811e7492f24411d6bf9d9beda29f99a14e034c1c9f01d66c58e5dcd2a",
+   "counts_tn_fp_fn_tp": [
+    160532,
+    0,
+    5,
+    0
+   ]
+  },
+  {
+   "name": "India_533192_S2Hand.tif",
+   "event": "India",
+   "map_id": "India_533192_S2Hand.tif",
+   "input_sha256": "545dd5eee5cd72f62a20909a9d14077b97881dbdbf0576d772f2bc6efbf9c027",
+   "mask_sha256": "8bda6d7fbeca449fca10d44cf25341a6ee13f610221e6c221bb758bed617b65d",
+   "counts_tn_fp_fn_tp": [
+    86187,
+    0,
+    49070,
+    0
+   ]
+  },
+  {
+   "name": "India_691027_S2Hand.tif",
+   "event": "India",
+   "map_id": "India_691027_S2Hand.tif",
+   "input_sha256": "dccda7563257ae53499e056d96e4ac2e0eaffbc0afa3ac6730f7888bc767851e",
+   "mask_sha256": "d647d9a69c9c7fd7653892be3f57d81eb5edc59ef58c335b1e266d5d16908e2c",
+   "counts_tn_fp_fn_tp": [
+    245640,
+    0,
+    8394,
+    0
+   ]
+  },
+  {
+   "name": "India_70352_S2Hand.tif",
+   "event": "India",
+   "map_id": "India_70352_S2Hand.tif",
+   "input_sha256": "c8bd99acd9e3145485d117452b75eb22e76cafb176d9505efaa002c6081acd16",
+   "mask_sha256": "41e63b0e9be8d25d1cda108913f8cd4b2d074f6f11655e1f99029712274c21b3",
+   "counts_tn_fp_fn_tp": [
+    226041,
+    0,
+    13188,
+    0
+   ]
+  },
+  {
+   "name": "India_764946_S2Hand.tif",
+   "event": "India",
+   "map_id": "India_764946_S2Hand.tif",
+   "input_sha256": "d67f2a2f28a4c73649b6d3f3b887e99c44099f205ba168dc5a8be49f21ca0dd6",
+   "mask_sha256": "cec7586f58e377546318833350934107515d231a3872b4d4a099041b883c801a",
+   "counts_tn_fp_fn_tp": [
+    239356,
+    0,
+    3146,
+    0
+   ]
+  },
+  {
+   "name": "India_769408_S2Hand.tif",
+   "event": "India",
+   "map_id": "India_769408_S2Hand.tif",
+   "input_sha256": "739ea317b7c3fbbe50635db3685c6ce65865fa3edea1706a3b190793caa01f62",
+   "mask_sha256": "f4ead434aea32198071eb57bfc2385a32136e3bcc8cd72d88c92c3df3f5f9a64",
+   "counts_tn_fp_fn_tp": [
+    167325,
+    0,
+    8582,
+    0
+   ]
+  },
+  {
+   "name": "India_833266_S2Hand.tif",
+   "event": "India",
+   "map_id": "India_833266_S2Hand.tif",
+   "input_sha256": "57141f0ba2ff5233d486e024ce451a6f2499117242d49cb8f126bccf59f772a2",
+   "mask_sha256": "35c184e99ebdd604aa3f24c4795e408df81c85d6e7d499ab9cc2d94983c49fa8",
+   "counts_tn_fp_fn_tp": [
+    201412,
+    0,
+    18262,
+    0
+   ]
+  },
+  {
+   "name": "India_869358_S2Hand.tif",
+   "event": "India",
+   "map_id": "India_869358_S2Hand.tif",
+   "input_sha256": "ffc59037061c08f34235b608969ad2fd37f141f4008d03c89d07fe2b44cbdf92",
+   "mask_sha256": "9f430d43a04a7a59f036fef8208aa35c6ecda30492b0c6837098f7591b2d7095",
+   "counts_tn_fp_fn_tp": [
+    257094,
+    0,
+    5050,
+    0
+   ]
+  },
+  {
+   "name": "Mekong_1149855_S2Hand.tif",
+   "event": "Mekong",
+   "map_id": "Mekong_1149855_S2Hand.tif",
+   "input_sha256": "e1fd7086f663955953d6b5a177f06352fc76999ada112af2744c0293a5a7f70a",
+   "mask_sha256": "7049cd65427a4f47f9e032fa3f2fb8cc9f269563a68cfe44836bdd6ebd83d0b7",
+   "counts_tn_fp_fn_tp": [
+    207515,
+    0,
+    17260,
+    0
+   ]
+  },
+  {
+   "name": "Mekong_1413877_S2Hand.tif",
+   "event": "Mekong",
+   "map_id": "Mekong_1413877_S2Hand.tif",
+   "input_sha256": "58c07134d538a3cbed802a14d3886e72c9620151cb115e590e75f7ce26bab16d",
+   "mask_sha256": "86c0be04ff62ca6e1a6c74879c9ff75136fafc6d2d512337e5c61a3c9b0d8c2f",
+   "counts_tn_fp_fn_tp": [
+    254456,
+    0,
+    2512,
+    0
+   ]
+  },
+  {
+   "name": "Mekong_293769_S2Hand.tif",
+   "event": "Mekong",
+   "map_id": "Mekong_293769_S2Hand.tif",
+   "input_sha256": "7398c71888df7872ac641b9d25d8d1e319e414c61857ce4f605660db8b23fa0c",
+   "mask_sha256": "6845e25ef5fe2f9506670267978b77d9f832691b3c07f97d2650ba0125431cd1",
+   "counts_tn_fp_fn_tp": [
+    200383,
+    0,
+    30677,
+    0
+   ]
+  },
+  {
+   "name": "Mekong_474783_S2Hand.tif",
+   "event": "Mekong",
+   "map_id": "Mekong_474783_S2Hand.tif",
+   "input_sha256": "0028873eb34bc945f9c94c0cb6fd68455a206c01532ccff7ae750aa7ced16553",
+   "mask_sha256": "774270025bce32d44c4ef7e7ca3cf3f04408f13d1614fc6eaf3e02d13e3c7784",
+   "counts_tn_fp_fn_tp": [
+    256339,
+    0,
+    5780,
+    0
+   ]
+  },
+  {
+   "name": "Mekong_977338_S2Hand.tif",
+   "event": "Mekong",
+   "map_id": "Mekong_977338_S2Hand.tif",
+   "input_sha256": "f0e3820484aa35b6d0401e95380019709bc4b6f60676667bcfec454b98905b92",
+   "mask_sha256": "08ac109be865c9fc45c4dde3553f70606f6eba136079fe4809b9d1144fef5a04",
+   "counts_tn_fp_fn_tp": [
+    111391,
+    0,
+    65567,
+    0
+   ]
+  },
+  {
+   "name": "Mekong_98310_S2Hand.tif",
+   "event": "Mekong",
+   "map_id": "Mekong_98310_S2Hand.tif",
+   "input_sha256": "60753542f3a464218849761f3376abff08d2d90e4a38e71368814bc5ccdb0b0d",
+   "mask_sha256": "4a42257ce3f6d4c776b14d310829b194e639ac41afb5d7efd4aa166efffe08f6",
+   "counts_tn_fp_fn_tp": [
+    97104,
+    0,
+    85667,
+    0
+   ]
+  },
+  {
+   "name": "Nigeria_1095404_S2Hand.tif",
+   "event": "Nigeria",
+   "map_id": "Nigeria_1095404_S2Hand.tif",
+   "input_sha256": "cbe28c063b06959b432b8630dd9970877001638da042e3a700b777e6971c9375",
+   "mask_sha256": "3d46c655d1e6c8093a135b2b72672702a93bb567fdbbee188a958bd0aa10e6f9",
+   "counts_tn_fp_fn_tp": [
+    206192,
+    0,
+    46091,
+    0
+   ]
+  },
+  {
+   "name": "Nigeria_31096_S2Hand.tif",
+   "event": "Nigeria",
+   "map_id": "Nigeria_31096_S2Hand.tif",
+   "input_sha256": "9ea3c0b412e783dd412b9888dd8a18e299489647662b24a6eb7289cce6c24cbb",
+   "mask_sha256": "3314e7d157bb92f485c90453054c5dbb370ef3b58f3e1f0ccbfb82a8c9501b7c",
+   "counts_tn_fp_fn_tp": [
+    216671,
+    0,
+    816,
+    0
+   ]
+  },
+  {
+   "name": "Nigeria_820924_S2Hand.tif",
+   "event": "Nigeria",
+   "map_id": "Nigeria_820924_S2Hand.tif",
+   "input_sha256": "c253438143c2ecb97db89ed22071a1cb035e360ed9c79ae477abb615fc3187fc",
+   "mask_sha256": "68f4c21471ef60c849167a01f099b1252d38950b9adb2e57caa5c2da48516d93",
+   "counts_tn_fp_fn_tp": [
+    260967,
+    0,
+    1176,
+    0
+   ]
+  },
+  {
+   "name": "Nigeria_984831_S2Hand.tif",
+   "event": "Nigeria",
+   "map_id": "Nigeria_984831_S2Hand.tif",
+   "input_sha256": "0da18e632d30e360441b1ac410f1a3180dbc6a47894bf0d4ce01502537dcd545",
+   "mask_sha256": "fc2655e1d691888261e6f90c6e616045d7766c1a93b6d88a1d58be5c4601dad2",
+   "counts_tn_fp_fn_tp": [
+    18478,
+    0,
+    221676,
+    4
+   ]
+  },
+  {
+   "name": "Pakistan_1027214_S2Hand.tif",
+   "event": "Pakistan",
+   "map_id": "Pakistan_1027214_S2Hand.tif",
+   "input_sha256": "32863fbbcf867f9c09f79d385483e1cd4f47fda5e0da4ff199675bb3475b4ae9",
+   "mask_sha256": "bfd06c22619b3bb77ecdbd74a89f77607306c65139c43a9357ed577d1edea921",
+   "counts_tn_fp_fn_tp": [
+    135088,
+    0,
+    23870,
+    0
+   ]
+  },
+  {
+   "name": "Pakistan_210595_S2Hand.tif",
+   "event": "Pakistan",
+   "map_id": "Pakistan_210595_S2Hand.tif",
+   "input_sha256": "03d0bb3b9c0becb0e3ca7be43b670f1f64ac75583efc6add986a5bb6b7c4642d",
+   "mask_sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90",
+   "counts_tn_fp_fn_tp": [
+    262144,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Pakistan_336228_S2Hand.tif",
+   "event": "Pakistan",
+   "map_id": "Pakistan_336228_S2Hand.tif",
+   "input_sha256": "f508d24f0f8931f6120ba221881ba7f766b46da8a8181f5d3f9f084e4e1bd827",
+   "mask_sha256": "b783d1cedaea7c550c7d9a4508a2d9807fd86fa0066f94e06fbb4744d222356d",
+   "counts_tn_fp_fn_tp": [
+    132471,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Pakistan_43105_S2Hand.tif",
+   "event": "Pakistan",
+   "map_id": "Pakistan_43105_S2Hand.tif",
+   "input_sha256": "b2b189ab2abfac7e25e5011c256325ade36cb498e8b60afd3ad405c8d1c15b49",
+   "mask_sha256": "13ca69e9214941ec9fdf500a0533a1d70d15cb6442a789e67aec988763a870f4",
+   "counts_tn_fp_fn_tp": [
+    261404,
+    0,
+    271,
+    0
+   ]
+  },
+  {
+   "name": "Pakistan_94095_S2Hand.tif",
+   "event": "Pakistan",
+   "map_id": "Pakistan_94095_S2Hand.tif",
+   "input_sha256": "09ce55fbddb526bf7ece09abdccfc03916b57346cf071c85c16658499ee5b6fe",
+   "mask_sha256": "c0e81b249e97fcaa5ef183558ecc6a6020644d2a17d49b797965780e43dbc3c8",
+   "counts_tn_fp_fn_tp": [
+    127004,
+    0,
+    53566,
+    0
+   ]
+  },
+  {
+   "name": "Pakistan_9684_S2Hand.tif",
+   "event": "Pakistan",
+   "map_id": "Pakistan_9684_S2Hand.tif",
+   "input_sha256": "9f12c08230732db78aeca609cd78198d6991342bf6aa7128f0864953f0897f26",
+   "mask_sha256": "5752572cb52cae051760029b8db040c51c67ae46ad351120866ef48b56d3e3d0",
+   "counts_tn_fp_fn_tp": [
+    112354,
+    0,
+    1196,
+    0
+   ]
+  },
+  {
+   "name": "Paraguay_1019808_S2Hand.tif",
+   "event": "Paraguay",
+   "map_id": "Paraguay_1019808_S2Hand.tif",
+   "input_sha256": "7494624f26fa07d3b9394d8d94b943da02daefdc836bd581aa1d32c2613093b4",
+   "mask_sha256": "2aee85164badf180f53398bec2628e8b85f46119e774f8890209597e92cb660d",
+   "counts_tn_fp_fn_tp": [
+    256974,
+    0,
+    5170,
+    0
+   ]
+  },
+  {
+   "name": "Paraguay_153941_S2Hand.tif",
+   "event": "Paraguay",
+   "map_id": "Paraguay_153941_S2Hand.tif",
+   "input_sha256": "255d69c738856cd4aa54f6baab0494f1ff44bf95388f2c8f1312b8aaaa380468",
+   "mask_sha256": "b54990c972c0ce30169d218b35595d6edb202154c6787679877a77eeceb2e97c",
+   "counts_tn_fp_fn_tp": [
+    261503,
+    0,
+    641,
+    0
+   ]
+  },
+  {
+   "name": "Paraguay_172476_S2Hand.tif",
+   "event": "Paraguay",
+   "map_id": "Paraguay_172476_S2Hand.tif",
+   "input_sha256": "3a7d1febc4a17877c72135772813ebbe53194d5ae8a35552f1120cb8404c5749",
+   "mask_sha256": "5ee1fb26384a8cf60304aea23ca91fa9e494061dd3905e583fd90d825966f756",
+   "counts_tn_fp_fn_tp": [
+    259328,
+    0,
+    2815,
+    0
+   ]
+  },
+  {
+   "name": "Paraguay_205585_S2Hand.tif",
+   "event": "Paraguay",
+   "map_id": "Paraguay_205585_S2Hand.tif",
+   "input_sha256": "1d39b20a66167e39252c3ed2ca3db814d3364cae3be5c59f86de4eb1534be8f7",
+   "mask_sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90",
+   "counts_tn_fp_fn_tp": [
+    262144,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Paraguay_252217_S2Hand.tif",
+   "event": "Paraguay",
+   "map_id": "Paraguay_252217_S2Hand.tif",
+   "input_sha256": "974dd3cc031885d34161b32617141af3edd0ab6b177d3d8e15ed338a3b92539f",
+   "mask_sha256": "6bd930a7ca58f5f576d05a65b0aa70b99f1cae44afe5581a32038a5474b82043",
+   "counts_tn_fp_fn_tp": [
+    255478,
+    0,
+    300,
+    0
+   ]
+  },
+  {
+   "name": "Paraguay_284928_S2Hand.tif",
+   "event": "Paraguay",
+   "map_id": "Paraguay_284928_S2Hand.tif",
+   "input_sha256": "74c856ab04b12740255153d0f1c2d52c526d2a483854bce593436de51faf07e1",
+   "mask_sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90",
+   "counts_tn_fp_fn_tp": [
+    262144,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Paraguay_305760_S2Hand.tif",
+   "event": "Paraguay",
+   "map_id": "Paraguay_305760_S2Hand.tif",
+   "input_sha256": "a4f5ec14c8abd6fad54f42712ee68da759508e8732589e52755aaaf3a45ca6b4",
+   "mask_sha256": "8d4ca3ee3dedf8a093734ee7225082dffb3b7beaeef3cb1f8b044d5b3fe86025",
+   "counts_tn_fp_fn_tp": [
+    218353,
+    0,
+    43791,
+    0
+   ]
+  },
+  {
+   "name": "Paraguay_581976_S2Hand.tif",
+   "event": "Paraguay",
+   "map_id": "Paraguay_581976_S2Hand.tif",
+   "input_sha256": "a265d15e1ca1d864e278eea3e9ec47d798b03c4f68c6f1d1c2f27fe7173986bf",
+   "mask_sha256": "c03710daecbffdb460b2f3ebb0b32490014e170f51bb14ded701bcf51333f293",
+   "counts_tn_fp_fn_tp": [
+    113336,
+    0,
+    148808,
+    0
+   ]
+  },
+  {
+   "name": "Paraguay_648632_S2Hand.tif",
+   "event": "Paraguay",
+   "map_id": "Paraguay_648632_S2Hand.tif",
+   "input_sha256": "f0843bc5ef2e4bb28a84dd464db6e6f9f478dc7203dd727ea1e8a57e9c97fec2",
+   "mask_sha256": "2307f827138fc4a02c4101fd1a4566efb43e8a75c2b07c144cb7db47336dc56c",
+   "counts_tn_fp_fn_tp": [
+    243750,
+    0,
+    18394,
+    0
+   ]
+  },
+  {
+   "name": "Paraguay_657443_S2Hand.tif",
+   "event": "Paraguay",
+   "map_id": "Paraguay_657443_S2Hand.tif",
+   "input_sha256": "97675f3c8e4bdb2fec4f2e84d78173e0b0b84d1e300e6264d5c6e1f2b401bd9c",
+   "mask_sha256": "a2e43c2056f268811266fca668f41cdc18bfc401096762428ed04253ef038736",
+   "counts_tn_fp_fn_tp": [
+    197170,
+    0,
+    64974,
+    0
+   ]
+  },
+  {
+   "name": "Paraguay_76868_S2Hand.tif",
+   "event": "Paraguay",
+   "map_id": "Paraguay_76868_S2Hand.tif",
+   "input_sha256": "d56bb67086a3cbff7031665e902e609242f54cfc0d8ca0a78aa1c79ecdbc485b",
+   "mask_sha256": "6e906999eed95dc8e2d80e67ffebf48456268138349ae2338a5d7f20118f0206",
+   "counts_tn_fp_fn_tp": [
+    244438,
+    0,
+    17683,
+    0
+   ]
+  },
+  {
+   "name": "Paraguay_7894_S2Hand.tif",
+   "event": "Paraguay",
+   "map_id": "Paraguay_7894_S2Hand.tif",
+   "input_sha256": "51357c4251d2364b542a01d2a613c6c0ccc17566558c71b1e1333d27078e5259",
+   "mask_sha256": "d0b67b7d6181c2486665d6bb123352468d8cad231f2418fe70d8a379102be52d",
+   "counts_tn_fp_fn_tp": [
+    202187,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Paraguay_896458_S2Hand.tif",
+   "event": "Paraguay",
+   "map_id": "Paraguay_896458_S2Hand.tif",
+   "input_sha256": "2846e9b5467020d436dd810a49c257e1d680fbdcddae378286b755e4bc016144",
+   "mask_sha256": "787430d894692a416148e5d6a2f4ccd3bdfe3464bc93e712536a31c6b0a62ceb",
+   "counts_tn_fp_fn_tp": [
+    191379,
+    0,
+    49299,
+    0
+   ]
+  },
+  {
+   "name": "Paraguay_934240_S2Hand.tif",
+   "event": "Paraguay",
+   "map_id": "Paraguay_934240_S2Hand.tif",
+   "input_sha256": "128e2044c01f9b0a84ec007412b723ad97c940f7c9e94bbd8e5167db7bf78a28",
+   "mask_sha256": "d88fa33359f37f1f472834b8121bddb9721c479381ac0be027dd6f56a17b8c7e",
+   "counts_tn_fp_fn_tp": [
+    241786,
+    0,
+    20358,
+    0
+   ]
+  },
+  {
+   "name": "Somalia_12849_S2Hand.tif",
+   "event": "Somalia",
+   "map_id": "Somalia_12849_S2Hand.tif",
+   "input_sha256": "facfd420c18f7b863a8b562d6f480ee39f0b9fad51cd0b7e7481172d7e687383",
+   "mask_sha256": "49aa0a953427aee02cede77739d701e952df0fcfa187372e3833f10127aa0a54",
+   "counts_tn_fp_fn_tp": [
+    154110,
+    0,
+    37192,
+    0
+   ]
+  },
+  {
+   "name": "Somalia_167787_S2Hand.tif",
+   "event": "Somalia",
+   "map_id": "Somalia_167787_S2Hand.tif",
+   "input_sha256": "61a584bfd4ec943061e74c6266cb7836887ed9c679a3da4c98cecd3d79a82449",
+   "mask_sha256": "ef31dca1176fc774d7c2f74341de77dbaf3584b2c0fcc0486072a0c427797956",
+   "counts_tn_fp_fn_tp": [
+    220280,
+    0,
+    225,
+    0
+   ]
+  },
+  {
+   "name": "Somalia_256539_S2Hand.tif",
+   "event": "Somalia",
+   "map_id": "Somalia_256539_S2Hand.tif",
+   "input_sha256": "99826c947e4a478df97c64e347ea9e89961f31c93faa39a71bfe6b3ac1d4bc56",
+   "mask_sha256": "b5ca6e91ac34ca65e663385ce94b1a31b6da08b336b77768e1e84a5f097ffbfc",
+   "counts_tn_fp_fn_tp": [
+    221236,
+    0,
+    23,
+    0
+   ]
+  },
+  {
+   "name": "Somalia_61368_S2Hand.tif",
+   "event": "Somalia",
+   "map_id": "Somalia_61368_S2Hand.tif",
+   "input_sha256": "2281cc1d0e684ebd87da90756bd1b8f2af3850cf41fb91ca8dfb43aa526a95ac",
+   "mask_sha256": "22e8659343bfd4a0e7d8316f87b2fc0352bda4b12c41743c20b1adbeaa2f0ef6",
+   "counts_tn_fp_fn_tp": [
+    212969,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "name": "Somalia_649376_S2Hand.tif",
+   "event": "Somalia",
+   "map_id": "Somalia_649376_S2Hand.tif",
+   "input_sha256": "146bbce9aaa6fe3c8c4719803bd1122885c1eba1dca05efe9fd329ae24194abf",
+   "mask_sha256": "daeb9b58c6143575736d9be690669f4aeb47e6a7fa27d370c30c2217c21339b3",
+   "counts_tn_fp_fn_tp": [
+    208742,
+    0,
+    5187,
+    0
+   ]
+  },
+  {
+   "name": "Spain_1199913_S2Hand.tif",
+   "event": "Spain",
+   "map_id": "Spain_1199913_S2Hand.tif",
+   "input_sha256": "88286606171e7e789eb543102b1e3d0bbf830c224ef02fd5a0414606ba4b44e1",
+   "mask_sha256": "498121d9714120fe3234db0219834ed7b3027c3d01e8d9136dd592f9551e2878",
+   "counts_tn_fp_fn_tp": [
+    252053,
+    0,
+    10090,
+    0
+   ]
+  },
+  {
+   "name": "Spain_4282030_S2Hand.tif",
+   "event": "Spain",
+   "map_id": "Spain_4282030_S2Hand.tif",
+   "input_sha256": "1176493ddfa40a638bdce8e9fe57153a89e93adb3ab00d26163268413b4beaaf",
+   "mask_sha256": "643310191ac38f8f470f6746b585a75b789ed0cab117ce9baf4f6125e803febd",
+   "counts_tn_fp_fn_tp": [
+    163992,
+    0,
+    98131,
+    0
+   ]
+  },
+  {
+   "name": "Spain_6537196_S2Hand.tif",
+   "event": "Spain",
+   "map_id": "Spain_6537196_S2Hand.tif",
+   "input_sha256": "2c6fae06296b4eedd2b637b7b0723f8559d4e45eba0e2ed1655959bb47eed924",
+   "mask_sha256": "b86252b449da636c32761ff99c9803b67aeef1059cb574078866598b35fb2510",
+   "counts_tn_fp_fn_tp": [
+    259060,
+    0,
+    3046,
+    0
+   ]
+  },
+  {
+   "name": "Spain_7604243_S2Hand.tif",
+   "event": "Spain",
+   "map_id": "Spain_7604243_S2Hand.tif",
+   "input_sha256": "bf77e44cf996cbb4979398a3920712710c75e471725b92fa55329fe0ebda3473",
+   "mask_sha256": "ff805e946f42f6d83a263f1fa46b68372ce36fc4fd956e7225645e7a4e192f0c",
+   "counts_tn_fp_fn_tp": [
+    241161,
+    0,
+    20919,
+    0
+   ]
+  },
+  {
+   "name": "Spain_8372658_S2Hand.tif",
+   "event": "Spain",
+   "map_id": "Spain_8372658_S2Hand.tif",
+   "input_sha256": "d4be7d899fcce40c4f7311da7c84745f3028377401a690da0906971b339cda8e",
+   "mask_sha256": "fe46dc1508a8143649c77e6007eb07a2530a7de16b71903858be54631ef7a8cf",
+   "counts_tn_fp_fn_tp": [
+    168925,
+    0,
+    93104,
+    0
+   ]
+  },
+  {
+   "name": "Spain_8565131_S2Hand.tif",
+   "event": "Spain",
+   "map_id": "Spain_8565131_S2Hand.tif",
+   "input_sha256": "ae721d1d44f8605937cfe22d07741fadd6f0c184e594679fb988a7cde3e263d4",
+   "mask_sha256": "21460e26083a555d5780aaf79f14130d6d4b0a4d76b664b297c028675450f8ce",
+   "counts_tn_fp_fn_tp": [
+    209728,
+    0,
+    52356,
+    0
+   ]
+  },
+  {
+   "name": "Sri-Lanka_101973_S2Hand.tif",
+   "event": "Sri-Lanka",
+   "map_id": "Sri-Lanka_101973_S2Hand.tif",
+   "input_sha256": "c5941cccab80bd15a0afe21687ddf6d87d4ea637a48b0d50b7b1434ac68c5ced",
+   "mask_sha256": "bb9f57b9be50a3957172ce5598a259ee972772830dd28bb307fe9b353c6a3139",
+   "counts_tn_fp_fn_tp": [
+    259185,
+    0,
+    2958,
+    0
+   ]
+  },
+  {
+   "name": "Sri-Lanka_132922_S2Hand.tif",
+   "event": "Sri-Lanka",
+   "map_id": "Sri-Lanka_132922_S2Hand.tif",
+   "input_sha256": "68cd6ebcc0869d2fffda033b4d7af0d67543e29421c9f4f7e6ef3f9d43db6457",
+   "mask_sha256": "8fba031d6e12558c75d4042c9f3f53f48f138004b89009f7a34fb5e883ad1487",
+   "counts_tn_fp_fn_tp": [
+    244301,
+    0,
+    17843,
+    0
+   ]
+  },
+  {
+   "name": "Sri-Lanka_236030_S2Hand.tif",
+   "event": "Sri-Lanka",
+   "map_id": "Sri-Lanka_236030_S2Hand.tif",
+   "input_sha256": "694aad7ffb0770927d0efa395ceacab4ab0535658fe3436479e8bf568f5d1bcf",
+   "mask_sha256": "3d67449c30e348b2178945b0240550edc86278cd1cc6ce0b640b4401682fdbc9",
+   "counts_tn_fp_fn_tp": [
+    204375,
+    0,
+    1713,
+    0
+   ]
+  },
+  {
+   "name": "Sri-Lanka_236628_S2Hand.tif",
+   "event": "Sri-Lanka",
+   "map_id": "Sri-Lanka_236628_S2Hand.tif",
+   "input_sha256": "bf3fb136a5c03c8a76fafd4b0e1b690dcde08979e73386688984ebf615b7c2ba",
+   "mask_sha256": "0bb74a7fc265e289ca7635e95f2e8ce88e7d17197e9ffd8b7c11e7825f9d4db9",
+   "counts_tn_fp_fn_tp": [
+    259061,
+    0,
+    3081,
+    0
+   ]
+  },
+  {
+   "name": "Sri-Lanka_31559_S2Hand.tif",
+   "event": "Sri-Lanka",
+   "map_id": "Sri-Lanka_31559_S2Hand.tif",
+   "input_sha256": "431db5d96a3fe767b033e20bfb15c4bed2b6a0bf33c95dbd48a82bc7dc4b1d73",
+   "mask_sha256": "9a31b85918d1b4744c6629b1e8031a5e01b66e9e442fa7497a0bf246b7c88e45",
+   "counts_tn_fp_fn_tp": [
+    218331,
+    0,
+    464,
+    0
+   ]
+  },
+  {
+   "name": "Sri-Lanka_321316_S2Hand.tif",
+   "event": "Sri-Lanka",
+   "map_id": "Sri-Lanka_321316_S2Hand.tif",
+   "input_sha256": "4051ba3dc5c9ba56977bd426ad277aab3054f1c3e5d52f0ff2b3a26cbc17c057",
+   "mask_sha256": "e837f3bfc95094304e84bf0e044eb46e2db93fc26ebd9406bce81551fa28d9b9",
+   "counts_tn_fp_fn_tp": [
+    165228,
+    0,
+    96905,
+    0
+   ]
+  },
+  {
+   "name": "Sri-Lanka_612594_S2Hand.tif",
+   "event": "Sri-Lanka",
+   "map_id": "Sri-Lanka_612594_S2Hand.tif",
+   "input_sha256": "ce36c08985e18f10f501d8bfb2f042a33a3618a4d6fd95a3f1e17da11c2a2c5f",
+   "mask_sha256": "a4f75e02645976cdcc3f72049e677bece09c03170f8b1e144ed789925ab29845",
+   "counts_tn_fp_fn_tp": [
+    219019,
+    0,
+    43125,
+    0
+   ]
+  },
+  {
+   "name": "Sri-Lanka_63307_S2Hand.tif",
+   "event": "Sri-Lanka",
+   "map_id": "Sri-Lanka_63307_S2Hand.tif",
+   "input_sha256": "d7ad49dcb56377cf4c371727b3be7c0de38f519924a1be9d2120979aace725a6",
+   "mask_sha256": "76b83f945a9dc74e5c2e8a7aefaeeea44eea697679f8a3e3196f5b859a94fbfa",
+   "counts_tn_fp_fn_tp": [
+    255139,
+    0,
+    7005,
+    0
+   ]
+  },
+  {
+   "name": "Sri-Lanka_85652_S2Hand.tif",
+   "event": "Sri-Lanka",
+   "map_id": "Sri-Lanka_85652_S2Hand.tif",
+   "input_sha256": "ee885f75cd52943f89d1015937dfd9d6fe3f343de9687f690ac8a4769c988028",
+   "mask_sha256": "fd41ef660aab9a0d504f6de01c2c220067068e980fbd379858131fcf19aa6cb4",
+   "counts_tn_fp_fn_tp": [
+    195427,
+    0,
+    1941,
+    0
+   ]
+  },
+  {
+   "name": "USA_1039203_S2Hand.tif",
+   "event": "USA",
+   "map_id": "USA_1039203_S2Hand.tif",
+   "input_sha256": "582327b3e80ee80c1769abf58cb331180405f9f73c7a692216eaecdd96317792",
+   "mask_sha256": "cc6dd7c8f9fed473fdb5a29934c7cf25367c1a3d66602fbf5417f4626f0cc8dc",
+   "counts_tn_fp_fn_tp": [
+    260501,
+    0,
+    1611,
+    0
+   ]
+  },
+  {
+   "name": "USA_1082482_S2Hand.tif",
+   "event": "USA",
+   "map_id": "USA_1082482_S2Hand.tif",
+   "input_sha256": "aceba2b1d901f582c7689f25a08b969216dd9dd2cc1e674fd3109773dbb4e3fd",
+   "mask_sha256": "2848e770ef1ca7ef9094d78c65f1e6ded95424faab23b217e6d93e27e5743eed",
+   "counts_tn_fp_fn_tp": [
+    259924,
+    0,
+    2206,
+    0
+   ]
+  },
+  {
+   "name": "USA_19225_S2Hand.tif",
+   "event": "USA",
+   "map_id": "USA_19225_S2Hand.tif",
+   "input_sha256": "d88c5a61a5a644c9037a6329845fa0e0cd600fc2e202f51290d0c65e0872a3bc",
+   "mask_sha256": "03c97c48eac45e4a800abde0c4774751a99b9f4f1e93c59882d6cc5ed9dba8ee",
+   "counts_tn_fp_fn_tp": [
+    260731,
+    0,
+    1391,
+    0
+   ]
+  },
+  {
+   "name": "USA_225017_S2Hand.tif",
+   "event": "USA",
+   "map_id": "USA_225017_S2Hand.tif",
+   "input_sha256": "e4661871f08241739130f362e6b1257fc50e48ae73c214ae5cbc30a298ed604a",
+   "mask_sha256": "ca3dc19b8e024b1265ec0060f6a8e69cf137f89921910b3624694a179abe21e3",
+   "counts_tn_fp_fn_tp": [
+    245358,
+    0,
+    16780,
+    0
+   ]
+  },
+  {
+   "name": "USA_251323_S2Hand.tif",
+   "event": "USA",
+   "map_id": "USA_251323_S2Hand.tif",
+   "input_sha256": "68b669f856dd8042f9f09634ec98ad416d75378b5b9f3d4a8c1e0da4450853b6",
+   "mask_sha256": "75c07b2fde71380ab14680c522641b84cdd497b99285b771eafbf8cce02cbca4",
+   "counts_tn_fp_fn_tp": [
+    260343,
+    0,
+    695,
+    0
+   ]
+  },
+  {
+   "name": "USA_275372_S2Hand.tif",
+   "event": "USA",
+   "map_id": "USA_275372_S2Hand.tif",
+   "input_sha256": "c556a5cfaca01265e82d0462fba556efb7b8182f18b8d3c9939332700a12ab50",
+   "mask_sha256": "18770d4582d1cd10fbef040153b067b3f6aa7fd61c893c301388761844f571cd",
+   "counts_tn_fp_fn_tp": [
+    259416,
+    0,
+    2722,
+    0
+   ]
+  },
+  {
+   "name": "USA_308150_S2Hand.tif",
+   "event": "USA",
+   "map_id": "USA_308150_S2Hand.tif",
+   "input_sha256": "d03cdfb15ca8986307da1bcd67f50e177df2bfe3f17ee0f378b2b49c9dbb1c00",
+   "mask_sha256": "1221cc065423afb0bc05ebeff51cae2344e8311f89ca897f9968d988ee8484ca",
+   "counts_tn_fp_fn_tp": [
+    259120,
+    0,
+    2907,
+    0
+   ]
+  },
+  {
+   "name": "USA_366607_S2Hand.tif",
+   "event": "USA",
+   "map_id": "USA_366607_S2Hand.tif",
+   "input_sha256": "8a38d288ad7368cf76f77e23fecbc2963238b47e5675fd16f59006f4427dd874",
+   "mask_sha256": "d4cddedbff14c1786f2227a7a0ee73eea647066804a5f6c9cd8423014535c4e1",
+   "counts_tn_fp_fn_tp": [
+    212814,
+    0,
+    49325,
+    0
+   ]
+  },
+  {
+   "name": "USA_646878_S2Hand.tif",
+   "event": "USA",
+   "map_id": "USA_646878_S2Hand.tif",
+   "input_sha256": "636eae4962e6ff66330faf6837982946537c81904197fc679bc3ebff0d35951d",
+   "mask_sha256": "164170ec605d0e3553718b9580b85ed5a6678abf495acd6a2c373ba500881036",
+   "counts_tn_fp_fn_tp": [
+    250550,
+    0,
+    2424,
+    0
+   ]
+  },
+  {
+   "name": "USA_741073_S2Hand.tif",
+   "event": "USA",
+   "map_id": "USA_741073_S2Hand.tif",
+   "input_sha256": "a04d9fe8faf8582ceb27fb93f12c20071e3d1c3d18a5d4775a3cd52c8be6f64c",
+   "mask_sha256": "d79a54e509764da63b808b07fa8f76986945cac3683fa316dc21d33747c2927d",
+   "counts_tn_fp_fn_tp": [
+    258740,
+    0,
+    3375,
+    0
+   ]
+  },
+  {
+   "name": "USA_741178_S2Hand.tif",
+   "event": "USA",
+   "map_id": "USA_741178_S2Hand.tif",
+   "input_sha256": "334b85ceed36ab2597176ced392887276166411cbfcc29467dd6fef8f5aa7a1a",
+   "mask_sha256": "616cc75e0b5996ed73efc2a32fb276da3b3fdc064c3773bcce3527b8c689bd2e",
+   "counts_tn_fp_fn_tp": [
+    260671,
+    0,
+    1446,
+    0
+   ]
+  },
+  {
+   "name": "USA_761032_S2Hand.tif",
+   "event": "USA",
+   "map_id": "USA_761032_S2Hand.tif",
+   "input_sha256": "5a05a12b19b41ab0877d60948f8879800f45580e4e8781c95deb3678f48a7256",
+   "mask_sha256": "3f5c52319ece3bf6fc7201c733f8dd954ea802c5031b6b1b3cad69c37c14203a",
+   "counts_tn_fp_fn_tp": [
+    250008,
+    0,
+    12117,
+    0
+   ]
+  },
+  {
+   "name": "USA_826217_S2Hand.tif",
+   "event": "USA",
+   "map_id": "USA_826217_S2Hand.tif",
+   "input_sha256": "f0b2154d8d6750f31dd91eb4a82135933cf3fe7b08585320d3f8712ea39dc3fd",
+   "mask_sha256": "b12bd3317087ee5c66c01e2bb5e3dbe1368d25d09ebb21e1f3ef4ea30334d50b",
+   "counts_tn_fp_fn_tp": [
+    257628,
+    0,
+    4498,
+    0
+   ]
+  },
+  {
+   "name": "USA_986268_S2Hand.tif",
+   "event": "USA",
+   "map_id": "USA_986268_S2Hand.tif",
+   "input_sha256": "c7ee0965279e9d8aaa4081ac8fb940f194664c0f7c400a1a6d0094b5516d0323",
+   "mask_sha256": "e87719d8b31c73b39fb8cbaf829ef3403aad316e3069259058aed1a4e43afa0e",
+   "counts_tn_fp_fn_tp": [
+    253031,
+    0,
+    9092,
+    0
+   ]
+  }
+ ]
+}

@@ -14,7 +14,9 @@ def validate_rows(root,ds,rows,imported=False):
         rec=expected[name];c=np.asarray(row['counts_tn_fp_fn_tp'])
         if c.shape!=(4,) or not np.issubdtype(c.dtype,np.integer) or (c<0).any():raise ValueError('Invalid confusion counts '+name)
         if row['event']!=rec['event'] or int(c.sum())!=rec['valid_pixels'] or int(c[2]+c[3])!=rec['water_pixels']:raise ValueError('Wrong event/mask support '+name)
-        if not imported and any(row.get(k)!=rec[k] for k in ('input_sha256','mask_sha256')):raise ValueError('Wrong input/mask hash '+name)
+        if not imported:
+            from input_profiles import validate_input
+            validate_input(root,ds,row,rec)
         seen.add(name)
     if seen!=set(expected):raise ValueError('Incomplete inventory '+ds)
 

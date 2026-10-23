@@ -11,7 +11,7 @@ Here: trtexec --duration=30 --warmUp=2000; samples every 100 ms; only samples ta
 "Starting inference" moment is taken from the first stdout line containing it, read live.
 Energy per image = mean steady power / trtexec throughput of the same run.
 """
-import argparse, json, os, re, subprocess, threading, time
+import argparse, json, os, re, subprocess, threading, time, hashlib
 import numpy as np
 
 TRTEXEC = "/usr/src/tensorrt/bin/trtexec"
@@ -50,7 +50,7 @@ def main():
     idle = [s for s in samples if s[0] < idle_end]
     lo, hi = (t_start_inf or t_exit) + 3.0, t_exit - 1.0
     steady = [s for s in samples if lo <= s[0] <= hi]
-    rec = dict(engine=os.path.abspath(a.engine), cmd=" ".join(cmd), returncode=p.returncode, throughput_qps=qps,
+    rec = dict(engine_sha256=hashlib.sha256(open(a.engine,'rb').read()).hexdigest(), engine=os.path.abspath(a.engine), cmd=" ".join(cmd), returncode=p.returncode, throughput_qps=qps,
                window_s=[lo - (t_start_inf or 0), hi - (t_start_inf or 0)], steady_samples=len(steady),
                idle_cpu_gpu_cv_w=float(np.mean([s[1] for s in idle]) / 1000) if idle else None,
                power_rail="ina3221 ch2 (VDD_CPU_GPU_CV per benchmark_jetson.py fallback; label root-only)",

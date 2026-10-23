@@ -23,7 +23,7 @@ def summarize(rows):
     return dict(images=len(rows),events=len(groups),valid_pixels=sum(sum(r['counts_tn_fp_fn_tp']) for r in rows),pooled=scores(np.sum([r['counts_tn_fp_fn_tp'] for r in rows],axis=0)),equal_event={k:mean(k) for k in ('water_iou','miou','precision','recall')},per_event=event,rows=rows)
 
 def parse_args(argv=None):
-    p=argparse.ArgumentParser();p.add_argument('--engine',type=Path,required=True);p.add_argument('--io',type=Path);p.add_argument('--out',type=Path,required=True);p.add_argument('--sturm-root',type=Path);p.add_argument('--wf-root',type=Path);p.add_argument('--only-dry',action='store_true');p.add_argument('--resume',action='store_true');p.add_argument('--source-reference',type=Path);a=p.parse_args(argv)
+    p=argparse.ArgumentParser();p.add_argument('--engine',type=Path,required=True);p.add_argument('--io',type=Path);p.add_argument('--out',type=Path,required=True);p.add_argument('--sturm-root',type=Path);p.add_argument('--wf-root',type=Path);p.add_argument('--only-dry',action='store_true');p.add_argument('--resume',action='store_true');p.add_argument('--source-reference',type=Path);p.add_argument('--quant-source-reference',type=Path);a=p.parse_args(argv)
     if not a.only_dry and (a.sturm_root is None or a.wf_root is None):p.error('--sturm-root and --wf-root are required unless --only-dry is used')
     return a
 
@@ -36,7 +36,7 @@ def main():
     if not trt.__version__.startswith('8.4.'):raise RuntimeError('Target is TensorRT8.4; no implicit runtime migration')
     import integer_tools,device_runtime,dataset_io
     a.out.mkdir(parents=True,exist_ok=a.resume)
-    identity=dict(engine_sha256=sha(a.engine),io_sha256=sha(a.io) if a.io else None,only_dry=a.only_dry,source_reference_sha256=sha(a.source_reference) if a.source_reference else None)
+    identity=dict(engine_sha256=sha(a.engine),io_sha256=sha(a.io) if a.io else None,only_dry=a.only_dry,source_reference_sha256=sha(a.source_reference) if a.source_reference else None,quant_source_reference_sha256=sha(a.quant_source_reference) if a.quant_source_reference else None)
     meta=a.out/'IDENTITY.json'
     if meta.exists():assert json.loads(meta.read_text())==identity
     else:save(meta,identity)
@@ -50,7 +50,13 @@ def main():
     runner=device_runtime.IntegerRunner(a.engine,json.loads(a.io.read_text())) if a.io else integer_tools.TrtRunner(a.engine)
     datasets={}
     def check_source_wiring(ds,result):
-        if ds!='s11val' or not a.source_reference:return
+        if ds!='s11val':return
+        if a.quant_source_reference:
+            from repair_policy import source_gate
+            gate=source_gate(json.loads(a.quant_source_reference.read_text()),result)
+            gate['reference_sha256']=sha(a.quant_source_reference);save(a.out/'NATIVE_SOURCE_GATE.json',gate)
+            if not gate['passed']:raise RuntimeError('Quantized model failed the0.02 native source gate; stop external evaluation')
+        if not a.source_reference:return
         ref=json.loads(a.source_reference.read_text());delta=abs(result['pooled']['miou']-ref['mIoU']);passed=delta<=.005
         save(a.out/'SOURCE_WIRING.json',dict(passed=passed,pooled_mIoU_abs_difference=delta,tolerance=.005,reference_sha256=sha(a.source_reference)))
         if not passed:raise RuntimeError('Native FP32 source wiring exceeds0.005; stop external evaluation for this engine')
@@ -64,7 +70,7 @@ def main():
             pred=z[0].argmax(0);valid=(mask>=0)&(mask<2)
             c=np.bincount((2*mask[valid].astype(np.int64)+pred[valid]).ravel(),minlength=4)
             assert int(c.sum())==rec['valid_pixels'] and int(c[2]+c[3])==rec['water_pixels']
-            rows.append(dict(name=rec['name'],event=rec['event'],map_id=rec['map_id'],input_sha256=rec['input_sha256'],mask_sha256=rec['mask_sha256'],counts_tn_fp_fn_tp=c.tolist()))
+            rows.append(dict(name=rec['name'],event=rec['event'],map_id=rec['map_id'],input_sha256=rec['input_sha256'],mask_sha256=rec['mask_sha256'],counts_tn_fp_fn_tp=c.tolist(),**{k:rec[k] for k in ('input_profile','canonical_input_sha256') if k in rec}))
         validate_rows(ROOT,ds,rows)
         datasets[ds]=summarize(rows);save(a.out/(ds+'.json'),datasets[ds]);check_source_wiring(ds,datasets[ds]);print(ds,len(rows),'complete',flush=True)
     dry=[]

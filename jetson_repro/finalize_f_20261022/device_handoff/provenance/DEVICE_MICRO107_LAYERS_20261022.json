@@ -1,0 +1,2214 @@
+{
+  "Layers": [
+    {
+      "Name": "Reformatting CopyNode for Input Tensor 0 to stem.0.weight + /stem/stem.0/QuantizeLinear_1 + /stem/stem.0/Conv + PWN(/stem/stem.2/Clip)",
+      "LayerType": "Reformat",
+      "Inputs": [
+        {
+          "Name": "image",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            6,
+            512,
+            512
+          ],
+          "Format/Datatype": "Row major Int8 format"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "Reformatted Input Tensor 0 to stem.0.weight + /stem/stem.0/QuantizeLinear_1 + /stem/stem.0/Conv + PWN(/stem/stem.2/Clip)",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            6,
+            512,
+            512
+          ],
+          "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+        }
+      ],
+      "ParameterType": "Reformat",
+      "Origin": "REFORMAT",
+      "TacticValue": "0x0000000000000000"
+    },
+    {
+      "Name": "stem.0.weight + /stem/stem.0/QuantizeLinear_1 + /stem/stem.0/Conv + PWN(/stem/stem.2/Clip)",
+      "LayerType": "CaskConvolution",
+      "Inputs": [
+        {
+          "Name": "Reformatted Input Tensor 0 to stem.0.weight + /stem/stem.0/QuantizeLinear_1 + /stem/stem.0/Conv + PWN(/stem/stem.2/Clip)",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            6,
+            512,
+            512
+          ],
+          "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "/s1/s1.0/dw/dw.0/QuantizeLinear_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            4,
+            256,
+            256
+          ],
+          "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+        }
+      ],
+      "ParameterType": "Convolution",
+      "Kernel": [
+        3,
+        3
+      ],
+      "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+      "PrePadding": [
+        1,
+        1
+      ],
+      "PostPadding": [
+        1,
+        1
+      ],
+      "Stride": [
+        2,
+        2
+      ],
+      "Dilation": [
+        1,
+        1
+      ],
+      "OutMaps": 4,
+      "Groups": 1,
+      "Weights": {
+        "Type": "Int8",
+        "Count": 216
+      },
+      "Bias": {
+        "Type": "Float",
+        "Count": 4
+      },
+      "HasSparseWeights": 0,
+      "Activation": "CLIPPED_RELU",
+      "ParameterSubType": "[0.000000,127.000000]",
+      "HasBias": 1,
+      "HasReLU": 0,
+      "TacticName": "volta_int8x4_icudnn_int8x4_128x32_relu_small_nn_v1",
+      "TacticValue": "0xa8d133a63883409f"
+    },
+    {
+      "Name": "s1.0.dw.0.weight + /s1/s1.0/dw/dw.0/QuantizeLinear_1 + /s1/s1.0/dw/dw.0/Conv + PWN(/s1/s1.0/dw/dw.2/Clip)",
+      "LayerType": "CudaDepthwiseConvolution",
+      "Inputs": [
+        {
+          "Name": "/s1/s1.0/dw/dw.0/QuantizeLinear_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            4,
+            256,
+            256
+          ],
+          "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "/s1/s1.0/pw/pw.0/QuantizeLinear_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            4,
+            128,
+            128
+          ],
+          "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+        }
+      ],
+      "ParameterType": "Convolution",
+      "Kernel": [
+        3,
+        3
+      ],
+      "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+      "PrePadding": [
+        1,
+        1
+      ],
+      "PostPadding": [
+        1,
+        1
+      ],
+      "Stride": [
+        2,
+        2
+      ],
+      "Dilation": [
+        1,
+        1
+      ],
+      "OutMaps": 4,
+      "Groups": 4,
+      "Weights": {
+        "Type": "Int8",
+        "Count": 36
+      },
+      "Bias": {
+        "Type": "Float",
+        "Count": 4
+      },
+      "HasSparseWeights": 0,
+      "Activation": "CLIPPED_RELU",
+      "ParameterSubType": "[0.000000,127.000000]",
+      "HasBias": 1,
+      "TacticValue": "0xfffffffffffffffd"
+    },
+    {
+      "Name": "s1.0.pw.0.weight + /s1/s1.0/pw/pw.0/QuantizeLinear_1 + /s1/s1.0/pw/pw.0/Conv + PWN(/s1/s1.0/Clip)",
+      "LayerType": "CaskConvolution",
+      "Inputs": [
+        {
+          "Name": "/s1/s1.0/pw/pw.0/QuantizeLinear_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            4,
+            128,
+            128
+          ],
+          "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "/s1/s1.0/Clip_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            4,
+            128,
+            128
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "ParameterType": "Convolution",
+      "Kernel": [
+        1,
+        1
+      ],
+      "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+      "PrePadding": [
+        0,
+        0
+      ],
+      "PostPadding": [
+        0,
+        0
+      ],
+      "Stride": [
+        1,
+        1
+      ],
+      "Dilation": [
+        1,
+        1
+      ],
+      "OutMaps": 4,
+      "Groups": 1,
+      "Weights": {
+        "Type": "Int8",
+        "Count": 16
+      },
+      "Bias": {
+        "Type": "Float",
+        "Count": 4
+      },
+      "HasSparseWeights": 0,
+      "Activation": "CLIPPED_RELU",
+      "ParameterSubType": "[0.000000,6.000000]",
+      "HasBias": 1,
+      "HasReLU": 0,
+      "TacticName": "volta_fp32_icudnn_int8x4_128x32_relu_interior_nn_v1",
+      "TacticValue": "0xc9c0872569525a26"
+    },
+    {
+      "Name": "/s1/s1.1/dw/dw.0/QuantizeLinear",
+      "LayerType": "Reformat",
+      "Inputs": [
+        {
+          "Name": "/s1/s1.0/Clip_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            4,
+            128,
+            128
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "/s1/s1.1/dw/dw.0/QuantizeLinear_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            4,
+            128,
+            128
+          ],
+          "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+        }
+      ],
+      "ParameterType": "Reformat",
+      "Origin": "QDQ",
+      "TacticValue": "0x0000000000000000"
+    },
+    {
+      "Name": "s1.1.dw.0.weight + /s1/s1.1/dw/dw.0/QuantizeLinear_1 + /s1/s1.1/dw/dw.0/Conv + PWN(/s1/s1.1/dw/dw.2/Clip)",
+      "LayerType": "CudaDepthwiseConvolution",
+      "Inputs": [
+        {
+          "Name": "/s1/s1.1/dw/dw.0/QuantizeLinear_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            4,
+            128,
+            128
+          ],
+          "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "/s1/s1.1/pw/pw.0/QuantizeLinear_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            4,
+            128,
+            128
+          ],
+          "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+        }
+      ],
+      "ParameterType": "Convolution",
+      "Kernel": [
+        3,
+        3
+      ],
+      "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+      "PrePadding": [
+        1,
+        1
+      ],
+      "PostPadding": [
+        1,
+        1
+      ],
+      "Stride": [
+        1,
+        1
+      ],
+      "Dilation": [
+        1,
+        1
+      ],
+      "OutMaps": 4,
+      "Groups": 4,
+      "Weights": {
+        "Type": "Int8",
+        "Count": 36
+      },
+      "Bias": {
+        "Type": "Float",
+        "Count": 4
+      },
+      "HasSparseWeights": 0,
+      "Activation": "CLIPPED_RELU",
+      "ParameterSubType": "[0.000000,127.000000]",
+      "HasBias": 1,
+      "TacticValue": "0xfffffffffffffffd"
+    },
+    {
+      "Name": "s1.1.pw.0.weight + /s1/s1.1/pw/pw.0/QuantizeLinear_1 + /s1/s1.1/pw/pw.0/Conv + /s1/s1.1/Add",
+      "LayerType": "CaskConvolution",
+      "Inputs": [
+        {
+          "Name": "/s1/s1.1/pw/pw.0/QuantizeLinear_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            4,
+            128,
+            128
+          ],
+          "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+        },
+        {
+          "Name": "/s1/s1.0/Clip_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            4,
+            128,
+            128
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "/s1/s1.1/Add_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            4,
+            128,
+            128
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "ParameterType": "Convolution",
+      "Kernel": [
+        1,
+        1
+      ],
+      "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+      "PrePadding": [
+        0,
+        0
+      ],
+      "PostPadding": [
+        0,
+        0
+      ],
+      "Stride": [
+        1,
+        1
+      ],
+      "Dilation": [
+        1,
+        1
+      ],
+      "OutMaps": 4,
+      "Groups": 1,
+      "Weights": {
+        "Type": "Int8",
+        "Count": 16
+      },
+      "Bias": {
+        "Type": "Float",
+        "Count": 4
+      },
+      "HasSparseWeights": 0,
+      "Activation": "NONE",
+      "HasBias": 1,
+      "HasReLU": 0,
+      "TacticName": "volta_fp32_icudnn_int8x4_128x32_relu_interior_nn_v1",
+      "TacticValue": "0xc9c0872569525a26"
+    },
+    {
+      "Name": "/s2/s2.0/dw/dw.0/QuantizeLinear",
+      "LayerType": "Reformat",
+      "Inputs": [
+        {
+          "Name": "/s1/s1.1/Add_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            4,
+            128,
+            128
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "/s1/s1.1/Clip_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            4,
+            128,
+            128
+          ],
+          "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+        }
+      ],
+      "ParameterType": "Reformat",
+      "Origin": "QDQ",
+      "TacticValue": "0x0000000000000000"
+    },
+    {
+      "Name": "PWN(/s1/s1.1/Clip)",
+      "LayerType": "PointWiseV2",
+      "Inputs": [
+        {
+          "Name": "/s1/s1.1/Clip_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            4,
+            128,
+            128
+          ],
+          "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "/s2/s2.0/dw/dw.0/QuantizeLinear_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            4,
+            128,
+            128
+          ],
+          "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+        }
+      ],
+      "ParameterType": "PointWise",
+      "ParameterSubType": "PointWiseExpression",
+      "NbInputArgs": 1,
+      "InputArgs": [
+        "arg0"
+      ],
+      "NbOutputVars": 1,
+      "OutputVars": [
+        "var1"
+      ],
+      "NbParams": 0,
+      "Params": [],
+      "NbLiterals": 4,
+      "Literals": [
+        "0.000000e+00f",
+        "1.000000e+00f",
+        "0.000000e+00f",
+        "6.000000e+00f"
+      ],
+      "NbOperations": 2,
+      "Operations": [
+        "const auto var0 = pwgen::iMin(literal3, arg0);",
+        "const auto var1 = pwgen::iMax(literal2, var0);"
+      ],
+      "TacticValue": "0x0000000000000005"
+    },
+    {
+      "Name": "s2.0.dw.0.weight + /s2/s2.0/dw/dw.0/QuantizeLinear_1 + /s2/s2.0/dw/dw.0/Conv + PWN(/s2/s2.0/dw/dw.2/Clip)",
+      "LayerType": "CudaDepthwiseConvolution",
+      "Inputs": [
+        {
+          "Name": "/s2/s2.0/dw/dw.0/QuantizeLinear_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            4,
+            128,
+            128
+          ],
+          "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "/s2/s2.0/pw/pw.0/QuantizeLinear_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            4,
+            64,
+            64
+          ],
+          "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+        }
+      ],
+      "ParameterType": "Convolution",
+      "Kernel": [
+        3,
+        3
+      ],
+      "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+      "PrePadding": [
+        1,
+        1
+      ],
+      "PostPadding": [
+        1,
+        1
+      ],
+      "Stride": [
+        2,
+        2
+      ],
+      "Dilation": [
+        1,
+        1
+      ],
+      "OutMaps": 4,
+      "Groups": 4,
+      "Weights": {
+        "Type": "Int8",
+        "Count": 36
+      },
+      "Bias": {
+        "Type": "Float",
+        "Count": 4
+      },
+      "HasSparseWeights": 0,
+      "Activation": "CLIPPED_RELU",
+      "ParameterSubType": "[0.000000,127.000000]",
+      "HasBias": 1,
+      "TacticValue": "0xfffffffffffffffd"
+    },
+    {
+      "Name": "s2.0.pw.0.weight + /s2/s2.0/pw/pw.0/QuantizeLinear_1 + /s2/s2.0/pw/pw.0/Conv + PWN(/s2/s2.0/Clip)",
+      "LayerType": "CaskConvolution",
+      "Inputs": [
+        {
+          "Name": "/s2/s2.0/pw/pw.0/QuantizeLinear_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            4,
+            64,
+            64
+          ],
+          "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "/s2/s2.0/Clip_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            6,
+            64,
+            64
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "ParameterType": "Convolution",
+      "Kernel": [
+        1,
+        1
+      ],
+      "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+      "PrePadding": [
+        0,
+        0
+      ],
+      "PostPadding": [
+        0,
+        0
+      ],
+      "Stride": [
+        1,
+        1
+      ],
+      "Dilation": [
+        1,
+        1
+      ],
+      "OutMaps": 6,
+      "Groups": 1,
+      "Weights": {
+        "Type": "Int8",
+        "Count": 24
+      },
+      "Bias": {
+        "Type": "Float",
+        "Count": 6
+      },
+      "HasSparseWeights": 0,
+      "Activation": "CLIPPED_RELU",
+      "ParameterSubType": "[0.000000,6.000000]",
+      "HasBias": 1,
+      "HasReLU": 0,
+      "TacticName": "volta_fp32_icudnn_int8x4_128x32_relu_interior_nn_v1",
+      "TacticValue": "0xc9c0872569525a26"
+    },
+    {
+      "Name": "/s2/s2.1/dw/dw.0/QuantizeLinear",
+      "LayerType": "Reformat",
+      "Inputs": [
+        {
+          "Name": "/s2/s2.0/Clip_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            6,
+            64,
+            64
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "/s2/s2.1/dw/dw.0/QuantizeLinear_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            6,
+            64,
+            64
+          ],
+          "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+        }
+      ],
+      "ParameterType": "Reformat",
+      "Origin": "QDQ",
+      "TacticValue": "0x0000000000000000"
+    },
+    {
+      "Name": "s2.1.dw.0.weight + /s2/s2.1/dw/dw.0/QuantizeLinear_1 + /s2/s2.1/dw/dw.0/Conv + PWN(/s2/s2.1/dw/dw.2/Clip)",
+      "LayerType": "CudaDepthwiseConvolution",
+      "Inputs": [
+        {
+          "Name": "/s2/s2.1/dw/dw.0/QuantizeLinear_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            6,
+            64,
+            64
+          ],
+          "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "/s2/s2.1/pw/pw.0/QuantizeLinear_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            6,
+            64,
+            64
+          ],
+          "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+        }
+      ],
+      "ParameterType": "Convolution",
+      "Kernel": [
+        3,
+        3
+      ],
+      "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+      "PrePadding": [
+        1,
+        1
+      ],
+      "PostPadding": [
+        1,
+        1
+      ],
+      "Stride": [
+        1,
+        1
+      ],
+      "Dilation": [
+        1,
+        1
+      ],
+      "OutMaps": 6,
+      "Groups": 6,
+      "Weights": {
+        "Type": "Int8",
+        "Count": 54
+      },
+      "Bias": {
+        "Type": "Float",
+        "Count": 6
+      },
+      "HasSparseWeights": 0,
+      "Activation": "CLIPPED_RELU",
+      "ParameterSubType": "[0.000000,127.000000]",
+      "HasBias": 1,
+      "TacticValue": "0xfffffffffffffffd"
+    },
+    {
+      "Name": "s2.1.pw.0.weight + /s2/s2.1/pw/pw.0/QuantizeLinear_1 + /s2/s2.1/pw/pw.0/Conv",
+      "LayerType": "CaskConvolution",
+      "Inputs": [
+        {
+          "Name": "/s2/s2.1/pw/pw.0/QuantizeLinear_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            6,
+            64,
+            64
+          ],
+          "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "/s2/s2.1/pw/pw.0/Conv_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            6,
+            64,
+            64
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "ParameterType": "Convolution",
+      "Kernel": [
+        1,
+        1
+      ],
+      "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+      "PrePadding": [
+        0,
+        0
+      ],
+      "PostPadding": [
+        0,
+        0
+      ],
+      "Stride": [
+        1,
+        1
+      ],
+      "Dilation": [
+        1,
+        1
+      ],
+      "OutMaps": 6,
+      "Groups": 1,
+      "Weights": {
+        "Type": "Int8",
+        "Count": 36
+      },
+      "Bias": {
+        "Type": "Float",
+        "Count": 6
+      },
+      "HasSparseWeights": 0,
+      "Activation": "NONE",
+      "HasBias": 1,
+      "HasReLU": 0,
+      "TacticName": "volta_fp32_icudnn_int8x4_128x32_relu_small_nn_v1",
+      "TacticValue": "0x170705f9b2fc8d53"
+    },
+    {
+      "Name": "PWN(/s2/s2.1/Add, /s2/s2.1/Clip)",
+      "LayerType": "PointWiseV2",
+      "Inputs": [
+        {
+          "Name": "/s2/s2.1/pw/pw.0/Conv_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            6,
+            64,
+            64
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        },
+        {
+          "Name": "/s2/s2.0/Clip_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            6,
+            64,
+            64
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "/s2/s2.1/Clip_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            6,
+            64,
+            64
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "ParameterType": "PointWise",
+      "ParameterSubType": "PointWiseExpression",
+      "NbInputArgs": 2,
+      "InputArgs": [
+        "arg0",
+        "arg1"
+      ],
+      "NbOutputVars": 1,
+      "OutputVars": [
+        "var2"
+      ],
+      "NbParams": 0,
+      "Params": [],
+      "NbLiterals": 4,
+      "Literals": [
+        "0.000000e+00f",
+        "1.000000e+00f",
+        "0.000000e+00f",
+        "6.000000e+00f"
+      ],
+      "NbOperations": 3,
+      "Operations": [
+        "const auto var0 = pwgen::iPlus(arg0, arg1);",
+        "const auto var1 = pwgen::iMin(literal3, var0);",
+        "const auto var2 = pwgen::iMax(literal2, var1);"
+      ],
+      "TacticValue": "0x0000000000000006"
+    },
+    {
+      "Name": "/s3/s3.0/dw/dw.0/QuantizeLinear",
+      "LayerType": "Reformat",
+      "Inputs": [
+        {
+          "Name": "/s2/s2.1/Clip_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            6,
+            64,
+            64
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "/s3/s3.0/dw/dw.0/QuantizeLinear_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            6,
+            64,
+            64
+          ],
+          "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+        }
+      ],
+      "ParameterType": "Reformat",
+      "Origin": "QDQ",
+      "TacticValue": "0x0000000000000000"
+    },
+    {
+      "Name": "/l2/QuantizeLinear",
+      "LayerType": "Reformat",
+      "Inputs": [
+        {
+          "Name": "/s2/s2.1/Clip_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            6,
+            64,
+            64
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "/l2/QuantizeLinear_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            6,
+            64,
+            64
+          ],
+          "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+        }
+      ],
+      "ParameterType": "Reformat",
+      "Origin": "QDQ",
+      "TacticValue": "0x0000000000000000"
+    },
+    {
+      "Name": "s3.0.dw.0.weight + /s3/s3.0/dw/dw.0/QuantizeLinear_1 + /s3/s3.0/dw/dw.0/Conv + PWN(/s3/s3.0/dw/dw.2/Clip)",
+      "LayerType": "CudaDepthwiseConvolution",
+      "Inputs": [
+        {
+          "Name": "/s3/s3.0/dw/dw.0/QuantizeLinear_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            6,
+            64,
+            64
+          ],
+          "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "/s3/s3.0/pw/pw.0/QuantizeLinear_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            6,
+            32,
+            32
+          ],
+          "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+        }
+      ],
+      "ParameterType": "Convolution",
+      "Kernel": [
+        3,
+        3
+      ],
+      "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+      "PrePadding": [
+        1,
+        1
+      ],
+      "PostPadding": [
+        1,
+        1
+      ],
+      "Stride": [
+        2,
+        2
+      ],
+      "Dilation": [
+        1,
+        1
+      ],
+      "OutMaps": 6,
+      "Groups": 6,
+      "Weights": {
+        "Type": "Int8",
+        "Count": 54
+      },
+      "Bias": {
+        "Type": "Float",
+        "Count": 6
+      },
+      "HasSparseWeights": 0,
+      "Activation": "CLIPPED_RELU",
+      "ParameterSubType": "[0.000000,127.000000]",
+      "HasBias": 1,
+      "TacticValue": "0xfffffffffffffffd"
+    },
+    {
+      "Name": "s3.0.pw.0.weight + /s3/s3.0/pw/pw.0/QuantizeLinear_1 + /s3/s3.0/pw/pw.0/Conv + PWN(/s3/s3.0/Clip)",
+      "LayerType": "CaskConvolution",
+      "Inputs": [
+        {
+          "Name": "/s3/s3.0/pw/pw.0/QuantizeLinear_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            6,
+            32,
+            32
+          ],
+          "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "/s3/s3.0/Clip_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            8,
+            32,
+            32
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "ParameterType": "Convolution",
+      "Kernel": [
+        1,
+        1
+      ],
+      "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+      "PrePadding": [
+        0,
+        0
+      ],
+      "PostPadding": [
+        0,
+        0
+      ],
+      "Stride": [
+        1,
+        1
+      ],
+      "Dilation": [
+        1,
+        1
+      ],
+      "OutMaps": 8,
+      "Groups": 1,
+      "Weights": {
+        "Type": "Int8",
+        "Count": 48
+      },
+      "Bias": {
+        "Type": "Float",
+        "Count": 8
+      },
+      "HasSparseWeights": 0,
+      "Activation": "CLIPPED_RELU",
+      "ParameterSubType": "[0.000000,6.000000]",
+      "HasBias": 1,
+      "HasReLU": 0,
+      "TacticName": "volta_fp32_icudnn_int8x4_128x32_relu_small_nn_v1",
+      "TacticValue": "0x170705f9b2fc8d53"
+    },
+    {
+      "Name": "/s3/s3.1/dw/dw.0/QuantizeLinear",
+      "LayerType": "Reformat",
+      "Inputs": [
+        {
+          "Name": "/s3/s3.0/Clip_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            8,
+            32,
+            32
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "/s3/s3.1/dw/dw.0/QuantizeLinear_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            8,
+            32,
+            32
+          ],
+          "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+        }
+      ],
+      "ParameterType": "Reformat",
+      "Origin": "QDQ",
+      "TacticValue": "0x0000000000000000"
+    },
+    {
+      "Name": "s3.1.dw.0.weight + /s3/s3.1/dw/dw.0/QuantizeLinear_1 + /s3/s3.1/dw/dw.0/Conv + PWN(/s3/s3.1/dw/dw.2/Clip)",
+      "LayerType": "CudaDepthwiseConvolution",
+      "Inputs": [
+        {
+          "Name": "/s3/s3.1/dw/dw.0/QuantizeLinear_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            8,
+            32,
+            32
+          ],
+          "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "/s3/s3.1/pw/pw.0/QuantizeLinear_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            8,
+            32,
+            32
+          ],
+          "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+        }
+      ],
+      "ParameterType": "Convolution",
+      "Kernel": [
+        3,
+        3
+      ],
+      "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+      "PrePadding": [
+        1,
+        1
+      ],
+      "PostPadding": [
+        1,
+        1
+      ],
+      "Stride": [
+        1,
+        1
+      ],
+      "Dilation": [
+        1,
+        1
+      ],
+      "OutMaps": 8,
+      "Groups": 8,
+      "Weights": {
+        "Type": "Int8",
+        "Count": 72
+      },
+      "Bias": {
+        "Type": "Float",
+        "Count": 8
+      },
+      "HasSparseWeights": 0,
+      "Activation": "CLIPPED_RELU",
+      "ParameterSubType": "[0.000000,127.000000]",
+      "HasBias": 1,
+      "TacticValue": "0xfffffffffffffffd"
+    },
+    {
+      "Name": "s3.1.pw.0.weight + /s3/s3.1/pw/pw.0/QuantizeLinear_1 + /s3/s3.1/pw/pw.0/Conv",
+      "LayerType": "CaskConvolution",
+      "Inputs": [
+        {
+          "Name": "/s3/s3.1/pw/pw.0/QuantizeLinear_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            8,
+            32,
+            32
+          ],
+          "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "/s3/s3.1/pw/pw.0/Conv_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            8,
+            32,
+            32
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "ParameterType": "Convolution",
+      "Kernel": [
+        1,
+        1
+      ],
+      "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+      "PrePadding": [
+        0,
+        0
+      ],
+      "PostPadding": [
+        0,
+        0
+      ],
+      "Stride": [
+        1,
+        1
+      ],
+      "Dilation": [
+        1,
+        1
+      ],
+      "OutMaps": 8,
+      "Groups": 1,
+      "Weights": {
+        "Type": "Int8",
+        "Count": 64
+      },
+      "Bias": {
+        "Type": "Float",
+        "Count": 8
+      },
+      "HasSparseWeights": 0,
+      "Activation": "NONE",
+      "HasBias": 1,
+      "HasReLU": 0,
+      "TacticName": "volta_fp32_icudnn_int8x4_128x32_relu_xregs_small_nn_v1",
+      "TacticValue": "0x2d769bf5f9017100"
+    },
+    {
+      "Name": "PWN(/s3/s3.1/Add, /s3/s3.1/Clip)",
+      "LayerType": "PointWiseV2",
+      "Inputs": [
+        {
+          "Name": "/s3/s3.1/pw/pw.0/Conv_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            8,
+            32,
+            32
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        },
+        {
+          "Name": "/s3/s3.0/Clip_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            8,
+            32,
+            32
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "/s3/s3.1/Clip_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            8,
+            32,
+            32
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "ParameterType": "PointWise",
+      "ParameterSubType": "PointWiseExpression",
+      "NbInputArgs": 2,
+      "InputArgs": [
+        "arg0",
+        "arg1"
+      ],
+      "NbOutputVars": 1,
+      "OutputVars": [
+        "var2"
+      ],
+      "NbParams": 0,
+      "Params": [],
+      "NbLiterals": 4,
+      "Literals": [
+        "0.000000e+00f",
+        "1.000000e+00f",
+        "0.000000e+00f",
+        "6.000000e+00f"
+      ],
+      "NbOperations": 3,
+      "Operations": [
+        "const auto var0 = pwgen::iPlus(arg0, arg1);",
+        "const auto var1 = pwgen::iMin(literal3, var0);",
+        "const auto var2 = pwgen::iMax(literal2, var1);"
+      ],
+      "TacticValue": "0x0000000000000005"
+    },
+    {
+      "Name": "/s3/s3.2/dw/dw.0/QuantizeLinear",
+      "LayerType": "Reformat",
+      "Inputs": [
+        {
+          "Name": "/s3/s3.1/Clip_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            8,
+            32,
+            32
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "/s3/s3.2/dw/dw.0/QuantizeLinear_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            8,
+            32,
+            32
+          ],
+          "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+        }
+      ],
+      "ParameterType": "Reformat",
+      "Origin": "QDQ",
+      "TacticValue": "0x0000000000000000"
+    },
+    {
+      "Name": "s3.2.dw.0.weight + /s3/s3.2/dw/dw.0/QuantizeLinear_1 + /s3/s3.2/dw/dw.0/Conv + PWN(/s3/s3.2/dw/dw.2/Clip)",
+      "LayerType": "CudaDepthwiseConvolution",
+      "Inputs": [
+        {
+          "Name": "/s3/s3.2/dw/dw.0/QuantizeLinear_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            8,
+            32,
+            32
+          ],
+          "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "/s3/s3.2/pw/pw.0/QuantizeLinear_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            8,
+            32,
+            32
+          ],
+          "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+        }
+      ],
+      "ParameterType": "Convolution",
+      "Kernel": [
+        3,
+        3
+      ],
+      "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+      "PrePadding": [
+        1,
+        1
+      ],
+      "PostPadding": [
+        1,
+        1
+      ],
+      "Stride": [
+        1,
+        1
+      ],
+      "Dilation": [
+        1,
+        1
+      ],
+      "OutMaps": 8,
+      "Groups": 8,
+      "Weights": {
+        "Type": "Int8",
+        "Count": 72
+      },
+      "Bias": {
+        "Type": "Float",
+        "Count": 8
+      },
+      "HasSparseWeights": 0,
+      "Activation": "CLIPPED_RELU",
+      "ParameterSubType": "[0.000000,127.000000]",
+      "HasBias": 1,
+      "TacticValue": "0xfffffffffffffffd"
+    },
+    {
+      "Name": "s3.2.pw.0.weight + /s3/s3.2/pw/pw.0/QuantizeLinear_1 + /s3/s3.2/pw/pw.0/Conv + /s3/s3.2/Add",
+      "LayerType": "CaskConvolution",
+      "Inputs": [
+        {
+          "Name": "/s3/s3.2/pw/pw.0/QuantizeLinear_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            8,
+            32,
+            32
+          ],
+          "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+        },
+        {
+          "Name": "/s3/s3.1/Clip_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            8,
+            32,
+            32
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "/s3/s3.2/Add_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            8,
+            32,
+            32
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "ParameterType": "Convolution",
+      "Kernel": [
+        1,
+        1
+      ],
+      "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+      "PrePadding": [
+        0,
+        0
+      ],
+      "PostPadding": [
+        0,
+        0
+      ],
+      "Stride": [
+        1,
+        1
+      ],
+      "Dilation": [
+        1,
+        1
+      ],
+      "OutMaps": 8,
+      "Groups": 1,
+      "Weights": {
+        "Type": "Int8",
+        "Count": 64
+      },
+      "Bias": {
+        "Type": "Float",
+        "Count": 8
+      },
+      "HasSparseWeights": 0,
+      "Activation": "NONE",
+      "HasBias": 1,
+      "HasReLU": 0,
+      "TacticName": "volta_fp32_icudnn_int8x4_128x32_relu_small_nn_v1",
+      "TacticValue": "0x170705f9b2fc8d53"
+    },
+    {
+      "Name": "/l3/QuantizeLinear",
+      "LayerType": "Reformat",
+      "Inputs": [
+        {
+          "Name": "/s3/s3.2/Add_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            8,
+            32,
+            32
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "/s3/s3.2/Clip_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            8,
+            32,
+            32
+          ],
+          "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+        }
+      ],
+      "ParameterType": "Reformat",
+      "Origin": "QDQ",
+      "TacticValue": "0x0000000000000000"
+    },
+    {
+      "Name": "PWN(/s3/s3.2/Clip)",
+      "LayerType": "PointWiseV2",
+      "Inputs": [
+        {
+          "Name": "/s3/s3.2/Clip_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            8,
+            32,
+            32
+          ],
+          "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "/l3/QuantizeLinear_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            8,
+            32,
+            32
+          ],
+          "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+        }
+      ],
+      "ParameterType": "PointWise",
+      "ParameterSubType": "PointWiseExpression",
+      "NbInputArgs": 1,
+      "InputArgs": [
+        "arg0"
+      ],
+      "NbOutputVars": 1,
+      "OutputVars": [
+        "var1"
+      ],
+      "NbParams": 0,
+      "Params": [],
+      "NbLiterals": 4,
+      "Literals": [
+        "0.000000e+00f",
+        "1.000000e+00f",
+        "0.000000e+00f",
+        "6.000000e+00f"
+      ],
+      "NbOperations": 2,
+      "Operations": [
+        "const auto var0 = pwgen::iMin(literal3, arg0);",
+        "const auto var1 = pwgen::iMax(literal2, var0);"
+      ],
+      "TacticValue": "0x0000000000000004"
+    },
+    {
+      "Name": "l3.weight + /l3/QuantizeLinear_1 + /l3/Conv",
+      "LayerType": "CaskConvolution",
+      "Inputs": [
+        {
+          "Name": "/l3/QuantizeLinear_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            8,
+            32,
+            32
+          ],
+          "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "/l3/Conv_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            4,
+            32,
+            32
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "ParameterType": "Convolution",
+      "Kernel": [
+        1,
+        1
+      ],
+      "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+      "PrePadding": [
+        0,
+        0
+      ],
+      "PostPadding": [
+        0,
+        0
+      ],
+      "Stride": [
+        1,
+        1
+      ],
+      "Dilation": [
+        1,
+        1
+      ],
+      "OutMaps": 4,
+      "Groups": 1,
+      "Weights": {
+        "Type": "Int8",
+        "Count": 32
+      },
+      "Bias": {
+        "Type": "Float",
+        "Count": 4
+      },
+      "HasSparseWeights": 0,
+      "Activation": "NONE",
+      "HasBias": 1,
+      "HasReLU": 0,
+      "TacticName": "volta_fp32_icudnn_int8x4_128x32_relu_small_nn_v1",
+      "TacticValue": "0x170705f9b2fc8d53"
+    },
+    {
+      "Name": "Resize_bilinear_w + Resize_W_Q + Resize_W_DQ + Resize_Deconv",
+      "LayerType": "GemmDeconvolution",
+      "Inputs": [
+        {
+          "Name": "/l3/Conv_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            4,
+            32,
+            32
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "/Resize_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            4,
+            64,
+            64
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "ParameterType": "Convolution",
+      "Kernel": [
+        4,
+        4
+      ],
+      "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+      "PrePadding": [
+        1,
+        1
+      ],
+      "PostPadding": [
+        1,
+        1
+      ],
+      "Stride": [
+        2,
+        2
+      ],
+      "Dilation": [
+        1,
+        1
+      ],
+      "OutMaps": 4,
+      "Groups": 1,
+      "Weights": {
+        "Type": "Float",
+        "Count": 256
+      },
+      "Bias": {
+        "Type": "Float",
+        "Count": 0
+      },
+      "HasSparseWeights": 0,
+      "Activation": "NONE",
+      "TacticValue": "0x0000000000000000"
+    },
+    {
+      "Name": "l2.weight + /l2/QuantizeLinear_1 + /l2/Conv + /Add",
+      "LayerType": "CaskConvolution",
+      "Inputs": [
+        {
+          "Name": "/l2/QuantizeLinear_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            6,
+            64,
+            64
+          ],
+          "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+        },
+        {
+          "Name": "/Resize_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            4,
+            64,
+            64
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "/Add_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            4,
+            64,
+            64
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "ParameterType": "Convolution",
+      "Kernel": [
+        1,
+        1
+      ],
+      "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+      "PrePadding": [
+        0,
+        0
+      ],
+      "PostPadding": [
+        0,
+        0
+      ],
+      "Stride": [
+        1,
+        1
+      ],
+      "Dilation": [
+        1,
+        1
+      ],
+      "OutMaps": 4,
+      "Groups": 1,
+      "Weights": {
+        "Type": "Int8",
+        "Count": 24
+      },
+      "Bias": {
+        "Type": "Float",
+        "Count": 4
+      },
+      "HasSparseWeights": 0,
+      "Activation": "NONE",
+      "HasBias": 1,
+      "HasReLU": 0,
+      "TacticName": "volta_fp32_icudnn_int8x4_128x32_relu_small_nn_v1",
+      "TacticValue": "0x170705f9b2fc8d53"
+    },
+    {
+      "Name": "Resize_1_bilinear_w + Resize_1_W_Q + Resize_1_W_DQ + Resize_1_Deconv",
+      "LayerType": "GemmDeconvolution",
+      "Inputs": [
+        {
+          "Name": "/Add_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            4,
+            64,
+            64
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "/Resize_1_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            4,
+            128,
+            128
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "ParameterType": "Convolution",
+      "Kernel": [
+        4,
+        4
+      ],
+      "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+      "PrePadding": [
+        1,
+        1
+      ],
+      "PostPadding": [
+        1,
+        1
+      ],
+      "Stride": [
+        2,
+        2
+      ],
+      "Dilation": [
+        1,
+        1
+      ],
+      "OutMaps": 4,
+      "Groups": 1,
+      "Weights": {
+        "Type": "Float",
+        "Count": 256
+      },
+      "Bias": {
+        "Type": "Float",
+        "Count": 0
+      },
+      "HasSparseWeights": 0,
+      "Activation": "NONE",
+      "TacticValue": "0x0000000000000000"
+    },
+    {
+      "Name": "l1.weight + /l1/QuantizeLinear + /l1/Conv + /Add_1",
+      "LayerType": "CaskConvolution",
+      "Inputs": [
+        {
+          "Name": "/s2/s2.0/dw/dw.0/QuantizeLinear_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            4,
+            128,
+            128
+          ],
+          "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+        },
+        {
+          "Name": "/Resize_1_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            4,
+            128,
+            128
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "/Add_1_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            4,
+            128,
+            128
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "ParameterType": "Convolution",
+      "Kernel": [
+        1,
+        1
+      ],
+      "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+      "PrePadding": [
+        0,
+        0
+      ],
+      "PostPadding": [
+        0,
+        0
+      ],
+      "Stride": [
+        1,
+        1
+      ],
+      "Dilation": [
+        1,
+        1
+      ],
+      "OutMaps": 4,
+      "Groups": 1,
+      "Weights": {
+        "Type": "Int8",
+        "Count": 16
+      },
+      "Bias": {
+        "Type": "Float",
+        "Count": 4
+      },
+      "HasSparseWeights": 0,
+      "Activation": "NONE",
+      "HasBias": 1,
+      "HasReLU": 0,
+      "TacticName": "volta_fp32_icudnn_int8x4_128x32_relu_interior_nn_v1",
+      "TacticValue": "0xc9c0872569525a26"
+    },
+    {
+      "Name": "/fuse/fuse.0/QuantizeLinear",
+      "LayerType": "Reformat",
+      "Inputs": [
+        {
+          "Name": "/Add_1_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            4,
+            128,
+            128
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "/fuse/fuse.0/QuantizeLinear_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            4,
+            128,
+            128
+          ],
+          "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+        }
+      ],
+      "ParameterType": "Reformat",
+      "Origin": "QDQ",
+      "TacticValue": "0x0000000000000000"
+    },
+    {
+      "Name": "fuse.0.weight + /fuse/fuse.0/QuantizeLinear_1 + /fuse/fuse.0/Conv + PWN(/fuse/fuse.2/Clip)",
+      "LayerType": "CaskConvolution",
+      "Inputs": [
+        {
+          "Name": "/fuse/fuse.0/QuantizeLinear_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            4,
+            128,
+            128
+          ],
+          "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "/cls/QuantizeLinear_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            4,
+            128,
+            128
+          ],
+          "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+        }
+      ],
+      "ParameterType": "Convolution",
+      "Kernel": [
+        3,
+        3
+      ],
+      "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+      "PrePadding": [
+        1,
+        1
+      ],
+      "PostPadding": [
+        1,
+        1
+      ],
+      "Stride": [
+        1,
+        1
+      ],
+      "Dilation": [
+        1,
+        1
+      ],
+      "OutMaps": 4,
+      "Groups": 1,
+      "Weights": {
+        "Type": "Int8",
+        "Count": 144
+      },
+      "Bias": {
+        "Type": "Float",
+        "Count": 4
+      },
+      "HasSparseWeights": 0,
+      "Activation": "CLIPPED_RELU",
+      "ParameterSubType": "[0.000000,127.000000]",
+      "HasBias": 1,
+      "HasReLU": 0,
+      "TacticName": "volta_int8x4_icudnn_int8x4_128x32_relu_small_nn_v1",
+      "TacticValue": "0xa8d133a63883409f"
+    },
+    {
+      "Name": "cls.weight + /cls/QuantizeLinear_1 + /cls/Conv",
+      "LayerType": "CaskConvolution",
+      "Inputs": [
+        {
+          "Name": "/cls/QuantizeLinear_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            4,
+            128,
+            128
+          ],
+          "Format/Datatype": "Four wide channel vectorized row major Int8 format"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "/cls/Conv_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            2,
+            128,
+            128
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "ParameterType": "Convolution",
+      "Kernel": [
+        1,
+        1
+      ],
+      "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+      "PrePadding": [
+        0,
+        0
+      ],
+      "PostPadding": [
+        0,
+        0
+      ],
+      "Stride": [
+        1,
+        1
+      ],
+      "Dilation": [
+        1,
+        1
+      ],
+      "OutMaps": 2,
+      "Groups": 1,
+      "Weights": {
+        "Type": "Int8",
+        "Count": 8
+      },
+      "Bias": {
+        "Type": "Float",
+        "Count": 2
+      },
+      "HasSparseWeights": 0,
+      "Activation": "NONE",
+      "HasBias": 1,
+      "HasReLU": 0,
+      "TacticName": "volta_fp32_icudnn_int8x4_128x32_relu_interior_nn_v1",
+      "TacticValue": "0xc9c0872569525a26"
+    },
+    {
+      "Name": "Resize_2_bilinear_w + Resize_2_W_Q + Resize_2_W_DQ + Resize_2_Deconv",
+      "LayerType": "GemmDeconvolution",
+      "Inputs": [
+        {
+          "Name": "/cls/Conv_output_0",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            2,
+            128,
+            128
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "logits_f",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            2,
+            512,
+            512
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "ParameterType": "Convolution",
+      "Kernel": [
+        8,
+        8
+      ],
+      "PaddingMode": "kEXPLICIT_ROUND_DOWN",
+      "PrePadding": [
+        2,
+        2
+      ],
+      "PostPadding": [
+        2,
+        2
+      ],
+      "Stride": [
+        4,
+        4
+      ],
+      "Dilation": [
+        1,
+        1
+      ],
+      "OutMaps": 2,
+      "Groups": 1,
+      "Weights": {
+        "Type": "Float",
+        "Count": 256
+      },
+      "Bias": {
+        "Type": "Float",
+        "Count": 0
+      },
+      "HasSparseWeights": 0,
+      "Activation": "NONE",
+      "TacticValue": "0x0000000000000000"
+    },
+    {
+      "Name": "logits_Q",
+      "LayerType": "Reformat",
+      "Inputs": [
+        {
+          "Name": "logits_f",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            2,
+            512,
+            512
+          ],
+          "Format/Datatype": "Row major linear FP32"
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "logits",
+          "Location": "Device",
+          "Dimensions": [
+            1,
+            2,
+            512,
+            512
+          ],
+          "Format/Datatype": "Row major Int8 format"
+        }
+      ],
+      "ParameterType": "Reformat",
+      "Origin": "QDQ",
+      "TacticValue": "0x00000000000003ea"
+    }
+  ],
+  "Bindings": [
+    "image",
+    "logits"
+  ]
+}

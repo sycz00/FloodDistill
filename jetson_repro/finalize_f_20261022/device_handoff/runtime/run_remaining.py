@@ -86,6 +86,11 @@ def main():
                 code=command(cmd,dest/'build.log',out)
             if code or not build.exists() or json.loads(build.read_text()).get('status')!='built':
                 state.update(status='FAILED_BUILD',returncode=code);record(state);continue
+            if model.get('integer_repair_certificate'):
+                from repair_policy import integer_certificate
+                try:integer_certificate(json.loads(build.read_text()),json.loads(Path(str(engine)+'.layers.json').read_text()),model)
+                except (OSError,KeyError,ValueError) as error:
+                    state.update(status='FAILED_INTEGER_TENSOR_CERTIFICATE',reason=str(error));record(state);continue
             if model['precision']=='pure' and not json.loads(build.read_text())['precision_audit']['full_integer_tensor_path']:
                 state.update(status='FAILED_INTEGER_TENSOR_CERTIFICATE');record(state);continue
             if model.get('fp32_islands'):
@@ -99,6 +104,19 @@ def main():
         if model.get('io'):cmd+=['--io',str(ROOT/model['io'])]
         if onlydry:cmd+=['--only-dry']
         elif model['precision']=='fp32':cmd+=['--source-reference',str(ROOT/model['source_reference'])]
+        elif model.get('source_accuracy_pass') and not model.get('diagnostic_extra'):
+            baseline=out/(model['architecture']+'_s'+str(model['seed'])+'_fp32')/'evaluation/s11val.json'
+            if baseline.is_file():
+                from validate_results import validate_rows
+                from evaluate_native import summarize
+                rows=json.loads(baseline.read_text())['rows'];validate_rows(ROOT,'s11val',rows)
+                parent=next(m for m in manifest['engines'] if m['id']==model['architecture']+'_s'+str(model['seed'])+'_fp32')
+                expected=json.loads((ROOT/parent['source_reference']).read_text())['mIoU']
+                if abs(summarize(rows)['pooled']['miou']-expected)>.005:
+                    state.update(status='FAILED_FP32_BASELINE');record(state);continue
+                cmd+=['--quant-source-reference',str(baseline)]
+            elif model.get('integer_repair_certificate') or model.get('island_constraint_mode')=='prefer':
+                state.update(status='FAILED_FP32_BASELINE');record(state);continue
         code=command(cmd,dest/'evaluation.log',out)
         if code:state.update(status='FAILED_EVALUATION',returncode=code);record(state);continue
         if not onlydry:

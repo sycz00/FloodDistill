@@ -32,10 +32,13 @@ def main():
             checked.append(model['id']);del native_engine;gc.collect()
         native=dict(tensorrt=trt.__version__,torch=torch.__version__,reused_engines_deserialized=checked)
     import dataset_io
-    counts={}
+    counts={};profiles={}
     for ds in ('s11val','s11test','bolivia','wf','sturm512'):
-        counts[ds]=sum(1 for _ in dataset_io.images(ds,a.sturm_root,a.wf_root));print(ds,counts[ds],'input/mask hashes verified',flush=True)
+        counts[ds]=0
+        for _,_,rec in dataset_io.images(ds,a.sturm_root,a.wf_root):
+            counts[ds]+=1;tag=rec.get('input_profile','canonical_workstation');profiles[tag]=profiles.get(tag,0)+1
+        print(ds,counts[ds],'exact input/mask hashes verified',flush=True)
     counts['dry159']=sum(1 for _ in dataset_io.dry())
-    result=dict(status='CPU_INPUTS_VERIFIED_NATIVE_PENDING' if a.cpu_only else 'PASS_NATIVE_PREREQUISITES',prepared=prepared,full_input_inventory=counts,native=native,elapsed_seconds=time.time()-started,heldback97='NOT_READ')
+    result=dict(status='CPU_INPUTS_VERIFIED_NATIVE_PENDING' if a.cpu_only else 'PASS_NATIVE_PREREQUISITES',prepared=prepared,full_input_inventory=counts,input_profiles=profiles,native=native,elapsed_seconds=time.time()-started,heldback97='NOT_READ')
     a.out.parent.mkdir(parents=True,exist_ok=True);temp=a.out.with_name(a.out.name+'.tmp');temp.write_text(json.dumps(result,indent=2)+'\n');temp.replace(a.out);print(json.dumps(result,indent=2));return 0
 if __name__=='__main__':raise SystemExit(main())

@@ -33,8 +33,13 @@ def from_onnx(path):
     selected[heads[0].name]=heads[0]
     return dict(schema_version=1,policy='FP32 attention MatMuls through normalization Div and floating two-class classifier; TF32 disabled; remaining FP16/INT8 placement audited separately',node_names=sorted(selected),tensor_names=sorted({v for n in selected.values() for v in n.output}),required_compute_nodes=sorted([n.name for n in matmuls]+list(divs)+[heads[0].name]),attention_matmuls=8,normalizers=4,classifier=heads[0].name)
 
-def constrain(network,config,trt,spec):
-    config.set_flag(trt.BuilderFlag.OBEY_PRECISION_CONSTRAINTS);wanted=set(spec['node_names']);tensors=set(spec['tensor_names']);matched=[];names=[]
+def constrain(network,config,trt,spec,mode='obey'):
+    if mode not in ('obey','prefer'):raise ValueError('Unknown precision constraint mode')
+    if mode=='prefer':
+        config.clear_flag(trt.BuilderFlag.OBEY_PRECISION_CONSTRAINTS)
+        config.set_flag(trt.BuilderFlag.PREFER_PRECISION_CONSTRAINTS)
+    else:config.set_flag(trt.BuilderFlag.OBEY_PRECISION_CONSTRAINTS)
+    wanted=set(spec['node_names']);tensors=set(spec['tensor_names']);matched=[];names=[]
     for i in range(network.num_layers):
         layer=network.get_layer(i);outputs=[layer.get_output(j) for j in range(layer.num_outputs)]
         if layer.name not in wanted and not any(t.name in tensors for t in outputs):continue
@@ -45,7 +50,7 @@ def constrain(network,config,trt,spec):
         matched.append(dict(name=layer.name,outputs=[t.name for t in outputs]));names.append(layer.name)
     missing=[name for name in spec['required_compute_nodes'] if not any(contains_node(seen,name) for seen in names)]
     if missing:raise ValueError('Cannot constrain required FP32 layers: '+repr(missing))
-    return dict(required=spec['required_compute_nodes'],constrained=matched)
+    return dict(required=spec['required_compute_nodes'],constrained=matched,mode=mode,admission='All required FP32 islands must pass the independent post-build inspector audit')
 
 def inspect(layers,spec):
     rows=layers.get('Layers',[]) if isinstance(layers,dict) else layers;missing=[];bad=[];verified=[]
@@ -55,7 +60,7 @@ def inspect(layers,spec):
         okay=True
         for row in matching:
             formats=[str(t.get('Format/Datatype','')) for t in row.get('Outputs',[])]
-            if not formats or any(re.search(r'FP16|Half|BF16|INT8',v,re.I) for v in formats) or not any(re.search(r'FP32|Float',v,re.I) for v in formats):okay=False;bad.append(dict(node=name,layer=row.get('Name'),formats=formats))
+            if not formats or any(re.search(r'FP16|Half|BF16|INT8',v,re.I) or not re.search(r'FP32|Float',v,re.I) for v in formats):okay=False;bad.append(dict(node=name,layer=row.get('Name'),formats=formats))
         if okay:verified.append(name)
     return dict(passed=not missing and not bad,verified=verified,missing=missing,wrong_or_unknown=bad,scope='Requested FP32 compute and inspected output formats; does not certify every internal kernel arithmetic operation')
 
@@ -76,6 +81,8 @@ def validate_certificate(record, model, root, layers=None):
         raise ValueError('Missing or failed FP32 island certificate')
     if record.get('fp32_constraints', {}).get('required') != spec['required_compute_nodes']:
         raise ValueError('Required FP32 compute constraints were not recorded')
+    if record.get('fp32_constraints', {}).get('mode','obey') != model.get('island_constraint_mode','obey'):
+        raise ValueError('Stale FP32 builder constraint mode')
     if layers is not None and not inspect(layers, spec)['passed']:
         raise ValueError('Saved engine inspector contradicts FP32 certificate')
     return True

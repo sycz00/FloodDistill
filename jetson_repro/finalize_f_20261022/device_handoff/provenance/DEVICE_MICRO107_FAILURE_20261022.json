@@ -1,0 +1,8 @@
+{
+  "engine": "results_logs/smoke_20261022/build_R4_micro_s107_qat_pure/model.engine (built with the controller's exact arguments, mode no_fp16)",
+  "integer_certificate": "full_integer_tensor_path = false: 33/38 layers INT8, 4- and 6-channel convolutions use TensorRT 8.4 'volta_fp32_icudnn_int8x4' kernels with FP32 outputs. The controller records this cell as FAILED_INTEGER_TENSOR_CERTIFICATE and does not evaluate it.",
+  "smoke_only_native_accuracy": "evaluated anyway for diagnosis: S11 val pooled mIoU 0.445, water IoU 0.0000018 (workstation CPU 0.854 / 0.741). Predicts land everywhere.",
+  "single_image_probe": "Ghana_1033830: int8 logits in [-29, 29] (output_scale 0.0472, no saturation, no ties), channel means +17.9 / -16.7, 0 water predicted vs 96811 true water pixels. I/O bindings are linear INT8 as specified.",
+  "interpretation": "Genuine native failure on TensorRT 8.4 for this graph, not an evaluation wiring problem. No graph change attempted on Jetson.",
+  "created_utc": "2026-10-22"
+}

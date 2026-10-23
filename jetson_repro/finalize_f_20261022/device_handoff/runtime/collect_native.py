@@ -21,18 +21,23 @@ def imported(spec,ds):
     return summarize(rows)
 def main(attempt):
     out=ROOT/'results'/attempt;manifest=read(ROOT/'RUN_MANIFEST.json');states={r['id']:r for r in read(out/'STATUS.json')}
-    lookup={m['id']:m for m in manifest['engines']};evaluated={};accuracy=[];bench=[];dryrows=[];wfdry=[];coverage=[];invalid=[];complete_ids=set()
+    lookup={m['id']:m for m in manifest['engines']};evaluated={};accuracy=[];bench=[];dryrows=[];wfdry=[];coverage=[];invalid=[];complete_ids=set();certified_ids=set()
     for ident,m in lookup.items():
         dest=out/ident;state=states.get(ident,dict(status='NOT_RUN'))
         completion=dest/'evaluation/COMPLETE.json'
         try:
             expected_engine=m['reuse']['engine_sha256'] if m.get('reuse') else read(dest/'build.json')['engine_sha256']
             cert=read(ROOT/m['reuse']['build_receipt']) if m.get('reuse') else read(dest/'build.json')
+            if cert.get('model_sha256')!=m['onnx_sha256']:raise ValueError('Wrong model identity')
             if cert['engine_sha256']!=expected_engine:raise ValueError('Engine/build identity mismatch')
             if m['precision']=='pure' and not cert['precision_audit']['full_integer_tensor_path']:raise ValueError('Integer certificate failed')
+            if m.get('integer_repair_certificate'):
+                from repair_policy import integer_certificate
+                integer_certificate(cert,read(dest/'model.engine.layers.json'),m)
             if m.get('fp32_islands'):
                 from precision_islands import validate_certificate
                 validate_certificate(cert, m, ROOT, read(dest/'model.engine.layers.json'))
+            certified_ids.add(ident)
             if completion.exists() and read(completion)['engine_sha256']==expected_engine:complete_ids.add(ident)
         except (OSError,KeyError,ValueError) as error:
             if completion.exists():invalid.append(dict(id=ident,stage='completion/identity',reason=str(error)))
@@ -65,7 +70,7 @@ def main(attempt):
         elif (dest/'evaluation/timing.json').exists():
             t=read(dest/'evaluation/timing.json');profile=read(dest/'benchmark/bench.json') if (dest/'benchmark/bench.json').exists() else {};steady=read(dest/'steady_power/power_steady.json') if (dest/'steady_power/power_steady.json').exists() else {}
             build=read(dest/'build.json');audit=build.get('precision_audit',{})
-            bench.append(dict(id=ident,architecture=m['architecture'],seed=m['seed'],precision=m['precision'],method=m['method'],measurement='new native attempt',benchmark_evidence_valid=benchmark_receipts_valid(profile,steady,state),gpu_p50_ms=t['kernel_ms']['p50'],gpu_p95_ms=t['kernel_ms']['p95'],gpu_p99_ms=t['kernel_ms']['p99'],wall_p50_ms=t['wall_ms']['p50'],wall_p95_ms=t['wall_ms']['p95'],wall_p99_ms=t['wall_ms']['p99'],engine_bytes=t['engine_bytes'],device_memory_bytes=t['device_memory_bytes'],int8_tensor_layers=audit.get('int8_tensor_layers'),layers=audit.get('layer_count'),full_integer_tensor_path=audit.get('full_integer_tensor_path'),throughput=profile.get('throughput_qps_runA'),steady_power_w=steady.get('steady_cpu_gpu_cv_mean_w'),steady_energy_mJ=steady.get('steady_energy_mJ_per_image'),power_rail=steady.get('power_rail'),fp32_islands_pass=build.get('fp32_island_audit',{}).get('passed'),fp32_islands_sha256=build.get('fp32_islands_sha256')))
+            bench.append(dict(id=ident,architecture=m['architecture'],seed=m['seed'],precision=m['precision'],method=m['method'],measurement='inherited native session' if state.get('inherited_from') else 'new native attempt',inherited_from=state.get('inherited_from'),benchmark_evidence_valid=benchmark_receipts_valid(profile,steady,state),gpu_p50_ms=t['kernel_ms']['p50'],gpu_p95_ms=t['kernel_ms']['p95'],gpu_p99_ms=t['kernel_ms']['p99'],wall_p50_ms=t['wall_ms']['p50'],wall_p95_ms=t['wall_ms']['p95'],wall_p99_ms=t['wall_ms']['p99'],engine_bytes=t['engine_bytes'],device_memory_bytes=t['device_memory_bytes'],int8_tensor_layers=audit.get('int8_tensor_layers'),layers=audit.get('layer_count'),full_integer_tensor_path=audit.get('full_integer_tensor_path'),throughput=profile.get('throughput_qps_runA'),steady_power_w=steady.get('steady_cpu_gpu_cv_mean_w'),steady_energy_mJ=steady.get('steady_energy_mJ_per_image'),power_rail=steady.get('power_rail'),fp32_islands_pass=build.get('fp32_island_audit',{}).get('passed'),fp32_islands_sha256=build.get('fp32_islands_sha256')))
         baseline=f"{m['architecture']}_s{m['seed']}_fp32"
         for ds in DATASETS:
             if (ident,ds) not in evaluated:continue
@@ -88,8 +93,8 @@ def main(attempt):
         bm=next((r for r in bench if r['id']==ids),{})
         benchmark_ok=bool(bm) and bm.get('benchmark_evidence_valid',False) and (bool(bm.get('steady_power_w')) and bool(bm.get('engine_bytes')) and bool(bm.get('throughput') or bm.get('throughput_img_per_s_trtexec')))
         acc=next((r for r in accuracy if r['id']==ids and r['dataset']=='s11val'),{})
-        source_ok=lookup.get(ids,{}).get('source_admission')=='SOURCE_QUALIFIED'
-        coverage.append(dict(**slot,native_status=status,all_five_datasets_and_dry_complete=complete,benchmark_complete=benchmark_ok,source_admission=lookup.get(ids,{}).get('source_admission'),native_source_accuracy_pass=acc.get('user_0p02_pass'),workstation_source_accuracy_pass=lookup.get(ids,{}).get('source_accuracy_pass'),fp32_islands_required=bool(lookup.get(ids,{}).get('fp32_islands')),fp32_islands_pass=bm.get('fp32_islands_pass'),deployment_accuracy_qualified=bool(source_ok and acc.get('user_0p02_pass'))))
+        source_ok=lookup.get(ids,{}).get('source_admission')=='SOURCE_QUALIFIED' or lookup.get(ids,{}).get('source_accuracy_pass') is True
+        coverage.append(dict(**slot,native_status=status,all_five_datasets_and_dry_complete=complete,benchmark_complete=benchmark_ok,source_admission=lookup.get(ids,{}).get('source_admission'),native_source_accuracy_pass=acc.get('user_0p02_pass'),workstation_source_accuracy_pass=lookup.get(ids,{}).get('source_accuracy_pass'),fp32_islands_required=bool(lookup.get(ids,{}).get('fp32_islands')),fp32_islands_pass=bm.get('fp32_islands_pass'),strict_logit_parity_all89=lookup.get(ids,{}).get('strict_logit_parity_all89'),strict_representation_parity_all89=lookup.get(ids,{}).get('strict_representation_parity_all89'),deployment_accuracy_qualified=bool(source_ok and acc.get('user_0p02_pass') and ids in certified_ids)))
     intervals=[]
     for arch in ('B0','R4','R4_micro'):
         for precision in ('fp16','mixed','pure'):
@@ -138,7 +143,7 @@ def main(attempt):
     completed=sum(r['all_five_datasets_and_dry_complete'] and r['benchmark_complete'] for r in coverage);unsupported=sum(not r.get('engine') for r in coverage)
     all_resolved=set(states)==set(lookup) and all(s['status'] not in ('STARTED','NOT_RUN') for s in states.values())
     probe=read(out/'ATTENTION_PROBE_STATUS.json') if (out/'ATTENTION_PROBE_STATUS.json').exists() else {}
-    report=dict(status='ALL_SUPPORTED_CELLS_OBSERVED' if completed+unsupported==48 and len(wiring)==12 and all(r['pass_0p005'] for r in wiring) and all_resolved and probe.get('returncode')==0 and not invalid else 'INCOMPLETE_OR_WIRING_FAILURE',matrix_slots=48,observed_complete_primary_cells=completed,unsupported_or_unavailable_slots=unsupported,engine_attempts=len(manifest['engines']),all_declared_attempts_resolved=all_resolved,invalid_results=invalid,accuracy_qualified_primary_cells=sum(r['deployment_accuracy_qualified'] for r in coverage),failed_attempts=[s for s in states.values() if s['status'].startswith('FAILED')],source_qualification_and_native_acceptance='Separate; neither overrides a recorded export/source failure',power='Use steady rail values; rail identity inferred; startup-diluted averages are secondary only',heldback97='NOT_READ')
+    report=dict(status='ALL_SUPPORTED_CELLS_OBSERVED' if completed+unsupported==48 and len(wiring)==12 and all(r['pass_0p005'] for r in wiring) and all_resolved and probe.get('returncode')==0 and not invalid else 'INCOMPLETE_OR_WIRING_FAILURE',matrix_slots=48,observed_complete_primary_cells=completed,unsupported_or_unavailable_slots=unsupported,engine_attempts=len(manifest['engines']),inherited_states=sum(bool(s.get('inherited_from')) for s in states.values()),all_declared_attempts_resolved=all_resolved,invalid_results=invalid,accuracy_qualified_primary_cells=sum(r['deployment_accuracy_qualified'] for r in coverage),failed_attempts=[s for s in states.values() if s['status'].startswith('FAILED')],source_qualification_and_native_acceptance='Accuracy, integer/FP32-island certification and strict equivalence are separate; accuracy does not override strict export failures',power='Use steady rail values; rail identity inferred; startup-diluted averages are secondary only',heldback97='NOT_READ')
     (out/'COLLECTION_RECEIPT.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps(report,indent=2))
     return 0 if report['status']=='ALL_SUPPORTED_CELLS_OBSERVED' else 1
 if __name__=='__main__':

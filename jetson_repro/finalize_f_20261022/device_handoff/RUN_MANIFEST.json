@@ -784,23 +784,27 @@
       "source_gate": "models/R4_micro_s42_ptq_mixed/SOURCE_GATE.json"
     },
     {
-      "id": "R4_micro_s42_ptq_pure",
+      "id": "R4_micro_s42_ptq_pure_aligned16",
       "architecture": "R4_micro",
       "seed": 42,
       "precision": "pure",
       "method": "PTQ",
       "mode": "no_fp16",
-      "onnx": "models/R4_micro_s42_ptq_pure/model.onnx",
-      "onnx_sha256": "4ec02f46f4778b235bcab282d23cf8abc5940977163b2aedd856bfb87ad558b6",
-      "source_admission": "SOURCE_QUALIFIED",
-      "source_reference": "models/R4_micro_s42_ptq_pure/SOURCE_REFERENCE.json",
+      "onnx": "models/R4_micro_s42_ptq_pure_aligned16/model.onnx",
+      "onnx_sha256": "ba3357ae434c190872b4d5c8333bafa1716ead2769e4c41294920b8c44207fc6",
+      "source_admission": "SOURCE_ACCURACY_PASS_REPRESENTATION_DIAGNOSTIC",
+      "source_reference": "models/R4_micro_s42_ptq_pure_aligned16/SOURCE_REFERENCE.json",
       "source_accuracy_pass": true,
       "strict_logit_parity_all89": null,
       "unrounded_structure_all89": true,
       "diagnostic_extra": false,
-      "source_gate": "models/R4_micro_s42_ptq_pure/SOURCE_GATE.json",
-      "io": "models/R4_micro_s42_ptq_pure/IO.json",
-      "io_sha256": "75905cae350868db6e4764e5abeafa6f4feb5c47920b63212ef750a08410173f"
+      "source_gate": "models/R4_micro_s42_ptq_pure_aligned16/REPAIR_VALIDATION.json",
+      "io": "models/R4_micro_s42_ptq_pure_aligned16/IO.json",
+      "io_sha256": "a4208c4c7a73597dd320980b4105c418b520d367ff3a0a0e3cf5390efa7999e9",
+      "strict_representation_parity_all89": true,
+      "retired_engine": "R4_micro_s42_ptq_pure",
+      "recipe": "zero_pad16_dense_block_diagonal",
+      "integer_repair_certificate": true
     },
     {
       "id": "R4_micro_s64_fp32",
@@ -852,23 +856,27 @@
       "source_gate": "models/R4_micro_s64_ptq_mixed/SOURCE_GATE.json"
     },
     {
-      "id": "R4_micro_s64_ptq_pure",
+      "id": "R4_micro_s64_ptq_pure_aligned16",
       "architecture": "R4_micro",
       "seed": 64,
       "precision": "pure",
       "method": "PTQ",
       "mode": "no_fp16",
-      "onnx": "models/R4_micro_s64_ptq_pure/model.onnx",
-      "onnx_sha256": "df2c1bad58ec69d97f9b2bde7763ec9ef68535ad2c0985236efee34cfdf4fc1c",
-      "source_admission": "SOURCE_QUALIFIED",
-      "source_reference": "models/R4_micro_s64_ptq_pure/SOURCE_REFERENCE.json",
+      "onnx": "models/R4_micro_s64_ptq_pure_aligned16/model.onnx",
+      "onnx_sha256": "6516124ef206dd4704cb3b060314b03ae77dc71f4a2202c80ad630f0fa09bd65",
+      "source_admission": "SOURCE_ACCURACY_PASS_REPRESENTATION_DIAGNOSTIC",
+      "source_reference": "models/R4_micro_s64_ptq_pure_aligned16/SOURCE_REFERENCE.json",
       "source_accuracy_pass": true,
       "strict_logit_parity_all89": null,
       "unrounded_structure_all89": true,
       "diagnostic_extra": false,
-      "source_gate": "models/R4_micro_s64_ptq_pure/SOURCE_GATE.json",
-      "io": "models/R4_micro_s64_ptq_pure/IO.json",
-      "io_sha256": "7fa1d05e06a9b27c54b0ddf54e14a49a19d4b7bd09c10824416d042fc53a776b"
+      "source_gate": "models/R4_micro_s64_ptq_pure_aligned16/REPAIR_VALIDATION.json",
+      "io": "models/R4_micro_s64_ptq_pure_aligned16/IO.json",
+      "io_sha256": "ad1210347820f11ac6863c18286eb3a7fe035c3179c36a87ae0fc6efb1fb3d7b",
+      "strict_representation_parity_all89": false,
+      "retired_engine": "R4_micro_s64_ptq_pure",
+      "recipe": "zero_pad16_dense_block_diagonal",
+      "integer_repair_certificate": true
     },
     {
       "id": "R4_micro_s91_fp32",
@@ -920,23 +928,27 @@
       "source_gate": "models/R4_micro_s91_ptq_mixed/SOURCE_GATE.json"
     },
     {
-      "id": "R4_micro_s91_ptq_pure",
+      "id": "R4_micro_s91_ptq_pure_aligned16",
       "architecture": "R4_micro",
       "seed": 91,
       "precision": "pure",
       "method": "PTQ",
       "mode": "no_fp16",
-      "onnx": "models/R4_micro_s91_ptq_pure/model.onnx",
-      "onnx_sha256": "25bc955973fabc0ef9f332b6ab08e203c03aae9596daaf6438323a8294f3550a",
-      "source_admission": "SOURCE_QUALIFIED",
-      "source_reference": "models/R4_micro_s91_ptq_pure/SOURCE_REFERENCE.json",
+      "onnx": "models/R4_micro_s91_ptq_pure_aligned16/model.onnx",
+      "onnx_sha256": "d3b752c4a53ffd3e53ea67a1fc6821edc18d6af1b70af823787a2493580f52bf",
+      "source_admission": "SOURCE_ACCURACY_PASS_REPRESENTATION_DIAGNOSTIC",
+      "source_reference": "models/R4_micro_s91_ptq_pure_aligned16/SOURCE_REFERENCE.json",
       "source_accuracy_pass": true,
       "strict_logit_parity_all89": null,
       "unrounded_structure_all89": true,
       "diagnostic_extra": false,
-      "source_gate": "models/R4_micro_s91_ptq_pure/SOURCE_GATE.json",
-      "io": "models/R4_micro_s91_ptq_pure/IO.json",
-      "io_sha256": "0ced133d752a4bc1c3d5dca1204b6529ac859c6b956154a5070e8bf978fcfbaf"
+      "source_gate": "models/R4_micro_s91_ptq_pure_aligned16/REPAIR_VALIDATION.json",
+      "io": "models/R4_micro_s91_ptq_pure_aligned16/IO.json",
+      "io_sha256": "3aa2ea80f5a7a92c2b397fb38baf0340b1b9817f7450a5c32fe37b03411fa90d",
+      "strict_representation_parity_all89": true,
+      "retired_engine": "R4_micro_s91_ptq_pure",
+      "recipe": "zero_pad16_dense_block_diagonal",
+      "integer_repair_certificate": true
     },
     {
       "id": "R4_micro_s107_fp32",
@@ -1005,23 +1017,27 @@
       "source_gate": "models/R4_micro_s107_qat_mixed/SOURCE_GATE.json"
     },
     {
-      "id": "R4_micro_s107_qat_pure",
+      "id": "R4_micro_s107_qat_pure_aligned16",
       "architecture": "R4_micro",
       "seed": 107,
       "precision": "pure",
       "method": "QAT",
       "mode": "no_fp16",
-      "onnx": "models/R4_micro_s107_qat_pure/model.onnx",
-      "onnx_sha256": "135d21899367209030454d43a61d3ac892686436c04a055542c718b9c84e7841",
-      "source_admission": "SOURCE_ACCURACY_PASS_STRICT_QDQ_DIAGNOSTIC",
-      "source_reference": "models/R4_micro_s107_qat_pure/SOURCE_REFERENCE.json",
+      "onnx": "models/R4_micro_s107_qat_pure_aligned16/model.onnx",
+      "onnx_sha256": "f82bff41297a5678fa0afbfecf6228859f4b34b21445a013153db41532c5b558",
+      "source_admission": "SOURCE_ACCURACY_PASS_REPRESENTATION_DIAGNOSTIC",
+      "source_reference": "models/R4_micro_s107_qat_pure_aligned16/SOURCE_REFERENCE.json",
       "source_accuracy_pass": true,
       "strict_logit_parity_all89": false,
       "unrounded_structure_all89": true,
       "diagnostic_extra": false,
-      "source_gate": "models/R4_micro_s107_qat_pure/SOURCE_GATE.json",
-      "io": "models/R4_micro_s107_qat_pure/IO.json",
-      "io_sha256": "85b00acc253bea76cebef62ecda1f22c996454c8e4dfd4626f71e8c91b507c4a"
+      "source_gate": "models/R4_micro_s107_qat_pure_aligned16/REPAIR_VALIDATION.json",
+      "io": "models/R4_micro_s107_qat_pure_aligned16/IO.json",
+      "io_sha256": "a5c58a4dd78e9f4b05f8ff73f9df588df54bd9227f1d695d343190d68be7b0ac",
+      "strict_representation_parity_all89": false,
+      "retired_engine": "R4_micro_s107_qat_pure",
+      "recipe": "zero_pad16_dense_block_diagonal",
+      "integer_repair_certificate": true
     },
     {
       "id": "B0_s42_fp32",
@@ -1076,7 +1092,8 @@
       "diagnostic_extra": true,
       "source_gate": "models/B0_s42_ptq_mixed/SOURCE_GATE.json",
       "fp32_islands": "models/B0_s42_ptq_mixed/FP32_ISLANDS.json",
-      "fp32_islands_sha256": "0252b15ec48dffa76577fcac4e803a530091e72ac060d199b27d5284ac55c45f"
+      "fp32_islands_sha256": "0252b15ec48dffa76577fcac4e803a530091e72ac060d199b27d5284ac55c45f",
+      "island_constraint_mode": "prefer"
     },
     {
       "id": "B0_s42_qat_mixed_repaired",
@@ -1101,7 +1118,8 @@
       "deployment_quantized_convs": 56,
       "floating_conv_exceptions": [],
       "qat_objective": "CE on frozen cached teacher-hard512",
-      "fp32_islands_sha256": "79121035f71982432b395588235721096c7bc727891f7674e8803a34769c6068"
+      "fp32_islands_sha256": "79121035f71982432b395588235721096c7bc727891f7674e8803a34769c6068",
+      "island_constraint_mode": "prefer"
     },
     {
       "id": "B0_s64_fp32",
@@ -1156,7 +1174,8 @@
       "diagnostic_extra": true,
       "source_gate": "models/B0_s64_ptq_mixed/SOURCE_GATE.json",
       "fp32_islands": "models/B0_s64_ptq_mixed/FP32_ISLANDS.json",
-      "fp32_islands_sha256": "0252b15ec48dffa76577fcac4e803a530091e72ac060d199b27d5284ac55c45f"
+      "fp32_islands_sha256": "0252b15ec48dffa76577fcac4e803a530091e72ac060d199b27d5284ac55c45f",
+      "island_constraint_mode": "prefer"
     },
     {
       "id": "B0_s64_qat_mixed_repaired",
@@ -1181,7 +1200,8 @@
       "deployment_quantized_convs": 56,
       "floating_conv_exceptions": [],
       "qat_objective": "CE on frozen cached teacher-hard512",
-      "fp32_islands_sha256": "79121035f71982432b395588235721096c7bc727891f7674e8803a34769c6068"
+      "fp32_islands_sha256": "79121035f71982432b395588235721096c7bc727891f7674e8803a34769c6068",
+      "island_constraint_mode": "prefer"
     },
     {
       "id": "B0_s91_fp32",
@@ -1236,7 +1256,8 @@
       "diagnostic_extra": true,
       "source_gate": "models/B0_s91_ptq_mixed/SOURCE_GATE.json",
       "fp32_islands": "models/B0_s91_ptq_mixed/FP32_ISLANDS.json",
-      "fp32_islands_sha256": "0252b15ec48dffa76577fcac4e803a530091e72ac060d199b27d5284ac55c45f"
+      "fp32_islands_sha256": "0252b15ec48dffa76577fcac4e803a530091e72ac060d199b27d5284ac55c45f",
+      "island_constraint_mode": "prefer"
     },
     {
       "id": "B0_s91_qat_mixed_repaired",
@@ -1261,7 +1282,8 @@
       "deployment_quantized_convs": 56,
       "floating_conv_exceptions": [],
       "qat_objective": "KL temperature2 to frozen genuine parent plus0.01 squared logit-margin error; same512 images; masks provide valid support only; no new foundation teacher inference",
-      "fp32_islands_sha256": "79121035f71982432b395588235721096c7bc727891f7674e8803a34769c6068"
+      "fp32_islands_sha256": "79121035f71982432b395588235721096c7bc727891f7674e8803a34769c6068",
+      "island_constraint_mode": "prefer"
     },
     {
       "id": "B0_s107_fp32",
@@ -1316,7 +1338,8 @@
       "diagnostic_extra": true,
       "source_gate": "models/B0_s107_ptq_mixed/SOURCE_GATE.json",
       "fp32_islands": "models/B0_s107_ptq_mixed/FP32_ISLANDS.json",
-      "fp32_islands_sha256": "0252b15ec48dffa76577fcac4e803a530091e72ac060d199b27d5284ac55c45f"
+      "fp32_islands_sha256": "0252b15ec48dffa76577fcac4e803a530091e72ac060d199b27d5284ac55c45f",
+      "island_constraint_mode": "prefer"
     },
     {
       "id": "B0_s107_qat_mixed_repaired",
@@ -1341,7 +1364,8 @@
       "deployment_quantized_convs": 56,
       "floating_conv_exceptions": [],
       "qat_objective": "CE on frozen cached teacher-hard512",
-      "fp32_islands_sha256": "79121035f71982432b395588235721096c7bc727891f7674e8803a34769c6068"
+      "fp32_islands_sha256": "79121035f71982432b395588235721096c7bc727891f7674e8803a34769c6068",
+      "island_constraint_mode": "prefer"
     }
   ],
   "primary_matrix": [
@@ -1463,7 +1487,8 @@
       "architecture": "R4_micro",
       "seed": 42,
       "precision": "pure",
-      "engine": "R4_micro_s42_ptq_pure"
+      "engine": "R4_micro_s42_ptq_pure_aligned16",
+      "status": "SOURCE_ACCURACY_PASS_NATIVE_REPAIR_PENDING"
     },
     {
       "architecture": "R4_micro",
@@ -1487,7 +1512,8 @@
       "architecture": "R4_micro",
       "seed": 64,
       "precision": "pure",
-      "engine": "R4_micro_s64_ptq_pure"
+      "engine": "R4_micro_s64_ptq_pure_aligned16",
+      "status": "SOURCE_ACCURACY_PASS_NATIVE_REPAIR_PENDING"
     },
     {
       "architecture": "R4_micro",
@@ -1511,7 +1537,8 @@
       "architecture": "R4_micro",
       "seed": 91,
       "precision": "pure",
-      "engine": "R4_micro_s91_ptq_pure"
+      "engine": "R4_micro_s91_ptq_pure_aligned16",
+      "status": "SOURCE_ACCURACY_PASS_NATIVE_REPAIR_PENDING"
     },
     {
       "architecture": "R4_micro",
@@ -1535,7 +1562,8 @@
       "architecture": "R4_micro",
       "seed": 107,
       "precision": "pure",
-      "engine": "R4_micro_s107_qat_pure"
+      "engine": "R4_micro_s107_qat_pure_aligned16",
+      "status": "SOURCE_ACCURACY_PASS_NATIVE_REPAIR_PENDING"
     },
     {
       "architecture": "B0",
@@ -1762,5 +1790,90 @@
       "fp32_islands": "models/B0_s107_qat_mixed/FP32_ISLANDS.json"
     }
   ],
-  "b0_mixed_repair": "Original four failed QAT graphs retained as historical records; replaced primary entries have fresh identities. New source-qualified accuracy candidates retain strict parity diagnostics and require native FP32 island certification."
+  "b0_mixed_repair": "Original four failed QAT graphs retained as historical records; replaced primary entries have fresh identities. New source-qualified accuracy candidates retain strict parity diagnostics and require native FP32 island certification.",
+  "retired_micro_pure_20261023": [
+    {
+      "id": "R4_micro_s42_ptq_pure",
+      "architecture": "R4_micro",
+      "seed": 42,
+      "precision": "pure",
+      "method": "PTQ",
+      "mode": "no_fp16",
+      "onnx": "models/R4_micro_s42_ptq_pure/model.onnx",
+      "onnx_sha256": "4ec02f46f4778b235bcab282d23cf8abc5940977163b2aedd856bfb87ad558b6",
+      "source_admission": "SOURCE_QUALIFIED",
+      "source_reference": "models/R4_micro_s42_ptq_pure/SOURCE_REFERENCE.json",
+      "source_accuracy_pass": true,
+      "strict_logit_parity_all89": null,
+      "unrounded_structure_all89": true,
+      "diagnostic_extra": false,
+      "source_gate": "models/R4_micro_s42_ptq_pure/SOURCE_GATE.json",
+      "io": "models/R4_micro_s42_ptq_pure/IO.json",
+      "io_sha256": "75905cae350868db6e4764e5abeafa6f4feb5c47920b63212ef750a08410173f"
+    },
+    {
+      "id": "R4_micro_s64_ptq_pure",
+      "architecture": "R4_micro",
+      "seed": 64,
+      "precision": "pure",
+      "method": "PTQ",
+      "mode": "no_fp16",
+      "onnx": "models/R4_micro_s64_ptq_pure/model.onnx",
+      "onnx_sha256": "df2c1bad58ec69d97f9b2bde7763ec9ef68535ad2c0985236efee34cfdf4fc1c",
+      "source_admission": "SOURCE_QUALIFIED",
+      "source_reference": "models/R4_micro_s64_ptq_pure/SOURCE_REFERENCE.json",
+      "source_accuracy_pass": true,
+      "strict_logit_parity_all89": null,
+      "unrounded_structure_all89": true,
+      "diagnostic_extra": false,
+      "source_gate": "models/R4_micro_s64_ptq_pure/SOURCE_GATE.json",
+      "io": "models/R4_micro_s64_ptq_pure/IO.json",
+      "io_sha256": "7fa1d05e06a9b27c54b0ddf54e14a49a19d4b7bd09c10824416d042fc53a776b"
+    },
+    {
+      "id": "R4_micro_s91_ptq_pure",
+      "architecture": "R4_micro",
+      "seed": 91,
+      "precision": "pure",
+      "method": "PTQ",
+      "mode": "no_fp16",
+      "onnx": "models/R4_micro_s91_ptq_pure/model.onnx",
+      "onnx_sha256": "25bc955973fabc0ef9f332b6ab08e203c03aae9596daaf6438323a8294f3550a",
+      "source_admission": "SOURCE_QUALIFIED",
+      "source_reference": "models/R4_micro_s91_ptq_pure/SOURCE_REFERENCE.json",
+      "source_accuracy_pass": true,
+      "strict_logit_parity_all89": null,
+      "unrounded_structure_all89": true,
+      "diagnostic_extra": false,
+      "source_gate": "models/R4_micro_s91_ptq_pure/SOURCE_GATE.json",
+      "io": "models/R4_micro_s91_ptq_pure/IO.json",
+      "io_sha256": "0ced133d752a4bc1c3d5dca1204b6529ac859c6b956154a5070e8bf978fcfbaf"
+    },
+    {
+      "id": "R4_micro_s107_qat_pure",
+      "architecture": "R4_micro",
+      "seed": 107,
+      "precision": "pure",
+      "method": "QAT",
+      "mode": "no_fp16",
+      "onnx": "models/R4_micro_s107_qat_pure/model.onnx",
+      "onnx_sha256": "135d21899367209030454d43a61d3ac892686436c04a055542c718b9c84e7841",
+      "source_admission": "SOURCE_ACCURACY_PASS_STRICT_QDQ_DIAGNOSTIC",
+      "source_reference": "models/R4_micro_s107_qat_pure/SOURCE_REFERENCE.json",
+      "source_accuracy_pass": true,
+      "strict_logit_parity_all89": false,
+      "unrounded_structure_all89": true,
+      "diagnostic_extra": false,
+      "source_gate": "models/R4_micro_s107_qat_pure/SOURCE_GATE.json",
+      "io": "models/R4_micro_s107_qat_pure/IO.json",
+      "io_sha256": "85b00acc253bea76cebef62ecda1f22c996454c8e4dfd4626f71e8c91b507c4a"
+    }
+  ],
+  "device_failure_followup": {
+    "date": "2026-10-23",
+    "b0_mixed": "PREFER plus mandatory unchanged FP32 island audit",
+    "micro_pure": "Four existing aligned16 zero-embedding candidates; original failures retained",
+    "sturm_input_policy": "Exact canonical or received Jetson hash per tile; no floating tolerance bypass",
+    "chain": "Unchanged complete results may be copied from a drained predecessor after identity checks; changed recipes are new attempts"
+  }
 }

@@ -1,0 +1,44 @@
+{
+  "status": "PASS_OFFLINE_RECEIVED_FAILURE_REPAIR",
+  "source_evaluations": [
+    {
+      "seed": 42,
+      "images": 89,
+      "actual_optimized_confusions_match": true
+    },
+    {
+      "seed": 64,
+      "images": 89,
+      "actual_optimized_confusions_match": true
+    },
+    {
+      "seed": 91,
+      "images": 89,
+      "actual_optimized_confusions_match": true
+    },
+    {
+      "seed": 107,
+      "images": 89,
+      "actual_optimized_confusions_match": true
+    }
+  ],
+  "chain_and_received_failure_tests": {
+    "status": "PASS_OFFLINE_DEVICE_FOLLOWUP",
+    "exact_sturm_device_hashes": 2675,
+    "mask_and_unknown_input_rejection": "PASS",
+    "changed_recipe_not_reused": "PASS",
+    "compatible_complete_reuse": "PASS_OFFLINE_FIXTURE",
+    "prior_failure_preserved": "PASS",
+    "incomplete_not_promoted": "PASS",
+    "predecessor_wait_and_resume_exclusion": "PASS_REAL_PROCESS_FIXTURE",
+    "failed_preflight_without_states": "PASS",
+    "recorded_child_identity": "PASS_REAL_PROCESS_FIXTURE",
+    "received_micro_failure_rejected": "PASS",
+    "received_b0_prefer_diagnostic": "VERIFIED_RECEIPT_ONLY",
+    "legacy_power_receipt_identity": "PASS",
+    "source_evaluations": "NOT_RUN_NO_INPUT_ROOT",
+    "native_execution": "PENDING_JETSON"
+  },
+  "native_execution": "PENDING_JETSON",
+  "note": "Actual CPU evaluations and offline/real-process fixtures are distinct from native Jetson recovery."
+}
